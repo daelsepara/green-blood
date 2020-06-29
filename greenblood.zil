@@ -17,6 +17,7 @@
 <ROUTINE GO ()
     <INSTRUCTIONS>
     <CRLF>
+    <CHOOSE-CHARACTER>
     <SETG ,HERE ,PROLOGUE>
     <INIT-STATUS-LINE>
     <UPDATE-STATUS-LINE>
@@ -88,6 +89,7 @@
         <RETURN <PROCESS-CHOICES .CHOICES>>
     )(.CONTINUE
         <SETG ,HERE .CONTINUE>
+        <TELL CR "[Press a key to continue]" CR>
         <RETURN <INPUT 1>>
     )>
     <RETURN !\q>>
@@ -105,7 +107,16 @@
 	<HLIGHT ,H-INVERSE>
 	<LINE-ERASE 1>
 	<TELL !\ >
-	<COND (,HERE-LIT <TELL D ,HERE>)(ELSE <TELL %,DARKNESS-STATUS-TEXT>)>
+    <COND (,HERE
+	    <COND (,HERE-LIT <TELL D ,HERE>)(ELSE <TELL %,DARKNESS-STATUS-TEXT>)>
+    )>
+    <COND (,CURRENT-CHARACTER
+        <TELL " - " CT ,CURRENT-CHARACTER>
+    )>
+	<CURSET 1 <- .WIDTH 45>>
+	<TELL "Life Points: " N ,LIFE-POINTS>
+	<CURSET 1 <- .WIDTH 27>>
+	<TELL "Gold: " N ,GOLD-PIECES>
 	<CURSET 1 <- .WIDTH 16>>
 	<TELL "Moves: " N ,MOVES>
 	<SCREEN 0>
