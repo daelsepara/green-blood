@@ -1,6 +1,6 @@
 "Green Blood (ZIL)"
 
-<CONSTANT GAME-BANNER "Green Blood|By David Morris and Mark Smith||Implemented in ZIL by SD Separa (2020)|">
+<CONSTANT GAME-BANNER "Green Blood|Mark Smith||Implemented in ZIL by SD Separa (2020)|">
 <CONSTANT RELEASEID 1>
 <VERSION XZIP>
 
