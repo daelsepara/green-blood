@@ -284,6 +284,22 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY039)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT020 "He points up at the sun shining down on the clearing. Spitting onto his finger, he flicks the saliva up into the air. To your astonishment, a green watery film covers the face of the sun. It lasts only an instant before being wiped away like the blinking of a giant celestial eye. The Elf King turns to you, and his feral smile is brimming with triumph. \"Can you do that, mortal? Make the sun go green?\"">
+<CONSTANT STORY020-CHOICES-TEXT <LTABLE "cast an illusion to achieve the desired effect and pass the Elf King's test" "Otherwise you must admit defeat">>
+<CONSTANT STORY020-CHOICES-SKILLS <LTABLE SKILL-SPELLS NONE>>
+<CONSTANT STORY020-CHOICES-DESTINATIONS <LTABLE STORY232 STORY069>>
+
+<ROOM STORY020
+    (IN ROOMS)
+    (DESC "020")
+    (STORY-TEXT TEXT020)
+    (CHOICES-TEXT STORY020-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY020-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS STORY020-CHOICES-SKILLS)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY024
     (IN ROOMS)
     (DESC "024")
@@ -504,6 +520,17 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE NONE)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY069
+    (IN ROOMS)
+    (DESC "069")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY070
     (IN ROOMS)
     (DESC "070")
@@ -678,6 +705,17 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY210
     (IN ROOMS)
     (DESC "210")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY232
+    (IN ROOMS)
+    (DESC "232")
     (STORY-TEXT NONE)
     (CHOICES-TEXT NONE)
     (CHOICES-DESTINATIONS NONE)
