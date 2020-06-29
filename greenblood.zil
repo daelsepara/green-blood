@@ -35,8 +35,34 @@
     )>
     <CRLF>>
 
+<ROUTINE PROCESS-CHOICES (CHOICES "AUX" KEY CHOICE SKILLS KEYWORDS DESTINATIONS)
+    <SET DESTINATIONS <GETP ,HERE ,P?CHOICES-DESTINATIONS>>
+    <SET SKILLS <GETP ,HERE ,P?CHOICES-SKILL-REQUIREMENTS>>
+    <SET KEYWORDS <GETP ,HERE ,P?CHOICES-KEYWORD-REQUIREMENTS>>
+    <TELL CR "What will you choose? ">
+    <REPEAT ()
+        <SET KEY <INPUT 1>>
+        <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
+            <SET .CHOICE <- .KEY !\0>>
+            <COND (<AND <G=? .CHOICES 1> <L=? .CHOICE <GET .CHOICES 0>>>
+                <COND (<AND <NOT .SKILLS> <NOT .KEYWORDS>>
+                    <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>>>
+                        <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                        <RETURN>
+                    )(ELSE
+                        <TELL CR "Internal Error." CR>
+                        <SET KEY !\q>
+                        <RETURN>
+                    )>
+                )>
+            )>
+        )>
+        <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
+    >
+    <RETURN .KEY>>
+
 <ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES CONTINUE)
-    <SET CHOICES <GETP ,HERE ,P?CHOICE-TEXT>>
+    <SET CHOICES <GETP ,HERE ,P?CHOICES-TEXT>>
     <SET CONTINUE <GETP ,HERE ,P?CONTINUE>>
     <COND (.CHOICES
         <CRLF>
@@ -51,8 +77,9 @@
             <COND (<EQUAL? .I <- .COUNT 1>> <TELL " or ">)>
         >
         <TELL "." CR>
-    <RETURN <INPUT 1>>
+        <RETURN <PROCESS-CHOICES .CHOICES>>
     )(.CONTINUE
         <SETG ,HERE .CONTINUE>
         <RETURN <INPUT 1>>
-    )>>
+    )>
+    <RETURN !\q>>
