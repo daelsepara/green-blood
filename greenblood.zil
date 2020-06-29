@@ -16,6 +16,7 @@
 <CONSTANT NONE F>
 
 <ROUTINE GO ()
+    <V-VERSION>
     <INSTRUCTIONS>
     <CRLF>
     <CHOOSE-CHARACTER>
@@ -35,6 +36,7 @@
         <CHECK-DEATH>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <CRLF> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
+        <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
@@ -160,8 +162,7 @@
                 )>
             )>
         )>
-        <COND (<EQUAL? .KEY !\c !\C> <CRLF><RETURN>)>
-        <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
+        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\q !\Q> <CRLF> <RETURN>)>
     >
     <RETURN .KEY>>
 

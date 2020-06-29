@@ -61,6 +61,8 @@
     (DESC "WILDERNESS LORE")
     (LDESC "A talent for survival in the wild - whether it be forest, desert, swamp or mountain peak.")>
 
+<CONSTANT SKILL-GLOSSARY <LTABLE SKILL-AGILITY SKILL-ARCHERY SKILL-CHARMS SKILL-CUNNING SKILL-FOLKLORE SKILL-ROGUERY SKILL-SPELLS SKILL-STREETWISE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-WILDERNESS-LORE>>
+
 <ROUTINE DESCRIBE-SKILL (SKILL)
     <COND (.SKILL
         <HLIGHT ,H-BOLD>
@@ -276,4 +278,16 @@
         )(ELSE
             <TELL "None" CR>
         )>
+    )>>
+
+<ROUTINE DESCRIBE-SKILLS ("AUX" COUNT)
+    <SET COUNT <GET SKILL-GLOSSARY 0>>
+    <COND (<G? .COUNT 0>
+        <DO (I 1 .COUNT)
+            <HLIGHT ,H-ITALIC>
+            <TELL D <GET SKILL-GLOSSARY .I> CR>
+            <HLIGHT 0>
+            <TELL <GETP <GET SKILL-GLOSSARY .I> P?LDESC> CR>
+            <COND (<NOT <EQUAL? .I .COUNT>> <CRLF>)>
+        >
     )>>
