@@ -65,6 +65,7 @@
                 )>
             )>
         )>
+        <COND (<EQUAL? .KEY !\c !\C> <CRLF> <DESCRIBE-CHARACTER ,CURRENT-CHARACTER>)>
         <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
     >
     <RETURN .KEY>>
