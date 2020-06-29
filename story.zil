@@ -138,6 +138,49 @@
     (CONTINUE NONE)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT010 "\"Then why have you disturbed my slumber? You have woken me a year early. Now I will feel sick for the next year-\"||The dragon rolls over and seems to be going back to sleep.">
+<CONSTANT STORY010-CHOICES-TEXT <LTABLE "attack it" "try to steal its treasure" "continue your quest and leave the dragon to slumber">>
+<CONSTANT STORY010-CHOICES-DESTINATIONS <LTABLE STORY059 STORY079 STORY049>>
+
+<ROOM STORY010
+    (IN ROOMS)
+    (DESC "010")
+    (STORY-TEXT TEXT010)
+    (CHOICES-TEXT STORY010-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY010-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT011 "You know without doubt that your best plan is to call upon the dragon that has promised its help. Certeain in the knowledge that it will obey you, you set off for the Bonehill to enlist its help.||The journey passes swiftly with the help of an elf to guide you, and you are soon at the dragon's lar.||You call out its name . . .">
+
+<ROOM STORY011
+    (IN ROOMS)
+    (DESC "011")
+    (STORY-TEXT TEXT011)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE STORY083)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT012 "You tell Pozzo that to escape the forest he should make for a river and follow it to the sea. You know that there is a city or town at every river mouth for hundreds of miles around, and when he reaches one he can take ship for Godorno. He bids you farewell and says you may stay as his honoured guest at his in in Burg if you are ever travelling that way again. With that, he sets out to return to his beloved daughter.||You are soon safe back in the forest, and alone again. The awful sights and sounds of the Westerman camp are soon left far behind.">
+<CONSTANT STORY012-CHOICES-TEXT <LTABLE "head west" "east" "south-west" "south">>
+<CONSTANT STORY012-CHOICES-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>>
+
+<ROOM STORY012
+    (IN ROOMS)
+    (DESC "012")
+    (STORY-TEXT TEXT012)
+    (CHOICES-TEXT STORY012-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY012-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT016 "You walk across the room without looking to either side, pretending not to have heard the command.||The same voice rings out again, but the imperious tone now carries the sharp ring of anger: \"So you think you can come here and treat us as though we are beneath notice, do you? Are you deaf? Ignore Valerian, would you? I'll make you pay for your insolence.\"||There is a scramble as people leave the common room. Only the old woman in grey stays to watch the fight. It is too late to do anything but fight or run.">
 <CONSTANT STORY016-CHOICES-TEXT <LTABLE "run out of the inn without looking back" "otherwise, you must fight">>
 <CONSTANT STORY016-CHOICES-DESTINATIONS <LTABLE STORY117 STORY005>>
@@ -228,6 +271,28 @@
     (CONTINUE NONE)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY043
+    (IN ROOMS)
+    (DESC "043")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY049
+    (IN ROOMS)
+    (DESC "049")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT055 "A tall man and his short and stocky companion move apart to allow you room in front of the roaring log fire. Both give you a sidelong glance. They look rough and weather-beaten men: the smaller of the two has a face like a bull-mastiff, the taller has the sly cunning look of a fox.">
 <CONSTANT STORY055-CHOICES-TEXT <LTABLE "tell them who you are and why you have come to Burg" "remain silent">>
 <CONSTANT STORY055-CHOICES-DESTINATIONS <LTABLE STORY072 STORY094>>
@@ -238,6 +303,17 @@
     (STORY-TEXT TEXT055)
     (CHOICES-TEXT STORY055-CHOICES-TEXT)
     (CHOICES-DESTINATIONS STORY055-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY059
+    (IN ROOMS)
+    (DESC "059")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
     (CHOICES-SKILL-REQUIREMENTS NONE)
     (CHOICES-KEYWORD-REQUIREMENTS NONE)
     (CONTINUE NONE)
@@ -296,6 +372,39 @@
 <ROOM STORY072
     (IN ROOMS)
     (DESC "072")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY078
+    (IN ROOMS)
+    (DESC "078")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY079
+    (IN ROOMS)
+    (DESC "079")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY083
+    (IN ROOMS)
+    (DESC "083")
     (STORY-TEXT NONE)
     (CHOICES-TEXT NONE)
     (CHOICES-DESTINATIONS NONE)
@@ -453,6 +562,17 @@
 <ROOM STORY406
     (IN ROOMS)
     (DESC "406")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY427
+    (IN ROOMS)
+    (DESC "427")
     (STORY-TEXT NONE)
     (CHOICES-TEXT NONE)
     (CHOICES-DESTINATIONS NONE)
