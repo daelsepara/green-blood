@@ -9,6 +9,8 @@
 <INSERT-FILE "player">
 <INSERT-FILE "story">
 
+<SET REDEFINE T>
+
 <CONSTANT F <>>
 <CONSTANT NONE F>
 
@@ -16,6 +18,8 @@
     <INSTRUCTIONS>
     <CRLF>
     <SETG ,HERE ,PROLOGUE>
+    <INIT-STATUS-LINE>
+    <UPDATE-STATUS-LINE>
     <GAME-LOOP>>
 
 <ROUTINE GAME-LOOP ("AUX" KEY)
@@ -25,6 +29,8 @@
         <PRINT-PAGE>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
+        <CLOCKER>
+        <UPDATE-STATUS-LINE>
     >>
 
 <ROUTINE PRINT-PAGE ("AUX" TEXT)
@@ -48,6 +54,7 @@
                 <COND (<AND <NOT .SKILLS> <NOT .KEYWORDS>>
                     <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>>>
                         <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                        <CRLF>
                         <RETURN>
                     )(ELSE
                         <TELL CR "Internal Error." CR>
@@ -69,12 +76,13 @@
         <TELL "You can ">
         <SET COUNT <GET .CHOICES 0>>
         <DO (I 1 .COUNT)
+            <COND (<AND <EQUAL? .I .COUNT> <G? .COUNT 1>> <TELL "or ">)>
             <HLIGHT ,H-BOLD>
             <TELL N .I ") ">
             <HLIGHT 0>
             <TELL <GET .CHOICES .I>>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
-            <COND (<EQUAL? .I <- .COUNT 1>> <TELL " or ">)>
+            <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
         <TELL "." CR>
         <RETURN <PROCESS-CHOICES .CHOICES>>
@@ -83,3 +91,22 @@
         <RETURN <INPUT 1>>
     )>
     <RETURN !\q>>
+
+"Override"
+<ROUTINE LINE-ERASE (ROW)
+	<CURSET .ROW 1>
+	<DO (I <LOWCORE SCRH> 1 -1) <PRINTC !\ >>
+	<CURSET .ROW 1>>
+
+<ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
+	<SPLIT 1>
+	<SCREEN 1>
+	<SET WIDTH <LOWCORE SCRH>>
+	<HLIGHT ,H-INVERSE>
+	<LINE-ERASE 1>
+	<TELL !\ >
+	<COND (,HERE-LIT <TELL D ,HERE>)(ELSE <TELL %,DARKNESS-STATUS-TEXT>)>
+	<CURSET 1 <- .WIDTH 16>>
+	<TELL "Moves: " N ,MOVES>
+	<SCREEN 0>
+	<HLIGHT 0>>

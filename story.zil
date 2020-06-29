@@ -50,9 +50,39 @@
     (CONTINUE STORY333)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT005 "As Valerian stands up, he lets his cloak fall to the floor, reavealing armour made of quilted leather - light armor that wouldn't stop a sword thrust. He has no sword or obvious weapon to hand. Three small coloured pouches swing from his belt.">
+<CONSTANT STORY005-CHOICES-TEXT <LTABLE "decide to hold your ground" "decide to close with him">>
+<CONSTANT STORY005-CHOICES-DESTINATIONS <LTABLE STORY027 STORY065>>
+
+<ROOM STORY005
+    (IN ROOMS)
+    (DESC "005")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT016 "You walk across the room without looking to either side, pretending not to have heard the command.||The same voice rings out again, but the imperious tone now carries the sharp ring of anger: 'So you think you can come here and treat us as though we are beneath notice, do you? Are you deaf? Ignore Valerian, would you? I'll make you pay for your insolence.'||There is a scramble as people leave the common room. Only the old woman in grey stays to watch the fight. It is too late to do anything but fight or run.">
+<CONSTANT STORY016-CHOICES-TEXT <LTABLE "run out of the inn without looking back" "otherwise, you must fight">>
+<CONSTANT STORY016-CHOICES-DESTINATIONS <LTABLE STORY117 STORY005>>
+
 <ROOM STORY016
     (IN ROOMS)
     (DESC "016")
+    (STORY-TEXT TEXT016)
+    (CHOICES-TEXT STORY016-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY016-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY027
+    (IN ROOMS)
+    (DESC "027")
     (STORY-TEXT NONE)
     (CHOICES-TEXT NONE)
     (CHOICES-DESTINATIONS NONE)
@@ -86,6 +116,17 @@
     (STORY-TEXT TEXT055)
     (CHOICES-TEXT STORY055-CHOICES-TEXT)
     (CHOICES-DESTINATIONS STORY055-CHOICES-DESTINATIONS)
+    (CHOICES-SKILL-REQUIREMENTS NONE)
+    (CHOICES-KEYWORD-REQUIREMENTS NONE)
+    (CONTINUE NONE)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY065
+    (IN ROOMS)
+    (DESC "065")
+    (STORY-TEXT NONE)
+    (CHOICES-TEXT NONE)
+    (CHOICES-DESTINATIONS NONE)
     (CHOICES-SKILL-REQUIREMENTS NONE)
     (CHOICES-KEYWORD-REQUIREMENTS NONE)
     (CONTINUE NONE)
