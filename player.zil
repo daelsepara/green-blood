@@ -1,13 +1,11 @@
 <GLOBAL CURRENT-CHARACTER NONE>
 
 <OBJECT KEYWORDS
-    (IN PLAYER)
     (DESC "Keywords")
     (SYNONYM KEYWORDS)
     (FLAGS CONTBIT OPENBIT)>
 
 <OBJECT SKILLS
-    (IN PLAYER)
     (DESC "Skills")
     (SYNONYM SKILLS)
     (FLAGS CONTBIT OPENBIT)>
@@ -192,39 +190,35 @@
             <SET KEY <INPUT 1>>
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
                 <SET .CHOICE <- .KEY !\0>>
-                <COND (<AND <G=? CHARACTERS 1> <L=? .CHOICE <GET CHARACTERS 0>>>
-                    <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
-                        <SET CHARACTER <GET CHARACTERS .CHOICE>>
-                        <CRLF>
-                        <DESCRIBE-CHARACTER .CHARACTER>
-                        <CRLF>
-                        <TELL "Select this character?">
-                        <COND (<YES?>
-                            <SETG ,CURRENT-CHARACTER .CHARACTER>
-                            <SET SKILLS <GETP .CHARACTER ,P?SKILLS>>
-                            <COND (.SKILLS
-                                <SET COUNT <GET .SKILLS 0>>
-                                <DO (I 1 .COUNT)
-                                    <MOVE <GET .SKILLS .I> ,SKILLS>
-                                >
-                            )>
-                            <SET POSSESSIONS <GETP .CHARACTER ,P?POSSESSIONS>>
-                            <COND (.POSSESSIONS
-                                <SET COUNT <GET .POSSESSIONS 0>>
-                                <DO (I 1 .COUNT)
-                                    <MOVE <GET .POSSESSIONS .I> ,PLAYER>
-                                >
-                            )>
-                            <SETG ,CURRENT-CHARACTER .CHARACTER>
-                            <SETG ,GOLD-PIECES <GETP .CHARACTER ,P?MONEY>>
-                            <SETG ,LIFE-POINTS <GETP .CHARACTER ,P?LIFE-POINTS>>
-                            <TELL CR "You have selected " CT ,CURRENT-CHARACTER CR>
-                            <TELL CR "[Press a key to begin]" CR>
-                            <INPUT 1>
-                            <RETURN>
+                <COND (<AND <G=? CHARACTERS 1> <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
+                    <SET CHARACTER <GET CHARACTERS .CHOICE>>
+                    <CRLF>
+                    <DESCRIBE-CHARACTER .CHARACTER>
+                    <CRLF>
+                    <TELL "Select this character?">
+                    <COND (<YES?>
+                        <SETG ,CURRENT-CHARACTER .CHARACTER>
+                        <SET SKILLS <GETP .CHARACTER ,P?SKILLS>>
+                        <COND (.SKILLS
+                            <SET COUNT <GET .SKILLS 0>>
+                            <DO (I 1 .COUNT)
+                                <MOVE <GET .SKILLS .I> ,SKILLS>
+                            >
                         )>
-                    )(ELSE
-                        <JIGS-UP "Internal Error.">
+                        <SET POSSESSIONS <GETP .CHARACTER ,P?POSSESSIONS>>
+                        <COND (.POSSESSIONS
+                            <SET COUNT <GET .POSSESSIONS 0>>
+                            <DO (I 1 .COUNT)
+                                <MOVE <GET .POSSESSIONS .I> ,PLAYER>
+                            >
+                        )>
+                        <SETG ,CURRENT-CHARACTER .CHARACTER>
+                        <SETG ,GOLD-PIECES <GETP .CHARACTER ,P?MONEY>>
+                        <SETG ,LIFE-POINTS <GETP .CHARACTER ,P?LIFE-POINTS>>
+                        <TELL CR "You have selected " CT ,CURRENT-CHARACTER CR>
+                        <TELL CR "[Press a key to begin]" CR>
+                        <INPUT 1>
+                        <RETURN>
                     )>
                 )>
             )>
