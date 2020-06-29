@@ -7,6 +7,7 @@
 <INSERT-FILE "parser">
 <INSERT-FILE "prologue">
 <INSERT-FILE "player">
+<INSERT-FILE "keywords">
 <INSERT-FILE "story">
 
 <SET REDEFINE T>
@@ -26,8 +27,12 @@
 <ROUTINE GAME-LOOP ("AUX" KEY)
     <REPEAT ()
         <CRLF>
+        <KEYWORD-CHECK>
         <GOTO ,HERE>
         <PRINT-PAGE>
+        <COST-CHECK>
+        <GAIN-KEYWORD>
+        <CHECK-DEATH>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <CRLF> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
@@ -43,11 +48,46 @@
     )>
     <CRLF>>
 
+<ROUTINE CHECK-DEATH ("AUX" DEATH)
+    <SET DEATH <GETP ,HERE ,P?DEATH>>
+    <COND (.DEATH
+        <CRLF>
+        <JIGS-UP "The adventure is over. You have died.">
+    )>>
+
+<ROUTINE COST-CHECK ("AUX" GOLD)
+    <SET GOLD <GETP ,HERE ,P?COST>>
+    <COND(<G? .GOLD 0>
+        <CHARGE-GOLD .GOLD>)>>
+
+<ROUTINE GAIN-KEYWORD ("AUX" KEYWORD)
+    <SET KEYWORD <GETP ,HERE ,P?KEYWORD>>
+    <COND (.KEYWORD
+        <CRLF>
+        <TELL "[You gained the keyword ">
+        <HLIGHT ,H-BOLD>
+        <TELL D .KEYWORD>
+        <HLIGHT 0>
+        <TELL "]" CR>
+        <MOVE .KEYWORD ,KEYWORDS>
+    )>>
+
+<ROUTINE KEYWORD-CHECK ("AUX" KEYWORD)
+    <SET KEYWORD <GETP ,HERE ,P?KEYWORD-CHECK>>
+    <COND (.KEYWORD
+        <SETG ,HERE <APPLY .KEYWORD>>
+    )>>
+
 <ROUTINE NOT-POSSESSED (OBJ)
     <CRLF><CRLF>
     <HLIGHT ,H-BOLD>
     <TELL "You do not posses " D .OBJ CR>
     <HLIGHT 0>>
+
+<ROUTINE CHARGE-GOLD (COST)
+    <SETG ,GOLD-PIECES <- ,GOLD-PIECES .COST>>
+    <COND (<L? ,GOLD-PIECES 0> <SETG ,GOLD-PIECES 0>)>
+    <UPDATE-STATUS-LINE>>
 
 <ROUTINE CHECK-POSSESSIONS (SKILL)
     <COND(<EQUAL? .SKILL ,SKILL-SWORDPLAY>
@@ -127,7 +167,8 @@
 
 <ROUTINE PRESS-A-KEY ()
     <TELL CR "[Press a key to continue]" CR>
-    <RETURN <INPUT 1>>>
+    <INPUT 1>
+    <RETURN>>
 
 <ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES SKILLS CONTINUE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES-TEXT>>
@@ -151,7 +192,8 @@
         <RETURN <PROCESS-CHOICES .CHOICES>>
     )(.CONTINUE
         <SETG ,HERE .CONTINUE>
-        <RETURN PRESS-A-KEY>
+        <PRESS-A-KEY>
+        <RETURN>
     )>
     <RETURN !\q>>
 
@@ -183,7 +225,7 @@
 	<SCREEN 0>
 	<HLIGHT 0>>
 
-<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS)
+<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS KEYWORDS)
     <COND (,CURRENT-CHARACTER
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -230,6 +272,27 @@
                     <RETURN>
                 )>
                 <SET POSSESSIONS <NEXT? .POSSESSIONS>>
+            >
+            <CRLF>
+        )(ELSE
+            <TELL "None" CR>
+        )>
+        <CRLF>
+        <HLIGHT ,H-BOLD>
+        <TELL "Keywords: ">
+        <HLIGHT 0>
+        <SET COUNT 0>
+        <SET KEYWORDS <FIRST? ,KEYWORDS>>
+        <COND (.KEYWORDS
+            <REPEAT ()
+                <COND (.KEYWORDS
+                    <COND (<G? .COUNT 0> <TELL ", ">)>
+                    <TELL D .KEYWORDS>
+                    <SET COUNT <+ .COUNT 1>>
+                )(ELSE
+                    <RETURN>
+                )>
+                <SET KEYWORDS <NEXT? .KEYWORDS>>
             >
             <CRLF>
         )(ELSE
