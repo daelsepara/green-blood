@@ -7,6 +7,7 @@
 <INSERT-FILE "parser">
 <INSERT-FILE "prologue">
 <INSERT-FILE "player">
+<INSERT-FILE "objects">
 <INSERT-FILE "keywords">
 <INSERT-FILE "story">
 
@@ -18,7 +19,6 @@
 <ROUTINE GO ()
     <V-VERSION>
     <INSTRUCTIONS>
-    <CRLF>
     <CHOOSE-CHARACTER>
     <SETG ,HERE ,PROLOGUE>
     <INIT-STATUS-LINE>
@@ -33,9 +33,10 @@
         <PRINT-PAGE>
         <COST-CHECK>
         <GAIN-KEYWORD>
+        <GAIN-POSSESSION>
         <CHECK-DEATH>
         <SET KEY <PROCESS-STORY>>
-        <COND (<EQUAL? .KEY !\c !\C> <CRLF> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
+        <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
         <CLOCKER>
@@ -74,6 +75,18 @@
         <MOVE .KEYWORD ,KEYWORDS>
     )>>
 
+<ROUTINE GAIN-POSSESSION ("AUX" POSSESSION)
+    <SET POSSESSION <GETP ,HERE ,P?POSSESSION>>
+    <COND (.POSSESSION
+        <CRLF>
+        <TELL "[You gained ">
+        <HLIGHT ,H-BOLD>
+        <TELL T .POSSESSION>
+        <HLIGHT 0>
+        <TELL "]" CR>
+        <MOVE .POSSESSION ,PLAYER>
+    )>>
+
 <ROUTINE KEYWORD-CHECK ("AUX" KEYWORD)
     <SET KEYWORD <GETP ,HERE ,P?KEYWORD-CHECK>>
     <COND (.KEYWORD
@@ -91,28 +104,22 @@
     <COND (<L? ,GOLD-PIECES 0> <SETG ,GOLD-PIECES 0>)>
     <UPDATE-STATUS-LINE>>
 
-<ROUTINE CHECK-POSSESSIONS (SKILL)
-    <COND(<EQUAL? .SKILL ,SKILL-SWORDPLAY>
-        <COND (<NOT <IN? ,SWORD ,PLAYER>>
-            <NOT-POSSESSED ,SWORD>
-            <RFALSE>
+<ROUTINE CHECK-KEYWORDS (KEYWORDS "AUX" COUNT)
+    <COND (.KEYWORDS
+        <SET COUNT <GET .KEYWORDS 0>>
+        <COND (<G? .COUNT 0>
+            <DO (I 1 .COUNT)
+                <COND (<NOT <IN? <GET .KEYWORDS .I> ,KEYWORDS>> <RFALSE>)>
+            >
         )>
     )>
-    <COND(<EQUAL? .SKILL ,SKILL-ARCHERY>
-        <COND (<NOT <IN? ,LONGBOW ,PLAYER>>
-            <NOT-POSSESSED ,LONGBOW>
-            <RFALSE>
-        )>
-    )>
-    <COND(<EQUAL? .SKILL ,SKILL-CHARMS>
-        <COND (<NOT <IN? ,MAGIC-AMULET ,PLAYER>>
-            <NOT-POSSESSED ,MAGIC-AMULET>
-            <RFALSE>
-        )>
-    )>
-    <COND(<EQUAL? .SKILL ,SKILL-SPELLS>
-        <COND (<NOT <IN? ,MAGIC-WAND ,PLAYER>>
-            <NOT-POSSESSED ,MAGIC-WAND>
+    <RTRUE>>
+
+<ROUTINE CHECK-POSSESSIONS (SKILL "AUX" REQUIRED)
+    <SET REQUIRED <GETP .SKILL ,P?REQUIRES>>
+    <COND (.REQUIRED
+        <COND (<NOT <IN? .REQUIRED ,PLAYER>>
+            <NOT-POSSESSED .REQUIRED>
             <RFALSE>
         )>
     )>
@@ -139,7 +146,7 @@
                         <SET KEY !\q>
                         <RETURN>
                     )>
-                )(.SKILLS
+                )(<AND .SKILLS <NOT .KEYWORDS>>
                     <COND (<GET .SKILLS .CHOICE>
                         <COND (<IN? <GET .SKILLS .CHOICE> ,SKILLS>
                             <COND (<CHECK-POSSESSIONS <GET .SKILLS .CHOICE>>
@@ -159,6 +166,26 @@
                         <CRLF>
                         <RETURN>
                     )>
+                )(<AND .KEYWORDS <NOT .SKILLS>>
+                    <COND (<GET .KEYWORDS .CHOICE>
+                        <COND (<CHECK-KEYWORDS <GET .KEYWORDS .CHOICE>>
+                            <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                        )(ELSE
+                            <HLIGHT ,H-BOLD>
+                            <CRLF><CRLF>
+                            <TELL "You do not have all the keywords">
+                            <PRINT-KEYWORDS <GET .KEYWORDS .CHOICE>>
+                            <TELL "">
+                            <HLIGHT 0>
+                            <CRLF>
+                        )>
+                        <RETURN>
+                    )(ELSE
+                        <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                        <CRLF>
+                        <RETURN>
+                    )>
                 )>
             )>
         )>
@@ -171,9 +198,24 @@
     <INPUT 1>
     <RETURN>>
 
-<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES SKILLS CONTINUE)
+<ROUTINE PRINT-KEYWORDS (KEYWORDS "AUX" COUNT)
+    <COND (.KEYWORDS
+        <SET COUNT <GET .KEYWORDS 0>>
+        <COND (<G? .COUNT 0>
+            <TELL " (">
+            <DO (I 1 .COUNT)
+                <COND (<G? .I 1> <TELL ", ">)>
+                <TELL D <GET .KEYWORDS .I>>
+            >
+            <TELL ")">
+        )>
+    )>
+>
+
+<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES SKILLS KEYWORDS CONTINUE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES-TEXT>>
     <SET SKILLS <GETP ,HERE ,P?CHOICES-SKILL-REQUIREMENTS>>
+    <SET KEYWORDS <GETP ,HERE ,P?CHOICES-KEYWORD-REQUIREMENTS>>
     <SET CONTINUE <GETP ,HERE ,P?CONTINUE>>
     <COND (.CHOICES
         <CRLF>
@@ -186,6 +228,7 @@
             <HLIGHT 0>
             <TELL <GET .CHOICES .I>>
             <COND (<AND .SKILLS <GET .SKILLS .I>> <TELL " (" D <GET .SKILLS .I> ")">)>
+            <COND (<AND .KEYWORDS <GET .KEYWORDS .I>> <PRINT-KEYWORDS <GET .KEYWORDS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
