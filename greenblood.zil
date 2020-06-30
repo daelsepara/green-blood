@@ -156,7 +156,7 @@
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
-                            <TELL "You do not have " CT <GET .REQUIREMENTS .CHOICE> " skill!">
+                            <TELL "You do not have " T <GET .REQUIREMENTS .CHOICE> " skill!">
                             <HLIGHT 0>
                         )>
                     )(<AND <EQUAL? .TYPE R-KEYWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>

@@ -278,9 +278,34 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY022-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT023 "The Infernal Statue is belching steam as its sword arm rises and falls like a piston. As you do not wish to attack the steaming statue directly, what will you do?">
+<CONSTANT STORY023-CHOICES-TEXT <LTABLE "attack the shieldbearers and bodyguards clustered around the great boiler" "try to get to the pipe that connects the Infernal Statue to the boiler">>
+<CONSTANT STORY023-CHOICES-DESTINATIONS <LTABLE STORY203 STORY397>>
+<CONSTANT STORY023-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
+<ROOM STORY023
+    (IN ROOMS)
+    (DESC "023")
+    (STORY-TEXT TEXT023)
+    (CHOICES-TEXT STORY023-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY023-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY023-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT024 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated because they eat the farmers' crops,\" she syas. \"What do you say?\"">
+<CONSTANT STORY024-CHOICES-TEXT <LTABLE "say the ants are indeed pests and should be wiped out" "reply that the forest would choke and die if there were no ants to eat the dead leaves and wood" "use your knowledge">>
+<CONSTANT STORY024-CHOICES-DESTINATIONS <LTABLE STORY051 STORY067 STORY171>>
+<CONSTANT STORY024-CHOICES-REQUIREMENTS <LTABLE R-NONE R-NONE SKILL-WILDERNESS-LORE>>
+<CONSTANT STORY024-CHOICES-TYPES <LTABLE R-NONE R-NONE R-SKILL>>
+
 <ROOM STORY024
     (IN ROOMS)
     (DESC "024")
+    (STORY-TEXT TEXT024)
+    (CHOICES-TEXT STORY024-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY024-CHOICES-DESTINATIONS)
+    (CHOICES-REQUIREMENTS STORY024-CHOICES-REQUIREMENTS)
+    (CHOICES-TYPES STORY024-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT027 "While you hold your ground, Valerian begins casting a spell.">
@@ -369,6 +394,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "050")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY051
+    (IN ROOMS)
+    (DESC "051")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY053
     (IN ROOMS)
     (DESC "053")
@@ -411,6 +441,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY065
     (IN ROOMS)
     (DESC "065")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY067
+    (IN ROOMS)
+    (DESC "067")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY069
@@ -494,6 +529,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "169")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY171
+    (IN ROOMS)
+    (DESC "171")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY182
     (IN ROOMS)
     (DESC "182")
@@ -507,6 +547,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY198
     (IN ROOMS)
     (DESC "198")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY203
+    (IN ROOMS)
+    (DESC "203")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY210
@@ -534,11 +579,6 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "270")
     (FLAGS LIGHTBIT)>
 
-<ROOM STORY361
-    (IN ROOMS)
-    (DESC "361")
-    (FLAGS LIGHTBIT)>
-
 <ROOM STORY309
     (IN ROOMS)
     (DESC "309")
@@ -557,6 +597,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY346
     (IN ROOMS)
     (DESC "346")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY361
+    (IN ROOMS)
+    (DESC "361")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY397
+    (IN ROOMS)
+    (DESC "397")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY406
