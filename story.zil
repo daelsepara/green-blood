@@ -37,7 +37,7 @@
     (CONTINUE STORY333)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT003 "A figure lies dead in the forest. Ants crawl in and out of its newly picked-clean eye sockets; beetles and rats gnaw at the remains. With a shock you realize the figure is wearing identical clothes to yours - there isn't another pair of boots in the world quite like yours, made to order by a cobbler in Godorno.||\"You are not wearing my ring,\" says Elanor. \"If you cannot trust me, I cannot aid you. You must find your won way and I must continue my search for the saviour of the forest. Begone and never come back, you weak-willed doubter.\"||Elanor and the owl disappear. You are on your own again.">
+<CONSTANT TEXT003 "A figure lies dead in the forest. Ants crawl in and out of its newly picked-clean eye sockets; beetles and rats gnaw at the remains. With a shock you realize the figure is wearing identical clothes to yours - there isn't another pair of boots in the world quite like yours, made to order by a cobbler in Godorno.||\"You are not wearing my ring,\" says Elanor. \"If you cannot trust me, I cannot aid you. You must find your own way and I must continue my search for the saviour of the forest. Begone and never come back, you weak-willed doubter.\"||Elanor and the owl disappear. You are on your own again.">
 
 <ROOM STORY003
     (IN ROOMS)
@@ -384,7 +384,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES STORY033-CHOICES)
     (DESTINATIONS <LTABLE STORY076 STORY092>)
     (TYPES TWO-NONES)
-    (PRECHOICE-EVENT STORY033-DECISION)
+    (PRECHOICE STORY033-DECISION)
     (FLAGS LIGHTBIT)>
 
 <GLOBAL STORY033-DECISION-FLAG F>
@@ -403,7 +403,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY068)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT035 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles and asks if you are feeling brave today.||You sense a sombre urgency behind her words, and, imitating a courtly bow, you reply, \"My lady, I have never felt more heroic!\"||\"Good. Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away happy and expect good fortune to turn up on a plate without them lifting a finger. If the soothsayer prophesies misfortune a sense of helplessness comes over people and they all too often sink into a despairing inactivity which leads to their downfall through sloth. Thus their prophesy is self-fulfulling. It is a well-known fact in Godorno that those soothsayers who always give good auguries are never short of customers, leading you to conclude that they often lie, pretending to see happy events when they should be giving bad news, good fortune when they should be giving bad tidings.||Your worry on this score, however, is soon gone. Looking in the basin of smooth clear water it seems as though an artist is hurriedly painting a picture of ghoulish horror.\"The water shows what will come to pass if you do not succeed in your quest,\" says Elanor.||The picture is complete now in terrible detail, as if you were actually looking at the burnt remains of the forest. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke. Two hundred paces away you see a forge where a gigantic cauldron is suspended over a bonfire; six men constantly feed the fire with wood and charcoal. All the men working there have very pale skins, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses harnessed together pull logs to where groups of men cut them up ready for burning. A row of children sit nearby; they are darker skinned than men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped, men are torching the underbrush. They seem intent on killing everything that lives in the forest. A pall of smoke hangs like a storm-cloud over the scene.||Then the vision shifts and the men have gone, leaving behind nothing but the grey ashes of death. All that remains of the forest is a few blackened stumps.">
+<CONSTANT TEXT035 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles and asks if you are feeling brave today.||You sense a sombre urgency behind her words, and, imitating a courtly bow, you reply, \"My lady, I have never felt more heroic!\"||\"Good. Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away happy and expect good fortune to turn up on a plate without them lifting a finger. If the soothsayer prophesies misfortune a sense of helplessness comes over people and they all too often sink into a despairing inactivity which leads to their downfall through sloth. Thus their prophecy is self-fulfulling. It is a well-known fact in Godorno that those soothsayers who always give good auguries are never short of customers, leading you to conclude that they often lie, pretending to see happy events when they should be giving bad news, good fortune when they should be giving bad tidings.||Your worry on this score, however, is soon gone. Looking in the basin of smooth clear water it seems as though an artist is hurriedly painting a picture of ghoulish horror.\"The water shows what will come to pass if you do not succeed in your quest,\" says Elanor.||The picture is complete now in terrible detail, as if you were actually looking at the burnt remains of the forest. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke. Two hundred paces away you see a forge where a gigantic cauldron is suspended over a bonfire; six men constantly feed the fire with wood and charcoal. All the men working there have very pale skins, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses harnessed together pull logs to where groups of men cut them up ready for burning. A row of children sit nearby; they are darker skinned than men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped, men are torching the underbrush. They seem intent on killing everything that lives in the forest. A pall of smoke hangs like a storm-cloud over the scene.||Then the vision shifts and the men have gone, leaving behind nothing but the grey ashes of death. All that remains of the forest is a few blackened stumps.">
 
 <ROOM STORY035
     (IN ROOMS)
@@ -503,7 +503,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT044 "You travel on until you reach the next obstacle in your path: a tributary of the Sirion that is spanned by a rope bridge, the only means of crossing the water. The bridge has clearly been tended to recently, as bushes have been hacked back from the stancions between which it hangs. Tentatively, you step onto the bidge, which holds your weight but sags more and more as you approach its centre.||When you are half-way across, a waterspout erupts from the river beneath you, out of which flails a mass of vegetation ringed with fibrous tentacles. The water was thrown up by an Embracer, which plucks you from the bridge.">
-<CONSTANT STORY044-CHOICES <LTABLE "use " "use" "do something else if you do not have these skills">>
+<CONSTANT STORY044-CHOICES <LTABLE "grab the tentacles" "slice through the tentacles" "do something else">>
 
 <ROOM STORY044
     (IN ROOMS)
@@ -515,6 +515,39 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT045 "If you are near the dragon and the Bonehill you will need to turn to the right and travel several days to the west">
+<CONSTANT STORY045-CHOICES <LTABLE "do this" "investigate the area from where the whooshing noise came.">>
+
+<ROOM STORY045
+    (IN ROOMS)
+    (DESC "045")
+    (STORY TEXT045)
+    (CHOICES STORY045-CHOICES)
+    (DESTINATIONS <LTABLE STORY043 STORY068>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT046 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles at you.||\"Well, my hero, do you feel brave today? Is your resolve strong enough to do what is needed of you?\"||\"I have never felt more heroic, my noble lady,\" you reply, although you know in your heart of hearts that you felt considerably braver while you were wearing Elanor's emerald ring.||\"Good,\" she replies. \"Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away content and expect good luck to come their way without the need to lift a finger. If bad lack is prophesied, a sense of helplessness afflicts the person and they might sink into a despairing activity which leads to poverty and ruin. Thus the prophecy is self-fulfilling. It is well known that those soothsayers who invariably give good auguries are never short of customers, leading you to conclude that they must be pretending to see happy events even when they should be predicting bad news, since they will simply say what people want to hear.||Your doubts in Elanor's case are soon dispelled. Looking into the basin of smooth clear water it seems as though an unseen artist is hurriedly painting a picture of ghoulish horror.">
+
+<ROOM STORY046
+    (IN ROOMS)
+    (DESC "046")
+    (STORY TEXT046)
+    (CONTINUE STORY003)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT047 "As you set foot on the hillock you are surprised by how hard the ground feels, although it yilds slightly as if a layer of hard rock were resting on mud. The ground is smooth and has a sheen to it: it only looked like grass. The egret stops its cackling and flies off.">
+<CONSTANT STORY047-CHOICES <LTABLE "step back off the mound" "climb onwards">>
+
+<ROOM STORY047
+    (IN ROOMS)
+    (DESC "047")
+    (STORY TEXT047)
+    (CHOICES STORY047-CHOICES)
+    (DESTINATIONS <LTABLE STORY056 STORY066>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT048 "Your sword cuts cleanly through the fibers, lopping the tentacles into pieces. The Embracer emits a piercing shriek and subsides once more into the river. You swim to the far bank before the man-eating monster can recover.">
 
 <ROOM STORY048
@@ -524,24 +557,70 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY013)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT049 "Leaving the blasted valley behind you, you strike north through the forest in search of the camp of the dreaded Westermen. The ground becomes hillocky and uneven. The trees - hollies and elders - are smaller here; you walk on past ever more spindly and sickly trees until you are faced by an impenetrable wall of thorns that rises up like the great cupola dome on top of the cathedral in Godorno.||You skirt the wall, which seems in actuality to be one great bush of thorns. Here and there the denseness of the growing bushes has gathered the remains of dead animals and pushed them out to its perimeter. One little group of bones looks suspiciously like those of a man or elf mouldering on the ground.">
+
 <ROOM STORY049
     (IN ROOMS)
     (DESC "049")
+    (STORY TEXT049)
+    (CONTINUE STORY099)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT050 "The King of the Elves momentarily looks disappointed. He then casts his eyes about him to find a champion. A tall old elf stands forward, the first elf you have seen who carries a sword, which is strapped to his back.||He draws the blade from over his head with a flourish: it is slim with sharp, wavy edges. He looks quizzically at his king, and asks, \"Do we fight to the death, lord? If so, have no fear for me.\"||\"You will duel until one of you submits or is killed. If you survive we have two of the Lady of the Forest's potions to revive you if you are wounded.\"||To you he adds, \"Don't make Zorolotl kill you. You should submit when you feel his skill with the sword overmastering yours.\"||Zorolotl walks to one side of the grassy circle and waits confidently, his sword held aloft.">
+<CONSTANT STORY050-CHOICES <LTABLE "take up your position opposite him if you are prepared to fight" "try to get out of the duel by protesting you should be measured against your fores, the Westermen, not against the elves you have come to help">>
 
 <ROOM STORY050
     (IN ROOMS)
     (DESC "050")
+    (STORY TEXT050)
+    (CHOICES STORY050-CHOICES)
+    (DESTINATIONS <LTABLE STORY437 STORY092>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT051 "\"I am sorry but you have failed the test. You must leave the forest. Begone.\"||Elanor strides determinedly away from you, saying as she departs, \"I will set all the birds and the beasts against you. You have four days to leave the forest, never to return.\"">
+<CONSTANT STORY051-CHOICES <LTABLE "follow her" "let her go and follow your own destiny">>
 
 <ROOM STORY051
     (IN ROOMS)
     (DESC "051")
+    (STORY TEXT051)
+    (CHOICES STORY051-CHOICES)
+    (DESTINATIONS <LTABLE STORY085 STORY073>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT052 "Knowing that he has just repulsed your attempt to take over his mind and knowing you to be defenceless, the left-hand image moves. It is the real King of the Elves, and he cass a spell of his own with a dramatic gesture. A luminous green halo pops forth from his fingertips. As it darts toward you the halo grows, and it encircles your waist before you can move. Your legs feel as if they have turned to jelly: you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cries the Elf king.">
+<CONSTANT STORY052-CHOICES <LTABLE "submit" "try to fight on">>
+
+<ROOM STORY052
+    (IN ROOMS)
+    (DESC "052")
+    (STORY TEXT052)
+    (CHOICES STORY052-CHOICES)
+    (DESTINATIONS <LTABLE STORY255 STORY272>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT053 "Knowing what the Westermen plan for the Tree of Life, you determinedly hurry back to relay your information to the elves. Travelling along routes that seem to come unbidden to your mind, you reach a clearing that seems strangely familiar.||Your arrival is anticipated. An elf is waiting to return you to Elvenhame so you might hold a council of war. With a guide, you quickly make it to the fabulous home of the forest dwellers.">
 
 <ROOM STORY053
     (IN ROOMS)
     (DESC "053")
+    (STORY TEXT053)
+    (CONTINUE STORY256)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT054 "What is the dragon's name?">
+<CONSTANT STORY054-CHOICES <LTABLE "answer Gwelphstar" "Garoshtar" "Skardrig" "Bethshebel">>
+
+<ROOM STORY054
+    (IN ROOMS)
+    (DESC "054")
+    (STORY TEXT054)
+    (CHOICES STORY054-CHOICES)
+    (DESTINATIONS <LTABLE STORY006 STORY083 STORY093 STORY102>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT055 "A tall man and his short and stocky companion move apart to allow you room in front of the roaring log fire. Both give you a sidelong glance. They look rough and weather-beaten men: the smaller of the two has a face like a bull-mastiff, the taller has the sly cunning look of a fox.">
@@ -556,9 +635,25 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT056 "You step back off the mound, which begins to shake as if there was an earthquake. The ground you have stepped back onto is quite firm, but even so you can feel the vibrations rocking you slightly.||The whole of the green hillock suddenly rolls upwards and away from you, leaving you standing on the edge of a ledge with a twenty-foot drop. As the hillock moves it creases and splits apart.||The dragon, for that is what the hillock really is, moves slowly as it wakes from its slumber. Turning its great scaly neck like a corkscrew, the ancient creature looks back over its shoulder at you. Its smouldering red eyes, as terrifying as the portals to hell, gaze at you from a craggy face the size of a cart">
+<CONSTANT STORY056-CHOICES <LTABLE "leap at its head to attack it before it is fully awake" "smile at it in the hope that it will not eat you, while preparing a spell if you know how">>
+
+<ROOM STORY056
+    (IN ROOMS)
+    (DESC "056")
+    (STORY TEXT056)
+    (CHOICES STORY056-CHOICES)
+    (DESTINATIONS <LTABLE STORY074 STORY036>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT059 "The dragon pins you to the ground beneath a huge claw. You look up from the massive green scaled claw to the beast's smouldering red eyes some thirty feet above. Clearly it wasn't as sleepy as you thought and your actions have made it think you were trying to kill it. The dragon opens its jaws wide and its stomach convulses. A second later a gout of poisonous gas and acid hits you like a suffocating and burning wave. There is no surviving the breath of an ancient green dragon.">
+
 <ROOM STORY059
     (IN ROOMS)
     (DESC "059")
+    (STORY TEXT059)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY060
@@ -590,6 +685,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "065")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY066
+    (IN ROOMS)
+    (DESC "066")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY067
     (IN ROOMS)
     (DESC "067")
@@ -608,7 +708,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY070
     (IN ROOMS)
     (DESC "070")
-    (EVENT-HANDLER STORY070-EVENTS)
+    (EVENTS STORY070-EVENTS)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY070-EVENTS ()
@@ -621,6 +721,33 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "072")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY073
+    (IN ROOMS)
+    (DESC "073")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT074 "You leap into the air but the dragon twitches its head away and you miss the target. With nothing to land on, you plumment twenty feet to the ground, landing almost underneath one of the creature's massive claws.">
+
+<ROOM STORY074
+    (IN ROOMS)
+    (DESC "074")
+    (STORY TEXT074)
+    (CONTINUE STORY059)
+    (EVENTS STORY074-EVENTS)
+    (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY074-EVENTS ()
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+        <HLIGHT ,H-BOLD>
+        <TELL "It is a difficult leap, made harder by the dragon slowly rearing up onto its legs.">
+        <HLIGHT 0>
+        <CRLF>
+        <PRESS-A-KEY>
+        <CRLF>
+        <RETURN ,STORY086>
+    )>
+    <RETURN STORY074>>
+
 <ROOM STORY075
     (IN ROOMS)
     (DESC "075")
@@ -629,14 +756,14 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY076
     (IN ROOMS)
     (DESC "076")
-    (EVENT-HANDLER STORY076-EVENTS)
+    (EVENTS STORY076-EVENTS)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY076-EVENTS ()
     <HLIGHT ,H-BOLD>
     <COND (<NOT ,STORY033-DECISION-FLAG>
         <TELL "You take up position in the circle on the west side, where the ground is flattest and where the wind is at your back.">
-    )(
+    )(ELSE
         <TELL "You take up position in the circle on the east side, where the ground is uneven and where the wind is in your face.">
     )>
     <HLIGHT 0>
@@ -672,6 +799,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "083")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY085
+    (IN ROOMS)
+    (DESC "085")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY086
+    (IN ROOMS)
+    (DESC "086")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT087 "A silver noose magically appears in the air before you and drops over your head. You try to drag the noose up and over your head, but the silvery cord tightens slowly until it flattens your windpipe. You grow purple owing to the lack of oxygen and the great effort you are putting into staying alive.||It is a futile struggle. Grugling horribly, unable even to speak, you subside into the floor and black out, never to regain consciousness.">
 
 <ROOM STORY087
@@ -686,9 +823,24 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "092")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY093
+    (IN ROOMS)
+    (DESC "093")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY094
     (IN ROOMS)
     (DESC "094")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY099
+    (IN ROOMS)
+    (DESC "099")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY102
+    (IN ROOMS)
+    (DESC "102")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT103 "It was a mistake to enter the forest without a guide. There is no time to do anything as the Embracer sucks you down into the murky depths. You struggle desperately hard but, unable to breathe, your strength soon fails you and you drown in the clutches of this hideous creature.">
@@ -834,6 +986,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "249")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY255
+    (IN ROOMS)
+    (DESC "255")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY256
     (IN ROOMS)
     (DESC "256")
@@ -847,6 +1004,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY270
     (IN ROOMS)
     (DESC "270")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY272
+    (IN ROOMS)
+    (DESC "272")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT274 "The earth mound that was to be your bed collapses beneath you. It is the some of a giant man-eating Colossus beetle. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of the throat of a Colossus beetle press you down to its gullet you realize you have been swallowed alive while you listened for a monster stalking you. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
@@ -963,6 +1125,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY427
     (IN ROOMS)
     (DESC "427")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY437
+    (IN ROOMS)
+    (DESC "437")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY441

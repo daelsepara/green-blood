@@ -23,7 +23,8 @@
     <SETG ,HERE ,PROLOGUE>
     <INIT-STATUS-LINE>
     <UPDATE-STATUS-LINE>
-    <GAME-LOOP>>
+    <GAME-LOOP>
+    <JIGS-UP "This is a work in progress.">>
 
 <ROUTINE GAME-LOOP ("AUX" KEY)
     <REPEAT ()
@@ -36,12 +37,13 @@
         <GAIN-ITEM>
         <CHECK-DEATH>
         <CHECK-VICTORY>
-        <CHECK-PRE-CHOICE>
+        <CHECK-PRECHOICE>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
+        <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
+        <COND (<EQUAL? .KEY !\x !\X> <RETURN>)>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
     >>
@@ -68,8 +70,8 @@
         <JIGS-UP "The adventure is over. You saved the forest! Congratulations!">
     )>>
 
-<ROUTINE CHECK-PRE-CHOICE ("AUX" PRE-CHOICE)
-    <SET PRE-CHOICE <GETP ,HERE ,P?PRECHOICE-EVENT>>
+<ROUTINE CHECK-PRECHOICE ("AUX" PRE-CHOICE)
+    <SET PRE-CHOICE <GETP ,HERE ,P?PRECHOICE>>
     <COND (.PRE-CHOICE <APPLY .PRE-CHOICE>)>>
 
 <ROUTINE COST-CHECK ("AUX" GOLD)
@@ -180,7 +182,7 @@
     )>>
         
 <ROUTINE CHECK-EVENTS ("AUX" EVENT)
-    <SET EVENT <GETP ,HERE ,P?EVENT-HANDLER>>
+    <SET EVENT <GETP ,HERE ,P?EVENTS>>
     <COND (.EVENT
         <SETG ,HERE <APPLY .EVENT>>
     )>>
@@ -336,7 +338,7 @@
         <PRESS-A-KEY>
         <RETURN>
     )>
-    <RETURN !\q>>
+    <RETURN !\x>>
 
 "Override"
 <ROUTINE LINE-ERASE (ROW)
