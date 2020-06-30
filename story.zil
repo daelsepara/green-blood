@@ -536,7 +536,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT044 "You travel on until you reach the next obstacle in your path: a tributary of the Sirion that is spanned by a rope bridge, the only means of crossing the water. The bridge has clearly been tended to recently, as bushes have been hacked back from the stancions between which it hangs. Tentatively, you step onto the bidge, which holds your weight but sags more and more as you approach its centre.||When you are half-way across, a waterspout erupts from the river beneath you, out of which flails a mass of vegetation ringed with fibrous tentacles. The water was thrown up by an Embracer, which plucks you from the bridge.">
-<CONSTANT STORY044-CHOICES-TEXT <LTABLE "try to break free" "attack it" "try to do something else if you do not have these skills">>
+<CONSTANT STORY044-CHOICES-TEXT <LTABLE "use " "use" "do something else if you do not have these skills">>
 <CONSTANT STORY044-CHOICES-DESTINATIONS <LTABLE STORY061 STORY081 STORY103>>
 <CONSTANT STORY044-CHOICES-REQUIREMENTS <LTABLE SKILL-UNARMED-COMBAT SKILL-SWORDPLAY R-NONE>>
 <CONSTANT STORY044-CHOICES-TYPES <LTABLE R-SKILL R-SKILL R-NONE>>
