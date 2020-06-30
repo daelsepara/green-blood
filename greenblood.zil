@@ -33,7 +33,7 @@
         <PRINT-PAGE>
         <COST-CHECK>
         <GAIN-KEYWORD>
-        <GAIN-POSSESSION>
+        <GAIN-ITEM>
         <CHECK-DEATH>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
@@ -75,16 +75,16 @@
         <MOVE .KEYWORD ,KEYWORDS>
     )>>
 
-<ROUTINE GAIN-POSSESSION ("AUX" POSSESSION)
-    <SET POSSESSION <GETP ,HERE ,P?POSSESSION>>
-    <COND (.POSSESSION
+<ROUTINE GAIN-ITEM ("AUX" ITEM)
+    <SET ITEM <GETP ,HERE ,P?ITEM>>
+    <COND (.ITEM
         <CRLF>
         <TELL "[You gained ">
         <HLIGHT ,H-BOLD>
-        <TELL T .POSSESSION>
+        <TELL T .ITEM>
         <HLIGHT 0>
         <TELL "]" CR>
-        <MOVE .POSSESSION ,PLAYER>
+        <MOVE .ITEM ,PLAYER>
     )>>
 
 <ROUTINE CHECK-EVENTS ("AUX" EVENT)
@@ -115,7 +115,7 @@
     )>
     <RTRUE>>
 
-<ROUTINE CHECK-POSSESSION (ITEM)
+<ROUTINE CHECK-POSSESSIONS (ITEM)
     <COND (.ITEM
         <COND (<NOT <IN? .ITEM ,PLAYER>>
             <NOT-POSSESSED .ITEM>
@@ -170,7 +170,7 @@
                             <HLIGHT 0>
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-POSSESSION <GET .REQUIREMENTS .CHOICE>>
+                        <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
                             <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
                         )>
                     )>

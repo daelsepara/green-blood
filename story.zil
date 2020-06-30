@@ -170,7 +170,7 @@
     (DESC "014")
     (STORY-TEXT TEXT014)
     (CONTINUE STORY333)
-    (POSSESSION MAPLE-FLUTE)
+    (ITEM MAPLE-FLUTE)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT015 "The imp puts on the emerald ring as if it were a bracelet, and then tries to rip it off again. But the band of gold constricts until it is a perfect fit around his wrist.||\"Alack, alack, I can never take this cursed thing off,\" the imp laments.||\"Help me, and I will remove the ring.\"||\"I am the Kwerrel, and the Kwerrel keeps no bargains.\"||\"Then you are a prisoner of the Lady of the Forest's ring for ever and every being in the forest will know that you are not her friend,\" you say.||Quailing at your words, the Kwerrel says, \"Tke the flesh of the toadstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||As the imp speaks the gold ring grows and falls from his wrist to lie on the ground near the giant toadstool. You pick it up again, take a large piece of the flesh of the toadstool. Bidding the little imp goodby, you walk back into the forest.">
@@ -180,7 +180,7 @@
     (DESC "015")
     (STORY-TEXT TEXT015)
     (CONTINUE STORY406)
-    (POSSESSION TOADSTOOL-FLESH)
+    (ITEM TOADSTOOL-FLESH)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT016 "You walk across the room without looking to either side, pretending not to have heard the command.||The same voice rings out again, but the imperious tone now carries the sharp ring of anger: \"So you think you can come here and treat us as though we are beneath notice, do you? Are you deaf? Ignore Valerian, would you? I'll make you pay for your insolence.\"||There is a scramble as people leave the common room. Only the old woman in grey stays to watch the fight. It is too late to do anything but fight or run.">
