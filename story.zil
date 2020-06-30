@@ -3,10 +3,14 @@
 <CONSTANT R-CODEWORD 2>
 <CONSTANT R-ITEM 3>
 
+<CONSTANT TWO-NONES <LTABLE R-NONE R-NONE>>
+<CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
+<CONSTANT FOUR-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
+
 <CONSTANT TEXT001 "The road tops a ridge that is straddled by the ruins of a great wall, half covered in turf. The wall once marked the border between the lands of man and domain of the elves. Quickly you scramble up and over the blocks of fallen stone. Standing atop the ruin, you survey the outlands beyond.||Your gaze sweeps across the broad patches of purple heather and yellow gorse that cover the inhospitable uplands. The air smells fresh; it is good to be free of the noisome taint of the sewers and plague pits of the city you have left behind. The road winds down into a valley, at the foot of which nestles Burg, a small town of neat white houses with roof of triangular grey slates. Here may be your last chance to talk with mankind before you are swallowed up by the depths of the great Forest of Arden.||As you walk towards the buildings through the tilled and reaped land of the valley, you pass gleaners - peasants who search the ground for stalks of straw and seed spilled during the harvest. The townsfolk, seemingly wary of outsiders, keep out of your way. Ahead of you is an inn, the largest building in the town. Looking forward to perhaps your last night's sleep in a proper bed for many weeks, you make for this hostelry.||The inn seems surprisingly large for a town that is at the very edge of the wilderness. It must once have been a baronial hall built by a lord seeking to carve out a kingdom beyond the great wall. As you walk down the main street the ruddy sky is turning with the onset of twilight. What looked an inviting little town by day seems sombre and unwelcoming at nightfall. As you linger a moment outside the inn, there is a crack of thunder and it begins to pour with rain.||Inside the inn a young girl is lighting oil lamps with a taper. Until your eyes grow accustomed to the gloom you cannot make out who shares the common room with you, nor many details of the interior of the inn itself.">
 <CONSTANT STORY001-CHOICES-TEXT <LTABLE "wait by the door until you can see better" "step in and warm yourself before the fire">>
 <CONSTANT STORY001-CHOICES-DESTINATIONS <LTABLE STORY037 STORY055>>
-<CONSTANT STORY001-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY001-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY001
     (IN ROOMS)
@@ -38,7 +42,7 @@
 <CONSTANT TEXT004 "Valerian's voice is markedly different from the guttural speech of the Westermen, but there is no doubt he has thrown in his lot with them. It is plain that they depend upon him for their knowledge of the forest and its many dangers. They are planning how to destroy and burn the whole forest tree by tree. Valerian has convinced the chief of the Westermen that his realm will not be safe until every tree, every sapling and every bush in the forest has been razed to the ground.||\"You wanted to tell me something of note, Valerian? Else why have I summoned all my advisers?\"||\"Indeed, sire, I have a plan to destroy the forest at a stroke.\"||\"What stroke?\"||\"By killing the Tree of Life at the very centre of the forest. Slay the tree of Life, sire, and the whole forest, along with everything in it, will die.\"||\"Well, your advice has been sound in the past, Valerian. I will do as you suggest and slay the Tree of Life.\"">
 <CONSTANT STORY004-CHOICES-TEXT <LTABLE "interrupt and tell the chief that the death of the forest will mean death and destruction for the whole world, including him" "speak out of the pavilion and leave while the going is good">>
 <CONSTANT STORY004-CHOICES-DESTINATIONS <LTABLE STORY198 STORY038>>
-<CONSTANT STORY004-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY004-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY004
     (IN ROOMS)
@@ -53,7 +57,7 @@
 <CONSTANT TEXT005 "As Valerian stands up, he lets his cloak fall to the floor, reavealing armour made of quilted leather - light armor that wouldn't stop a sword thrust. He has no sword or obvious weapon to hand. Three small coloured pouches swing from his belt.">
 <CONSTANT STORY005-CHOICES-TEXT <LTABLE "decide to hold your ground" "decide to close with him">>
 <CONSTANT STORY005-CHOICES-DESTINATIONS <LTABLE STORY027 STORY065>>
-<CONSTANT STORY005-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY005-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY005
     (IN ROOMS)
@@ -76,7 +80,7 @@
 <CONSTANT TEXT007 "You say the word and vanish. Your invisibility, however, doesn't help you deal with the Infernal Statue, whose sword is still chopping into the Tree of Life. You are wasting precious time. Which spell will you cast to help save the tree?">
 <CONSTANT STORY007-CHOICES-TEXT <LTABLE "cast Choking Fog" "Bafflement" "Visceral Disruption" "Tower of Will">>
 <CONSTANT STORY007-CHOICES-DESTINATIONS <LTABLE STORY346 STORY113 STORY064 STORY186>>
-<CONSTANT STORY007-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY007-CHOICES-TYPES FOUR-NONES>
 
 <ROOM STORY007
     (IN ROOMS)
@@ -99,7 +103,7 @@
 <CONSTANT TEXT009 "\"I must test your fitness to be the forest's saviour,\" says Elanor. \"I hope you pass the test. YOu would not like to see the forest laid to waste would you?\"||She looks regal and yet kind, but her eyes never leave yours.">
 <CONSTANT STORY009-CHOICES-TEXT <LTABLE "reply that your reason for visiting the forest is to find the Tree of Knowledge and take some of its wisdom away with you to the lands of men" "say that the forest is too beautiful to be laid waste and you will try to save it">>
 <CONSTANT STORY009-CHOICES-DESTINATIONS <LTABLE STORY024 STORY040>>
-<CONSTANT STORY009-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY009-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY009
     (IN ROOMS)
@@ -113,7 +117,7 @@
 <CONSTANT TEXT010 "\"Then why have you disturbed my slumber? You have woken me a year early. Now I will feel sick for the next year-\"||The dragon rolls over and seems to be going back to sleep.">
 <CONSTANT STORY010-CHOICES-TEXT <LTABLE "attack it" "try to steal its treasure" "continue your quest and leave the dragon to slumber">>
 <CONSTANT STORY010-CHOICES-DESTINATIONS <LTABLE STORY059 STORY079 STORY049>>
-<CONSTANT STORY010-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY010-CHOICES-TYPES THREE-NONES>
 
 <ROOM STORY010
     (IN ROOMS)
@@ -136,7 +140,7 @@
 <CONSTANT TEXT012 "You tell Pozzo that to escape the forest he should make for a river and follow it to the sea. You know that there is a city or town at every river mouth for hundreds of miles around, and when he reaches one he can take ship for Godorno. He bids you farewell and says you may stay as his honoured guest at his in in Burg if you are ever travelling that way again. With that, he sets out to return to his beloved daughter.||You are soon safe back in the forest, and alone again. The awful sights and sounds of the Westerman camp are soon left far behind.">
 <CONSTANT STORY012-CHOICES-TEXT <LTABLE "head west" "east" "south-west" "south">>
 <CONSTANT STORY012-CHOICES-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>>
-<CONSTANT STORY012-CHOICES-TYPE <LTABLE R-NONE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY012-CHOICES-TYPE FOUR-NONES>
 
 <ROOM STORY012
     (IN ROOMS)
@@ -186,7 +190,7 @@
 <CONSTANT TEXT016 "You walk across the room without looking to either side, pretending not to have heard the command.||The same voice rings out again, but the imperious tone now carries the sharp ring of anger: \"So you think you can come here and treat us as though we are beneath notice, do you? Are you deaf? Ignore Valerian, would you? I'll make you pay for your insolence.\"||There is a scramble as people leave the common room. Only the old woman in grey stays to watch the fight. It is too late to do anything but fight or run.">
 <CONSTANT STORY016-CHOICES-TEXT <LTABLE "run out of the inn without looking back" "otherwise, you must fight">>
 <CONSTANT STORY016-CHOICES-DESTINATIONS <LTABLE STORY117 STORY005>>
-<CONSTANT STORY016-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY016-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY016
     (IN ROOMS)
@@ -267,7 +271,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT022 "The sprite inclines your own reflected face in an expression of deep meditation. \"I see your destiny,\" it says at last. \"You will either prove yourself a hero, saving the forest, or else you will allow venality and pride to lead you to your doom.\"||\"Being a hero sounds the better option,\" you comment drily.||\"In that case, you must seek Elanor the Grey Lady. Solitude has made her strange - not quite elvish in her ways, but not human any longer either. But you should trust her, as she'll set you on the right path. Then you must find the elves. Convincing them to help you may prove a weighty task, for they are proud and aloof and wilfully headstrong. Next seek the camp of the Westermen to learn their plans. They will destroy the forest if they succeed, and only direct action can stop them. Perhaps you can dig up a worm to help you.\"||There is a long pause. You look expectantly at the reflection until it finally gives you a distinctly unhuman grin. \"Well, that is the prophecy,\" it concludes.">
 <CONSTANT STORY022-CHOICES-TEXT <LTABLE "keep your promise to break the mirror" "leave it intact for the time being">>
 <CONSTANT STORY022-CHOICES-DESTINATIONS <LTABLE STORY418 STORY105>>
-<CONSTANT STORY022-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY022-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY022
     (IN ROOMS)
@@ -281,7 +285,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT023 "The Infernal Statue is belching steam as its sword arm rises and falls like a piston. As you do not wish to attack the steaming statue directly, what will you do?">
 <CONSTANT STORY023-CHOICES-TEXT <LTABLE "attack the shieldbearers and bodyguards clustered around the great boiler" "try to get to the pipe that connects the Infernal Statue to the boiler">>
 <CONSTANT STORY023-CHOICES-DESTINATIONS <LTABLE STORY203 STORY397>>
-<CONSTANT STORY023-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY023-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY023
     (IN ROOMS)
@@ -311,7 +315,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT025 "The Chief of the Westermen describes his favourite toy to you. His eyes are shining with enthusiasm as he describes a great steam-powered machine of metal armour inside which a man can ride. The suit is as large as a giant and as powerful as a steam hammer, it can smash men to pulp or rend them limb from limb. The chief believes it works by magic.||\"It only has one weakness. Sever the line that connects it to the steam furnace and it dies. Only a real hero could stand up to The Steamer and do that, by the gods,\"||At that moment a visitor is announched. \"It is Valerian the Moon Druid, sire,\" says the herald. \"He says he has important news. Shall we let him come in?\"||\"Aye, let him enter.\" The speech of Westermen sounds guttural and uncouth, but you can understand their dialect. The man who enters is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak, but his hood is thrown back to reveal his hatchet-like face and pointed black goatee beard. He bows before the chief, then wrinkles his nose and stares at you.">
 <CONSTANT STORY025-CHOICES-TEXT <LTABLE "make your excuses and leave" "choose to stay and hear what news Valerian brings">>
 <CONSTANT STORY025-CHOICES-DESTINATIONS <LTABLE STORY038 STORY004>>
-<CONSTANT STORY025-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY025-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY025
     (IN ROOMS)
@@ -359,7 +363,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT029 "Valerian's attention is distracted by what the king is pointing out on the map. You inch quietly past the guards and towards the pavilion's porchway. Valerian looks up and his eyes narrow, then he cries out, \"There's something moving, they're getting away. I have the senses of a bat.\"||He points in your general dirction. The guards peer from him to where you stand, unable to make you out.">
 <CONSTANT STORY029-CHOICES-TEXT <LTABLE "cast the Shield of Defence spell, if you think this is your best option" "otherwise make a run for the forest">>
 <CONSTANT STORY029-CHOICES-DESTINATIONS <LTABLE STORY441 STORY451>>
-<CONSTANT STORY029-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY029-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY029
     (IN ROOMS)
@@ -382,7 +386,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT031 "A grandiose gesture brings forth the Choking Fog about the machine. But why have you used this spell against a machine that doesn't breathe but is powered by steam? The steam rushing from vents in the head dissipates the fog and the Infernal Statue lurches to the Tree of Life once again, raising its sword arm to strike.">
 <CONSTANT STORY031-CHOICES-TEXT <LTABLE "can cast Bafflement" "Visceral Disruption" "Tower of Will">>
 <CONSTANT STORY031-CHOICES-DESTINATIONS <LTABLE STORY113 STORY064 STORY186>>
-<CONSTANT STORY031-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY031-CHOICES-TYPES THREE-NONES>
 
 <ROOM STORY031
     (IN ROOMS)
@@ -396,7 +400,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT032 "There is another great whooshing exhalation behind you and you start to sprint. The gurgling sounds closer this time. The dragon must be chasing you. Straining your ears, you listen for sounds of the leviathan crashing through the ferns behind, over the rasping of your own breath and the thudding of your feet on the ground. You run until exhaustion overwhelms you but there are no sounds of pursuit now. It seems you have escaped the dragon.||If indeed you are near the Bonehill, the dragon's lair..">
 <CONSTANT STORY032-CHOICES-TEXT <LTABLE "travel for several days to the west to regain your course" "continue north in your original direction">>
 <CONSTANT STORY032-CHOICES-DESTINATIONS <LTABLE STORY043 STORY127>>
-<CONSTANT STORY032-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY032-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY032
     (IN ROOMS)
@@ -410,7 +414,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT033 "\"I choose to use magic to fight this duel,\" you say, confident that your power is enough to beat any elf.||The King of the Elves smiles when he hears your choice - a cool smile that induces doubt and imbues you with fear. You realize you have never seen an elf smile before; the action transforms the king's face, making him look quite human all of a sudden.||\"You think to pit your magic against that of the elves? I will be the champion of elvendom in this duel: I can fashion a spell as well as any other standing here. We will use no death magics. We have potions to revive us if we are wounded. Don't make me kill you; submit if you feel my power overmastering yours.\"||With that he gestures you to take up position inside the grassy circle.">
 <CONSTANT STORY033-CHOICES-TEXT <LTABLE "stay in position opposite him" "try getting out of the duel by telling the king you should be measured against your foes, the Westermen, instead of the elves you have come to help">>
 <CONSTANT STORY033-CHOICES-DESTINATIONS <LTABLE STORY076 STORY092>>
-<CONSTANT STORY033-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY033-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY033
     (IN ROOMS)
@@ -451,7 +455,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
 <CONSTANT STORY037-CHOICES-TEXT <LTABLE "obey the command" "ignore it" "leave the inn">>
 <CONSTANT STORY037-CHOICES-DESTINATIONS <LTABLE STORY108 STORY016 STORY117>>
-<CONSTANT STORY037-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY037-CHOICES-TYPES THREE-NONES>
 
 <ROOM STORY037
     (IN ROOMS)
@@ -530,7 +534,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT055 "A tall man and his short and stocky companion move apart to allow you room in front of the roaring log fire. Both give you a sidelong glance. They look rough and weather-beaten men: the smaller of the two has a face like a bull-mastiff, the taller has the sly cunning look of a fox.">
 <CONSTANT STORY055-CHOICES-TEXT <LTABLE "tell them who you are and why you have come to Burg" "remain silent">>
 <CONSTANT STORY055-CHOICES-DESTINATIONS <LTABLE STORY072 STORY094>>
-<CONSTANT STORY055-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+<CONSTANT STORY055-CHOICES-TYPES TWO-NONES>
 
 <ROOM STORY055
     (IN ROOMS)
