@@ -407,7 +407,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY032-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT033 "\"I choose to use magic to fight this duel,\" you say, confident that your power is enough to beat any elf.||The King of the Elves smiles when he hears your choice - a cool smile that induces doubt and imbues you with fear. You realize you have never seen an elf smile before; the action transforms the king's face, making him look quite human all of a sudden.||\"You think to pit your magic against that of the elves? I will be the champion of elvendom in this duel: I can fashion a spell as well as any other standing here. We will use no death magics. We have potions to revive us if we are wounded. Don't make me kill you; submit if you feel my power overmastering yours.\"||With that he gestures you to take up position inside the grassy circle.||(Note: Decide whether you will stand with the wind in your face or at your back)">
+<CONSTANT TEXT033 "\"I choose to use magic to fight this duel,\" you say, confident that your power is enough to beat any elf.||The King of the Elves smiles when he hears your choice - a cool smile that induces doubt and imbues you with fear. You realize you have never seen an elf smile before; the action transforms the king's face, making him look quite human all of a sudden.||\"You think to pit your magic against that of the elves? I will be the champion of elvendom in this duel: I can fashion a spell as well as any other standing here. We will use no death magics. We have potions to revive us if we are wounded. Don't make me kill you; submit if you feel my power overmastering yours.\"||With that he gestures you to take up position inside the grassy circle.">
 <CONSTANT STORY033-CHOICES-TEXT <LTABLE "stay in position opposite him" "try getting out of the duel by telling the king you should be measured against your foes, the Westermen, instead of the elves you have come to help">>
 <CONSTANT STORY033-CHOICES-DESTINATIONS <LTABLE STORY076 STORY092>>
 <CONSTANT STORY033-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
@@ -419,7 +419,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TEXT STORY033-CHOICES-TEXT)
     (CHOICES-DESTINATIONS STORY033-CHOICES-DESTINATIONS)
     (CHOICES-TYPES STORY033-CHOICES-TYPES)
+    (PRECHOICE-EVENT STORY033-DECISION)
     (FLAGS LIGHTBIT)>
+
+<GLOBAL STORY033-DECISION-FLAG F>
+
+<ROUTINE STORY033-DECISION ()
+    <CRLF>
+    <TELL "Stand with the wind in your face (yes) or at your back (no)?">
+    <COND (<YES?> <SETG ,STORY033-DECISION-FLAG T>)>>
 
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
 <CONSTANT STORY037-CHOICES-TEXT <LTABLE "obey the command" "ignore it" "leave the inn">>
@@ -568,7 +576,21 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY076
     (IN ROOMS)
     (DESC "076")
+    (EVENT-HANDLER STORY076-EVENTS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY076-EVENTS ()
+    <HLIGHT ,H-BOLD>
+    <COND (<NOT ,STORY033-DECISION-FLAG>
+        <TELL "You take up position in the circle on the west side, where the ground is flattest and where the wind is at your back.">
+    )(
+        <TELL "You take up position in the circle on the east side, where the ground is uneven and where the wind is in your face.">
+    )>
+    <HLIGHT 0>
+    <CRLF>
+    <PRESS-A-KEY>
+    <CRLF>
+    <RETURN ,STORY110>>
 
 <ROOM STORY078
     (IN ROOMS)
@@ -614,6 +636,20 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "108")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT110 "(You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.)||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
+<CONSTANT STORY110-CHOICES-TEXT <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defense" "Bafflement" "Visions" "Tower of Will">>
+<CONSTANT STORY110-CHOICES-DESTINATIONS <LTABLE STORY122 STORY143 STORY347 STORY326 STORY347 STORY249 STORY174>>
+<CONSTANT STORY110-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
+
+<ROOM STORY110
+    (IN ROOMS)
+    (DESC "110")
+    (STORY-TEXT TEXT110)
+    (CHOICES-TEXT STORY110-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY110-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY110-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY113
     (IN ROOMS)
     (DESC "113")
@@ -624,6 +660,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "117")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY122
+    (IN ROOMS)
+    (DESC "122")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY127
     (IN ROOMS)
     (DESC "127")
@@ -632,6 +673,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY137
     (IN ROOMS)
     (DESC "137")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY143
+    (IN ROOMS)
+    (DESC "143")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY163
@@ -647,6 +693,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY171
     (IN ROOMS)
     (DESC "171")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY174
+    (IN ROOMS)
+    (DESC "174")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY182
@@ -684,6 +735,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "232")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY249
+    (IN ROOMS)
+    (DESC "249")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY256
     (IN ROOMS)
     (DESC "256")
@@ -699,6 +755,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "309")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY326
+    (IN ROOMS)
+    (DESC "326")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT333 "The young girl, who says that her father is away on a journey to buy provisions, charges you a piece gold for your food and for a night's lodging.||You sleep well and awake early but refreshed. Washing in cold water is invigorating and you enjoy the feel of the rough inn towel. There will be no such comforts in the forest.||Downstairs the inn is deserted. The woman in grey, the only other guest, has left already. The young girl is mopping the floor and she looks troubled. Asking what ails her brings the reply, \"My father did not return last night. I tried not to worry but I knew in my heart he wouldn't come. He went into the forest to buy provisions before the Westermen block the spice road. I know he has gone the way of the others. And that strange woman in grey never so much as touched her bed last night, though she didn't leave her room till after dawn. I begged Father to take Renard to guide him but he wouldn't spend the money. Now I'll never see him again\". With this, she breaks into tears.||As you comfort here, you ask the innkeeper's daughter to describe her father and say you will try to find either him or news of him. As you turn to leave she says, \"Fare you well, traveller, you are my only hope.\"">
 
 <ROOM STORY333
@@ -712,6 +773,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY346
     (IN ROOMS)
     (DESC "346")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY347
+    (IN ROOMS)
+    (DESC "347")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY361

@@ -36,6 +36,7 @@
         <GAIN-ITEM>
         <CHECK-DEATH>
         <CHECK-VICTORY>
+        <CHECK-PRE-CHOICE>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
@@ -66,6 +67,10 @@
         <CRLF>
         <JIGS-UP "The adventure is over. You saved the forest! Congratulations!">
     )>>
+
+<ROUTINE CHECK-PRE-CHOICE ("AUX" PRE-CHOICE)
+    <SET PRE-CHOICE <GETP ,HERE ,P?PRECHOICE-EVENT>>
+    <COND (.PRE-CHOICE <APPLY .PRE-CHOICE>)>>
 
 <ROUTINE COST-CHECK ("AUX" GOLD)
     <SET GOLD <GETP ,HERE ,P?COST>>
