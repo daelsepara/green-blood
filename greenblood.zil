@@ -190,7 +190,7 @@
 <ROUTINE NOT-POSSESSED (OBJ)
     <CRLF><CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You do not posses " D .OBJ CR>
+    <TELL "You do not possess " D .OBJ CR>
     <HLIGHT 0>>
 
 <ROUTINE CHARGE-GOLD (COST)

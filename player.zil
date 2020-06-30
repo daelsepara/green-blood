@@ -22,7 +22,7 @@
 
 <OBJECT SKILL-ARCHERY
     (DESC "ARCHERY")
-    (LDESC "A long-range attack skill. You must posses a longbow to use this skill")
+    (LDESC "A long-range attack skill. You must possess a longbow to use this skill")
     (REQUIRES LONGBOW)>
 
 <OBJECT SKILL-CHARMS
