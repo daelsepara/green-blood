@@ -3,17 +3,6 @@
 <CONSTANT R-KEYWORD 2>
 <CONSTANT R-ITEM 3>
 
-<ROOM BLANK
-    (IN ROOMS)
-    (DESC " ")
-    (STORY-TEXT NONE)
-    (CHOICES-TEXT NONE)
-    (CHOICES-DESTINATIONS NONE)
-    (CHOICES-SKILL-REQUIREMENTS NONE)
-    (CHOICES-KEYWORD-REQUIREMENTS NONE)
-    (CONTINUE NONE)
-    (FLAGS LIGHTBIT)>
-
 <CONSTANT TEXT001 "The road tops a ridge that is straddled by the ruins of a great wall, half covered in turf. The wall once marked the border between the lands of man and domain of the elves. Quickly you scramble up and over the blocks of fallen stone. Standing atop the ruin, you survey the outlands beyond.||Your gaze sweeps across the broad patches of purple heather and yellow gorse that cover the inhospitable uplands. The air smells fresh; it is good to be free of the noisome taint of the sewers and plague pits of the city you have left behind. The road winds down into a valley, at the foot of which nestles Burg, a small town of neat white houses with roof of triangular grey slates. Here may be your last chance to talk with mankind before you are swallowed up by the depths of the great Forest of Arden.||As you walk towards the buildings through the tilled and reaped land of the valley, you pass gleaners - peasants who search the ground for stalks of straw and seed spilled during the harvest. The townsfolk, seemingly wary of outsiders, keep out of your way. Ahead of you is an inn, the largest building in the town. Looking forward to perhaps your last night's sleep in a proper bed for many weeks, you make for this hostelry.||The inn seems surprisingly large for a town that is at the very edge of the wilderness. It must once have been a baronial hall built by a lord seeking to carve out a kingdom beyond the great wall. As you walk down the main street the ruddy sky is turning with the onset of twilight. What looked an inviting little town by day seems sombre and unwelcoming at nightfall. As you linger a moment outside the inn, there is a crack of thunder and it begins to pour with rain.||Inside the inn a young girl is lighting oil lamps with a taper. Until your eyes grow accustomed to the gloom you cannot make out who shares the common room with you, nor many details of the interior of the inn itself.">
 <CONSTANT STORY001-CHOICES-TEXT <LTABLE "wait by the door until you can see better" "step in and warm yourself before the fire">>
 <CONSTANT STORY001-CHOICES-DESTINATIONS <LTABLE STORY037 STORY055>>
@@ -275,6 +264,20 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY021-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT022 "The sprite inclines your own reflected face in an expression of deep meditation. \"I see your destiny,\" it says at last. \"You will either prove yourself a hero, saving the forest, or else you will allow venality and pride to lead you to your doom.\"||\"Being a hero sounds the better option,\" you comment drily.||\"In that case, you must seek Elanor the Grey Lady. Solitude has made her strange - not quite elvish in her ways, but not human any longer either. But you should trust her, as she'll set you on the right path. Then you must find the elves. Convincing them to help you may prove a weighty task, for they are proud and aloof and wilfully headstrong. Next seek the camp of the Westermen to learn their plans. They will destroy the forest if they succeed, and only direct action can stop them. Perhaps you can dig up a worm to help you.\"||There is a long pause. You look expectantly at the reflection until it finally gives you a distinctly unhuman grin. \"Well, that is the prophecy,\" it concludes.">
+<CONSTANT STORY022-CHOICES-TEXT <LTABLE "keep your promise to break the mirror" "leave it intact for the time being">>
+<CONSTANT STORY022-CHOICES-DESTINATIONS <LTABLE STORY418 STORY105>>
+<CONSTANT STORY022-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
+<ROOM STORY022
+    (IN ROOMS)
+    (DESC "022")
+    (STORY-TEXT TEXT022)
+    (CHOICES-TEXT STORY022-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY022-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY022-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY024
     (IN ROOMS)
     (DESC "024")
@@ -456,6 +459,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "094")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY105
+    (IN ROOMS)
+    (DESC "105")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY108
     (IN ROOMS)
     (DESC "108")
@@ -554,6 +562,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY406
     (IN ROOMS)
     (DESC "406")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY418
+    (IN ROOMS)
+    (DESC "418")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY419
