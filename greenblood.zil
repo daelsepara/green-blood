@@ -5,7 +5,7 @@
 <VERSION XZIP>
 
 <INSERT-FILE "parser">
-<INSERT-FILE "prologue">
+<INSERT-FILE "instructions">
 <INSERT-FILE "player">
 <INSERT-FILE "objects">
 <INSERT-FILE "codewords">
