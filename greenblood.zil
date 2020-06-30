@@ -105,6 +105,20 @@
         <RETURN .ITEMS>
     )>>
 
+<ROUTINE CHECK-DROPS (ITEM "AUX" REQUIRES)
+    <COND (.ITEM
+        <SET REQUIRES <GETP .ITEM ,P?REQUIRES>>
+        <COND (<AND .REQUIRES <IN? .REQUIRES ,SKILLS>>
+            <CRLF>
+            <HLIGHT ,H-BOLD>
+            <TELL "You cannot drop " T .ITEM " because it is required by " T .REQUIRES " skill!">
+            <HLIGHT 0>
+            <CRLF>
+            <RFALSE>
+        )>
+    )>
+    <RTRUE>>
+
 <ROUTINE DROP-REPLACE-ITEM (OBJ "AUX" KEY COUNT ITEM CHOICE)
     <COND (<AND .OBJ <G=? <COUNT-POSESSIONS> LIMIT-POSSESSIONS>>
         <REPEAT ()
@@ -127,10 +141,12 @@
                     <CRLF>
                     <TELL "Drop " T .ITEM "?">
                     <COND (<YES?>
-                        <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
-                        <REMOVE .ITEM>
-                        <MOVE .OBJ ,PLAYER>
-                        <RETURN>
+                        <COND (<CHECK-DROPS .ITEM>
+                            <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
+                            <REMOVE .ITEM>
+                            <MOVE .OBJ ,PLAYER>
+                            <RETURN>
+                        )>
                     )>
                 )>
             )(<EQUAL? .KEY <+ .COUNT 49>>
