@@ -308,6 +308,20 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY024-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT025 "The Chief of the Westermen describes his favourite toy to you. His eyes are shining with enthusiasm as he describes a great steam-powered machine of metal armour inside which a man can ride. The suit is as large as a giant and as powerful as a steam hammer, it can smash men to pulp or rend them limb from limb. The chief believes it works by magic.||\"It only has one weakness. Sever the line that connects it to the steam furnace and it dies. Only a real hero could stand up to The Steamer and do that, by the gods,\"||At that moment a visitor is announched. \"It is Valerian the Moon Druid, sire,\" says the herald. \"He says he has important news. Shall we let him come in?\"||\"Aye, let him enter.\" The speech of Westermen sounds guttural and uncouth, but you can understand their dialect. The man who enters is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak, but his hood is thrown back to reveal his hatchet-like face and pointed black goatee beard. He bows before the chief, then wrinkles his nose and stares at you.">
+<CONSTANT STORY025-CHOICES-TEXT <LTABLE "make your excuses and leave" "choose to stay and hear what news Valerian brings">>
+<CONSTANT STORY025-CHOICES-DESTINATIONS <LTABLE STORY038 STORY004>>
+<CONSTANT STORY025-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
+<ROOM STORY025
+    (IN ROOMS)
+    (DESC "025")
+    (STORY-TEXT TEXT025)
+    (CHOICES-TEXT STORY025-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY025-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY025-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT027 "While you hold your ground, Valerian begins casting a spell.">
 <CONSTANT STORY027-CHOICES-TEXT <LTABLE "go onto the offensive" "prepare a defensive magic" "otherwise">>
 <CONSTANT STORY027-CHOICES-DESTINATIONS <LTABLE STORY169 STORY182 STORY087>>
