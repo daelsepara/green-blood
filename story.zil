@@ -259,6 +259,22 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY020-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT021 "With the dragon's help and the might of the elves, you feel you have a chance of defeating the forces of the Westermen and driving the threat of the evil from the forest. Full of confidence in your ability to call upon a powerful ally of the ancient times, you head towards the rowan trees at the edge of the forest.||Travelling along routes that seem to come unbidden to you mind, you reach a clearing that seems strangely familiar. Was it perhaps, that you met the elves? Or does some horror of your travels lurk nearby in the undergrowth?||Summoning up your courage, you call out to whoever or whatever will here: |\"Elves! If you would win your freedom, come talk with a mortal who can deliver it. For I have secured us an ally equal to half the Westermen's forces - a dragon whose very appearance will slay scores of them from sheer terror. Come forward and speak with me.\"||The words of your challenge die away, suffocated by the preternatural silence of the forest. You might have expected to hear the chirruping voice of a bird or the faint rustle of a woodmouse questing for beetles, yet there is nothoing. Cursing the elves for their arrogance, you shout again, \"Come forward!\"||Spittle flies from your lips and your face flushes with the violent passion of your request. Again you wait for a reply.||\"Do you think that one dragon is enough, then, to beat your fellow men?\" says a cool voice from behind you.||Spinning around, you see no more than inces from your face the eternally youthful face of an elf. Yet the penetrating eyes that are windows to the wisdom of countless centuries mark this elf out above all others. The Elf King has answered your call.||\"One dragon is more than enough,\" you reply, \"with the forces of the elves a well. He will demoralize the Westermen, plunging them into chaos from which the deadly arrows of the elves will cruelly pluck them.\"||He smiles a cold smile, approving of the relish with which you describe the Westermen's deaths. \"Brave words indeed, for a mortal. But for elves to accede to your schemes and counsels, you must prove yourself worthy of our respect.\"||\"How may I do that?\"||\"Overcome my champion in a duel. Only then will we heed your words.\"">
+<CONSTANT STORY021-CHOICES-TEXT <LTABLE "use your knowledge" "use the keyword" "accept his terms if you have neither">>
+<CONSTANT STORY021-CHOICES-DESTINATIONS <LTABLE STORY215 STORY309 STORY137>>
+<CONSTANT STORY021-CHOICES-REQUIREMENTS <LTABLE SKILL-FOLKLORE <LTABLE KEYWORD-SPECULUM> R-NONE>>
+<CONSTANT STORY021-CHOICES-TYPES <LTABLE R-SKILL R-KEYWORD R-NONE>>
+
+<ROOM STORY021
+    (IN ROOMS)
+    (DESC "021")
+    (STORY-TEXT TEXT021)
+    (CHOICES-TEXT STORY021-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY021-CHOICES-DESTINATIONS)
+    (CHOICES-REQUIREMENTS STORY021-CHOICES-REQUIREMENTS)
+    (CHOICES-TYPES STORY021-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY024
     (IN ROOMS)
     (DESC "024")
@@ -455,6 +471,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "117")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY137
+    (IN ROOMS)
+    (DESC "137")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY163
     (IN ROOMS)
     (DESC "169")
@@ -485,6 +506,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "210")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY215
+    (IN ROOMS)
+    (DESC "215")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY232
     (IN ROOMS)
     (DESC "232")
@@ -503,6 +529,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY361
     (IN ROOMS)
     (DESC "361")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY309
+    (IN ROOMS)
+    (DESC "309")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT333 "The young girl, who says that her father is away on a journey to buy provisions, charges you a piece gold for your food and for a night's lodging.||You sleep well and awake early but refreshed. Washing in cold water is invigorating and you enjoy the feel of the rough inn towel. There will be no such comforts in the forest.||Downstairs the inn is deserted. The woman in grey, the only other guest, has left already. The young girl is mopping the floor and she looks troubled. Asking what ails her brings the reply, \"My father did not return last night. I tried not to worry but I knew in my heart he wouldn't come. He went into the forest to buy provisions before the Westermen block the spice road. I know he has gone the way of the others. And that strange woman in grey never so much as touched her bed last night, though she didn't leave her room till after dawn. I begged Father to take Renard to guide him but he wouldn't spend the money. Now I'll never see him again\". With this, she breaks into tears.||As you comfort here, you ask the innkeeper's daughter to describe her father and say you will try to find either him or news of him. As you turn to leave she says, \"Fare you well, traveller, you are my only hope.\"">
