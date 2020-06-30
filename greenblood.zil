@@ -39,6 +39,7 @@
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
+        <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\q !\Q> <RETURN>)>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
@@ -83,6 +84,62 @@
         <MOVE .KEYWORD ,KEYWORDS>
     )>>
 
+<ROUTINE GET-ITEM (ITEM "AUX" ITEMS COUNT)
+    <COND(<AND .ITEM <G=? <COUNT-POSESSIONS> 0>>
+        <SET COUNT 0>
+        <SET ITEMS <FIRST? ,PLAYER>>
+        <REPEAT ()
+            <COND (.ITEMS
+                <SET COUNT <+ .COUNT 1>>
+                <COND (<EQUAL? .COUNT .ITEM> <RETURN>)>
+            )(ELSE
+                <RETURN>
+            )>
+            <SET .ITEMS <NEXT? .ITEMS>>
+        >
+        <RETURN .ITEMS>
+    )>>
+
+<ROUTINE DROP-REPLACE-ITEM (OBJ "AUX" KEY COUNT ITEM CHOICE)
+    <COND (<AND .OBJ <G=? <COUNT-POSESSIONS> LIMIT-POSSESSIONS>>
+        <REPEAT ()
+            <CRLF>
+            <TELL "Please choose an item to drop:" CR>
+            <SET COUNT 0>
+            <SET ITEM <FIRST? ,PLAYER>>
+            <REPEAT ()
+                <COND (<NOT .ITEM> <RETURN>)>
+                <SET COUNT <+ .COUNT 1>>
+                <TELL N .COUNT " - " T .ITEM  CR>
+                <SET .ITEM <NEXT? .ITEM>>
+            >
+            <TELL N <+ .COUNT 1> " - drop " T .OBJ " instead." CR>
+            <SET KEY <INPUT 1>>
+            <COND (<AND <G? .KEY 48> <L? .KEY <+ .COUNT 49>>>
+                <SET CHOICE <- .KEY 48>>
+                <SET .ITEM <GET-ITEM .CHOICE>>
+                <COND (.ITEM
+                    <CRLF>
+                    <TELL "Drop " T .ITEM "?">
+                    <COND (<YES?>
+                        <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
+                        <REMOVE .ITEM>
+                        <MOVE .OBJ ,PLAYER>
+                        <RETURN>
+                    )>
+                )>
+            )(<EQUAL? .KEY <+ .COUNT 49>>
+                <CRLF>
+                <TELL "Drop " T .OBJ "?">
+                <COND (<YES?>
+                    <TELL "You dropped " T .OBJ CR>
+                    <REMOVE .OBJ>
+                    <RETURN>
+                )>
+            )>
+        >
+    )>>
+
 <ROUTINE GAIN-ITEM ("AUX" ITEM)
     <SET ITEM <GETP ,HERE ,P?ITEM>>
     <COND (.ITEM
@@ -92,9 +149,15 @@
         <TELL T .ITEM>
         <HLIGHT 0>
         <TELL "]" CR>
-        <MOVE .ITEM ,PLAYER>
+        <COND (<AND <EQUAL? <COUNT-POSESSIONS> LIMIT-POSSESSIONS> <NOT <IN? .ITEM ,PLAYER>>>
+            <CRLF>
+            <TELL "You are carrying too many items." CR>
+            <DROP-REPLACE-ITEM .ITEM>
+        )(ELSE
+            <MOVE .ITEM ,PLAYER>
+        )>
     )>>
-
+        
 <ROUTINE CHECK-EVENTS ("AUX" EVENT)
     <SET EVENT <GETP ,HERE ,P?EVENT-HANDLER>>
     <COND (.EVENT
@@ -131,6 +194,16 @@
         )>
     )>
     <RTRUE>>
+
+<ROUTINE COUNT-POSESSIONS ("AUX" COUNT ITEM)
+    <SET COUNT 0>
+    <SET ITEM <FIRST? ,PLAYER>>
+    <REPEAT ()
+        <COND (<NOT .ITEM> <RETURN>)>
+        <SET COUNT <+ .COUNT 1>>
+        <SET .ITEM <NEXT? .ITEM>>
+    >
+    <RETURN .COUNT>>
 
 <ROUTINE CHECK-SKILL-POSSESSIONS (SKILL "AUX" REQUIRED)
     <SET REQUIRED <GETP .SKILL ,P?REQUIRES>>
@@ -192,7 +265,7 @@
                 )>
             )>
         )>
-        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\q !\Q> <CRLF> <RETURN>)>
+        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\i !\I !\q !\Q> <CRLF> <RETURN>)>
     >
     <RETURN .KEY>>
 
@@ -348,5 +421,38 @@
             <CRLF>
         )(ELSE
             <TELL "None" CR>
+        )>
+    )>>
+
+<ROUTINE DESCRIBE-INVENTORY ("AUX" COUNT POSSESSIONS QUANTITY)
+    <COND (,CURRENT-CHARACTER
+        <SET COUNT <COUNT-POSESSIONS>>
+        <CRLF>
+        <TELL "You are carrying " N .COUNT " items">
+        <COND (<G? .COUNT 0>
+            <TELL ":">
+            <CRLF><CRLF>
+            <SET COUNT 0>
+            <SET POSSESSIONS <FIRST? ,PLAYER>>
+            <COND (.POSSESSIONS
+                <REPEAT ()
+                    <COND (.POSSESSIONS
+                        <COND (<G? .COUNT 0> <TELL ", ">)>
+                        <TELL D .POSSESSIONS>
+                        <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
+                        <COND (.QUANTITY
+                            <TELL " (" N .QUANTITY ")">
+                        )>
+                        <SET COUNT <+ .COUNT 1>>
+                    )(ELSE
+                        <RETURN>
+                    )>
+                    <SET POSSESSIONS <NEXT? .POSSESSIONS>>
+                >
+                <CRLF>
+            )>
+        )(ELSE
+            <TELL ".">
+            <CRLF>
         )>
     )>>
