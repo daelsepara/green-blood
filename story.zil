@@ -429,6 +429,25 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <TELL "Stand with the wind in your face (yes) or at your back (no)?">
     <COND (<YES?> <SETG ,STORY033-DECISION-FLAG T>)>>
 
+<CONSTANT TEXT034 "You could not possibly be near the Bonehill, which is several days travel to the east. The whole character of the forest here is very different from the area near the Bonehill. You can however, at least investigate the area where the whooshing noise came from.">
+
+<ROOM STORY034
+    (IN ROOMS)
+    (DESC "034")
+    (STORY-TEXT TEXT034)
+    (CONTINUE STORY068)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT035 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles and asks if you are feeling brave today.||You sense a sombre urgency behind her words, and, imitating a courtly bow, you reply, \"My lady, I have never felt more heroic!\"||\"Good. Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away happy and expect good fortune to turn up on a plate without them lifting a finger. If the soothsayer prophesies misfortune a sense of helplessness comes over people and they all too often sink into a despairing inactivity which leads to their downfall through sloth. Thus their prophesy is self-fulfulling. It is a well-known fact in Godorno that those soothsayers who always give good auguries are never short of customers, leading you to conclude that they often lie, pretending to see happy events when they should be giving bad news, good fortune when they should be giving bad tidings.||Your worry on this score, however, is soon gone. Looking in the basin of smooth clear water it seems as though an artist is hurriedly painting a picture of ghoulish horror.\"The water shows what will come to pass if you do not succeed in your quest,\" says Elanor.||The picture is complete now in terrible detail, as if you were actually looking at the burnt remains of the forest. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke. Two hundred paces away you see a forge where a gigantic cauldron is suspended over a bonfire; six men constantly feed the fire with wood and charcoal. All the men working there have very pale skins, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses harnessed together pull logs to where groups of men cut them up ready for burning. A row of children sit nearby; they are darker skinned than men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped, men are torching the underbrush. They seem intent on killing everything that lives in the forest. A pall of smoke hangs like a storm-cloud over the scene.||Then the vision shifts and the men have gone, leaving behind nothing but the grey ashes of death. All that remains of the forest is a few blackened stumps.">
+
+<ROOM STORY035
+    (IN ROOMS)
+    (DESC "035")
+    (STORY-TEXT TEXT035)
+    (CONTINUE STORY026)
+    (KEYWORD KEYWORD-CRABCLAW)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
 <CONSTANT STORY037-CHOICES-TEXT <LTABLE "obey the command" "ignore it" "leave the inn">>
 <CONSTANT STORY037-CHOICES-DESTINATIONS <LTABLE STORY108 STORY016 STORY117>>
@@ -552,6 +571,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "067")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY068
+    (IN ROOMS)
+    (DESC "068")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY069
     (IN ROOMS)
     (DESC "069")
@@ -636,10 +660,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "108")
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT110 "(You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.)||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
-<CONSTANT STORY110-CHOICES-TEXT <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defense" "Bafflement" "Visions" "Tower of Will">>
-<CONSTANT STORY110-CHOICES-DESTINATIONS <LTABLE STORY122 STORY143 STORY347 STORY326 STORY347 STORY249 STORY174>>
-<CONSTANT STORY110-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
+<CONSTANT TEXT110 "You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
+<CONSTANT STORY110-CHOICES-TEXT <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption or Bafflement" "Shield of Defense" "Visions" "Tower of Will">>
+<CONSTANT STORY110-CHOICES-DESTINATIONS <LTABLE STORY122 STORY143 STORY347 STORY326 STORY249 STORY174>>
+<CONSTANT STORY110-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
 
 <ROOM STORY110
     (IN ROOMS)
