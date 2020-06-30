@@ -488,19 +488,42 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT040 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated beause the ants eat their crops. What do you say?\"">
+<CONSTANT STORY040-CHOICES-TEXT <LTABLE "say the ants are indeed pests and should be wiped out" "reply that the forest would choke and die if there were no ants to eat the dead leaves and wood" "use your knowledge">>
+<CONSTANT STORY040-CHOICES-DESTINATIONS <LTABLE STORY075 STORY067 STORY171>>
+<CONSTANT STORY040-CHOICES-REQUIREMENTS <LTABLE NONE NONE SKILL-WILDERNESS-LORE>>
+<CONSTANT STORY040-CHOICES-TYPES <LTABLE R-NONE R-NONE R-SKILL>>
+
 <ROOM STORY040
     (IN ROOMS)
     (DESC "040")
+    (STORY-TEXT TEXT040)
+    (CHOICES-TEXT STORY040-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY040-CHOICES-DESTINATIONS)
+    (CHOICES-REQUIREMENTS STORY040-CHOICES-REQUIREMENTS)
+    (CHOICES-TYPES STORY040-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT041 "Elanor takes your hand once more and brushes the surface of the water again. The water is icy to your touch this time. A shiver of indefinable apprehension runs through you.||A new picture forms. Elves with bows throng the depths of the forest. They have pale green skin and hair the colour of rich red wine. They are sniping at the Westermen, unseen. Men fall in swathes, pierced by the elves' arrows, but the Westermen come on and on, advancing towards some unseen goal. The elves fall back; it seems they are looking to you to do something decisive.||A terrible figure stalks into view. You can't tell whether it is a man or some infernal magical machine. It looks like a full suit of armour, large enough for a giant of a man, that hisses steam at the joints. It bears a great sword which whistles through the air as it strides mechanically towards you.||The vision fades.||\"Your moment of truth, hero. You must be prepared to fight the smoking man. Remember this vision, saviour, it shows the way to success in your quest,\" she says.||She pauses before continuing, \"Tomorrow will be Midsummer's day. It is time for you to go in search of the elves. But, my hero you must be careful. Tell them you are a friend of mine and they might not kill you, for they sometimes shoota man dead with a single arrow before the hapless wanderer knows he is being watched. Harm neither hide nor leaf of the forest. Only by your feeling for nature will the elves judge you. Aside from that they are impartial. You could be a saint or a murderer among men, yet it would count for nothing among the elves.\"||When she is sure you know the way she bids you farewell with one last warning. \"The flute will be of no use to  you, for I cannot save you from the elves if you anger them. Farewell.\"">
 
 <ROOM STORY041
     (IN ROOMS)
     (DESC "041")
+    (STORY-TEXT TEXT041)
+    (CONTINUE STORY070)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT042 "You are in the dark about the plans of Westermen.">
+<CONSTANT STORY042-CHOICES-TEXT <LTABLE "try to find their camp and spy on it" "lead as many elves as you can muster in pitched battle against the Westermen">>
+<CONSTANT STORY042-CHOICES-DESTINATIONS <LTABLE STORY270 STORY030>>
 
 <ROOM STORY042
     (IN ROOMS)
     (DESC "042")
+    (STORY-TEXT TEXT042)
+    (CHOICES-TEXT STORY042-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY042-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY043
@@ -595,6 +618,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY072
     (IN ROOMS)
     (DESC "072")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY075
+    (IN ROOMS)
+    (DESC "075")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY076
