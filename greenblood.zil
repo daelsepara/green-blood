@@ -115,6 +115,15 @@
     )>
     <RTRUE>>
 
+<ROUTINE CHECK-POSSESSION (ITEM)
+    <COND (.ITEM
+        <COND (<NOT <IN? .ITEM ,PLAYER>>
+            <NOT-POSSESSED .ITEM>
+            <RFALSE>
+        )>
+    )>
+    <RTRUE>>
+
 <ROUTINE CHECK-SKILL-POSSESSIONS (SKILL "AUX" REQUIRED)
     <SET REQUIRED <GETP .SKILL ,P?REQUIRES>>
     <COND (.REQUIRED
@@ -159,6 +168,10 @@
                             <TELL "You do not have all the keywords">
                             <PRINT-KEYWORDS <GET .REQUIREMENTS .CHOICE>>
                             <HLIGHT 0>
+                        )>
+                    )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-POSSESSION <GET .REQUIREMENTS .CHOICE>>
+                            <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
                         )>
                     )>
                     <CRLF>
