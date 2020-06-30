@@ -115,7 +115,7 @@
     )>
     <RTRUE>>
 
-<ROUTINE CHECK-POSSESSIONS (SKILL "AUX" REQUIRED)
+<ROUTINE CHECK-SKILL-POSSESSIONS (SKILL "AUX" REQUIRED)
     <SET REQUIRED <GETP .SKILL ,P?REQUIRES>>
     <COND (.REQUIRED
         <COND (<NOT <IN? .REQUIRED ,PLAYER>>
@@ -141,7 +141,7 @@
                         <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
                     )(<AND <EQUAL? .TYPE R-SKILL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<IN? <GET .REQUIREMENTS .CHOICE> ,SKILLS>
-                            <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
+                            <COND (<CHECK-SKILL-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
                                 <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
                             )>
                         )(ELSE
