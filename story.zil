@@ -526,9 +526,38 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT043 "After several days of trekking west through the forest, and climbing towards uplands, you reach the edge of the Anvil Mountains. Climbing high above the treeline you can see the Forest of Arden laid out beneath you almost like a map. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the Lady of the Forest. As it is you have wasted too much time, and you are far out of your way.||You re-enter the forest, journeying along the paths between its great trees. After the few days, however, you start to find the fresh bodies of hundres of elves among the trees. It is as though they have all been slain instantly in the act of doing everyday things - some while eating their supper. Whatever has caused this terrible has bereft the forest of life: it is doomed and so are you.">
+
 <ROOM STORY043
     (IN ROOMS)
     (DESC "043")
+    (STORY-TEXT TEXT043)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT044 "You travel on until you reach the next obstacle in your path: a tributary of the Sirion that is spanned by a rope bridge, the only means of crossing the water. The bridge has clearly been tended to recently, as bushes have been hacked back from the stancions between which it hangs. Tentatively, you step onto the bidge, which holds your weight but sags more and more as you approach its centre.||When you are half-way across, a waterspout erupts from the river beneath you, out of which flails a mass of vegetation ringed with fibrous tentacles. The water was thrown up by an Embracer, which plucks you from the bridge.">
+<CONSTANT STORY044-CHOICES-TEXT <LTABLE "try to break free" "attack it" "try to do something else if you do not have these skills">>
+<CONSTANT STORY044-CHOICES-DESTINATIONS <LTABLE STORY061 STORY081 STORY103>>
+<CONSTANT STORY044-CHOICES-REQUIREMENTS <LTABLE SKILL-UNARMED-COMBAT SKILL-SWORDPLAY R-NONE>>
+<CONSTANT STORY044-CHOICES-TYPES <LTABLE R-SKILL R-SKILL R-NONE>>
+
+<ROOM STORY044
+    (IN ROOMS)
+    (DESC "044")
+    (STORY-TEXT TEXT044)
+    (CHOICES-TEXT STORY044-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY044-CHOICES-DESTINATIONS)
+    (CHOICES-REQUIREMENTS STORY044-CHOICES-REQUIREMENTS)
+    (CHOICES-TYPES STORY044-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT048 "Your sword cuts cleanly through the fibers, lopping the tentacles into pieces. The Embracer emits a piercing shriek and subsides once more into the river. You swim to the far bank before the man-eating monster can recover.">
+
+<ROOM STORY048
+    (IN ROOMS)
+    (DESC "048")
+    (STORY-TEXT TEXT048)
+    (CONTINUE STORY013)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY049
@@ -572,6 +601,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY060
     (IN ROOMS)
     (DESC "060")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT061 "You grab two flailing tentacles, haul yourself towards the creature's cone-shaped head and smash your fist repeatedly between its murky grey eyes. Its coils loosen and fall away, and you break the surface gasping for air. Swimming to the far bank, you scramble out before the Embracer can recover.">
+
+<ROOM STORY061
+    (IN ROOMS)
+    (DESC "061")
+    (STORY-TEXT TEXT061)
+    (CONTINUE STORY013)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY063
@@ -654,6 +692,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "079")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT081 "As the Embracer prepares to wrap you up in its tentacles, the smell of rot and marsh gas almost makes you gag. The tips of the fibrous tentacles wave in the air as if trying to sniff you out.">
+<CONSTANT STORY081-CHOICES-TEXT <LTABLE "try to climb the great mass of vegetation and drive your sword between its eyes" "slash at the other tentacles as it is preparing to coil around you">>
+<CONSTANT STORY081-CHOICES-DESTINATIONS <LTABLE STORY287 STORY048>>
+
+<ROOM STORY081
+    (IN ROOMS)
+    (DESC "081")
+    (STORY-TEXT TEXT081)
+    (CHOICES-TEXT STORY081-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY081-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY083
     (IN ROOMS)
     (DESC "083")
@@ -676,6 +727,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY094
     (IN ROOMS)
     (DESC "094")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT103 "It was a mistake to enter the forest without a guide. There is no time to do anything as the Embracer sucks you down into the murky depths. You struggle desperately hard but, unable to breathe, your strength soon fails you and you drown in the clutches of this hideous creature.">
+
+<ROOM STORY103
+    (IN ROOMS)
+    (DESC "103")
+    (STORY-TEXT TEXT103)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY105
@@ -797,6 +857,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "232")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT237 "You trudge on, singling out a particular tree to head for as far away as you can see and keeping it in sight as you go to try to make sure you don't walk in circles. When you reach the tree you look back and try to identify the one you left behind so that you can choose another tree to make for in the same general direction. It is tiring and you are exhausted.||Moving through winding mossy ways, wrapped in the green gloom of the forest depth, you catch the scent of unusual blooms. A path fringed with violet blossoms leads off between the great black boles of the trees, and following it with your gaze you glimpse a stone tower. It is some distance out of your path, and ominously draped in shadows.">
+<CONSTANT STORY237-CHOICES-TEXT <LTABLE "investigate the tower" "pass by without looking back">>
+<CONSTANT STORY237-CHOICES-DESTINATIONS <LTABLE STORY394 STORY454>>
+
+<ROOM STORY237
+    (IN ROOMS)
+    (DESC "237")
+    (STORY-TEXT TEXT237)
+    (CHOICES-TEXT STORY237-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY237-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY249
     (IN ROOMS)
     (DESC "249")
@@ -807,9 +880,37 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "256")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY258
+    (IN ROOMS)
+    (DESC "258")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY270
     (IN ROOMS)
     (DESC "270")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT274 "The earth mound that was to be your bed collapses beneath you. It is the some of a giant man-eating Colossus beetle. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of the throat of a Colossus beetle press you down to its gullet you realize you have been swallowed alive while you listened for a monster stalking you. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
+
+<ROOM STORY274
+    (IN ROOMS)
+    (DESC "274")
+    (STORY-TEXT TEXT274)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY277
+    (IN ROOMS)
+    (DESC "277")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT287 "You grab one of the tentacles with your free hand and try to climb towards the head of the Embracer. It beats you back with its tentacles and one coils around your sword arm. The tentacle constricts around your wrist like a noose of steel and the sword falls from your grasp. Unfortunately the creature has more than enough tentacles to deal with you and soon both your arms are crushed to your sides by what felt like iron bars. The Embracer drags you to drown, before feeding. You will never see the Tree of Life now. The Forest of Arden is doomed.">
+
+<ROOM STORY287
+    (IN ROOMS)
+    (DESC "287")
+    (STORY-TEXT TEXT287)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY309
@@ -842,9 +943,42 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "347")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT361 "You perform the chant that makes the stone in your pendant grow warm if a large animal or beast should approach while you sleep. To your dismay the stone begins to heat up immediately when you lie down to rest. You look around but can see nothing in the dark. You strain your ears but all you can here are the usual night sounds of the forest. The stone grows hotter against your breast: the unseen danger is coming closer. The earth begins to vibrate beneath you as if a giant stalks you.">
+<CONSTANT STORY361-CHOICES-TEXT <LTABLE "try to hide by burying yourself in the earth mound" "climb a neaby tree">>
+<CONSTANT STORY361-CHOICES-DESTINATIONS <LTABLE STORY274 STORY392>>
+
 <ROOM STORY361
     (IN ROOMS)
     (DESC "361")
+    (STORY-TEXT TEXT361)
+    (CHOICES-TEXT STORY361-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY361-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
+
+<ROOM STORY392
+    (IN ROOMS)
+    (DESC "392")
+    (STORY-TEXT TEXT392)
+    (CONTINUE STORY237)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT394 "It takes much longer to reach the tower than you imagined, since path after path leads you up against such obstacles as thorn bushes or fallen trees whose rotting bark crawls with insects. At last you pass into the open, where a clearing of uneven grassy ground stands between the louring ranks of trees.||The tower is outlined in a halo of moonlight which makes the angular masonry blocks gleam like silver. Ivy cover the walls in a dark tangled net. Under a lichen-stained armorial crest looms a great black door sealed with an iron lock. Gazing up, you see a glimmer of green light from the topmost chamber of the tower. It is one sign that the place might not be abandoned and left to ruin.">
+<CONSTANT STORY394-CHOICES-TEXT <LTABLE "climb the tower" "pick the lock" "return to the main forest paths and continue on your way">>
+<CONSTANT STORY394-CHOICES-DESTINATIONS <LTABLE STORY464 STORY489 STORY454>>
+<CONSTANT STORY394-CHOICES-REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-ROGUERY NONE>>
+<CONSTANT STORY394-CHOICES-TYPES <LTABLE R-SKILL R-SKILL R-NONE>>
+
+<ROOM STORY394
+    (IN ROOMS)
+    (DESC "394")
+    (STORY-TEXT TEXT394)
+    (CHOICES-TEXT STORY394-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY394-CHOICES-DESTINATIONS)
+    (CHOICES-REQUIREMENTS STORY394-CHOICES-REQUIREMENTS)
+    (CHOICES-TYPES STORY394-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY397
@@ -862,9 +996,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "418")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT419 "You are rudely awakened when the earth mound that is your bead collapses beneath you. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of a Colossus Beetle's throat press you down towards its stomach you realize you have been swallowed alive while you slept. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
+
 <ROOM STORY419
     (IN ROOMS)
     (DESC "419")
+    (STORY-TEXT TEXT419)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY427
@@ -880,6 +1018,29 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY451
     (IN ROOMS)
     (DESC "451")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT454 "As you walk on you find gaunt grey crags jutting up out of the forest. It is a relief to find clear landmarks at last. The forest is broken here; where soil is thin above the grey rock only grass can grow, and you walk out of gloom into bright sunlight that hurts your eyes. There are countless paths heading back into the forest in all directions. As you stand comtemplating the choice of ways a voice above and behind you says, \"Lost, are you?\"||You turn around and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
+<CONSTANT STORY454-CHOICES-TEXT <LTABLE "admit you are lost" "ignore it and walk on, choosing one of the many ways at random">>
+<CONSTANT STORY454-CHOICES-DESTINATIONS <LTABLE STORY258 STORY277>>
+
+<ROOM STORY454
+    (IN ROOMS)
+    (DESC "454")
+    (STORY-TEXT TEXT454)
+    (CHOICES-TEXT STORY454-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY454-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY464
+    (IN ROOMS)
+    (DESC "464")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY489
+    (IN ROOMS)
+    (DESC "489")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT500 "The Westermen are routed. They have faced a dragon, the elves and a hero among mankind and they have had enough. They are easy to pick off as they flee through the forest much more slowly than the elves can follow. In their panic, they break into smaller and smaller groups and the elves have no difficulty in killing them. They show no mercy: the Westermen die in their tens of thousands. They will leave the forest, never to return. The Tree of Life lives on and Elanor and the elves will tend it till it has made a full recovery.||Without you, the elves and the whole forest would have been doomed. Without the forest the whole world's atmosphere would have been thrown into imbalance. Elanor greets you as the forest's saviour she had always known you would be. Now everything that grows in the great Forest of Arden is your friend. You will not be famous when you return to the lands of men. No one will ever know what great deeds you have performed here, but it doesn't matter. You know you are a hero.">
