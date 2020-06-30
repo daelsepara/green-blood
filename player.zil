@@ -53,7 +53,7 @@
 
 <OBJECT SKILL-SWORDPLAY
     (DESC "SWORDPLAY")
-    (LDESC "Thee best fighting skill. You must possess a sword to use this skill.")
+    (LDESC "The best fighting skill. You must possess a sword to use this skill.")
     (REQUIRES SWORD)>
 
 <OBJECT SKILL-UNARMED-COMBAT
