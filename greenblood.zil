@@ -8,7 +8,7 @@
 <INSERT-FILE "prologue">
 <INSERT-FILE "player">
 <INSERT-FILE "objects">
-<INSERT-FILE "keywords">
+<INSERT-FILE "codewords">
 <INSERT-FILE "story">
 
 <SET REDEFINE T>
@@ -32,7 +32,7 @@
         <GOTO ,HERE>
         <PRINT-PAGE>
         <COST-CHECK>
-        <GAIN-KEYWORD>
+        <GAIN-CODEWORD>
         <GAIN-ITEM>
         <CHECK-DEATH>
         <CHECK-VICTORY>
@@ -77,16 +77,16 @@
     <COND(<G? .GOLD 0>
         <CHARGE-GOLD .GOLD>)>>
 
-<ROUTINE GAIN-KEYWORD ("AUX" KEYWORD)
-    <SET KEYWORD <GETP ,HERE ,P?KEYWORD>>
-    <COND (.KEYWORD
+<ROUTINE GAIN-CODEWORD ("AUX" CODEWORD)
+    <SET CODEWORD <GETP ,HERE ,P?CODEWORD>>
+    <COND (.CODEWORD
         <CRLF>
-        <TELL "[You gained the keyword ">
+        <TELL "[You gained the codeword ">
         <HLIGHT ,H-BOLD>
-        <TELL D .KEYWORD>
+        <TELL D .CODEWORD>
         <HLIGHT 0>
         <TELL "]" CR>
-        <MOVE .KEYWORD ,KEYWORDS>
+        <MOVE .CODEWORD ,CODEWORDS>
     )>>
 
 <ROUTINE GET-ITEM (ITEM "AUX" ITEMS COUNT)
@@ -180,12 +180,12 @@
     <COND (<L? ,GOLD-PIECES 0> <SETG ,GOLD-PIECES 0>)>
     <UPDATE-STATUS-LINE>>
 
-<ROUTINE CHECK-KEYWORDS (KEYWORDS "AUX" COUNT)
-    <COND (.KEYWORDS
-        <SET COUNT <GET .KEYWORDS 0>>
+<ROUTINE CHECK-CODEWORDS (CODEWORDS "AUX" COUNT)
+    <COND (.CODEWORDS
+        <SET COUNT <GET .CODEWORDS 0>>
         <COND (<G? .COUNT 0>
             <DO (I 1 .COUNT)
-                <COND (<NOT <IN? <GET .KEYWORDS .I> ,KEYWORDS>> <RFALSE>)>
+                <COND (<NOT <IN? <GET .CODEWORDS .I> ,CODEWORDS>> <RFALSE>)>
             >
         )>
     )>
@@ -245,14 +245,14 @@
                             <TELL "You do not have " T <GET .REQUIREMENTS .CHOICE> " skill!">
                             <HLIGHT 0>
                         )>
-                    )(<AND <EQUAL? .TYPE R-KEYWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-KEYWORDS <GET .REQUIREMENTS .CHOICE>>
+                    )(<AND <EQUAL? .TYPE R-CODEWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
                             <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
-                            <TELL "You do not have all the keywords">
-                            <PRINT-KEYWORDS <GET .REQUIREMENTS .CHOICE>>
+                            <TELL "You do not have all the codewords">
+                            <PRINT-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
                             <HLIGHT 0>
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
@@ -279,14 +279,14 @@
     <INPUT 1>
     <RETURN>>
 
-<ROUTINE PRINT-KEYWORDS (KEYWORDS "AUX" COUNT)
-    <COND (.KEYWORDS
-        <SET COUNT <GET .KEYWORDS 0>>
+<ROUTINE PRINT-CODEWORDS (CODEWORDS "AUX" COUNT)
+    <COND (.CODEWORDS
+        <SET COUNT <GET .CODEWORDS 0>>
         <COND (<G? .COUNT 0>
             <TELL " (">
             <DO (I 1 .COUNT)
                 <COND (<G? .I 1> <TELL ", ">)>
-                <TELL D <GET .KEYWORDS .I>>
+                <TELL D <GET .CODEWORDS .I>>
             >
             <TELL ")">
         )>
@@ -309,7 +309,7 @@
             <HLIGHT 0>
             <TELL <GET .CHOICES .I>>
             <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" D <GET .REQUIREMENTS .I> ")">)>
-            <COND (<AND <EQUAL? R-KEYWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-KEYWORDS <GET .REQUIREMENTS .I>>)>
+            <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
@@ -350,7 +350,7 @@
     <SCREEN 0>
     <HLIGHT 0>>
 
-<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS KEYWORDS QUANTITY)
+<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS CODEWORDS QUANTITY)
     <COND (,CURRENT-CHARACTER
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -408,20 +408,20 @@
         )>
         <CRLF>
         <HLIGHT ,H-BOLD>
-        <TELL "Keywords: ">
+        <TELL "Codewords: ">
         <HLIGHT 0>
         <SET COUNT 0>
-        <SET KEYWORDS <FIRST? ,KEYWORDS>>
-        <COND (.KEYWORDS
+        <SET CODEWORDS <FIRST? ,CODEWORDS>>
+        <COND (.CODEWORDS
             <REPEAT ()
-                <COND (.KEYWORDS
+                <COND (.CODEWORDS
                     <COND (<G? .COUNT 0> <TELL ", ">)>
-                    <TELL D .KEYWORDS>
+                    <TELL D .CODEWORDS>
                     <SET COUNT <+ .COUNT 1>>
                 )(ELSE
                     <RETURN>
                 )>
-                <SET KEYWORDS <NEXT? .KEYWORDS>>
+                <SET CODEWORDS <NEXT? .CODEWORDS>>
             >
             <CRLF>
         )(ELSE

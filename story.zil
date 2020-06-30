@@ -1,6 +1,6 @@
 <CONSTANT R-NONE 0>
 <CONSTANT R-SKILL 1>
-<CONSTANT R-KEYWORD 2>
+<CONSTANT R-CODEWORD 2>
 <CONSTANT R-ITEM 3>
 
 <CONSTANT TEXT001 "The road tops a ridge that is straddled by the ruins of a great wall, half covered in turf. The wall once marked the border between the lands of man and domain of the elves. Quickly you scramble up and over the blocks of fallen stone. Standing atop the ruin, you survey the outlands beyond.||Your gaze sweeps across the broad patches of purple heather and yellow gorse that cover the inhospitable uplands. The air smells fresh; it is good to be free of the noisome taint of the sewers and plague pits of the city you have left behind. The road winds down into a valley, at the foot of which nestles Burg, a small town of neat white houses with roof of triangular grey slates. Here may be your last chance to talk with mankind before you are swallowed up by the depths of the great Forest of Arden.||As you walk towards the buildings through the tilled and reaped land of the valley, you pass gleaners - peasants who search the ground for stalks of straw and seed spilled during the harvest. The townsfolk, seemingly wary of outsiders, keep out of your way. Ahead of you is an inn, the largest building in the town. Looking forward to perhaps your last night's sleep in a proper bed for many weeks, you make for this hostelry.||The inn seems surprisingly large for a town that is at the very edge of the wilderness. It must once have been a baronial hall built by a lord seeking to carve out a kingdom beyond the great wall. As you walk down the main street the ruddy sky is turning with the onset of twilight. What looked an inviting little town by day seems sombre and unwelcoming at nightfall. As you linger a moment outside the inn, there is a crack of thunder and it begins to pour with rain.||Inside the inn a young girl is lighting oil lamps with a taper. Until your eyes grow accustomed to the gloom you cannot make out who shares the common room with you, nor many details of the interior of the inn itself.">
@@ -47,7 +47,7 @@
     (CHOICES-TEXT STORY004-CHOICES-TEXT)
     (CHOICES-DESTINATIONS STORY004-CHOICES-DESTINATIONS)
     (CHOICES-TYPES STORY004-CHOICES-TYPES)
-    (KEYWORD KEYWORD-BULLHORN)
+    (CODEWORD CODEWORD-BULLHORN)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT005 "As Valerian stands up, he lets his cloak fall to the floor, reavealing armour made of quilted leather - light armor that wouldn't stop a sword thrust. He has no sword or obvious weapon to hand. Three small coloured pouches swing from his belt.">
@@ -249,10 +249,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT021 "With the dragon's help and the might of the elves, you feel you have a chance of defeating the forces of the Westermen and driving the threat of the evil from the forest. Full of confidence in your ability to call upon a powerful ally of the ancient times, you head towards the rowan trees at the edge of the forest.||Travelling along routes that seem to come unbidden to you mind, you reach a clearing that seems strangely familiar. Was it perhaps, that you met the elves? Or does some horror of your travels lurk nearby in the undergrowth?||Summoning up your courage, you call out to whoever or whatever will here: |\"Elves! If you would win your freedom, come talk with a mortal who can deliver it. For I have secured us an ally equal to half the Westermen's forces - a dragon whose very appearance will slay scores of them from sheer terror. Come forward and speak with me.\"||The words of your challenge die away, suffocated by the preternatural silence of the forest. You might have expected to hear the chirruping voice of a bird or the faint rustle of a woodmouse questing for beetles, yet there is nothoing. Cursing the elves for their arrogance, you shout again, \"Come forward!\"||Spittle flies from your lips and your face flushes with the violent passion of your request. Again you wait for a reply.||\"Do you think that one dragon is enough, then, to beat your fellow men?\" says a cool voice from behind you.||Spinning around, you see no more than inces from your face the eternally youthful face of an elf. Yet the penetrating eyes that are windows to the wisdom of countless centuries mark this elf out above all others. The Elf King has answered your call.||\"One dragon is more than enough,\" you reply, \"with the forces of the elves a well. He will demoralize the Westermen, plunging them into chaos from which the deadly arrows of the elves will cruelly pluck them.\"||He smiles a cold smile, approving of the relish with which you describe the Westermen's deaths. \"Brave words indeed, for a mortal. But for elves to accede to your schemes and counsels, you must prove yourself worthy of our respect.\"||\"How may I do that?\"||\"Overcome my champion in a duel. Only then will we heed your words.\"">
-<CONSTANT STORY021-CHOICES-TEXT <LTABLE "use your knowledge" "use the keyword" "accept his terms if you have neither">>
+<CONSTANT STORY021-CHOICES-TEXT <LTABLE "use your knowledge" "use the codeword" "accept his terms if you have neither">>
 <CONSTANT STORY021-CHOICES-DESTINATIONS <LTABLE STORY215 STORY309 STORY137>>
-<CONSTANT STORY021-CHOICES-REQUIREMENTS <LTABLE SKILL-FOLKLORE <LTABLE KEYWORD-SPECULUM> NONE>>
-<CONSTANT STORY021-CHOICES-TYPES <LTABLE R-SKILL R-KEYWORD R-NONE>>
+<CONSTANT STORY021-CHOICES-REQUIREMENTS <LTABLE SKILL-FOLKLORE <LTABLE CODEWORD-SPECULUM> NONE>>
+<CONSTANT STORY021-CHOICES-TYPES <LTABLE R-SKILL R-CODEWORD R-NONE>>
 
 <ROOM STORY021
     (IN ROOMS)
@@ -445,7 +445,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "035")
     (STORY-TEXT TEXT035)
     (CONTINUE STORY026)
-    (KEYWORD KEYWORD-CRABCLAW)
+    (CODEWORD CODEWORD-CRABCLAW)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
@@ -465,8 +465,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <CONSTANT TEXT038 "Once you are a safe distance from the pavilion, you run for the edge of the trees, quickly hiding yourself in the depths of the forest. The awful sights and sounds of the Westerman camp are soon far behind.">
 <CONSTANT STORY038-CHOICES-TEXT <LTABLE "report back to the elves" "head west" "east" "south-west" "south">>
 <CONSTANT STORY038-CHOICES-DESTINATIONS <LTABLE STORY053 STORY043 STORY070 STORY270 STORY078>>
-<CONSTANT STORY038-CHOICES-REQUIREMENTS <LTABLE <LTABLE KEYWORD-WATERBEARER KEYWORD-BULLHORN> NONE NONE NONE NONE>>
-<CONSTANT STORY038-CHOICES-TYPES <LTABLE R-KEYWORD R-NONE R-NONE R-NONE R-NONE>>
+<CONSTANT STORY038-CHOICES-REQUIREMENTS <LTABLE <LTABLE CODEWORD-WATERBEARER CODEWORD-BULLHORN> NONE NONE NONE NONE>>
+<CONSTANT STORY038-CHOICES-TYPES <LTABLE R-CODEWORD R-NONE R-NONE R-NONE R-NONE>>
 
 <ROOM STORY038
     (IN ROOMS)
@@ -588,8 +588,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY070-EVENTS ()
-    <COND (<AND <IN? ,KEYWORD-WATERBEARER ,KEYWORDS> <IN? ,KEYWORD-BULLHORN ,KEYWORDS>> <RETURN ,STORY256>)>
-    <COND (<IN? ,KEYWORD-WATERBEARER ,KEYWORDS> <RETURN ,STORY042>)>
+    <COND (<AND <IN? ,CODEWORD-WATERBEARER ,CODEWORDS> <IN? ,CODEWORD-BULLHORN ,CODEWORDS>> <RETURN ,STORY256>)>
+    <COND (<IN? ,CODEWORD-WATERBEARER ,CODEWORDS> <RETURN ,STORY042>)>
     <RETURN ,STORY060>>
 
 <ROOM STORY072
