@@ -28,7 +28,7 @@
 <ROUTINE GAME-LOOP ("AUX" KEY)
     <REPEAT ()
         <CRLF>
-        <KEYWORD-CHECK>
+        <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
         <COST-CHECK>
@@ -87,10 +87,10 @@
         <MOVE .POSSESSION ,PLAYER>
     )>>
 
-<ROUTINE KEYWORD-CHECK ("AUX" KEYWORD)
-    <SET KEYWORD <GETP ,HERE ,P?KEYWORD-CHECK>>
-    <COND (.KEYWORD
-        <SETG ,HERE <APPLY .KEYWORD>>
+<ROUTINE CHECK-EVENTS ("AUX" EVENT)
+    <SET EVENT <GETP ,HERE ,P?EVENT-HANDLER>>
+    <COND (.EVENT
+        <SETG ,HERE <APPLY .EVENT>>
     )>>
 
 <ROUTINE NOT-POSSESSED (OBJ)
@@ -125,67 +125,49 @@
     )>
     <RTRUE>>
 
-<ROUTINE PROCESS-CHOICES (CHOICES "AUX" KEY CHOICE SKILLS KEYWORDS DESTINATIONS)
+<ROUTINE PROCESS-CHOICES (CHOICES "AUX" DESTINATIONS REQUIREMENTS TYPES KEY CHOICE TYPE)
     <SET DESTINATIONS <GETP ,HERE ,P?CHOICES-DESTINATIONS>>
-    <SET SKILLS <GETP ,HERE ,P?CHOICES-SKILL-REQUIREMENTS>>
-    <SET KEYWORDS <GETP ,HERE ,P?CHOICES-KEYWORD-REQUIREMENTS>>
+    <SET REQUIREMENTS <GETP ,HERE ,P?CHOICES-REQUIREMENTS>>
+    <SET TYPES <GETP ,HERE ,P?CHOICES-TYPES>>
     <TELL CR "What will you choose? ">
     <REPEAT ()
         <SET KEY <INPUT 1>>
         <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
             <SET .CHOICE <- .KEY !\0>>
             <COND (<AND <G=? .CHOICES 1> <L=? .CHOICE <GET .CHOICES 0>>>
-                <COND (<AND <NOT .SKILLS> <NOT .KEYWORDS>>
-                    <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>>>
+                <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>> <L=? .CHOICE <GET .TYPES 0>>>
+                    <SET TYPE <GET .TYPES .CHOICE>>
+                    <COND (<EQUAL? .TYPE R-NONE>
                         <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
-                        <CRLF>
-                        <RETURN>
-                    )(ELSE
-                        <CRLF>
-                        <TELL CR "Internal Error." CR>
-                        <SET KEY !\q>
-                        <RETURN>
-                    )>
-                )(<AND .SKILLS <NOT .KEYWORDS>>
-                    <COND (<GET .SKILLS .CHOICE>
-                        <COND (<IN? <GET .SKILLS .CHOICE> ,SKILLS>
-                            <COND (<CHECK-POSSESSIONS <GET .SKILLS .CHOICE>>
+                    )(<AND <EQUAL? .TYPE R-SKILL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<IN? <GET .REQUIREMENTS .CHOICE> ,SKILLS>
+                            <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
                                 <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
-                                <CRLF>
                             )>
-                            <RETURN>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
-                            <TELL "You do not have " CT <GET .SKILLS .CHOICE> " skill!" CR>
+                            <TELL "You do not have " CT <GET .REQUIREMENTS .CHOICE> " skill!">
                             <HLIGHT 0>
-                            <RETURN>
-                       )>
-                    )(ELSE
-                        <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
-                        <CRLF>
-                        <RETURN>
-                    )>
-                )(<AND .KEYWORDS <NOT .SKILLS>>
-                    <COND (<GET .KEYWORDS .CHOICE>
-                        <COND (<CHECK-KEYWORDS <GET .KEYWORDS .CHOICE>>
+                        )>
+                    )(<AND <EQUAL? .TYPE R-KEYWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-KEYWORDS <GET .REQUIREMENTS .CHOICE>>
                             <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
-                            <CRLF>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
                             <TELL "You do not have all the keywords">
-                            <PRINT-KEYWORDS <GET .KEYWORDS .CHOICE>>
-                            <TELL "">
+                            <PRINT-KEYWORDS <GET .REQUIREMENTS .CHOICE>>
                             <HLIGHT 0>
-                            <CRLF>
                         )>
-                        <RETURN>
-                    )(ELSE
-                        <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
-                        <CRLF>
-                        <RETURN>
                     )>
+                    <CRLF>
+                    <RETURN>
+                )(ELSE
+                    <CRLF>
+                    <TELL CR "Internal Error." CR>
+                    <SET KEY !\q>
+                    <RETURN>
                 )>
             )>
         )>
@@ -212,10 +194,10 @@
     )>
 >
 
-<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES SKILLS KEYWORDS CONTINUE)
+<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES TYPES REQUIREMENTS CONTINUE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES-TEXT>>
-    <SET SKILLS <GETP ,HERE ,P?CHOICES-SKILL-REQUIREMENTS>>
-    <SET KEYWORDS <GETP ,HERE ,P?CHOICES-KEYWORD-REQUIREMENTS>>
+    <SET TYPES <GETP ,HERE ,P?CHOICES-TYPES>>
+    <SET REQUIREMENTS <GETP ,HERE ,P?CHOICES-REQUIREMENTS>>
     <SET CONTINUE <GETP ,HERE ,P?CONTINUE>>
     <COND (.CHOICES
         <CRLF>
@@ -227,8 +209,8 @@
             <TELL N .I ") ">
             <HLIGHT 0>
             <TELL <GET .CHOICES .I>>
-            <COND (<AND .SKILLS <GET .SKILLS .I>> <TELL " (" D <GET .SKILLS .I> ")">)>
-            <COND (<AND .KEYWORDS <GET .KEYWORDS .I>> <PRINT-KEYWORDS <GET .KEYWORDS .I>>)>
+            <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" D <GET .REQUIREMENTS .I> ")">)>
+            <COND (<AND <EQUAL? R-KEYWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-KEYWORDS <GET .REQUIREMENTS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
