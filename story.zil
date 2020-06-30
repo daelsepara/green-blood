@@ -356,9 +356,69 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY500)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT029 "Valerian's attention is distracted by what the king is pointing out on the map. You inch quietly past the guards and towards the pavilion's porchway. Valerian looks up and his eyes narrow, then he cries out, \"There's something moving, they're getting away. I have the senses of a bat.\"||He points in your general dirction. The guards peer from him to where you stand, unable to make you out.">
+<CONSTANT STORY029-CHOICES-TEXT <LTABLE "cast the Shield of Defence spell, if you think this is your best option" "otherwise make a run for the forest">>
+<CONSTANT STORY029-CHOICES-DESTINATIONS <LTABLE STORY441 STORY451>>
+<CONSTANT STORY029-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
+<ROOM STORY029
+    (IN ROOMS)
+    (DESC "029")
+    (STORY-TEXT TEXT029)
+    (CHOICES-TEXT STORY029-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY029-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY029-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT030 "It will take two days to travel from Elvenhame to the Tree of Life. You delay as long as possible, mustering more than seven thousand elves, before setting out to defend the Tree of Life.||The elves fight bravely but they are outnumbered and in hand-to-hand fighting their lack of swords and armour proves a fatal weakness. Green blood flows everywhere.||You perish along with the last of the elves, vainly trying to protect their king. The death of so many immortal elves is the greatest disaster the world has ever witnessed. Nothing can now stop the Westermen reaching the Tree of Life: the Forest of Arden is doomed.">
+
+<ROOM STORY030
+    (IN ROOMS)
+    (DESC "030")
+    (STORY-TEXT TEXT030)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT031 "A grandiose gesture brings forth the Choking Fog about the machine. But why have you used this spell against a machine that doesn't breathe but is powered by steam? The steam rushing from vents in the head dissipates the fog and the Infernal Statue lurches to the Tree of Life once again, raising its sword arm to strike.">
+<CONSTANT STORY031-CHOICES-TEXT <LTABLE "can cast Bafflement" "Visceral Disruption" "Tower of Will">>
+<CONSTANT STORY031-CHOICES-DESTINATIONS <LTABLE STORY113 STORY064 STORY186>>
+<CONSTANT STORY031-CHOICES-TYPES <LTABLE R-NONE R-NONE R-NONE>>
+
+<ROOM STORY031
+    (IN ROOMS)
+    (DESC "031")
+    (STORY-TEXT TEXT031)
+    (CHOICES-TEXT STORY031-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY031-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY031-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT032 "There is another great whooshing exhalation behind you and you start to sprint. The gurgling sounds closer this time. The dragon must be chasing you. Straining your ears, you listen for sounds of the leviathan crashing through the ferns behind, over the rasping of your own breath and the thudding of your feet on the ground. You run until exhaustion overwhelms you but there are no sounds of pursuit now. It seems you have escaped the dragon.||If indeed you are near the Bonehill, the dragon's lair..">
+<CONSTANT STORY032-CHOICES-TEXT <LTABLE "travel for several days to the west to regain your course" "continue north in your original direction">>
+<CONSTANT STORY032-CHOICES-DESTINATIONS <LTABLE STORY043 STORY127>>
+<CONSTANT STORY032-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
+<ROOM STORY032
+    (IN ROOMS)
+    (DESC "032")
+    (STORY-TEXT TEXT032)
+    (CHOICES-TEXT STORY032-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY032-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY032-CHOICES-TYPES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT033 "\"I choose to use magic to fight this duel,\" you say, confident that your power is enough to beat any elf.||The King of the Elves smiles when he hears your choice - a cool smile that induces doubt and imbues you with fear. You realize you have never seen an elf smile before; the action transforms the king's face, making him look quite human all of a sudden.||\"You think to pit your magic against that of the elves? I will be the champion of elvendom in this duel: I can fashion a spell as well as any other standing here. We will use no death magics. We have potions to revive us if we are wounded. Don't make me kill you; submit if you feel my power overmastering yours.\"||With that he gestures you to take up position inside the grassy circle.||(Note: Decide whether you will stand with the wind in your face or at your back)">
+<CONSTANT STORY033-CHOICES-TEXT <LTABLE "stay in position opposite him" "try getting out of the duel by telling the king you should be measured against your foes, the Westermen, instead of the elves you have come to help">>
+<CONSTANT STORY033-CHOICES-DESTINATIONS <LTABLE STORY076 STORY092>>
+<CONSTANT STORY033-CHOICES-TYPES <LTABLE R-NONE R-NONE>>
+
 <ROOM STORY033
     (IN ROOMS)
     (DESC "033")
+    (STORY-TEXT TEXT033)
+    (CHOICES-TEXT STORY033-CHOICES-TEXT)
+    (CHOICES-DESTINATIONS STORY033-CHOICES-DESTINATIONS)
+    (CHOICES-TYPES STORY033-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
@@ -505,6 +565,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "072")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY076
+    (IN ROOMS)
+    (DESC "076")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY078
     (IN ROOMS)
     (DESC "078")
@@ -527,6 +592,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "087")
     (STORY-TEXT TEXT087)
     (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY092
+    (IN ROOMS)
+    (DESC "092")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY094
@@ -552,6 +622,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY117
     (IN ROOMS)
     (DESC "117")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY127
+    (IN ROOMS)
+    (DESC "127")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY137
@@ -667,6 +742,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY427
     (IN ROOMS)
     (DESC "427")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY441
+    (IN ROOMS)
+    (DESC "441")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY451
+    (IN ROOMS)
+    (DESC "451")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT500 "The Westermen are routed. They have faced a dragon, the elves and a hero among mankind and they have had enough. They are easy to pick off as they flee through the forest much more slowly than the elves can follow. In their panic, they break into smaller and smaller groups and the elves have no difficulty in killing them. They show no mercy: the Westermen die in their tens of thousands. They will leave the forest, never to return. The Tree of Life lives on and Elanor and the elves will tend it till it has made a full recovery.||Without you, the elves and the whole forest would have been doomed. Without the forest the whole world's atmosphere would have been thrown into imbalance. Elanor greets you as the forest's saviour she had always known you would be. Now everything that grows in the great Forest of Arden is your friend. You will not be famous when you return to the lands of men. No one will ever know what great deeds you have performed here, but it doesn't matter. You know you are a hero.">
