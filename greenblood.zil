@@ -272,7 +272,7 @@
     <SCREEN 0>
     <HLIGHT 0>>
 
-<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS KEYWORDS)
+<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS KEYWORDS QUANTITY)
     <COND (,CURRENT-CHARACTER
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -314,6 +314,10 @@
                 <COND (.POSSESSIONS
                     <COND (<G? .COUNT 0> <TELL ", ">)>
                     <TELL D .POSSESSIONS>
+                    <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
+                    <COND (.QUANTITY
+                        <TELL " (" N .QUANTITY ")">
+                    )>
                     <SET COUNT <+ .COUNT 1>>
                 )(ELSE
                     <RETURN>

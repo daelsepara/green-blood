@@ -202,7 +202,7 @@
         >
     )>>
 
-<ROUTINE DESCRIBE-CHARACTER (CHARACTER "AUX" COUNT SKILLS POSSESSIONS)
+<ROUTINE DESCRIBE-CHARACTER (CHARACTER "AUX" COUNT SKILLS POSSESSIONS QUANTITY)
     <COND (.CHARACTER
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -242,6 +242,10 @@
                 <DO (I 1 .COUNT)
                     <COND (<AND <G? .I 1> <G? .COUNT 1>> <TELL ", ">)>
                     <TELL D <GET .POSSESSIONS .I>>
+                    <SET QUANTITY <GETP <GET .POSSESSIONS .I> ,P?QUANTITY>>
+                    <COND (.QUANTITY
+                        <TELL " (" N .QUANTITY ")">
+                    )>
                 >
             )>  
             <CRLF>
