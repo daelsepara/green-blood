@@ -35,6 +35,7 @@
         <GAIN-KEYWORD>
         <GAIN-ITEM>
         <CHECK-DEATH>
+        <CHECK-VICTORY>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
@@ -56,6 +57,13 @@
     <COND (.DEATH
         <CRLF>
         <JIGS-UP "The adventure is over. You have died.">
+    )>>
+
+<ROUTINE CHECK-VICTORY ("AUX" VICTORY)
+    <SET VICTORY <GETP ,HERE ,P?VICTORY>>
+    <COND (.VICTORY
+        <CRLF>
+        <JIGS-UP "The adventure is over. You saved the forest! Congratulations!">
     )>>
 
 <ROUTINE COST-CHECK ("AUX" GOLD)

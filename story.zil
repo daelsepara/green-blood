@@ -322,8 +322,17 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY025-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT026 "\"You have seen what will come to pass if you fail in your quest: death and nothing but death. Now let us see whether your future holds something different in store.\"||Elanor takes your hand and brushes the surface of the water with your fingertips. A new picture forms and your eyes grow round with wonder. Something that looks like a hill set between tall dark trees is stirring and turning to look at you. It is a dragon, the oldest of the ancient beasts, not quite immortal. Its red eyes contrast horribly with the smooth jade green scales of its body. It snorts and a cloud of green gas rolls towards you. You jerk back from the vision in horror, before you remember it is just a picture on the water. You see yourself darting away from the cloud. Later, the vision shows you riding astride the creature's back while it flexes it wings in flight.||\"You must win over the dragon, the most powerful of the forest's denizens,\" says Elanor.\"Then it will fight for you against the Westermen.\"">
+
+<ROOM STORY026
+    (IN ROOMS)
+    (DESC "026")
+    (STORY-TEXT TEXT026)
+    (CONTINUE STORY041)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT027 "While you hold your ground, Valerian begins casting a spell.">
-<CONSTANT STORY027-CHOICES-TEXT <LTABLE "go onto the offensive" "prepare a defensive magic" "otherwise">>
+<CONSTANT STORY027-CHOICES-TEXT <LTABLE "go onto the offensive" "prepare a defensive magic" "otherwise do nothing">>
 <CONSTANT STORY027-CHOICES-DESTINATIONS <LTABLE STORY169 STORY182 STORY087>>
 <CONSTANT STORY027-CHOICES-REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS NONE>>
 <CONSTANT STORY027-CHOICES-TYPES <LTABLE R-SKILL R-SKILL R-NONE>>
@@ -338,11 +347,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES-TYPES STORY027-CHOICES-TYPES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT028 "Fearing death at any moment, you plunge your dagger into the rubber hose that connects the great boiler to the Infernal Statue, which is still hacking chunks out of the Tree of Life. The hose breaks and the ends whip round with dreadful force. The Westermen coming to attack you are scythed off their feet by the hose, and you are bathed in a fog of hot steam.||You stagger out of the fog where you were safe, because it is unbearably hot, and watch as the Infernal Statue seems to run down like a clockwork toy. It bends, bows and then rolls down into the deep blue pool. The Westermen give a howl of dismay and begin to retreat, harried by the arrows of the elves.">
+
+<ROOM STORY028
+    (IN ROOMS)
+    (DESC "028")
+    (STORY-TEXT TEXT028)
+    (CONTINUE STORY500)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY033
     (IN ROOMS)
     (DESC "033")
     (FLAGS LIGHTBIT)>
-
 
 <CONSTANT TEXT037 "The smoking lamps produce little light, but peering through the gloom you can see several circular tables set about the hall, three near the fire and four back in the shadows. Two men, one tall and the other short and stocky, hog the fire and are engaged in conversation. Several dark figures are seated at the tables. One of these seems to be shrouded in a black travelling cloak.||\"You, stranger. Do you fear enemies here? Why skulk in the shadows like a rogue? Step nearer the fire so we may see your face.\"||You can't even tell who spoke to you but he doesn't sound friendly.">
 <CONSTANT STORY037-CHOICES-TEXT <LTABLE "obey the command" "ignore it" "leave the inn">>
@@ -386,6 +403,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY040
     (IN ROOMS)
     (DESC "040")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY041
+    (IN ROOMS)
+    (DESC "041")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY042
@@ -498,9 +520,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "083")
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT087 "A silver noose magically appears in the air before you and drops over your head. You try to drag the noose up and over your head, but the silvery cord tightens slowly until it flattens your windpipe. You grow purple owing to the lack of oxygen and the great effort you are putting into staying alive.||It is a futile struggle. Grugling horribly, unable even to speak, you subside into the floor and black out, never to regain consciousness.">
+
 <ROOM STORY087
     (IN ROOMS)
     (DESC "087")
+    (STORY-TEXT TEXT087)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY094
@@ -641,4 +667,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY427
     (IN ROOMS)
     (DESC "427")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT500 "The Westermen are routed. They have faced a dragon, the elves and a hero among mankind and they have had enough. They are easy to pick off as they flee through the forest much more slowly than the elves can follow. In their panic, they break into smaller and smaller groups and the elves have no difficulty in killing them. They show no mercy: the Westermen die in their tens of thousands. They will leave the forest, never to return. The Tree of Life lives on and Elanor and the elves will tend it till it has made a full recovery.||Without you, the elves and the whole forest would have been doomed. Without the forest the whole world's atmosphere would have been thrown into imbalance. Elanor greets you as the forest's saviour she had always known you would be. Now everything that grows in the great Forest of Arden is your friend. You will not be famous when you return to the lands of men. No one will ever know what great deeds you have performed here, but it doesn't matter. You know you are a hero.">
+
+<ROOM STORY500
+    (IN ROOMS)
+    (DESC "500")
+    (STORY-TEXT TEXT500)
+    (VICTORY T)
     (FLAGS LIGHTBIT)>
