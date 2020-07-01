@@ -647,6 +647,27 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT057 "By the time you are directed to where the King of the Elves is preparing the defences, he is in position with his elven army in the trees around the Tree of Life itself.||The forest falls still. There are thousands of elves in the trees around the clearing but they make no sound. Even the animals and birds have fallen unnaturally silent. You look around and savour the beauty of this enchanted place, the fountain of all life. This may well be the last chance you ever have to revel in the natural glory of the Forest of Arden.||The sun breaks through the rolling clouds and bathes the clearing in brilliant light. The trumpets of the tree lilies swing round to greet the sun. You expect to hear the elves cheer at this good omen, but they remain grimly silent.||The oppresive din of the tramping of feet of thousands upon thousands of enemies grows inexorably closer. There is a crack like a firecracker as a tree is split and knocked to the ground by the passing of one of the great metallic monsters.">
+
+<ROOM STORY057
+    (IN ROOMS)
+    (DESC "057")
+    (STORY TEXT057)
+    (CONTINUE STORY434)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT058 "\"A battle of wits?\" The Elf King rises to this like a cat confronted with a helpless mouse. \"Very well, let us set an impossible task. He who fails to achieve the task has lost the contest.\"||You are on the point of asserting that an impossible task by definition can never be achieved, but then you remember that elves abide by a contrary sort of logic. In any case, this is a test of your skill as a trickster. You nod your head. \"Agreed.\"||The Elf King looks about him, then picks up a stone from the ground. Plucking a thread from the hem of his robe, he holds it between thumb and forefinger and says, \"Be rigid.\" Instantly the thread staightens like a length of steel wire. \"Curl.\" adds the Elf King, and now the thread twists into a corkscrew shape. Finally, he says, \"Penetrate,\" and drives the thread into the stone. It winds right through as you might push a nail through a lump of butter. \"Return again to thread,\" says the Elf King, and he holds the stone up dangling on the limp thread.||You take it from him. \"And what am I to do?\"||\"Withdraw the silk from the stone,\" he says, \"Then thread it back through.\"||\"Easy enough.\" You pull out the thread, then go over to a tree where you moisten the end with a drop of sticky sap. Next you find an ant crawling amid the leaf litter and glue the thread to its abdomen with the sap. As the ant wriggles, you lower it over the hole in the stone. It takes several attempts, but finally the ant crawls into the tiny hole. The Elf King glowers inscrutably as you hold up the stone and wait. Knowing that the ant is unable to turn around, it is only a matter of time before it emerges from the other end of the hole. You detach the ant and hand the stone back to the Elf King - once more with the skilk neatly threaded through it.||He casts it aside. \"Another task -\" He begins.||\"Now it is my turn to set a task,\" you protest. \"You have just set one.\"||\"That was by way of being an example of what was needed. Now we begin the contest proper.\"">
+<CONSTANT STORY058-CHOICES <LTABLE "agree to attempt another task that he sets you" "accept a more conventional duel if you think you might fail a second try">>
+
+<ROOM STORY058
+    (IN ROOMS)
+    (DESC "058")
+    (STORY TEXT058)
+    (CHOICES STORY058-CHOICES)
+    (DESTINATIONS <LTABLE STORY187 STORY018>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT059 "The dragon pins you to the ground beneath a huge claw. You look up from the massive green scaled claw to the beast's smouldering red eyes some thirty feet above. Clearly it wasn't as sleepy as you thought and your actions have made it think you were trying to kill it. The dragon opens its jaws wide and its stomach convulses. A second later a gout of poisonous gas and acid hits you like a suffocating and burning wave. There is no surviving the breath of an ancient green dragon.">
 
 <ROOM STORY059
@@ -656,9 +677,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT060 "Thea hairs on the nape of your neck begin to bristle as you step quietly between the Greenbark trees. You sens you are being watched.">
+<CONSTANT STORY060-CHOICES <LTABLE "hide" "stop and look about you" "call out that you are Elanor's friend come in search of the immortal elves">>
+
 <ROOM STORY060
     (IN ROOMS)
     (DESC "060")
+    (STORY TEXT060)
+    (CHOICES STORY060-CHOICES)
+    (DESTINATIONS <LTABLE STORY080 STORY090 STORY109>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT061 "You grab two flailing tentacles, haul yourself towards the creature's cone-shaped head and smash your fist repeatedly between its murky grey eyes. Its coils loosen and fall away, and you break the surface gasping for air. Swimming to the far bank, you scramble out before the Embracer can recover.">
@@ -670,29 +698,74 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY013)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT062 "The innkeeper's daughter is overjoyed to see her father returned. The innkeeper is as good as his word and he kills a fattened pig to give you a banquet fit for a king.||All too soon, however, you have to leave their pleasant hospitality behind and return to your quest. Yet you are already too late. As you journey back towards the Sirion river the Westermen have found the Tree of Life and cut it down. The forest is doomed and so, in the end, is all mankind. You have failed: the long winter is beginning.">
+
+<ROOM STORY062
+    (IN ROOMS)
+    (DESC "062")
+    (STORY TEXT062)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT063 "Deciding your best chance of success in the duel is to use unarmed combat, you inform the King of the Elves of your choice. He scowls at you, then looks about him for a champion.||One of the frew young elves walks forward. He is the only elf you have evver seen who  you could describe as reasonably well built. His muscles are long and well defined. You have noticed how swift and deft the other elves are, and noted their surprising wiry strength. The young elf could prove to be a difficult adversary.||He walks forward, rocking up onto the balls of his feet, like a sping-heeled Jack, looks towards the king and asks, \"Do we fight to the death, Lord? Have no fear for me.\"||\"You will duel iuntil one of you submits or is killed,\" answers the king. \"If you survive we have two of the Lady of the Forest's potions to revive those who are wounded.\"||Gathkeri walks to one side of the grassy circle and waits confidently with his arms folded in front of him. He appears to be concentrating hard and mumbling.">
+<CONSTANT STORY063-CHOICES <LTABLE "take up your postion opposite Gathkeri" "try to get out of the duel by protesting to the king that you should be measured against your foes, the Westermen, not against the elves you have come to help">>
+
 <ROOM STORY063
     (IN ROOMS)
     (DESC "063")
+    (STORY TEXT063)
+    (CHOICES STORY063-CHOICES)
+    (DESTINATIONS <LTABLE STORY201 STORY092>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT064 "Speaking the word you clench your fist, imagining you are twisting and crushing the entrails of the Infernal Statue. The machine does not buckle or hold its stomach, as must a man affected by this puissant spell. Instead it lurches past the Tree of Life, then circles and lurches forward again, towards the deep blue pool.||The cries of the Westermen die to silence. In the resulting quiet you can hear muffled groans coming from somewhere inside the Infernal State. It totters on the brink of the pool and then begins to turn slowly back towards the Tree of Life. It seems to be recovering and will not be harmed by the spell again.">
+<CONSTANT STORY064-CHOICES <LTABLE "cast Bafflement" "Tower of Will">>
 
 <ROOM STORY064
     (IN ROOMS)
     (DESC "064")
+    (STORY TEXT064)
+    (CHOICES STORY064-CHOICES)
+    (DESTINATIONS <LTABLE STORY372 STORY207>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT065 "Your sudden rush takes him by surprise as he was preparing a spell. Just before you reach him he calls out the word \"Sanctuary\" in a ringing voice and claps his hands together. There is a second clap and he is gone. He has disappeared completely. YOu go to the door of the inn but there is no sign of him in the rain-lashed cobbled street.||Only the old woman in grey remains in the common room. She nods at you approvingly.">
+<CONSTANT STORY065-CHOICES <LTABLE "sit at her table and talk to her" "take a room in the inn for the night">>
 
 <ROOM STORY065
     (IN ROOMS)
     (DESC "065")
+    (STORY TEXT065)
+    (CHOICES STORY065-CHOICES)
+    (DESTINATIONS <LTABLE STORY181 STORY333>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT066 "You have taken a few more steps when the ground starts to shake. It feels like an earthquake and you fall down. Then the very ground beneath you hurtles skyward. There is a sudden hissing and a cloud of noisome vapours suddenly spurs from the other end of the hillock, giving the game away. You are lying on a dragon.||The dragon rolls over, away from the ledge it has been slumbering against, and as it does so you clamber up its back - an experience that is like scrambling up the side of a gigantic rolling barrel - and manage to grab hold of the bottle-green row of scales that runs in a crest down the creature's back.||Moving slowly as it wakes from its lengthy slumber, the dragon turns its necks like a corkscrew and points its cart-sized face at you. Its smouldering red eyes are like the gateways to hell.">
+<CONSTANT STORY066-CHOICES <LTABLE "leap at its head to attack the dragon before it becomes fully awake" "smile at the dragon in the hope that it doesn't eat you">>
 
 <ROOM STORY066
     (IN ROOMS)
     (DESC "066")
+    (STORY TEXT066)
+    (CHOICES STORY066-CHOICES)
+    (DESTINATIONS <LTABLE STORY074 STORY036>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT067 "\"The Westermen hate spiders. They say the spiders are ugly, poisonous and unnatural. To them spiders are the evil creatures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?">
+<CONSTANT STORY067-CHOICES <LTABLE "say there is no harm in killing spiders" "say it is bad to kill spiders" "use">>
 
 <ROOM STORY067
     (IN ROOMS)
     (DESC "067")
+    (STORY TEXT067)
+    (CHOICES STORY067-CHOICES)
+    (DESTINATIONS <LTABLE STORY051 STORY106 STORY136>)
+    (REQUIREMENTS <LTABLE NONE NONE SKILL-WILDERNESS-LORE>)
+    (TYPES <LTABLE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY068
@@ -782,6 +855,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "079")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY080
+    (IN ROOMS)
+    (DESC "080")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT081 "As the Embracer prepares to wrap you up in its tentacles, the smell of rot and marsh gas almost makes you gag. The tips of the fibrous tentacles wave in the air as if trying to sniff you out.">
 <CONSTANT STORY081-CHOICES <LTABLE "try to climb the great mass of vegetation and drive your sword between its eyes" "slash at the other tentacles as it is preparing to coil around you">>
 
@@ -818,19 +896,39 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY090
+    (IN ROOMS)
+    (DESC "090")
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT092 "\"You would have us risk our lives in battle with a hundred thousand Westermen, yet you will not dare face one elf in a duel? You are no better than the other humans.\" The king's voice is loaded with contempt. \"We will have no dealings with you. Slay the coward.\"||You begin to expostulate, but they are already drawing back on the bowstrings.||\"Alright, I'll fight the duel,\" you cry. \"It won't prove anything, aahhh!\" The first arrow pierces your windpipe - it is followed by many more. You die spurned by all elvendom.\"">
+
 <ROOM STORY092
     (IN ROOMS)
     (DESC "092")
+    (STORY TEXT092)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT093 "You call out the dragon's name and its great head rears slowly above you and its eyes bore into yours. Its nostrils dilate as it sucks in a deep breath. Too late you realize you lied to yourself about knowing the dragon's real name as it breathes acid and gas down on you. The intense burning and blistering that follows wracks your body with pain. Yet the torment is mercifully brief, as you quickly lapse into unconsciousness and then the permanent sleep of death.">
 
 <ROOM STORY093
     (IN ROOMS)
     (DESC "093")
+    (STORY TEXT093)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT094 "Ignoring you, the two men continue their conversation about hunting in the forest. The shorter of the two becomes insulting when the taller claims to know the forest better than he.||\"There are things in the forest which you wouldn't dare look upon, yet which I have seen with my own eyes.\"||\"What things?\"||\"Terrible things, green ghosts that walk through trees, phantasms and, in the darkest depths beyond Sirion, a huge monster as big as a hill.\"||\"You've been too long alone in the forest. All your pent-up thoughts turn to babble.\"||\"I saw it, it blinked its great eye at me. An eye like a salver big enough to carry a boar's head.\"">
+<CONSTANT STORY094-CHOICES <LTABLE "tell them of your quest to the forest now" "as your eyes become accustomed to the light and you can see the other travellers in the inn, look them over before before choosing a table">>
 
 <ROOM STORY094
     (IN ROOMS)
     (DESC "094")
+    (STORY TEXT094)
+    (CHOICES STORY094-CHOICES)
+    (DESTINATIONS <LTABLE STORY162 STORY176>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY099
@@ -857,9 +955,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "105")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY106
+    (IN ROOMS)
+    (DESC "106")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY108
     (IN ROOMS)
     (DESC "108")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY109
+    (IN ROOMS)
+    (DESC "109")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT110 "You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
@@ -894,6 +1002,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "127")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY136
+    (IN ROOMS)
+    (DESC "136")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY137
     (IN ROOMS)
     (DESC "137")
@@ -904,9 +1017,14 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "143")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY162
+    (IN ROOMS)
+    (DESC "162")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY163
     (IN ROOMS)
-    (DESC "169")
+    (DESC "163")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY165
@@ -929,9 +1047,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "174")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY176
+    (IN ROOMS)
+    (DESC "176")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY178
     (IN ROOMS)
     (DESC "174")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY181
+    (IN ROOMS)
+    (DESC "181")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY182
@@ -944,14 +1072,29 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "186")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY187
+    (IN ROOMS)
+    (DESC "187")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY198
     (IN ROOMS)
     (DESC "198")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY201
+    (IN ROOMS)
+    (DESC "201")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY203
     (IN ROOMS)
     (DESC "203")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY207
+    (IN ROOMS)
+    (DESC "207")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY210
@@ -1065,7 +1208,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT361 "You perform the chant that makes the stone in your pendant grow warm if a large animal or beast should approach while you sleep. To your dismay the stone begins to heat up immediately when you lie down to rest. You look around but can see nothing in the dark. You strain your ears but all you can here are the usual night sounds of the forest. The stone grows hotter against your breast: the unseen danger is coming closer. The earth begins to vibrate beneath you as if a giant stalks you.">
-<CONSTANT STORY361-CHOICES <LTABLE "try to hide by burying yourself in the earth mound" "climb a neaby tree">>
+<CONSTANT STORY361-CHOICES <LTABLE "try to hide by burying yourself in the earth mound" "climb a nearby tree">>
 
 <ROOM STORY361
     (IN ROOMS)
@@ -1074,6 +1217,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES STORY361-CHOICES)
     (DESTINATIONS <LTABLE STORY274 STORY392>)
     (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY372
+    (IN ROOMS)
+    (DESC "372")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
@@ -1125,6 +1273,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY427
     (IN ROOMS)
     (DESC "427")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY434
+    (IN ROOMS)
+    (DESC "434")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY437

@@ -40,7 +40,7 @@
         <CHECK-PRECHOICE>
         <SET KEY <PROCESS-STORY>>
         <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<EQUAL? .KEY !\g !\G> <CRLF> <DESCRIBE-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
+        <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
         <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
         <COND (<EQUAL? .KEY !\x !\X> <RETURN>)>
@@ -56,18 +56,24 @@
     )>
     <CRLF>>
 
+<ROUTINE PRINT-ENDING (MESSAGE)
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL .MESSAGE>
+    <HLIGHT 0>
+    <JIGS-UP " ">
+>
+
 <ROUTINE CHECK-DEATH ("AUX" DEATH)
     <SET DEATH <GETP ,HERE ,P?DEATH>>
     <COND (.DEATH
-        <CRLF>
-        <JIGS-UP "The adventure is over. You have died.">
+        <PRINT-ENDING "The adventure is over. The Forest of Arden is doomed.">
     )>>
 
 <ROUTINE CHECK-VICTORY ("AUX" VICTORY)
     <SET VICTORY <GETP ,HERE ,P?VICTORY>>
     <COND (.VICTORY
-        <CRLF>
-        <JIGS-UP "The adventure is over. You saved the forest! Congratulations!">
+        <PRINT-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
     )>>
 
 <ROUTINE CHECK-PRECHOICE ("AUX" PRE-CHOICE)
@@ -190,13 +196,19 @@
 <ROUTINE NOT-POSSESSED (OBJ)
     <CRLF><CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You do not possess " D .OBJ CR>
-    <HLIGHT 0>>
+    <TELL "You do not possess " A .OBJ CR>
+    <HLIGHT 0>
+    <PRESS-A-KEY>>
 
 <ROUTINE CHARGE-GOLD (COST)
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You are charged " N .COST " gold.">
+    <HLIGHT 0>
     <SETG ,GOLD-PIECES <- ,GOLD-PIECES .COST>>
     <COND (<L? ,GOLD-PIECES 0> <SETG ,GOLD-PIECES 0>)>
-    <UPDATE-STATUS-LINE>>
+    <UPDATE-STATUS-LINE>
+    <CRLF>>
 
 <ROUTINE CHECK-CODEWORDS (CODEWORDS "AUX" COUNT)
     <COND (.CODEWORDS
@@ -252,33 +264,40 @@
                     <SET TYPE <GET .TYPES .CHOICE>>
                     <COND (<EQUAL? .TYPE R-NONE>
                         <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                        <CRLF>
                     )(<AND <EQUAL? .TYPE R-SKILL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<IN? <GET .REQUIREMENTS .CHOICE> ,SKILLS>
                             <COND (<CHECK-SKILL-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
                                 <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                                <CRLF>
                             )>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
                             <TELL "You do not have " T <GET .REQUIREMENTS .CHOICE> " skill!">
                             <HLIGHT 0>
+                            <CRLF>
+                            <PRESS-A-KEY>
                         )>
                     )(<AND <EQUAL? .TYPE R-CODEWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
                             <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
                             <CRLF><CRLF>
                             <TELL "You do not have all the codewords">
                             <PRINT-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
                             <HLIGHT 0>
+                            <CRLF>
+                            <PRESS-A-KEY>
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
                             <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
                         )>
                     )>
-                    <CRLF>
                     <RETURN>
                 )(ELSE
                     <CRLF>
