@@ -1,3 +1,9 @@
+<OBJECT EMERALD-RING
+    (DESC "emerald ring")
+    (SYNONYM RING)
+    (ADJECTIVE EMERALD)
+    (FALGS TAKEBIT)>
+
 <OBJECT JEWELS
     (DESC "jewels")
     (SYNONYM JEWEL JEWELS)

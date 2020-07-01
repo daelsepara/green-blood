@@ -16,6 +16,8 @@
 <CONSTANT F <>>
 <CONSTANT NONE F>
 
+<GLOBAL CONTINUE-TO-CHOICES T>
+
 <ROUTINE GO ()
     <V-VERSION>
     <INSTRUCTIONS>
@@ -29,6 +31,7 @@
 <ROUTINE GAME-LOOP ("AUX" KEY)
     <REPEAT ()
         <CRLF>
+        <SETG ,CONTINUE-TO-CHOICES T>
         <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
@@ -38,12 +41,14 @@
         <CHECK-DEATH>
         <CHECK-VICTORY>
         <CHECK-PRECHOICE>
-        <SET KEY <PROCESS-STORY>>
-        <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
-        <COND (<EQUAL? .KEY !\x !\X> <RETURN>)>
+        <COND (,CONTINUE-TO-CHOICES
+            <SET KEY <PROCESS-STORY>>
+            <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
+            <COND (<EQUAL? .KEY !\x !\X> <RETURN>)>
+        )>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
     >>

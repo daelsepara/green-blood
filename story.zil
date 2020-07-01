@@ -213,7 +213,7 @@
     (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT019 "The dragon bats you out of the cavern and sends you rolling down the bank like a golden cannonball. You struggle to your feet while the ancient beast mocks you.||\"It is a long time since I spied a golden turtle in these parts.\" He laughs and hisses as you stagger away from the Bonehill.||Weighed bown by gold, you have no chance of completing your quest unless you head back to Burg and find someone to remove the 
+<CONSTANT TEXT019 "The dragon bats you out of the cavern and sends you rolling down the bank like a golden cannonball. You struggle to your feet while the ancient beast mocks you.||\"It is a long time since I spied a golden turtle in these parts.\" He laughs and hisses as you stagger away from the Bonehill.||Weighed down by gold, you have no chance of completing your quest unless you head back to Burg and find someone to remove the 
 precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROOM STORY019
@@ -450,7 +450,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-CODEWORD R-NONE R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT039 "Your plight is hopeless. YOu will never stagger out of the great forest weighed down as you are. One of the dark denizens of the deepest dark tracts of wood will catch you and skin you for the exotic hide you now wear. You will never escape. Because of your greed, the Forest of Arden is doomed.">
+<CONSTANT TEXT039 "Your plight is hopeless. You will never stagger out of the great forest weighed down as you are. One of the dark denizens of the deepest dark tracts of wood will catch you and skin you for the exotic hide you now wear. You will never escape. Because of your greed, the Forest of Arden is doomed.">
 
 <ROOM STORY039
     (IN ROOMS)
@@ -892,19 +892,50 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY044)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT078 "You trudge on, singling out and mentally marking individual trees as far away as you can see with the object of keeping them in sight so you don't walk in circles. Each time you reach your target tree you look back and try to identify the one you left behind so that you can choose another tree to make for in the same general direction. It is tiring work, and it exhausts you in body and mind.||As you walk on you eventually see gaunty grey crags jump out of the forest. It is a relief to find clear landmarks at last. The forest is broken here, as only grass can grow on where the soil is thin above the grey rock.||You walk out of the gloom into bright sunlight that hurts your eyes. There are countless paths leading back into the forest in all directions. As you stand contemplating which way to choose, a voice above and behind you says, \"Lost, are you?\"||You turn round and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
+<CONSTANT CHOICES078 <LTABLE "admit you are lost" "ignore the voice and walk on, picking one of the many ways at random">>
+
 <ROOM STORY078
     (IN ROOMS)
     (DESC "078")
+    (STORY TEXT078)
+    (CHOICES CHOICES078)
+    (DESTINATIONS <LTABLE STORY258 STORY277>)
+    (TYPES TWO-NONES)
+    (PRECHOICE STORY078-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY078-PRECHOICE ()
+    <COND (<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
+        <SETG ,HERE ,STORY440> <SETG ,CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+        <RETURN>
+    )(<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
+        <SETG ,HERE ,STORY459>
+        <SETG ,CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+        <RETURN>
+    )>>
+
+<CONSTANT TEXT079 "The dragon seems to read your mind. The monster flicks its tails and licks its lips.||\"Walk into the cavern and behold my hoard which has been garnered from palaces across the whole world. Many of my teasures are old, so very old, that they have a tale to tell.\"||The dragon bats you with a mighty claw, bowling you over so you fall to the ground. Once you have gotten back on your feet, the ancient creature ushers you forward into the dark cavern. Entering, you stop for a moment to adjust to the dim light. Blinking in astonishment, your jaw goes slack at the sight before you. You stare in awe at the veritable mountain of golden coins, goblets, candelabra and jewellery that comprise the dragon's treasure trove.||\"All the gold and jewels you can carry I give to you,\" says the dragon.||At the creature's words, some of the coins fly up into the air and push themselves against you. Soon you are covered in a golden crust which has gathered like barnacles do on the hull of a ship. Although your arms and legs are left free, you are terribly weighed down by the fortune that is now stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.">
 
 <ROOM STORY079
     (IN ROOMS)
     (DESC "079")
+    (STORY TEXT079)
+    (CONTINUE STORY019)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT080 "You hide underneath a clump of bushes for what seems an age. Here in the deepest part of the forest you can only guess that it is still daytime. When you are certain that you can hear and see nothing, you emerge from your hiding place and decide to journey on.||You have walked but half a mile further when the feeling of being watched returns.">
+<CONSTANT CHOICES080 <LTABLE "hide again" "stop and look around you" "walk on seemingly unaware" "try calling out that you are Elanor's friend come in search of the immortal elves">>
 
 <ROOM STORY080
     (IN ROOMS)
     (DESC "080")
+    (STORY TEXT080)
+    (CHOICES CHOICES080)
+    (DESTINATIONS <LTABLE STORY129 STORY090 STORY150 STORY109>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT081 "As the Embracer prepares to wrap you up in its tentacles, the smell of rot and marsh gas almost makes you gag. The tips of the fibrous tentacles wave in the air as if trying to sniff you out.">
@@ -919,19 +950,58 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT082 "You speak the word and a magical silver shield appears to protect you from magic. But there is no one here using magic against you. You are wasting precious time. Now is your last chance to save the Tree of Life.">
+<CONSTANT CHOICES082 <LTABLE "cast Choking Fog" "Bafflement" "Visceral Disruption" "Tower of Will">>
+
+<ROOM STORY082
+    (IN ROOMS)
+    (DESC "082")
+    (STORY TEXT082)
+    (CHOICES CHOICES082)
+    (DESTINATIONS <LTABLE STORY346 STORY113 STORY064 STORY186>)
+    (TYPES FOUR-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT083 "\"Great Garoshtar, aid me now. Listen to and respect your friend's wishes - the forest needs your help.\"||Garoshtar's great head rises slowly above you and his red eyes bore into yours.||\"I need your help now, Garoshtar. The Westermen are marching to uproot the Tree of Life.\"||The dragon is ready to bear you and to frighten the Westermen into the bargain. You ask him to attack the head of the Westermen columns as they advance, to give time for the King of the Elves to muster all his available forces. You climb onto Garoshtar's back and sit just in front of the great taut wings that beat the air like mainsails close-rigged in a storm.">
+<CONSTANT CHOICES083 <LTABLE "remain astride Garoshtar's back while he attacks the Westermen" "get him to deliver you to Elvenhame before making his attack">>
+
 <ROOM STORY083
     (IN ROOMS)
     (DESC "083")
+    (STORY TEXT083)
+    (CHOICES CHOICES083)
+    (DESTINATIONS <LTABLE STORY228 STORY247>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT084 "As the Westermen close in on you with swords and maces, you defend yourself as best as you can while the Infernal Statue hews great lumps of green stained wood from the trunk of the Tree of Life. You fight like a hero, but for every foe you kill two more take his place. At the last your feet are knocked out from under you and your body is pierced by countless sword thrusts. You have failed the forest: it will be destroyed by the Westermen.">
+
+<ROOM STORY084
+    (IN ROOMS)
+    (DESC "084")
+    (STORY TEXT084)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT085 "She will not listen as you ask her to stop and she moves so lightly you have a hard time keeping up.||\"What have I done to upset you?\" you ask. \"I can't help it if I don't know the ways of the forest as you do. I've had a hard life on the streets of Godorno. I din't know what I would find here in the forest. Don't leave me here . . .\"||Your pleas are useless: you cannot change her mind.||She flits between a curtain of creepers and down a secret tunnel, leaving you with an inexplicably strong feeling of loss. You try to find the concealed opening, but after hours of fruitless searching you reluctantly admit you have no choice but to follow your own destiny.||You wander in the forest for many days, until you come across the bodies of hundreds of elves lying among the trees. They are like figures of clay, cold and limp without the spark of life. You realize that the most terrible of fates have come to pass: the Westermen have succeeded in destroying the heart of the forest. You slump to your knees in despair as you hear their engines of destruction cutting through the trees towards you. Soon you will share the doom of the elves.">
 
 <ROOM STORY085
     (IN ROOMS)
     (DESC "085")
+    (STORY TEXT085)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT086 "Your agile leap carries you into the monster's face, where you clutch at the beast's long thick whiskers to stop yourself falling off. You are right next to the dragon's mouth and your eyes are looking straight into its cavernous nostrils. But how will you take advantage of your precarious position?">
+<CONSTANT CHOICES086 <LTABLE "scramble up on top of the ancient creature's head if you consider this your best move" "daringly pat the dragon gently on the end of its great scaly nose">>
 
 <ROOM STORY086
     (IN ROOMS)
     (DESC "086")
+    (STORY TEXT086)
+    (CHOICES CHOICES086)
+    (DESTINATIONS <LTABLE STORY116 STORY125>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT087 "A silver noose magically appears in the air before you and drops over your head. You try to drag the noose up and over your head, but the silvery cord tightens slowly until it flattens your windpipe. You grow purple owing to the lack of oxygen and the great effort you are putting into staying alive.||It is a futile struggle. Grugling horribly, unable even to speak, you subside into the floor and black out, never to regain consciousness.">
@@ -1044,6 +1114,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "113")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY116
+    (IN ROOMS)
+    (DESC "116")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY117
     (IN ROOMS)
     (DESC "117")
@@ -1054,9 +1129,19 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "122")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY125
+    (IN ROOMS)
+    (DESC "125")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY127
     (IN ROOMS)
     (DESC "127")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY129
+    (IN ROOMS)
+    (DESC "129")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY130
@@ -1082,6 +1167,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY145
     (IN ROOMS)
     (DESC "145")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY150
+    (IN ROOMS)
+    (DESC "150")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY162
@@ -1174,6 +1264,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "215")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY228
+    (IN ROOMS)
+    (DESC "228")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY232
     (IN ROOMS)
     (DESC "232")
@@ -1189,6 +1284,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES237)
     (DESTINATIONS <LTABLE STORY394 STORY454>)
     (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY247
+    (IN ROOMS)
+    (DESC "247")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY249
@@ -1357,6 +1457,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "437")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY440
+    (IN ROOMS)
+    (DESC "440")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY441
     (IN ROOMS)
     (DESC "441")
@@ -1377,6 +1482,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES454)
     (DESTINATIONS <LTABLE STORY258 STORY277>)
     (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY459
+    (IN ROOMS)
+    (DESC "459")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY464
