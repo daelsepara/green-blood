@@ -883,6 +883,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <RETURN ,STORY110>>
 
+<CONSTANT TEXT077 "Nothing in your life so far has prepared you for the first sight of the great Sirion river. The furthest bank - or perhaps it is just a large island in midstream - seems to be three miles away. Its roiling waters carry a multitude of dead tree branches towards the sea, like a vein carrying detritus out of a body.||Across the river the treeline is unbroken. You are deep in the rainforest now. The gigantic trees spread their branches more than a hundred feet from the ground here. At the river's edge mangroves reach far out into the water; bloated river buffalo shelter beneath their arching roots. It is hard going here. At every other step you sink into oozing mud.">
+
+<ROOM STORY077
+    (IN ROOMS)
+    (DESC "077")
+    (STORY TEXT077)
+    (CONTINUE STORY044)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY078
     (IN ROOMS)
     (DESC "078")
