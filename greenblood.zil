@@ -48,7 +48,7 @@
             <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
-            <COND (<EQUAL? .KEY !\x !\X> <RETURN>)>
+            <COND (<EQUAL? .KEY !\x !\X> <CRLF><RETURN>)>
         )>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
@@ -64,8 +64,8 @@
     <COND (.TEXT
         <CRLF>
         <TELL .TEXT>
-    )>
-    <CRLF>>
+        <CRLF>
+    )>>
 
 <ROUTINE PRINT-ENDING (MESSAGE)
     <CRLF>
