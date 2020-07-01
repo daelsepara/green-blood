@@ -1423,7 +1423,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT124 "\"It is my intention to search for the Tree of Knowledge in the Forest of Arden,\" you announce in a firm clear voice.||As your eyes become accustomed to the gloom you can begin to make out details of those in the room. The black-cowled man merely stares inscrutably. A woman, old and weather-beaten, in a grey robe, looks up at you with interest. The two who were at the fire stand up and walk over to you. The shorter one has a face that reminds you of a bullmastiff. \"Why would you seek the Tree of Knowledge?\" he asks. \"What use it is to you, a southerner?\"||\"Fool, don't speak to him of the tree,\" interrupts the man in black. \"All must be left as it is, nothing changed. The knowledge of the tree is lost to men and it is better that way.\"||The woman speaks with a clear voice that sounds too young for her age. \"You would have it that way. You are not at one with the forest. Because the tree sees your evil heart, you seek to keep its knowledge and pervert it.\"||\"You dare to say I am no friend of the forest?\" The black cowled man surges to his feet and the cowl slips back to reveal a bald head, a hatchet-thin face with a long black goatee beard and eyes of flint.||\"You lost your way in the forest many years ago.\"||\"I didn't need you to find me, old woman. You only dare challenge me now because you think these simpple folk of Burg can offer you protection.\"||\"You know full well I am at my strongest in the forest, Valerian,\" says the woman. \"The beasts follow me. They sense your evil.\"||\"There is a new power astir in the forest,\" he retorts. \"It will sweep you and all your bestial followers aside like chaff in the wind.\"||\"There is no cause to fill the hearts of good people of Burg with dismay. I know of what you speak . . .\"||He sneers. \"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must change -- or pass away.\"||Valerian speaks the last words in such dire tones that three townsfolk at the nearby table hastily leave the inn. Valerian himself twitches his cloak around him and follows them out, pausing to give you a last look as though committing your face to memory.">
+<CONSTANT TEXT124 "\"It is my intention to search for the Tree of Knowledge in the Forest of Arden,\" you announce in a firm clear voice.||As your eyes become accustomed to the gloom you can begin to make out details of those in the room. The black-cowled man merely stares inscrutably. A woman, old and weather-beaten, in a grey robe, looks up at you with interest. The two who were at the fire stand up and walk over to you. The shorter one has a face that reminds you of a bull-mastiff. \"Why would you seek the Tree of Knowledge?\" he asks. \"What use it is to you, a southerner?\"||\"Fool, don't speak to him of the tree,\" interrupts the man in black. \"All must be left as it is, nothing changed. The knowledge of the tree is lost to men and it is better that way.\"||The woman speaks with a clear voice that sounds too young for her age. \"You would have it that way. You are not at one with the forest. Because the tree sees your evil heart, you seek to keep its knowledge and pervert it.\"||\"You dare to say I am no friend of the forest?\" The black cowled man surges to his feet and the cowl slips back to reveal a bald head, a hatchet-thin face with a long black goatee beard and eyes of flint.||\"You lost your way in the forest many years ago.\"||\"I didn't need you to find me, old woman. You only dare challenge me now because you think these simpple folk of Burg can offer you protection.\"||\"You know full well I am at my strongest in the forest, Valerian,\" says the woman. \"The beasts follow me. They sense your evil.\"||\"There is a new power astir in the forest,\" he retorts. \"It will sweep you and all your bestial followers aside like chaff in the wind.\"||\"There is no cause to fill the hearts of good people of Burg with dismay. I know of what you speak . . .\"||He sneers. \"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must change -- or pass away.\"||Valerian speaks the last words in such dire tones that three townsfolk at the nearby table hastily leave the inn. Valerian himself twitches his cloak around him and follows them out, pausing to give you a last look as though committing your face to memory.">
 <CONSTANT CHOICES124 <LTABLE "take a room at the inn for the night" "talk to some of the inn's inhabitants: choose between the hunter and guide who are by the fire" "the woman in grey">>
 
 <ROOM STORY124
@@ -1505,7 +1505,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT132 "You have directed your spell against one of the king's images, not against the king himself. The image you have assailed disappears with a startling pop, but the elf has used the time he has gained to prepare another spell.||The King of the Elves draws a green silk veil from his waist and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words echoing through your senses. As the veil fallS it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your instrusion. The plants will snare you and tear you limb from limb with the slow strength of their growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight.||Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
+<CONSTANT TEXT132 "You have directed your spell against one of the king's images, not against the king himself. The image you have assailed disappears with a startling pop, but the elf has used the time he has gained to prepare another spell.||The King of the Elves draws a green silk veil from his waist and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words echoing through your senses. As the veil fallS it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from limb with the slow strength of their growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight.||Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
 
 <ROOM STORY132
     (IN ROOMS)
@@ -1612,44 +1612,92 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT143 "Throwing your arms wide to embrace the wind and blowing mightily as if playing a trumpet you cast the might spell Choking Fog. There is a hiss and puff of green smoke that appears in front of appears in front of the three images of your foe, one of which you know to be real.">
+
 <ROOM STORY143
     (IN ROOMS)
     (DESC "143")
+    (STORY TEXT143)
+    (PRECHOICE STORY143-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY143-PRECHOICE ()
+    <COND (,STORY033-DECISION-FLAG
+        <SETG HERE ,STORY294>
+    )(ELSE
+        <SETG HERE ,STORY285>
+    )>
+    <SETG CONTINUE-TO-CHOICES F>
+    <PRESS-A-KEY>
+    <RETURN>>
+
+<CONSTANT TEXT144 "You back off and reach a rock behind which you can take cover.||The Infernal Statute recovers its equilibrium and hacks into the trunk of the Tree of Life once more. The sword bites deep and one of the tree's great branches cracks and falls to the ground, killing and maiming more than twenty of its assailants. At the next sword blow another branch cracks and falls, and those not dead or trapped fall back as the machine completes its job of destruction.||You screw up your courage and rush once more against the machine but you are too late. One last great blow splits the trunk in the middle and the tree is dead. The destruction of the Tree of Life shatters your hopes. Utterly dejected you do not resist as the Westermen take you prisoner. The only certainty about the future is that you will be a slave of the forces that you should have defeated.">
 
 <ROOM STORY144
     (IN ROOMS)
     (DESC "144")
+    (STORY TEXT144)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT145 "\"There's Marek the Hunter there.\" He points to the stocky man with a face like a bull-mastiff, drinking beer by the kitchen door. \"He's a good enough man if it's simple hunting you're after.\" Renard looks at you as if you must be after something more.||\"Then there's old Oakmother there, lives in the forest. She says she comes to Burg just to remind herself once in a while that she is a human being. She's a strange old cove.\" He points to a weather-beaten old woman in a grey robe. \"She won't eat meat. Says her friends the animals will desert her if she does. Says they'll smell it on her skin.\" Renard shakes his head pityingly.||\"And who is the man in black?\" you whisper.||\"I am Valerian and I have the ears of a bat, the eyes of an owl and the sting of a viper.\" The main in black gets to his feet and approaches.||Renard slinks away to join Marek the Hunter.">
 
 <ROOM STORY145
     (IN ROOMS)
     (DESC "145")
+    (STORY TEXT145)
+    (CONTINUE STORY252)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT146 "The chief looks at you as though scales have fallen from his eyes. \"Miserable trickster . . . Hmm, you look strong and fit, a fine log-puller you'll make.\"||Valerian takes away your wand, and the guards strip you of your possessions. Without even asking who you are or where you have come from they chain you to a yoke beside another slave.||You begin a life of back-breaking work, pulling tree trunks from the fellers to the sawyers for week after week, year after year. Your pitiful existence is dominated by thoughts of how you might make a desperate escape before the toil kills you.">
 
 <ROOM STORY146
     (IN ROOMS)
     (DESC "146")
+    (STORY TEXT146)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT147 "\"Hunters come to the forest from Burg, Dale and the few villages near the forest's edge. They come to kill and then to eat and to find furs to wear. Should I stop hem coming to the forest? It lies within my power.\"">
+<CONSTANT CHOICES147 <LTABLE "reply that the hunters should be stopped" "reply that hunters are so few that it cannot harm the forest">>
 
 <ROOM STORY147
     (IN ROOMS)
     (DESC "147")
+    (STORY TEXT147)
+    (CHOICES CHOICES147)
+    (DESTINATIONS <LTABLE STORY051 STORY140>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT148 "As soon as the idea of killing the impish little man forms in your head, he bounds down from the toadstool.||\"It's mischief you're planning, is it? May your bones rot to feed the Umbellifer bush. I leave you its prisoner.\"||With that he rushes to the central trunk of the giant bush and scrambles up just as if he was a monkey, writhing sinously past the wicked barbed thorns. You could never follow such a difficult route. The little imp is soon lost to sight and you start to look for a way out of the bush.">
 
 <ROOM STORY148
     (IN ROOMS)
     (DESC "148")
+    (STORY TEXT148)
+    (CONTINUE STORY432)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT149 "You have directed your spell against one of the king's images, not against the king himself. The image you have assailed disappears with a startling pop but the elf has used this time to prepare another spell.||The King of the Elves draws a green silk veil from his waist and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words echoing through your senses. As the veil falls it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from limb with the slow strength of their growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight.||Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" declares the king.||His magic has made you break the rules. You have lost.">
 
 <ROOM STORY149
     (IN ROOMS)
     (DESC "149")
+    (STORY TEXT149)
+    (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT150 "You feign nonchalance as you walk on between the beautiful Greenbark trees, which every now and then let a golden leaf fall on your brow. Though you have been hit by several leaves you never see one falling. It is as if the gargantuan trees, with their trunks as wide as towers, have been shaken slightly by your footsteps.||A little way ahead there is a clearning from which you can hear the crackle of fire and see the orange flickering of flame. The sun must have set fire to the dried grass. Advancing closer, you see a chipmunk chittering in panic inside the closing ring of flames. A solid wall of fire surrounds the desperate little animal, a fire so strong that it would undoubtedly burn you horribly.">
+<CONSTANT CHOICES150 <LTABLE "brave the flames to save the chipmunk" "keep out of the clearing on the grounds that you will make an easy target thre">>
 
 <ROOM STORY150
     (IN ROOMS)
     (DESC "150")
+    (STORY TEXT150)
+    (CHOICES CHOICES150)
+    (DESTINATIONS <LTABLE STORY160 STORY170>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY151
