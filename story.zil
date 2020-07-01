@@ -1013,19 +1013,46 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT088 "For a long while nothing happens. Nervously you begin to edge closer to the source of the strange sounds. There is a ledge ahead and you can't see what lies beyond.||There is a sudden dire hissing, as if a hundred vipers were baring their venomous fangs or perhaps it is an ancient dragon drawing breath. Then another whoosh followed by an eruption of hot water that fountains into the air gives you the solution to the mystery. There is no dragon here and you are indeed, nowhere near the Bonehill. Walking to the edge you see a cluster of large bubbling pools. All you have found is an area of hot springs. Every now and then a geyser erupts; gurgling that follows is the escape of foul-smelling gases. There is nothing of interest here so you go on your way.">
+<CONSTANT CHOICES088 <LTABLE "turn and head west from here" "continue north in your original direction if you prefer">>
+
 <ROOM STORY088
     (IN ROOMS)
     (DESC "088")
+    (STORY TEXT088)
+    (CHOICES CHOICES088)
+    (DESTINATIONS <LTABLE STORY043 STORY127>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT089 "\"Why is it bad to kill spiders?\" she asks.">
+<CONSTANT CHOICES089 <LTABLE "say it is because all evil things as well as good things must be tolerated in the forest" "say you believe it is because the birds would die without spiders to eat, and without birds to eat berries there would be no young trees ">>
 
 <ROOM STORY089
     (IN ROOMS)
     (DESC "089")
+    (STORY TEXT089)
+    (CHOICES CHOICES089)
+    (DESTINATIONS <LTABLE STORY104 STORY128>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT090 "You stop still in your tracks and start to stare about, thinking to catch an elf slyly peeking at you from behind a tree.||There is the rushing whine of an arrow and a stabbing pain between your shoulder-blades. The force of the shot spins you round enabling you to see your assailant.||It is a tall, proud elf, who stands between two Greenbark trees, his legs apart. He lets his bow fall to his side as your legs buckle under you. Your nameless attacker is a fine shot: his arrow has pierced your lung. Slowly you begin to drown in your own blood.">
 
 <ROOM STORY090
     (IN ROOMS)
     (DESC "090")
+    (STORY TEXT090)
+    (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT091 "You marshal your thoughts and unleash the magic that begins a struggle of wills. Seconds after your eyes have glazed with the effort you realize your mistake. The centuries of being the one on whom all elvenkind has depended for leadership have hardened the king's will. He quickly exerts his power over your feeble mind. Your body trembles with the effort of trying to resist, but none the less you find yourself walking forward step by step until you are in front of the king. He compels you to kneel before him. Powerless to resist, you speak the words of submission. You have lost the duel.">
+
+<ROOM STORY091
+    (IN ROOMS)
+    (DESC "091")
+    (STORY TEXT091)
+    (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT092 "\"You would have us risk our lives in battle with a hundred thousand Westermen, yet you will not dare face one elf in a duel? You are no better than the other humans.\" The king's voice is loaded with contempt. \"We will have no dealings with you. Slay the coward.\"||You begin to expostulate, but they are already drawing back on the bowstrings.||\"Alright, I'll fight the duel,\" you cry. \"It won't prove anything, aahhh!\" The first arrow pierces your windpipe - it is followed by many more. You die spurned by all elvendom.\"">
@@ -1075,6 +1102,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "103")
     (STORY TEXT103)
     (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY104
+    (IN ROOMS)
+    (DESC "104")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY105
@@ -1137,6 +1169,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY127
     (IN ROOMS)
     (DESC "127")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY128
+    (IN ROOMS)
+    (DESC "128")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY129
