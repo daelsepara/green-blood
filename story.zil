@@ -1381,9 +1381,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT120 "You are surrounded by a circle of elves, all of whom seem to have appeared as if by magic. They look solemn but not hostile. Their faces have the perfect beauty of unsullied youth but their green almond-shaped eyes are like windows onto the wisdom of the centuries. Their skin is flawless pale green with a silvery bloom like grape bloom. Their long straight hair is the colour of rich red wine. They seem not in the least surprised to see you.||You wait for them to say something but they seem in no hurry, so you tell men you are a friend of the forest and an enemy of the burners.">
+
 <ROOM STORY120
     (IN ROOMS)
     (DESC "120")
+    (STORY TEXT120)
+    (CONTINUE STORY180)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY121
