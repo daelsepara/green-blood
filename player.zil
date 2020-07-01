@@ -2,6 +2,7 @@
 <GLOBAL CURRENT-CHARACTER NONE>
 <GLOBAL GOLD-PIECES 0>
 <GLOBAL LIFE-POINTS 0>
+<GLOBAL LIFE-POINTS-BOOST 0>
 
 <CONSTANT SKILL-GLOSSARY <LTABLE SKILL-AGILITY SKILL-ARCHERY SKILL-CHARMS SKILL-CUNNING SKILL-FOLKLORE SKILL-ROGUERY SKILL-SPELLS SKILL-STREETWISE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-WILDERNESS-LORE>>
 <CONSTANT CHARACTERS <LTABLE CHARACTER-DUELLIST CHARACTER-RANGER CHARACTER-MONK CHARACTER-SORCERERS-APPRENTICE CHARACTER-STARVELING CHARACTER-TRAVELLER CHARACTER-THIEF>>
@@ -170,7 +171,7 @@
                     <CRLF>
                     <TELL "Select this character?">
                     <COND (<YES?>
-                        <SETG ,CURRENT-CHARACTER .CHARACTER>
+                        <SETG CURRENT-CHARACTER .CHARACTER>
                         <SET SKILLS <GETP .CHARACTER ,P?SKILLS>>
                         <COND (.SKILLS
                             <SET COUNT <GET .SKILLS 0>>
@@ -185,9 +186,9 @@
                                 <MOVE <GET .POSSESSIONS .I> ,PLAYER>
                             >
                         )>
-                        <SETG ,CURRENT-CHARACTER .CHARACTER>
-                        <SETG ,GOLD-PIECES <GETP .CHARACTER ,P?MONEY>>
-                        <SETG ,LIFE-POINTS <GETP .CHARACTER ,P?LIFE-POINTS>>
+                        <SETG CURRENT-CHARACTER .CHARACTER>
+                        <SETG GOLD-PIECES <GETP .CHARACTER ,P?MONEY>>
+                        <SETG LIFE-POINTS <GETP .CHARACTER ,P?LIFE-POINTS>>
                         <TELL CR "You have selected " CT ,CURRENT-CHARACTER CR>
                         <TELL CR "[Press a key to begin]" CR>
                         <INPUT 1>

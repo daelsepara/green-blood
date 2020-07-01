@@ -1,6 +1,6 @@
 "Green Blood (ZIL)"
 
-<CONSTANT GAME-BANNER "Green Blood|Mark Smith and Dave Morris||Implemented in ZIL by SD Separa (2020)|">
+<CONSTANT GAME-BANNER "Green Blood||by Mark Smith and Dave Morris (1993)||Implemented in ZIL by SD Separa (2020)|">
 <CONSTANT RELEASEID 1>
 <VERSION XZIP>
 
@@ -21,8 +21,9 @@
 <ROUTINE GO ()
     <V-VERSION>
     <INSTRUCTIONS>
+    <RESET-STORY>
     <CHOOSE-CHARACTER>
-    <SETG ,HERE ,PROLOGUE>
+    <SETG HERE ,PROLOGUE>
     <INIT-STATUS-LINE>
     <UPDATE-STATUS-LINE>
     <GAME-LOOP>
@@ -31,7 +32,7 @@
 <ROUTINE GAME-LOOP ("AUX" KEY)
     <REPEAT ()
         <CRLF>
-        <SETG ,CONTINUE-TO-CHOICES T>
+        <SETG CONTINUE-TO-CHOICES T>
         <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
@@ -52,6 +53,11 @@
         <CLOCKER>
         <UPDATE-STATUS-LINE>
     >>
+
+<ROUTINE RESET-STORY ()
+    <SETG CONTINUE-TO-CHOICES T>
+    <SETG LIFE-POINTS-BOOST 0>
+    <SETG STORY033-DECISION-FLAG F>>
 
 <ROUTINE PRINT-PAGE ("AUX" TEXT)
     <SET TEXT <GETP ,HERE ,P?STORY>>
@@ -195,7 +201,7 @@
 <ROUTINE CHECK-EVENTS ("AUX" EVENT)
     <SET EVENT <GETP ,HERE ,P?EVENTS>>
     <COND (.EVENT
-        <SETG ,HERE <APPLY .EVENT>>
+        <SETG HERE <APPLY .EVENT>>
     )>>
 
 <ROUTINE NOT-POSSESSED (OBJ)
@@ -210,8 +216,8 @@
     <HLIGHT ,H-BOLD>
     <TELL "You are charged " N .COST " gold.">
     <HLIGHT 0>
-    <SETG ,GOLD-PIECES <- ,GOLD-PIECES .COST>>
-    <COND (<L? ,GOLD-PIECES 0> <SETG ,GOLD-PIECES 0>)>
+    <SETG GOLD-PIECES <- ,GOLD-PIECES .COST>>
+    <COND (<L? ,GOLD-PIECES 0> <SETG GOLD-PIECES 0>)>
     <UPDATE-STATUS-LINE>
     <CRLF>>
 
@@ -268,12 +274,12 @@
                 <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>> <L=? .CHOICE <GET .TYPES 0>>>
                     <SET TYPE <GET .TYPES .CHOICE>>
                     <COND (<EQUAL? .TYPE R-NONE>
-                        <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                        <SETG HERE <GET .DESTINATIONS .CHOICE>>
                         <CRLF>
                     )(<AND <EQUAL? .TYPE R-SKILL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<IN? <GET .REQUIREMENTS .CHOICE> ,SKILLS>
                             <COND (<CHECK-SKILL-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
-                                <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                                <SETG HERE <GET .DESTINATIONS .CHOICE>>
                                 <CRLF>
                             )>
                         )(ELSE
@@ -286,7 +292,7 @@
                         )>
                     )(<AND <EQUAL? .TYPE R-CODEWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
-                            <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )(ELSE
                             <HLIGHT ,H-BOLD>
@@ -299,7 +305,7 @@
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
-                            <SETG ,HERE <GET .DESTINATIONS .CHOICE>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )>
                     )>
@@ -358,7 +364,7 @@
         <TELL "." CR>
         <RETURN <PROCESS-CHOICES .CHOICES>>
     )(.CONTINUE
-        <SETG ,HERE .CONTINUE>
+        <SETG HERE .CONTINUE>
         <PRESS-A-KEY>
         <RETURN>
     )>
@@ -384,7 +390,7 @@
         <TELL " - " CT ,CURRENT-CHARACTER>
     )>
     <CURSET 1 <- .WIDTH 45>>
-    <TELL "Life Points: " N ,LIFE-POINTS>
+    <TELL "Life Points: " N <+ ,LIFE-POINTS ,LIFE-POINTS-BOOST>>
     <CURSET 1 <- .WIDTH 27>>
     <TELL "Gold: " N ,GOLD-PIECES>
     <CURSET 1 <- .WIDTH 16>>

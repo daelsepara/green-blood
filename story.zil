@@ -392,7 +392,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY033-DECISION ()
     <CRLF>
     <TELL "Stand with the wind in your face (yes) or at your back (no)?">
-    <COND (<YES?> <SETG ,STORY033-DECISION-FLAG T>)>>
+    <COND (<YES?> <SETG STORY033-DECISION-FLAG T>)>>
 
 <CONSTANT TEXT034 "You could not possibly be near the Bonehill, which is several days travel to the east. The whole character of the forest here is very different from the area near the Bonehill. You can however, at least investigate the area where the whooshing noise came from.">
 
@@ -907,12 +907,12 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY078-PRECHOICE ()
     <COND (<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
-        <SETG ,HERE ,STORY440> <SETG ,CONTINUE-TO-CHOICES F>
+        <SETG HERE ,STORY440> <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
         <RETURN>
     )(<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
-        <SETG ,HERE ,STORY459>
-        <SETG ,CONTINUE-TO-CHOICES F>
+        <SETG HERE ,STORY459>
+        <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
         <RETURN>
     )>>
@@ -1118,14 +1118,61 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT098 "The Lady of the Forest watches your departure sadly, but she does nothing to prevent you leaving. How can she be grieving at your loss when she hardly knows you? She must be mad. Nevertheless you quit her beautiful garden with regret and continue your quest for the Tree of Knowledge.||It will soon be Midsummer's day. Where will you search for the tree next?">
+<CONSTANT CHOICES098 <LTABLE "head west" "east" "south-west">>
+
+<ROOM STORY098
+    (IN ROOMS)
+    (DESC "098")
+    (STORY STORY098)
+    (CHOICES CHOICES098)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY079>)
+    (TYPES THREE-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT099 "You pass several of the great Umbellifer bushes, so called because of their bell shape. You walk on between them, where only grass that has been cropped by deer grows, until you come to an archway that has been cut through the thorns to provide a way into the shadowy recesses of the immense bush.">
+<CONSTANT CHOICES099 <LTABLE "go inside the bush" "hurry past with not so much as a backward glance">>
+
 <ROOM STORY099
     (IN ROOMS)
     (DESC "099")
+    (STORY TEXT099)
+    (CHOICES CHOICES099)
+    (DESTINATIONS <LTABLE STORY119 STORY127>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT100 "As you walk towards the guards you are horrified to see them spearing the animals that are fleeing the burning brush. The men throw the unfortunate beasts onto the fire beneath the great cauldron. The others laugh merrily as if they could think of no better sport than to wantonly slaughter helpless beasts.||You call a greeting above the hissing of the steam bellows that is rising and falling, driven by the metal machine. The guards stand up and fan out as if to surround you, without a word of command.||\"Search the southerner for weapons,\" shouts their captain.">
+<CONSTANT CHOICES100 <LTABLE "surrender and let them search you" "try to fight your way out">>
+
+<ROOM STORY100
+    (IN ROOMS)
+    (DESC "100")
+    (STORY TEXT100)
+    (CHOICES CHOICES100)
+    (DESTINATIONS <LTABLE STORY151 STORY202>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT101 "Your spell of Bafflement crosses unseen the space that separates you and the King of the Elves, silently invading his mind. His eyes look at you, blankly uncomprehending, and the two false images that his magic created just flicker and die away. The king is powerless; he is far too confused to attempt a spell or even move from the spot. Unfortunately he is also too baffled to realize the time has come for him to submit to you and acknowledge you the winner of the duel.||Under the rules of a duel you can only use magic to subdue him so you let the Bafflement fade and prepare another spell.">
+<CONSTANT CHOICES101 <LTABLE "cast Visceral Disruption" "Tower of will">>
+
+<ROOM STORY101
+    (IN ROOMS)
+    (DESC "101")
+    (STORY STORY101)
+    (CHOICES CHOICES101)
+    (DESTINATIONS <LTABLE STORY111 STORY071>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT102 "You call out the dragon's name. Its great head rears slowly above you and his glittering eyes bore into yours. His nostrils dilate as he sucks in a deep breath. Too late, you realize you were wrong about knowing the dragon's name. There is a terrible whooshing sound as the dragon's breath of acid and gas roars towards you. The torrent of gas and air rolls you across the ground and you are lucky to bang your head on a rock and spare yourself a more painful death. The forest is doomed.">
 
 <ROOM STORY102
     (IN ROOMS)
     (DESC "102")
+    (STORY TEXT102)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT103 "It was a mistake to enter the forest without a guide. There is no time to do anything as the Embracer sucks you down into the murky depths. You struggle desperately hard but, unable to breathe, your strength soon fails you and you drown in the clutches of this hideous creature.">
@@ -1137,29 +1184,71 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT104 "\"The men who have come to the forest say that when the trees have been felled the undergrowth should be burned to clear it for humans to live in. They say burning returns all the goodness in the plants to the soil so that crops can flourish. Do you agree with them?\" asks Elanor.">
+<CONSTANT CHOICES104 <LTABLE "admit that you have no reason to disbelieve them" "say instead that the forest should be kept as it is for it makes the air that man breathes">>
+
 <ROOM STORY104
     (IN ROOMS)
     (DESC "104")
+    (STORY TEXT104)
+    (CHOICES CHOICES104)
+    (DESTINATIONS <LTABLE STORY051 STORY147>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT105 "\"So,\" hisses your mirror image, \"you would rather shatter your promise . . .\"||\"You witless sprite,\" you retort sharply, \"If I break the mirror right away, the enchantress will wake up. Be patient; I'll get around to it.\"||\"No!\" wails the voice from the glass. \"You're lying. You intend to use me just as she has - but I'll foil that scheme. Wake, mistress, wake! A mortal prowls within your boudoir!\"">
 
 <ROOM STORY105
     (IN ROOMS)
     (DESC "105")
+    (STORY TEXT105)
+    (CONTINUE STORY499)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT106 "\"Why is it bad to kill spiders?\" she asks.">
+<CONSTANT CHOICES106 <LTABLE "say it is because all evil things as well as good things must be tolerated in the forest" "reason that without spiders to eat the birds would die, and without birds to eat berries there would be no young trees">>
 
 <ROOM STORY106
     (IN ROOMS)
     (DESC "106")
+    (STORY TEXT106)
+    (CHOICES CHOICES106)
+    (DESTINATIONS <LTABLE STORY051 STORY128>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT107 "\"I have watched you coming here in the mirror I keep in my secret bower. I think you have the makings of a hero,\" she says.||\"Did it amuse you to watch me struggle to find my way in the forest?\"||\"Not at all. I was hoping you would survive at least this far.\"||\"That doesn't sound very encouraging.\"||\"Only you can shape your own destiny. I think perhaps you have greatness within you.\"||\"If you have plans for me why didn't you bring me straight here from the inn in Burg?\"||\"The ways of the forest cannot all be taught. They must be experienced. And besides, I needed to know your mettle.\"||She smiles a smile that could mean anything from cruel amusement to genuine welcome; you are too confused by what she has said to judge the difference.||It feels slightly shaming to think that this woman has watched your most intimate moments in the forest. Still, you have done nothing to be ashamed of.">
+<CONSTANT CHOICES107 <LTABLE "choose to go along with her" "leave if you are convinced she is mad">>
+
+<ROOM STORY107
+    (IN ROOMS)
+    (DESC "107")
+    (STORY TEXT107)
+    (CHOICES CHOICES107)
+    (DESTINATIONS <LTABLE STORY009 STORY098>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT108 "You stride to the fireside and turn so that the light of the flaming logs plays across your face. All eyes are on you, but you can't see well in the gloom. The two men who had been rubbing their hands at the fire sit down at the other end of the old hall.||\"We don't take kindly to strangers here. What brings you to Burg, southerner?\"||It seems to be the sinister man clocked in black who is talking.">
+<CONSTANT CHOICES108 <LTABLE "tell him the truth, that you journey to the great Forest of Arden to seek the Tree of Knowledge" "say that you are a scout sent out from your city to explore far-off lands and bring news back to your masters" "use">>
 
 <ROOM STORY108
     (IN ROOMS)
     (DESC "108")
+    (STORY TEXT108)
+    (CHOICES CHOICES108)
+    (DESTINATIONS <LTABLE STORY124 STORY154 STORY188>)
+    (REQUIREMENTS <LTABLE NONE NONE SKILL-STREETWISE>)
+    (TYPES <LTABLE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT109 "You call out loudly. \"I am a friend of Elanor, the Lady of the Forest. I come in search of the immortal elves.\"||You feel rather unheroic, calling out like this when you don't know whether anyone can hear you. But there is also the nasty feeling that you might be struck by an arrow at any moment.||You call out a second time and this time, to your relief, you are answered.">
 
 <ROOM STORY109
     (IN ROOMS)
     (DESC "109")
+    (STORY TEXT109)
+    (CONTINUE STORY120)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT110 "You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
@@ -1174,19 +1263,132 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT111 "You mouth the strange words that set off Visceral Disruption. A spasm wracks the King of the Elves and he tries to stop himself clutching his stomach as the spell twists his guts.||You have never known anyone who could remain standing under the effects of this agonizing spell, but it is taking all of the Elf King's will. He cannot cast another spell.||\"Cancel the spell, mortal. I concede victory to your sorcery,\" the King of the Elves says from between clenched teeth.||Knowing how unpleasant the spell can be and out of compassion for the king, you quickly comply. You have won the duel.">
+
+<ROOM STORY111
+    (IN ROOMS)
+    (DESC "111")
+    (STORY TEXT111)
+    (CONTINUE STORY263)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT112 "\"Do you think that the knowledge of the Tree of Life should be passed on to man so mankind can benefit from the tree's wisdom? Or are men too greedy and selfish to be trusted with this great wisdom?\" she asks.">
+<CONSTANT CHOICES112 <LTABLE "reply that wise men rule well and that you hope to take the wisdom of the Tree of Life back" "say that the knowledge must be guarded as a secret treasure and not given to men at large because man cannot be trusted">>
+
+<ROOM STORY112
+    (IN ROOMS)
+    (DESC "112")
+    (STORY TEXT112)
+    (CHOICES CHOICES112)
+    (DESTINATIONS <LTABLE STORY104 STORY140>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT113 "For a moment your Bafflement spell seems to have had little effect: the statue's sword arm rises and falls like a mindless piston. Soon, however, the sword starts to miss its mark, flailing pointlessly through the air. There are cries of alarm from the Westermen, who then begin to fall silent as the Infernal Statue lurches a few steps away from the tree and teeters near the edge of the deep blue pool.||It lapses into inaction - it would seem truly baffled. How will you followup with your success?">
+<CONSTANT CHOICES113 <LTABLE "cast Visceral Disruption" "Choking Fog" "Tower of Will">>
+
 <ROOM STORY113
     (IN ROOMS)
     (DESC "113")
+    (STORY TEXT113)
+    (CHOICES CHOICES113)
+    (DESTINATIONS <LTABLE STORY362 STORY031 STORY207>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT114 "Your confident announcement fails to enthral the Elf King as you had hoped. Instead he only shakes his head slowly, the look in his eyes reflecting some inner emotion unknown to mortal men. Just as you open your mouth to try another guess, he comes striding rapidly forward to throw his cloak up in front of your eyes. There is no time to react before your vision is blotted out in a rustle of soft green fabric. A scent wafts to you, reminiscent of meadows and leafy lanes in summer.||Reaching up to pull aside the folds of the cloak, your fingers close only on a handful of fresh green leaves. You look around. The elves have vanished. You have no choice but to turn and trudge through the trees, calling out for them to return. But your pleas are unanswered except by the song of the birds and the murmuring of a distant brook.">
+
+<ROOM STORY114
+    (IN ROOMS)
+    (DESC "114")
+    (STORY TEXT114)
+    (CONTINUE STORY078)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT115 "While you wait, quite still behind the chief's chair, you hear a visitor being announced. \"It is Valerian the Moon Druid, sire, he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding but you can understand their dialect.||It is the man you first saw in the inn at Burg. He is still dressed in a black travelling cloak but the hood is thrown back to reveal his hatchet-like face and pointed black goatee beard. He bows before the chief, then wrinkles his nose and stares at thin air in your general direction.||\"I have driven off the tree bears, you will have no more trouble from them,\" he tells the chief. He sniffs again and moves his head from side to side while fixing his gaze just above your head, giving him a most comical air.||The chief spreads out the map of the forest and his advisers gather round, almost blocking your exit.">
+<CONSTANT CHOICES115 <LTABLE "try to get away now" "wait to see what they may plan">>
+
+<ROOM STORY115
+    (IN ROOMS)
+    (DESC "115")
+    (STORY TEXT115)
+    (CHOICES CHOICES115)
+    (DESTINATIONS <LTABLE STORY029 STORY004>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT116 "You nimbly climb up on top of the dragon's head perching behind its glittering eyes. The monster reaches a claw up over its shoulder to flick you off onto the ground.">
+<CONSTANT CHOICES116 <LTABLE "try to kill the dragon" "talk to it" "hope that you can dodge the claw">>
 
 <ROOM STORY116
     (IN ROOMS)
     (DESC "116")
+    (STORY TEXT116)
+    (CHOICES CHOICES116)
+    (DESTINATIONS <LTABLE STORY135 STORY178 STORY133>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT117 "It is a cold and blustery night. You look for another inn but there is none. The houses are shuttered and the doors are barred. You try knocking but all your attempts at seeking entry are ignored. The inhabitants really don't like strangers here.||A woman shouts from a top window, \"You'd best get outside the gates before they turn the dogs loose in the streets.\"||As she speaks you hear the baying of a pack of dogs from near the gate. You walk quickly through. The dog handlers seem to be sizing you up as quarry as they shut the gate behind you.||You pass a cold, damp night outside the town, awakening stiff and soaked through in the morning. You are only too glad to leave Burg behind you.">
 
 <ROOM STORY117
     (IN ROOMS)
     (DESC "117")
+    (STORY TEXT117)
+    (CONTINUE STORY210)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT118 "There is a tingling pins-and-needles feeling as the sprite's magic takes effect.||\"Now do as you promised,\" urges the sprite in the mirror. \"Free me.\"">
+<CONSTANT CHOICES118 <LTABLE "break the mirror" "not">>
+
+<ROOM STORY118
+    (IN ROOMS)
+    (DESC "118")
+    (STORY TEXT118)
+    (CHOICES CHOICES118)
+    (DESTINATIONS <LTABLE STORY418 STORY105>)
+    (TYPES TWO-NONES)
+    (PRECHOICE STORY118-GAINLIFE)
+    (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY118-GAINLIFE ("AUX" MAX-LIFE)
+    <SET MAX-LIFE <GETP ,CURRENT-CHARACTER ,P?LIFE-POINTS>>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <COND (<EQUAL? .MAX-LIFE ,LIFE-POINTS>
+        <SETG LIFE-POINTS-BOOST <+ ,LIFE-POINTS-BOOST 1>>
+        <SETG LIFE-POINTS .MAX-LIFE>
+        <HLIGHT ,H-BOLD>
+        <TELL "You gain a permanent +1 life point.">
+    )(ELSE
+        <SETG LIFE-POINTS .MAX-LIFE>
+        <TELL "You life points is restored.">
+    )>
+    <HLIGHT 0>
+    <UPDATE-STATUS-LINE>
+    <CRLF>
+    <RETURN>>
+
+<CONSTANT TEXT119 "The archway leads into a tunnel that has been cut through the thick branches and thorns of the bell-shaped bush. You walk on towards the great open space that surrounds the trunk of the bush.||Looking back, however, you cannot make out the archway at all, even though it should be directly behind you. You press on anyway until you hear a chirruping litte voice say, \"Welcome, sirray, 'tis a pretty place to spend the rest of your days, is it not?\"||A strange little man the size of a small capuchin monkey sits cross-legged on a giant toadstool. Even in the dim light you can see the fungus is liver-spotted and looks poisonous.||\"Come, share my provender,\" invites the little man as he breaks off a piece of the toadstool on which he is sitting. He offers it to you. \"Share my provender, there is nothing more helpful to a hero than the flesh of the Blood of Iron toadstool.\" The little imp proffers it to you with an elaborate bow.">
+<CONSTANT CHOICES119 <LTABLE "take and eat the flesh" "try to kill the little man" "ask him to help you in your quest">>
+
+<ROOM STORY119
+    (IN ROOMS)
+    (DESC "119")
+    (STORY TEXT119)
+    (CHOICES CHOICES119)
+    (DESTINATIONS <LTABLE STORY138 STORY148 STORY158>)
+    (TYPES THREE-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY120
+    (IN ROOMS)
+    (DESC "120")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY121
+    (IN ROOMS)
+    (DESC "121")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY122
@@ -1194,9 +1396,24 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "122")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY123
+    (IN ROOMS)
+    (DESC "123")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY124
+    (IN ROOMS)
+    (DESC "124")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY125
     (IN ROOMS)
     (DESC "125")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY126
+    (IN ROOMS)
+    (DESC "126")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY127
@@ -1224,6 +1441,26 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "131")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY132
+    (IN ROOMS)
+    (DESC "132")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY133
+    (IN ROOMS)
+    (DESC "133")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY134
+    (IN ROOMS)
+    (DESC "134")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY135
+    (IN ROOMS)
+    (DESC "135")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY136
     (IN ROOMS)
     (DESC "136")
@@ -1234,9 +1471,39 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "137")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY138
+    (IN ROOMS)
+    (DESC "138")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY139
+    (IN ROOMS)
+    (DESC "139")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY140
+    (IN ROOMS)
+    (DESC "140")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY141
+    (IN ROOMS)
+    (DESC "141")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY142
+    (IN ROOMS)
+    (DESC "142")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY143
     (IN ROOMS)
     (DESC "143")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY144
+    (IN ROOMS)
+    (DESC "144")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY145
@@ -1244,9 +1511,84 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "145")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY146
+    (IN ROOMS)
+    (DESC "146")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY147
+    (IN ROOMS)
+    (DESC "147")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY148
+    (IN ROOMS)
+    (DESC "148")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY149
+    (IN ROOMS)
+    (DESC "149")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY150
     (IN ROOMS)
     (DESC "150")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY151
+    (IN ROOMS)
+    (DESC "151")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY152
+    (IN ROOMS)
+    (DESC "152")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY153
+    (IN ROOMS)
+    (DESC "153")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY154
+    (IN ROOMS)
+    (DESC "154")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY155
+    (IN ROOMS)
+    (DESC "155")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY156
+    (IN ROOMS)
+    (DESC "156")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY157
+    (IN ROOMS)
+    (DESC "157")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY158
+    (IN ROOMS)
+    (DESC "158")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY159
+    (IN ROOMS)
+    (DESC "159")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY160
+    (IN ROOMS)
+    (DESC "160")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY161
+    (IN ROOMS)
+    (DESC "161")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY162
@@ -1259,9 +1601,29 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "163")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY164
+    (IN ROOMS)
+    (DESC "164")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY165
     (IN ROOMS)
     (DESC "165")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY166
+    (IN ROOMS)
+    (DESC "166")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY167
+    (IN ROOMS)
+    (DESC "167")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY168
+    (IN ROOMS)
+    (DESC "168")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY169
@@ -1269,9 +1631,24 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "169")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY170
+    (IN ROOMS)
+    (DESC "170")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY171
     (IN ROOMS)
     (DESC "171")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY172
+    (IN ROOMS)
+    (DESC "172")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY173
+    (IN ROOMS)
+    (DESC "173")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY174
@@ -1279,14 +1656,34 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "174")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY175
+    (IN ROOMS)
+    (DESC "175")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY176
     (IN ROOMS)
     (DESC "176")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY177
+    (IN ROOMS)
+    (DESC "177")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY178
     (IN ROOMS)
-    (DESC "174")
+    (DESC "178")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY179
+    (IN ROOMS)
+    (DESC "179")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY180
+    (IN ROOMS)
+    (DESC "180")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY181
@@ -1299,6 +1696,21 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "182")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY183
+    (IN ROOMS)
+    (DESC "183")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY184
+    (IN ROOMS)
+    (DESC "184")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY185
+    (IN ROOMS)
+    (DESC "185")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY186
     (IN ROOMS)
     (DESC "186")
@@ -1309,14 +1721,79 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "187")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY188
+    (IN ROOMS)
+    (DESC "188")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY189
+    (IN ROOMS)
+    (DESC "189")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY190
+    (IN ROOMS)
+    (DESC "190")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY191
+    (IN ROOMS)
+    (DESC "191")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY192
+    (IN ROOMS)
+    (DESC "192")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY193
+    (IN ROOMS)
+    (DESC "193")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY194
+    (IN ROOMS)
+    (DESC "194")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY195
+    (IN ROOMS)
+    (DESC "195")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY196
+    (IN ROOMS)
+    (DESC "196")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY197
+    (IN ROOMS)
+    (DESC "197")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY198
     (IN ROOMS)
     (DESC "198")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY199
+    (IN ROOMS)
+    (DESC "199")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY200
+    (IN ROOMS)
+    (DESC "200")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY201
     (IN ROOMS)
     (DESC "201")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY202
+    (IN ROOMS)
+    (DESC "202")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY203
@@ -1329,9 +1806,29 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "204")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY205
+    (IN ROOMS)
+    (DESC "205")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY206
+    (IN ROOMS)
+    (DESC "206")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY207
     (IN ROOMS)
     (DESC "207")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY208
+    (IN ROOMS)
+    (DESC "208")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY209
+    (IN ROOMS)
+    (DESC "209")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY210
@@ -1476,6 +1973,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY362
+    (IN ROOMS)
+    (DESC "362")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY372
     (IN ROOMS)
     (DESC "372")
@@ -1582,6 +2084,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY489
     (IN ROOMS)
     (DESC "489")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY499
+    (IN ROOMS)
+    (DESC "499")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT500 "The Westermen are routed. They have faced a dragon, the elves and a hero among mankind and they have had enough. They are easy to pick off as they flee through the forest much more slowly than the elves can follow. In their panic, they break into smaller and smaller groups and the elves have no difficulty in killing them. They show no mercy: the Westermen die in their tens of thousands. They will leave the forest, never to return. The Tree of Life lives on and Elanor and the elves will tend it till it has made a full recovery.||Without you, the elves and the whole forest would have been doomed. Without the forest the whole world's atmosphere would have been thrown into imbalance. Elanor greets you as the forest's saviour she had always known you would be. Now everything that grows in the great Forest of Arden is your friend. You will not be famous when you return to the lands of men. No one will ever know what great deeds you have performed here, but it doesn't matter. You know you are a hero.">
