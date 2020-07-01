@@ -1085,6 +1085,39 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT095 "You jump nimbly and quickly over a stack of books and slink out between the chief's advisers. The guards at the porch don't notice you bass between them and you are soon safe back in the forest. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT CHOICES095 <LTABLE "head west" "east" "south-west" "south">>
+
+<ROOM STORY095
+    (IN ROOMS)
+    (DESC "095")
+    (STORY TEXT095)
+    (CHOICES CHOICES095)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>)
+    (TYPES FOUR-NONES)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT096 "Nothing in your life so far has prepared you for the first sight of the great Sirion river. The furthest bank - or perhaps it is just a large island in midstream - seems three miles away. Its roiling waters carry a multitude of dead tree branches towards the sea, like a vein carrying detritus out of a body.||Across the river the treeline is unbroken. You are deep in the rainforest now. The gigantic trees spread their branches more than a hundred feet from the ground here. At the river's edge mangroves reach far out into the water; bloated river buffalo shelter beneath their arching roots. It is hard going here. At every other step you sink into oozing mud. Twice you nearly lose your life in the oozing mud: once when a vine you were clinging to snaps, and again when a huge river buffalo erupts out of the water between the mangrove and rushes you. It storms through the water margin and crashes into the trees in hot pursuit. Soon the trees are too thick for it to follow and you trudge on, abandoning the river bank. Quite lost by now, you hope you can find a landmark to guide you.">
+
+<ROOM STORY096
+    (IN ROOMS)
+    (DESC "096")
+    (STORY TEXT096)
+    (CONTINUE STORY131)
+    (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT097 "The chief shakes his head. \"My new realm will never be safe until I have destroyed every last tree in the forest. Valerian tells me so and his counsel has always been good in the past.\"||\"But the whole world needs the forest,\" you argue. \"Without the forest there would be no air to breathe. We will all die.\"||\"Valerian doesn't want to die any more than either you or I, I'll warrant. What nonsense is this you talk?\" He narrows his eyes, suddenly suspicious. \"Where was it we met? Was it the Reaver's Inn in Bessaraban? Remind me.\" He screws up his eyes in the effort of remembering a meeting that you know never took place.">
+<CONSTANT CHOICES097 <LTABLE "pretend that you met in the Reaver's Inn in the far off city of Bessaraban" "make up an excuse and leave">>
+
+<ROOM STORY097
+    (IN ROOMS)
+    (DESC "097")
+    (STORY TEXT097)
+    (CHOICES CHOICES097)
+    (DESTINATIONS <LTABLE STORY204 STORY305>)
+    (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY099
     (IN ROOMS)
     (DESC "099")
@@ -1184,6 +1217,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY130
     (IN ROOMS)
     (DESC "130")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY131
+    (IN ROOMS)
+    (DESC "131")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY136
@@ -1286,6 +1324,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "203")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY204
+    (IN ROOMS)
+    (DESC "204")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY207
     (IN ROOMS)
     (DESC "207")
@@ -1384,6 +1427,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "287")
     (STORY TEXT287)
     (DEATH T)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY305
+    (IN ROOMS)
+    (DESC "305")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY309
