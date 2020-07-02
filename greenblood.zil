@@ -205,6 +205,7 @@
     <COND (.EVENT
         <SET STORY <APPLY .EVENT>>
         <COND (.STORY <SETG HERE .STORY>)>
+        <UPDATE-STATUS-LINE>
     )>>
 
 <ROUTINE NOT-POSSESSED (OBJ)

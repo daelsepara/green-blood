@@ -1879,24 +1879,52 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT166 "When you awake you are wonderfully restored to healthy vitality.||Elanor is nowhere to be seen. On the third finger of your right hand, however is an emerald ring with the stone set in a furled silver leaf. It fits perfectly. You get up, strech your limbs, and deep in thought, rub the gem.||You feel in your bones that it is your destiny to save the forest and that you will risk your life to do so. You suffer a moment's unease as you worry abovt the dangers ahead, an unease that turns to deep-rooted fear. Once more you look at the ring. Is it magical? Is it the ring  causing you to feel the reckless courage of a hero? Or did the blood of a hero always run in your veins?">
+<CONSTANT CHOICES166 <LTABLE "take of the ring" "leave the ring on if you trust Elanor">>
+
 <ROOM STORY166
     (IN ROOMS)
     (DESC "166")
+    (STORY TEXT166)
+    (CHOICES CHOICES166)
+    (DESTINATIONS <LTABLE STORY179 STORY035>)
+    (TYPES TWO-NONES)
+    (ITEM EMERALD-RING-ELANOR)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT167 "Renard surlily agrees to take you up the Bonehill on the morrow, and you settle down to sleep, exhausted after days of hard travelling.||At dawm, when you awake, Renard is nowhere to be seen and neither is your money pouch. He must have stolen it while you slept before slinking away into the forest. You will never find him. He has left you penniless but at least he didn't slit your throat.||You slept soundly enough but the loss of your money has upset you, even though you can foresee no need for money here in the forest.||Cursing Renard, you begin to climb the slope away from the Sirion River.">
 
 <ROOM STORY167
     (IN ROOMS)
     (DESC "167")
+    (STORY TEXT167)
+    (EVENTS STORY167-LOSEGOLD)
+    (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY167-LOSEGOLD ()
+    <SETG GOLD-PIECES 0>
+    <RETURN ,STORY167>>
+
+<CONSTANT TEXT168 "The black tarty goo smells of putrefaction and does not deter the bees at all. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not pleasant. Your neck swells until your windpipe is closed tight up and you choke to death. You rue bitterly your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
 
 <ROOM STORY168
     (IN ROOMS)
     (DESC "168")
+    (STORY TEXT168)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT169 "You cast your best attack spell for this situation: a magical javelin that should always find its mark. It appears in your right hand just as a silver noose materializes in the air before you. You hurl the javelin which leaves a trail of golden sparks in the air, as the silver noose rises above you and drops towards your head.||Before the noose can tighten around your neck and as the javelin flies towards him, Valerian speaks a word of negation: both his spell and yours are cancelled. The golden javelin and the silver noose disappear.||\"Had I known you were a sorcerer I should not have been so short with you. A sorcerer is by nature secretive. We need not prolong our quarrel here.\"">
+<CONSTANT CHOICES169 <LTABLE "attack him with another spell" "talk to the woman in grey, who seems unmoved by the violence she has seen"> >
 
 <ROOM STORY169
     (IN ROOMS)
     (DESC "169")
+    (STORY TEXT169)
+    (CHOICES CHOICES169)
+    (DESTINATIONS <LTABLE STORY206 STORY181>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY170
