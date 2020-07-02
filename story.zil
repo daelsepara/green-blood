@@ -2180,9 +2180,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT191 "You whip an arrow to your bow and let fly. It splinters your oppenent's shaft in mid air before it reaches its target. You breathe a sigh, knowing that it was a one in a hundred fluke that you did not miss your target and end up humiliated.||The effect on Huldranas is deeply mysterious and utterly elfin. For a long moment he remains gazing along the arrow's flight, his bow half lowered, arm still poised in the moment of release. Then it is as if he wakes from a trance. Turning to you, he performs an elegant courtly salute, then snaps his bow across his knee and casts it aside along with his quiver. \"Henceforth I eschew the bow,\" he declares to the assembled elves. \"Huldranas will take his prey with spear or not at all. This is my geas.\"||He turns and stalks away. You regret the loss archery such a fine exponent of the art, but at least your daring risk has secured you victory. Now the elves will respect your words.">
+
 <ROOM STORY191
     (IN ROOMS)
     (DESC "191")
+    (STORY TEXT191)
+    (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY192
