@@ -2398,10 +2398,25 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT208 "What if, you reason, the emerald ring is taking over control of your mind with every passing moment? As the ring slips easily off your finger you feel a sense of loss -- loss of purpose and of strength. The ring must be magical. You decide to keep it safe but not to wear it for now. You need your wits about you.|\The owl has been watching you all the time.">
+
 <ROOM STORY208
     (IN ROOMS)
     (DESC "208")
+    (STORY TEXT208)
+    (CONTINUE STORY244)
+    (PRECHOICE STORY208-RING)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY208-RING ()
+    <FCLEAR ,EMERALD-RING-ELANOR ,WORNBIT>
+    <FCLEAR ,EMERALD-RING-ELANOR ,WEARBIT>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You removed " T ,EMERALD-RING-ELANOR " but kept it.">
+    <HLIGHT 0>
+    <CRLF>
+    <RETURN>>
 
 <ROOM STORY209
     (IN ROOMS)

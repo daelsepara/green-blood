@@ -476,6 +476,9 @@
                     <COND (.QUANTITY
                         <TELL " (" N .QUANTITY ")">
                     )>
+                    <COND (<AND <FSET? .POSSESSIONS ,WEARBIT> <FSET? .POSSESSIONS ,WORNBIT>>
+                        <TELL " (worn)">
+                    )>
                     <SET COUNT <+ .COUNT 1>>
                 )(ELSE
                     <RETURN>
@@ -526,6 +529,9 @@
                         <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
                         <COND (.QUANTITY
                             <TELL " (" N .QUANTITY ")">
+                        )>
+                        <COND (<AND <FSET? .POSSESSIONS ,WEARBIT> <FSET? .POSSESSIONS ,WORNBIT>>
+                            <TELL " (worn)">
                         )>
                         <SET COUNT <+ .COUNT 1>>
                     )(ELSE
