@@ -1351,17 +1351,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (PRECHOICE STORY118-GAINLIFE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY118-GAINLIFE ("AUX" MAX-LIFE)
-    <SET MAX-LIFE <GETP ,CURRENT-CHARACTER ,P?LIFE-POINTS>>
+<ROUTINE STORY118-GAINLIFE ()
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <COND (<EQUAL? .MAX-LIFE ,MAX-LIFE-POINTS>
+    <COND (<EQUAL? ,LIFE-POINTS ,MAX-LIFE-POINTS>
         <SETG MAX-LIFE-POINTS <+ ,MAX-LIFE-POINTS 1>>
         <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
         <HLIGHT ,H-BOLD>
         <TELL "You gain a permanent +1 life point.">
     )(ELSE
-        <SETG LIFE-POINTS .MAX-LIFE>
+        <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
         <TELL "You life points is restored.">
     )>
     <HLIGHT 0>

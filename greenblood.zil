@@ -48,8 +48,8 @@
             <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
-            <COND (<EQUAL? .KEY !\q !\Q> <CRLF><RETURN>)>
-            <COND (<EQUAL? .KEY !\x !\X> <CRLF><RETURN>)>
+            <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <RETURN>)>
+            <COND (<EQUAL? .KEY !\x !\X> <CRLF> <RETURN>)>
         )>
         <CLOCKER>
         <UPDATE-STATUS-LINE>
@@ -371,7 +371,6 @@
     )>
     <RETURN !\x>>
 
-"Override"
 <ROUTINE LINE-ERASE (ROW)
     <CURSET .ROW 1>
     <DO (I <LOWCORE SCRH> 1 -1) <PRINTC !\ >>
@@ -390,7 +389,7 @@
     <COND (,CURRENT-CHARACTER
         <TELL " - " CT ,CURRENT-CHARACTER>
     )>
-    <CURSET 1 <- .WIDTH 45>>
+    <CURSET 1 <- .WIDTH 46>>
     <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
     <CURSET 1 <- .WIDTH 27>>
     <TELL "Gold: " N ,GOLD-PIECES>
