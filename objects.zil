@@ -8,7 +8,7 @@
     (DESC "Lady of the Forest's emerald ring")
     (SYNONYM RING)
     (ADJECTIVE EMERALD)
-    (FALGS TAKEBIT)>
+    (FALGS TAKEBIT WEARBIT WORNBIT)>
 
 <OBJECT JEWELS
     (DESC "jewels")

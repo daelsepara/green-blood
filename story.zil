@@ -2022,74 +2022,162 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT177 "You choose a suitable tree. As you prepare to slash into its bark, you glance upwards at its branches. The knots on the bole remind you of the face of a wizened old man, or perhaps of the eyes of an owl.||When you cut the bark a great flake comes off with your blade, and the pale wood beneath seems to shrink from the dim light like the stomach of an old man coughing. There is a far-away call that sounds like a howl of rage and terror lost in the wind.||The bole of the tree convulses suddenly and there is a ripping sound as its roots grow suddenly out of the ground, pinioning you.">
+
 <ROOM STORY177
     (IN ROOMS)
     (DESC "177")
+    (STORY TEXT177)
+    (PRECHOICE STORY177-CHECKITEM)
+    (CONTINUE STORY222)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY177-CHECKITEM ()
+    <COND (<IN? ,MAPLE-FLUTE ,PLAYER>
+        <PUTP ,STORY177 ,P?DEATH F>
+    )(ELSE
+        <CRLF>
+        <TELL "There is nothing you can do to save yourself as the tree, creaking and juddering, begins to sink into the ground, burying you along with it.">
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT178 "The dragon's nostrils smoulder as it looks down its long nose at you.||\"You are brave, O impudent man,\" it booms. Its voice has the timbre of thunder in a summer storm.||\"Aye, when I have to be,\" you reply, recoiling at the beast's terrifying voice. All thoughts of brave action and heroism desert you.||\"What is it you want with me? Do you hanker to call yourself dragon-slayer and have your name bruited about the land? Have you perhaps heard that dragons sleep on vast hoards of treasure? Or perhaps you want me to teach you magic?">
+<CONSTANT CHOICES178 <LTABLE "say you wish to be taught the wonders of magic" "say that you would like a tenth part of the dragon's hoard" "say you want the dragon's help" "say you don't want anything from the dragon">>
 
 <ROOM STORY178
     (IN ROOMS)
     (DESC "178")
+    (STORY TEXT178)
+    (CHOICES CHOICES178)
+    (DESTINATIONS <LTABLE STORY185 STORY194 STORY205 STORY010>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT179 "As you start to pull the emerald ring off your finger you notice the owl perched on top of the ladder looking on with its unblinking eyes.">
+<CONSTANT CHOICES179 <LTABLE "take of the ring and throw it into the pool" "take off the ring and keep it" "change or mind and leave the ring on">>
 
 <ROOM STORY179
     (IN ROOMS)
     (DESC "179")
+    (STORY TEXT179)
+    (CHOICES CHOICES179)
+    (DESTINATIONS <LTABLE STORY195 STORY208 STORY220>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT180 "Your words seem to make no difference: the elves just stare at you. Their childlike faces belie the threat they present. A few of them carry slender longbows but these are slung over their shoulders. The elves are not trying to frighten you but the eeriness of those young old faces, silent and quizzical, is unnerving. For all you know each one of them was born before man came into existence.||You repeat that you are no friend of the Westermen and that you want to save the forest. Your words are met by stony silence. Rattled by this lack of communication, you end up by saying that not all men are evil. You then decide to keep your mouth shut.||\"I have met many men,\" says a voice. \"Seven this very millennium have found me here in the greenwood. On the whole, taken for what they were, summing the sinews of their spirit and the canopy of their souls, they were bad; not evil, just bad. We came here to avoid the prattling of men. It is hard for us to be near those we must pity.\"||At the mention of the word pity, many of the elves turn their faces away for a moment, as if to spare you. You will have to win their respect.">
+<CONSTANT CHOICES180 <LTABLE "apologize for making them feel uncomfortable by disturbing them in the greenwood" "tell them it is they who are to be pitied, for the Westermen are destroying their forest as surely as night follows day">>
 
 <ROOM STORY180
     (IN ROOMS)
     (DESC "180")
+    (STORY TEXT180)
+    (CHOICES CHOICES180)
+    (DESTINATIONS <LTABLE STORY209 STORY219>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT181 "The woman looks wise. \"My name is Elanor, I am a priestess of the All Mother, from whom springs all life, eternally.\" Her weather-beaten face comes to life as she speaks and you sense her love of life.||She tells you Valerian, the man in the black robe, is a Moon Druid who vies with her for control of the forest and the beasts dwelling there. \"But they sense his evil and flock to me. His envy of me consumes his heart and turns it as black as his cloak. Valerian has thrown in his lot with the Westermen, the hewers and burners. They have come to destroy the great forest.\"||She seems very grave.">
+<CONSTANT CHOICES181 <LTABLE "say that it would be a terrible thing to destroy the great forest" "ask her why it would be such a bad thing to destroy the forest">>
 
 <ROOM STORY181
     (IN ROOMS)
     (DESC "181")
+    (STORY TEXT181)
+    (CHOICES CHOICES181)
+    (DESTINATIONS <LTABLE STORY014 STORY002>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT182 "You cast the spell of the Shield of Defense just as a silver noose appears in the air before you. The noose drops over your head magically, avoiding the shield by dancing above it. You try to drag it from your neck but the silver cord tightens slowly until it flattens your windpipe. You grow purple with effort and lack of oxygen. Gurgling horribly, unable to speak, you subside to the floor and black out, never to regain consciousness. It is doubtful that these unfriendly people of Burg will even give you a decent burial: your remains will probably be thrown on a spoil heap.">
 
 <ROOM STORY182
     (IN ROOMS)
     (DESC "182")
+    (STORY TEXT182)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT183 "As Gathkeri circles you, you try to cut him off by making a sudden rush to back him up against the edge of the circle. You lunge to grapple him, but he is too quick for you this time. He skips nimbly past and falls back onto a patch of uneven ground inside the circle. He looks down when he treads on a root and you close in again.">
+<CONSTANT CHOICES183 <LTABLE "repeat the same tactic" "attack him with your fists and feet" "wait for him to attack you">>
 
 <ROOM STORY183
     (IN ROOMS)
     (DESC "183")
+    (STORY TEXT183)
+    (CHOICES CHOICES183)
+    (DESTINATIONS <LTABLE STORY142 STORY172 STORY161>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT184 "As soon as you take the stopper out of the round bottle the bees veer away. You smear a little of the white jelly across your forehead and smile. The jelly has a pungent smell which seems to be driving the insects away. Even the beetles on the forest floor are scurrying away from you.||Saved from the insects by the white balm, you ponder where to search for the Tree of Knowledge next. You know it will soon be Midsummer's Day">
+<CONSTANT CHOICES184 <LTABLE "continue your search by heading west" "east" "south-west">>
 
 <ROOM STORY184
     (IN ROOMS)
     (DESC "184")
+    (STORY TEXT184)
+    (CHOICES CHOICES184)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT185 "The dragon tells you that because you have disturbed it from its slumbers it seems appropriate to begin by teaching you the spell of sleep. It starts to recite the words of the spell, but chooses to demonstrate on you to show what the effect is like. Unfortunately it is a dragon sleep-spell and will keep a puny mortal like you asleep for a hundred years. By the time you awake the forest will be no more. Your selfish thirst for knowledge has sealed the destruction of the forest and all the things that live in it.">
 
 <ROOM STORY185
     (IN ROOMS)
     (DESC "185")
+    (STORY TEXT185)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT186 "You summon all your willpower and try to grapple with the machine in a battle of minds, your resolve weakend by the nagging fear that the machine doesn't have a will of its own.||To your surprise your magic tells you there is a mind within the machine -- one that belongs to the man who is controlling it. He is too busy working the machine to notice your attack, and when your psychic assault hits him, the machine grinds to a halt.||You sense his shift in attention from the machine to you. Although you hold the machine motionless for many moments, you fail to overpower the will of the man inside it, and at last he manages to throw the lever that sets the steam-hammer of a sword arm into motion again.||One last great blow splits the trunk in the middle and the Tree of Life is dead. Your hopes of saving the forest are destroyed; dejected you are taken prisoner and enslaved.">
 
 <ROOM STORY186
     (IN ROOMS)
     (DESC "186")
+    (STORY TEXT186)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT187 "The Elf King crosses to a juniper bush and shakes it branches. \"Attend to my word,\" he says to the bush. \"Awaken -- speak. Tell me of a secret.\"||The bush speaks in a voice like sighing: \"Under my roots, a mole with a scarred forepaw, has just devoured an earthworm. No other know this secret until now.\"||The Elf King turns to you triumphantly. \"Well, mortal? Can you make the very plants themselves speak? If not, you forfeit the contest.\"||You go over to a tree and snap off a twig. \"I shall make this single twig tell a secret,\" you declare. \"And moreover, it will not be by magic, but in a manner that any man might use.\" So saying, you strike up a small fire among some dead leaves and char the end of the twig. Then, removing your shirt, you use the charred tip of the twig like a pencil. The elves gather round to whatch as you write: \"The Elf King's true name is --\"||\"Enough!\" The Elf King snatches the twig out of your hand. He casts it aside, an unsettled look clouding his silver-grey eyes. \"This is mere trickery. My next task will not be so easy to circumvent.\"">
+<CONSTANT CHOICES187 <LTABLE "insist that it is your turn to set him a task" "let him set a third task">>
 
 <ROOM STORY187
     (IN ROOMS)
     (DESC "187")
+    (STORY TEXT187)
+    (CHOICES CHOICES187)
+    (DESTINATIONS <LTABLE STORY221 STORY020>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT188 "These people look very wary of strangers. Whatever you say mustn't alarm them. They could easily be untrustworthy so you had better not mention the Tree of Knowledge. You loudly announce that you are searching for a rare kind of bird that you hope to find in the forest, the violet tanager. \"Can anyone guide me to the nest of such a bird?\" you ask, fingering your money-pouch significantly.||\"I know of no such bird in the forest. Indeed, I have never heard tell of a tanager that was violet.\" The voice of the woman in grey carries absolute certainty; she must be steeped in wilderness lore.||You explain it is a very rare bird mentioned in ancient manuscripts and ask about the birds she has seen in the forest.||She gestures you to join her table; she seems happy to talk to you all night about the forest. The man in black cowl stares at you all the while; his eyes look like glittering flints within his cowl. THe other two have returned to the fire.">
 
 <ROOM STORY188
     (IN ROOMS)
     (DESC "188")
+    (STORY TEXT188)
+    (CONTINE STORY181)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT189 "When you awake the Kwerrel is nowhere to be seen, although the archway back out to the forest has reappeared. You make good your escape, knowing that the Kwerrel could have killed you if it had wanted to.">
 
 <ROOM STORY189
     (IN ROOMS)
     (DESC "189")
+    (STORY TEXT189)
+    (CONTINUE STORY406)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT190 "\"No,\" you say loudly. \"The contest is over. I have won.\"||Huldranas was already in the act of notching another arrow to his bow. He assumed that you, like any elf, would immediately accede to the king's commands. Now he lowers the bow and looks around uncertainly.||\"Do you value pride above the truth?\" you demand of the assembled elves. \"Is this what has become of the legendary elves -- cloistered from the sight of other peoples, you turn your vision inwards and forget the values of honor, courtesy and courage?\"||Hundreds of faces stare back inscrutably from the gloom between the trees. The Elf King sweeps back his cloak in an extravagant gesture which reminds you of a sleek cat grooming itself. \"Very well, mortal,\" he says in a languid voice. \"You have won the contest. Now let us talk.\"">
 
 <ROOM STORY190
     (IN ROOMS)
     (DESC "190")
+    (STORY TEXT190)
+    (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY191
