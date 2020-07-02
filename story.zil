@@ -907,14 +907,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY078-PRECHOICE ()
     <COND (<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
-        <SETG HERE ,STORY440> <SETG CONTINUE-TO-CHOICES F>
+        <SETG HERE ,STORY440>
+        <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
-        <RETURN>
     )(<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
         <SETG HERE ,STORY459>
         <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
-        <RETURN>
     )>>
 
 <CONSTANT TEXT079 "The dragon seems to read your mind. The monster flicks its tails and licks its lips.||\"Walk into the cavern and behold my hoard which has been garnered from palaces across the whole world. Many of my teasures are old, so very old, that they have a tale to tell.\"||The dragon bats you with a mighty claw, bowling you over so you fall to the ground. Once you have gotten back on your feet, the ancient creature ushers you forward into the dark cavern. Entering, you stop for a moment to adjust to the dim light. Blinking in astonishment, your jaw goes slack at the sight before you. You stare in awe at the veritable mountain of golden coins, goblets, candelabra and jewellery that comprise the dragon's treasure trove.||\"All the gold and jewels you can carry I give to you,\" says the dragon.||At the creature's words, some of the coins fly up into the air and push themselves against you. Soon you are covered in a golden crust which has gathered like barnacles do on the hull of a ship. Although your arms and legs are left free, you are terribly weighed down by the fortune that is now stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.">
@@ -1699,10 +1698,29 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT151 "You surrender yourself up to the Westermen guards and are taken before a man who is clearly their chief.||The Chief of the Westermen is a balding corpulent man whose eyes seem to gleam with greed. He appraises your worth in a quick glance. \"Hmm, you look -- strong and fit -- doubtless you'll make a find log-puller.\"||Without even asking who you are or where you have come from, the Westermen chain you to a yoke beside a man who reminds you of the girl in the inn at Burg. It must be her father.">
+<CONSTANT TEXT151-DEATH "You begin a liffe of back-breaking work, pulling tree trunks from the fellers to the sawyers for week after week, year after year. Your pitiful existence is dominated by thoughts of how you might make a desperate escape before the toil kills you. There is no escape. You live only to see the utter destruction of the Forest of Arden.">
+
 <ROOM STORY151
     (IN ROOMS)
     (DESC "151")
+    (STORY TEXT151)
+    (PRECHOICE STORY151-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY151-PRECHOICE ()
+    <COND (<IN? ,SKILL-SPELLS ,SKILLS>
+        <PUTP ,STORY151 ,P?DEATH F>
+        <SETG CONTINUE-TO-CHOICES F>
+        <SETG HERE ,STORY229>
+        <PRESS-A-KEY>
+    )(ELSE
+        <CRLF>
+        <TELL TEXT151-DEATH>
+        <CRLF>
+    )>
+>
 
 <ROOM STORY152
     (IN ROOMS)
