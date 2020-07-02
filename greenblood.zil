@@ -57,7 +57,7 @@
 
 <ROUTINE RESET-STORY ()
     <SETG CONTINUE-TO-CHOICES T>
-    <SETG LIFE-POINTS-BOOST 0>
+    <SETG MAX-LIFE-POINTS 0>
     <SETG STORY033-DECISION-FLAG F>>
 
 <ROUTINE PRINT-PAGE ("AUX" TEXT)
@@ -391,7 +391,7 @@
         <TELL " - " CT ,CURRENT-CHARACTER>
     )>
     <CURSET 1 <- .WIDTH 45>>
-    <TELL "Life Points: " N <+ ,LIFE-POINTS ,LIFE-POINTS-BOOST>>
+    <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
     <CURSET 1 <- .WIDTH 27>>
     <TELL "Gold: " N ,GOLD-PIECES>
     <CURSET 1 <- .WIDTH 16>>
@@ -484,8 +484,7 @@
         <CRLF>
         <TELL "You are carrying " N .COUNT " items">
         <COND (<G? .COUNT 0>
-            <TELL ":">
-            <CRLF><CRLF>
+            <TELL ": ">
             <SET COUNT 0>
             <SET POSSESSIONS <FIRST? ,PLAYER>>
             <COND (.POSSESSIONS

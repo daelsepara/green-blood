@@ -1355,9 +1355,9 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <SET MAX-LIFE <GETP ,CURRENT-CHARACTER ,P?LIFE-POINTS>>
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <COND (<EQUAL? .MAX-LIFE ,LIFE-POINTS>
-        <SETG LIFE-POINTS-BOOST <+ ,LIFE-POINTS-BOOST 1>>
-        <SETG LIFE-POINTS .MAX-LIFE>
+    <COND (<EQUAL? .MAX-LIFE ,MAX-LIFE-POINTS>
+        <SETG MAX-LIFE-POINTS <+ ,MAX-LIFE-POINTS 1>>
+        <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
         <HLIGHT ,H-BOLD>
         <TELL "You gain a permanent +1 life point.">
     )(ELSE
