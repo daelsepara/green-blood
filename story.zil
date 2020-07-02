@@ -850,7 +850,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
         <RETURN ,STORY086>
     )>
-    <RETURN STORY074>>
+    <RETURN ,STORY074>>
 
 <CONSTANT TEXT075 "\"The Westermen hate spiders. They say the sppiders are ugly, poisonous and unnatural. To them spiders are the evil cratures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?">
 <CONSTANT CHOICES075 <LTABLE "say there is no harm in killing spiders" "say it is bad to kill spiders">>
@@ -1782,7 +1782,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY156-EVENTS ()
-    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS> <RETURN ,STORY251>)>>
+    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS> <RETURN ,STORY251>)>
+    <RETURN ,STORY156>>
 
 <ROOM STORY157
     (IN ROOMS)
