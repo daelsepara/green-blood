@@ -2,6 +2,7 @@
 <CONSTANT R-SKILL 1>
 <CONSTANT R-CODEWORD 2>
 <CONSTANT R-ITEM 3>
+<CONSTANT R-GOLD 4>
 
 <CONSTANT TWO-NONES <LTABLE R-NONE R-NONE>>
 <CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
@@ -1785,14 +1786,26 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS> <RETURN ,STORY251>)>
     <RETURN ,STORY156>>
 
+<CONSTANT TEXT157 "Squirming quickly round to the statue's back you work at the screws. Two come free and the head starts to tilt. With one great forearm smash you knock it off and the Infernal Statue lurches back from the Tree of Life. Inside the machine is a small man who cannot defend himself. You rain blows down on his head and he slumps forward, knocking the strange levers inside the machine and sending it striding towards the deep blue pool.||It totters on the brink of the pool and you leap clear just as it keels over into the water. There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
+
 <ROOM STORY157
     (IN ROOMS)
     (DESC "157")
+    (STORY TEXT157)
+    (CONTINUE STORY500)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT158 "\"You want my help, what is in it fore me then? How will you pay your side of the bargain?\"">
+<CONSTANT CHOICES158 <LTABLE "offer the little imp some gold" "beg him to help you for the sake of the forest and all who dwell there" "offer him the Lady of the Forest's emerald ring if you have it" "offer him a magic potion if you are carrying one">>
 
 <ROOM STORY158
     (IN ROOMS)
     (DESC "158")
+    (STORY TEXT158)
+    (CHOICES CHOICES158)
+    (DESTINATIONS <LTABLE STORY214 STORY225 STORY236 STORY243>)
+    (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR MAGIC-POTION>)
+    (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY159

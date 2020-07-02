@@ -244,6 +244,19 @@
     )>
     <RTRUE>>
 
+<ROUTINE CHECK-GOLD (AMOUNT)
+    <COND (<G? .AMOUNT 0>
+        <COND (<L? ,GOLD-PIECES .AMOUNT>
+            <CRLF><CRLF>
+            <HLIGHT ,H-BOLD>
+            <TELL "You do not have enough gold." CR>
+            <HLIGHT 0>
+            <PRESS-A-KEY>
+            <RFALSE>
+        )>
+    )>
+    <RTRUE>>
+
 <ROUTINE COUNT-POSESSIONS ("AUX" COUNT ITEM)
     <SET COUNT 0>
     <SET ITEM <FIRST? ,PLAYER>>
@@ -311,6 +324,11 @@
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )>
+                    )(<AND <EQUAL? .TYPE R-GOLD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-GOLD <GET .REQUIREMENTS .CHOICE>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                        )>
                     )>
                     <RETURN>
                 )(ELSE
@@ -335,10 +353,12 @@
         <SET COUNT <GET .CODEWORDS 0>>
         <COND (<G? .COUNT 0>
             <TELL " (">
+            <HLIGHT ,H-ITALIC>
             <DO (I 1 .COUNT)
                 <COND (<G? .I 1> <TELL ", ">)>
                 <TELL D <GET .CODEWORDS .I>>
             >
+            <HLIGHT 0>
             <TELL ")">
         )>
     )>
@@ -359,8 +379,10 @@
             <TELL N .I ") ">
             <HLIGHT 0>
             <TELL <GET .CHOICES .I>>
-            <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" D <GET .REQUIREMENTS .I> ")">)>
+            <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
             <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
+            <COND (<AND <EQUAL? R-ITEM <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
+            <COND (<AND <EQUAL? R-GOLD <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " gold)">)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
