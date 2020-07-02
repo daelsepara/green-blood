@@ -2216,7 +2216,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY019)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT195 "The ring slips of easily off your finger, but as you take it off you feel a sense of loss -- a loss of purpose and of strength. But the certainty that the ring is magical and has been influencing you strengthens your resolve. You send it spinning through the air to land in a pool with a plop.||The owl shuts its eyes and says, \"What a waste. And that was my lady's ring, not for you to hurl away.\"">
+<CONSTANT TEXT195 "The ring slips of easily off your finger, but as you take it off you feel a sense of loss -- a loss of purpose and of strength. But the certainty that the ring is magical and has been influencing you strengthens your resolve. You send it spinning through the air to land in a pool with a plop.||The owl shuts its eyes and says, \"What a waste. And that was my lady's ring, not for you to hurl away.\"||There is still no sign of Elanor.">
 <CONSTANT CHOICES195 <LTABLE "steal potions and leave" "ask the owl where Elanor is">>
 
 <ROOM STORY195
