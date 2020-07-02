@@ -8,6 +8,24 @@
 <CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
 <CONSTANT FOUR-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
 
+<ROUTINE LOSE-LIFE (DMG MSG STORY)
+    <SETG LIFE-POINTS <- ,LIFE-POINTS .DMG>>
+    <COND (<L? ,LIFE-POINTS 0> <SETG LIFE-POINTS 0>)>
+    <UPDATE-STATUS-LINE>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <COND (<L? ,LIFE-POINTS 1>
+        <TELL .MSG>
+        <HLIGHT 0>
+        <SETG CONTINUE-TO-CHOICES F>
+    )(ELSE
+        <PUTP .STORY ,P?DEATH F>
+        <TELL "You lost " N .DMG " Life Points.">
+        <HLIGHT 0>
+    )>
+    <CRLF>
+    <RETURN>>
+
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
@@ -1700,7 +1718,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT151 "You surrender yourself up to the Westermen guards and are taken before a man who is clearly their chief.||The Chief of the Westermen is a balding corpulent man whose eyes seem to gleam with greed. He appraises your worth in a quick glance. \"Hmm, you look -- strong and fit -- doubtless you'll make a find log-puller.\"||Without even asking who you are or where you have come from, the Westermen chain you to a yoke beside a man who reminds you of the girl in the inn at Burg. It must be her father.">
-<CONSTANT TEXT151-DEATH "You begin a liffe of back-breaking work, pulling tree trunks from the fellers to the sawyers for week after week, year after year. Your pitiful existence is dominated by thoughts of how you might make a desperate escape before the toil kills you. There is no escape. You live only to see the utter destruction of the Forest of Arden.">
+<CONSTANT TEXT151-DEATH "You begin a life of back-breaking work, pulling tree trunks from the fellers to the sawyers for week after week, year after year. Your pitiful existence is dominated by thoughts of how you might make a desperate escape before the toil kills you. There is no escape. You live only to see the utter destruction of the Forest of Arden.">
 
 <ROOM STORY151
     (IN ROOMS)
@@ -1927,39 +1945,81 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT170 "You turn your back on the chittering chipmunk, leaving it to a fiery death. But you have taken no more than three steps before you hear the rushing whine of an arrow as it heads towards you.||You attempt to dodge the unseen attack, but your action is in vain. There is a terrible stabbing pain in the middle of your back and you are knocked to your knees by the force of the shot. Looking down, you see the sharp head of a deadly elven arrow portruding from your belly; your stomach convulses and you begin to cough up blood.||Out of the corner of one eye you can see your assailant: a tall, proud elf, who is standing between two great Greenbark trees. An arrow is already nocked ready for a second shot, but it proves unnecessary as the first has done its work. As your lifeblood spills onto the ground, the silent elf looks on without pity.">
+
 <ROOM STORY170
     (IN ROOMS)
     (DESC "170")
+    (STORY TEXT170)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT171 "Your knowledge of the wilderness and the ways of even its smallest creatures makes this an easy question to answer. You know full well that without ants to clear away the debris of wood and leaves the forest would drown in a blanket of rot in but a few years.">
 
 <ROOM STORY171
     (IN ROOMS)
     (DESC "171")
+    (STORY TEXT171)
+    (CONTINUE STORY067)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT172 "You close with Gathkeri and unleash a combination of kicks and punches. The elf, however, is quicker than you. At the end of the exchange of blows his foot smashes into your chest at the bottom of your ribcage, causing you to double up in pain. Gathkeri has smashed some of your ribs.||The elf gives you no time to recover. He darts in to the attack again, his feet a blur as they shoot out at your head and body.">
+<CONSTANT CHOICES172 <LTABLE "try the same tactic again" "try to grapple him" "fallback before his attack">>
 
 <ROOM STORY172
     (IN ROOMS)
     (DESC "172")
+    (STORY TEXT172)
+    (CHOICES CHOICES172)
+    (DESTINATIONS <LTABLE STORY422 STORY142 STORY381>)
+    (TYPES THREE-NONES)
+    (PRECHOICE STORY172-LOSELIFE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY172-LOSELIFE ()
+    <LOSE-LIFE 5 "You have died in combat." ,STORY172>>
+
+<CONSTANT TEXT173 "The new way you have taken plunges you deep into a dark emerald gloom, where the moisture of rotting bark seems to deaden all sound. You feel as if you are walking away from the lands of men into another time, a time of desolation and loneliness.||As you walk you begin to feel an unpleasant itching which turns to pain and, looking down, you see a horde of brown ants swarming up your legs.||There are thousands of them converging on you out of fallen trees and cracks in the earth. You run for it, brushing frantically at your body to dislodge the insects as you go.">
+<CONSTANT CHOICES173 <LTABLE "head uphill" "downhill">>
 
 <ROOM STORY173
     (IN ROOMS)
     (DESC "173")
+    (STORY TEXT173)
+    (CHOICES CHOICES173)
+    (DESTINATIONS <LTABLE STORY164 STORY199>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT174 "The magic bindings of the Tower of Will spell leave your mind and cross to the mind of the King of the Elves. You reach out and touch an alien mind, an old green-blooded mind that is at home here in the forest and unable to comprehend much of your thoughts.||Unfortunately it is as hard for you to get a grip on the king's thoughts. His will, tempered by leadership over the millennia, is at least the match of yours, and your mind, not yet fatigued by spellcasting, retreats in confusion. In a desperate flurry of thought, you cast the Shield of Defense spell to protect yourself from his magic.">
 
 <ROOM STORY174
     (IN ROOMS)
     (DESC "174")
+    (STORY TEXT174)
+    (CONTINUE STORY052)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT175 "You cut a length of creeper from a nearby tree to bind the elf, who does not stop you tying him to a branch. \"At least now you can stop looking at me, mortal.\"||As your gaze is obviously making the poor elf feel very uncomfortable you decide to spend a little time checking the area for any of his friends. You find none, though at any moment you expect to feel an arrow piercing your flesh.||When you return to the branch to check on the elf, he has vanished. So has the creeper with which you tied him. All that remains is a spattering of ash on the forest floor. In the short time you were away he couldn't have gotten far so you search for him, but his woodcraft is superior to yours and you cannot find him.">
 
 <ROOM STORY175
     (IN ROOMS)
     (DESC "175")
+    (STORY TEXT175)
+    (CONTINUE STORY380)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT176 "Apart from the hunter and the guide there are five other people in the room. Three sit together -- they look like ordinary townsfolk, suspicious but not dangerous.||Of the two others, one is a woman dressed in a grey travelling robe. The cowl is thrown back to reveal grey hair and a weather-beaten face. The remaining person is a sinister-looking man in a black floack whose face is hidden in the shadows of his cowl.">
+<CONSTANT CHOICES176 <LTABLE "sit at the nearest table to the fire and talk to the hunter and guide" "join the woman dressed in grey" "have dealings with the sinister main in black">>
 
 <ROOM STORY176
     (IN ROOMS)
     (DESC "176")
+    (STORY TEXT176)
+    (CHOICES CHOICES176)
+    (DESTINATIONS <LTABLE STORY297 STORY181 STORY324>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY177
@@ -2744,9 +2804,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "372")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY380
+    (IN ROOMS)
+    (DESC "380")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY381
+    (IN ROOMS)
+    (DESC "381")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY382
+    (IN ROOMS)
+    (DESC "382")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY383
+    (IN ROOMS)
+    (DESC "383")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY384
     (IN ROOMS)
     (DESC "384")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY385
+    (IN ROOMS)
+    (DESC "385")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY386
+    (IN ROOMS)
+    (DESC "386")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY387
+    (IN ROOMS)
+    (DESC "387")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY388
+    (IN ROOMS)
+    (DESC "388")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY389
+    (IN ROOMS)
+    (DESC "389")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY390
+    (IN ROOMS)
+    (DESC "390")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
