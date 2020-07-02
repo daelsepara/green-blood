@@ -3134,6 +3134,36 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (COST 1)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY334
+    (IN ROOMS)
+    (DESC "334")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY335
+    (IN ROOMS)
+    (DESC "335")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY336
+    (IN ROOMS)
+    (DESC "336")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY337
+    (IN ROOMS)
+    (DESC "337")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY338
+    (IN ROOMS)
+    (DESC "338")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY339
+    (IN ROOMS)
+    (DESC "339")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY340
     (IN ROOMS)
     (DESC "340")
