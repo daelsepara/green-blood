@@ -1808,14 +1808,25 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT159 "A slender elf with moon-coloured hair steps forward to answer his monarch's summons. He carries a bow of silver-chased ivory, and the fletching of the arrows in his quiver is purest white. \"Your opponent will be Huldranas,\" the Elf King tells you. He points to a tall tree. \"That branch will be the target.\"||You look where he is pointing, then glance back at him. \"Which branch?\"||\"The one where the orchid grows.\"||You look back. You had not noticed before the flower blazing like a pale jewel against the black bark of the tree. Huldranas gestures for you to take the first shot. You nock on an arrow and send it sailing up towards the branch. It strikes wide of the orchid, but it was only  intended as a ranging shot. At least now you have a good sense of the allowance you need to make for height and wind speed.||Huldranas' arrow flashes from his bow. It impales one of the petals of the orchid. He turns to you with a casual look that betrays neither arrogance not tension. Again without a word, he gestures for you to shoot.||As you sight along your arrow, you consider what to do.">
+<CONSTANT CHOICES159 <LTABLE "go for a cautious shot, since Huldranas' first arrow might have been lucky" "attempt a shot slightly better than his, perhaps striking the orchid in its centre" "try an extremely difficult but impressive shot, such as shooting through the thin twig at the end of the branch">>
+
 <ROOM STORY159
     (IN ROOMS)
     (DESC "159")
+    (STORY TEXT159)
+    (CHOICES CHOICES159)
+    (DESTINATIONS <LTABLE STORY320 STORY469 STORY276>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT160 "As soon as you make the jump to clear the ring of flame, the fire vanishes without even a trace of smoke. The chipmunk too has vanished. Instead you are surrounded by a circle of elves who have appeared as if by magic.||The elves look solemn but not hostile. Their faces have the perfect beauty of unsullied youth, but their green almond eyes are like windows that open to the wisdom of the centuries. Their skin is flawless pale green with a silvery dusting like grape bloom. Their long straight hair is the colour of rich red wine.||They seem not in the least surprised to see you. You wait for them to say something but they seem in no hurry, so you tell them you are a friend of the forest and an enemy of the burners.">
 
 <ROOM STORY160
     (IN ROOMS)
     (DESC "160")
+    (STORY TEXT160)
+    (CONTINUE STORY180)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY161
@@ -2583,9 +2594,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "310")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY320
+    (IN ROOMS)
+    (DESC "320")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY321
+    (IN ROOMS)
+    (DESC "321")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY322
+    (IN ROOMS)
+    (DESC "322")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY323
+    (IN ROOMS)
+    (DESC "323")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY324
+    (IN ROOMS)
+    (DESC "324")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY325
+    (IN ROOMS)
+    (DESC "325")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY326
     (IN ROOMS)
     (DESC "326")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY327
+    (IN ROOMS)
+    (DESC "327")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY328
+    (IN ROOMS)
+    (DESC "328")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY329
+    (IN ROOMS)
+    (DESC "329")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY330
+    (IN ROOMS)
+    (DESC "330")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT333 "The young girl, who says that her father is away on a journey to buy provisions, charges you a piece gold for your food and for a night's lodging.||You sleep well and awake early but refreshed. Washing in cold water is invigorating and you enjoy the feel of the rough inn towel. There will be no such comforts in the forest.||Downstairs the inn is deserted. The woman in grey, the only other guest, has left already. The young girl is mopping the floor and she looks troubled. Asking what ails her brings the reply, \"My father did not return last night. I tried not to worry but I knew in my heart he wouldn't come. He went into the forest to buy provisions before the Westermen block the spice road. I know he has gone the way of the others. And that strange woman in grey never so much as touched her bed last night, though she didn't leave her room till after dawn. I begged Father to take Renard to guide him but he wouldn't spend the money. Now I'll never see him again\". With this, she breaks into tears.||As you comfort her, you ask the innkeeper's daughter to describe her father and say you will try to find either him or news of him. As you turn to leave she says, \"Fare you well, traveller, you are my only hope.\"">
@@ -2808,9 +2869,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "459")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY460
+    (IN ROOMS)
+    (DESC "460")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY461
+    (IN ROOMS)
+    (DESC "461")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY462
+    (IN ROOMS)
+    (DESC "462")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY463
+    (IN ROOMS)
+    (DESC "463")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY464
     (IN ROOMS)
     (DESC "464")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY465
+    (IN ROOMS)
+    (DESC "465")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY466
+    (IN ROOMS)
+    (DESC "466")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY467
+    (IN ROOMS)
+    (DESC "467")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY468
+    (IN ROOMS)
+    (DESC "468")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY469
+    (IN ROOMS)
+    (DESC "469")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY470
+    (IN ROOMS)
+    (DESC "470")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY489
