@@ -90,7 +90,7 @@
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT006 "You call out the dragon's name. Its great head rears slowly above you and its yellow-green eyes bore into yours. Its nostrils dilate as it sucks in a deep breath. Too late, you realize you lied to yourself about knowing the creature's name. There is a terrible whooshing sounds like the dragon's real name as it breathes acid and gas upon you. The torrent of gas and air rolls you across the ground and you are lucky to bang your head on a rock, sparing yourself a more painful death. The Forest of Arden is doomed.">
+<CONSTANT TEXT006 "You call out the dragon's name. Its great head rears slowly above you and its yellow-green eyes bore into yours. Its nostrils dilate as it sucks in a deep breath. Too late, you realize you lied to yourself about knowing the creature's name. There is a terrible whooshing sounds like the dragon's real name as it breathes acid and gas upon you. The torrent of gas and air rolls you across the ground and you are lucky to bang your head on a rock, sparing yourself a more painful death.">
 
 <ROOM STORY006
     (IN ROOMS)
@@ -360,7 +360,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT030 "It will take two days to travel from Elvenhame to the Tree of Life. You delay as long as possible, mustering more than seven thousand elves, before setting out to defend the Tree of Life.||The elves fight bravely but they are outnumbered and in hand-to-hand fighting their lack of swords and armour proves a fatal weakness. Green blood flows everywhere.||You perish along with the last of the elves, vainly trying to protect their king. The death of so many immortal elves is the greatest disaster the world has ever witnessed. Nothing can now stop the Westermen reaching the Tree of Life: the Forest of Arden is doomed.">
+<CONSTANT TEXT030 "It will take two days to travel from Elvenhame to the Tree of Life. You delay as long as possible, mustering more than seven thousand elves, before setting out to defend the Tree of Life.||The elves fight bravely but they are outnumbered and in hand-to-hand fighting their lack of swords and armour proves a fatal weakness. Green blood flows everywhere.||You perish along with the last of the elves, vainly trying to protect their king. The death of so many immortal elves is the greatest disaster the world has ever witnessed. Nothing can now stop the Westermen reaching the Tree of Life.">
 
 <ROOM STORY030
     (IN ROOMS)
@@ -469,7 +469,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-CODEWORD R-NONE R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT039 "Your plight is hopeless. You will never stagger out of the great forest weighed down as you are. One of the dark denizens of the deepest dark tracts of wood will catch you and skin you for the exotic hide you now wear. You will never escape. Because of your greed, the Forest of Arden is doomed.">
+<CONSTANT TEXT039 "Your plight is hopeless. You will never stagger out of the great forest weighed down as you are. One of the dark denizens of the deepest dark tracts of wood will catch you and skin you for the exotic hide you now wear. You will never escape. Because of your greed . . .">
 
 <ROOM STORY039
     (IN ROOMS)
@@ -1184,7 +1184,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT102 "You call out the dragon's name. Its great head rears slowly above you and his glittering eyes bore into yours. His nostrils dilate as he sucks in a deep breath. Too late, you realize you were wrong about knowing the dragon's name. There is a terrible whooshing sound as the dragon's breath of acid and gas roars towards you. The torrent of gas and air rolls you across the ground and you are lucky to bang your head on a rock and spare yourself a more painful death. The forest is doomed.">
+<CONSTANT TEXT102 "You call out the dragon's name. Its great head rears slowly above you and his glittering eyes bore into yours. His nostrils dilate as he sucks in a deep breath. Too late, you realize you were wrong about knowing the dragon's name. There is a terrible whooshing sound as the dragon's breath of acid and gas roars towards you. The torrent of gas and air rolls you across the ground and you are lucky to bang your head on a rock and spare yourself a more painful death.">
 
 <ROOM STORY102
     (IN ROOMS)
@@ -2418,64 +2418,135 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <RETURN>>
 
+<CONSTANT TEXT209 "\"It is a mistake soon remedied by returning to the lands of men.\"||\"But, but . . .\" you stammer as the elves turn away and slip out of sight. As they go, you look from one to another, and as you do so, each one freezes under your gaze. Perhaps they act so strangely because they are too polite to disappear while you look at them, for at the edges of your vision you see them move behind trees and leaf curtains. They vanish swiftly and silently, moving through the dense forest like rainbow trout in a murky river. They are not wasting magic, you cannot keep up with them.||At last only one elf is left.">
+
 <ROOM STORY209
     (IN ROOMS)
     (DESC "209")
+    (STORY TEXT209)
+    (CONTINUE STORY230)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT210 "After leaving Burg by the waterside gate you walk north along a path next to the bank of the Burgstream. The river valley has quite steep sides and you can see little of the land that surrounds you. Ahead you see the vast leafy canopy that stretches to the far horizon like a green sea fading to blue in the distance. The air is good here, fresh and clean, laden only with the perfume of wild flowers.||A lone figure in grey walks ahead. You increase your pace to catch up. After half an hour's hard walking you seem to be no nearer the figure. You break into a jog but even this seems to bring you no closer to the slender woman dressed in grey. You ponder the strange fact that even though she seems only to be walking you cannot seem to come any closer to her. At last you reach the crest of a rise to find she has vanished, but now you can see the trunks of the trees at the edge of the Forest of Arden.||As you enter the forest you are surprised by how much colour there is. Blossoming trees, fungus mounds in bright hues, flowering creepers and giant butterflies are lit up by the dappled sunshine that trickles through gaps in the leafy canopy. It is noisy, too -- the forest is alive with insects, birds and small mammals.||The path stays close to the river, almost doubling back on itself where the Burgstream bends tortuously until at last you hear the roar of the great Sirion river as it washes through the forest ahead. Pressing on, you come to a ford over the Burgstream.">
+<CONSTANT CHOICES210 <LTABLE "cross the ford and follow the bank of the Sirion river to the west" "remain on this side of the Burgstream and turn east when you meet the Sirion">>
 
 <ROOM STORY210
     (IN ROOMS)
     (DESC "210")
+    (STORY TEXT210)
+    (CHOICES CHOICES210)
+    (DESTINATIONS <LTABLE STORY077 STORY096>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT211 "The path twists and turns, winding through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed one before. To your dismay the path ends in a little clearing choked with dead leaves. Two paths lead off in different directions, and each is lined with thorn bushes that are at least the height of a man and which are covered in inch-long purple barbs that ooze an orange fluid. The thorns would break off in your flesh if you brushed against them.">
+<CONSTANT CHOICES211 <LTABLE "go left" "right" "despair of ever finding your way out of the forest" "orient yourself by marking one of the great Gwelph trees by scoring it with your dagger">>
 
 <ROOM STORY211
     (IN ROOMS)
     (DESC "211")
+    (STORY TEXT211)
+    (CHOICES CHOICES211)
+    (DESTINATIONS <LTABLE STORY196 STORY131 STORY156 STORY177>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT212 "There is something very strange about the grass on that hillock. It seems almost reflective, as if the stems of grass were coated in shiny wax. White egrets like the one on the hillock eat insects -- they catch mites and parasites on the hides of large animals. You've never known one probe the ground for worms.">
+<CONSTANT CHOICES212 <LTABLE "walk to the top of the hillock, anyway, to see what you can see" "leave the valley and skirt around it to the east, if you prefer">>
 
 <ROOM STORY212
     (IN ROOMS)
     (DESC "212")
+    (STORY TEXT212)
+    (CHOICES CHOICES212)
+    (DESTINATIONS <LTABLE STORY047 STORY408>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT213 "You tackle her before she can leap through the hatch and, pinioning her arms behind her back, tie her to a vine that is growing in and out of the walls of the tree house.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do they do?\" you ask urgently.||There are five potions on the shelf behind her. There is a clear cherry red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloud sea-blue fluid in a phial and a glass pot that contains layers of coloured earth.||Elanor starts to explain what each does. \"The blue fluid, if quaffed in sunlight, will heall all save the most serious of hurts.\" As she says the word \"hurts\" the back of your wrist is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is mulch of fire lizar's gizzard, a deadly poison.\"||You are stung twice more, on the leg and the neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees' stings feel like those of hornets.">
+<CONSTANT CHOICES213 <LTABLE "quickly ask about the red liquid" "the white jelly" "the bands of coloured earth in the hope that one of them will protect against the insects" "grab the phial of blue fluid and drink it">>
 
 <ROOM STORY213
     (IN ROOMS)
     (DESC "213")
+    (STORY TEXT213)
+    (CHOICES CHOICES213)
+    (DESTINATIONS <LTABLE STORY313 STORY304 STORY296 STORY292>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT214 "\"These golden disks look pretty,\" says the Kwerrel. \"Give me ten and I will help you\".">
 
 <ROOM STORY214
     (IN ROOMS)
     (DESC "214")
+    (STORY TEXT214)
+    (CONTINUE STORY008)
+    (COST 10)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT215 "You recall a snippet of doggerel that used to be sung by the old gypsy women who came to town selling their handicrafts:||The name of the elfin king|Is a terribly powerful thing:|If you speak it to him, or even sing,|You can make him give you his signet ring.|The Elf King's name is --|Ah! but that would be telling!||Such songs always fascinated you, since their simple folk rhythm seems to conceal a core of hoary secret truth. The hard part is to strip away the mystery so that you are left with that truth. You also know that you must tread carefully. The elves are proud and pitiless, and often behave like spiteful children in spite of their immemorial wisdom. You must not show weakness or hesitation which they could exploit to their advantage, but neither must you offend them.">
+<CONSTANT CHOICES215 <LTABLE "guess the Elf King's name" "you would prefer to accept a duel">>
 
 <ROOM STORY215
     (IN ROOMS)
     (DESC "215")
+    (STORY TEXT215)
+    (CHOICES CHOICES215)
+    (DESTINATIONS <LTABLE STORY309 STORY137>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT216 "You cast a Thunderclap spell in an effort to stun the owl. The spell works and the owl, stunned, dashes its head against the branch of a tree and falls to the ground.||It lies still for a while, then raises its head to look at you.||\"The curse of the Grey Touch be upon you, traveller, for striking the Grey Lady's servant,\" it calls.||The owl flaps its wings and takes off, swooping past you back to the forest.">
 
 <ROOM STORY216
     (IN ROOMS)
     (DESC "216")
+    (STORY TEXT216)
+    (CONTINUE STORY193)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT217 "You wait, concealed in the trees, for nightfall. You have not been waiting and watching long when Valerian the Moon Druid, who you saw at the inn at Burg, pays a visit to the black and scarlet pavilion. He is still wearing the all-enveloping black robe but the hood is back to reveal the hatchet-like features and black goatee beard.||He leaves an hour later, looking smugly satisfied. Other men come and go with reports or to suit for some privilege or to settle disputes. The day fades into a dark and moonless night, ideal for what you have in mind.">
+<CONSTANT CHOICES217 <LTABLE "use magic to enter the pavilion" "rely on natural stealth">>
 
 <ROOM STORY217
     (IN ROOMS)
     (DESC "217")
+    (STORY TEXT217)
+    (CHOICES CHOICES217)
+    (DESTINATIONS <LTABLE STORY452 STORY462>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS NONE>)
+    (TYPES <LTABLE R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT218 "The serpent is heavy and horribly powerful. You are in its element and are powerless to resist as it crushes the life out of you. The last thing you hear is the sound of your own ribcage shattering.">
 
 <ROOM STORY218
     (IN ROOMS)
     (DESC "218")
+    (STORY TEXT218)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT219 "There is no mistaking the expression in the elves' eyes this time. You have angered them.||\"We are older than the forest. We were alive before the forest grew and we will live on after it is gone.\"||\"But it has been your home for so long. Does it not anger you to see the burners destroying its beauty?\" you ask. \"And where will you live? Where will you find a place where there are no men to be pitied?\"||\"Have you come here to taunt us? It is the coming of the time of men. All things must pass and we with them.\"">
+<CONSTANT CHOICES219 <LTABLE "taunt them to goad them into action" "humble yourself and beg them to let you see the wonders of their homes in the greenwood before it is lost for ever">>
 
 <ROOM STORY219
     (IN ROOMS)
     (DESC "219")
+    (STORY TEXT219)
+    (CHOICES CHOICES219)
+    (DESTINATIONS <LTABLE STORY426 STORY436>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT220 "What if, with every passing moment, the emerald ring is taking control of your mind?||A long time in the forest, with only the noises of wild beasts for company, has made you feel vulnerable. Strange thoughts enter your head, that you are being watched, or hunted, or that you are the butt of some cruel joke for the amusement of others. Knowing that Elanor could even now be watching you is unsettling. Does she want you as her slave? Are all the birds and beasts that flock to her bidding just slaves to her whim? You know in your heart such misgivings are mere foolishness, so you decide to ignore the worry and trust in Elanor.||\"Good,\" says the owl, \"perhaps you really are the one to save us.\"">
 
 <ROOM STORY220
     (IN ROOMS)
     (DESC "220")
+    (STORY TEXT220)
+    (CONTINUE STORY035)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY221
@@ -2819,7 +2890,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "286")
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT287 "You grab one of the tentacles with your free hand and try to climb towards the head of the Embracer. It beats you back with its tentacles and one coils around your sword arm. The tentacle constricts around your wrist like a noose of steel and the sword falls from your grasp. Unfortunately the creature has more than enough tentacles to deal with you and soon both your arms are crushed to your sides by what felt like iron bars. The Embracer drags you to drown, before feeding. You will never see the Tree of Life now. The Forest of Arden is doomed.">
+<CONSTANT TEXT287 "You grab one of the tentacles with your free hand and try to climb towards the head of the Embracer. It beats you back with its tentacles and one coils around your sword arm. The tentacle constricts around your wrist like a noose of steel and the sword falls from your grasp. Unfortunately the creature has more than enough tentacles to deal with you and soon both your arms are crushed to your sides by what felt like iron bars. The Embracer drags you to drown, before feeding. You will never see the Tree of Life now.">
 
 <ROOM STORY287
     (IN ROOMS)
