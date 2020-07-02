@@ -2189,25 +2189,54 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT192 "The chance is gone. You had the opportunity not only to reach the vulnerable hose but also to jump away from your attackers. They close in from both sides and though you evade two sword cuts, a sudden thrust from behind finishes you off.||Your allies, the elves, are already melting back into the forest. You have lost your chance to save the great Forest of Arden.">
+
 <ROOM STORY192
     (IN ROOMS)
     (DESC "192")
+    (STORY TEXT192)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT193 "You beg the owl's pardon and implore it to wait, but it has taken to the wing again and is swiftly lost in the gloom of the forest. As you walk away from the crags three small tree warblers drive-bomb you, pecking your ears. They are too small to be of any danger, although you have never seen small birds act in this way.">
 
 <ROOM STORY193
     (IN ROOMS)
     (DESC "193")
+    (STORY TEXT193)
+    (CONTINUE STORY173)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT194 "The dragon flicks its tail and licks its lips. \"Walk into the cavern and behold my hoard. It has been gernered from the palaces of the whole world. Many of my pieces are old, so very old, that they have a tale to tell.\"||The dragon rolls over so you fall to the ground on your feet. With a sweep of its massive claw, it ushers you forward into the dark cavern.||\"All the gold and jewels you can carry I give to you.\"||As you stare in awe at a pile of coins, goblets, candelabra and jewellery, some of the coins fly up into the air and push themselves against you. Soon they are covering you in a crust, like barnacles on the hull of a ship. They leave your arms and legs free but you are terribly weighed down by the gold that has stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.\"">
 
 <ROOM STORY194
     (IN ROOMS)
     (DESC "194")
+    (STORY TEXT194)
+    (CONTINUE STORY019)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT195 "The ring slips of easily off your finger, but as you take it off you feel a sense of loss -- a loss of purpose and of strength. But the certainty that the ring is magical and has been influencing you strengthens your resolve. You send it spinning through the air to land in a pool with a plop.||The owl shuts its eyes and says, \"What a waste. And that was my lady's ring, not for you to hurl away.\"">
+<CONSTANT CHOICES195 <LTABLE "steal potions and leave" "ask the owl where Elanor is">>
 
 <ROOM STORY195
     (IN ROOMS)
     (DESC "195")
+    (STORY TEXT195)
+    (CHOICES CHOICES195)
+    (DESTINATIONS <LTABLE STORY235 STORY244>)
+    (TYPES TWO-NONES)
+    (PRECHOICE STORY195-LOSERING)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY195-LOSERING ()
+    <REMOVE ,EMERALD-RING-ELANOR>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You lost " T ,EMERALD-RING-ELANOR ".">
+    <HLIGHT 0>
+    <CRLF>
+    <RETURN>>
 
 <ROOM STORY196
     (IN ROOMS)
