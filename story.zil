@@ -1753,20 +1753,36 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
+<CONSTANT TEXT154 "\"Then tell your masters that Burg is a broken-down little hamlet soon to be swamped by the forest. Go and tell them there is nothing for them here.\"||The man in black steps forward. You can see a hatchet-shaped face inside the cowl of his robe and a pointed black goatee beard. He is flanked by the two who were by the fire.||\"We don't take to foreigners. You better leave Burg before we set the dogs on you.\"||It seems they think you are a spy sent out to find rich towns to pillage and despoil. You decide to leae while you can still walk.">
+
 <ROOM STORY154
     (IN ROOMS)
     (DESC "154")
+    (STORY TEXT154)
+    (CONSTINUE STORY117)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT155 "You grab the phial and gulp down the cloudy blue fluid. The owl, perched on a tree, watches as unblinking as ever.||\"You have just drunk the mulch of the fire lizard's gizzard. You have not long to live.\"||The owl is right. Your throat goes into spasm as the poison starts to work and soon you cannot breathe. You fall to the ground writhing in agony, but it is not long before unconsciousness brings merciful release from the pain of the poison.">
 
 <ROOM STORY155
     (IN ROOMS)
     (DESC "155")
+    (STORY TEXT155)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT156 "Crushed by despair you realize you will never find your way out of the forest. There is nothing you can eat here -- everything tastes og poison, even the dead leaves. You try eating some of the earwigs in the leaf litter but their blood burns your mouth like acid.||Beyond caring, you push your way into the undergrowth, heedless of the purple thorns that rip your flesh. The bushes are not as thick as you believed. You crash through into a dark avenue between tall slender trees growing so close together you cannot force your way between their trunks. Resigned to your fate you walk on down the avenue for what seems an age.||You start to pass bodies lying where they have fallen, one at a time, and then a forlorn-looking group, huddled together. Exhausted and starving like the others before, you give up hope and lie down to die.">
 
 <ROOM STORY156
     (IN ROOMS)
     (DESC "156")
+    (STORY TEXT156)
+    (EVENTS STORY156-EVENTS)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY156-EVENTS ()
+    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS> <RETURN ,STORY251>)>>
 
 <ROOM STORY157
     (IN ROOMS)
