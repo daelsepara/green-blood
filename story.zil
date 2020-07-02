@@ -2307,19 +2307,41 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT201 "The Elf King gives the order to begin. Gathkeri circles you warily. He is very light-footed and the look in his eyes is murderous.">
+<CONSTANT CHOICES201 <LTABLE "grapple with him" "attack him with your fists and feet" "wait for him to attack you">>
+
 <ROOM STORY201
     (IN ROOMS)
     (DESC "201")
+    (STORY TEXT201)
+    (CHOICES CHOICES201)
+    (DESTINATIONS <LTABLE STORY183 STORY172 STORY161>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT202 "These men look well armed and well fed. They are probably veterans of many campaigns but their jowls and their paunches have grown a little flabby from lack of exercise here in the forest. The chief hired them to protect the camp against the elves, but so far, the fey sylvan elves have done nothing to hinder the Westermen and the guards have led an indolent life with nothing more to do than keep the slaves in check. Still, there are eight of them and all are armed with sowrds and protected by corslets of mail.">
+<CONSTANT CHOICES202 <LTABLE "use" "use" "use" "use" "otherwise if you have none of these skills">>
 
 <ROOM STORY202
     (IN ROOMS)
     (DESC "202")
+    (STORY TEXT202)
+    (CHOICES CHOICES202)
+    (DESTINATIONS <LTABLE STORY461 STORY471 STORY481 STORY442 STORY491>)
+    (REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-CHARMS SKILL-STREETWISE SKILL-SPELLS NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT203 "You rush to attack, and several of the Westermen turn to meet your onslaught. As individuals and taken one at a time they would certainly be no match for you. The men you are facing, however are seasoned campaigners and fools. You are quickly surrounded.">
+<CONSTANT CHOICES203 <LTABLE "try to kill one, leap over his fallen body and then retreat to safer ground nearby" "try to fight it out until you or all your opponents are slain">>
 
 <ROOM STORY203
     (IN ROOMS)
     (DESC "203")
+    (STORY TEXT203)
+    (CHOICES CHOICES203)
+    (DESTINATIONS <LTABLE STORY376 STORY084>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY204
@@ -2972,6 +2994,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "330")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY331
+    (IN ROOMS)
+    (DESC "331")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY332
+    (IN ROOMS)
+    (DESC "332")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT333 "The young girl, who says that her father is away on a journey to buy provisions, charges you a piece gold for your food and for a night's lodging.||You sleep well and awake early but refreshed. Washing in cold water is invigorating and you enjoy the feel of the rough inn towel. There will be no such comforts in the forest.||Downstairs the inn is deserted. The woman in grey, the only other guest, has left already. The young girl is mopping the floor and she looks troubled. Asking what ails her brings the reply, \"My father did not return last night. I tried not to worry but I knew in my heart he wouldn't come. He went into the forest to buy provisions before the Westermen block the spice road. I know he has gone the way of the others. And that strange woman in grey never so much as touched her bed last night, though she didn't leave her room till after dawn. I begged Father to take Renard to guide him but he wouldn't spend the money. Now I'll never see him again\". With this, she breaks into tears.||As you comfort her, you ask the innkeeper's daughter to describe her father and say you will try to find either him or news of him. As you turn to leave she says, \"Fare you well, traveller, you are my only hope.\"">
 
 <ROOM STORY333
@@ -3037,6 +3069,56 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "350")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY351
+    (IN ROOMS)
+    (DESC "351")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY352
+    (IN ROOMS)
+    (DESC "352")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY353
+    (IN ROOMS)
+    (DESC "353")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY354
+    (IN ROOMS)
+    (DESC "354")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY355
+    (IN ROOMS)
+    (DESC "355")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY356
+    (IN ROOMS)
+    (DESC "356")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY357
+    (IN ROOMS)
+    (DESC "357")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY358
+    (IN ROOMS)
+    (DESC "358")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY359
+    (IN ROOMS)
+    (DESC "359")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY360
+    (IN ROOMS)
+    (DESC "360")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT361 "You perform the chant that makes the stone in your pendant grow warm if a large animal or beast should approach while you sleep. To your dismay the stone begins to heat up immediately when you lie down to rest. You look around but can see nothing in the dark. You strain your ears but all you can here are the usual night sounds of the forest. The stone grows hotter against your breast: the unseen danger is coming closer. The earth begins to vibrate beneath you as if a giant stalks you.">
 <CONSTANT CHOICES361 <LTABLE "try to hide by burying yourself in the earth mound" "climb a nearby tree">>
 
@@ -3054,9 +3136,89 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "362")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY363
+    (IN ROOMS)
+    (DESC "363")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY364
+    (IN ROOMS)
+    (DESC "364")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY365
+    (IN ROOMS)
+    (DESC "365")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY366
+    (IN ROOMS)
+    (DESC "366")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY367
+    (IN ROOMS)
+    (DESC "367")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY368
+    (IN ROOMS)
+    (DESC "368")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY369
+    (IN ROOMS)
+    (DESC "369")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY370
+    (IN ROOMS)
+    (DESC "370")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY371
+    (IN ROOMS)
+    (DESC "371")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY372
     (IN ROOMS)
     (DESC "372")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY373
+    (IN ROOMS)
+    (DESC "373")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY374
+    (IN ROOMS)
+    (DESC "374")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY375
+    (IN ROOMS)
+    (DESC "375")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY376
+    (IN ROOMS)
+    (DESC "376")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY377
+    (IN ROOMS)
+    (DESC "377")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY378
+    (IN ROOMS)
+    (DESC "378")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY379
+    (IN ROOMS)
+    (DESC "379")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY380
@@ -3114,6 +3276,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "390")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY391
+    (IN ROOMS)
+    (DESC "390")
+    (FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
 
 <ROOM STORY392
@@ -3121,6 +3288,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "392")
     (STORY TEXT392)
     (CONTINUE STORY237)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY393
+    (IN ROOMS)
+    (DESC "393")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT394 "It takes much longer to reach the tower than you imagined, since path after path leads you up against such obstacles as thorn bushes or fallen trees whose rotting bark crawls with insects. At last you pass into the open, where a clearing of uneven grassy ground stands between the louring ranks of trees.||The tower is outlined in a halo of moonlight which makes the angular masonry blocks gleam like silver. Ivy cover the walls in a dark tangled net. Under a lichen-stained armorial crest looms a great black door sealed with an iron lock. Gazing up, you see a glimmer of green light from the topmost chamber of the tower. It is one sign that the place might not be abandoned and left to ruin.">
@@ -3136,14 +3308,119 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY395
+    (IN ROOMS)
+    (DESC "395")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY396
+    (IN ROOMS)
+    (DESC "396")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY397
     (IN ROOMS)
     (DESC "397")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY398
+    (IN ROOMS)
+    (DESC "398")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY399
+    (IN ROOMS)
+    (DESC "399")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY400
+    (IN ROOMS)
+    (DESC "400")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY401
+    (IN ROOMS)
+    (DESC "401")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY402
+    (IN ROOMS)
+    (DESC "402")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY403
+    (IN ROOMS)
+    (DESC "403")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY404
+    (IN ROOMS)
+    (DESC "404")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY405
+    (IN ROOMS)
+    (DESC "405")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY406
     (IN ROOMS)
     (DESC "406")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY407
+    (IN ROOMS)
+    (DESC "407")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY408
+    (IN ROOMS)
+    (DESC "408")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY409
+    (IN ROOMS)
+    (DESC "409")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY410
+    (IN ROOMS)
+    (DESC "410")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY411
+    (IN ROOMS)
+    (DESC "411")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY412
+    (IN ROOMS)
+    (DESC "412")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY413
+    (IN ROOMS)
+    (DESC "413")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY414
+    (IN ROOMS)
+    (DESC "414")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY415
+    (IN ROOMS)
+    (DESC "415")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY416
+    (IN ROOMS)
+    (DESC "416")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY417
+    (IN ROOMS)
+    (DESC "417")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY418
@@ -3270,6 +3547,46 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "441")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY442
+    (IN ROOMS)
+    (DESC "442")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY443
+    (IN ROOMS)
+    (DESC "443")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY444
+    (IN ROOMS)
+    (DESC "444")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY445
+    (IN ROOMS)
+    (DESC "445")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY446
+    (IN ROOMS)
+    (DESC "446")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY447
+    (IN ROOMS)
+    (DESC "447")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY448
+    (IN ROOMS)
+    (DESC "448")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY449
+    (IN ROOMS)
+    (DESC "449")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY450
     (IN ROOMS)
     (DESC "450")
@@ -3382,9 +3699,144 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "470")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY471
+    (IN ROOMS)
+    (DESC "471")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY472
+    (IN ROOMS)
+    (DESC "472")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY473
+    (IN ROOMS)
+    (DESC "473")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY474
+    (IN ROOMS)
+    (DESC "474")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY475
+    (IN ROOMS)
+    (DESC "475")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY476
+    (IN ROOMS)
+    (DESC "476")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY477
+    (IN ROOMS)
+    (DESC "477")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY478
+    (IN ROOMS)
+    (DESC "478")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY479
+    (IN ROOMS)
+    (DESC "479")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY480
+    (IN ROOMS)
+    (DESC "480")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY481
+    (IN ROOMS)
+    (DESC "481")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY482
+    (IN ROOMS)
+    (DESC "482")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY483
+    (IN ROOMS)
+    (DESC "483")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY484
+    (IN ROOMS)
+    (DESC "484")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY485
+    (IN ROOMS)
+    (DESC "485")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY486
+    (IN ROOMS)
+    (DESC "486")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY487
+    (IN ROOMS)
+    (DESC "487")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY488
+    (IN ROOMS)
+    (DESC "488")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY489
     (IN ROOMS)
     (DESC "489")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY490
+    (IN ROOMS)
+    (DESC "490")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY491
+    (IN ROOMS)
+    (DESC "491")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY492
+    (IN ROOMS)
+    (DESC "492")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY493
+    (IN ROOMS)
+    (DESC "493")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY494
+    (IN ROOMS)
+    (DESC "494")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY495
+    (IN ROOMS)
+    (DESC "495")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY496
+    (IN ROOMS)
+    (DESC "496")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY497
+    (IN ROOMS)
+    (DESC "497")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY498
+    (IN ROOMS)
+    (DESC "498")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY499
