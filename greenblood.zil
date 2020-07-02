@@ -81,8 +81,7 @@
     <HLIGHT ,H-BOLD>
     <TELL .MESSAGE>
     <HLIGHT 0>
-    <JIGS-UP " ">
->
+    <JIGS-UP " ">>
 
 <ROUTINE CHECK-DEATH ("AUX" DEATH)
     <SET DEATH <GETP ,HERE ,P?DEATH>>
