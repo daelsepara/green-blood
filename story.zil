@@ -2238,29 +2238,73 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <RETURN>>
 
+<CONSTANT TEXT196 "The path twists and turns, winding through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed by one before.||To your dismay the path ends in a little clearing choked with dead leaves, but from which two paths lead off in different directions. Each path is lined with thorn bushes that have grown to the height of a man and are covered in inch-long purple barbs oozing an orange fluid. The thorns would break off in your flesh if you brushed against them.">
+<CONSTANT CHOICES196 <LTABLE "head left" "head right" "despair of ever finding your way out of the forest" "mark one of the great Gwelph trees by scoring it with your dagger">>
+
 <ROOM STORY196
     (IN ROOMS)
     (DESC "196")
+    (STORY TEXT196)
+    (CHOICES CHOICES196)
+    (DESTINATIONS <LTABLE STORY131 STORY211 STORY156 STORY177>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT197 "The bees fly faster than you can run. They settle around your head so you cannot see to run. Blindly, you stagger about the forest, continually stung by the bees. Death from so many bee stings is not pleasant. Your neck swells until your windpipe is closed up and you choke to death. You rue bitterly your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
 
 <ROOM STORY197
     (IN ROOMS)
     (DESC "197")
+    (STORY TEXT197)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT198 "Your heartfelt plea for the Chief of the Westermen to reconsider his actions falls upon deaf ears. He simply cannot believe you are being so foolish to question him. \"How can cutting down trees destroy the whole world? You are talking nonsense! Who are you, and who sent you to interfere in our plans?\"||\"Listen to me or we are all doomed,\" you tell him. But now you see that you can never hope to persuade him. You have simply put yourself in danger by attempting to end the Westermen's onslaught peaceably.||The chief has had enough. \"Silence this wittering fool. Bring chains -- we'll add another slave to the work gangs.\"||Valerian is watching you. His hard stare suggests he is calling a spell to mind.">
+<CONSTANT CHOICES198 <LTABLE "surrender and be enslaved" "make a run for it" "use magic">>
 
 <ROOM STORY198
     (IN ROOMS)
     (DESC "198")
+    (STORY TEXT198)
+    (CHOICES CHOICES198)
+    (DESTINATIONS <LTABLE STORY146 STORY451 STORY450>)
+    (REQUIREMENTS <LTABLE NONE NONE SKILL-SPELLS>)
+    (TYPES <LTABLE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT199 "The ants' bites are poisonous.">
+<CONSTANT TEXT199-CONTINUED "You have already suffered dozens of wounds by the time you reach a large pond in a dark hollow. Throwing caution to the winds and driven by the tormenting pain of the bites, you plunge into the water and immerse yourself where you tear off your clothes.||The torment ceases as the ants drown and float to the surface, and although the venom makes you feel drowsy you manage to drag yourself towards the pond's edge.||Just as you are about to hand yourself out of the water, you feel a huge water snake coiling around your legs.">
+<CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despare to the owl in case it is still nearby and prepared to forgive and help you">>
 
 <ROOM STORY199
     (IN ROOMS)
     (DESC "199")
+    (STORY TEXT199)
+    (CHOICES CHOICES199)
+    (DESTINATIONS <LTABLE STORY218 STORY227>)
+    (TYPES TWO-NONES)
+    (PRECHOICE STORY199-LOSELIFE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY199-LOSELIFE ()
+    <LOSE-LIFE 2 "You have died from ant bites." ,STORY199>
+    <COND (<G? ,LIFE-POINTS 0>
+        <CRLF>
+        <TELL TEXT199-CONTINUED>
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT200 "Renard leads you out of the town through the waterside gate to the bank of the Burgstream. You walk north along a path next to the bank. The river valley has quite steep sides, making it difficult for you to see very much of the surrounding land. Ahead, however, you can see the vast top of a leafy canopy that stretches to the far horizon like a green sea fading to blue in the distance. The air is good here -- fresh and clean, laden only with the perfumes of wild flowers.||A lone figure in grey walks ahead. You suggest trying to catch up but Renard just shakes his head.\"We will never find her in the forest unless she wishes it. A man might as well try to fly.\"||\"If we run we can catch up before she reaches the forest,\" you suggest.||\"She moves as fast as a deer at need. We'd only tire ourselves to no end.\"||If it is the same old woman from the inn last night, she looked too old even to break into a trot. You ponder Renard's strange claims until you can see the trunks of the trees at the edge of the Forest of Arden.||As you enter the forest you are surprised by how much colour there is. Blossoming trees, fungus mounds in bright hues, flowering creepers and giant butterflies are lit by the dappled sunshine that pours through gaps in the leafy canopy. It is noisy too -- the forest is alive with insects, birds and small mammals. Renard leads you along short cuts where the Burgstream bends tortuously until at last you hear the roar of the great Sirion river as it rushes through the forest ahead. He brings you to a ford over the Burgstream.||\"We must cross here and then walk west beside the Sirion.\" You follow across the ford and on through the thick forest.||Nothing in your life has prepared you for the moment when you first catch sight of the Sirion river. The furthest bank is just a line of shimmering heat-hazed greenery at least six miles away. The roiling waters carry a multitude of dead tree branches towards the sea, like a vein carrying detritus out of a living body. Across the river the treeline is unbroken. You are deep in the rainforest now. The gigantic trees spread their branches more than a hundred feet above the ground. At the river's edge mangroves reach far out into the water. Bloated river buffalo bask beneath their arching roots.||\"The going will be difficult for a while until we reach higher ground,\" says Renard. He presses on, hacking at the undergrowth, until you reach a tributary of the river. It blocks your progress, and is spanned by only a narrow rope bridge. The bridge show signs of regular repair: bushes have been hacked back from the stanchions between which it hangs. Renard tells you that the elves maintain this bridge as a link between different parts of their domain. He leads the way across and you follow.||He is halfway across when a waterspout surges up from the river. Out of it rears a mass of vegetation ringed with fibrous tentacles. It is a dreaded Embracer, and in seconds it has plucked Renard from the bridge. As he is pulled under the water, he manages to cry out to you: \"You must go on, then climb. Then you may find what you seek --\"||The tentacles drag him under. You watch the muddied water swirl beneath the bridge, but there is no sign of poor Renard.">
+<CONSTANT CHOICES200 <LTABLE "try to save him" "cross the bridge quickly while the Embracer is otherwise occupied">>
 
 <ROOM STORY200
     (IN ROOMS)
     (DESC "200")
+    (STORY TEXT200)
+    (CHOICES CHOICES200)
+    (DESTINATIONS <LTABLE STORY316 STORY343>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY201
@@ -2828,6 +2872,51 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "310")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY311
+    (IN ROOMS)
+    (DESC "311")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY312
+    (IN ROOMS)
+    (DESC "312")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY313
+    (IN ROOMS)
+    (DESC "313")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY314
+    (IN ROOMS)
+    (DESC "314")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY315
+    (IN ROOMS)
+    (DESC "315")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY316
+    (IN ROOMS)
+    (DESC "316")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY317
+    (IN ROOMS)
+    (DESC "317")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY318
+    (IN ROOMS)
+    (DESC "318")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY319
+    (IN ROOMS)
+    (DESC "319")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY320
     (IN ROOMS)
     (DESC "320")
@@ -2893,6 +2982,36 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (COST 1)
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY340
+    (IN ROOMS)
+    (DESC "340")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY341
+    (IN ROOMS)
+    (DESC "341")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY342
+    (IN ROOMS)
+    (DESC "342")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY343
+    (IN ROOMS)
+    (DESC "343")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY344
+    (IN ROOMS)
+    (DESC "344")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY345
+    (IN ROOMS)
+    (DESC "345")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY346
     (IN ROOMS)
     (DESC "346")
@@ -2901,6 +3020,21 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY347
     (IN ROOMS)
     (DESC "347")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY348
+    (IN ROOMS)
+    (DESC "348")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY349
+    (IN ROOMS)
+    (DESC "346")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY350
+    (IN ROOMS)
+    (DESC "350")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT361 "You perform the chant that makes the stone in your pendant grow warm if a large animal or beast should approach while you sleep. To your dismay the stone begins to heat up immediately when you lie down to rest. You look around but can see nothing in the dark. You strain your ears but all you can here are the usual night sounds of the forest. The stone grows hotter against your breast: the unseen danger is coming closer. The earth begins to vibrate beneath you as if a giant stalks you.">
@@ -3136,9 +3270,24 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "441")
     (FLAGS LIGHTBIT)>
 
+<ROOM STORY450
+    (IN ROOMS)
+    (DESC "450")
+    (FLAGS LIGHTBIT)>
+
 <ROOM STORY451
     (IN ROOMS)
     (DESC "451")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY452
+    (IN ROOMS)
+    (DESC "452")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY453
+    (IN ROOMS)
+    (DESC "453")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT454 "As you walk on you find gaunt grey crags jutting up out of the forest. It is a relief to find clear landmarks at last. The forest is broken here; where soil is thin above the grey rock only grass can grow, and you walk out of gloom into bright sunlight that hurts your eyes. There are countless paths heading back into the forest in all directions. As you stand comtemplating the choice of ways a voice above and behind you says, \"Lost, are you?\"||You turn around and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
@@ -3151,6 +3300,26 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES454)
     (DESTINATIONS <LTABLE STORY258 STORY277>)
     (TYPES TWO-NONES)
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY455
+    (IN ROOMS)
+    (DESC "455")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY456
+    (IN ROOMS)
+    (DESC "456")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY457
+    (IN ROOMS)
+    (DESC "457")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY458
+    (IN ROOMS)
+    (DESC "458")
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY459
