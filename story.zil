@@ -2374,14 +2374,28 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <PRESS-A-KEY>
     )>>
 
+<CONSTANT TEXT206 "As he sees you about to cast another spell, Valerian utters a single word, \"Sanctuary,\" in a ringing voice and claps his hands together. There is a second clap and he is gone. He has disappeared completely. You go to the door of the inn but there is no sign of him in the rain-lashed cobbled street.||Only the old woman in grey remains in the common room.">
+<CONSTANT CHOICES206 <LTABLE "sit at her table and talk with her" "take a room at the inn for the night">>
+
 <ROOM STORY206
     (IN ROOMS)
     (DESC "206")
+    (STORY TEXT206)
+    (CHOICES CHOICES206)
+    (DESTINATIONS <LTABLE STORY181 STORY333>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT207 "You summon all your willpower and try to grapple with the machine in a battle of minds, even though your resolve is weakened by the nagging fear that the machine doesn't have a will of its own.||To your surprise your magic tells you there is a mind within the machine -- it belongs to the man who is controlling it. He is busy working the machine, and the machine grinds to a halt as he is hit by your psychic assault.||The operator switches his attention to you and focuses his mental powers. You hold the machine motionless for long moments without managing to overpower the will of the man inside it.||How will you follow up your success?">
+<CONSTANT CHOICES207 <LTABLE "cast Choking Fog" "use Bafflement" "cast Visceral Disruption">>
 
 <ROOM STORY207
     (IN ROOMS)
     (DESC "207")
+    (STORY TEXT207)
+    (CHOICES CHOICES207)
+    (DESTINATIONS <LTABLE STORY395 STORY372 STORY064>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY208
