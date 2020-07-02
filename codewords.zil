@@ -6,6 +6,10 @@
     (DESC "Crabclaw")
     (SYNONYM CRABCLAW)>
 
+<OBJECT CODEWORD-SCORPION
+    (DESC "Scorpion")
+    (SYNONYM SCORPION)>
+
 <OBJECT CODEWORD-SPECULUM
     (DESC "Speculum")
     (SYNONYM SPECULUM)>

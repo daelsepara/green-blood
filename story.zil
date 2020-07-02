@@ -2332,7 +2332,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT203 "You rush to attack, and several of the Westermen turn to meet your onslaught. As individuals and taken one at a time they would certainly be no match for you. The men you are facing, however are seasoned campaigners and fools. You are quickly surrounded.">
+<CONSTANT TEXT203 "You rush to attack, and several of the Westermen turn to meet your onslaught. As individuals and taken one at a time they would certainly be no match for you. The men you are facing, however are seasoned campaigners and no fools. You are quickly surrounded.">
 <CONSTANT CHOICES203 <LTABLE "try to kill one, leap over his fallen body and then retreat to safer ground nearby" "try to fight it out until you or all your opponents are slain">>
 
 <ROOM STORY203
@@ -2344,15 +2344,35 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT204 "\"Yes, that was it,\" you reply. \"The Reaver's Inn, Bessaraban. What a place, eh?\"||\"Remember the one-legged serving wench who used to take her leg off and poke the fire with it?\" asks the chief.">
+<CONSTANT CHOICES204 <LTABLE "say yes, you remember her, but can't think of her name" "admit that you don't remember her">>
+
 <ROOM STORY204
     (IN ROOMS)
     (DESC "204")
+    (STORY TEXT204)
+    (CHOICES CHOICES204)
+    (DESTINATIONS <LTABLE STORY358 STORY367>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT205 "You explain your quest to save the forest from the Westermen. The dragon has been asleep all the time the men have been hacking and burning the forest, but he seems to believe your tale of woe. He tells you his name is Garoshtar and says he is surprised and impressed that a human could want so little of him when he has great power and riches to give.||He tells you to come for him at your hour of greatest need and he will help you against the Westermen. Remember you have the promise of Garoshtar's help">
 
 <ROOM STORY205
     (IN ROOMS)
     (DESC "205")
+    (STORY TEXT205)
+    (CONTINUE STORY021)
+    (PRECHOICE STORY205-PRECHOICE)
+    (CODEWORD CODEWORD-SCORPION)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY205-PRECHOICE ()
+    <COND (<IN? ,CODEWORD-WATERBEARER,CODEWORDS>
+        <SETG HERE ,STORY049>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 <ROOM STORY206
     (IN ROOMS)
