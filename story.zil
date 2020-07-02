@@ -907,11 +907,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY078-PRECHOICE ()
-    <COND (<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
+    <COND (<AND <IN? ,EMERALD-RING-ELANOR ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
         <SETG HERE ,STORY440>
         <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
-    )(<AND <IN? ,EMERALD-RING ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
+    )(<AND <IN? ,EMERALD-RING-ELANOR ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
         <SETG HERE ,STORY459>
         <SETG CONTINUE-TO-CHOICES F>
         <PRESS-A-KEY>
@@ -1829,29 +1829,54 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY180)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT161 "Gathkeri closes in, still circling but moving ever closer, until he suddenly launches into a flurry of kicks aimed at your head. You parry them with your arms up high and step into the right, watching his movements, learning so that you can anticipate what he will do. Now that you have assessed his fighting style you can see that he uses kicks better than punches, and deduce that he might not be able to fight so well at close quarters. Armed with this knowledge you can probably beat him.">
+<CONSTANT CHOICES161 <LTABLE "try to grapple him" "attack him with your fists and feet">>
+
 <ROOM STORY161
     (IN ROOMS)
     (DESC "161")
+    (STORY TEXT161)
+    (CHOICES CHOICES161)
+    (DESTINATIONS <LTABLE STORY183 STORY172>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT162 "You tell them of your quest to find the Tree of Knowledge in the Forest of Arden, after which the taller of the two introduces himself as Renard the Guide.||\"You will need a guide in the forest, or you'll be lost, never to see the lands of men again.\"||\"Renard doesn't know the whereabouts of this tree you seek, I'll warrant,\" comments Marek.||\"What would a hunter know of the Tree of Knowledge?\"||The hunter turns away; his parting shot is: \"About as much as you, Renard, and that is nothing at all.\" He walks over to the kitchen door to talk to the young woman, who pours him jug of beer.||Renard sits down at a table, draws up a second chair and gestures for you to join him.">
+<CONSTANT CHOICES162 <LTABLE "ask him about the Tree of Knowledge" "learn more about the other travellers" "ask the hunter about he monster he has seen">>
 
 <ROOM STORY162
     (IN ROOMS)
     (DESC "162")
+    (STORY TEXT162)
+    (CHOICES CHOICES162)
+    (DESTINATIONS <LTABLE STORY130 STORY145 STORY281>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT163 "To your shame you have lost the duel and failed the elven test. The elves vanish back into the forest, warning you to return straight to Burg or you will suffer a death of a thousand bites and stings here in the forest.">
 
 <ROOM STORY163
     (IN ROOMS)
     (DESC "163")
+    (STORY TEXT163)
+    (CONTINUE STORY384)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT164 "The ants inject poison with every bite. You take more than a hundred bites as you toil uphill, at last abandoning flight and stripping off your gear in a final effort to scrape the ants from your skin.||It is too late: the venom weakens your muscles and you sink helpless to the forest floor, mercifully losing consciousness before the ants consume you. Within minutes they strip your flesh to the bone. It does not do to have the whole forest against you.">
 
 <ROOM STORY164
     (IN ROOMS)
     (DESC "164")
+    (STORY TEXT164)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT165 "Turning your back on a dragon is never wise. The ancient creature pins you to the ground beneath a huge claw. You look up from the massive green scaled claw to the smouldering red eyes thirty feet above. It wasn't as sleepy as you thought and now it thinks you were trying to kill it. The dragon opens its jaws wide and its stomach convulses. A second later a gout of poisonous gass and acid hit you like a wave. There is no surviving the breath of an ancient green dragon.">
 
 <ROOM STORY165
     (IN ROOMS)
     (DESC "165")
+    (STORY TEXT165)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY166
@@ -2689,6 +2714,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY372
     (IN ROOMS)
     (DESC "372")
+    (FLAGS LIGHTBIT)>
+
+<ROOM STORY384
+    (IN ROOMS)
+    (DESC "384")
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
