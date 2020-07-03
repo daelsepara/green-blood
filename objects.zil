@@ -1,3 +1,9 @@
+<OBJECT ELVEN-DIRK
+    (DESC "elven dirk")
+    (SYNONYM DIRK)
+    (ADJECTIVE ELVEN)
+    (FLAGS TAKEBIT)>
+
 <OBJECT EMERALD-RING
     (DESC "emerald ring")
     (SYNONYM RING)
@@ -46,6 +52,12 @@
     (DESC "maple flute")
     (SYNONYM FLUTE)
     (ADJECTIVE MAPLE)
+    (FLAGS TAKEBIT)>
+
+<OBJECT POTION-RED-LIQUID
+    (DESC "potion of red liquid")
+    (SYNONYM LIQUID POTION)
+    (ADJECTIVE RED)
     (FLAGS TAKEBIT)>
 
 <OBJECT SWORD

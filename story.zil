@@ -2549,45 +2549,117 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY035)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT221 "You go to stand in front of the Elf King. Then, smiling, you stand on one foot and spin around in a complete circle. You end with a bow, like a dancer acknowledging applause. \"That's the task,\" you say. \"Just do as I did: turn around.\"||He stares at you, violent emotion surging behind his eyes. For a long moment the two of you stand face to face, unmoving. The Elf King twitches at the hem of his cloak, grinding his feet into the sward of the forest clearing. \"Curse you!\" he says at last. \"Avert your gaze and I'd do it in an instant!\"||\"It wouldn't count if I didn't see it,\" you reply, \"Do you accept that you can't do the task?\"||His regal tones are laced with sullen annoyance as he says, \"Yes, you have won the contest, mortal. I'll agree to be your ally.\"">
+
 <ROOM STORY221
     (IN ROOMS)
     (DESC "221")
+    (STORY TEXT221)
+    (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT222 "You take out the flute and set it to your lips. The tree, creaking and shuddering, begins to sink into the ground, taking you down with it. Drawing a large breath you blow as hard as you can and an eerie half-heard note seems to sound far away. Then the forest seems to go quiet as the background noise of chattering, piping and warbling gives way to eerie silence. The tree roots fall away from you and are drawn slowly back into the ground.||A little tree frog, lime green with scarlet spots jumps onto your shoulder and then down on the ground. It begins to hop away and, not knowing what else to do, you follow. Soon it has led you to a previously unnoticed path that winds between the thorn bushes. Without the flute you would have been lost in the forest for ever.">
 
 <ROOM STORY222
     (IN ROOMS)
     (DESC "222")
+    (STORY TEXT222)
+    (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT223 "Your feint works. This time it is the elf who is overcommitted and you who can strike without fear. Your sword crashes into his side and the elf doubles up and falls to the floor. He cries his submission. One of his kind rushes forward with a healing potion to stem the tide of green blood, which coats his clothes like pond slim.||You have won the duel.">
 
 <ROOM STORY223
     (IN ROOMS)
     (DESC "223")
+    (STORY TEXT223)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT224 "Renard's cottage is small but well looked after. He lives alone and is a taciturn fellow. He asks for one piece of gold for every day he is with you, and before he even agrees to guide you he wants to see the colour of your money. You show him your gold but are mindful to sleep with the money pouch under your mattress.||In the morning Renard is up early and he brings you some steaming broth to eat before you set out. He says he will need another piece of gold for every day it takes to travel back to Burg from wherever you part company.">
+<CONSTANT CHOICES224 <LTABLE "agree to his terms" "would rather risk the forest alone">>
 
 <ROOM STORY224
     (IN ROOMS)
     (DESC "224")
+    (STORY TEXT224)
+    (CHOICES CHOICES224)
+    (DESTINATIONS <LTABLE STORY200 STORY210>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT225 "\"What care I for those who dwell in the forest?\" The little imp starts to sing in a high wistful tone, \"I work and sing from dusk till dawn, no lark more blithe than me, and this is the burden of my song forever doomed to be -- I care for nobody. No, not I, and nobody cares for me.\"">
+<CONSTANT CHOICES225 <LTABLE "tell the Kwerrel how sad you are that he must be lonely" "that he will be cared for if he helps you save the forest">>
 
 <ROOM STORY225
     (IN ROOMS)
     (DESC "225")
+    (STORY TEXT225)
+    (CHOICES CHOICES225)
+    (DESTINATIONS <LTABLE STORY323 STORY284>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT226 "Once again the elf's drik scores your flesh.">
+<CONSTANT TEXT226-CONTINUED "You gain heart when you notice that the elf too is tiring. You manage to wound him and corner him between two trees that grow close together.||Your opponent drops the dirk and says he will take you to the King of the Elves in Elvenhame.">
 
 <ROOM STORY226
     (IN ROOMS)
     (DESC "226")
+    (STORY TEXT226)
+    (PRECHOICE STORY226-LOSELIFE)
+    (CONTINUE STORY331)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY226-LOSELIFE ()
+    <LOSE-LIFE 4 "You died in combat" ,STORY226>
+    <COND (<G? ,LIFE-POINTS 0>
+        <CRLF>
+        <TELL TEXT226-CONTINUED>
+        <CRLF>
+        <COND (<IN? ,POTION-RED-LIQUID ,PLAYER>
+            <CRLF>
+            <TELL "Drink " T ,POTION-RED-LIQUID "?">
+            <COND (<YES?>
+                <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
+                <CRLF>
+                <HLIGHT ,H-BOLD>
+                <TELL "The potion magically heals all your lost life points.">
+                <HLIGHT 0>
+                <CRLF>
+            )>
+        )>
+        <CRLF>
+        <TELL "Take " T ,ELVEN-DIRK "?">
+        <COND (<YES?>
+            <TAKE-ITEM ,ELVEN-DIRK>
+        )>
+    )>
+    <RETURN>>
+
+<CONSTANT TEXT227 "As if materializing at your call, the owl swoops and claws at the serpent's eyes. The snake falls back under the water and you scramble out of the mud and catch your breath under the trees, watching the surface of the pond warily.||\"So now you know. It pays to have friends in the forest,\" says the bird. \"Follow me.\" It flits away through the trees and then waits for you to come near before flying onward.">
 
 <ROOM STORY227
     (IN ROOMS)
     (DESC "227")
+    (STORY TEXT227)
+    (CONTINUE STORY241)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT228 "Garoshtar sights one of the columns of men that are blundering their way through the forest, flattening trees and bushes as they go. There are thousands of soldiers, most of them sweating inside chain armour. Near the front is a contingent of three hundred crossbowmen, all dressed in the same mail and uniform, obviously mercenaries. There is no sign of any infernal machines with this column.">
+<CONSTANT CHOICES228 <LTABLE "ask Garoshtar to search out the second column the elven scouts saw advancing upon the Tree of Life" "attack these men while they are vulnerable in a clearing">>
 
 <ROOM STORY228
     (IN ROOMS)
     (DESC "228")
+    (STORY TEXT228)
+    (CHOICES CHOICES228)
+    (DESTINATIONS <LTABLE STORY248 STORY273>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT229 "You bide your time until you are roughly uuhooked from the coffle chain and set to work digging a hole for the Westermen to use as a latrine. When the guard looks away you cast a Vanish spell and make good your escape. The guard has just returned to the pit you had begun to dig and is looking around for you.">
 
 <ROOM STORY229
     (IN ROOMS)
