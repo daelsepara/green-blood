@@ -14,7 +14,8 @@
     <PUTP ,STORY199 ,P?DEATH T>
     <PUTP ,STORY226 ,P?DEATH T>
     <PUTP ,STORY234 ,P?DEATH T>
-    <PUTP ,STORY248 ,P?DEATH T>>
+    <PUTP ,STORY248 ,P?DEATH T>
+    <PUTP ,STORY254 ,P?DEATH T>>
     
 <ROUTINE STORY-LOSERING ()
     <LOSE-ITEM ,EMERALD-RING-ELANOR>>
@@ -2967,25 +2968,53 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <SELECT-FROM-LIST .POTIONS 5 3 "potion">
     <RETURN>>
 
+<CONSTANT TEXT254 "Without waiting to hear a word the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily. He is drinking the mulch of the fire lizard's gizzard, as deadly a poison to him as it is to you. He dies in a fit of convulsions, leaving you alone.||There is nothing to be done for the poor little Kwerrel, so you begin to search for a way out of the giant bush. At last your perseverance is rewarded and you break out into the open -- but not without getting badly scratched by the thorns.">
+
 <ROOM STORY254
     (IN ROOMS)
     (DESC "254")
+    (STORY TEXT254)
+    (CONTINUE STORY406)
+    (PRECHOICE STORY254-LOSELIFE)
     (EVENTS STORY254-GIVEBLUE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
-
+    
 <ROUTINE STORY254-GIVEBLUE ()
     <GIVE-ITEM ,POTION-CLOUDY-BLUE>
     <RETURN ,STORY254>>
 
+<ROUTINE STORY254-LOSELIFE ()
+    <LOSE-LIFE 1 "You have died from thorn scratches." ,STORY254>>
+
+<CONSTANT TEXT255 "\"I submit!\" you cry. \"You are the victor.\"||The King of the Elves looks at you with contempt. \"Such magics as you can muster will not prevail over the Westermen. Leave the forest. You have a week to clear the edge of the forest or your life will be forefeit.\"">
+
 <ROOM STORY255
     (IN ROOMS)
     (DESC "255")
+    (STORY TEXT255)
+    (CONTINUE STORY384)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT256 "Later, seated in a ring with the elven elders, you are planning your defence of the Tree of Life when a messenger runs into the clearing and bows to the king. \"The Westermen are moving, sire, in two columns. They are heading for the Tree of Life -- more men than there are ants in a Gwelph tree.\"||\"How long will they take to reach the Tree of Life?\" you ask.||\"Three days, perhaps four, no more.\"||\"How long will it take to marshal all your elves?\" you ask anxiously.||He returns a bleak time-haunted look. \"A week; it can't be done in less. The forest is so large . . .\"||You must think of a way of delaying the Westermen until the elves are ready.">
+<CONSTANT CHOICES256 <LTABLE "try to assasinate the chief of the Westermen" "journey to the Bonehill to talk with the dragon" "lead as many elves as you can muster into pitched battle before the Tree of Life">>
 
 <ROOM STORY256
     (IN ROOMS)
     (DESC "256")
+    (STORY TEXT256)
+    (CHOICES CHOICES256)
+    (DESTINATIONS <LTABLE STORY433 STORY054 STORY030>)
+    (PRECHOICE STORY256-KEYWORD)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY256-KEYWORD ()
+    <COND (<IN? ,CODEWORD-SCORPION ,CODEWORDS>
+        <SETG HERE ,STORY011>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 <ROOM STORY257
     (IN ROOMS)
