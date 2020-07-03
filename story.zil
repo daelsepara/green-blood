@@ -1,16 +1,16 @@
 <CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
 <CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
 
-<CONSTANT CURRENCY "gold">
-<CONSTANT C-CURRENCY "Gold">
+<OBJECT CURRENCY (DESC "gold")>
 
 <ROUTINE RESET-OBJECTS ()
     <PUTP ,JEWELS ,P?QUANTITY 2>
     <FSET ,EMERALD-RING-ELANOR ,WEARBIT>
-    <FSET ,EMERALD-RING-ELANOR ,WORNBIT>>
+    <FSET ,EMERALD-RING-ELANOR ,WORNBIT>
+    <RETURN>>
 
 <ROUTINE RESET-STORY ()
-    <SETG STORY033-DECISION-FLAG F>
+    <SETG STORY033-PRECHOICE-FLAG F>
     <PUTP ,STORY151 ,P?DEATH T>
     <PUTP ,STORY172 ,P?DEATH T>
     <PUTP ,STORY177 ,P?DEATH T>
@@ -18,7 +18,8 @@
     <PUTP ,STORY226 ,P?DEATH T>
     <PUTP ,STORY234 ,P?DEATH T>
     <PUTP ,STORY248 ,P?DEATH T>
-    <PUTP ,STORY254 ,P?DEATH T>>
+    <PUTP ,STORY254 ,P?DEATH T>
+    <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
     <LOSE-ITEM ,EMERALD-RING-ELANOR>>
@@ -415,15 +416,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES033)
     (DESTINATIONS <LTABLE STORY076 STORY092>)
     (TYPES TWO-NONES)
-    (PRECHOICE STORY033-DECISION)
+    (PRECHOICE STORY033-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<GLOBAL STORY033-DECISION-FLAG F>
+<GLOBAL STORY033-PRECHOICE-FLAG F>
 
-<ROUTINE STORY033-DECISION ()
+<ROUTINE STORY033-PRECHOICE ()
     <CRLF>
     <TELL "Stand with the wind in your face (yes) or at your back (no)?">
-    <COND (<YES?> <SETG STORY033-DECISION-FLAG T>)>>
+    <COND (<YES?> <SETG STORY033-PRECHOICE-FLAG T>)>>
 
 <CONSTANT TEXT034 "You could not possibly be near the Bonehill, which is several days travel to the east. The whole character of the forest here is very different from the area near the Bonehill. You can however, at least investigate the area where the whooshing noise came from.">
 
@@ -903,7 +904,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY076-EVENTS ()
     <HLIGHT ,H-BOLD>
-    <COND (<NOT ,STORY033-DECISION-FLAG>
+    <COND (<NOT ,STORY033-PRECHOICE-FLAG>
         <TELL "You take up position in the circle on the west side, where the ground is flattest and where the wind is at your back.">
     )(ELSE
         <TELL "You take up position in the circle on the east side, where the ground is uneven and where the wind is in your face.">
@@ -1378,10 +1379,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES118)
     (DESTINATIONS <LTABLE STORY418 STORY105>)
     (TYPES TWO-NONES)
-    (PRECHOICE STORY118-GAINLIFE)
+    (PRECHOICE STORY118-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY118-GAINLIFE ()
+<ROUTINE STORY118-PRECHOICE ()
     <CRLF>
     <HLIGHT ,H-BOLD>
     <COND (<EQUAL? ,LIFE-POINTS ,MAX-LIFE-POINTS>
@@ -1651,7 +1652,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY143-PRECHOICE ()
-    <COND (,STORY033-DECISION-FLAG
+    <COND (,STORY033-PRECHOICE-FLAG
         <SETG HERE ,STORY294>
     )(ELSE
         <SETG HERE ,STORY285>
@@ -1769,10 +1770,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT153)
     (CONTINUE STORY237)
     (COST 6)
-    (PRECHOICE STORY153-GAINLIFE)
+    (PRECHOICE STORY153-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY153-GAINLIFE ()
+<ROUTINE STORY153-PRECHOICE ()
     <COND (<NOT <EQUAL? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -1928,11 +1929,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "167")
     (STORY TEXT167)
-    (EVENTS STORY167-LOSEGOLD)
+    (EVENTS STORY167-EVENTS)
     (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY167-LOSEGOLD ()
+<ROUTINE STORY167-EVENTS ()
     <SETG MONEY 0>
     <RETURN ,STORY167>>
 
@@ -1985,11 +1986,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES172)
     (DESTINATIONS <LTABLE STORY422 STORY142 STORY381>)
     (TYPES THREE-NONES)
-    (PRECHOICE STORY172-LOSELIFE)
+    (PRECHOICE STORY172-PRECHOICE)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY172-LOSELIFE ()
+<ROUTINE STORY172-PRECHOICE ()
     <LOSE-LIFE 5 "You have died in combat." ,STORY172>>
 
 <CONSTANT TEXT173 "The new way you have taken plunges you deep into a dark emerald gloom, where the moisture of rotting bark seems to deaden all sound. You feel as if you are walking away from the lands of men into another time, a time of desolation and loneliness.||As you walk you begin to feel an unpleasant itching which turns to pain and, looking down, you see a horde of brown ants swarming up your legs.||There are thousands of them converging on you out of fallen trees and cracks in the earth. You run for it, brushing frantically at your body to dislodge the insects as you go.">
@@ -2040,12 +2041,12 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "177")
     (STORY TEXT177)
-    (PRECHOICE STORY177-CHECKITEM)
+    (PRECHOICE STORY177-PRECHOICE)
     (CONTINUE STORY222)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY177-CHECKITEM ()
+<ROUTINE STORY177-PRECHOICE ()
     <COND (<IN? ,MAPLE-FLUTE ,PLAYER>
         <PUTP ,STORY177 ,P?DEATH F>
     )(ELSE
@@ -2286,11 +2287,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES199)
     (DESTINATIONS <LTABLE STORY218 STORY227>)
     (TYPES TWO-NONES)
-    (PRECHOICE STORY199-LOSELIFE)
+    (PRECHOICE STORY199-PRECHOICE)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY199-LOSELIFE ()
+<ROUTINE STORY199-PRECHOICE ()
     <LOSE-LIFE 2 "You have died from ant bites." ,STORY199>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
@@ -2408,10 +2409,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "208")
     (STORY TEXT208)
     (CONTINUE STORY244)
-    (PRECHOICE STORY208-RING)
+    (PRECHOICE STORY208-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY208-RING ()
+<ROUTINE STORY208-PRECHOICE ()
     <FCLEAR ,EMERALD-RING-ELANOR ,WORNBIT>
     <FCLEAR ,EMERALD-RING-ELANOR ,WEARBIT>
     <CRLF>
@@ -2610,12 +2611,12 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "226")
     (STORY TEXT226)
-    (PRECHOICE STORY226-LOSELIFE)
+    (PRECHOICE STORY226-PRECHOICE)
     (CONTINUE STORY331)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY226-LOSELIFE ()
+<ROUTINE STORY226-PRECHOICE ()
     <LOSE-LIFE 4 "You died in combat" ,STORY226>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
@@ -2701,10 +2702,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT232)
     (CONTINUE STORY042)
     (CODEWORD CODEWORD-WATERBEARER)
-    (PRECHOICE STORY232-JUMP)
+    (PRECHOICE STORY232-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY232-JUMP ()
+<ROUTINE STORY232-PRECHOICE ()
     <COND (<IN? ,CODEWORD-BULLHORN ,PLAYER>
         <SETG HERE ,STORY256>
         <SETG CONTINUE-TO-CHOICES F>
@@ -2727,11 +2728,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "234")
     (STORY TEXT234)
     (CONTINUE STORY238)
-    (PRECHOICE STORY234-LOSELIFE)
+    (PRECHOICE STORY234-PRECHOICE)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY234-LOSELIFE ()
+<ROUTINE STORY234-PRECHOICE ()
     <LOSE-LIFE 8 "You have died in combat." ,STORY234>>
 
 <CONSTANT TEXT235 "You carefully gather the potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
@@ -2860,10 +2861,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "245")
     (STORY TEXT245)
     (CONTINUE STORY287)
-    (PRECHOICE STORY245-CONTINUED)
+    (PRECHOICE STORY245-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY245-CONTINUED ()
+<ROUTINE STORY245-PRECHOICE ()
     <CRLF>
     <TELL "Take " T ,ELVEN-DIRK "?">
     <COND (<YES?>
@@ -2893,18 +2894,18 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT248 "Garoshtar's great body puts the men in shadow for a moment as he swoops overhead and you are satisfied to see the soldiers below like helpless little ants on the forest floor.">
-<CONSTANT TEXT248-CONTINUED "Garoshtar sweeps low, his wings cracking down at the last moment as he swings his head and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, throwing you off his back and you impale yourself on a branch of the tree below.">
+<CONSTANT TEXT248-CONTINUED "Garoshtar sweeps low, his wings cracking down at the last moment as he swings his head and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, throwing you off his back and you impale yourself on a branch of a tree below.">
 
 <ROOM STORY248
     (IN ROOMS)
     (DESC "248")
     (STORY TEXT248)
     (CONTINUE STORY319)
-    (PRECHOICE STORY248-AGILITY)
+    (PRECHOICE STORY248-PRECHOICE)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY248-AGILITY()
+<ROUTINE STORY248-PRECHOICE()
     <COND (<IN? ,SKILL-AGILITY ,SKILLS>
         <PUTP ,STORY248 ,P?DEATH F>
     )(ELSE
@@ -2966,10 +2967,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "253")
     (STORY TEXT253)
     (CONTINUE STORY322)
-    (PRECHOICE STORY253-CHOOSEPOTIONS)
+    (PRECHOICE STORY253-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY253-CHOOSEPOTIONS ("AUX" POTIONS)
+<ROUTINE STORY253-PRECHOICE ("AUX" POTIONS)
     <SET POTIONS <LTABLE POTION-CLOUDY-BLUE POTION-RED-LIQUID POTION-TARRY-BLACK JAR-WHITE-JELLY JAR-COLOURED-EARTH>>
     <SELECT-FROM-LIST .POTIONS 5 3 "potion">
     <RETURN>>
@@ -2981,16 +2982,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "254")
     (STORY TEXT254)
     (CONTINUE STORY406)
-    (PRECHOICE STORY254-LOSELIFE)
-    (EVENTS STORY254-GIVEBLUE)
+    (PRECHOICE STORY254-PRECHOICE)
+    (EVENTS STORY254-EVENTS)
     (DEATH T)
     (FLAGS LIGHTBIT)>
     
-<ROUTINE STORY254-GIVEBLUE ()
+<ROUTINE STORY254-EVENTS ()
     <GIVE-ITEM ,POTION-CLOUDY-BLUE>
     <RETURN ,STORY254>>
 
-<ROUTINE STORY254-LOSELIFE ()
+<ROUTINE STORY254-PRECHOICE ()
     <LOSE-LIFE 1 "You have died from thorn scratches." ,STORY254>>
 
 <CONSTANT TEXT255 "\"I submit!\" you cry. \"You are the victor.\"||The King of the Elves looks at you with contempt. \"Such magics as you can muster will not prevail over the Westermen. Leave the forest. You have a week to clear the edge of the forest or your life will be forefeit.\"">
@@ -3011,11 +3012,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT256)
     (CHOICES CHOICES256)
     (DESTINATIONS <LTABLE STORY433 STORY054 STORY030>)
-    (PRECHOICE STORY256-KEYWORD)
+    (PRECHOICE STORY256-PRECHOICE)
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY256-KEYWORD ()
+<ROUTINE STORY256-PRECHOICE ()
     <COND (<IN? ,CODEWORD-SCORPION ,CODEWORDS>
         <SETG HERE ,STORY011>
         <SETG CONTINUE-TO-CHOICES F>
@@ -3052,10 +3053,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "259")
     (STORY TEXT259)
-    (PRECHOICE STORY259-JUMP)
+    (PRECHOICE STORY259-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY259-JUMP ()
+<ROUTINE STORY259-PRECHOICE ()
     <COND (<AND <IN? ,SKILL-CHARMS ,SKILLS> <IN? ,MAGIC-AMULET ,PLAYER>>
         <SETG HERE ,STORY283>
     )(<IN? ,MAPLE-FLUTE ,PLAYER>
@@ -3103,10 +3104,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "263")
     (STORY TEXT263)
     (CONTINUE STORY232)
-    (PRECHOICE STORY263-HEAL)
+    (PRECHOICE STORY263-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY263-HEAL()
+<ROUTINE STORY263-PRECHOICE()
     <POTION-RESTORE>>
 
 <CONSTANT TEXT264 "The innkeeper is chained in a line of five slaves who have been set to repair a broken cartwheel. Four of them lift the cart while another tries to tie a joint together. The guard comes over to the group and starts kicking them to give himself the feeling he is doing his job well. The innkeeper groans and begs for mercy as the guard's boot thumps into his stomach. He groans again.">
@@ -3128,15 +3129,15 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "265")
     (STORY TEXT265)
     (CONTINUE STORY258)
-    (EVENTS STORY265-GIVEWHITE)
-    (PRECHOICE STORY265-AGILITY)
+    (EVENTS STORY265-EVENTS)
+    (PRECHOICE STORY265-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY265-GIVEWHITE ()
+<ROUTINE STORY265-EVENTS ()
     <GIVE-ITEM ,JAR-WHITE-JELLY>
     <RETURN ,STORY265>>
 
-<ROUTINE STORY265-AGILITY ()
+<ROUTINE STORY265-PRECHOICE ()
     <HLIGHT ,H-BOLD>
     <COND (<IN? ,SKILL-AGILITY ,SKILLS>
         <CRLF>
@@ -3206,20 +3207,40 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY260)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT271 "Your swiping sword point just keeps the elf at bay. He is quick and nimble. But after a while you realize he is hampered because he cannot flee. He can only walk backwards, feeling his way. His eyes seem drawn to yours as you press your attack.">
+<CONSTANT CHOICES271 <LTABLE "try one mighty lunge to end the fight" "try a combination, feinting a high thrust and following up with a chop to the midriff">>
+
 <ROOM STORY271
     (IN ROOMS)
     (DESC "271")
+    (STORY TEXT271)
+    (CHOICES CHOICES271)
+    (DESTINATIONS <LTABLE STORY291 STORY245>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT272 "Seeing that you have broken the terms of the duel by failing to submit when you have been beaten, the King of the Elves feels he may use death magic against you. He frowns hard at you and begins a chant. Your blood congeals and blocks your arteries. Your heart beats frantically, trying to force the blood to your brain but the strain is too great and your heart bursts. You have been slain for breaking the rules of the duel.">
 
 <ROOM STORY272
     (IN ROOMS)
     (DESC "272")
+    (STORY TEXT272)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT273 "Garoshtar swoops low, his wings cracking down at the last moment as he swings his head down and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack hard against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, throwing you off his back and you impale yourself on a branch of a tree.">
 
 <ROOM STORY273
     (IN ROOMS)
     (DESC "273")
+    (STORY TEXT273)
+    (EVENTS STORY273-EVENTS)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY273-EVENTS ()
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS> <RETURN ,STORY286>)>
+    <RETURN ,STORY273>>
 
 <CONSTANT TEXT274 "The earth mound that was to be your bed collapses beneath you. It is the some of a giant man-eating Colossus beetle. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of the throat of a Colossus beetle press you down to its gullet you realize you have been swallowed alive while you listened for a monster stalking you. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
 
@@ -3230,55 +3251,112 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT275 "Without waiting to hear your answer the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily.||\"Not yet,\" you caution. \"Drink only at need when you are hurt and need a magical healing.\" The Kwerrel stops drinking and examines the joint of his thumb carefully.||\"It is working: you tell the truth, my thumb is healed.\" He sucks on it happily. \"Take some of the flesh of the toadstool. It is the Blood of Iron taodstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||You take a large piece of the flesh of the toadstool and, bidding goodbye to the little imp, you walk back out into the forest.">
+
 <ROOM STORY275
     (IN ROOMS)
     (DESC "275")
-    (EVENTS STORY275-GIVERED)
+    (STORY TEXT275)
+    (CONTINUE STORY406)
+    (ITEM TOADSTOOL-FLESH)
+    (EVENTS STORY275-EVENTS)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY275-GIVERED ()
+<ROUTINE STORY275-EVENTS ()
     <GIVE-ITEM ,POTION-RED-LIQUID>
     <RETURN ,STORY275>>
+
+<CONSTANT TEXT276 "Your arrow slices through the air and strikes exactly where Huldranas hit a moment before, splintering the shaft in two. It is a good hit. You allow yourself a self-satisfied nod and lower your bow, then turn to Huldranas. He lets fly with a second arrow, attempting to do the same to your shaft embedded in the branch, but in his haste he is careless and the shot goes wide, missing the branch entirely.||\"That is sufficient,\" you say. \"I've no desire to humiliate you. Admit you're bested.\"||\"No,\" interrupts the Elf King. \"Let Huldranas try again.\"">
+<CONSTANT CHOICES276 <LTABLE "allow Huldranas to try to make a second attempt at splitting your arrow" "insist that the contest ends now that you have proven yourself the victor">>
 
 <ROOM STORY276
     (IN ROOMS)
     (DESC "276")
+    (STORY TEXT276)
+    (CHOICES CHOICES276)
+    (DESTINATIONS <LTABLE STORY300 STORY190>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT277 "The days come and go and still you cannot find anyone to talk to in the forest, nor anything but perfectly ordinary-seeming trees. You manage to find enough berries and nuts to stay alive but it is a hard existence. The forest is just too big to find your way through alone.||For hours on end you feel as though you are being watched by unseen eyes. Sometimes you whirl round suddenly, eyes darting towards any sign of movement in the hope of catching one of the spies. But you never do.||Then one day which dawns cold and dewy just like any other, you hear a strange thumping and an occasional hissing like a dragon's breath or a geyser erupting far away.">
 
 <ROOM STORY277
     (IN ROOMS)
     (DESC "277")
+    (STORY TEXT277)
+    (CONTINUE STORY260)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT278 "Your spell, which should have stunned the egret and sent it to sleep for a while, goes off much more strongly than you expected. There is an explosion and a cloud of white feathers flutters to the charred earth, all that remains of the white egret. The report rolls around the valley, echoing ominously. The hillock begins to shake as if in an earthquake. The ground you have stepped back on is quite firm but you can feel the vibrations rocking you slightly. Then the whole of the green hillock rolls upwards and away from you, leaving you standing on the edge of a leedge with a twenty-foot drop. As the hillock moves it creases and splits apart and you realize what it is. It turns its great scaly neck like a corkscrew and looks back over its shoulder at you. You are looking into the face of a dragon; the smouldering red eyes gaze at you like the portals to hell out of its cart-sized face">
+<CONSTANT CHOICES278 <LTABLE "leap at its head to attack it before it can wake up" "smile at it and hope it doesn't eat you , while preparing a spell, if you know how">>
 
 <ROOM STORY278
     (IN ROOMS)
     (DESC "278")
+    (STORY TEXT278)
+    (CHOICES CHOICES278)
+    (DESTINATIONS <LTABLE STORY074 STORY036>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeper groan and beg for mercy.||Soon the awful sights and sounds of the Westerman camp are far behind.">
+<CONSTANT CHOICES279 <LTABLE "head weast" "east" "south-west" "south">>
 
 <ROOM STORY279
     (IN ROOMS)
     (DESC "279")
+    (STORY TEXT279)
+    (CHOICES CHOICES279)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT280 "You abandon the elves but continue with your quest for the Tree of Knowledge. You are still no nearer to finding it when you stumble across the bodies of hundreds of elves lying among the trees. It is as if someone has just switched them off without warning, some even while eating their supper. They are all dead and you will never escape.">
 
 <ROOM STORY280
     (IN ROOMS)
     (DESC "280")
+    (STORY TEXT280)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT281 "Renard snorts in disgust. \"Not that old tale again. Don't let Marek tell you it was as big as a temple, will you?\" He gets up and leaves.||Marek the Hunter fixes you with a grim stare. Whatever he thinks he has seen has really frightened him,||\"It was like a small green hill. I almost stepped on it. But its body heaved as it breathed. I thought it was asleep. I backed away from the clearing but it opened one eye, like a moon, and looked at me. Its nostrils smoked and I thought it was going to kill me, but it let me go and I ran all the way out of the forest by nightfall of the fourth day.\"||You ask the hunter if he could find this clearing again but he seems too fearful. You ask him to draw a map but he says he cannot write. \"But if you walk beside the Burgstream to the banks of the great Sirion river, turn west and then climb where the ground rises, you will find the place.\"||Marek pleads tiredness and excuses himself. You follow suit and take a room in the inn for the night.">
 
 <ROOM STORY281
     (IN ROOMS)
     (DESC "281")
+    (STORY TEXT281)
+    (CONTINUE STORY333)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT282 "\"How am I to find my way back out of the forest?\" asks Pozzo. \"I am a man of the town. I was lost before the Westermen dogs captured me. I'll never see Burg or my poor daughter again without your help.\"">
+<CONSTANT CHOICES282 <LTABLE "change your mind and take the time needed to escort him to Burg" "tell him to walk until he finds a river and then to follow that river towards the seaa and he will one day escape the forest">>
 
 <ROOM STORY282
     (IN ROOMS)
     (DESC "282")
+    (STORY TEXT282)
+    (CHOICES CHOICES282)
+    (DESTINATIONS <LTABLE STORY062 STORY012>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT283 "You whisper a charm and rub the pendant on your neck chain. The magical stone is not warm -- there seems to be no danger -- yet there is something about the Lady in Grey that suggests power.">
 
 <ROOM STORY283
     (IN ROOMS)
     (DESC "283")
+    (STORY TEXT283)
+    (CONTINUE STORY310)
+    (PRECHOICE STORY283-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY283-PRECHOICE ()
+    <COND (<IN? ,MAPLE-FLUTE ,PLAYER>
+        <SETG CONTINUE-TO-CHOICES F>
+        <SETG HERE ,STORY299>
+        <PRESS-A-KEY>
+    )>>
 
 <ROOM STORY284
     (IN ROOMS)

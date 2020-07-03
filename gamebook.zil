@@ -182,7 +182,7 @@
             <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
             <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
             <COND (<AND <EQUAL? R-ITEM <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
-            <COND (<AND <EQUAL? R-MONEY <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " " CURRENCY ")">)>
+            <COND (<AND <EQUAL? R-MONEY <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " " D ,CURRENCY ")">)>
             <COND (<AND <EQUAL? R-ANY <GET .TYPES .I>> .REQUIREMENTS> <PRINT-ANY <GET .REQUIREMENTS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
@@ -224,7 +224,7 @@
         <COND (<L? ,MONEY .AMOUNT>
             <CRLF><CRLF>
             <HLIGHT ,H-BOLD>
-            <TELL "You do not have enough " CURRENCY "." CR>
+            <TELL "You do not have enough " D ,CURRENCY "." CR>
             <HLIGHT 0>
             <PRESS-A-KEY>
             <RFALSE>
@@ -308,7 +308,7 @@
 <ROUTINE CHARGE-MONEY (COST)
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You are charged " N .COST " " CURRENCY ".">
+    <TELL "You are charged " N .COST " " D ,CURRENCY ".">
     <HLIGHT 0>
     <SETG MONEY <- ,MONEY .COST>>
     <COND (<L? ,MONEY 0> <SETG MONEY 0>)>
@@ -797,7 +797,8 @@
     <CURSET 1 <- .WIDTH 46>>
     <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
     <CURSET 1 <- .WIDTH 27>>
-    <TELL C-CURRENCY ": " N ,MONEY>
+    <PRINT-CAP-OBJ ,CURRENCY>
+    <TELL ": " N ,MONEY>
     <CURSET 1 <- .WIDTH 16>>
     <TELL "Moves: " N ,MOVES>
     <SCREEN 0>
