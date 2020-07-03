@@ -3067,7 +3067,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <PRESS-A-KEY>>
 
 <CONSTANT TEXT260 "Climbing a rise you look out over a scene of utter devastation. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke and two hundred yards away you see a forge with a gigantic cauldron over a bonfire which six men feed constantly with ready-cut wood and charcoal. The men working here are very pale skinned, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses yoked together pull logs to where groups of men cut them up with saws ready for burning. A row of children sit nearby; they are darker skinned than the men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped men are torching the underbrush to kill everything that lives in the forest. A pall of smoke hangs over everything like a storm-cloud.||The men haven't noticed you yet. There is a group of armed gauards near the forge who sport more steel armour than you have ever seen. These men must be wealthy. They also look bored and edgy.">
-<CONSTANT CHOICES260 <LTABLE STORY100 STORY134>>
+<CONSTANT CHOICES260 <LTABLE "show yourself and talk to them" "sink back into the forest and hide">>
 
 <ROOM STORY260
     (IN ROOMS)
