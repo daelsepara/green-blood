@@ -3151,29 +3151,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <TELL "You will have to offer the Kwerrel imp something else.">>
 
+<CONSTANT TEXT266 "You cast Vanish and disappear. Then you creep slowly round to the perch of the pavilion and, waiting to make sure there will be no one coming in or out you creep in and sneak behind the table where the man they call the chief is seated, poring over the maps. He is a balding, corpulent man whose eyes gleam with greed.||The master map shows the Forest of Arden in its enttirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments which are eating into the forest. The chief waves his broad hand across the map, showing where they are going to wreak devastation and havoc next .Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. There is nothing to show where Elvenhame, the fabled city of the elves, is.||The chief dismisses his scribes and furls the map once more before you can read any of the little notes the scribes have inked in.">
+<CONSTANT CHOICES266 <LTABLE "stay to see if you can discover more, baring in mind your spell will fail in another ten minutes or so" "you can leave now while the coast is clear">>
+
 <ROOM STORY266
     (IN ROOMS)
     (DESC "266")
+    (STORY TEXT266)
+    (CHOICES CHOICES266)
+    (DESTINATIONS <LTABLE STORY115 STORY095>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT267 "Your charm of friendship works. The egret flies up into the air, arcs round you in a graceful curve and comes to land on your head. It has stopped its cackling. You start to climb the hillock with the white egret balancing on your head. As you set foot on the hillock you are surprised at how hard the ground feels, yet it yields slightly as if a layer of hard rock was resting on mud. The ground is smooth and has a sheen: it only looked like grass. You climb on up the hillock and reaching the summit, look down on its far side which is ribbed and ridged in the most unusual way. It dawns on you that the thing you are standing on is a gargantuan dragon. You can see its head, the size of a cart, curled up next to its feet as it slumberes. It seems not to have noticed you crawling like a fly over its great body.">
+<CONSTANT CHOICES267 <LTABLE "climb down its head and slay it" "attempt to wake it up and perhaps talk with it, for they say some dragons can talk">>
 
 <ROOM STORY267
     (IN ROOMS)
     (DESC "267")
+    (STORY TEXT267)
+    (CHOICES CHOICES267)
+    (DESTINATIONS <LTABLE STORY116 STORY178>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT268 "\"The Elf King's name,\" suggests the mirror-sprite. \"That is a very old secret.\"||You shrug. \"What of it? I need a secret that will help me in my quest.\"||\"Among the ancient folk, names are especially significant,\" says the sprite. \"You can force such a being to do what you want if you know his name. And you might want the Elf King's help before your quest is done.\"||\"All right, what is his name?\"||The sprite demurs. \"I heard. . . on the wind, long ago, I head a whisper...\" It glances to left and right, wearing a fearful expression on your own reflected face. \"I'll tell you this rhyme:||\"The name of the Elven King|Is a very powerful thing;|If you speak it to him, or even sing,|He'll have to give you his signet ring.\"||You give the mirror a long hard glare. The sprite returns your annoyance with a disingenuous look. \"That does not sound very helpful,\" you say coldly.||\"It is all I dare,\" replies the sprite. \"Now hurry -- shatter the mirror so that I can fly free.\"">
+<CONSTANT CHOICES268 <LTABLE "break the mirror" "or not">>
 
 <ROOM STORY268
     (IN ROOMS)
     (DESC "268")
+    (STORY TEXT268)
+    (CHOICES CHOICES268)
+    (DESTINATIONS <LTABLE STORY418 STORY105>)
+    (TYPES TWO-NONES)
+    (CODEWORD CODEWORD-SPECULUM)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT269 "The Elf is angered by your refusal to give in. You try to defend yourself, but hampered as you are by your wounds you are no match for him. He thrusts fast twice, each time cutting you deeply. You are drenched in your own hot red blood as the elf stands back, looking on you sorrowfully as he can see that he has killed. Another elf rushes forward with a potion and holds it to your mouth to drink, but he is too late. A wracking cough shakes you and you die.">
 
 <ROOM STORY269
     (IN ROOMS)
     (DESC "269")
+    (STORY TEXT269)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT270 "The elves take you by secret ways through the forest until  you come near to the camp of the Westermen. There they leave you. If they are seen by mortal men they become unable to melt away into the forest and are then in danger of being enslaved, so you will have to spy along.">
 
 <ROOM STORY270
     (IN ROOMS)
     (DESC "270")
+    (STORY TEXT270)
+    (CONTINUE STORY260)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY271
