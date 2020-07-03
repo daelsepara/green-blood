@@ -37,7 +37,7 @@
         <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
-        <COST-CHECK>
+        <LOSE-GOLD>
         <GAIN-CODEWORD>
         <GAIN-ITEM>
         <CHECK-PRECHOICE>
@@ -100,7 +100,7 @@
     <SET PRE-CHOICE <GETP ,HERE ,P?PRECHOICE>>
     <COND (.PRE-CHOICE <APPLY .PRE-CHOICE>)>>
 
-<ROUTINE COST-CHECK ("AUX" GOLD)
+<ROUTINE LOSE-GOLD ("AUX" GOLD)
     <SET GOLD <GETP ,HERE ,P?COST>>
     <COND(<G? .GOLD 0>
         <CHARGE-GOLD .GOLD>)>>

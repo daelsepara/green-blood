@@ -2671,20 +2671,47 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT230 "\"Why have all your fiends gone? Why won't they talk to me?\"||\"They are elves, they do not wish to.\"||\"You are an elf, you are still here talking to me.\"||\"But I do not wish to.\"||\"Then why do you not vanish like the rest?\"||\"Shut your eyes just for a moment.\"">
+<CONSTANT CHOICES230 <LTABLE "do as the elf asks" "keep your gaze firmly on the last of the slippery elves">>
+
 <ROOM STORY230
     (IN ROOMS)
     (DESC "230")
+    (STORY TEXT230)
+    (CHOICES CHOICES230)
+    (DESTINATIONS <LTABLE STORY240 STORY250>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT231 "Judging from your manners and bearing, the guard has no reason to doubt you, and deferentially leads you to the pavilion. You step inside and introduce yourself to an important-looking man -- the Chief of the Westermen -- sitting at a large oak table strewn with scrolls and maps. A balding corpulent man, his eyes seem to gleam with greed.||His eyes show a vague flicker of recognition, and you hope wits will see you through this meeting. For now, however, there seems to be little to worry about. The chief invites you to look at the master map which shows the whole Forest of Arden. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments which are eating into the forest. The chief waves his broad hand across the map, showing where they are going to wreak devastation and havoc next. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in.">
+<CONSTANT CHOICES231 <LTABLE "ask him about the Tree of Knowledge" "ask why the chief is despoiling the forest" "if there is ever any trouble among the elves or his own men">>
 
 <ROOM STORY231
     (IN ROOMS)
     (DESC "231")
+    (STORY TEXT231)
+    (CHOICES CHOICES231)
+    (DESTINATIONS <LTABLE STORY337 STORY097 STORY354>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT232 "The Elf King tells you there are about twelve thousand elves here in the forest, and a very few spread across the rest of the world who are too far away to be reached in time.">
 
 <ROOM STORY232
     (IN ROOMS)
     (DESC "232")
+    (STORY TEXT232)
+    (CONTINUE STORY042)
+    (CODEWORD CODEWORD-WATERBEARER)
+    (PRECHOICE STORY232-JUMP)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY232-JUMP ()
+    <COND (<IN? ,CODEWORD-BULLHORN ,PLAYER>
+        <SETG HERE ,STORY256>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 <ROOM STORY233
     (IN ROOMS)
