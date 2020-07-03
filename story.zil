@@ -2952,7 +2952,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "250")
     (STORY TEXT250)
     (CHOICES CHOICES250)
-    (DESTINATIONS <STORY330 STORY340>)
+    (DESTINATIONS <LTABLE STORY330 STORY340>)
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
