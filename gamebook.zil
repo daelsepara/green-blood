@@ -1,9 +1,8 @@
-<INSERT-FILE "story">
 <INSERT-FILE "instructions">
 <INSERT-FILE "player">
 <INSERT-FILE "objects">
 <INSERT-FILE "codewords">
-<INSERT-FILE "locations">
+<INSERT-FILE "story">
 
 <SET REDEFINE T>
 
