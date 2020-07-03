@@ -3,6 +3,7 @@
 <CONSTANT R-CODEWORD 2>
 <CONSTANT R-ITEM 3>
 <CONSTANT R-GOLD 4>
+<CONSTANT R-ANY 5>
 
 <CONSTANT TWO-NONES <LTABLE R-NONE R-NONE>>
 <CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
@@ -111,7 +112,7 @@
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT008 "The Kwerrel is delighted with his shiny golden disks of metal, whe he starts trying to weave into his hair. Now that he has got what he wants he scampers away, leaving you alone inside the bush. The archway back to the forest has reappeared so you make good your escape from the bush.">
+<CONSTANT TEXT008 "The Kwerrel is delighted with his shiny golden disks of metal, which he starts trying to weave into his hair. Now that he has got what he wants he scampers away, leaving you alone inside the bush. The archway back to the forest has reappeared so you make good your escape from the bush.">
 
 <ROOM STORY008
     (IN ROOMS)
@@ -1822,8 +1823,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT158)
     (CHOICES CHOICES158)
     (DESTINATIONS <LTABLE STORY214 STORY225 STORY236 STORY243>)
-    (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR MAGIC-POTION>)
-    (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ITEM>)
+    (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR <LTABLE POTION-RED-LIQUID POTION-TARRY-BLACK POTION-WHITE-JELLY POTION-CLOUDY-BLUE JAR-COLOURED-EARTH>>)
+    (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ANY>)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT159 "A slender elf with moon-coloured hair steps forward to answer his monarch's summons. He carries a bow of silver-chased ivory, and the fletching of the arrows in his quiver is purest white. \"Your opponent will be Huldranas,\" the Elf King tells you. He points to a tall tree. \"That branch will be the target.\"||You look where he is pointing, then glance back at him. \"Which branch?\"||\"The one where the orchid grows.\"||You look back. You had not noticed before the flower blazing like a pale jewel against the black bark of the tree. Huldranas gestures for you to take the first shot. You nock on an arrow and send it sailing up towards the branch. It strikes wide of the orchid, but it was only  intended as a ranging shot. At least now you have a good sense of the allowance you need to make for height and wind speed.||Huldranas' arrow flashes from his bow. It impales one of the petals of the orchid. He turns to you with a casual look that betrays neither arrogance not tension. Again without a word, he gestures for you to shoot.||As you sight along your arrow, you consider what to do.">
@@ -2713,20 +2714,54 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <PRESS-A-KEY>
     )>>
 
+<CONSTANT TEXT233 "The sotone misses the owl, which veers into the top of a tree. It clings on to a branch there and struggles upright, then while preening its ruffled feathers says, \"The curse of the Grey Touch be upon you, for striking at the servant of the Lady of Grey.\" The owl swoops down past you back to the forest.">
+
 <ROOM STORY233
     (IN ROOMS)
     (DESC "233")
+    (STORY TEXT233)
+    (CONTINUE STORY193)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT234 "Zorolotl is too quick for you. The desperate nature of your last ditch attack only makes it easier for him to sidestep you and cut into your side, below your armpit.">
 
 <ROOM STORY234
     (IN ROOMS)
     (DESC "234")
+    (STORY TEXT234)
+    (CONTINUE STORY238)
+    (PRECHOICE STORY234-LOSELIFE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY234-LOSELIFE ()
+    <LOSE-LIFE 8 "You have died in combat." ,STORY234>>
+
+<CONSTANT TEXT235 "You carefully gather potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
+<CONSTANT CHOICES235 <LTABLE "run in search of water to hide in" "smear some of the white jelly on yourself" "smear some of the black tar on yourself" "drink the blue potion" "drink the red potion">>
 
 <ROOM STORY235
     (IN ROOMS)
+    (STORY TEXT235)
+    (CHOICES CHOICES235)
+    (DESTINATIONS <LTABLE STORY197 STORY184 STORY168 STORY155 STORY141>)
+    (REQUIREMENTS <LTABLE NONE POTION-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
+    (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
+    (PRECHOICE STORY235-GATHERPOTIONS)
     (DESC "235")
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY235-GATHERPOTIONS ()
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You gathered " T ,POTION-WHITE-JELLY ", " T ,POTION-TARRY-BLACK ", " T ,POTION-CLOUDY-BLUE ", " T ,POTION-RED-LIQUID " and " T ,JAR-COLOURED-EARTH ".">
+    <MOVE ,POTION-WHITE-JELLY ,PLAYER>
+    <MOVE ,POTION-TARRY-BLACK ,PLAYER>
+    <MOVE ,POTION-CLOUDY-BLUE ,PLAYER>
+    <MOVE ,POTION-RED-LIQUID ,PLAYER>
+    <MOVE ,JAR-COLOURED-EARTH ,PLAYER>
+    <HLIGHT 0>
+    <CRLF>>
 
 <ROOM STORY236
     (IN ROOMS)

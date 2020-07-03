@@ -67,7 +67,8 @@
     <PUTP ,STORY172 ,P?DEATH T>
     <PUTP ,STORY177 ,P?DEATH T>
     <PUTP ,STORY199 ,P?DEATH T>
-    <PUTP ,STORY226 ,P?DEATH T>>
+    <PUTP ,STORY226 ,P?DEATH T>
+    <PUTP ,STORY234 ,P?DEATH T>>
 
 <ROUTINE PRINT-PAGE ("AUX" TEXT)
     <SET TEXT <GETP ,HERE ,P?STORY>>
@@ -255,6 +256,16 @@
     )>
     <RTRUE>>
 
+<ROUTINE CHECK-ANY (ITEMS "AUX" COUNT)
+    <COND (.ITEMS
+        <SET COUNT <GET .ITEMS 0>>
+        <DO (I 1 .COUNT)
+            <COND (<IN? <GET .ITEMS .I> ,PLAYER> <RTRUE>)>
+        >
+        <RFALSE>
+    )>
+    <RTRUE>>
+
 <ROUTINE CHECK-GOLD (AMOUNT)
     <COND (<G? .AMOUNT 0>
         <COND (<L? ,GOLD-PIECES .AMOUNT>
@@ -340,6 +351,19 @@
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )>
+                    )(<AND <EQUAL? .TYPE R-ANY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-ANY <GET .REQUIREMENTS .CHOICE>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                        )(ELSE
+                            <HLIGHT ,H-BOLD>
+                            <CRLF><CRLF>
+                            <TELL "You do not have any of the items">
+                            <PRINT-ANY <GET .REQUIREMENTS .CHOICE>>
+                            <HLIGHT 0>
+                            <CRLF>
+                            <PRESS-A-KEY>
+                        )>
                     )>
                     <RETURN>
                 )(ELSE
@@ -372,8 +396,23 @@
             <HLIGHT 0>
             <TELL ")">
         )>
-    )>
->
+    )>>
+
+<ROUTINE PRINT-ANY (ITEMS "AUX" COUNT)
+    <COND (.ITEMS
+        <SET COUNT <GET .ITEMS 0>>
+        <COND (<G? .COUNT 0>
+            <TELL " (">
+            <HLIGHT ,H-ITALIC>
+            <DO (I 1 .COUNT)
+                <COND (<G? .I 1> <TELL ", ">)>
+                <COND (<EQUAL? .I .COUNT> <TELL "or ">)>
+                <TELL D <GET .ITEMS .I>>
+            >
+            <HLIGHT 0>
+            <TELL ")">
+        )>
+    )>>
 
 <ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES TYPES REQUIREMENTS CONTINUE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES>>
@@ -394,6 +433,7 @@
             <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
             <COND (<AND <EQUAL? R-ITEM <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
             <COND (<AND <EQUAL? R-GOLD <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " gold)">)>
+            <COND (<AND <EQUAL? R-ANY <GET .TYPES .I>> .REQUIREMENTS> <PRINT-ANY <GET .REQUIREMENTS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
         >
