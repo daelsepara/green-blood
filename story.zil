@@ -27,6 +27,14 @@
     <TAKE-ITEM ,POTION-RED-LIQUID>
     <TAKE-ITEM ,JAR-COLOURED-EARTH>>
 
+<ROUTINE POTION-RESTORE ()
+    <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "The potion magically heals all your lost life points.">
+    <HLIGHT 0>
+    <CRLF>>
+
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
@@ -1730,7 +1738,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY151-PRECHOICE ()
-    <COND (<IN? ,SKILL-SPELLS ,SKILLS>
+    <COND (<AND <IN? ,SKILL-SPELLS ,SKILLS> <IN? ,MAGIC-WAND ,PLAYER>>
         <PUTP ,STORY151 ,P?DEATH F>
         <SETG CONTINUE-TO-CHOICES F>
         <SETG HERE ,STORY229>
@@ -2614,12 +2622,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
             <CRLF>
             <TELL "Drink " T ,POTION-RED-LIQUID "?">
             <COND (<YES?>
-                <SETG LIFE-POINTS ,MAX-LIFE-POINTS>
-                <CRLF>
-                <HLIGHT ,H-BOLD>
-                <TELL "The potion magically heals all your lost life points.">
-                <HLIGHT 0>
-                <CRLF>
+                <POTION-RESTORE>
             )>
         )>
         <CRLF>
@@ -3016,40 +3019,92 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <PRESS-A-KEY>
     )>>
 
+<CONSTANT TEXT257 "Zorolotl seems content to let you come forward and make the next strike. He is counting on his nimbleness saving him if you commit yourself as clumsily as you did last time, then he will riposte. How much more of this can you stand?">
+<CONSTANT CHOICES257 <LTABLE "try to end it quickly with a blistering combination" "feint and draw him in, to make him commit himself">>
+
 <ROOM STORY257
     (IN ROOMS)
     (DESC "257")
+    (STORY TEXT257)
+    (CHOICES CHOICES257)
+    (DESTINATIONS <LTABLE STORY234 STORY223>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT258 "\"Yes. I am lost,\" your reply. \"Are you truly a talking owl?\"||\"Truly I am. I suppose you want to know how to escape from the forest?\"||You are tempted to say yes but pride will not let you. The owl sounds surprised when you say no.||\"Humans usually want to know the way out. It is a hard place for those who do not know and love the forest.\"||The owl seems friendly, if it really is the owl talking. It tells you it is an enchanted bird, enchanted by the Lady of Grey, to bring those who are friends of the forest to her bower.">
+<CONSTANT CHOICES258 <LTABLE "can ask the owl to take you to the Lady in Grey" "ask the way to find the Tree of Knowledge">>
 
 <ROOM STORY258
     (IN ROOMS)
     (DESC "258")
+    (STORY TEXT258)
+    (CHOICES CHOICES258)
+    (DESTINATIONS <LTABLE STORY241 STORY328>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT259 "You walk slowly on past a blue cedar that stands beside a tall poplar tree. The trees are festooned with climbing plants and a spiral of violet wistaria climbs the poplar likea barber's pole. The forest seems to quieten around you as you push under a hanging curtain of clematis and honeysuckle and enter a small clearing which is a beautifully tended garden. An inner ring of fruit trees surrounds the meadow-like garden, which is lit with bright sun that bathes the wings of butterflies and dragonflies glittering with iridescent hues. Behind a large pool in the meadow is a gnarled old holm-oak tree with a ladder leading up to tree-house.||The owl is perched on top of the tree-house. \"I told you it wasn't far. If only you didn't walk so slowly.\"||\"Enough; do not chide. We must make our visitor welcome.\" A woman in a pearl-grey robe pulls aside a curtain at the top of the ladder and beckons you welcomingly. She is young and very beautiful. You find her appearance startling. Who would have expected to encounter such loveliness in this remote place? Looking upon one so serene makes you think of the fabled Faerie Queen.">
 
 <ROOM STORY259
     (IN ROOMS)
     (DESC "259")
+    (STORY TEXT259)
+    (PRECHOICE STORY259-JUMP)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY259-JUMP ()
+    <COND (<AND <IN? ,SKILL-CHARMS ,SKILLS> <IN? ,MAGIC-AMULET ,PLAYER>>
+        <SETG HERE ,STORY283>
+    )(<IN? ,MAPLE-FLUTE ,PLAYER>
+        <SETG HERE ,STORY299>
+    )(ELSE
+        <SETG HERE ,STORY310>
+    )>
+    <SETG CONTINUE-TO-CHOICES F>
+    <PRESS-A-KEY>>
+
+<CONSTANT TEXT260 "Climbing a rise you look out over a scene of utter devastation. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke and two hundred yards away you see a forge with a gigantic cauldron over a bonfire which six men feed constantly with ready-cut wood and charcoal. The men working here are very pale skinned, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses yoked together pull logs to where groups of men cut them up with saws ready for burning. A row of children sit nearby; they are darker skinned than the men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped men are torching the underbrush to kill everything that lives in the forest. A pall of smoke hangs over everything like a storm-cloud.||The men haven't noticed you yet. There is a group of armed gauards near the forge who sport more steel armour than you have ever seen. These men must be wealthy. They also look bored and edgy.">
+<CONSTANT CHOICES260 <LTABLE STORY100 STORY134>>
 
 <ROOM STORY260
     (IN ROOMS)
     (DESC "260")
+    (STORY TEXT260)
+    (CHOICES CHOICES260)
+    (DESTINANTIONS <LTABLE STORY100 STORY134>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT261 "You look away and say that you free the elf to return to his home. There is no answer: you look back in time to see the dirk being thrust at your throat. The elven blade cuts your jugular and you fall to the ground in a dying faint.">
 
 <ROOM STORY261
     (IN ROOMS)
     (DESC "261")
+    (STORY TEXT261)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT262 "The sword cuts cleanly through the fibres lopping the tentacles into pieces. The Embracer emits a piercing shriek and throws Renard at you before subsiding once more into the river. You both swim to the far bank before the Embracer can recover.">
 
 <ROOM STORY262
     (IN ROOMS)
     (DESC "262")
+    (STORY TEXT262)
+    (CONTINUE STORY398)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT263 "The eyes of the elves still hold no clue as to what they think of you. They do not clap or smile or acknowledge your victory in any way, but the king says, \"You have proved your worth in the duel. Elvendom will play its part if you lead us against the Westermen for there is not one of us who wants to see the destruction of the forest. What would you have us do?||As he says this, you are given a clear blue potion to drink which makes your whole body jingle excruciatingly, but heals any of your hurts.||\"Come. We will plan the downfall of the Westermen,\" says the Elf King.">
 
 <ROOM STORY263
     (IN ROOMS)
     (DESC "263")
+    (STORY TEXT263)
+    (CONTINUE STORY232)
+    (PRECHOICE STORY263-HEAL)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY263-HEAL()
+    <POTION-RESTORE>>
 
 <ROOM STORY264
     (IN ROOMS)
