@@ -458,6 +458,51 @@
         <RETURN .ITEMS>
     )>>
 
+<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC "AUX" KEY COUNT CHOICE)
+    <SET COUNT 0>
+    <COND (<NOT .DESC> <SET DESC "item">)>
+    <RESET-SELECTIONS>
+    <REPEAT ()
+        <CRLF>
+        <TELL "You are already carrying " N <COUNT-POSSESSIONS> " items in your inventory." CR>
+        <TELL "You can select up to " N .MAX " " .DESC "s from this list:" CR>
+        <DO (I 1 .ITEMS)
+            <TELL N .I " - [">
+            <COND (<INTBL? <GET .LIST .I> SELECT-CHOICES 10> <TELL "X">)(ELSE <TELL " ">)>
+            <TELL "] - " D <GET .LIST .I> CR>
+        >
+        <TELL "0 - I'm alright with my choices." CR>
+        <TELL "Select which " .DESC "(s) to take: " CR>
+        <SET KEY <INPUT 1>>
+        <COND (<EQUAL? .KEY !\0> <RETURN>)>
+        <COND (<AND <G=? .KEY !\1> <L=? .KEY !\5>>
+            <SET CHOICE <- .KEY !\0>>
+            <COND (<INTBL? <GET .LIST .CHOICE> SELECT-CHOICES 10>
+                <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES <GET .LIST .CHOICE>> NONE>
+                <SET COUNT <- .COUNT 1>>
+            )(ELSE
+                <COND (<EQUAL? .COUNT .MAX>
+                    <CRLF>
+                    <HLIGHT ,H-BOLD>
+                    <TELL "You have already selected " N .MAX " " .DESC "s!">
+                    <HLIGHT 0>
+                    <CRLF>
+                )(ELSE
+                    <SET COUNT <+ .COUNT 1>>
+                    <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES NONE> <GET .LIST .CHOICE>>
+                )>
+            )>
+        )>
+    >
+    <COND (<G? .COUNT 0>
+        <DO (I 1 9)
+            <COND (<GET SELECT-CHOICES .I>
+                <TAKE-ITEM <GET SELECT-CHOICES .I>>
+            )>
+        >
+    )>
+    <RETURN>>
+
 ; "Story - Support Routines (display)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE PRINT-ANY (ITEMS)
@@ -734,51 +779,6 @@
 <ROUTINE PRESS-A-KEY ()
     <TELL CR "[Press a key to continue]" CR>
     <INPUT 1>
-    <RETURN>>
-
-<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC "AUX" KEY COUNT CHOICE)
-    <SET COUNT 0>
-    <COND (<NOT .DESC> <SET DESC "item">)>
-    <RESET-SELECTIONS>
-    <REPEAT ()
-        <CRLF>
-        <TELL "You are already carrying " N <COUNT-POSSESSIONS> " items in your inventory." CR>
-        <TELL "You can select up to " N .MAX " " .DESC "s from this list:" CR>
-        <DO (I 1 .ITEMS)
-            <TELL N .I " - [">
-            <COND (<INTBL? <GET .LIST .I> SELECT-CHOICES 10> <TELL "X">)(ELSE <TELL " ">)>
-            <TELL "] - " D <GET .LIST .I> CR>
-        >
-        <TELL "0 - I'm alright with my choices." CR>
-        <TELL "Select which " .DESC "(s) to take: " CR>
-        <SET KEY <INPUT 1>>
-        <COND (<EQUAL? .KEY !\0> <RETURN>)>
-        <COND (<AND <G=? .KEY !\1> <L=? .KEY !\5>>
-            <SET CHOICE <- .KEY !\0>>
-            <COND (<INTBL? <GET .LIST .CHOICE> SELECT-CHOICES 10>
-                <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES <GET .LIST .CHOICE>> NONE>
-                <SET COUNT <- .COUNT 1>>
-            )(ELSE
-                <COND (<EQUAL? .COUNT .MAX>
-                    <CRLF>
-                    <HLIGHT ,H-BOLD>
-                    <TELL "You have already selected " N .MAX " " .DESC "s!">
-                    <HLIGHT 0>
-                    <CRLF>
-                )(ELSE
-                    <SET COUNT <+ .COUNT 1>>
-                    <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES NONE> <GET .LIST .CHOICE>>
-                )>
-            )>
-        )>
-    >
-    <COND (<G? .COUNT 0>
-        <DO (I 1 9)
-            <COND (<GET SELECT-CHOICES .I>
-                <TAKE-ITEM <GET SELECT-CHOICES .I>>
-            )>
-        >
-    )>
     <RETURN>>
 
 <ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
