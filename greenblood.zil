@@ -387,7 +387,7 @@
     <COND (.ITEMS
         <SET COUNT <GET .ITEMS 0>>
         <COND (<G? .COUNT 0>
-            <TELL " ("            
+            <TELL " (">            
             <DO (I 1 .COUNT)
                 <COND (<G? .I 1> <TELL ", ">)>
                 <COND (<AND <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
