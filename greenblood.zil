@@ -464,7 +464,35 @@
     <SCREEN 0>
     <HLIGHT 0>>
 
-<ROUTINE DESCRIBE-PLAYER ("AUX" COUNT SKILLS POSSESSIONS CODEWORDS QUANTITY)
+<ROUTINE PRINT-CONTAINER (CONTAINER "AUX" COUNT ITEMS QUANTITY)
+    <SET COUNT 0>
+    <SET ITEMS <FIRST? .CONTAINER>>
+    <COND (.ITEMS
+        <REPEAT ()
+            <COND (.ITEMS
+                <COND (<G? .COUNT 0> <TELL ", ">)>
+                <HLIGHT ,H-ITALIC>
+                <TELL D .ITEMS>
+                <HLIGHT 0>
+                <SET QUANTITY <GETP .ITEMS ,P?QUANTITY>>
+                <COND (.QUANTITY
+                    <TELL " (" N .QUANTITY ")">
+                )>
+                <COND (<AND <FSET? .ITEMS ,WEARBIT> <FSET? .ITEMS ,WORNBIT>>
+                    <TELL " (worn)">
+                )>
+                <SET COUNT <+ .COUNT 1>>
+            )(ELSE
+                <RETURN>
+            )>
+            <SET ITEMS <NEXT? .ITEMS>>
+        >
+        <CRLF>
+    )(ELSE
+        <TELL "None" CR>
+    )>>
+
+<ROUTINE DESCRIBE-PLAYER ()
     <COND (,CURRENT-CHARACTER
         <CRLF>
         <HLIGHT ,H-BOLD>
@@ -478,111 +506,27 @@
         <HLIGHT ,H-BOLD>
         <TELL "Skills: ">
         <HLIGHT 0>
-        <SET COUNT 0>
-        <SET SKILLS <FIRST? ,SKILLS>>
-        <COND (.SKILLS
-            <REPEAT ()
-                <COND (.SKILLS
-                    <COND (<G? .COUNT 0> <TELL ", ">)>
-                    <HLIGHT ,H-ITALIC>
-                    <TELL D .SKILLS>
-                    <HLIGHT 0>
-                    <SET COUNT <+ .COUNT 1>>
-                )(ELSE
-                    <RETURN>
-                )>
-                <SET SKILLS <NEXT? .SKILLS>>
-            >
-            <CRLF>
-        )(ELSE
-            <TELL "None" CR>
-        )>
+        <PRINT-CONTAINER ,SKILLS>
         <CRLF>
         <HLIGHT ,H-BOLD>
         <TELL "Possessions: ">
         <HLIGHT 0>
-        <SET COUNT 0>
-        <SET POSSESSIONS <FIRST? ,PLAYER>>
-        <COND (.POSSESSIONS
-            <REPEAT ()
-                <COND (.POSSESSIONS
-                    <COND (<G? .COUNT 0> <TELL ", ">)>
-                    <HLIGHT ,H-ITALIC>
-                    <TELL D .POSSESSIONS>
-                    <HLIGHT 0>
-                    <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
-                    <COND (.QUANTITY
-                        <TELL " (" N .QUANTITY ")">
-                    )>
-                    <COND (<AND <FSET? .POSSESSIONS ,WEARBIT> <FSET? .POSSESSIONS ,WORNBIT>>
-                        <TELL " (worn)">
-                    )>
-                    <SET COUNT <+ .COUNT 1>>
-                )(ELSE
-                    <RETURN>
-                )>
-                <SET POSSESSIONS <NEXT? .POSSESSIONS>>
-            >
-            <CRLF>
-        )(ELSE
-            <TELL "None" CR>
-        )>
+        <PRINT-CONTAINER ,PLAYER>
         <CRLF>
         <HLIGHT ,H-BOLD>
         <TELL "Codewords: ">
         <HLIGHT 0>
-        <SET COUNT 0>
-        <SET CODEWORDS <FIRST? ,CODEWORDS>>
-        <COND (.CODEWORDS
-            <REPEAT ()
-                <COND (.CODEWORDS
-                    <COND (<G? .COUNT 0> <TELL ", ">)>
-                    <HLIGHT ,H-ITALIC>
-                    <TELL D .CODEWORDS>
-                    <HLIGHT 0>
-                    <SET COUNT <+ .COUNT 1>>
-                )(ELSE
-                    <RETURN>
-                )>
-                <SET CODEWORDS <NEXT? .CODEWORDS>>
-            >
-            <CRLF>
-        )(ELSE
-            <TELL "None" CR>
-        )>
+        <PRINT-CONTAINER ,CODEWORDS>
     )>>
 
-<ROUTINE DESCRIBE-INVENTORY ("AUX" COUNT POSSESSIONS QUANTITY)
+<ROUTINE DESCRIBE-INVENTORY ("AUX" COUNT)
     <COND (,CURRENT-CHARACTER
         <SET COUNT <COUNT-POSESSIONS>>
         <CRLF>
         <TELL "You are carrying " N .COUNT " items">
         <COND (<G? .COUNT 0>
             <TELL ": ">
-            <SET COUNT 0>
-            <SET POSSESSIONS <FIRST? ,PLAYER>>
-            <COND (.POSSESSIONS
-                <REPEAT ()
-                    <COND (.POSSESSIONS
-                        <COND (<G? .COUNT 0> <TELL ", ">)>
-                        <HLIGHT ,H-ITALIC>
-                        <TELL D .POSSESSIONS>
-                        <HLIGHT 0>
-                        <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
-                        <COND (.QUANTITY
-                            <TELL " (" N .QUANTITY ")">
-                        )>
-                        <COND (<AND <FSET? .POSSESSIONS ,WEARBIT> <FSET? .POSSESSIONS ,WORNBIT>>
-                            <TELL " (worn)">
-                        )>
-                        <SET COUNT <+ .COUNT 1>>
-                    )(ELSE
-                        <RETURN>
-                    )>
-                    <SET POSSESSIONS <NEXT? .POSSESSIONS>>
-                >
-                <CRLF>
-            )>
+            <PRINT-CONTAINER ,PLAYER>
         )(ELSE
             <TELL ".">
             <CRLF>
