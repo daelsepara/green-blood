@@ -7,9 +7,6 @@
 <INSERT-FILE "parser">
 <INSERT-FILE "gamebook">
 
-<CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
-<CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
-
 <ROUTINE GO ()
     <V-VERSION>
     <GAME-BOOK>

@@ -22,6 +22,8 @@
 <CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
 <CONSTANT FOUR-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
 
+<CONSTANT SELECT-CHOICES <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
+
 <GLOBAL CURRENT-CHARACTER NONE>
 <GLOBAL GOLD-PIECES 0>
 <GLOBAL LIFE-POINTS 0>
@@ -43,6 +45,7 @@
     <INSTRUCTIONS>
     <RESET-PLAYER>
     <RESET-OBJECTS>
+    <RESET-SELECTIONS>
     <RESET-STORY>
     <CHOOSE-CHARACTER>
     <SETG HERE ,PROLOGUE>
@@ -50,7 +53,7 @@
     <UPDATE-STATUS-LINE>
     <REPEAT ()
         <CRLF>
-        <SETG CONTINUE-TO-CHOICES T>
+        <RESET-CHOICES>
         <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
@@ -677,6 +680,9 @@
 
 ; "Reset Routines"
 ; ---------------------------------------------------------------------------------------------
+<ROUTINE RESET-CODEWORDS ()
+    <RESET-CONTAINER ,CODEWORDS>>
+
 <ROUTINE RESET-CONTAINER (CONTAINER "AUX" ITEM NEXT)
     <SET ITEM <FIRST? .CONTAINER>>
     <REPEAT ()
@@ -686,27 +692,14 @@
         <SET ITEM .NEXT>
     >>
 
-<ROUTINE RESET-OBJECTS ()
-    <PUTP ,JEWELS ,P?QUANTITY 2>
-    <FSET ,EMERALD-RING-ELANOR ,WEARBIT>
-    <FSET ,EMERALD-RING-ELANOR ,WORNBIT>>
-
-<ROUTINE RESET-STORY ()
-    <SETG CONTINUE-TO-CHOICES T>
-    <SETG STORY033-DECISION-FLAG F>
-    <PUTP ,STORY151 ,P?DEATH T>
-    <PUTP ,STORY172 ,P?DEATH T>
-    <PUTP ,STORY177 ,P?DEATH T>
-    <PUTP ,STORY199 ,P?DEATH T>
-    <PUTP ,STORY226 ,P?DEATH T>
-    <PUTP ,STORY234 ,P?DEATH T>
-    <PUTP ,STORY248 ,P?DEATH T>>
+<ROUTINE RESET-CHOICES ()
+    <SETG CONTINUE-TO-CHOICES T>>
 
 <ROUTINE RESET-POSSESSIONS ()
     <RESET-CONTAINER ,PLAYER>>
 
-<ROUTINE RESET-CODEWORDS ()
-    <RESET-CONTAINER ,CODEWORDS>>
+<ROUTINE RESET-SELECTIONS ()
+    <DO (I 1 9) <PUT SELECT-CHOICES .I NONE>>>
 
 <ROUTINE RESET-SKILLS ()
     <RESET-CONTAINER ,SKILLS>>
@@ -722,16 +715,71 @@
 
 ; "System/Utility/Miscellaneous routines"
 ; ---------------------------------------------------------------------------------------------
+<ROUTINE GET-INDEX (LIST ITEM "AUX" COUNT)
+    <COND (.LIST
+        <SET COUNT <GET .LIST 0>>
+        <DO (I 1 .COUNT)
+            <COND (<EQUAL? .ITEM <GET .LIST .I>>
+                <RETURN .I>
+            )>
+        >
+    )>
+    <RETURN 0>>
+
+<ROUTINE LINE-ERASE (ROW)
+    <CURSET .ROW 1>
+    <DO (I <LOWCORE SCRH> 1 -1) <PRINTC !\ >>
+    <CURSET .ROW 1>>
 
 <ROUTINE PRESS-A-KEY ()
     <TELL CR "[Press a key to continue]" CR>
     <INPUT 1>
     <RETURN>>
 
-<ROUTINE LINE-ERASE (ROW)
-    <CURSET .ROW 1>
-    <DO (I <LOWCORE SCRH> 1 -1) <PRINTC !\ >>
-    <CURSET .ROW 1>>
+<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC "AUX" KEY COUNT CHOICE)
+    <SET COUNT 0>
+    <COND (<NOT .DESC> <SET DESC "item">)>
+    <RESET-SELECTIONS>
+    <REPEAT ()
+        <CRLF>
+        <TELL "You are already carrying " N <COUNT-POSSESSIONS> " items in your inventory." CR>
+        <TELL "You can select up to " N .MAX " " .DESC "s from this list:" CR>
+        <DO (I 1 .ITEMS)
+            <TELL N .I " - [">
+            <COND (<INTBL? <GET .LIST .I> SELECT-CHOICES 10> <TELL "X">)(ELSE <TELL " ">)>
+            <TELL "] - " D <GET .LIST .I> CR>
+        >
+        <TELL "0 - I'm alright with my choices." CR>
+        <TELL "Select which " .DESC "(s) to take: " CR>
+        <SET KEY <INPUT 1>>
+        <COND (<EQUAL? .KEY !\0> <RETURN>)>
+        <COND (<AND <G=? .KEY !\1> <L=? .KEY !\5>>
+            <SET CHOICE <- .KEY !\0>>
+            <COND (<INTBL? <GET .LIST .CHOICE> SELECT-CHOICES 10>
+                <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES <GET .LIST .CHOICE>> NONE>
+                <SET COUNT <- .COUNT 1>>
+            )(ELSE
+                <COND (<EQUAL? .COUNT .MAX>
+                    <CRLF>
+                    <HLIGHT ,H-BOLD>
+                    <TELL "You have already selected " N .MAX " " .DESC "s!">
+                    <HLIGHT 0>
+                    <CRLF>
+                )(ELSE
+                    <SET COUNT <+ .COUNT 1>>
+                    <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES NONE> <GET .LIST .CHOICE>>
+                )>
+            )>
+        )>
+    >
+    <COND (<G? .COUNT 0>
+        <DO (I 1 9)
+            <COND (<GET SELECT-CHOICES .I>
+                <TAKE-ITEM <GET SELECT-CHOICES .I>>
+            )>
+        >
+    )>
+    <RETURN>>
 
 <ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
     <SPLIT 1>

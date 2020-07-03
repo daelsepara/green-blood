@@ -1,8 +1,26 @@
+<CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
+<CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
+
+<ROUTINE RESET-OBJECTS ()
+    <PUTP ,JEWELS ,P?QUANTITY 2>
+    <FSET ,EMERALD-RING-ELANOR ,WEARBIT>
+    <FSET ,EMERALD-RING-ELANOR ,WORNBIT>>
+
+<ROUTINE RESET-STORY ()
+    <SETG STORY033-DECISION-FLAG F>
+    <PUTP ,STORY151 ,P?DEATH T>
+    <PUTP ,STORY172 ,P?DEATH T>
+    <PUTP ,STORY177 ,P?DEATH T>
+    <PUTP ,STORY199 ,P?DEATH T>
+    <PUTP ,STORY226 ,P?DEATH T>
+    <PUTP ,STORY234 ,P?DEATH T>
+    <PUTP ,STORY248 ,P?DEATH T>>
+    
 <ROUTINE STORY-LOSERING ()
     <LOSE-ITEM ,EMERALD-RING-ELANOR>>
 
 <ROUTINE STORY-GATHERPOTIONS ()
-    <TAKE-ITEM ,POTION-WHITE-JELLY>
+    <TAKE-ITEM ,JAR-WHITE-JELLY>
     <TAKE-ITEM ,POTION-TARRY-BLACK>
     <TAKE-ITEM ,POTION-CLOUDY-BLUE>
     <TAKE-ITEM ,POTION-RED-LIQUID>
@@ -1804,7 +1822,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT158)
     (CHOICES CHOICES158)
     (DESTINATIONS <LTABLE STORY214 STORY225 STORY236 STORY243>)
-    (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR <LTABLE POTION-CLOUDY-BLUE POTION-WHITE-JELLY POTION-RED-LIQUID>>)
+    (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR <LTABLE POTION-CLOUDY-BLUE JAR-WHITE-JELLY POTION-RED-LIQUID>>)
     (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ANY>)
     (FLAGS LIGHTBIT)>
 
@@ -2717,7 +2735,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT235)
     (CHOICES CHOICES235)
     (DESTINATIONS <LTABLE STORY197 STORY184 STORY168 STORY155 STORY141>)
-    (REQUIREMENTS <LTABLE NONE POTION-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
+    (REQUIREMENTS <LTABLE NONE JAR-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
     (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
     (PRECHOICE STORY-GATHERPOTIONS)
     (DESC "235")
@@ -2813,7 +2831,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT243)
     (CHOICES CHOICES243)
     (DESTINATIONS <LTABLE STORY254 STORY265 STORY275>)
-    (REQUIREMENTS <LTABLE POTION-CLOUDY-BLUE POTION-WHITE-JELLY POTION-RED-LIQUID>)
+    (REQUIREMENTS <LTABLE POTION-CLOUDY-BLUE JAR-WHITE-JELLY POTION-RED-LIQUID>)
     (TYPES <LTABLE R-ITEM R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
 
@@ -2912,7 +2930,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT251 "You sit down in the clearing and cover yourself with leaves so that you can just see out. Remaining motioneless for a long time you wait until the denizens of the clearing, a group of miniature deer with heads like little hippopotamuses, return to their grooming ground. By watching them for some time you notice many leave the clearing by the left path and then disappear behind the trunk of a tree. Rising from the mound of leaves you investigate and find a small path winding between the thorn bushes. Without the wit to use such tricks of the woods you would have been lost in the forest for ever.">
+<CONSTANT TEXT251 "You sit down in the clearing and cover yourself with leaves so that you can just see out. Remaining motionless for a long time you wait until the denizens of the clearing, a group of miniature deer with heads like little hippopotamuses, return to their grooming ground. By watching them for some time you notice many leave the clearing by the left path and then disappear behind the trunk of a tree. Rising from the mound of leaves you investigate and find a small path winding between the thorn bushes. Without the wit to use such tricks of the woods you would have been lost in the forest for ever.">
 
 <ROOM STORY251
     (IN ROOMS)
@@ -2921,15 +2939,33 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT252 "The man in black fixes you with a flinty stare. \"What are you doing here, stranger?\"">
+<CONSTANT CHOICES252 <LTABLE "use" "tell him to mind his own business" "tell him you seek the Tree of Knowledge" "simply leave the inn abruptly">>
+
 <ROOM STORY252
     (IN ROOMS)
     (DESC "252")
+    (STORY TEXT252)
+    (CHOICES CHOICES252)
+    (DESTINATIONS <LTABLE STORY188 STORY336 STORY124 STORY117>)
+    (REQUIREMENTS <LTABLE SKILL-STREETWISE NONE NONE NONE>)
+    (TYPES <LTABLE R-SKILL R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT253 "As you draw back your sword to strike, Elanor suddenly jerks the end of a vine. A secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest,\" she warns. \"I will turn every living thing against you.\"||Inside the tree-house you are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily. In your haste to flee you can grab only three of the five potions. There is a cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot banded with layers of coloured earth.">
 
 <ROOM STORY253
     (IN ROOMS)
     (DESC "253")
+    (STORY TEXT253)
+    (CONTINUE STORY322)
+    (PRECHOICE STORY253-CHOOSEPOTIONS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY253-CHOOSEPOTIONS ("AUX" POTIONS)
+    <SET POTIONS <LTABLE POTION-CLOUDY-BLUE POTION-RED-LIQUID POTION-TARRY-BLACK JAR-WHITE-JELLY JAR-COLOURED-EARTH>>
+    <SELECT-FROM-LIST .POTIONS 5 3 "potion">
+    <RETURN>>
 
 <ROOM STORY254
     (IN ROOMS)
@@ -2998,7 +3034,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY265-GIVEWHITE ()
-    <GIVE-ITEM ,POTION-WHITE-JELLY>
+    <GIVE-ITEM ,JAR-WHITE-JELLY>
     <RETURN ,STORY265>>
 
 <ROOM STORY266

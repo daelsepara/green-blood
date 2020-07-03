@@ -22,6 +22,12 @@
     (ADJECTIVE COLOURED)
     (FLAGS TAKEBIT)>
 
+<OBJECT JAR-WHITE-JELLY
+    (DESC "jar of white jelly")
+    (SYNONYM JAR JELLY)
+    (ADJECTIVE WHITE)
+    (FLAGS TAKEBIT)>
+
 <OBJECT JEWELS
     (DESC "jewels")
     (SYNONYM JEWEL JEWELS)
@@ -70,12 +76,6 @@
     (DESC "tarry black potion")
     (SYNONYM POTION)
     (ADJECTIVE TARRY BLACK)
-    (FLAGS TAKEBIT)>
-
-<OBJECT POTION-WHITE-JELLY
-    (DESC "white jelly potion")
-    (SYNONYM POTION JELLY)
-    (ADJECTIVE WHITE)
     (FLAGS TAKEBIT)>
 
 <OBJECT SWORD
