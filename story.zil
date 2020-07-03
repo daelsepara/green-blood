@@ -36,6 +36,18 @@
     <CRLF>
     <RETURN>>
 
+<ROUTINE STORY-GATHERPOTIONS ()
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You gained " T ,POTION-WHITE-JELLY ", " T ,POTION-TARRY-BLACK ", " T ,POTION-CLOUDY-BLUE ", " T ,POTION-RED-LIQUID " and " T ,JAR-COLOURED-EARTH ".">
+    <MOVE ,POTION-WHITE-JELLY ,PLAYER>
+    <MOVE ,POTION-TARRY-BLACK ,PLAYER>
+    <MOVE ,POTION-CLOUDY-BLUE ,PLAYER>
+    <MOVE ,POTION-RED-LIQUID ,PLAYER>
+    <MOVE ,JAR-COLOURED-EARTH ,PLAYER>
+    <HLIGHT 0>
+    <CRLF>>
+
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
@@ -2747,21 +2759,9 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESTINATIONS <LTABLE STORY197 STORY184 STORY168 STORY155 STORY141>)
     (REQUIREMENTS <LTABLE NONE POTION-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
     (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
-    (PRECHOICE STORY235-GATHERPOTIONS)
+    (PRECHOICE STORY-GATHERPOTIONS)
     (DESC "235")
     (FLAGS LIGHTBIT)>
-
-<ROUTINE STORY235-GATHERPOTIONS ()
-    <CRLF>
-    <HLIGHT ,H-BOLD>
-    <TELL "You gained " T ,POTION-WHITE-JELLY ", " T ,POTION-TARRY-BLACK ", " T ,POTION-CLOUDY-BLUE ", " T ,POTION-RED-LIQUID " and " T ,JAR-COLOURED-EARTH ".">
-    <MOVE ,POTION-WHITE-JELLY ,PLAYER>
-    <MOVE ,POTION-TARRY-BLACK ,PLAYER>
-    <MOVE ,POTION-CLOUDY-BLUE ,PLAYER>
-    <MOVE ,POTION-RED-LIQUID ,PLAYER>
-    <MOVE ,JAR-COLOURED-EARTH ,PLAYER>
-    <HLIGHT 0>
-    <CRLF>>
 
 <CONSTANT TEXT236 "The little imp's eyes light up when he sees the emerald ring. \"It is the Lady's ring, the ring of power.\" He yanks it off your finger and runs to the central trunk of the giant bush. He scrambles up just as if he were a monkey, writhing sinuously past the wicked barbed thorns. You could never follow him. He chirrups and laughs, looking down at you through the thorny branches. You ask him to keep his side of the bargain, to help you in your quest.||\"I am the Kwerrel, the Kwerrel keep no bargains.\"||His chirruping laugh mocks you.">
 <CONSTANT CHOICES236 <LTABLE "tell him to put on the ring" "use SPELLS against him if you have that skill as well as a wand">>
@@ -2789,29 +2789,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT238 "\"Submit; your red blood stains the sward. You have fought well. Honour is satisfied. Submit.\" The elf shows no pity but you fancy you can see admiration for your courage in his eyes.">
+<CONSTANT CHOICES238 <LTABLE "give in and submit to Zorolotl" "fight in the hope of triumphing against the odds">>
+
 <ROOM STORY238
     (IN ROOMS)
     (DESC "238")
+    (STORY TEXT238)
+    (CHOICES CHOICES238)
+    (DESTINATIONS <LTABLE STORY344 STORY269>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT239 "You manage to creep to within twenty paces of the silk pavilion before one of the guards sees you and raises the alarm. You run back towards the forest edge but a detachment of soldiers issues from the trees, they fan out and surround you. Fearing the worst you are relieved when they only take you prisoner.">
 
 <ROOM STORY239
     (IN ROOMS)
     (DESC "239")
+    (STORY TEXT239)
+    (CONTINUE STORY151)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT240 "You close your eyes for a moment, then pondering how hard it has been to find them and how important is your quest, you open them again to make sure the elf is not slinking away. But already you are too late. In a blink of the eye the last elf has vanished. You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they recede into the depths of the forest. You have failed to meet the elves on Midsummer's day.">
+<CONSTANT CHOICES240 <LTABLE "try again tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
 
 <ROOM STORY240
     (IN ROOMS)
     (DESC "240")
+    (STORY TEXT240)
+    (CHOICES CHOICES240)
+    (DESTINATIONS <LTABLE STORY139 STORY280>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT241 "The owl leads you by easy ways and you make faster progress than before. It seems to be leading you many miles and before nightfall you have to ask it to stop so you can rest.||The next day you begin to wonder whether the owl is not merely leading you astray. When you ask how much further to the bower it always says the same thing: \"Not far. Follow me.\" You come to hate the sight of the bird that keeps you slogging through the forest in its wake.||You are about to stop in protest that it has been saying not far all day long, when you notice in this part of the forest no two trees are the same species. It is as if every type of tree in the forest has one representative here. You comment on this to the owl, but when you look round you realize it has vanished.">
 
 <ROOM STORY241
     (IN ROOMS)
     (DESC "241")
+    (STORY TEXT241)
+    (CONTINUE STORY259)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT242 "As soon as you take the stopper out of the round bottle the bees fly out of the tree-house. You smear a little of the white jelly across your forehead and smile. The jelly has a pungent smell which seems to be driving the insects away. Even the beetles on the tree-house floor are scurrying away from you.||You carefully gather up all the other potions. Then you climb down the ladder to the ground and consider your next move.">
+<CONSTANT CHOICES242 <LTABLE "go west from here" "east" "south-west">>
 
 <ROOM STORY242
     (IN ROOMS)
     (DESC "242")
+    (STORY TEXT242)
+    (CHOICES CHOICES242)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070>)
+    (TYPES THREE-NONES)
+    (PRECHOICE STORY-GATHERPOTIONS)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY243
