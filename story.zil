@@ -3542,14 +3542,25 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY069)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT301 "You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the forest. You have failed to meet the elves on Midsummer's Day.">
+<CONSTANT CHOICES301 <LTABLE "try again tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
+
 <ROOM STORY301
     (IN ROOMS)
     (DESC "301")
+    (STORY TEXT301)
+    (CHOICES CHOICES301)
+    (DESTINATIONS <LTABLE STORY139 STORY280>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT302 "Your confident declaration is greeted only by a look of wistful superiority. The Elf King suddenly strides forward and throws up his cloak, obscuring your vision in a rustle of soft green fabric. You smell something like honeysuckle and heather. Reaching up to pull aside the folds of the cloak, your fingers close only on a small handful of fresh green leaves.||You look around. The elves have vanished. You have no choice but to turn and trudge through the trees, calling out for them to return. But your pleas are unanswered except by the song of birds and murmuring of a distant brook.">
 
 <ROOM STORY302
     (IN ROOMS)
     (DESC "302")
+    (STORY TEXT302)
+    (CONTINUE STORY078)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY303
