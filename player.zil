@@ -244,7 +244,9 @@
             <COND (<G? .COUNT 0>
                 <DO (I 1 .COUNT)
                     <COND (<AND <G? .I 1> <G? .COUNT 1>> <TELL ", ">)>
+                    <HLIGHT ,H-ITALIC>
                     <TELL D <GET .POSSESSIONS .I>>
+                    <HLIGHT 0>
                     <SET QUANTITY <GETP <GET .POSSESSIONS .I> ,P?QUANTITY>>
                     <COND (.QUANTITY
                         <TELL " (" N .QUANTITY ")">

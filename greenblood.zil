@@ -383,36 +383,27 @@
     <INPUT 1>
     <RETURN>>
 
-<ROUTINE PRINT-CODEWORDS (CODEWORDS "AUX" COUNT)
-    <COND (.CODEWORDS
-        <SET COUNT <GET .CODEWORDS 0>>
+<ROUTINE PRINT-ITEMS (ITEMS "OPT" LASTFIX "AUX" COUNT)
+    <COND (.ITEMS
+        <SET COUNT <GET .ITEMS 0>>
         <COND (<G? .COUNT 0>
-            <TELL " (">
-            <HLIGHT ,H-ITALIC>
+            <TELL " ("            
             <DO (I 1 .COUNT)
                 <COND (<G? .I 1> <TELL ", ">)>
-                <TELL D <GET .CODEWORDS .I>>
+                <COND (<AND <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
+                <HLIGHT ,H-ITALIC>
+                <TELL D <GET .ITEMS .I>>
+                <HLIGHT 0>
             >
-            <HLIGHT 0>
             <TELL ")">
         )>
     )>>
 
-<ROUTINE PRINT-ANY (ITEMS "AUX" COUNT)
-    <COND (.ITEMS
-        <SET COUNT <GET .ITEMS 0>>
-        <COND (<G? .COUNT 0>
-            <TELL " (">
-            <HLIGHT ,H-ITALIC>
-            <DO (I 1 .COUNT)
-                <COND (<G? .I 1> <TELL ", ">)>
-                <COND (<EQUAL? .I .COUNT> <TELL "or ">)>
-                <TELL D <GET .ITEMS .I>>
-            >
-            <HLIGHT 0>
-            <TELL ")">
-        )>
-    )>>
+<ROUTINE PRINT-CODEWORDS (CODEWORDS)
+    <PRINT-ITEMS .CODEWORDS>>
+
+<ROUTINE PRINT-ANY (ITEMS)
+    <PRINT-ITEMS .ITEMS "or ">>
 
 <ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES TYPES REQUIREMENTS CONTINUE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES>>
@@ -493,7 +484,9 @@
             <REPEAT ()
                 <COND (.SKILLS
                     <COND (<G? .COUNT 0> <TELL ", ">)>
+                    <HLIGHT ,H-ITALIC>
                     <TELL D .SKILLS>
+                    <HLIGHT 0>
                     <SET COUNT <+ .COUNT 1>>
                 )(ELSE
                     <RETURN>
@@ -514,7 +507,9 @@
             <REPEAT ()
                 <COND (.POSSESSIONS
                     <COND (<G? .COUNT 0> <TELL ", ">)>
+                    <HLIGHT ,H-ITALIC>
                     <TELL D .POSSESSIONS>
+                    <HLIGHT 0>
                     <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
                     <COND (.QUANTITY
                         <TELL " (" N .QUANTITY ")">
@@ -542,7 +537,9 @@
             <REPEAT ()
                 <COND (.CODEWORDS
                     <COND (<G? .COUNT 0> <TELL ", ">)>
+                    <HLIGHT ,H-ITALIC>
                     <TELL D .CODEWORDS>
+                    <HLIGHT 0>
                     <SET COUNT <+ .COUNT 1>>
                 )(ELSE
                     <RETURN>
@@ -568,7 +565,9 @@
                 <REPEAT ()
                     <COND (.POSSESSIONS
                         <COND (<G? .COUNT 0> <TELL ", ">)>
+                        <HLIGHT ,H-ITALIC>
                         <TELL D .POSSESSIONS>
+                        <HLIGHT 0>
                         <SET QUANTITY <GETP .POSSESSIONS ,P?QUANTITY>>
                         <COND (.QUANTITY
                             <TELL " (" N .QUANTITY ")">
