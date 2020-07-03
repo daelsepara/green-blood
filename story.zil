@@ -27,6 +27,15 @@
     <CRLF>
     <RETURN>>
 
+<ROUTINE STORY-LOSERING ()
+    <REMOVE ,EMERALD-RING-ELANOR>
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You lost " T ,EMERALD-RING-ELANOR ".">
+    <HLIGHT 0>
+    <CRLF>
+    <RETURN>>
+
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
@@ -2227,17 +2236,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES195)
     (DESTINATIONS <LTABLE STORY235 STORY244>)
     (TYPES TWO-NONES)
-    (PRECHOICE STORY195-LOSERING)
+    (PRECHOICE STORY-LOSERING)
     (FLAGS LIGHTBIT)>
-
-<ROUTINE STORY195-LOSERING ()
-    <REMOVE ,EMERALD-RING-ELANOR>
-    <CRLF>
-    <HLIGHT ,H-BOLD>
-    <TELL "You lost " T ,EMERALD-RING-ELANOR ".">
-    <HLIGHT 0>
-    <CRLF>
-    <RETURN>>
 
 <CONSTANT TEXT196 "The path twists and turns, winding through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed by one before.||To your dismay the path ends in a little clearing choked with dead leaves, but from which two paths lead off in different directions. Each path is lined with thorn bushes that have grown to the height of a man and are covered in inch-long purple barbs oozing an orange fluid. The thorns would break off in your flesh if you brushed against them.">
 <CONSTANT CHOICES196 <LTABLE "head left" "head right" "despair of ever finding your way out of the forest" "mark one of the great Gwelph trees by scoring it with your dagger">>
@@ -2414,7 +2414,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <FCLEAR ,EMERALD-RING-ELANOR ,WEARBIT>
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You removed " T ,EMERALD-RING-ELANOR " but kept it.">
+    <TELL "You removed " T ,EMERALD-RING-ELANOR " from your finger but kept it.">
     <HLIGHT 0>
     <CRLF>
     <RETURN>>
@@ -2737,7 +2737,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY234-LOSELIFE ()
     <LOSE-LIFE 8 "You have died in combat." ,STORY234>>
 
-<CONSTANT TEXT235 "You carefully gather potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
+<CONSTANT TEXT235 "You carefully gather the potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
 <CONSTANT CHOICES235 <LTABLE "run in search of water to hide in" "smear some of the white jelly on yourself" "smear some of the black tar on yourself" "drink the blue potion" "drink the red potion">>
 
 <ROOM STORY235
@@ -2754,7 +2754,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY235-GATHERPOTIONS ()
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You gathered " T ,POTION-WHITE-JELLY ", " T ,POTION-TARRY-BLACK ", " T ,POTION-CLOUDY-BLUE ", " T ,POTION-RED-LIQUID " and " T ,JAR-COLOURED-EARTH ".">
+    <TELL "You gained " T ,POTION-WHITE-JELLY ", " T ,POTION-TARRY-BLACK ", " T ,POTION-CLOUDY-BLUE ", " T ,POTION-RED-LIQUID " and " T ,JAR-COLOURED-EARTH ".">
     <MOVE ,POTION-WHITE-JELLY ,PLAYER>
     <MOVE ,POTION-TARRY-BLACK ,PLAYER>
     <MOVE ,POTION-CLOUDY-BLUE ,PLAYER>
@@ -2763,9 +2763,18 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <HLIGHT 0>
     <CRLF>>
 
+<CONSTANT TEXT236 "The little imp's eyes light up when he sees the emerald ring. \"It is the Lady's ring, the ring of power.\" He yanks it off your finger and runs to the central trunk of the giant bush. He scrambles up just as if he were a monkey, writhing sinuously past the wicked barbed thorns. You could never follow him. He chirrups and laughs, looking down at you through the thorny branches. You ask him to keep his side of the bargain, to help you in your quest.||\"I am the Kwerrel, the Kwerrel keep no bargains.\"||His chirruping laugh mocks you.">
+<CONSTANT CHOICES236 <LTABLE "tell him to put on the ring" "use SPELLS against him if you have that skill as well as a wand">>
+
 <ROOM STORY236
     (IN ROOMS)
     (DESC "236")
+    (STORY TEXT236)
+    (CHOICES CHOICES236)
+    (DESTINATIONS <LTABLE STORY015 STORY375>)
+    (REQUIREMENTS <LTABLE NONE SKILL-SPELLS>)
+    (TYPES <LTABLE R-NONE R-SKILL>)
+    (PRECHOICE STORY-LOSERING)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT237 "You trudge on, singling out a particular tree to head for as far away as you can see and keeping it in sight as you go to try to make sure you don't walk in circles. When you reach the tree you look back and try to identify the one you left behind so that you can choose another tree to make for in the same general direction. It is tiring and you are exhausted.||Moving through winding mossy ways, wrapped in the green gloom of the forest depth, you catch the scent of unusual blooms. A path fringed with violet blossoms leads off between the great black boles of the trees, and following it with your gaze you glimpse a stone tower. It is some distance out of your path, and ominously draped in shadows.">
