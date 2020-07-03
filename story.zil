@@ -2659,11 +2659,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT229 "You bide your time until you are roughly uuhooked from the coffle chain and set to work digging a hole for the Westermen to use as a latrine. When the guard looks away you cast a Vanish spell and make good your escape. The guard has just returned to the pit you had begun to dig and is looking around for you.">
+<CONSTANT TEXT229 "You bide your time until you are roughly uuhooked from the coffle chain and set to work digging a hole for the Westermen to use as a latrine. When the guard looks away you cast a Vanish spell and make good your escape. The guard has just returned to the pit you had begun to dig and is looking around for you. If he doesn't want to call attention to the fact he has let you escape he may do nothing. On the other hand he may sound the alarm.">
+<CONSTANT CHOICES229 <LTABLE "try to free the innkeeper, which you must surely do if you promised his daughter you would try to find him" "abandon him to the Westermen's tender mercies">>
 
 <ROOM STORY229
     (IN ROOMS)
     (DESC "229")
+    (STORY TEXT229)
+    (CHOICES CHOICES229)
+    (DESTINATIONS <LTABLE STORY264 STORY279>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY230
