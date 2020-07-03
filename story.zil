@@ -1,6 +1,9 @@
 <CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
 <CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
 
+<CONSTANT CURRENCY "gold">
+<CONSTANT C-CURRENCY "Gold">
+
 <ROUTINE RESET-OBJECTS ()
     <PUTP ,JEWELS ,P?QUANTITY 2>
     <FSET ,EMERALD-RING-ELANOR ,WEARBIT>
@@ -1832,7 +1835,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CHOICES CHOICES158)
     (DESTINATIONS <LTABLE STORY214 STORY225 STORY236 STORY243>)
     (REQUIREMENTS <LTABLE 10 NONE EMERALD-RING-ELANOR <LTABLE POTION-CLOUDY-BLUE JAR-WHITE-JELLY POTION-RED-LIQUID>>)
-    (TYPES <LTABLE R-GOLD R-NONE R-ITEM R-ANY>)
+    (TYPES <LTABLE R-MONEY R-NONE R-ITEM R-ANY>)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT159 "A slender elf with moon-coloured hair steps forward to answer his monarch's summons. He carries a bow of silver-chased ivory, and the fletching of the arrows in his quiver is purest white. \"Your opponent will be Huldranas,\" the Elf King tells you. He points to a tall tree. \"That branch will be the target.\"||You look where he is pointing, then glance back at him. \"Which branch?\"||\"The one where the orchid grows.\"||You look back. You had not noticed before the flower blazing like a pale jewel against the black bark of the tree. Huldranas gestures for you to take the first shot. You nock on an arrow and send it sailing up towards the branch. It strikes wide of the orchid, but it was only  intended as a ranging shot. At least now you have a good sense of the allowance you need to make for height and wind speed.||Huldranas' arrow flashes from his bow. It impales one of the petals of the orchid. He turns to you with a casual look that betrays neither arrogance not tension. Again without a word, he gestures for you to shoot.||As you sight along your arrow, you consider what to do.">
@@ -1930,7 +1933,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY167-LOSEGOLD ()
-    <SETG GOLD-PIECES 0>
+    <SETG MONEY 0>
     <RETURN ,STORY167>>
 
 <CONSTANT TEXT168 "The black tarty goo smells of putrefaction and does not deter the bees at all. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not pleasant. Your neck swells until your windpipe is closed tight up and you choke to death. You rue bitterly your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
@@ -3106,20 +3109,47 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY263-HEAL()
     <POTION-RESTORE>>
 
+<CONSTANT TEXT264 "The innkeeper is chained in a line of five slaves who have been set to repair a broken cartwheel. Four of them lift the cart while another tries to tie a joint together. The guard comes over to the group and starts kicking them to give himself the feeling he is doing his job well. The innkeeper groans and begs for mercy as the guard's boot thumps into his stomach. He groans again.">
+<CONSTANT CHOICES264 <LTABLE "kill the guard" "bide your time">>
+
 <ROOM STORY264
     (IN ROOMS)
     (DESC "264")
+    (STORY TEXT264)
+    (CHOICES CHOICES264)
+    (DESTINATIONS <LTABLE STORY315 STORY334>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT265 "The Kwerrel sniffs at the pot of ointment and tastes a smear. He wrinkles his nose in disgust and throws the pot back at you.">
 
 <ROOM STORY265
     (IN ROOMS)
     (DESC "265")
+    (STORY TEXT265)
+    (CONTINUE STORY258)
     (EVENTS STORY265-GIVEWHITE)
+    (PRECHOICE STORY265-AGILITY)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY265-GIVEWHITE ()
     <GIVE-ITEM ,JAR-WHITE-JELLY>
     <RETURN ,STORY265>>
+
+<ROUTINE STORY265-AGILITY ()
+    <HLIGHT ,H-BOLD>
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+        <CRLF>
+        <TELL "You leap over the toadstool and catch it before it lands on the ground and breaks.">
+        <CRLF>
+        <TAKE-ITEM ,JAR-WHITE-JELLY>
+    )(ELSE
+        <TELL "It shatters against a flint and is lost.">
+        <CRLF>
+        <REMOVE ,JAR-WHITE-JELLY>
+    )>
+    <CRLF>
+    <TELL "You will have to offer the Kwerrel imp something else.">>
 
 <ROOM STORY266
     (IN ROOMS)

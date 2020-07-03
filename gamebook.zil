@@ -13,7 +13,7 @@
 <CONSTANT R-SKILL 1>
 <CONSTANT R-CODEWORD 2>
 <CONSTANT R-ITEM 3>
-<CONSTANT R-GOLD 4>
+<CONSTANT R-MONEY 4>
 <CONSTANT R-ANY 5>
 
 <CONSTANT LIMIT-POSSESSIONS 8>
@@ -25,7 +25,7 @@
 <CONSTANT SELECT-CHOICES <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
 
 <GLOBAL CURRENT-CHARACTER NONE>
-<GLOBAL GOLD-PIECES 0>
+<GLOBAL MONEY 0>
 <GLOBAL LIFE-POINTS 0>
 <GLOBAL MAX-LIFE-POINTS 0>
 
@@ -57,7 +57,7 @@
         <CHECK-EVENTS>
         <GOTO ,HERE>
         <PRINT-PAGE>
-        <LOSE-GOLD>
+        <LOSE-MONEY>
         <GAIN-CODEWORD>
         <GAIN-ITEM>
         <CHECK-PRECHOICE>
@@ -132,8 +132,8 @@
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )>
-                    )(<AND <EQUAL? .TYPE R-GOLD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-GOLD <GET .REQUIREMENTS .CHOICE>>
+                    )(<AND <EQUAL? .TYPE R-MONEY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-MONEY <GET .REQUIREMENTS .CHOICE>>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )>
@@ -182,7 +182,7 @@
             <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
             <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
             <COND (<AND <EQUAL? R-ITEM <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
-            <COND (<AND <EQUAL? R-GOLD <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " gold)">)>
+            <COND (<AND <EQUAL? R-MONEY <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " " CURRENCY ")">)>
             <COND (<AND <EQUAL? R-ANY <GET .TYPES .I>> .REQUIREMENTS> <PRINT-ANY <GET .REQUIREMENTS .I>>)>
             <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
             <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
@@ -219,12 +219,12 @@
     )>
     <RTRUE>>
 
-<ROUTINE CHECK-GOLD (AMOUNT)
+<ROUTINE CHECK-MONEY (AMOUNT)
     <COND (<G? .AMOUNT 0>
-        <COND (<L? ,GOLD-PIECES .AMOUNT>
+        <COND (<L? ,MONEY .AMOUNT>
             <CRLF><CRLF>
             <HLIGHT ,H-BOLD>
-            <TELL "You do not have enough gold." CR>
+            <TELL "You do not have enough " CURRENCY "." CR>
             <HLIGHT 0>
             <PRESS-A-KEY>
             <RFALSE>
@@ -303,15 +303,15 @@
     <HLIGHT 0>
     <JIGS-UP " ">>
 
-; "Story - Player Events (gain/lose life/items/gold)"
+; "Story - Player Events (gain/lose life/items/money)"
 ; ---------------------------------------------------------------------------------------------
-<ROUTINE CHARGE-GOLD (COST)
+<ROUTINE CHARGE-MONEY (COST)
     <CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You are charged " N .COST " gold.">
+    <TELL "You are charged " N .COST " " CURRENCY ".">
     <HLIGHT 0>
-    <SETG GOLD-PIECES <- ,GOLD-PIECES .COST>>
-    <COND (<L? ,GOLD-PIECES 0> <SETG GOLD-PIECES 0>)>
+    <SETG MONEY <- ,MONEY .COST>>
+    <COND (<L? ,MONEY 0> <SETG MONEY 0>)>
     <UPDATE-STATUS-LINE>
     <CRLF>>
 
@@ -322,10 +322,10 @@
 <ROUTINE GIVE-ITEM (ITEM)
     <REMOVE-ITEM .ITEM "gave">>
 
-<ROUTINE LOSE-GOLD ("AUX" GOLD)
-    <SET GOLD <GETP ,HERE ,P?COST>>
-    <COND(<G? .GOLD 0>
-        <CHARGE-GOLD .GOLD>)>>
+<ROUTINE LOSE-MONEY ("AUX" COST)
+    <SET COST <GETP ,HERE ,P?COST>>
+    <COND(<G? .COST 0>
+        <CHARGE-MONEY .COST>)>>
 
 <ROUTINE LOSE-ITEM (ITEM)
     <REMOVE-ITEM .ITEM "lost">>
@@ -640,7 +640,7 @@
                             >
                         )>
                         <SETG CURRENT-CHARACTER .CHARACTER>
-                        <SETG GOLD-PIECES <GETP .CHARACTER ,P?MONEY>>
+                        <SETG MONEY <GETP .CHARACTER ,P?MONEY>>
                         <SETG LIFE-POINTS <GETP .CHARACTER ,P?LIFE-POINTS>>
                         <SETG MAX-LIFE-POINTS ,LIFE-POINTS>
                         <TELL CR "You have selected " CT ,CURRENT-CHARACTER CR>
@@ -751,7 +751,7 @@
 
 <ROUTINE RESET-PLAYER ()
     <SETG CURRENT-CHARACTER NONE>
-    <SETG GOLD-PIECES 0>
+    <SETG MONEY 0>
     <SETG LIFE-POINTS 0>
     <SETG MAX-LIFE-POINTS 0>
     <RESET-POSSESSIONS>
@@ -797,7 +797,7 @@
     <CURSET 1 <- .WIDTH 46>>
     <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
     <CURSET 1 <- .WIDTH 27>>
-    <TELL "Gold: " N ,GOLD-PIECES>
+    <TELL C-CURRENCY ": " N ,MONEY>
     <CURSET 1 <- .WIDTH 16>>
     <TELL "Moves: " N ,MOVES>
     <SCREEN 0>
