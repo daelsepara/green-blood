@@ -2932,14 +2932,28 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
+<CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose antoehr spell. There is little point in casting casting Vanish.">
+<CONSTANT CHOICES249 <LTABLE "cast Choking Fog" "Visceral Disruption or Bafflement" "Shield of Defense" "Tower of Will">>
+
 <ROOM STORY249
     (IN ROOMS)
     (DESC "249")
+    (STORY TEXT249)
+    (CHOICES CHOICES249)
+    (DESTINATIONS <LTABLE STORY143 STORY347 STORY326 STORY091>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT250 "\"Why do you stare at me so? Are you trying to turn me to stone?\" asks the elf. He grins at you but you notice he is quivering tensely.||\"I'm not letting you slip away,\" you say, \"I have travelled far to find you and now that I have, you will not talk to me.\"||\"Why should I talk to a mortal? You know so little, one might as well talk to a mole or a dung beetle. You cannot hope to understand us and the way of the world.\"||\"In any case I'm not taking my eyes off you.\"||The elf's skin seems to fade almost to pearly white as you say this. He sits crossleged in front of you. \"Then I'll just have to wait for you to go to sleep.\" He feigns nonchalance but seems very uncomfortable under your gaze. At last he says \"Tie me up if you must, but release me from your stare or I shall go mad.\"||It seems your gaze alone holds him in thrall. Fascinating. You ask him what power you have over him.||\"An elf can never turn his back when looked on by mortal eyes. Your gaze entraps us as surely as if you had shackled us in cold iron. This is why we shun mankind, and rarely show ourselves. There, you have forced the secret from my lips. Will you look away and release me now?\"">
+<CONSTANT CHOICES250 <LTABLE "look away out of kindness" "demand that the elf takes you to meet his king">>
 
 <ROOM STORY250
     (IN ROOMS)
     (DESC "250")
+    (STORY TEXT250)
+    (CHOICES CHOICES250)
+    (DESTINATIONS <STORY330 STORY340>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY251
