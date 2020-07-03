@@ -49,17 +49,6 @@
     (DESC "WILDERNESS LORE")
     (LDESC "A talent for survival in the wild - whether it be forest, desert, swamp or mountain peak.")>
 
-<ROUTINE DESCRIBE-SKILL (SKILL)
-    <COND (.SKILL
-        <HLIGHT ,H-BOLD>
-        <TELL D .SKILL CR>
-        <HLIGHT 0>
-        <CRLF>
-        <COND (<GETP .SKILL ,P?LDESC>
-            <TELL <GETP .SKILL ,P?LDESC> CR>
-        )>
-    )>>
-
 <OBJECT CHARACTER-DUELLIST
     (DESC "Duellist")
     (SYNONYM DUELLIST)
