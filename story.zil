@@ -1,49 +1,5 @@
-<CONSTANT R-NONE 0>
-<CONSTANT R-SKILL 1>
-<CONSTANT R-CODEWORD 2>
-<CONSTANT R-ITEM 3>
-<CONSTANT R-GOLD 4>
-<CONSTANT R-ANY 5>
-
-<CONSTANT TWO-NONES <LTABLE R-NONE R-NONE>>
-<CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
-<CONSTANT FOUR-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
-
-<ROUTINE LOSE-LIFE (DMG MSG STORY)
-    <SETG LIFE-POINTS <- ,LIFE-POINTS .DMG>>
-    <COND (<L? ,LIFE-POINTS 0> <SETG LIFE-POINTS 0>)>
-    <UPDATE-STATUS-LINE>
-    <CRLF>
-    <HLIGHT ,H-BOLD>
-    <COND (<L? ,LIFE-POINTS 1>
-        <TELL .MSG>
-        <SETG CONTINUE-TO-CHOICES F>
-    )(ELSE
-        <PUTP .STORY ,P?DEATH F>
-        <TELL "You lost " N .DMG " Life Points.">
-    )>
-    <HLIGHT 0>
-    <CRLF>
-    <RETURN>>
-
 <ROUTINE STORY-LOSERING ()
-    <REMOVE ,EMERALD-RING-ELANOR>
-    <CRLF>
-    <HLIGHT ,H-BOLD>
-    <TELL "You lost " T ,EMERALD-RING-ELANOR ".">
-    <HLIGHT 0>
-    <CRLF>
-    <RETURN>>
-
-<ROUTINE STORY-GIVEITEM (ITEM)
-    <REMOVE .ITEM>
-    <HLIGHT ,H-BOLD>
-    <TELL "You gave " T .ITEM ".">
-    <HLIGHT 0>
-    <CRLF>
-    <PRESS-A-KEY>
-    <CRLF>
-    <RETURN>>
+    <LOSE-ITEM ,EMERALD-RING-ELANOR>>
 
 <ROUTINE STORY-GATHERPOTIONS ()
     <TAKE-ITEM ,POTION-WHITE-JELLY>
@@ -2956,9 +2912,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT251 "You sit down in the clearing and cover yourself with leaves so that you can just see out. Remaining motioneless for a long time you wait until the denizens of the clearing, a group of miniature deer with heads like little hippopotamuses, return to their grooming ground. By watching them for some time you notice many leave the clearing by the left path and then disappear behind the trunk of a tree. Rising from the mound of leaves you investigate and find a small path winding between the thorn bushes. Without the wit to use such tricks of the woods you would have been lost in the forest for ever.">
+
 <ROOM STORY251
     (IN ROOMS)
     (DESC "251")
+    (STORY TEXT251)
+    (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY252
@@ -2978,7 +2938,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY254-GIVEBLUE ()
-    <STORY-GIVEITEM ,POTION-CLOUDY-BLUE>
+    <GIVE-ITEM ,POTION-CLOUDY-BLUE>
     <RETURN ,STORY254>>
 
 <ROOM STORY255
@@ -3038,7 +2998,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY265-GIVEWHITE ()
-    <STORY-GIVEITEM ,POTION-WHITE-JELLY>
+    <GIVE-ITEM ,POTION-WHITE-JELLY>
     <RETURN ,STORY265>>
 
 <ROOM STORY266
@@ -3097,7 +3057,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY275-GIVERED ()
-    <STORY-GIVEITEM ,POTION-RED-LIQUID>
+    <GIVE-ITEM ,POTION-RED-LIQUID>
     <RETURN ,STORY275>>
 
 <ROOM STORY276
