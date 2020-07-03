@@ -17,13 +17,12 @@
     <HLIGHT ,H-BOLD>
     <COND (<L? ,LIFE-POINTS 1>
         <TELL .MSG>
-        <HLIGHT 0>
         <SETG CONTINUE-TO-CHOICES F>
     )(ELSE
         <PUTP .STORY ,P?DEATH F>
         <TELL "You lost " N .DMG " Life Points.">
-        <HLIGHT 0>
     )>
+    <HLIGHT 0>
     <CRLF>
     <RETURN>>
 
@@ -2862,30 +2861,76 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-ITEM R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT244 "\"Come, follow,\" says the owl. \"I will take you to My Lady of the Forest.\"||\"To Elanor?\" you ask.||\"Yes, follow.\"||The owl leads you along a maze of paths to a dark bower ringed with hawthorns. You would never have found it without the owl to lead you. An archway has been cut through the thick haws and Elanor stands inside the bower, pouring water from a silver ewer into a jade bowl on a stone plinth. She looks as beautiful as ever, but sinister too in the shadows.">
+
 <ROOM STORY244
     (IN ROOMS)
     (DESC "244")
+    (STORY TEXT244)
+    (CONTINUE STORY046)
+    (CODEWORD CODEWORD-TWINHEAD)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT245 "Your sword skill triumphs. The elf dodges the feinted thrust but succumbs to the cut that drives your blade into his stomach; he staggers and you finish him off with a single chop across the back of the head.||Drawing brath, you listen for others, realizing that at any moment you may be picked off by the arrows of his kind.">
+<CONSTANT TEXT245-CONTINUED "You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees. This is not elven architecture. It is the firest sign of man since you entered the Forest of Arden.">
 
 <ROOM STORY245
     (IN ROOMS)
     (DESC "245")
+    (STORY TEXT245)
+    (CONTINUE STORY287)
+    (PRECHOICE STORY245-CONTINUED)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY245-CONTINUED ()
+    <CRLF>
+    <TELL "Take " T ,ELVEN-DIRK "?">
+    <COND (<YES?>
+        <TAKE-ITEM ,ELVEN-DIRK>
+    )>
+    <CRLF>
+    <TELL TEXT245-CONTINUED>
+    <CRLF>
+    <RETURN>>
+
+<CONSTANT TEXT246 "Renard is beginning to panic as he weakens from loss of blood. He curses you for a murderous fool. As you wonder how you could have been so foolish as to attack the tentacles clutching him, the Embracer erupts out of the water beneath you once more.">
 
 <ROOM STORY246
     (IN ROOMS)
     (DESC "246")
+    (STORY TEXT246)
+    (CONTINUE STORY287)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT247 "You wait in Elvenhame until the elven scouts report on Garoshtar's success. They tell you that the great dragon has attacked the Westermen and set them back in confusion. After many attacks, however, he was wounded by many crossbow quarrels and forced to land and sleep so he could heal himself. He has won you precious time, however, and the defence of the Tree of Life is now set in hand.">
 
 <ROOM STORY247
     (IN ROOMS)
     (DESC "247")
+    (STORY TEXT247)
+    (CONTINUE STORY057)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT248 "Garoshtar's great body puts the men in shadow for a moment as he swoops overhead and you are satisfied to see the soldiers below like helpless little ants on the forest floor.">
+<CONSTANT TEXT248-CONTINUED "Garoshtar sweeps low, his wings cracking down at the last moment as he swings his head and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, throwing you off his back and you impale yourself on a branch of the tree below.">
 
 <ROOM STORY248
     (IN ROOMS)
     (DESC "248")
+    (STORY TEXT248)
+    (CONTINUE STORY319)
+    (PRECHOICE STORY248-AGILITY)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY248-AGILITY()
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+        <PUTP ,STORY248 ,P?DEATH F>
+    )(ELSE
+        <CRLF>
+        <TELL TEXT248-CONTINUED>
+        <CRLF>
+    )>>
 
 <ROOM STORY249
     (IN ROOMS)
