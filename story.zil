@@ -19,6 +19,7 @@
     <PUTP ,STORY234 ,P?DEATH T>
     <PUTP ,STORY248 ,P?DEATH T>
     <PUTP ,STORY254 ,P?DEATH T>
+    <PUTP ,STORY291 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -1155,7 +1156,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY098
     (IN ROOMS)
     (DESC "098")
-    (STORY STORY098)
+    (STORY TEXT098)
     (CHOICES CHOICES098)
     (DESTINATIONS <LTABLE STORY043 STORY427 STORY079>)
     (TYPES THREE-NONES)
@@ -1191,7 +1192,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY101
     (IN ROOMS)
     (DESC "101")
-    (STORY STORY101)
+    (STORY TEXT101)
     (CHOICES CHOICES101)
     (DESTINATIONS <LTABLE STORY111 STORY071>)
     (TYPES TWO-NONES)
@@ -3075,7 +3076,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESC "260")
     (STORY TEXT260)
     (CHOICES CHOICES260)
-    (DESTINANTIONS <LTABLE STORY100 STORY134>)
+    (DESTINATIONS <LTABLE STORY100 STORY134>)
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -3358,19 +3359,34 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <PRESS-A-KEY>
     )>>
 
+<CONSTANT TEXT284 "\"I don't care to be cared for. We Kwerrel can look out for ourselves.\" He seems angered. Perhaps he hates to be pitied.||\"I will hold you prisoner here for a day, or a month or a year . . . until I have grown tired of you.\" With that the imp disappears high into the giant bush, his chirruping laughter mocking you. You start to look for a way out of the giant bush thorns.">
+
 <ROOM STORY284
     (IN ROOMS)
     (DESC "284")
+    (STORY TEXT284)
+    (CONTINUE STORY432)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT285 "The wind takes the Choking Fog and blows it into the face of the King of the Elves. He staggers, while the two images to his right remain immobile, and he clutches at his throat and begins to vomit. He calls out his submission as he falls retching to ground.">
+<CONSTANT CHOICES285 <LTABLE "cancel the spell and save him" "let the spell run its course">>
 
 <ROOM STORY285
     (IN ROOMS)
     (DESC "285")
+    (STORY TEXT285)
+    (CHOICES CHOICES285)
+    (DESTINATIONS <LTABLE STORY353 STORY365>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT286 "Garoshtar swoops low, his wings cracking down at the last moment as he swings his head down and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack hard against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, but you manage to cling on. The wounds are not mortal but Garoshtar tells you he must land and sleep for a few years to heal his many hurts. He lands near Elvenhame and sinks immediately into a deep slumber, his bulk rising and falling in time with the breathing like a heavy ocean swell. You decide to search for the Elf King to report what has befallen brave Garoshtar.">
 
 <ROOM STORY286
     (IN ROOMS)
     (DESC "286")
+    (STORY TEXT286)
+    (CONTINUE STORY057)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT287 "You grab one of the tentacles with your free hand and try to climb towards the head of the Embracer. It beats you back with its tentacles and one coils around your sword arm. The tentacle constricts around your wrist like a noose of steel and the sword falls from your grasp. Unfortunately the creature has more than enough tentacles to deal with you and soon both your arms are crushed to your sides by what felt like iron bars. The Embracer drags you to drown, before feeding. You will never see the Tree of Life now.">
@@ -3382,69 +3398,148 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT288 "You cast the dirk, not expecting it to hit the bird, but it flashes though the air and buries itself in the egret's breast. The bird croaks once and falls lifeless to the burnt floor of the valley.">
+<CONSTANT CHOICES288 <LTABLE "walk to the top of the hillock to see what you can see" "leave the valley and skirt around it to the east if you prefer">>
+
 <ROOM STORY288
     (IN ROOMS)
     (DESC "288")
+    (STORY TEXT288)
+    (CHOICES CHOICES288)
+    (DESTINATIONS <LTABLE STORY314 STORY429>)
+    (PRECHOICE STORY288-PRECHOICE)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY288-PRECHOICE ()
+    <LOSE-ITEM ,ELVEN-DIRK>>
+
+<CONSTANT TEXT289 "As you stare at the crumbled victory arch, a sense of hopelessness overwhelms you. There is very old, very bad magic here, you can feel it in your bones. You are hopelessly lost now and will never see the lands of men again. This is what all man's labours come to with the passing of time.||You are still searching for the Tree of Life when you come across the bodies of hundreds of dead elves among the trees. It is as though they have all been witched off suddenly, cut off in the midst of immortal life, some even as they ate their supper. The elves are all dead.">
 
 <ROOM STORY289
     (IN ROOMS)
     (DESC "289")
+    (STORY TEXT289)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT290 "You wriggle and squirm but can't evade the crushing arm. The breath is driven out of your body and you are helpless as the statue crushes your chest against its own. You die and the statue attacks the Tree of Life remorselessly. When the tree is slain the elves and the forest will die with it.">
 
 <ROOM STORY290
     (IN ROOMS)
     (DESC "290")
+    (STORY TEXT290)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT291 "Your lunge is mighty indeed but the point of your sword only cuts through air. The nimble elf jumps aside, rolls and, as you turn to face him once more, you feel the cold steel of his dirk biting deep into your side.">
+<CONSTANT CHOICES291 <LTABLE "fight on" "let the elf go by looking away">>
 
 <ROOM STORY291
     (IN ROOMS)
     (DESC "291")
+    (STORY TEXT291)
+    (CHOICES CHOICES291)
+    (DESTINATIONS <LTABLE STORY226 STORY261>)
+    (TYPES TWO-NONES)
+    (PRECHOICE STORY291-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY291-PRECHOICE ()
+    <LOSE-LIFE 5 "You have died in combat." ,STORY291>>
+
+<CONSTANT TEXT292 "You grab the phial and down the cloudy blue fluid. Elanor makes no move to stop you. \"I have tricked you, fool. You have just drunk the mulch of the fire lizard's gizzard. You have not long to live.\"||Elanor is right. Your throat goes into spasm as the poison starts to work and soon you cannot breathe. You can do nothing as Elanor pulls on a vine and a secret hatch opens in the side of the tree-house. She pushes you through it and you fall to the ground, finding merciful release from the pain and the poison. The ants will dine on you tonight.">
 
 <ROOM STORY292
     (IN ROOMS)
     (DESC "292")
+    (STORY TEXT292)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT293 "The mesmerizing look in Zorolotl's eyes is gone: they are dimmed with pain. He has lost so much blood he can hardly see straight. Realizing he cannot fight on, Zorolotl submits to you, saying you are the victor in the duel. A young elf runs up with the potions for both of you  to drink which he assures you will restory you to complete health.">
 
 <ROOM STORY293
     (IN ROOMS)
     (DESC "293")
+    (STORY TEXT293)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT294 "The wind takes the Choking Fog and blows it back in your direction.">
+<CONSTANT CHOICES294 <LTABLE "step right back to avoid it so that it obscures you from your foe" "stand your ground and cancel the spell">>
 
 <ROOM STORY294
     (IN ROOMS)
     (DESC "294")
+    (STORY TEXT294)
+    (CHOICES CHOICES294)
+    (DESTINATIONS <LTABLE STORY306 STORY318>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT295 "You charge the Infernal Statue and rain blows down upon it, but the metal is not dented by the mightiest of your blows. In hammering against the statue with all your might you beak your sword off at the hilt. You will have to try and attack it with your bare hands.">
 
 <ROOM STORY295
     (IN ROOMS)
     (DESC "295")
+    (STORY TEXT295)
+    (CONTINUE STORY327)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT296 "\"Why do you ask about the coloured earths? Pretty, aren't they? It's an ornament, nothing more.\"||The stinging of the bees is driving you mad. You are forced to make a dash for the ladder and run off, looking for a pool so you can immerse yourself and get rid of the bees.">
 
 <ROOM STORY296
     (IN ROOMS)
     (DESC "296")
+    (STORY TEXT296)
+    (CONTINUE STORY197)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT297 "The men have both spent much time in the forest and must know many of its secrets. They talk of the elves who do not deign to notice mortal men. Men say they are immortal yet they all look like children. The guide, Renard, mentions tree spirits and strange monsters. The hunter, Marek, tells you about a dragon, but Renard clearly doesn't believe the tale. Both agree, however, that things are changing in the forest. The Westermen have come in their multitudes, hewing and burning the trees to feed iron monsters that belch smoke. Both men hate the Westermen.||\"They are passing cruel -- it's better to die in the forest than to be taken alive by the paleskins,\" says Marek.||You become tired at last and ponder your next move.">
+<CONSTANT CHOICES297 <LTABLE "stay at the inn" "go home with Renard">>
 
 <ROOM STORY297
     (IN ROOMS)
     (DESC "297")
+    (STORY TEXT297)
+    (CHOICES CHOICES297)
+    (DESTINATIONS <LTABLE STORY333 STORY224>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT298 "You circle round to his vulnerable side and this gives you the opening you need.">
+<CONSTANT CHOICES298 <LTABLE "cut down in a slashing blow with your arm extended -- a dangerous move that will still catch him if he springs back" "you can stab quickly at his midriff and dance back out of range again">>
 
 <ROOM STORY298
     (IN ROOMS)
     (DESC "298")
+    (STORY TEXT298)
+    (CHOICES CHOICES298)
+    (DESTINATIONS <LTABLE STORY377 STORY364>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT299 "\"Yes it is I, the Lady in Grey. As you can see I am also Elanor, the Lady of the Forest. I thought you had the wit to find your way this far. I am glad. The forest needs a hero. Climb up, take some elderflower nectar with me -- you'll find it most refreshing. Did you need to play the flute?\"||You climb up into the little tree-house. There is no furniture except a straw-filled hemp mattress to sleep on. The lady gestures you to sit in the nook of a curved branch, covered in dry moss, that serves as a chair and is surprisingly comfortable. She sits on a small hammock made of creepers, and swings gently to and fro.||There are shelves made of thick ropes and creepers which have been trained to grow in and out around the edge of the tree-house. Behind the Lady in Grey on one of the shelves is a row of potions. The strange liquids with bright swirling colours look just as you imagine magical potions do. She looks deep into your eyes and says, \"Are you ready to be the forest's saviour?\"">
+<CONSTANT CHOICES299 <LTABLE "try to get the potions" "say you don't know what she is talking about and that you  only came to get directions to the Tree of Knowledge" "say you would like to be the hero who saves the forest">>
 
 <ROOM STORY299
     (IN ROOMS)
     (DESC "299")
+    (STORY TEXT299)
+    (CHOICES CHOICES299)
+    (DESTINATIONS <LTABLE STORY341 STORY329 STORY009>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT300 "You notice the Elf King making a swift pass with his hands as Huldranas takes the shot. This time it is as though the arrow veers in mid air to find its target. There is a distant crack of splintered wood and Huldranas' arrow stands quivering from the bough where your own arrow was embedded an instant earlier.||Immediately Huldranas whirls and flashes a sharp look at the king. He seems on the verge of saying something, but he is soon stared down by the millennial gaze of his liege lord. The Elf King turns to you and says shortly, \"You were a fool to choose this contest. What mortal could equal the archery of the elves?\"||But as Huldranas passes you, he whispers in your ear, \"I cannot speak out against my king, mortal, but you and I shall always know the real result of this contest. You are my equal in this art.\"">
 
 <ROOM STORY300
     (IN ROOMS)
     (DESC "300")
+    (STORY TEXT300)
+    (CONTINUE STORY069)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY301
