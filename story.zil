@@ -4753,29 +4753,61 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT401 "Gathkeri begins to circle you warily once more; the murderous glint still gleams in his violet eyes.">
+<CONSTANT CHOICES401 <LTABLE "try to grapple him" "attack him with your fists and feet">>
+
 <ROOM STORY401
     (IN ROOMS)
     (DESC "401")
+    (STORY TEXT401)
+    (CHOICES CHOICES401)
+    (DESTINATIONS <LTABLE STORY142 STORY172>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT402 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Tree-houses spanning the gaps between the Greenbarks' great branches are decked with hanging violets and ivy. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.">
 
 <ROOM STORY402
     (IN ROOMS)
     (DESC "402")
+    (STORY TEXT402)
+    (CONTINE STORY386)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT403 "His wound has slowed him slightly. Even though you are trying the same trick again, you win the initiative. You have an opening for a killing blow.">
+<CONSTANT CHOICES403 <LTABLE "stab at his heart and end things for the immortal elf" "cut at his shoulder but this gives him more time to dodge if you flinch at killing him or do not want to">>
 
 <ROOM STORY403
     (IN ROOMS)
     (DESC "403")
+    (STORY TEXT403)
+    (CHOICES CHOICES403)
+    (DESTINATIONS <LTABLE STORY348 STORY357>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT404 "The smell of rot and marsh gas almost make you gag. The tips of the Embracer's tentacles wave in the air, almost as if they were trying to sniff you out.">
+<CONSTANT CHOICES404 <LTABLE "slash at the tentacles coiled around Renard" "drive your sword point between its eyes" "slash at the other tentacles it is preparing to coil around you">>
 
 <ROOM STORY404
     (IN ROOMS)
     (DESC "404")
+    (STORY TEXT404)
+    (CHOICES CHOICES404)
+    (DESTINATIONS <LTABLE STORY374 STORY287 STORY262>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT405 "The elf draws a long slim dirk from beneath his shirt, but when he sees you coming at him without a weapon he throws the dirk back over his shoulder. This elf is quite tall but very lightly built: he does not look as strong as you. He moves very quickly and nimbly so you will have to be careful.">
+<CONSTANT CHOICES405 <LTABLE "try to fell him with a sudden attack of kicks and lunges" "try to back him up into a corner and then grapple with him">>
 
 <ROOM STORY405
     (IN ROOMS)
     (DESC "405")
+    (STORY TEXT405)
+    (CHOICES CHOICES405)
+    (DESTINATIONS <LTABLE STORY383 STORY363>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY406
