@@ -4765,7 +4765,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT402 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Tree-houses spanning the gaps between the Greenbarks' great branches are decked with hanging violets and ivy. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.">
+<CONSTANT TEXT402 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming-birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Bridges of tree-houses spanning the gaps between the Greenbark's great branches are decked with hanging violets and ivy-lilies. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.">
 
 <ROOM STORY402
     (IN ROOMS)
@@ -4881,30 +4881,71 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY380)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT411 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming-birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Bridges of tree-houses spanning the gaps between the Greenbark's great branches are decked with hanging violets and ivy-lilies. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.||Your guide takes you to the foot of a great ladder of oak fpoles, leading up to the king's pavilion which is decked out in silver and green. The poor elf who brought you to the hidden city is trembling as he stands nervously before his lord. If he is so frightened, you reason, you must be in great peril yourself. To your relief, the king asks him a series of questions in a tongue you cannot comprehend and seems quite satisfied with the answers.">
+
 <ROOM STORY411
     (IN ROOMS)
     (DESC "411")
+    (STORY TEXT411)
+    (CONTINUE STORY386)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT412 "You throw yourself at Gathkeri and your shoulder cannons into his hip. He sprawls flat on the ground and you jump astride his back. You are too strong for him to escape. The elf knows he is beaten.||\"I submit,\" he cries out loudly enough for all the elves to hear. \"You are the victor.\"||You let him rise and you both walk over to the king.">
 
 <ROOM STORY412
     (IN ROOMS)
     (DESC "412")
+    (STORY TEXT412)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT413 "The Westermen crossbowmen are outnumbered by the elves who are brilliant natural bowmen. While the crossbows take a minute to crank and reload, the best of the elven marksmen can unleash ten arrows with just as much foce as a crossbow. The first black rain of crossbow bolts claims a few elves but the rate of fire is too much for the Westermen who are too slow to take cover. It is a scene of butchery and the surviving mercenaries are soon put to flight.||The soldiers behind them regroup and start to raze the forest in front of them so they can advance on a wide front and bring their greater numbers to bear.">
+<CONSTANT CHOICES413 <LTABLE "organize the defence here" "return to the other side of the great tree where you can hear a terrible racket and screaming">>
 
 <ROOM STORY413
     (IN ROOMS)
     (DESC "413")
+    (STORY TEXT413)
+    (CHOICES CHOICES413)
+    (DESTINATIONS <LTABLE STORY400 STORY379>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT414 "When you awake you are still inside the great Umbellifer bush, lying beneath a twisted holly tree that is being uprooted by the growth of the bush. The Kwerrel imp has stolen everything off you but your clothes.||You start to dig again but next morning you awake to find the hole filled in. You are hungry again and must east. You lose track of time but nothing can daunt the spirit of a true hero and you persevere until the little Kwerrel tires of the great labour of undoing your day's work every night. By the time you have dug your way out the autumn rains have ocme. It begins to rain and rain and rain. You set off to the north once again.">
 
 <ROOM STORY414
     (IN ROOMS)
     (DESC "414")
+    (STORY TEXT414)
+    (CONTINUE STORY406)
+    (PRECHOICE STORY414-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY414-PRECHOICE ("AUX" HAS-RING)
+    <SET HAS-RING <IN? ,EMERALD-RING-ELANOR ,PLAYER>>
+    <RESET-POSSESSIONS>
+    <COND (.HAS-RING <MOVE ,EMERALD-RING-ELANOR ,PLAYER>)>>
+
+<CONSTANT TEXT415 "Zorolotl strikes as fast as lightning. The point of his sword rips into your jerkin, but your riposte catches him on the neck. You have wounded the elf but you were also wounded.">
+<CONSTANT CHOICES415 <LTABLE "circle to the left of him" "to the right of him" "meet him head on">>
 
 <ROOM STORY415
     (IN ROOMS)
     (DESC "415")
+    (STORY TEXT415)
+    (CHOICES CHOICES415)
+    (DESTINATIONS <LTABLE STORY403 STORY393 STORY385>)
+    (PRECHOICE STORY415-PRECHOICE)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY415-PRECHOICE ()
+    <LOSE-LIFE 3 "You have died in combat." ,STORY385>
+    <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 3>>
+    <CRLF>
+    <TELL "He advances warily again.">
+    <CRLF>>
 
 <ROOM STORY416
     (IN ROOMS)
