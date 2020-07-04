@@ -4771,7 +4771,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "402")
     (STORY TEXT402)
-    (CONTINE STORY386)
+    (CONTINUE STORY386)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT403 "His wound has slowed him slightly. Even though you are trying the same trick again, you win the initiative. You have an opening for a killing blow.">
