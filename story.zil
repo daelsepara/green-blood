@@ -1,3 +1,5 @@
+<GLOBAL CHARACTERS-ENABLED T>
+
 <CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
 <CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
 
@@ -42,6 +44,13 @@
     <TELL "The potion magically heals all your lost life points.">
     <HLIGHT 0>
     <CRLF>>
+
+<ROUTINE TAKE-ELVEN-DIRK ()
+    <CRLF>
+    <TELL "Take " T ,ELVEN-DIRK "?">
+    <COND (<YES?>
+        <TAKE-ITEM ,ELVEN-DIRK>
+    )>>
 
 <GLOBAL ZOROLOTL-WOUNDED 0>
 <GLOBAL LIFE-POINTS-LOST 0>
@@ -1289,7 +1298,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY120)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT110 "You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen.  CHOKING FOG brings a cloud of poisonous gas. VSCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects agains manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before ou have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
+<CONSTANT TEXT110 "You review the spells you can cast against the King of the Elves in the duel.||VANISH allows you to disappear and move unseen. CHOKING FOG brings a cloud of poisonous gas. VISCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE protects against manifest magical attacks. BAFFLEMENT makes your foe unable to understand what is happening. VISIONS creates two false illusions of yourself. TOWER OF WILL subdues your enemy and makes him do your will.||The elven bard announces the beginning of the duel. You are shocked at the swiftness of elven king's magic. Before you have even fully contemplated which spell to use, he cries a single word of power and vanishes. A moment later he reappears along with two exact copies of himself. You can't tell which is which because all three appear motionless. You must quickly decide which spell to use first.">
 <CONSTANT CHOICES110 <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption or Bafflement" "Shield of Defense" "Visions" "Tower of Will">>
 
 <ROOM STORY110
@@ -2636,11 +2645,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
                 <POTION-RESTORE>
             )>
         )>
-        <CRLF>
-        <TELL "Take " T ,ELVEN-DIRK "?">
-        <COND (<YES?>
-            <TAKE-ITEM ,ELVEN-DIRK>
-        )>
+        <TAKE-ELVEN-DIRK>
     )>
     <RETURN>>
 
@@ -2873,11 +2878,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY245-PRECHOICE ()
-    <CRLF>
-    <TELL "Take " T ,ELVEN-DIRK "?">
-    <COND (<YES?>
-        <TAKE-ITEM ,ELVEN-DIRK>
-    )>
+    <TAKE-ELVEN-DIRK>
     <CRLF>
     <TELL TEXT245-CONTINUED>
     <CRLF>
@@ -3789,11 +3790,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
         <TELL TEXT321-CONTINUED>
-        <CRLF>
-        <TELL "Take " T ,ELVEN-DIRK "?">
-        <COND (<YES?>
-            <TAKE-ITEM ,ELVEN-DIRK>
-        )>
+        <TAKE-ELVEN-DIRK>
     )>>
 
 <CONSTANT TEXT322 "Elanor is nowhere to bee seen, but her owl is still gazing at you unwinkingly. It follows you as you exit the beautiful clearing, hoping to leave the bees behind. Just as you hear a loud buzzing behind you there is a stab of pain as a bee strings the back of your neck. Looking back you see a whole swarm of bees flying to attack you.">
@@ -3975,19 +3972,41 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINE STORY004)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT338 "As you speak the elf stoops, scopps up a handful of dirt and rotting leaves and hurls it into your face. You duck just in time and the handful of dirt spatters against a trunk behind you. Seizing our chance you shoulder-charge the elf who is still trapped against the tween trees, and wrestle him to the ground. Feeling your strength, the elf surrenders to you and says he will take you to meet the elf lord.">
+
 <ROOM STORY338
     (IN ROOMS)
     (DESC "338")
+    (STORY TEXT338)
+    (CONTINUE STORY331)
+    (PREHOICE STORY338-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY338-PRECHOICE ()
+    <TAKE-ELVEN-DIRK>>
+
+<CONSTANT TEXT339 "The infernal Statute belches steam as its sword arm rises and falls like a piston. You review the spells you can cast against this terrible weapon of destruction.||VANISH allows you to disappear and move unseen. CHOKING FOG creates a cloud of poisonous gas. VISCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE is a defense against manifest magical attacks. BAFFLEMENT confuses your foe. TOWER OF WILL subdues your enemy, who will then do your will.||The sword continues to drive into and out of the trunk of the Tree of Life. Green-stained wood flies up in splinters. Decide which spell you will cast.">
+<CONSTANT CHOICES339 <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defence" "Bafflement" "Tower of Will">>
 
 <ROOM STORY339
     (IN ROOMS)
     (DESC "339")
+    (STORY TEXT339)
+    (CHOICES CHOICES339)
+    (DESTINATIONS <LTABLE STORY007 STORY031 STORY064 STORY082 STORY113 STORY207>)
+    (TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT340 "\"I cannot take you to Elvenhame. I would rather die like a mortal than reveal our last great secret.\"||\"What secret is that?\" you ask.||\"No mortal has ever looked upon the glory of Elvenhame.\"||\"And lived?\" you ask grimly.||\"No mortals live. If they did they wouldn't be mortal, would they?||You threaten to kill the elf but he seems ready to die rather than to lead you to his lord. You look deep into his violet eyes, reading there the fear that you are about to cut short a life that should endure for millennia.">
+<CONSTANT CHOICES340 <LTABLE "let him go" "tie him up" "kill him anyway">>
 
 <ROOM STORY340
     (IN ROOMS)
     (DESC "340")
+    (STORY TEXT340)
+    (CHOICES CHOICES340)
+    (DESTINATIONS <LTABLE STORY360 STORY175 STORY370>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY341

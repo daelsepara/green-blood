@@ -42,32 +42,36 @@
     (FLAGS CONTBIT OPENBIT)>
 
 <ROUTINE GAME-BOOK ("AUX" KEY)
-    <INSTRUCTIONS>
-    <RESET-PLAYER>
-    <RESET-OBJECTS>
-    <RESET-SELECTIONS>
-    <RESET-STORY>
-    <CHOOSE-CHARACTER>
+    <COND (,CHARACTERS-ENABLED
+        <INSTRUCTIONS>
+        <RESET-PLAYER>
+        <RESET-OBJECTS>
+        <RESET-SELECTIONS>
+        <RESET-STORY>
+        <CHOOSE-CHARACTER>
+    )>
     <SETG HERE ,PROLOGUE>
     <INIT-STATUS-LINE>
     <UPDATE-STATUS-LINE>
     <REPEAT ()
         <CRLF>
         <RESET-CHOICES>
-        <CHECK-EVENTS>
+        <COND (,CHARACTERS-ENABLED <CHECK-EVENTS>)>
         <GOTO ,HERE>
         <PRINT-PAGE>
-        <LOSE-MONEY>
-        <GAIN-CODEWORD>
-        <GAIN-ITEM>
-        <CHECK-PRECHOICE>
+        <COND (,CHARACTERS-ENABLED
+            <LOSE-MONEY>
+            <GAIN-CODEWORD>
+            <GAIN-ITEM>
+            <CHECK-PRECHOICE>
+        )>
         <CHECK-DEATH>
         <CHECK-VICTORY>
         <COND (,CONTINUE-TO-CHOICES
             <SET KEY <PROCESS-STORY>>
-            <COND (<EQUAL? .KEY !\c !\C> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
-            <COND (<EQUAL? .KEY !\g !\G> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
-            <COND (<EQUAL? .KEY !\i !\I> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\g !\G>> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\i !\I>> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <RETURN>)>
             <COND (<EQUAL? .KEY !\x !\X> <CRLF> <RETURN>)>
         )>
@@ -791,14 +795,14 @@
     <COND (,HERE
         <COND (,HERE-LIT <TELL D ,HERE>)(ELSE <TELL %,DARKNESS-STATUS-TEXT>)>
     )>
-    <COND (,CURRENT-CHARACTER
+    <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
         <TELL " - " CT ,CURRENT-CHARACTER>
+        <CURSET 1 <- .WIDTH 46>>
+        <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
+        <CURSET 1 <- .WIDTH 27>>
+        <PRINT-CAP-OBJ ,CURRENCY>
+        <TELL ": " N ,MONEY>
     )>
-    <CURSET 1 <- .WIDTH 46>>
-    <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
-    <CURSET 1 <- .WIDTH 27>>
-    <PRINT-CAP-OBJ ,CURRENCY>
-    <TELL ": " N ,MONEY>
     <CURSET 1 <- .WIDTH 16>>
     <TELL "Moves: " N ,MOVES>
     <SCREEN 0>
