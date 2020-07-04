@@ -22,6 +22,7 @@
     <PUTP ,STORY248 ,P?DEATH T>
     <PUTP ,STORY254 ,P?DEATH T>
     <PUTP ,STORY291 ,P?DEATH T>
+    <PUTP ,STORY321 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -3704,54 +3705,129 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT315 "The guard has chosen a place, where he is not observed by any of his fellows, to brutalize the slaves, so there will be no one to save him when you attack. Immersed as he is in his sadistic pleasures it is easy enough to walk up behind him and kill him before he even knows you are there, just as he was about to kick the innkeeper hard in the chest.||Taking the key from its chain about the dead guard's neck you free the slaves, including the innkeeper, and tell them to hide out in the forest. You tell the innkeeper of your visit to the inn at Burg and find out it is indeed his hostelry. He asks anxiously after his daughter and you are able to say she is tolerably well. \"She will be all the happier when you return to her, no doubt.\"||\"Will you come back with me to Burg? I will shower you with hospitality, a banquet fit for a prince . . .">
+<CONSTANT CHOICES315 <LTABLE "escort the innkeeper safely back to his inn" "tell him you must stay in the forest and foil the Westermen">>
+
 <ROOM STORY315
     (IN ROOMS)
     (DESC "315")
+    (STORY TEXT315)
+    (CHOICES CHOICES315)
+    (DESTINATIONS <LTABLE STORY062 STORY378>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT CHOICES316 <LTABLE "use" "use" "use" "otherwise if you have none of these skills">>
 
 <ROOM STORY316
     (IN ROOMS)
     (DESC "316")
+    (CHOICES CHOICES316)
+    (DESTINATIONS <LTABLE STORY355 STORY368 STORY404 STORY382>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-UNARMED-COMBAT SKILL-SWORDPLAY NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT317 "\"What would you have us do? They outnumber us a hundred to one. Must we give battle? We have no swords.\"||The elves know nothing of warfare. You will have to guide them. Many of them don't seem to believe the forest is really threatened.">
+<CONSTANT CHOICES317 <LTABLE "say that their bows alone are enough to guarantee victory, but first set out alone for the camp of the Westermen to find out what you can about your foes" "suggest an expedition to capture swords from the forges">>
 
 <ROOM STORY317
     (IN ROOMS)
     (DESC "317")
+    (STORY TEXT317)
+    (CHOICES CHOICES317)
+    (DESTINATIONS <LTABLE STORY326 STORY335>)
+    (TYPE TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT318 "You break the spell with a word of negation and the cloud of gas evaporates. You were hardly affected by the choking poison gas. But your foe is casting another spell.">
+<CONSTANT CHOICES318 <LTABLE "use a quick defensive charm" "concentrate for longer on an attack spell">>
 
 <ROOM STORY318
     (IN ROOMS)
     (DESC "318")
+    (STORY TEXT318)
+    (CHOICES CHOICES318)
+    (DESTINATIONS <LTABLE STORY326 STORY335>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT319 "Garoshtar swoops low, his wings cracking down at the last moment as he swings his head down and breathes over the leading company of soldiers, sending a cloud of poisonous gas and acid roiling about them. His wings crack hard against the air as he struggles to gain height, skimming the treetops. The mercenaries let loose their crossbows as one and Garoshtar is stuck like a pincushion. The dragon convulses in mid air, and it do all you can to cling desperately on as he struggles to stay airborne. The wounds are not mortal but Garoshtar tells you he must land and sleep for a few years to heal his many hurts. He lands near Elvenhame and sinks immediately into a deep slumber, his bulk rising and falling in time with his breathing like a heavy ocean swell. You decide to search for the Elf King to report what has befallen brave Garoshtar.">
 
 <ROOM STORY319
     (IN ROOMS)
     (DESC "319")
+    (STORY TEXT319)
+    (CONTINUE STORY057)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT320 "Shot follows shot, with no clear sign which of you is the better archer. The elves look on in silence, giving no clue as to whether they are completely enraptured or whether they find the whole contest of no interest at all.||Your arm is beginning to tire; Huldranas shoots like an automaton, with precision and unflagging strength. You are wasting arrows, and you know that if you allow the contest to drag on you are going to lose through simple fatigue.||\"Enough!\" you say to the Elf king. \"It might amuse you elves to watch this carry on till the sky cave in, but the Westermen will not wait that long to bring about Doomsday.\"||\"Very well,\" he says. \"A more fraught duel then -- with life and death at stake.\"">
 
 <ROOM STORY320
     (IN ROOMS)
     (DESC "320")
+    (STORY TEXT320)
+    (CONTINUE STORY018)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT321 "You turn your back and start to run through the trees. Behind you the elf retrieves his dirk and sends it spinning end over end towards the small of your back. You hear it cutting through the air.">
+<CONSTANT TEXT321-AGILITY "You duck past a tree just in time.">
+<CONSTANT TEXT321-CONTINUED "You can hear the elf shouting, \"Leave the forest. You are not wanted here.\"">
 
 <ROOM STORY321
     (IN ROOMS)
     (DESC "321")
+    (STORY TEXT321)
+    (PRECHOICE STORY321-PRECHOICE)
+    (CONTINUE STORY301)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY321-PRECHOICE ()
+    <COND (<IN? ,SKILL-AGILITY ,PLAYER> <CRLF> <TELL TEXT321-AGILITY> <CRLF>)>
+    <LOSE-LIFE 3 "You died from the attack." ,STORY321>
+    <COND (<G? ,LIFE-POINTS 0>
+        <CRLF>
+        <TELL TEXT321-CONTINUED>
+        <CRLF>
+        <TELL "Take " T ,ELVEN-DIRK "?">
+        <COND (<YES?>
+            <TAKE-ITEM ,ELVEN-DIRK>
+        )>
+    )>>
+
+<CONSTANT TEXT322 "Elanor is nowhere to bee seen, but her owl is still gazing at you unwinkingly. It follows you as you exit the beautiful clearing, hoping to leave the bees behind. Just as you hear a loud buzzing behind you there is a stab of pain as a bee strings the back of your neck. Looking back you see a whole swarm of bees flying to attack you.">
+<CONSTANT CHOICES322 <LTABLE "run in search of water to hide in" "smear some of the white jelly on yourself" "smear some of the black tar on your self" "drink the blue potion" "drink the red potion">>
 
 <ROOM STORY322
     (IN ROOMS)
     (DESC "322")
+    (STORY TEXT322)
+    (CHOICES CHOICES322)
+    (DESTINATIONS <LTABLE STORY197 STORY174 STORY168 STORY155 STORY141>)
+    (REQUIREMENTS <LTABLE NONE JAR-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
+    (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT323 "\"Then you'll be glad to stay a while to keep me company. I could help you, oh I could, I could. But first you must make me like you.\"||You protest that you are on an urgent and perilous quest.||\"Spare me your excuses. You're just like all the rest. Nobody cares for the Kwerrel.\" The impish little man hangs his head sadly. At length you ask how you can make him like you.||\"By accepting my hospitality, by eating the flesh of the Blood of Iron toadstool.\"||You hesitate. \"See, just like all the rest. You just can't find it in you to trust the Kwerrel, can you?\"">
+<CONSTANT CHOICES323 <LTABLE "eat the mushroom he offers you" "refuse">>
 
 <ROOM STORY323
     (IN ROOMS)
     (DESC "323")
+    (STORY TEXT323)
+    (CHOICES CHOICES323)
+    (DESTINATIONS <LTABLE STORY138 STORY438>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT324 "The strange shadow figure seems to know the forest. To your surprise he begins to tell you about the fabled Tree of Knowledge. \"Ah, yes, it is real enough. I myself have spoken with it and profited greatly thereby. The tree can give a man all the knowledge of the forest. I can teach magical charms as well. Do you seek this tree?\" He doesn't wait for you to answer, but goes on, \"Then follow the Burgstream into the forest until it flows into the great Sirion river. Then turn east along the bank. Where the land rises climb until you reach a clearing and at its centre a cave. There you will find the guardian of the tree. Slay the guardian and the knowledge of the tree will be yours. Farewell.\"||With that he rises abruptly, twitches his black cloak around him and leaves the inn. The others all eye you suspiciously before leaving the common room. You take a room at the inn for the night.">
 
 <ROOM STORY324
     (IN ROOMS)
     (DESC "324")
+    (STORY TEXT324)
+    (CONTINUE STORY333)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY325
