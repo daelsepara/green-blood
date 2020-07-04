@@ -1671,7 +1671,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT143 "Throwing your arms wide to embrace the wind and blowing mightily as if playing a trumpet you cast the might spell Choking Fog. There is a hiss and puff of green smoke that appears in front of appears in front of the three images of your foe, one of which you know to be real.">
+<CONSTANT TEXT143 "Throwing your arms wide to embrace the wind and blowing mightily as if playing a trumpet you cast the mighty spell Choking Fog. There is a hiss and puff of green smoke that appears in front of appears in front of the three images of your foe, one of which you know to be real.">
 
 <ROOM STORY143
     (IN ROOMS)
@@ -1952,7 +1952,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (ITEM EMERALD-RING-ELANOR)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT167 "Renard surlily agrees to take you up the Bonehill on the morrow, and you settle down to sleep, exhausted after days of hard travelling.||At dawm, when you awake, Renard is nowhere to be seen and neither is your money pouch. He must have stolen it while you slept before slinking away into the forest. You will never find him. He has left you penniless but at least he didn't slit your throat.||You slept soundly enough but the loss of your money has upset you, even though you can foresee no need for money here in the forest.||Cursing Renard, you begin to climb the slope away from the Sirion River.">
+<CONSTANT TEXT167 "Renard surlily agrees to take you up the Bonehill on the morrow, and you settle down to sleep, exhausted after days of hard travelling.||At dawn, when you awake, Renard is nowhere to be seen and neither is your money pouch. He must have stolen it while you slept before slinking away into the forest. You will never find him. He has left you penniless but at least he didn't slit your throat.||You slept soundly enough but the loss of your money has upset you, even though you can foresee no need for money here in the forest.||Cursing Renard, you begin to climb the slope away from the Sirion River.">
 
 <ROOM STORY167
     (IN ROOMS)
@@ -4696,29 +4696,61 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT396 "As you struggle to your feet, cursing the very ground that has betrayed your feet, one of the guards breaks ranks and rushes towards you. As he closes, however, your opponent looks as if he is going to try to parry your blows rather than try to kill you himself, while his comrades close in on your back.">
+<CONSTANT CHOICES396 <LTABLE "risk all with a sudden lunge" "fight him carefully, until you see an opening to attack without fear of a riposte">>
+
 <ROOM STORY396
     (IN ROOMS)
     (DESC "396")
+    (STORY TEXT396)
+    (CHOICES CHOICES396)
+    (DESTINATIONS <LTABLE STORY453 STORY463>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT397 "A sudden leap not only carries you to where the hose lies unprotected on the ground but temporarily leaves your many assailants behind. You have one chance to sever the hose with your dagger. If you take it you will be surrounded by the enemy.">
+<CONSTANT CHOICES397 <LTABLE "seize the moment to sever the hose" "back off to nearby safer ground">>
 
 <ROOM STORY397
     (IN ROOMS)
     (DESC "397")
+    (STORY TEXT397)
+    (CHOICES CHOICES397)
+    (DESTINATIONS <LTABLE STORY028 STORY144>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT398 "All is quiet behind you but you do not look back. Renard is anxious to leave the monster far behind and sets a cracking pace through the forest. The path is difficult, overgrown and boggy. You make slow progress for many hours until nightfall.||The noises of the forest seem to intensify with the night: there is buzzing, clicking, croaking, and the hoot of a lone owl to keep you company. Finding a dry place to rest is not easy but at last you find a mound of earth on which you can settle down.||\"Not there!\" exclaims Renard. \"That mound is the cap of the burrow of a Colossus beetle.\"||Renard selects a place for you to camp for the night on a slope that climbs gradually away from the river. You take your calfskin boots off and wash your feet in a stream that winds between the trees. The boots are soaked wet and your feet shows signs of a green mould which you wash off carefully. You are relieved when Renard says your journey on the morrow will take you up out of the river valley to drier parts.||\"My journey?\" you ask. \"What about you?\"||\"This is where I leave you. In the morning I will start back to Burg. You owe me six pieces of gold. Three days out, three days back. Tomorrow, walk past that old yew tree and go on, always seeking the higher ground. If you do that you will find what you seek at the hill top.\"||\"Why not guide me further?\"||\"I want to live a long time. Nothing would make me face the terrors of the Bonehill.\" Renard is adamant he will go no futher.">
+<CONSTANT CHOICES398 <LTABLE "pay Renard the price agreed" "say that you will not pay him unless he takes you to the top of Bonehill">>
 
 <ROOM STORY398
     (IN ROOMS)
     (DESC "398")
+    (STORY TEXT398)
+    (CHOICES CHOICES398)
+    (DESTINATIONS <LTABLE STORY153 STORY167>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT399 "The elf draws a long slim dirk from beneath his shirt. Your sword gives you the advantage of reach but you notice the elf is very agile and has remarkable balance.">
+<CONSTANT CHOICES399 <LTABLE "press your attack fast with a mighty lunge" "bide your time and keep him out of range with sword swipes while you gauge his style">>
 
 <ROOM STORY399
     (IN ROOMS)
     (DESC "399")
+    (STORY TEXT399)
+    (CHOICES CHOICES399)
+    (DESTINATIONS <LTABLE STORY291 STORY271>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT400 "You direct the elves to shoot those who are clearing the path for the armed mass of soldiers behind and the Westermen are soon flinching and edging away. They are on the point of panic when there is a terrible groan from all of the elves. The Tree of Life has been slain and the elves have lost their immortality. As if they had been turned off by a master switch the elves all slump to the ground, stone dead.">
 
 <ROOM STORY400
     (IN ROOMS)
     (DESC "400")
+    (STORY TEXT400)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY401
