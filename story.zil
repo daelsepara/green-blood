@@ -1682,7 +1682,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <PRESS-A-KEY>
     <RETURN>>
 
-<CONSTANT TEXT144 "You back off and reach a rock behind which you can take cover.||The Infernal Statute recovers its equilibrium and hacks into the trunk of the Tree of Life once more. The sword bites deep and one of the tree's great branches cracks and falls to the ground, killing and maiming more than twenty of its assailants. At the next sword blow another branch cracks and falls, and those not dead or trapped fall back as the machine completes its job of destruction.||You screw up your courage and rush once more against the machine but you are too late. One last great blow splits the trunk in the middle and the tree is dead. The destruction of the Tree of Life shatters your hopes. Utterly dejected you do not resist as the Westermen take you prisoner. The only certainty about the future is that you will be a slave of the forces that you should have defeated.">
+<CONSTANT TEXT144 "You back off and reach a rock behind which you can take cover.||The Infernal Statue recovers its equilibrium and hacks into the trunk of the Tree of Life once more. The sword bites deep and one of the tree's great branches cracks and falls to the ground, killing and maiming more than twenty of its assailants. At the next sword blow another branch cracks and falls, and those not dead or trapped fall back as the machine completes its job of destruction.||You screw up your courage and rush once more against the machine but you are too late. One last great blow splits the trunk in the middle and the tree is dead. The destruction of the Tree of Life shatters your hopes. Utterly dejected you do not resist as the Westermen take you prisoner. The only certainty about the future is that you will be a slave of the forces that you should have defeated.">
 
 <ROOM STORY144
     (IN ROOMS)
@@ -2625,7 +2625,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT226 "Once again the elf's drik scores your flesh.">
+<CONSTANT TEXT226 "Once again the elf's dirk scores your flesh.">
 <CONSTANT TEXT226-CONTINUED "You gain heart when you notice that the elf too is tiring. You manage to wound him and corner him between two trees that grow close together.||Your opponent drops the dirk and says he will take you to the King of the Elves in Elvenhame.">
 
 <ROOM STORY226
@@ -3990,7 +3990,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY338-PRECHOICE ()
     <TAKE-ELVEN-DIRK>>
 
-<CONSTANT TEXT339 "The infernal Statute belches steam as its sword arm rises and falls like a piston. You review the spells you can cast against this terrible weapon of destruction.||VANISH allows you to disappear and move unseen. CHOKING FOG creates a cloud of poisonous gas. VISCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE is a defense against manifest magical attacks. BAFFLEMENT confuses your foe. TOWER OF WILL subdues your enemy, who will then do your will.||The sword continues to drive into and out of the trunk of the Tree of Life. Green-stained wood flies up in splinters. Decide which spell you will cast.">
+<CONSTANT TEXT339 "The infernal Statue belches steam as its sword arm rises and falls like a piston. You review the spells you can cast against this terrible weapon of destruction.||VANISH allows you to disappear and move unseen. CHOKING FOG creates a cloud of poisonous gas. VISCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE is a defense against manifest magical attacks. BAFFLEMENT confuses your foe. TOWER OF WILL subdues your enemy, who will then do your will.||The sword continues to drive into and out of the trunk of the Tree of Life. Green-stained wood flies up in splinters. Decide which spell you will cast.">
 <CONSTANT CHOICES339 <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defence" "Bafflement" "Tower of Will">>
 
 <ROOM STORY339
@@ -4192,24 +4192,59 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONINUE STORY301)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT357 "You draw the sword back and cut fast at Zorolotl's shoulder but he has time to regain his balance and skip lightly past your sword cut. The wavy edge of his blade runs against your thigh.">
+<CONSTANT TEXT357-CONTINUED "Your red blood stains the ground; your fot feels hot and wet from the blood which soaks it. You jump back, en garde once more.">
+
 <ROOM STORY357
     (IN ROOMS)
     (DESC "357")
+    (STORY TEXT357)
+    (CONTINUE STORY303)
+    (PRECHOICE STORY357-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY357-PRECHOICE ()
+    <LOSE-LIFE 4 "You died in combat." ,STORY357>
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
+    <COND (<G? ,LIFE-POINTS 0>
+        <CRLF>
+        <TELL TEXT357-CONTINUED>
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT358 "You say you remember the serving wench all right but you can't quite conjure up her name.||\"She was never at the Reaver's. That's the girl from Rainbow's End.\" The gleam in his eyes dims a moment to be replaced by a piercing look of low cunning. \"I don't think I rember you at all. Guards.\"||You run for the exit to the porch but the guards cross heir halberds in front of you, barring your way.">
+<CONSTANT CHOICES358 <LTABLE "surrender" "fight">>
 
 <ROOM STORY358
     (IN ROOMS)
     (DESC "358")
+    (STORY TEXT358)
+    (CHOICES CHOICES358)
+    (DESTINATIONS <LTABLE STORY146 STORY017>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT359 "You must decide how will you face this monstrous machine of destruction.">
+<CONSTANT CHOICES359 <LTABLE "use" "face it bare-handed" "use" "use" "try something else">>
 
 <ROOM STORY359
     (IN ROOMS)
     (DESC "359")
+    (STORY TEXT359)
+    (CHOICES CHOICES359)
+    (DESTINATIONS <LTABLE STORY339 STORY327 STORY295 STORY391 STORY084>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-UNARMED-COMBAT SKILL-SWORDPLAY SKILL-CHARMS NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT360 "You tell the elf you are going to let him go and he seems grateful. \"I must speak with your lord, the forest and everything in it depends on it.\"||\"Then you must seek him, but beware: he will only speak to you today, Midsummer's day. If you cannot find him before sundown we will kill you. Why meddle where mortals are not wanted? Leave the forest now, while you still have life. Now look away please.\"||You do so and when you look back seconds later he has vanished.">
 
 <ROOM STORY360
     (IN ROOMS)
     (DESC "360")
+    (STORY TEXT360)
+    (CONTINUE STORY078)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT361 "You perform the chant that makes the stone in your pendant grow warm if a large animal or beast should approach while you sleep. To your dismay the stone begins to heat up immediately when you lie down to rest. You look around but can see nothing in the dark. You strain your ears but all you can here are the usual night sounds of the forest. The stone grows hotter against your breast: the unseen danger is coming closer. The earth begins to vibrate beneath you as if a giant stalks you.">
@@ -4224,49 +4259,107 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT362 "Speaking the word you clench your fist, imagining you are twisting and crushing the entrails of the Infernal Statue. The machine does not buckle or hold its stomach, as must a man affected by this puissant spell. Instead it lurches past the tree, then circles and lurches forward again, towards the deep blue bpool. The cries of the Westermen die to silence and you can hear a muffled groaning from somewhere inside the Infernal Statue. It totters on the brink of the pool and then keels over into the water. There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
+
 <ROOM STORY362
     (IN ROOMS)
     (DESC "362")
+    (STORY TEXT362)
+    (CONTINUE STORY500)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT363 "The elf is hampered by your gaze. It is as though your eyes have part-mesmerized him and you manage to back him up into a corner between two trees that have grown together. He tries a last attempt to get away but you cut him off and stand before him cutting off his escape.">
+<CONSTANT CHOICES363 <LTABLE "press your advantage right away" "give him the chance to surrender while remaining wary of any tricks">>
 
 <ROOM STORY363
     (IN ROOMS)
     (DESC "363")
+    (STORY TEXT363)
+    (CHOICES CHOICES363)
+    (DESTINATIONS <LTABLE STORY356 STORY338>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT364 "Your hurried stab pierces his clothing and thick green blood stains the tip of your blade. You have danced back out of range once again and you look to see if the wound will make Zorolotl submit. That souldering look is still there in your eyes. The mandrake root he has eaten has indeed made him immune to pain.">
+<CONSTANT CHOICES364 <LTABLE "circle to the left of him" "to the right of him" "meet him head on">>
 
 <ROOM STORY364
     (IN ROOMS)
     (DESC "364")
+    (STORY TEXT364)
+    (CHOICES CHOICES364)
+    (DESTINATIONS <LTABLE STORY403 STORY393 STORY257>)
+    (PRECHOICE STORY364-PRECHOICE)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY364-PRECHOICE ()
+    <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>>
+
+<CONSTANT TEXT365 "The King of the Elves is retching helplessly on the floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. He can longer even speak -- this spell seems to have dire effects on elves. He is dying. The hard look on your face as he gives up the ghost with a ghoulish death rattle turns to one of fear as you realize the elves are going to kill you. You should have spared their king. Twenty arrows all find their mark in your body and you too are dead.">
 
 <ROOM STORY365
     (IN ROOMS)
     (DESC "365")
+    (STORY TEXT365)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT CHOICES366 <LTABLE "throw the elven dirk at the egret" "attack it with magic" "use" "otherwise there is nothing you can do which keeps it well out of range. You can however, walk to the top of the hillock to what you can see" "leave the valley and skirt around it to the east" "use">>
 
 <ROOM STORY366
     (IN ROOMS)
     (DESC "366")
+    (CHOICES CHOICES366)
+    (DESTINATIONS <LTABLE STORY288 STORY278 STORY267 STORY314 STORY429 STORY388>)
+    (REQUIREMENTS <LTABLE ELVEN-DIRK SKILL-SPELLS SKILL-CHARMS NONE NONE SKILL-WILDERNESS-LORE>)
+    (TYPES <LTABLE R-ITEM R-SKILL R-SKILL R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT367 "You honesty stands you in good stead. The chief was trying to trick you for there never was any such a one-legged wench serving at the Reaver's Inn in Bessaraban. He is relaxed now; you can ask him whatever you like.">
+<CONSTANT CHOICES367 <LTABLE "ask him about the Tree of Knowledge" "whether there is ever any trouble among the slaves or his own men">>
 
 <ROOM STORY367
     (IN ROOMS)
     (DESC "367")
+    (STORY TEXT367)
+    (CHOICES CHOICES367)
+    (DESTINATIONS <LTABLE STORY337 STORY354>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT368 "You let yourself fall from the bridge into the murky waters and land, by chance, on top of Renard and the Embracer. The Embracer surges up out of the water once more to see what has assailed it, with you resting on the coiled tentacles. Renard is still struggling but his arms are pinioned by the Embracer's fibrous tentacles. You grab two flailing tentacles and haul yourself towards its cone-shaped head and smash your fist repeatedly between its murky grey eyes. Its coils loosens and Renard swims up to the surface. You follow, gasping for air as you break the surface, then swim to the far bank and scramble before the man-eating monster can recover.">
 
 <ROOM STORY368
     (IN ROOMS)
     (DESC "368")
+    (STORY TEXT368)
+    (CONTINUE STORY398)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT369 "The statue is shaped like a man, bearing a ten-foot sword and clad head to toe in plate armour. Steam hisses out of vents behind its ears giving it a supernatural horror. The hose which joins it to the great boiler snakes out across the grass behind it, slithering on as the Infernal Statue takes slow strides towards the Tree of Life with the great sword held high.">
+<CONSTANT CHOICES369 <LTABLE "rush between it and the Tree of Life" "wait to see what it will do">>
 
 <ROOM STORY369
     (IN ROOMS)
     (DESC "369")
+    (STORY TEXT369)
+    (CHOICES CHOICES369)
+    (DESTINATIONS <LTABLE STORY359 STORY349>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT370 "The elf is powerless to run as you draw your dagger for the kill, but he can fight well enough.">
+<CONSTANT CHOICES370 <LTABLE "use" "use" "use" "otherwise, if you have none of these skills">>
 
 <ROOM STORY370
     (IN ROOMS)
     (DESC "370")
+    (STORY TEXT370)
+    (CHOICES CHOICES370)
+    (DESTINATIONS <LTABLE STORY399 STORY410 STORY405 STORY308>)
+    (REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-SPELLS SKILL-UNARMED-COMBAT NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY371
