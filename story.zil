@@ -623,8 +623,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT050)
     (CHOICES CHOICES050)
     (DESTINATIONS <LTABLE STORY437 STORY092>)
+    (PRECHOICE STORY050-PRECHOICE)
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY050-PRECHOICE ()
+    <SETG ZOROLOTL-WOUNDED 0>
+    <SETG LIFE-POINTS-LOST 0>>
 
 <CONSTANT TEXT051 "\"I am sorry but you have failed the test. You must leave the forest. Begone.\"||Elanor strides determinedly away from you, saying as she departs, \"I will set all the birds and the beasts against you. You have four days to leave the forest, never to return.\"">
 <CONSTANT CHOICES051 <LTABLE "follow her" "let her go and follow your own destiny">>
@@ -3738,7 +3743,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT317)
     (CHOICES CHOICES317)
     (DESTINATIONS <LTABLE STORY326 STORY335>)
-    (TYPE TWO-NONES)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT318 "You break the spell with a word of negation and the cloud of gas evaporates. You were hardly affected by the choking poison gas. But your foe is casting another spell.">
@@ -4009,59 +4014,134 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT341 "You sidle towards the shelf while pretending to look about the the little house with natural curiosity. Elanor watches you. As you get nearer she stands up and the hammock falls to the floor behind her. Her look challenges you to sit down. She will not let you near the potions.">
+<CONSTANT CHOICES341 <LTABLE "attack her" "sit down once more">>
+
 <ROOM STORY341
     (IN ROOMS)
     (DESC "341")
+    (STORY TEXT341)
+    (CHOICES CHOICES341)
+    (DESTINATIONS <LTABLE STORY389 STORY009>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT342 "At last you have picked a definite advantage by attacking Zorolotls more vulnerable side. He defends as best he can but you are a brilliant swordsman and the point of your blade moves with hypnotizing speed. You slash him a vicious cut down the side of his body and he falls back.">
 
 <ROOM STORY342
     (IN ROOMS)
     (DESC "342")
+    (STORY TEXT342)
+    (CONTINUE STORY303)
+    (PRECHOICE STORY342-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY342-PRECHOICE ()
+    <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>>
+
+<CONSTANT TEXT343 "You hurry quickly across the bridge as a last string of bubbles from Renard's body float to the surface. All is quiet behind you, but you do not look back, fearful of seeing the mangled remains of Renard bobbing in the stream. The path is difficult, overgrown and boggy. Every now and then you are hard put to decide which way it leads but by keeping fairly close to the great river you make progress for many hours until nightfall.||The noises of the forest seem to intensify with night, there is buzzing, clicking, croaking and the hoot of a lone owl to keep you company. Finding a dry place to rest is not easy but at last you find a mound of earth on which you can settle down.">
+<CONSTANT CHOICES343 <LTABLE "turn the pendant into a warning stone" "you can settle down">>
 
 <ROOM STORY343
     (IN ROOMS)
     (DESC "343")
+    (STORY TEXT343)
+    (CHOICES CHOICES343)
+    (DESTINATIONS <LTABLE STORY361 STORY419>)
+    (REQUIREMENTS <LTABLE SKILL-CHARMS NONE>)
+    (TYPES <LTABLE R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT344 "You submit and Zorolotl holds his sword aloft in triumph. They give you a potion to drink which makes your body tingle excruciatingly but which cures you of all your wonds.">
 
 <ROOM STORY344
     (IN ROOMS)
     (DESC "344")
+    (STORY TEXT344)
+    (CONTINUE STORY163)
+    (PRECHOICE STORY344-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY344-PRECHOICE ()
+    <POTION-RESTORE>>
+
+<CONSTANT TEXT345 "\"You mortals are used to battle. You hate, and wage wards constantly. Elf has never fought elf, we know nothing of war. We are thousands. The men of the west come in hundreds of thousands. What would you have us do?\"">
+<CONSTANT CHOICES345 <LTABLE "exhort them to fight" "ask them what will happen if the Westermen raze the forest">>
 
 <ROOM STORY345
     (IN ROOMS)
     (DESC "345")
+    (STORY TEXT345)
+    (CHOICES CHOICES345)
+    (DESTINATIONS <LTABLE STORY317 STORY332>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT346 "As the Infernal Statue hacks through the trunk of the Tree of Life you cast the Choking Fog: a cloud of noxious vapours surrounds the statue. The steam hissing from vents in the head dissipates the fog and the machine hacks on remoreselessly, unaffected by your spell. One last great blow splits the trunk in the middle and the tree is dead. Losing all hope, you are taken prisoner and enslaved.">
 
 <ROOM STORY346
     (IN ROOMS)
     (DESC "346")
+    (STORY TEXT346)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT347 "You concentrate on a potent attack spell. But which of the three images of the King of Elves will you cast it at? None is moving so much as a flicker.">
+<CONSTANT CHOICES347 <LTABLE "choose the right-hand one" "choose the centre one" "choose the left-hand one">>
 
 <ROOM STORY347
     (IN ROOMS)
     (DESC "347")
+    (STORY TEXT347)
+    (CHOICES CHOICES347)
+    (DESTINATIONS <LTABLE STORY149 STORY132 STORY121>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT348 "It was a killing blow sure enough. Your sudden thrust takes Zorolotl by surprise and he is transfixed. Green blood runs down the shining metal of your sword blade and the violet eyes turn up into the top of the elf's head as he dies. There is a chilling low moan from the elves all around you.">
 
 <ROOM STORY348
     (IN ROOMS)
     (DESC "348")
+    (STORY TEXT348)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT349 "The nearby elves look at you with horror. They had conunted on you as their saviour in the moment of direst danger. The Infernal Statue strikes slowly forward until it reaches the gigantic tree, dwarfed by it yet horribly menacing. The great sword rises and falls hewing great gashes out of the trunk. The elves moan as green sap begins to ooze rapidly from the scored Greenbark. There is a crash of thunder overhead and the horrible scene is plunged in gloom. You haven't long to act. The Infernal Statue will soon mortally wound the tree, and the Westermen are howling with fearful glee.">
+<CONSTANT CHOICES349 <LTABLE "use" "use" "use" "do something else">>
 
 <ROOM STORY349
     (IN ROOMS)
-    (DESC "346")
+    (DESC "349")
+    (STORY TEXT349)
+    (CHOICES CHOICES349)
+    (DESTINATIONS <LTABLE STORY339 STORY371 STORY327 STORY023>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SWORDPLAY SKILL-UNARMED-COMBAT NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT350 "Beyond the black silk pavilion there are many smaller canvas tents roped to the few trees which have been allowed to stay standing. There is a regular bustle of people coming and going between the tents and the pavilion or riding in to report from scattered forges and slave encampments.">
+<CONSTANT CHOICES350 <LTABLE "try to get to the silk pavilion right away before you are spotted" "stay hidden until dusk">>
 
 <ROOM STORY350
     (IN ROOMS)
     (DESC "350")
+    (STORY TEXT350)
+    (CHOICES CHOICES350)
+    (DESTINATIONS <LTABLE STORY239 STORY217>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT351 "You have lost a lot of blood and the effort of fighting with such blood loss is making you dizzy. As Zorolotl moves carefully in to the attack again, your vision blurs.">
+<CONSTANT CHOICES351 <LTABLE "give up and submit, amitting you have lost the duel" "fight on against the odds">>
 
 <ROOM STORY351
     (IN ROOMS)
     (DESC "351")
+    (STORY TEXT351)
+    (CHOICES CHOICES351)
+    (DESTINATIONS <LTABLE STORY344 STORY312>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY352
