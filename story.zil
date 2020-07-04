@@ -28,6 +28,8 @@
     <PUTP ,STORY357 ,P?DEATH T>
     <PUTP ,STORY375 ,P?DEATH T>
     <PUTP ,STORY377 ,P?DEATH T>
+    <PUTP ,STORY383 ,P?DEATH T>
+    <PUTP ,STORY385 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -1785,7 +1787,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "152")
     (STORY TEXT152)
-    (CONTINUE STORY229)
+    (CONTINUE STORY166)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT153 "Renard thanks you for the six pieces of gold. \"It's not that I'm a coward, you understand. It's just that nobody in their right mind would brave the Bonehill.||You awake at dawn in time to glimpse Renard's disappearing back. It seems he doesn't want to stay a moment longer than he has to. You slept soundly and feel invigorated and confident as you begin to climb the slop away from the Sirion river.">
@@ -2680,7 +2682,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT229 "You bide your time until you are roughly uuhooked from the coffle chain and set to work digging a hole for the Westermen to use as a latrine. When the guard looks away you cast a Vanish spell and make good your escape. The guard has just returned to the pit you had begun to dig and is looking around for you. If he doesn't want to call attention to the fact he has let you escape he may do nothing. On the other hand he may sound the alarm.">
+<CONSTANT TEXT229 "You bide your time until you are roughly unhooked from the coffle chain and set to work digging a hole for the Westermen to use as a latrine. When the guard looks away you cast a Vanish spell and make good your escape. The guard has just returned to the pit you had begun to dig and is looking around for you. If he doesn't want to call attention to the fact he has let you escape he may do nothing. On the other hand he may sound the alarm.">
 <CONSTANT CHOICES229 <LTABLE "try to free the innkeeper, which you must surely do if you promised his daughter you would try to find him" "abandon him to the Westermen's tender mercies">>
 
 <ROOM STORY229
@@ -2756,7 +2758,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY234-PRECHOICE ()
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 8>>
-    <LOSE-LIFE 8 "You have died in combat." ,STORY234>>
+    <LOSE-LIFE 8 "You died in combat." ,STORY234>>
 
 <CONSTANT TEXT235 "You carefully gather the potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
 <CONSTANT CHOICES235 <LTABLE "run in search of water to hide in" "smear some of the white jelly on yourself" "smear some of the black tar on yourself" "drink the blue potion" "drink the red potion">>
@@ -3464,7 +3466,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY291-PRECHOICE ()
-    <LOSE-LIFE 5 "You have died in combat." ,STORY291>>
+    <LOSE-LIFE 5 "You died in combat." ,STORY291>>
 
 <CONSTANT TEXT292 "You grab the phial and down the cloudy blue fluid. Elanor makes no move to stop you. \"I have tricked you, fool. You have just drunk the mulch of the fire lizard's gizzard. You have not long to live.\"||Elanor is right. Your throat goes into spasm as the poison starts to work and soon you cannot breathe. You can do nothing as Elanor pulls on a vine and a secret hatch opens in the side of the tree-house. She pushes you through it and you fall to the ground, finding merciful release from the pain and the poison. The ants will dine on you tonight.">
 
@@ -4468,7 +4470,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY377-PRECHOICE ()
-    <LOSE-LIFE 5 "You have died in combat." ,STORY377>
+    <LOSE-LIFE 5 "You died in combat." ,STORY377>
     <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 5>>>
 
@@ -4502,30 +4504,74 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY289)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT381 "You fall back but his attack is pressed with such verve you have stepped outside the circle before you know where you are. Gathkeri stops and clasps his hands to his chest in triumph. \"I am the victor. You have stepped outside the circle and forfeited the duel.\"">
+
 <ROOM STORY381
     (IN ROOMS)
     (DESC "381")
+    (STORY TEXT381)
+    (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT382 "You let yourself fall from the bridge into the murky waters and land, by chance, on top of Renard and the Embracer. Renard is still struggling but his arms are pinioned by the man-eating monster's fibrous tentacles. Unfortunately it has more than enough tentacles to deal with you and soon your arms are crushed to you sides by what feel like iron bars. It drags you down to the slimy bottom and waits for you to drown, before feeding on your remains.">
 
 <ROOM STORY382
     (IN ROOMS)
     (DESC "382")
+    (STORY TEXT382)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT383 "You charge to the attack but the elf dances aside even more quickly and his heel crashes into your side, breaking two of your ribs. Each time you attack the elf turns you attack the elf turns your own strength against you until he sends you over his shoulder and you crash into the trunk of a fallen tree.">
+<CONSTANT CHOICES383 <LTABLE "flee" "fight on">>
 
 <ROOM STORY383
     (IN ROOMS)
     (DESC "383")
+    (STORY TEXT383)
+    (CHOICES CHOICES383)
+    (DESTINATIONS <LTABLE STORY321 STORY311>)
+    (PRECHOICE STORY383-PRECHOICE)
+    (TYPES TWO-NONES)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY383-PRECHOICE ()
+    <LOSE-LIFE 5 "You died in combat." ,STORY383>>
+
+<CONSTANT TEXT384 "You journey for several days falling more and more in love with the wild unpredictable beauty of the forest now that you now you may never leave it. You turn back, risking all in one last attempt to persuade the elves to help save the forest.">
 
 <ROOM STORY384
     (IN ROOMS)
     (DESC "384")
+    (STORY TEXT384)
+    (CONTINUE STORY078)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT385 "There is a swift exchange of cut and thrust, which ends when the elf leaps back nimbly. You have wounded him again: there is more green blood on the tip of your sword, but there is red blood on the wavy-edged blade of Zorolotl. You have been wounded as well.">
 
 <ROOM STORY385
     (IN ROOMS)
     (DESC "385")
+    (STORY TEXT385)
+    (PRECHOICE STORY385-PRECHOICE)
+    (CONTINUE STORY415)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY385-PRECHOICE ()
+    <LOSE-LIFE 4 "You have died in combat." ,STORY385>
+    <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
+    <COND (<G=? ,LIFE-POINTS-LOST 7>
+        <SETG HERE ,STORY351>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )(ELSE
+        <CRLF>
+        <TELL "The elf darts in to attack again.">
+        <CRLF>
+    )>>
 
 <ROOM STORY386
     (IN ROOMS)
