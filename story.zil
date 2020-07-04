@@ -27,6 +27,7 @@
     <PUTP ,STORY321 ,P?DEATH T>
     <PUTP ,STORY357 ,P?DEATH T>
     <PUTP ,STORY375 ,P?DEATH T>
+    <PUTP ,STORY377 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -4080,7 +4081,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT346 "As the Infernal Statue hacks through the trunk of the Tree of Life you cast the Choking Fog: a cloud of noxious vapours surrounds the statue. The steam hissing from vents in the head dissipates the fog and the machine hacks on remoreselessly, unaffected by your spell. One last great blow splits the trunk in the middle and the tree is dead. Losing all hope, you are taken prisoner and enslaved.">
+<CONSTANT TEXT346 "As the Infernal Statue hacks through the trunk of the Tree of Life you cast the Choking Fog: a cloud of noxious vapours surrounds the statue. The steam hissing from vents in the head dissipates the fog and the machine hacks on remorselessly, unaffected by your spell. One last great blow splits the trunk in the middle and the tree is dead. Losing all hope, you are taken prisoner and enslaved.">
 
 <ROOM STORY346
     (IN ROOMS)
@@ -4440,29 +4441,65 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY375-PRECHOICE ()
     <LOSE-LIFE 6 "You have died from your injuries." ,STORY375>>
 
+<CONSTANT TEXT376 "Somehow you kill one and leap over his falling body before it hits the ground. One stumbles over his slain brother in arms and balks  those trying to follow. You escape to a nearby rock; from the saftey of which you scan the battle. The elves are at work with their arrows which zip and whine through the air, taking a terrible toll on the Westermen. The men's captains are driving them on out of the trees with whips.||The Infernal Statue lurches remorselessly towards the Tree of Life, its heavy step making the earth tremble. Its sword arm rises and falls like a piston as it hacks into the trunk of the great Greenbark tree. Thick green sap runs from the scores in the bark and there is another groan from the elves.">
+<CONSTANT CHOICES376 <LTABLE "attack the machine before it klls the tree" "try to reach the hose that connects it to the huge twenty-wheeled boiler behind it">>
+
 <ROOM STORY376
     (IN ROOMS)
     (DESC "376")
+    (STORY TEXT376)
+    (CHOICES CHOICES376)
+    (DESTINATIONS <LTABLE STORY359 STORY397>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT377 "Your slashing cut scores his shoulders but Zorolotl ripostes with a lancing blow into your side. You both spring away from each other, circling once more, as green and red blood flows freely.">
+<CONSTANT CHOICES377 <LTABLE "submit" "you are determined to fight on">>
 
 <ROOM STORY377
     (IN ROOMS)
     (DESC "377")
+    (STORY TEXT377)
+    (CHOICES CHOICES377)
+    (DESTINATIONS <LTABLE STORY422 STORY303>)
+    (PRECHOICE STORY377-PRECHOICE)
+    (TYPES TWO-NONES)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY377-PRECHOICE ()
+    <LOSE-LIFE 5 "You have died in combat." ,STORY377>
+    <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 5>>>
+
+<CONSTANT TEXT378 "You have moved to the edge of the trees now and look out over the grisly devastation. The innkeeper tell you his name is Pozzo and also reveals what he knows about the Westermen. Their leader has a huge scarlet and black pavilion tent beyond the forges where he plans how to despoil the forest. Pozzo offers to take you there.">
+<CONSTANT CHOICES378 <LTABLE "be guided by the innkeeper" "return to the safety of the deep forest">>
 
 <ROOM STORY378
     (IN ROOMS)
     (DESC "378")
+    (STORY TEXT378)
+    (CHOICES CHOICES378)
+    (DESTINATIONS <LTABLE STORY428 STORY282>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT379 "You return just in time to see a group of men surrounded by shieldbearers hewing down two great trees at the edge of the clearing. The air is alive with the whine and whoosh of the elven arrow shafts, many of which find their mark with uncanny accuracy, but whenever a Westerman drops to the ground two others take his place in the struggle to bring their engine of destruction to bear.||There is a groan of splitting wood matched by one from the elves as the beautiful trees crash to the ground and the Infernal Statue is revealed in all its terrifying metallic splendour.">
 
 <ROOM STORY379
     (IN ROOMS)
     (DESC "379")
+    (STORY TEXT379)
+    (CONTINUE STORY390)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT380 "Drawing breah you listen for others, realizing at any moment you may be picked off by the arrows of his kind. You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees.">
 
 <ROOM STORY380
     (IN ROOMS)
     (DESC "380")
+    (STORY TEXT380)
+    (CONTINUE STORY289)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY381
