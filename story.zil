@@ -1812,7 +1812,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "154")
     (STORY TEXT154)
-    (CONSTINUE STORY117)
+    (CONTINUE STORY117)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT155 "You grab the phial and gulp down the cloudy blue fluid. The owl, perched on a tree, watches as unblinking as ever.||\"You have just drunk the mulch of the fire lizard's gizzard. You have not long to live.\"||The owl is right. Your throat goes into spasm as the poison starts to work and soon you cannot breathe. You fall to the ground writhing in agony, but it is not long before unconsciousness brings merciful release from the pain of the poison.">
@@ -2193,7 +2193,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "188")
     (STORY TEXT188)
-    (CONTINE STORY181)
+    (CONTINUE STORY181)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT189 "When you awake the Kwerrel is nowhere to be seen, although the archway back out to the forest has reappeared. You make good your escape, knowing that the Kwerrel could have killed you if it had wanted to.">
@@ -3974,7 +3974,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "337")
     (STORY TEXT337)
-    (CONTINE STORY004)
+    (CONTINUE STORY004)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT338 "As you speak the elf stoops, scopps up a handful of dirt and rotting leaves and hurls it into your face. You duck just in time and the handful of dirt spatters against a trunk behind you. Seizing our chance you shoulder-charge the elf who is still trapped against the tween trees, and wrestle him to the ground. Feeling your strength, the elf surrenders to you and says he will take you to meet the elf lord.">
@@ -4144,29 +4144,52 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT352 "You cast the charm but the Lady in Grey just smiles at you. \"You cannot ensorcel me. I could ensorcel you, but that would not be to purpose. Use your skills in the camp of the Westermen, not on me.\" She is not impressed by your attemt to charm here.">
+
 <ROOM STORY352
     (IN ROOMS)
     (DESC "352")
+    (STORY TEXT352)
+    (CONTINUE STORY009)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT353 "The Elf King is retching helplessy on the forest floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. You hurriedly speak the word of negation and the king begins to recover. You have won the duel.">
 
 <ROOM STORY353
     (IN ROOMS)
     (DESC "353")
+    (STORY TEXT353)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT354 "\"There is trouble among the slaves from time to time. No more than usual. They are so far from home they fear for their lives even if they should escape. Of course we put to death those who try to escape, to discourage the others.\"||\"No trouble among the factions who serve under you here?\"||\"No, as long as there is no effective opposition, no war, no deaths, I don't have much to worry about. The other barons fear me and my infernal machine. Oh no, they don't want to take on The Steamer!\"">
+<CONSTANT CHOICES354 <LTABLE "ask about The Steamer" "make your excuses and leave">>
 
 <ROOM STORY354
     (IN ROOMS)
     (DESC "354")
+    (STORY TEXT354)
+    (CHOICES CHOICES354)
+    (DESTINATIONS <LTABLE STORY025 STORY305>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT355 "Summoning forth all your will, you invoke one of the great words of power to stun the Embracer and so release Renard. Unfortunately, perhaps because the Embracer is underwater, nothing seems to happen. In fact you are at a loss to deal with the Embracer, which you can no longer see to aim a spell at. All you can do is carry on over the bridge, mourning the loss of poor Renard, your guide. You hadn't even paid him yet.">
 
 <ROOM STORY355
     (IN ROOMS)
     (DESC "355")
+    (STORY TEXT355)
+    (CONTINUE STORY343)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT356 "As you move in to wrestle him to the ground the elf stoops, scoops up a handful of dirt and rotting leaves and hurls it into your face. The dirt goes into your eyes and you recoil, rubbing at them. By the time you have rubbed the dirt away he has vanished. In the short time you couldn't see he couldn't have got far, so you search for him but his woodcraft is superior to yours and you cannot find him.">
 
 <ROOM STORY356
     (IN ROOMS)
     (DESC "356")
+    (STORY TEXT356)
+    (CONINUE STORY301)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY357
