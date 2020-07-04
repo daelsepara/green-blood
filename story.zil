@@ -25,6 +25,8 @@
     <PUTP ,STORY254 ,P?DEATH T>
     <PUTP ,STORY291 ,P?DEATH T>
     <PUTP ,STORY321 ,P?DEATH T>
+    <PUTP ,STORY357 ,P?DEATH T>
+    <PUTP ,STORY375 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -54,6 +56,8 @@
 
 <GLOBAL ZOROLOTL-WOUNDED 0>
 <GLOBAL LIFE-POINTS-LOST 0>
+
+<CONSTANT FIVE-POTIONS <LTABLE POTION-CLOUDY-BLUE POTION-RED-LIQUID POTION-TARRY-BLACK JAR-WHITE-JELLY JAR-COLOURED-EARTH>>
 
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
@@ -2984,9 +2988,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (PRECHOICE STORY253-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
-<ROUTINE STORY253-PRECHOICE ("AUX" POTIONS)
-    <SET POTIONS <LTABLE POTION-CLOUDY-BLUE POTION-RED-LIQUID POTION-TARRY-BLACK JAR-WHITE-JELLY JAR-COLOURED-EARTH>>
-    <SELECT-FROM-LIST .POTIONS 5 3 "potion">
+<ROUTINE STORY253-PRECHOICE ()
+    <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
     <RETURN>>
 
 <CONSTANT TEXT254 "Without waiting to hear a word the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily. He is drinking the mulch of the fire lizard's gizzard, as deadly a poison to him as it is to you. He dies in a fit of convulsions, leaving you alone.||There is nothing to be done for the poor little Kwerrel, so you begin to search for a way out of the giant bush. At last your perseverance is rewarded and you break out into the open -- but not without getting badly scratched by the thorns.">
@@ -4362,30 +4365,80 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT371 "The machine must have been designed by a genius: There is no weak spot you can see. Your sword rings and hammers against the statue's metal casing but you cannot even stop it chopping the tree. It just ignores you as though you were no more than a flea. Several Westermen close in towards you, intent on finishing you off while the machine destroys the tree. You will have to think of something else.">
+<CONSTANT CHOICES371 <LTABLE "retreat to a safer spot while it is possible to do so and consider your next strategy" "fight on where you are" "make a dash for the hose connecting the statue to the great twenty-wheeled boiler">>
+
 <ROOM STORY371
     (IN ROOMS)
     (DESC "371")
+    (STORY TEXT371)
+    (CHOICES CHOICES371)
+    (DESTINATIONS <LTABLE STORY144 STORY084 STORY397>)
+    (TYPE THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT372 "You speak the word and the spell wings its way to the Infernal Statue. It doesn't shake its head or rub its brow as a man affected by this spell might but it takes a great step backwards and falls into the deep blue pool.||There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
 
 <ROOM STORY372
     (IN ROOMS)
     (DESC "372")
+    (STORY TEXT372)
+    (CONTINUE STORY500)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT373 "Without warning you leap towards Elanor but she is ready for you. She tugs on the end of a vine and a secret hatch opens in the side of the tree-house.">
+<CONSTANT TEXT373-CONTINUED "Elanor jumps through the hatch and swings to the ground on a hanging creeper.||\"You will never leave the forest,\" she warns you. \"I will turn every living thing in the forest against you.\"||You are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily.||You can now take some of the potions, although you have time to grab only three. Choose which of the following you are taking: a clear cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot that contains bands of coloured earth.">
+<CONSTANT TEXT373-END "You rush to climb down the ladder to the ground.">
 
 <ROOM STORY373
     (IN ROOMS)
     (DESC "373")
+    (STORY TEXT373)
+    (CONTINUE STORY322)
+    (PRECHOICE STORY373-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY373-PRECHOICE ()
+    <COND (<IN? ,SKILL-AGILITY ,PLAYER>
+        <SETG HERE ,STORY213>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )(ELSE
+        <CRLF>
+        <TELL TEXT373-CONTINUED>
+        <CRLF>
+        <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
+        <CRLF>
+        <TELL TEXT373-END>
+        <CRLF>
+    )>
+    <RETURN>>
+
+<CONSTANT TEXT374 "The sword lops cleanly through the Embracer's tentacles but also bites deep into the softer flesh of Renard, your guide. The Embracer emits a piercing shriek and throws Renard at you before subsiding once more into the river. The water is stained livid red as Renard's heart pumps his lifeblood out. He flails desperately for help.">
+<CONSTANT CHOICES374 <LTABLE "help him to the bank" "abandon him">>
 
 <ROOM STORY374
     (IN ROOMS)
     (DESC "374")
+    (STORY TEXT374)
+    (CHOICES CHOICES374)
+    (DESTINATIONS <LTABLE STORY246 STORY343>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT375 "Your sorcery does not work here inside the magical Umbellifer bush. Instead the bush itself seems to convulse and the imp falls to the ground out of sight. The thorny branches bow down from the central trunk and begin to sweep you along the ground towards the edge of the giant magical bush. It seems it doesn't like your magic and wants to spit you out. The thorns are pricking you but there is nothing you can do. You are completely engulfed. By the time you have been disgorged back into the forest you have lost blood.">
 
 <ROOM STORY375
     (IN ROOMS)
     (DESC "375")
+    (STORY TEXT375)
+    (CONTINUE STORY406)
+    (PRECHOICE STORY375-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY375-PRECHOICE ()
+    <LOSE-LIFE 6 "You have died from your injuries." ,STORY375>>
 
 <ROOM STORY376
     (IN ROOMS)
