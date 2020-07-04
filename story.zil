@@ -10,6 +10,8 @@
     <RETURN>>
 
 <ROUTINE RESET-STORY ()
+    <SETG ZOROLOTL-WOUNDED 0>
+    <SETG LIFE-POINTS-LOST 0>
     <SETG STORY033-PRECHOICE-FLAG F>
     <PUTP ,STORY151 ,P?DEATH T>
     <PUTP ,STORY172 ,P?DEATH T>
@@ -39,6 +41,9 @@
     <TELL "The potion magically heals all your lost life points.">
     <HLIGHT 0>
     <CRLF>>
+
+<GLOBAL ZOROLOTL-WOUNDED 0>
+<GLOBAL LIFE-POINTS-LOST 0>
 
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
@@ -2734,6 +2739,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY234-PRECHOICE ()
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 8>>
     <LOSE-LIFE 8 "You have died in combat." ,STORY234>>
 
 <CONSTANT TEXT235 "You carefully gather the potions.||As you climb down the ladder to the ground you discover that Elanor is nowhere to be seen, but her owl is still gazing at you unblinkingly. It follows as you leave the clearing. Just when you become aware of a loud droning sound in the air above the clearing, and there is a stab of pain as a bee stings the back of your neck. Looking back, you see a shadow pass through the beams of green-filtered sunlight as a whole swarm of bees flies to attack you.">
@@ -3542,7 +3548,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY069)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT301 "You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the forest. You have failed to meet the elves on Midsummer's Day.">
+<CONSTANT TEXT301 "You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the  . You have failed to meet the elves on Midsummer's Day.">
 <CONSTANT CHOICES301 <LTABLE "try again tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
 
 <ROOM STORY301
@@ -3566,61 +3572,136 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROOM STORY303
     (IN ROOMS)
     (DESC "303")
+    (EVENTS STORY303-EVENTS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY303-EVENTS ()
+    <COND (<G=? ,ZOROLOTL-WOUNDED 3>
+        <RETURN ,STORY293>
+    )(<G=? ,LIFE-POINTS-LOST 7>
+        <RETURN ,STORY351>
+    )(ELSE
+        <RETURN ,STORY415>
+    )>>
+
+<CONSTANT TEXT304 "\"What is the white jelly? Is it a balm?\"||Elanor hesitates. You wave the point of your sword in front of her nose but she won't talk.">
+<CONSTANT CHOICES304 <LTABLE "try to kill her" "grab the bottle of white jelly and smear some on yourself" "drink the red potion" "climb quickly down the ladder to the ground and run for it">>
 
 <ROOM STORY304
     (IN ROOMS)
     (DESC "304")
+    (STORY TEXT304)
+    (CHOICES CHOICES304)
+    (DESTINATIONS <LTABLE STORY253 STORY242 STORY141 STORY197>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT305 "You thell the chief it was very pleasant to meet up with an old friend again and wish him well, then take your leave.||As you walk towards the porch a man dressed in a black cloak walks brusquely past the guards, who obviously recognize him. The visitor is announced. \"It is Valerian the Moon Druid, sire, he says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding, but you can understand their dialect.||It is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak bit his hood is thrown back to reveal the hatchet-like face and the pointed black goatee. He bows before the chief, then wrinkles his nose and stares at you.">
+<CONSTANT CHOICES305 <LTABLE "continue on your way" "stay and hear what important news Valerian brings">>
 
 <ROOM STORY305
     (IN ROOMS)
     (DESC "305")
+    (STORY TEXT305)
+    (CHOICES CHOICES305)
+    (DESTINATIONS <LTABLE STORY038 STORY004>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT306 "In stepping back from the cloud of vapours you have managed to hide yourself from the King of the Elves, who is even now casting another spell, but you have also stepped outside the ring and so lost the duel. The wind rips away the sheet of fog and the King of the Elves says: \"I am the victor, you have lost the duel.\" He looks at you with contempt. \"Such magics as you can muster will not prevail over the Westermen. Leave the forest. You have a week to clear the edge of the forest or your life will be forfeit.\"||With that the elves start to disappear into the trees. You turn your back on the clearing and start the long journey back to Burg.">
 
 <ROOM STORY306
     (IN ROOMS)
     (DESC "306")
+    (STORY TEXT306)
+    (CONTINUE STORY384)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT307 "Searching for the camp of the Westermen in the great forest takes several days. On the morning of the sixth day, breaking from the cover of orange-berried rowan trees, you see a steep-sided valley, charred and dead. The vegetation has been burned or dissolved away. In places bare rock has been exposed by heavy scuffing, and here and there are smooth basins etched into the rock by strong chemicals. At the centre of the valley is a smooth green hillock about twenty feet high. At the far end is a strange, bare hill of some grey-white rock, looking like a mound of bone. An egret pecks at the green turf of the hillock for worms. The grass is lightly wreathed in mist.">
+<CONSTANT CHOICES307 <LTABLE "walk down into the dead valley past the blackened tree stumps" "skirt around the valley to the east">>
 
 <ROOM STORY307
     (IN ROOMS)
     (DESC "307")
+    (STORY TEXT307)
+    (CHOICES CHOICES307)
+    (DESTINATIONS <LTABLE STORY439 STORY429>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT308 "The elf draws a long slim dirk from his shirt and stabs you in the neck. You try to throw him off but it was a fatal wound: your blood gushes in crimson spurts to the ground.">
 
 <ROOM STORY308
     (IN ROOMS)
     (DESC "308")
+    (STORY TEXT308)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT309 "You look hard into the Elf King's eyes despite the disquiet that his ageless gaze causes you. \"Well, sire, I've heard it said that he who speaks an elf's name can gain power over him . . .\"||You do not see him move, yet none the less he seems to draw back away from you slightly. \"This is typical mortal talk,\" he says guardedly, \"all bluff and bluster.\"">
+<CONSTANT CHOICES309 <LTABLE "say the Elf King's name is: Arawn" "Eldring" "Oberon" "Elivager">>
 
 <ROOM STORY309
     (IN ROOMS)
     (DESC "309")
+    (STORY TEXT309)
+    (CHOICES CHOICES309)
+    (DESTINATIONS <LTABLE STORY302 STORY387 STORY069 STORY114>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT310 "\"I am Elanor, the Lady of the Forest. Climb up here and take some elderflower nectar with me. The nectar of elderflowers is the most refreshing drink known to elf or man. My friends the bees collect it for me. You will find it most invigorating.||\"I was watching you at the old inn in Burg. Do you remember the old woman in grey sitting in the shadows? I was searching for the forest's saviour. Is this the end of my quest? Are you the hero who will save the forest?\"||You climb up into the little tree-house. There is no furniture inside but a straw-filled hempen sack to sleep on. The lady gestures you to sit in the nook of a curved branch, covered in dry moss, that serves as a chair: it is surprisingly comfortable. She sits on a small hammock made of creepers, and swings gently to and for.||There are shelves made of thick ropes of creepers which have been trained to grow in and out around the edge of the tree-house. Behind the Lady in Grey on one of the shelves is a row of potions. The strange liquid with bright swirling colours look just as you imagine magical potions do.">
+<CONSTANT CHOICES310 <LTABLE "try to get the potions" "you can say you don't know what she is talking about and that you only came for directions to the Tree of Knowledge" "say you would like to be the hero who saves the forest">>
 
 <ROOM STORY310
     (IN ROOMS)
     (DESC "310")
+    (STORY TEXT310)
+    (CHOICES CHOICES310)
+    (DESTINATIONS <LTABLE STORY341 STORY329 STORY009>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT311 "You have made the wrong decision. Stunned as you are, you are no match for this darting elf whose feet become a blur as he kicks you to the ground. You struggle to find your feet as he picks up the dirk and stabs into your neck with it. The pitiless elf has killed you.">
 
 <ROOM STORY311
     (IN ROOMS)
     (DESC "311")
+    (STORY TEXT311)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT312 "You have gambled with your life and lost. Zorolotl's sword arcs through the air and buries itself in your skull. You fall to the ground, poleaxed You are beyond the help of magic.">
 
 <ROOM STORY312
     (IN ROOMS)
     (DESC "312")
+    (STORY TEXT312)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT313 "\"What is the red potion? Does it banish pain?\"||\"Yes, how did you guess?\" she replies.">
+<CONSTANT CHOICES313 <LTABLE "kill her" "grab the bottle of white jelly and smear some on yourself" "drink the red potion" "climb quickly down the ladder to the ground and run off">>
 
 <ROOM STORY313
     (IN ROOMS)
     (DESC "313")
+    (STORY TEXT313)
+    (CHOICES CHOICES313)
+    (DESTINATIONS <LTABLE STORY253 STORY242 STORY141 STORY197>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT314 "As you set foot on the hillock you are surprised at how hard the ground feels, yet it yields slightly, as if a layer of hard rock was resting on mud. The ground is smooth and has a sheen. It only looked like grass. You climb on up the hillock and reaching the summit, look down on its far side which is ribbed and ridged in the most unusual way. It dawns on you that the thing you are standing on is a gargantuan dragon. You can see its head, the size of a cart, curled up net to its feet as it slumbers. It seems not to have noticed you crawling like a fly over its great body.">
+<CONSTANT CHOICES314 <LTABLE "climb down to its head and slay it" "attmpt to wake it up and perhaps talk with it, for they say some dragons can talk">>
 
 <ROOM STORY314
     (IN ROOMS)
     (DESC "314")
+    (STORY TEXT314)
+    (CHOICES CHOICES314)
+    (DESTINATIONS <LTABLE STORY074 STORY178>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY315
