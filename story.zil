@@ -30,6 +30,7 @@
     <PUTP ,STORY377 ,P?DEATH T>
     <PUTP ,STORY383 ,P?DEATH T>
     <PUTP ,STORY385 ,P?DEATH T>
+    <PUTP ,STORY393 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -4573,37 +4574,72 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
+<CONSTANT TEXT386 "You are led to the clearing in the centre of the city of trees and there sat down on the ground. The elves sit in tiers around you, perching on branches; more stand on the walkways and lean out from the towers between the trees. You cannot hide your awe at the natural beauty which surrounds you. When you say that you could never have imagined such an idyll they seem pleased.||\"Never have we risked everything by sharing the beauty of our home with mortals. But now we realize that this beauty will soon be lost. In the time of men no one but you will tell tales of the splendours that were once Elvenhame.\" There is a brooding melancholy in the faces of all the elves.||\"But if you fight you can drive the men out of the forest.\"||\"Do you, a mortal, counsel us to slay your fellow men?\"||What will you answer?">
+<CONSTANT CHOICES386 <LTABLE "say that the men of the west are not your fellows" "that the men are killing the forest which keeps the air pure for everyone to breath">>
+
 <ROOM STORY386
     (IN ROOMS)
     (DESC "386")
+    (STORY TEXT386)
+    (CHOICES CHOICES386)
+    (DESTINATIONS <LTABLE STORY345 STORY332>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT387 "He blinks slowly, as if clearing his head after a daze.||\"Shall I speak it again?\" you ask.||He holds up his hand. \"There is no need. You have named me truly, and in accordance with an ancient pact between myself and the first man I must now present you with my signet ring.\" He takes off his ring and puts it into your hand. It is carved out of a single flawless emerald whose depths are filled with pinpoints of flaring green light. \"It is the symbol of my royal authority,\" he says. \"To keep it would demonstrate a lack of goodwill on your part. Why not return it to me now, and then we shall talk.\"">
+<CONSTANT CHOICES387 <LTABLE "insist on retaining the ring" "return it to him">>
 
 <ROOM STORY387
     (IN ROOMS)
     (DESC "387")
+    (STORY TEXT387)
+    (CHOICES CHOICES387)
+    (DESTINATIONS <LTABLE STORY126 STORY069>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT388 "Until it sopped to watch you the white egret was definitely feeding. Egrets eat insects but there certainly wouldn't be many insects on the surface of a copper statue, no matter how green with age. You can only conclude that the colossus lying bfore you is not a statue but a sleeping dragon.">
+<CONSTANT CHOICES388 <LTABLE "retreat hurriedly into the bog and let sleeping dragons lie" "go down into the valley and approach the monster">>
 
 <ROOM STORY388
     (IN ROOMS)
     (DESC "388")
+    (STORY TEXT388)
+    (CHOICES CHOICES388)
+    (DESTINATIONS <LTABLE STORY417 STORY439>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT CHOICES389 <LTABLE "cast a Flamehand spell to drive her out of the tree-house" "threaten her by putting the tip of your sword to her throat" "try to enchant her so she sees you as a long lost friend" "tackle her to the floor and tie her up in the hammock">>
 
 <ROOM STORY389
     (IN ROOMS)
     (DESC "389")
+    (CHOICES CHOICES389)
+    (DESTINATIONS <LTABLE STORY407 STORY416 STORY352 STORY373>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SWORDPLAY SKILL-CHARMS NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT390 "The Westermen fall back behind their weapon of destruction and the shieldbearers cluster around the statue itself, behind which a great cylinder on huge wheels hisses and steams. The massive boiler is connected to the armoured statue by a hose. Suddenly a plume of steam rises out of the top of the statue's helmet with a shriek like a banshee, and its face, which had been resting on its huge iron chest, slowly rises to look at the tree. There is a great roar from the Westermen. They look upon this thing with awe. It is their talisman, a moving demonstration of their invulnerability. Its powers to wreak havoc must be terrifying if a whole army of cruel slaves like the Westermen look upon it with such reverence.||Looking around you, you see a look of bewilderment in the faces of the brave elves. No man can daunt them but nothing has prepared them to face this awful apparition from the underworld. Perhaps if you show the lead they will rally but for the moment at least you must face this Infernal Statue alone.">
 
 <ROOM STORY390
     (IN ROOMS)
     (DESC "390")
+    (STORY TEXT390)
+    (CONTINUE STORY369)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT391 "Your charms will not work on this metal monster. Your one hope is to attack it with your bare hands.">
 
 <ROOM STORY391
     (IN ROOMS)
-    (DESC "390")
+    (DESC "391")
+    (STORY TEXT391)
+    (CONTINUE STORY327)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horms are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
+<CONSTANT TEXT392 "Just as you leave the mound of earth it collapses and the head of a Colossus beetle pokes out. Its head alone is twice as big as you and it shines blackly in the faint iridescence of nearby glow-worms. Its curving black horns are tipped with cruel crushing pincers. It lunges for you but you jump behind a tree and start to climb, hoping the beetle will not have the cunning to push the tree down and claim you as a tasty morsel.||It seems to lose track of you once you leave the ground and at last retreats cumbersomely into its burrow, which it caps once more with masticated mud.">
 
 <ROOM STORY392
     (IN ROOMS)
@@ -4612,10 +4648,28 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY237)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT393 "You circle round to his sword side and are caught out by the speed of his darting lunge. The tip of his sword rips into your thigh and the elf has bounded out of range before you can counter.">
+<CONSTANT CHOICES393 <LTABLE "attack him on his vulnerable side" "meet him head to head">>
+
 <ROOM STORY393
     (IN ROOMS)
     (DESC "393")
+    (STORY TEXT393)
+    (CHOICES CHOICES393)
+    (DESTINATIONS <LTABLE STORY342 STORY385>)
+    (PRECHOICE STORY393-PRECHOICE)
+    (TYPES TWO-NONES)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY393-PRECHOICE ()
+    <LOSE-LIFE 4 "You have died in combat." ,STORY393>
+    <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
+    <COND (<G=? ,LIFE-POINTS-LOST 7>
+        <SETG HERE ,STORY351>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 <CONSTANT TEXT394 "It takes much longer to reach the tower than you imagined, since path after path leads you up against such obstacles as thorn bushes or fallen trees whose rotting bark crawls with insects. At last you pass into the open, where a clearing of uneven grassy ground stands between the louring ranks of trees.||The tower is outlined in a halo of moonlight which makes the angular masonry blocks gleam like silver. Ivy cover the walls in a dark tangled net. Under a lichen-stained armorial crest looms a great black door sealed with an iron lock. Gazing up, you see a glimmer of green light from the topmost chamber of the tower. It is one sign that the place might not be abandoned and left to ruin.">
 <CONSTANT CHOICES394 <LTABLE "climb the tower" "pick the lock" "return to the main forest paths and continue on your way">>
@@ -4630,9 +4684,16 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT395 "You speak the word and bring forth the Choking Fog around the Infernal Machine. But why have you used this spell against a machine that doesn't breathe but is powered by steam? The steam rushing from vents in the head dissipates the fog, and still the piston-like sword arm of the machine slices into the tree sending splinters of green wood into the air. You are wasting prcious time. Now is your last chance to save the tree.">
+<CONSTANT CHOICES395 <LTABLE "cast Bafflement" "Visceral Disruption" "Tower Will">>
+
 <ROOM STORY395
     (IN ROOMS)
     (DESC "395")
+    (STORY TEXT395)
+    (CHOICES CHOICES395)
+    (DESTINATIONS <LTABLE STORY113 STORY064 STORY186>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY396
