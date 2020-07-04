@@ -3830,44 +3830,95 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY333)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT325 "The expedition is a success but the strategy can only lead to failure. The gathering of all the elves at Elvenhame takes over a week. They are nearly ten thousand in all. The last to come are the solitary elves from the east, beyond the Widewater river. Some haven't been to Elvenhame for hundreds of years. Half are equipped with the captured swords, others with their powerful yew longbows. They fight readily in pitched battle but are overwhelmed by the superior numbers and arms of the Westermen. The death of so many immortal elves is the greatest strategy of all time. You are slain in the final battle.">
+
 <ROOM STORY325
     (IN ROOMS)
     (DESC "325")
+    (STORY TEXT325)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT326 "As quick as thought you murmur the incantation of the magical Shield of Defence. You have just finished when the King of the Elves casts another spell. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It splashes against the glowing defensive silver disk and fizzles out.">
+<CONSTANT CHOICES326 <LTABLE "now cast Bafflement, Visceral Disruption or Tower of Will" "maintain your Shield of Defense spell">>
 
 <ROOM STORY326
     (IN ROOMS)
     (DESC "326")
+    (STORY TEXT326)
+    (CHOICES CHOICES326)
+    (DESTINATIONS <LTABLE STORY347 STORY132>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT327 "As you get close to the Infernal Statue you realize there is nothing you can do against it with your bare hands. It must have been designed by a genius. There is no weak spot you can see. Your fists and feet pound the metal casing but it is only you who is getting hurt. You cannot even stop it chopping at the tree. It just ignores you as though you were no more than a flea. Several Westermen close in, intent on finishing you off while the machine destroys the tree. You will have to think of something else.">
+<CONSTANT CHOICES327 <LTABLE "retreat to a safer spot and consider your strategy" "fight on where you are" "make a dash for the hose that connects the statue to the great boiler" "spend a precious moment or two looking at the statue for a weakness">>
 
 <ROOM STORY327
     (IN ROOMS)
     (DESC "327")
+    (STORY TEXT327)
+    (CHOICES CHOICES327)
+    (DESTINATIONS <LTABLE STORY144 STORY409 STORY397 STORY420>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT328 "As soon as you mention the Tree of Knowledge the owl takes flight for the depths of the forest.">
+<CONSTANT CHOICES328 <LTABLE "try to stop it leaving you lost here" "shy a small stone at it" "otherwise you are alone again and must choose at random one of the many ways back into the forest">>
 
 <ROOM STORY328
     (IN ROOMS)
     (DESC "328")
+    (STORY TEXT328)
+    (CHOICES CHOICES328)
+    (DESTINATIONS <LTABLE STORY216 STORY233 STORY173>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS NONE NONE>)
+    (TYPES <LTABLE R-SKILL R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT329 "She looks disappointed in you, almost crestfallen.||\"Many a man has come in search of the tree. But only Valerian and I have gained its knowledge. What use is knowledge when the end of the world is at hand?\" She seems to believe what she is saying.">
+<CONSTANT CHOICES329 <LTABLE "decide she is mad and leave" "listen to her">>
 
 <ROOM STORY329
     (IN ROOMS)
     (DESC "329")
+    (STORY TEXT329)
+    (CHOICES CHOICES329)
+    (DESTINATIONS <LTABLE STORY098 STORY107>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT330 "You look away for a moment then sneak a look bak towards the elf for a moment. You are too late. In a blink of the eye the last elf has vanished. You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the forest. You have failed to meet the elves on Midsummer's Day.">
+<CONSTANT CHOICES330 <LTABLE "Try to meet the elves tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
 
 <ROOM STORY330
     (IN ROOMS)
     (DESC "330")
+    (STORY TEXT330)
+    (CHOICES CHOICES330)
+    (DESTINATIONS STORY139 STORY280)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT331 "The elf leads you as he said he would, never once attempting to escape and leave you lost in the depths of the forest. It is ajourney of several hours through secret ways and tunnels. You notice him kmaking signs now and again and realize he must be communicating with others of his kind, though you can see no one in the trees.">
+<CONSTANT CHOICES331 <LTABLE "kill him before he can lead you into a trap" "just follow in his footsteps">>
 
 <ROOM STORY331
     (IN ROOMS)
     (DESC "331")
+    (STORY TEXT331)
+    (CHOICES CHOICES331)
+    (DESTINATIONS <LTABLE STORY421 STORY431>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT332 "\"The mortal speaks the truth. If the forest is killed the whole world will die. It will not be the time of men but the time of death and desolation, the end of all things.\"||\"But what can we do? we number thousands but the Westermen come in hundreds of thousands.\"||\"Would you rather fight bravely, and show that you value the beauty that is your home? Or will you stand idly by and let the time of death and desolation come to the forest? I beg you to take up your bows and fight these cruel Wstermen, not just for your own sake, but for all the world. We all need the forest in order to live.\"">
 
 <ROOM STORY332
     (IN ROOMS)
     (DESC "332")
+    (STORY TEXT332)
+    (CONTINUE STORY317)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT333 "The young girl, who says that her father is away on a journey to buy provisions, charges you a piece gold for your food and for a night's lodging.||You sleep well and awake early but refreshed. Washing in cold water is invigorating and you enjoy the feel of the rough inn towel. There will be no such comforts in the forest.||Downstairs the inn is deserted. The woman in grey, the only other guest, has left already. The young girl is mopping the floor and she looks troubled. Asking what ails her brings the reply, \"My father did not return last night. I tried not to worry but I knew in my heart he wouldn't come. He went into the forest to buy provisions before the Westermen block the spice road. I know he has gone the way of the others. And that strange woman in grey never so much as touched her bed last night, though she didn't leave her room till after dawn. I begged Father to take Renard to guide him but he wouldn't spend the money. Now I'll never see him again\". With this, she breaks into tears.||As you comfort her, you ask the innkeeper's daughter to describe her father and say you will try to find either him or news of him. As you turn to leave she says, \"Fare you well, traveller, you are my only hope.\"">
@@ -3880,24 +3931,48 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (COST 1)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT334 "Time has run out for the innkeeper. The next kick ruptures his spleen and the guard, swearig viciously, kicks him twice more then leaves him to bleed to death inwardly. There is nothing you can do for him. Thinking sadly of the poor innkeeper's daughter you turn your back on the camp of the Westermen and return to the forest. Soon the awful sights and sounds of the Westermen camp are far behind.">
+<CONSTANT CHOICES334 <LTABLE "head west" "east" "south-west" "south from here">>
+
 <ROOM STORY334
     (IN ROOMS)
     (DESC "334")
+    (STORY TEXT334)
+    (CHOICES CHOICES334)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT335 "Before you can complete the train of thought you need for your spell, the King of the Elves has done so. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It encircles your wast before you can move. Your legs feel as if they have turned to jelly and you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cried the King of the Elves.">
+<CONSTANT CHOICES335 <LTABLE "submit" "try to fight on">>
 
 <ROOM STORY335
     (IN ROOMS)
     (DESC "335")
+    (STORY TEXT335)
+    (CHOICES CHOICES335)
+    (DESTINATIONS <LTABLE STORY255 STORY272>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT336 "Three townsfolk leave you as you curtly tell the man in black to mind his own business. The hunter and guide standing near the fire retreat into the kitchen. The woman in grey reaches for a gnarled old staff lying beneath her table and speaks for the first time. \"Mind your temper, Valerian. I wil protect this stranger even if I must kill you.\"||\"You push your luck, old woman. What is the stranger to me? No one can hold up the progress of time. There is a new power astir in the forest. It will sweep you and all your beastly followers aside, like chaff in the wind.\"||\"There is no cause to fill the hearts of the good people of Burg with dismay. I know of what you speak.\"||\"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must pass away and change.\" Valerian speaks the last words in such dire tones that the hunter, listening from behind the kitchen door, slams it shut in fear.||Valerian twitches his cloak around him and leaves abruptly, pausing only to look once more at you, as though committing your face to memory.">
+<CONSTANT CHOICES336 <LTABLE "ask for a room in the inn for the night" "sit at the table with the woman dressed in grey">>
 
 <ROOM STORY336
     (IN ROOMS)
     (DESC "336")
+    (STORY TEXT336)
+    (CHOICES CHOICES336)
+    (DESTINATIONS <LTABLE STORY333 STORY181>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT337 "The chief does not seem surprised you want to talk about what he calls the Tree of Life. He has been thinking about it himself a great deal. It seems he can't make up his mind whether to believe what Valerian the Moon Druid has told him. Valerian maintains the Tree of Life is the core of the elves' immortality. He counsels the chief to dstroy the tree.||The chief is still talking animatedly when Valerian himself is ushered into the pavilion and announced by a guard. He is still wearing an all-enveloping black robe but its hood is thrown back to reveal his hatchet-like features and black goatee beard.||\"It is Valerian the Moon Druid, sire. He says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding but you can understand their dialect.||It is the man you first saw in the inn at Burg. He bows before the chief, then wrinkles his nose and stares in your general direction.||\"I have driven off the tree bears, you will have no more trouble from them.\" He sniffs again and moves his head from side to side while fixing his gaze just above your head, giving him a most comical air. The chief spreads out the map of the forest and his advisers gather round, almost blocking your exit.||Despite the risk, you wait to see if you can find out what they are planning.">
 
 <ROOM STORY337
     (IN ROOMS)
     (DESC "337")
+    (STORY TEXT337)
+    (CONTINE STORY004)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY338
