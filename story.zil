@@ -190,7 +190,7 @@
     (CONTINUE STORY083)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT012 "You tell Pozzo that to escape the forest he should make for a river and follow it to the sea. You know that there is a city or town at every river mouth for hundreds of miles around, and when he reaches one he can take ship for Godorno. He bids you farewell and says you may stay as his honoured guest at his in in Burg if you are ever travelling that way again. With that, he sets out to return to his beloved daughter.||You are soon safe back in the forest, and alone again. The awful sights and sounds of the Westerman camp are soon left far behind.">
+<CONSTANT TEXT012 "You tell Pozzo that to escape the forest he should make for a river and follow it to the sea. You know that there is a city or town at every river mouth for hundreds of miles around, and when he reaches one he can take ship for Godorno. He bids you farewell and says you may stay as his honoured guest at his in in Burg if you are ever travelling that way again. With that, he sets out to return to his beloved daughter.||You are soon safe back in the forest, and alone again. The awful sights and sounds of the Westermen camp are soon left far behind.">
 <CONSTANT CHOICES012 <LTABLE "head west" "east" "south-west" "south">>
 
 <ROOM STORY012
@@ -493,7 +493,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT038 "Once you are a safe distance from the pavilion, you run for the edge of the trees, quickly hiding yourself in the depths of the forest. The awful sights and sounds of the Westerman camp are soon far behind.">
+<CONSTANT TEXT038 "Once you are a safe distance from the pavilion, you run for the edge of the trees, quickly hiding yourself in the depths of the forest. The awful sights and sounds of the Westermen camp are soon far behind.">
 <CONSTANT CHOICES038 <LTABLE "report back to the elves" "head west" "east" "south-west" "south">>
 
 <ROOM STORY038
@@ -3320,7 +3320,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeper groan and beg for mercy.||Soon the awful sights and sounds of the Westerman camp are far behind.">
+<CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeper groan and beg for mercy.||Soon the awful sights and sounds of the Westermen camp are far behind.">
 <CONSTANT CHOICES279 <LTABLE "head weast" "east" "south-west" "south">>
 
 <ROOM STORY279
@@ -4810,29 +4810,75 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT406 "Sweat is pouring off you as you press through thick undergrowth, searching for the camp of the WEstermen. It is unnaturally hot here even though you  occasionally glimpse the midday sun through gaps in the leaf canopy. The vegetation is lush and the ground spongy. Ants scuttle over everything. Here and there you see clumps of them swarming all over each other, eating hapless small creatures that have strayed.||As you push through thick ferns, brushing ants off as you go, there is a sudden whooshing noise ahead and to the left, followed by a strange loud gurgling. It sounded for all the world like a dragon. If you are near the Bonehill you must be serveral days' travel further east than you thought.">
+
 <ROOM STORY406
     (IN ROOMS)
     (DESC "406")
+    (STORY TEXT406)
+    (CONTINUE STORY045)
+    (PRECHOICE STORY406-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY406-PRECHOICE ()
+    <SETG HERE ,STORY034>
+    <SETG CONTINUE-TO-CHOICES F>
+    <PRESS-A-KEY>>
+
+<CONSTANT TEXT407 "Spurting flame blossoms from your palm. Elanor tugs on a vine and a secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest. I will turn every living thing in the forest against you.\"||You are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily.You can now take some of the potions, although you have time to grab only three. Choose which of the following you are taking: a clear cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot that contains bands of coloured earth.">
+<CONSTANT TEXT407-END "You rush to climb down the ladder to the ground.">
 
 <ROOM STORY407
     (IN ROOMS)
     (DESC "407")
+    (STORY TEXT407)
+    (CONTINUE STORY322)
+    (PRECHOICE STORY407-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY407-PRECHOICE ()
+    <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
+    <CRLF>
+    <TELL TEXT407-END>
+    <CRLF>
+    <RETURN>>
+
+<CONSTANT TEXT408 "As you skirt the dead valley you can see the white egret standing atop the green hillock in the distance, watching you. As you slowly make pgrogress you begin to see the other side of the hillock. It is creased and folded in a strange way. Then it hits you, it is so large you couldn't see it for what it was. Viewed from this side of the hillock, it looks like a gargantuan copper statue, green with verdigris. There is a huge head tucked up next to massive claws. It is a statue of a dragon.">
+<CONSTANT CHOICES408 <LTABLE "investigate it" "enter the bogland and leave the monolithic statue behind">>
 
 <ROOM STORY408
     (IN ROOMS)
     (DESC "408")
+    (STORY TEXT408)
+    (CHOICES CHOICES408)
+    (DESTINATIONS <LTABLE STORY439 STORY417>)
+    (PRECHOICE STORY408-PRECHOICE)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY408-PRECHOICE ()
+    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS>
+        <SETG HERE ,STORY388>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
+
+<CONSTANT TEXT409 "As soon as you wound one of them another takes his place. You fight like a hero but even heroes tire and at last one manages to sweep your legs out from under you. There is no escape as they finish you off with their swords.">
 
 <ROOM STORY409
     (IN ROOMS)
     (DESC "409")
+    (STORY TEXT409)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT410 "Casting a spell while keeping your eyes fixed on the elf is not easy but you manage to utter the incantation of Entanglement and the underbrush beneath the elf grows suddenly. Low branches from the nearest tree seem to turn to rubber and stretch to wind themselves around the elf but he speaks his own word of power and then the fronds and branches wither and turn to ash, freeing him.||You begin another spell, a more powerful one this time, the spell of the Crushing Hand, but as you speak the elf stoops, scoops up a handful of dirt and rotting leaves and hurls it into your face. He has put you off the spell. The dirt goes into you eyes and you recoil, rubbing at them. By the time you have rubbed the dirt away he has vanished. In the short time you couldn't see he couldn't have got far, so you search for him but his woodcraft is superior to yours and you cannot find him.">
 
 <ROOM STORY410
     (IN ROOMS)
     (DESC "410")
+    (STORY TEXT410)
+    (CONTINUE STORY380)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY411
