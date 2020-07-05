@@ -21,6 +21,7 @@
 <CONSTANT TWO-NONES <LTABLE R-NONE R-NONE>>
 <CONSTANT THREE-NONES <LTABLE R-NONE R-NONE R-NONE>>
 <CONSTANT FOUR-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE>>
+<CONSTANT SIX-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
 
 <CONSTANT SELECT-CHOICES <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
 
@@ -262,7 +263,7 @@
     <HLIGHT 0>
     <PRESS-A-KEY>>
 
-; "Story - Event Routines (victory/death/prechoice/transition/codeword events)"
+; "Story - Event Routines (victory/death/prechoice/transition/codeword/story jump events)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE CHECK-DEATH ("AUX" DEATH)
     <SET DEATH <GETP ,HERE ,P?DEATH>>
@@ -306,6 +307,13 @@
     <TELL .MESSAGE>
     <HLIGHT 0>
     <JIGS-UP " ">>
+
+<ROUTINE STORY-JUMP (STORY)
+    <COND (.STORY
+        <SETG HERE .STORY>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 ; "Story - Player Events (gain/lose life/items/money)"
 ; ---------------------------------------------------------------------------------------------

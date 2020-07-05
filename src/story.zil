@@ -968,13 +968,9 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY078-PRECHOICE ()
     <COND (<AND <IN? ,EMERALD-RING-ELANOR ,PLAYER> <IN? ,CODEWORD-CRABCLAW ,CODEWORDS>>
-        <SETG HERE ,STORY440>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY440>
     )(<AND <IN? ,EMERALD-RING-ELANOR ,PLAYER> <IN? ,CODEWORD-TWINHEAD ,CODEWORDS>>
-        <SETG HERE ,STORY459>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY459>
     )>>
 
 <CONSTANT TEXT079 "The dragon seems to read your mind. The monster flicks its tails and licks its lips.||\"Walk into the cavern and behold my hoard which has been garnered from palaces across the whole world. Many of my teasures are old, so very old, that they have a tale to tell.\"||The dragon bats you with a mighty claw, bowling you over so you fall to the ground. Once you have gotten back on your feet, the ancient creature ushers you forward into the dark cavern. Entering, you stop for a moment to adjust to the dim light. Blinking in astonishment, your jaw goes slack at the sight before you. You stare in awe at the veritable mountain of golden coins, goblets, candelabra and jewellery that comprise the dragon's treasure trove.||\"All the gold and jewels you can carry I give to you,\" says the dragon.||At the creature's words, some of the coins fly up into the air and push themselves against you. Soon you are covered in a golden crust which has gathered like barnacles do on the hull of a ship. Although your arms and legs are left free, you are terribly weighed down by the fortune that is now stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.">
@@ -1320,7 +1316,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT110)
     (CHOICES CHOICES110)
     (DESTINATIONS <LTABLE STORY122 STORY143 STORY347 STORY326 STORY249 STORY174>)
-    (TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>)
+    (TYPES SIX-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT111 "You mouth the strange words that set off Visceral Disruption. A spasm wracks the King of the Elves and he tries to stop himself clutching his stomach as the spell twists his guts.||You have never known anyone who could remain standing under the effects of this agonizing spell, but it is taking all of the Elf King's will. He cannot cast another spell.||\"Cancel the spell, mortal. I concede victory to your sorcery,\" the King of the Elves says from between clenched teeth.||Knowing how unpleasant the spell can be and out of compassion for the king, you quickly comply. You have won the duel.">
@@ -1682,13 +1678,10 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY143-PRECHOICE ()
     <COND (,STORY033-PRECHOICE-FLAG
-        <SETG HERE ,STORY294>
+        <STORY-JUMP ,STORY294>
     )(ELSE
-        <SETG HERE ,STORY285>
-    )>
-    <SETG CONTINUE-TO-CHOICES F>
-    <PRESS-A-KEY>
-    <RETURN>>
+        <STORY-JUMP ,STORY285>
+    )>>
 
 <CONSTANT TEXT144 "You back off and reach a rock behind which you can take cover.||The Infernal Statue recovers its equilibrium and hacks into the trunk of the Tree of Life once more. The sword bites deep and one of the tree's great branches cracks and falls to the ground, killing and maiming more than twenty of its assailants. At the next sword blow another branch cracks and falls, and those not dead or trapped fall back as the machine completes its job of destruction.||You screw up your courage and rush once more against the machine but you are too late. One last great blow splits the trunk in the middle and the tree is dead. The destruction of the Tree of Life shatters your hopes. Utterly dejected you do not resist as the Westermen take you prisoner. The only certainty about the future is that you will be a slave of the forces that you should have defeated.">
 
@@ -1773,9 +1766,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY151-PRECHOICE ()
     <COND (<AND <IN? ,SKILL-SPELLS ,SKILLS> <IN? ,MAGIC-WAND ,PLAYER>>
         <PUTP ,STORY151 ,P?DEATH F>
-        <SETG CONTINUE-TO-CHOICES F>
-        <SETG HERE ,STORY229>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY229>
     )(ELSE
         <CRLF>
         <TELL TEXT151-DEATH>
@@ -2402,9 +2393,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY205-PRECHOICE ()
     <COND (<IN? ,CODEWORD-WATERBEARER,CODEWORDS>
-        <SETG HERE ,STORY049>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY049>
     )>>
 
 <CONSTANT TEXT206 "As he sees you about to cast another spell, Valerian utters a single word, \"Sanctuary,\" in a ringing voice and claps his hands together. There is a second clap and he is gone. He has disappeared completely. You go to the door of the inn but there is no sign of him in the rain-lashed cobbled street.||Only the old woman in grey remains in the common room.">
@@ -2732,9 +2721,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY232-PRECHOICE ()
     <COND (<IN? ,CODEWORD-BULLHORN ,PLAYER>
-        <SETG HERE ,STORY256>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY256>
     )>>
 
 <CONSTANT TEXT233 "The sotone misses the owl, which veers into the top of a tree. It clings on to a branch there and struggles upright, then while preening its ruffled feathers says, \"The curse of the Grey Touch be upon you, for striking at the servant of the Lady of Grey.\" The owl swoops down past you back to the forest.">
@@ -3039,9 +3026,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY256-PRECHOICE ()
     <COND (<IN? ,CODEWORD-SCORPION ,CODEWORDS>
-        <SETG HERE ,STORY011>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY011>
     )>>
 
 <CONSTANT TEXT257 "Zorolotl seems content to let you come forward and make the next strike. He is counting on his nimbleness saving him if you commit yourself as clumsily as you did last time, then he will riposte. How much more of this can you stand?">
@@ -3079,14 +3064,12 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY259-PRECHOICE ()
     <COND (<AND <IN? ,SKILL-CHARMS ,SKILLS> <IN? ,MAGIC-AMULET ,PLAYER>>
-        <SETG HERE ,STORY283>
+        <STORY-JUMP ,STORY283>
     )(<IN? ,MAPLE-FLUTE ,PLAYER>
-        <SETG HERE ,STORY299>
+        <STORY-JUMP ,STORY299>
     )(ELSE
-        <SETG HERE ,STORY310>
-    )>
-    <SETG CONTINUE-TO-CHOICES F>
-    <PRESS-A-KEY>>
+        <STORY-JUMP ,STORY310>
+    )>>
 
 <CONSTANT TEXT260 "Climbing a rise you look out over a scene of utter devastation. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke and two hundred yards away you see a forge with a gigantic cauldron over a bonfire which six men feed constantly with ready-cut wood and charcoal. The men working here are very pale skinned, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses yoked together pull logs to where groups of men cut them up with saws ready for burning. A row of children sit nearby; they are darker skinned than the men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped men are torching the underbrush to kill everything that lives in the forest. A pall of smoke hangs over everything like a storm-cloud.||The men haven't noticed you yet. There is a group of armed gauards near the forge who sport more steel armour than you have ever seen. These men must be wealthy. They also look bored and edgy.">
 <CONSTANT CHOICES260 <LTABLE "show yourself and talk to them" "sink back into the forest and hide">>
@@ -3374,9 +3357,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY283-PRECHOICE ()
     <COND (<IN? ,MAPLE-FLUTE ,PLAYER>
-        <SETG CONTINUE-TO-CHOICES F>
-        <SETG HERE ,STORY299>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY299>
     )>>
 
 <CONSTANT TEXT284 "\"I don't care to be cared for. We Kwerrel can look out for ourselves.\" He seems angered. Perhaps he hates to be pitied.||\"I will hold you prisoner here for a day, or a month or a year . . . until I have grown tired of you.\" With that the imp disappears high into the giant bush, his chirruping laughter mocking you. You start to look for a way out of the giant bush thorns.">
@@ -3774,12 +3755,12 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY057)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT320 "Shot follows shot, with no clear sign which of you is the better archer. The elves look on in silence, giving no clue as to whether they are completely enraptured or whether they find the whole contest of no interest at all.||Your arm is beginning to tire; Huldranas shoots like an automaton, with precision and unflagging strength. You are wasting arrows, and you know that if you allow the contest to drag on you are going to lose through simple fatigue.||\"Enough!\" you say to the Elf king. \"It might amuse you elves to watch this carry on till the sky cave in, but the Westermen will not wait that long to bring about Doomsday.\"||\"Very well,\" he says. \"A more fraught duel then -- with life and death at stake.\"">
+<CONSTANT SHOT-FOLLOWS-SHOT "Shot follows shot, with no clear sign of which of you is the better archer. The elves look on in silence, giving no clue as to whether they are completely enraptured or whether they find the whole contest of no interest at all.||Your arm is beginning to tire; Huldranas shoots like an automaton, with precision and unflagging strength. You are wasting arrows, and you know that if you allow the contest to drag on you are going to lose through simple fatigue.||\"Enough!\" you say to the Elf king. \"It might amuse you elves to watch this carry on 'til the sky caves in, but the Westermen will not wait that long to bring about Doomsday.\"||\"Very well,\" he says. \"A more fraught duel then -- with life and death at stake.\"">
 
 <ROOM STORY320
     (IN ROOMS)
     (DESC "320")
-    (STORY TEXT320)
+    (STORY SHOT-FOLLOWS-SHOT)
     (CONTINUE STORY018)
     (FLAGS LIGHTBIT)>
 
@@ -4006,7 +3987,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (STORY TEXT339)
     (CHOICES CHOICES339)
     (DESTINATIONS <LTABLE STORY007 STORY031 STORY064 STORY082 STORY113 STORY207>)
-    (TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>)
+    (TYPES SIX-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT340 "\"I cannot take you to Elvenhame. I would rather die like a mortal than reveal our last great secret.\"||\"What secret is that?\" you ask.||\"No mortal has ever looked upon the glory of Elvenhame.\"||\"And lived?\" you ask grimly.||\"No mortals live. If they did they wouldn't be mortal, would they?||You threaten to kill the elf but he seems ready to die rather than to lead you to his lord. You look deep into his violet eyes, reading there the fear that you are about to cut short a life that should endure for millennia.">
@@ -4404,9 +4385,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY373-PRECHOICE ()
     <COND (<IN? ,SKILL-AGILITY ,PLAYER>
-        <SETG HERE ,STORY213>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY213>
     )(ELSE
         <CRLF>
         <TELL TEXT373-CONTINUED>
@@ -4565,9 +4544,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
     <COND (<G=? ,LIFE-POINTS-LOST 7>
-        <SETG HERE ,STORY351>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY351>
     )(ELSE
         <CRLF>
         <TELL "The elf darts in to attack again.">
@@ -4666,9 +4643,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <LOSE-LIFE 4 "You have died in combat." ,STORY393>
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
     <COND (<G=? ,LIFE-POINTS-LOST 7>
-        <SETG HERE ,STORY351>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY351>
     )>>
 
 <CONSTANT TEXT394 "It takes much longer to reach the tower than you imagined, since path after path leads you up against such obstacles as thorn bushes or fallen trees whose rotting bark crawls with insects. At last you pass into the open, where a clearing of uneven grassy ground stands between the louring ranks of trees.||The tower is outlined in a halo of moonlight which makes the angular masonry blocks gleam like silver. Ivy cover the walls in a dark tangled net. Under a lichen-stained armorial crest looms a great black door sealed with an iron lock. Gazing up, you see a glimmer of green light from the topmost chamber of the tower. It is one sign that the place might not be abandoned and left to ruin.">
@@ -4821,9 +4796,9 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY406-PRECHOICE ()
-    <SETG HERE ,STORY034>
-    <SETG CONTINUE-TO-CHOICES F>
-    <PRESS-A-KEY>>
+    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS>
+        <STORY-JUMP ,STORY034>
+    )>>
 
 <CONSTANT TEXT407 "Spurting flame blossoms from your palm. Elanor tugs on a vine and a secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest. I will turn every living thing in the forest against you.\"||You are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily.You can now take some of the potions, although you have time to grab only three. Choose which of the following you are taking: a clear cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot that contains bands of coloured earth.">
 <CONSTANT TEXT407-END "You rush to climb down the ladder to the ground.">
@@ -4858,9 +4833,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY408-PRECHOICE ()
     <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS>
-        <SETG HERE ,STORY388>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY388>
     )>>
 
 <CONSTANT TEXT409 "As soon as you wound one of them another takes his place. You fight like a hero but even heroes tire and at last one manages to sweep your legs out from under you. There is no escape as they finish you off with their swords.">
@@ -5101,9 +5074,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROUTINE STORY430-PRECHOICE ()
     <COND (<IN? ,SKILL-AGILITY ,PLAYER>
-        <SETG HERE ,STORY157>
-        <SETG CONTINUE-TO-CHOICES F>
-        <PRESS-A-KEY>
+        <STORY-JUMP ,STORY157>
     )>>
 
 <CONSTANT TEXT431 "At last you come across a well-trodden track, then climb a tree ladder. There is a maze of highways from tree to tree, fifty feet above the ground. Soon yo uare passing tree-houses festooned with flowering creepers and you see hosts of elves staring at you. You are the first mortal to enter Elvenhame.">
@@ -5157,55 +5128,127 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT436 "Something in what you have said has struck a chord with them.||\"For thousands of years we have guarded our secret homes from the eyes of men. Now we must leave them and no one but us and the beasts of the woods will know or tell of the splendour that is Elvenhame. We grant you this, a sight of Elvenhame.\"||You walk with them, they slow their pace for you, but they seem remarkably lacking in curiosity about you. It is if they aldready know all they need to about the race of beings called man. It is a walk of several hours through secret ways and tunnels before the most beautiful sight in the world upens up before you.">
+
 <ROOM STORY436
     (IN ROOMS)
     (DESC "436")
+    (STORY TEXT436)
+    (CONTINUE STORY402)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT437 "The King of the Elves announces the start of the duel and Zorolotl advances carefully towards you. There is a smouldering, almost mesmerizing look in his dark violet eyes as if he had been chewing mandrake root to inure hi to pain. He is left-handed like all the elves and he holds the blade point toward you like a rapier. There is certainly no fear of you in his eyes.">
+<CONSTANT CHOICES437 <LTABLE "circle to the left of him" "to the right" "meet him head on">>
 
 <ROOM STORY437
     (IN ROOMS)
     (DESC "437")
+    (STORY TEXT437)
+    (CHOICES CHOICES437)
+    (DESTINATIONS <LTABLE STORY298 STORY393 STORY415>)
+    (PRECHOICE STORY437-PRECHOICE)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY437-PRECHOICE ()
+    <SETG ZOROLOTL-WOUNDED 0>
+    <SETG LIFE-POINTS-LOST 0>>
+
+<CONSTANT TEXT438 "\"Then I will hold you prisoner here for a day, or a month, or a year ... until I have grown tired of you.\" With that the imp disappears high into the giant bush, his chirruping laughter mocking you. You start to look for a way out of the giant bush of thorns.">
 
 <ROOM STORY438
     (IN ROOMS)
     (DESC "438")
+    (STORY TEXT438)
+    (CONTINUE STORY432)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT439 "As you descend towards the bright green hillock the white egret starts to cackle and jumps up and down on the grass. As you approach it flies over the crest of the hillock but you can still hear it cackling on the other side. You look about warily in case the calls of the white bird have attracted nearby men or elves. The valley is quiet.">
+<CONSTANT CHOICES439 <LTABLE "try to silence the egret" "simply walk to the top of the hillock to see what you can see" "leave the valley and skirt around it to the east" "use">>
 
 <ROOM STORY439
     (IN ROOMS)
     (DESC "439")
+    (STORY TEXT439)
+    (CHOICES CHOICES439)
+    (DESTINATIONS <LTABLE STORY366 STORY314 STORY429 STORY212>)
+    (REQUIREMENTS <LTABLE NONE NONE NONE SKILL-WILDERNESS-LORE>)
+    (TYPES <LTABLE R-NONE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT440 "\"It seems you will do little to save the forest by exploring its many paths.\" says the owl. \"Where would you like to be taken?\"">
+<CONSTANT CHOICES440 <LTABLE "follow the owl's directions to the camp of the Westermen." "you can follow the owl's directions to your allies">>
 
 <ROOM STORY440
     (IN ROOMS)
     (DESC "440")
+    (STORY TEXT440)
+    (CHOICES CHOICES440)
+    (DESTINATIONS <LTABLE STORY260 STORY053>)
+    (REQUIREMENTS <LTABLE NONE <LTABLE CODEWORD-BULLHORN CODEWORD-WATERBEARER>>)
+    (TYPES <LTABLE R-NONE R-CODEWORD>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT441 "A silver noose flies up into the pavilion and darts through the air to hover above your head. Your magical shield blossoms beneath it and when they touch, both disappear with a musical pop. You run for the edge of the trees and are quicly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT CHOICES441 <LTABLE "head west" "east" "south-west" "south">>
 
 <ROOM STORY441
     (IN ROOMS)
     (DESC "441")
+    (STORY TEXT441)
+    (CHOICES CHOICES441)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>)
+    (PRECHOICE STORY441-PRECHOICE)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY441-PRECHOICE ()
+    <COND (<AND <IN? ,CODEWORD-BULLHORN ,CODEWORDS> <IN? ,CODEWORD-WATERBEARER ,CODEWORDS>>
+        <STORY-JUMP ,STORY053>
+    )>>
+
+<CONSTANT TEXT442 "With the odds stacked against you, there is no time for subtle ploys. Quickly you cast Vanish, instantly disappearing from the gaze of your astonished foes. Lest they should hear you, however, you stealthily move from your current position, retreating to a safe vantage point at the edge of the forest so you can observe the confusion of the guards. Your Vanish spell wears off while you watch.||As the camp will be in a state of alert for some time, you reconsider your options.">
+<CONSTANT CHOICES442 <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 
 <ROOM STORY442
     (IN ROOMS)
     (DESC "442")
+    (STORY TEXT442)
+    (CHOICES CHOICES442)
+    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>)
+    (TYPES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT443 "The guard falls under your spell and you order him to protect you, but the Chief of the Westermen realizes something is amiss. He orders his guards to take you. Your guard is cut down by one of his own comrades. Unluckily for you these cruel Westermen care little for comradeship.">
 
 <ROOM STORY443
     (IN ROOMS)
     (DESC "443")
+    (STORY TEXT443)
+    (CONTINUE STORY017)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY444
     (IN ROOMS)
     (DESC "444")
+    (STORY SHOT-FOLLOWS-SHOT)
+    (CONTINUE STORY018)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT445 "You cast Choking Fog and a cloud of poisonous green gas explodes around you, filling the pavilion. You too suffer from the noxious effects of the gas.">
 
 <ROOM STORY445
     (IN ROOMS)
     (DESC "445")
+    (STORY TEXT445)
+    (CONTINUE STORY472)
+    (PRECHOICE STORY445-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY445-PRECHOICE ()
+    <COND (<G=? ,LIFE-POINTS 8>
+        <STORY-JUMP ,STORY495>
+    )>>
 
 <ROOM STORY446
     (IN ROOMS)
