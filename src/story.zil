@@ -5106,29 +5106,55 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <PRESS-A-KEY>
     )>>
 
+<CONSTANT TEXT431 "At last you come across a well-trodden track, then climb a tree ladder. There is a maze of highways from tree to tree, fifty feet above the ground. Soon yo uare passing tree-houses festooned with flowering creepers and you see hosts of elves staring at you. You are the first mortal to enter Elvenhame.">
+
 <ROOM STORY431
     (IN ROOMS)
     (DESC "431")
+    (STORY TEXT431)
+    (CONTINUE STORY411)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT432 "There is no trace of the archway by which you entered the great bush. It must have closed by magic. Your only way out is to dig or break off branches until you have broken through the forest outside. You attack the branches but as soon as you break one off, two more grow magically in its place. The harder you work the further you are from freedom. You soon give up, there is no point in going on and so you will have to dig your way out. Alas, when you sleep, after digging hard for hours, the hole you have dug has been filled in once more. The footprints of the impish little Kwerrel show it was he who did it. There is no way out. In the end you have no choice but to eat part of the todstoll or faint through hunger.">
 
 <ROOM STORY432
     (IN ROOMS)
     (DESC "432")
+    (STORY TEXT432)
+    (CONTINUE STORY424)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT433 "YOu manage to spy on the leaders of the Westermen army but the chief has not come with them. He has sent a group of his warlords to do his dirty work for him while he leads a life of ease in his silken pavilion. Killing one or even several warlords will not stop the attack on the Tree of Life. You have squandered too much time. Nothing now can stop them slaying the Tree of Life.">
 
 <ROOM STORY433
     (IN ROOMS)
     (DESC "433")
+    (STORY TEXT433)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT434 "A faint hissing can be heard above the heavy tramp of feet. The thick trees dampen sound so they must be very close. The Elf King and his subjects are ready in the branches with their bows. A few of the bravest elves gather around you beneath the great Greenbark trees. The Westermen have come to the Tree of Life. The fate of the whole world hangs in the balance. The hissing of their infernal engines grows louder, a foreign unnatural sound, a desecration of nature. Birds fly up from their path and the animals of the forest run in panic from the clanging metal monstrosities. The two columns of men are converging on the tree at the same time from opposite directions.">
+<CONSTANT CHOICES434 <LTABLE "stand your ground before the main column from which he hissing and clanging sounds come" "make a stand first against the soldiers and crossbowmen in the smaller column">>
 
 <ROOM STORY434
     (IN ROOMS)
     (DESC "434")
+    (STORY TEXT434)
+    (CHOICES CHOICES434)
+    (DESTINATIONS <LTABLE STORY423 STORY413>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT435 "You grab Gathkeri's throat but his arms are longer than yours and he punches you in the face knocking you back off him. He has smashed your nose and red blood stains your jerkin as you totter momentarily on your knees, dazed and hurt. The elf is rising quickly to his feet.">
+<CONSTANT CHOICES435 <LTABLE "throw yourself at him without getting up first" "get up and move back out of immediate range">>
 
 <ROOM STORY435
     (IN ROOMS)
     (DESC "435")
+    (STORY TEXT435)
+    (CHOICES CHOICES435)
+    (DESTINATIONS <LTABLE STORY412 STORY401>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY436
