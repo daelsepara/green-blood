@@ -32,6 +32,7 @@
     <PUTP ,STORY385 ,P?DEATH T>
     <PUTP ,STORY393 ,P?DEATH T>
     <PUTP ,STORY456 ,P?DEATH T>
+    <PUTP ,STORY485 ,P?DEATH T>
     <RETURN>>
 
 <ROUTINE STORY-LOSERING ()
@@ -3736,7 +3737,7 @@
     (DESC "317")
     (STORY TEXT317)
     (CHOICES CHOICES317)
-    (DESTINATIONS <LTABLE STORY326 STORY335>)
+    (DESTINATIONS <LTABLE STORY307 STORY325>)
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -5388,7 +5389,6 @@
         <LOSE-LIFE 3 "You died in combat." ,STORY456>
     )>
     <COND (<G? ,LIFE-POINTS 0>
-        <PUTP ,STORY456 ,P?DEATH F>
         <CRLF>
         <TELL TEXT256-CONTINUED>
         <CRLF>
@@ -5610,55 +5610,126 @@
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT476 "You hastily send the spell unseen across the space separating you from the Chief of the Westermen. As your spell takes hold the Chief of the Westermen stares about him uncomprehendingly. He is completely nonplussed. Valerian, however, is casting a spell. He stares at you intently and flourishes his arms menacingly. You haven't long to act.">
+<CONSTANT CHOICES476 <LTABLE "tell the guards Valerian has bewitched their chief" "hastily cast Shield of Defence" "Visceral Disruption">>
+
 <ROOM STORY476
     (IN ROOMS)
     (DESC "476")
+    (STORY TEXT476)
+    (CHOICES CHOICES476)
+    (DESTINATIONS <LTABLE STORY448 STORY458 STORY468>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT477 "The guards fall back before your sudden assault and close in again behind you. You are surrounded and overwhelmed. You take two of them with you to the unending grey but the steel of their swords pierces your vitals and you are quickly dispatched.">
 
 <ROOM STORY477
     (IN ROOMS)
     (DESC "477")
+    (STORY TEXT477)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT478 "It is unfortunate for you that this powerful spell can be used against only one victim and you are surrounded by many aggressors. Even as one of them drops to the floor helpless, clutching his stomach, so the others close in and kill you.">
 
 <ROOM STORY478
     (IN ROOMS)
     (DESC "478")
+    (STORY TEXT478)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT479 "You make your way quickly away from the eerie ivy-clad tower and return to the main track, where you snatch a few hours of rest before continuing on your way.">
 
 <ROOM STORY479
     (IN ROOMS)
     (DESC "479")
+    (STORY TEXT479)
+    (CONTINUE STORY454)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT480 "You have made the wrong choice. Why attack with your unguarded ride side towards the enemy? You pay for your folly with a wicket thrust into your vitals that spills out your life force on the ground in front of the Westermen.">
 
 <ROOM STORY480
     (IN ROOMS)
     (DESC "480")
+    (STORY TEXT480)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT481 "\"What use is it to you, if you capture me? I have no gold, no treasures for you to steal -- but I know where you can find some. The great dragon of the forest has breathed his last breath and I need the help of many men to carry away his hoard,. We will be wealthy beyond the dreams of men -- wealthier than kinds. Will you help me? I'ææ give each of you a tenth of the bounty.\"||They look at each other and one whispers something to his colleagues before saying he agrees. But you know enough of the ways of men to know it is just a trick -- they clearly donøt believe you and still mean to capture you.">
+<CONSTANT CHOICES481 <LTABLE "use" "use" "use" "otherwise, if you don't have any of these skills">>
 
 <ROOM STORY481
     (IN ROOMS)
     (DESC "481")
+    (STORY TEXT481)
+    (CHOICES CHOICES481)
+    (DESTINATIONS <LTABLE STORY461 STORY471 STORY442 STORY491>)
+    (REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-CHARMS SKILL-SPELLS NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT482 "The indolent Chief of the Westermen falls under your spell. His mind is not as strong as yours and you can bend it to your will. Valerian is about to cast a spell. He stares at you intently and flourishes his arms menacingly.||You haven't long to act">
+<CONSTANT CHOICES482 <LTABLE "make the Chief of the Westermen order his guards to provide you safe escort into the forest" "get him to order the guards to kill Valerian">>
 
 <ROOM STORY482
     (IN ROOMS)
     (DESC "482")
+    (STORY TEXT482)
+    (CHOICES CHOICES482)
+    (DESTINATIONS <LTABLE STORY447 STORY457>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY483
     (IN ROOMS)
     (DESC "483")
+    (EVENTS STORY483-EVENTS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY483-EVENTS ()
+    <CRLF>
+    <TELL "Are left-handed or right-handed? ">
+    <COND (<YES?>
+        <RETURN ,STORY480>
+    )(ELSE
+        <RETURN ,STORY490>
+    )>>
+
+<CONSTANT TEXT484 "The guards fall back before your sudden assault and close in again behind you. You are surrounded and overwhelmed. You take two of them with you to the unending grey but the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY484
     (IN ROOMS)
     (DESC "484")
+    (STORY TEXT484)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT485 "You are halfway across the room when you hear an imperious voice raised in thunderous anger behind you. Glancing back, you see the lady of the tower rising from her bed. Soil and flower petals scatter to the marble floor as she raises her arms to the moonlight and signs the words of a spell. Suddenly a numbness creeps through your limbs and you see patches of grey mould spreading across the backs of your hands. With a horrified cry, you reel out of the chamber and stagger down the steps of the tower.">
+<CONSTANT TEXT485-CONTINUED "The enchantress stands and watches you flee, sending peals of laughter ringing down the stairwell to mock you. The doors fly wide at your approach, but even on the threshold of escape you are frozen to the spot at the sound of her voice: \"Get you gone, mortal. If I catch you at my bedside a second time, your corpse will be food for my night-blooms\"||You stagger outside and the tower doors slam shut behind you.">
 
 <ROOM STORY485
     (IN ROOMS)
     (DESC "485")
+    (STORY TEXT485)
+    (CONTINUE STORY479)
+    (PRECHOICE STORY485-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY485-PRECHOICE ()
+    <COND (<IN? ,SKILL-CHARMS ,SKILLS>
+        <LOSE-LIFE 1 "You died because of the Noxious Blight spell." ,STORY485>
+    )(ELSE
+        <LOSE-LIFE 4 "You died because of the Noxious Blight spell." ,STORY485>
+    )>
+    <COND (<G? ,LIFE-POINTS 0>
+        <CRLF>
+        <TELL TEXT485-CONTINUED>
+        <CRLF>
+    )>>
 
 <ROOM STORY486
     (IN ROOMS)
