@@ -2496,7 +2496,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT213 "You tackle her before she can leap through the hatch and, pinioning her arms behind her back, tie her to a vine that is growing in and out of the walls of the tree house.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do they do?\" you ask urgently.||There are five potions on the shelf behind her. There is a clear cherry red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloud sea-blue fluid in a phial and a glass pot that contains layers of coloured earth.||Elanor starts to explain what each does. \"The blue fluid, if quaffed in sunlight, will heall all save the most serious of hurts.\" As she says the word \"hurts\" the back of your wrist is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is mulch of fire lizar's gizzard, a deadly poison.\"||You are stung twice more, on the leg and the neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees' stings feel like those of hornets.">
+<CONSTANT TEXT213 "You tackle her before she can leap through the hatch and, pinioning her arms behind her back, tie her to a vine that is growing in and out of the walls of the tree house.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do they do?\" you ask urgently.||There are five potions on the shelf behind her. There is a clear cherry-red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloud sea-blue fluid in a phial and a glass pot that contains layers of coloured earth.||Elanor starts to explain what each does. \"The blue fluid, if quaffed in sunlight, will heall all save the most serious of hurts.\" As she says the word \"hurts\" the back of your wrist is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is mulch of fire lizar's gizzard, a deadly poison.\"||You are stung twice more, on the leg and the neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees' stings feel like those of hornets.">
 <CONSTANT CHOICES213 <LTABLE "quickly ask about the red liquid" "the white jelly" "the bands of coloured earth in the hope that one of them will protect against the insects" "grab the phial of blue fluid and drink it">>
 
 <ROOM STORY213
@@ -4947,19 +4947,37 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <TELL "He advances warily again.">
     <CRLF>>
 
+<CONSTANT TEXT416 "With one neat fast movement you draw your sword and thrust the point an inch from Elanor's throat.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do the do?\"||There are five potions on the shelf behind her.||There is a clear cherry-red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot containing layers of coloured earth.||Elanor starts to explain what each one does. \"The blue fluid, if quaffed in sunlight, will heal all save the most dire hurts.\" As she says the word \"hurts\", the back of your wrist, near the sword hilt, is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is the mulch of fire lizard's gizzard, a deadly poison.\"||You are stung twice more, on the leg and neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees are stinging with the ferocity of hornets.">
+<CONSTANT CHOICES416 <LTABLE "quickly ask about the red liquid" "the white jelly" "bands of coloured earth in the hopes that one of them will protect against the insects?" "will you grab the phial of blue fluid and drink it">>
+
 <ROOM STORY416
     (IN ROOMS)
     (DESC "416")
+    (STORY TEXT416)
+    (CHOICES CHOICES416)
+    (DESTINATIONS <LTABLE STORY313 STORY304 STORY296 STORY292>)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT417 "The boglands are dangerous and it is slow going here. After a while you decide to struggle to higher ground and rejoin your old course. You make it to firmer ground at last, thinking to yourself you are lucky not to have been attacked by some of the more gargantuan crocodiles you have seen swimming lazily in the deeper pools.">
 
 <ROOM STORY417
     (IN ROOMS)
     (DESC "417")
+    (STORY TEXT417)
+    (CONTINUE STORY049)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT418 "You have more sense than to smash the mirror here by the enchantress' bedside, where the noise would surely wake her. Taking it down carefully from the wall, you tiptoe to the balcony and drop it over the ballustrade. You watch it flash in the moonlight as it falls to shatter on the ground far below. A gust of spring-scented wind arises and you catch a glimpse of an ethereal smiling face flitting up past you as a voice whispers, \"Thank You.\" Then the wind dies and all is quiet again.">
+<CONSTANT CHOICES418 <LTABLE "explore the bower further" "leave">>
 
 <ROOM STORY418
     (IN ROOMS)
     (DESC "418")
+    (STORY TEXT418)
+    (CHOICES CHOICES418)
+    (DESTINATIONS <LTABLE STORY470 STORY479>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT419 "You are rudely awakened when the earth mound that is your bead collapses beneath you. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of a Colossus Beetle's throat press you down towards its stomach you realize you have been swallowed alive while you slept. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
@@ -4971,34 +4989,61 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT420 "Around the neck of the statue are four large screws which seem to be bolting the head to the body.">
+<CONSTANT CHOICES420 <LTABLE "leap up onto the statue and try to undo the screws and knock the helment off" "fight on where you are" "make a dash for the hose that connects the statue to the great boiler">>
+
 <ROOM STORY420
     (IN ROOMS)
     (DESC "420")
+    (STORE TEXT420)
+    (CHOICES CHOICES420)
+    (DESTINATIONS <LTABLE STORY430 STORY409 STORY192>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT421 "You slay the unsuspecting elf easily enough but you are already trapped. Arrows zip and whine through the air and you are stuck like a pincushion. You die almost within sight of fabled Elvenhame.">
 
 <ROOM STORY421
     (IN ROOMS)
     (DESC "421")
+    (STORY TEXT421)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT422 "You should have changed your tactics. Hampered by your smashed ribs you are an easier target for Gathkeri who bludgeons you to the ground with repeated blows to the head. You just have the sense left to submit before you lose consciousness. You have lost the duel.">
 
 <ROOM STORY422
     (IN ROOMS)
     (DESC "422")
+    (STORY TEXT422)
+    (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT423 "You stand your ground bravely and the elves are ready to fight beside you, hidden in the trees, from where they can shoot with deadly accuracy. A group of men surrounded by shieldbearers shuffle forward and hew down two great trees at the edge of the clearing. The air is alive with the whine and whoosh of the elven arrow shafts, many of which find their mark with uncanny accuracy, but whenever a Westerman is dropped to the floor two others take his place in the struggle to bring their engine of destruction to bear. There is a groan of splitting wood matched by one from the elves as the beautiful trees crash to the ground: The Infernal Statue is revealed in all its terrifying metallic splendour.">
 
 <ROOM STORY423
     (IN ROOMS)
     (DESC "423")
+    (STORY TEXT423)
+    (CONTINE STORY390)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT424 "The toadstool is a dull red colour, spotted with purple. Underneath, the soft gills are mauvre. The Kwerrel skips down to watch as you reach out to break off some toadstool flesh. You ask nervously if it is poisonous.||\"No, no, never, not poisonous, my dear, oh no.\"||It tastes surprisingly good, it almost melts in your mouth. You begin to feel sleepy. You walk a few steps further then sit down with your back to the central trunk of the of the giant bush. Feeling warm, snug and content you fall into a deep sleep.">
 
 <ROOM STORY424
     (IN ROOMS)
     (DESC "424")
+    (STORY TEXT424)
+    (CONTINUE STORY414)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT425 "You are stronger than Gathkeri. He wriggles and pushes against you but cannot break your grip. After a long struggle you manage to flip him onto his back on the ground and land astride him. You draw back your fist to strike but Gathkeri knows he is beaten. \"I submit,\" he cries out loudly enough for all the elves to hear. \"You are the victory.\" You let him rise and you both walk over to the Elf King.">
 
 <ROOM STORY425
     (IN ROOMS)
     (DESC "425")
+    (STORY TEXT425)
+    (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY426
