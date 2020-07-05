@@ -5046,30 +5046,65 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT426 "YOu say that long life has worn out their spirit. \"Is that all there is to immortality, a long slide into the grey of uncaring? Look at the beauty all around you. Are your eyes worn out? Have you become blind to the glory of this foreset? I've never seen anything like it.\"||\"Its glories are wasted on you, mortal.\" The elf's voice cracks harshly and as he speaks your eyes fill with blood. Now it is you who is blind. You will never find your way out of the forest. Without sight you cannot even find food, and will surely perish in the forest.">
+
 <ROOM STORY426
     (IN ROOMS)
     (DESC "426")
+    (STORY TEXT426)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT427 "After several days of trekking to the east you come to the banks of the great Sirion river where it bends north before leaving the Forest of Arden. You have missed your way. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the lady of the woods. As it is you have wasted too much time, far out of your way. You plulnge back into the green bosom of the forest. A few days later you start to find the fresh bodies of hundreds of elves among the trees. It is as though they have all been slain in a moment. You are doomed.">
 
 <ROOM STORY427
     (IN ROOMS)
     (DESC "427")
+    (STORY TEXT427)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT428 "Pozzo takes you through the trees until you come to a large clearing. Noticing a steady stream of messengers riding post-haste to a point beyond the furnaces, you skirt round through the forest until, peering out between the branches of a Servis tree, you see a magnificent silk pavilion large enough to seat a hundred knights at a banquet. There are guards at each corner of the pavilion and two guards with halberds flank the silk porch which leads into the main tent. They are all dressed in rare steel armour and all have the sly look of the Westermen about them. It is a hundred paces across burned ground from the Servis tree to the tent.">
+<CONSTANT CHOICES428 <LTABLE "cast Vanish and sneak unseen into the pavilion" "cast Friendship to charm your way past the guards and into their chief's confidence" "otherwise, sneak up to the tent as a spy">>
 
 <ROOM STORY428
     (IN ROOMS)
     (DESC "428")
+    (STORY TEXT428)
+    (CHOICES CHOICES428)
+    (DESTINATIONS <LTABLE STORY266 STORY231 STORY350>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT429 "You hug the rim of the valley heedless of the fact that you are breaking the skyline and thus easy to spot from afar. The forest is not dense here; large stagnant algae-covered pools, black watered and clogged with dead leaves, separate the trees.">
+<CONSTANT CHOICES429 <LTABLE "descend into the bog land if you are worried about being spotted" "you can go back into the dead valley">>
 
 <ROOM STORY429
     (IN ROOMS)
     (DESC "429")
+    (STORY TEXT429)
+    (CHOICES CHOICES429)
+    (DESTINATIONS <LTABLE STORY417 STORY408>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT430 "You manage to scramble up the metal statue as it hacks on into the Tree of Life and start feverishly to take out the screw. Seeming to realize what you are trying to do, the machine brings its free arm down across your back to crush you.">
 
 <ROOM STORY430
     (IN ROOMS)
     (DESC "430")
+    (STORY TEXT430)
+    (CONTINUE STORY290)
+    (PRECHOICE STORY430-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY430-PRECHOICE ()
+    <COND (<IN? ,SKILL-AGILITY ,PLAYER>
+        <SETG HERE ,STORY157>
+        <SETG CONTINUE-TO-CHOICES F>
+        <PRESS-A-KEY>
+    )>>
 
 <ROOM STORY431
     (IN ROOMS)
