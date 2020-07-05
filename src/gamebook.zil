@@ -394,15 +394,18 @@
     )>
     <RTRUE>>
 
-<ROUTINE COUNT-POSSESSIONS ("AUX" COUNT ITEM)
+<ROUTINE COUNT-CONTAINER (CONTAINER "AUX" COUNT ITEM)
     <SET COUNT 0>
-    <SET ITEM <FIRST? ,PLAYER>>
+    <SET ITEM <FIRST? .CONTAINER>>
     <REPEAT ()
         <COND (<NOT .ITEM> <RETURN>)>
         <SET COUNT <+ .COUNT 1>>
         <SET .ITEM <NEXT? .ITEM>>
     >
     <RETURN .COUNT>>
+
+<ROUTINE COUNT-POSSESSIONS ()
+    <RETURN <COUNT-CONTAINER ,PLAYER>>>
 
 <ROUTINE DROP-REPLACE-ITEM (OBJ "AUX" KEY COUNT ITEM CHOICE)
     <COND (<AND .OBJ <G=? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS>>
@@ -462,13 +465,15 @@
         <RETURN .ITEMS>
     )>>
 
-<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC "AUX" KEY COUNT CHOICE)
+<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC CONTAINER "AUX" KEY COUNT CHOICE)
     <SET COUNT 0>
     <COND (<NOT .DESC> <SET DESC "item">)>
     <RESET-SELECTIONS>
     <REPEAT ()
         <CRLF>
-        <TELL "You are already carrying " N <COUNT-POSSESSIONS> " items in your inventory." CR>
+        <COND (<OR <NOT .CONTAINER> <EQUAL? .CONTAINER ,PLAYER>>
+            <TELL "You are already carrying " N <COUNT-POSSESSIONS> " items in your inventory." CR>
+        )>
         <TELL "You can select up to " N .MAX " " .DESC "s from this list:" CR>
         <DO (I 1 .ITEMS)
             <TELL N .I " - [">
@@ -501,7 +506,11 @@
     <COND (<G? .COUNT 0>
         <DO (I 1 9)
             <COND (<GET SELECT-CHOICES .I>
-                <TAKE-ITEM <GET SELECT-CHOICES .I>>
+                <COND (<OR <NOT .CONTAINER> <EQUAL? .CONTAINER ,PLAYER>>
+                    <TAKE-ITEM <GET SELECT-CHOICES .I>>
+                )(ELSE
+                    <MOVE <GET SELECT-CHOICES .I> .CONTAINER>
+                )>
             )>
         >
     )>
