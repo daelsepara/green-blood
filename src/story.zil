@@ -5533,39 +5533,81 @@
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT469 "Your arrow strikes the very centre of the orchid. You turn a challenging look at Huldranas, but he does not notice. All his concentration is focused on the branch as he removes an arrow from his quiver and nocks on all in one graceful sinuous motion. As he draws back the bowstring, the muscles in his thin arms leap into sharp relief and you can see from his very posture that he is about to make a perfect shot.">
+<CONSTANT CHOICES469 <LTABLE "push your skill to the very limits in an attempt to prove beyond argument who is the better archer" "bide your time and take your shot when it is your turn">>
+
 <ROOM STORY469
     (IN ROOMS)
     (DESC "469")
+    (STORY TEXT469)
+    (CHOICES CHOICES469)
+    (DESTINATIONS <LTABLE STORY191 STORY444>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT470 "You discover a stout bronze chest in a vine-carpeted alcove. Your heart thuds with greed as you contemplate the lavish treasures it might contain. Alas, you are destined never to possess a single gold coin of that treasure. The moment you touch the hasp, the vine leaves start rustling of their own accord, making a noise like a hundred hissing serpents to break the silence of the bower. You should have guessed that the treasure chest would be protected by an alarm spell.">
 
 <ROOM STORY470
     (IN ROOMS)
     (DESC "470")
+    (STORY TEXT470)
+    (CONTINUE STORY499)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT CHOICES471 <LTABLE "try the famous charm Return of the Prodigal Son, to see if you can magically win their friendship" "you might try Fibonacci's Dweomer of Apprehension in the hope of scaring them so badly they will let you go">>
 
 <ROOM STORY471
     (IN ROOMS)
     (DESC "471")
+    (CHOICES CHOICES471)
+    (DESTINATIONS <LTABLE STORY488 STORY498>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT472 "You are too weak to withstand the effects of the gas and fall to the floor just as Valerian, the chief and the guards do. You are not the first to recover, owing to your weakened state, and the chief orders his men to take you. You cannot clear your head enough to cast another spell.">
 
 <ROOM STORY472
     (IN ROOMS)
     (DESC "472")
+    (STORY TEXT472)
+    (CONTINUE STORY017)
+    (EVENTS STORY472-EVENTS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY472-EVENTS ()
+    <COND (<IN? ,SKILL-CHARMS ,SKILLS>
+        <STORY-JUMP ,STORY495>
+    )>>
+
+<CONSTANT TEXT473 "A bad choice. The men at either ends of the front rank move around and attack you from the back. You are quickly overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying">
 
 <ROOM STORY473
     (IN ROOMS)
     (DESC "473")
+    (STORY TEXT473)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT474 "You fall back just in time and the guards form into two ranks before advancing towards you with military precision.">
+<CONSTANT CHOICES474 <LTABLE "fall back again to the edge of the trees" "fight here">>
 
 <ROOM STORY474
     (IN ROOMS)
     (DESC "474")
+    (STORY TEXT474)
+    (CHOICES CHOICES474)
+    (DESTINATIONS <LTABLE STORY494 STORY446>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT CHOICES475 <LTABLE "cast Bafflement at the Chief of the Westermen" "Valerian the Moon Druid" "at the nearest guard who is twelve feet away">>
 
 <ROOM STORY475
     (IN ROOMS)
     (DESC "475")
+    (CHOICES CHOICES475)
+    (DESTINATIONS <LTABLE STORY476 STORY486 STORY496>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY476
