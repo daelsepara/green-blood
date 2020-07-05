@@ -33,7 +33,7 @@
     <PUTP ,STORY393 ,P?DEATH T>
     <PUTP ,STORY456 ,P?DEATH T>
     <RETURN>>
-    
+
 <ROUTINE STORY-LOSERING ()
     <LOSE-ITEM ,EMERALD-RING-ELANOR>>
 
@@ -70,9 +70,9 @@
 <CONSTANT CAMP-CHOICES <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 <CONSTANT CAMP-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>>
 
-<CONSTANT CAMP-PLANS "The chief himself is sleeping on silken cushions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destory the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the princer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.">
+<CONSTANT CAMP-PLANS "The chief himself is sleeping on silken cushions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destroy the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the pincer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.">
 
-<CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
+<CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. You resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundreds of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hero or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
     (IN ROOMS)
@@ -93,7 +93,7 @@
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT002 "\"It is the forest which cleans and purifies the air for all the world to breathe. Without the Forest of Arden all living things would choke, gag, and die. The trees absorb the foul air of man's polution, his burning and wasting, and give it back to the world again clean, fresh and ready to breath. The stench and dross of the cities is purged and cleansed by the trees. The forest is the lifeblood of the world.\"||The old woman delivers these words very gravely, convincing you that she believes every word of what she is saying. All the time her eyes never leave yours.||\"Ah, but I see I bore you. Enough of this idle prattle, I must take my rest. Good night to you.\"||So saying, she gets up and makes to leave you. You are about to protest that you are far from bored but realize she is only looking for a polite way to leave your company. You let her go and decide to take a room at the inn as well.">
+<CONSTANT TEXT002 "\"It is the forest which cleans and purifies the air for all the world to breathe. Without the Forest of Arden all living things would choke, gag, and die. The trees absorb the foul air of man's pollution, his burning and wasting, and give it back to the world again clean, fresh and ready to breath. The stench and dross of the cities is purged and cleansed by the trees. The forest is the lifeblood of the world.\"||The old woman delivers these words very gravely, convincing you that she believes every word of what she is saying. All the time her eyes never leave yours.||\"Ah, but I see I bore you. Enough of this idle prattle, I must take my rest. Good night to you.\"||So saying, she gets up and makes to leave you. You are about to protest that you are far from bored but realize she is only looking for a polite way to leave your company. You let her go and decide to take a room at the inn as well.">
 
 <ROOM STORY002
     (IN ROOMS)
@@ -124,7 +124,7 @@
     (CODEWORD CODEWORD-BULLHORN)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT005 "As Valerian stands up, he lets his cloak fall to the floor, reavealing armour made of quilted leather -- light armor that wouldn't stop a sword thrust. He has no sword or obvious weapon to hand. Three small coloured pouches swing from his belt.">
+<CONSTANT TEXT005 "As Valerian stands up, he lets his cloak fall to the floor, revealing armour made of quilted leather -- light armour that wouldn't stop a sword thrust. He has no sword or obvious weapon to hand. Three small coloured pouches swing from his belt.">
 <CONSTANT CHOICES005 <LTABLE "decide to hold your ground" "decide to close with him">>
 
 <ROOM STORY005
@@ -166,7 +166,7 @@
     (CONTINUE STORY406)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT009 "\"I must test your fitness to be the forest's saviour,\" says Elanor. \"I hope you pass the test. YOu would not like to see the forest laid to waste would you?\"||She looks regal and yet kind, but her eyes never leave yours.">
+<CONSTANT TEXT009 "\"I must test your fitness to be the forest's saviour,\" says Elanor. \"I hope you pass the test. You would not like to see the forest laid to waste would you?\"||She looks regal and yet kind, but her eyes never leave yours.">
 <CONSTANT CHOICES009 <LTABLE "reply that your reason for visiting the forest is to find the Tree of Knowledge and take some of its wisdom away with you to the lands of men" "say that the forest is too beautiful to be laid waste and you will try to save it">>
 
 <ROOM STORY009
@@ -190,7 +190,7 @@
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT011 "You know without doubt that your best plan is to call upon the dragon that has promised its help. Certeain in the knowledge that it will obey you, you set off for the Bonehill to enlist its help.||The journey passes swiftly with the help of an elf to guide you, and you are soon at the dragon's lar.||You call out its name . . .">
+<CONSTANT TEXT011 "You know without doubt that your best plan is to call upon the dragon that has promised its help. Certain in the knowledge that it will obey you, you set off for the Bonehill to enlist its help.||The journey passes swiftly with the help of an elf to guide you, and you are soon at the dragon's lair.||You call out its name . . .">
 
 <ROOM STORY011
     (IN ROOMS)
@@ -223,7 +223,7 @@
     (TYPES <LTABLE R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT014 "\"Yes it would, more terrible than you can know. The stench and dross of the cities is purged and cleansed by the forest. The trees absorb the foul air of man's pollution, his berning and smelting, and give it back to the world again clean, fresh and ready to breathe. The forest is the lifeblood of the world; without it the world will choke, gag and die. The sin of man, his waste, his poisons, are made good again by the life force of nature. You feel something of this, don't you?\" The woman looks at you approvingly.||Sensing that you can trust here, you ask about the Tree of Knowledge.||\"If you come to my bower in the forest I can take you to the Great Tree. But I must warn you that if you harm so much as a leaf on your way there you will never leave the forest. When you enter the forest follow the Burgstream to the great Sirion river and then walk down the eastern bank. My followers will bring me word of your progress.\"||She takes up her staff and taps it once on the table. Her gnarled old staff turns into a little flute, which she hands to you with the words, \"Blow this at need in the forest and my friends will help you.\"||You murmur your thanks and fall to wondering how she can make the animals of the forest do her bidding. As the fire burns down, the woman goes to sleep in her chair. Not wishing to distrub her, you take a room at the inn for the night.">
+<CONSTANT TEXT014 "\"Yes it would, more terrible than you can know. The stench and dross of the cities is purged and cleansed by the forest. The trees absorb the foul air of man's pollution, his burning and smelting, and give it back to the world again clean, fresh and ready to breathe. The forest is the lifeblood of the world; without it the world will choke, gag and die. The sin of man, his waste, his poisons, are made good again by the life force of nature. You feel something of this, don't you?\" The woman looks at you approvingly.||Sensing that you can trust here, you ask about the Tree of Knowledge.||\"If you come to my bower in the forest I can take you to the Great Tree. But I must warn you that if you harm so much as a leaf on your way there you will never leave the forest. When you enter the forest follow the Burgstream to the great Sirion river and then walk down the eastern bank. My followers will bring me word of your progress.\"||She takes up her staff and taps it once on the table. Her gnarled old staff turns into a little flute, which she hands to you with the words, \"Blow this at need in the forest and my friends will help you.\"||You murmur your thanks and fall to wondering how she can make the animals of the forest do her bidding. As the fire burns down, the woman goes to sleep in her chair. Not wishing to disturb her, you take a room at the inn for the night.">
 
 <ROOM STORY014
     (IN ROOMS)
@@ -233,7 +233,7 @@
     (ITEM MAPLE-FLUTE)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT015 "The imp puts on the emerald ring as if it were a bracelet, and then tries to rip it off again. But the band of gold constricts until it is a perfect fit around his wrist.||\"Alack, alack, I can never take this cursed thing off,\" the imp laments.||\"Help me, and I will remove the ring.\"||\"I am the Kwerrel, and the Kwerrel keeps no bargains.\"||\"Then you are a prisoner of the Lady of the Forest's ring for ever and every being in the forest will know that you are not her friend,\" you say.||Quailing at your words, the Kwerrel says, \"Tke the flesh of the toadstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||As the imp speaks the gold ring grows and falls from his wrist to lie on the ground near the giant toadstool. You pick it up again, take a large piece of the flesh of the toadstool. Bidding the little imp goodby, you walk back into the forest.">
+<CONSTANT TEXT015 "The imp puts on the emerald ring as if it were a bracelet, and then tries to rip it off again. But the band of gold constricts until it is a perfect fit around his wrist.||\"Alack, alack, I can never take this cursed thing off,\" the imp laments.||\"Help me, and I will remove the ring.\"||\"I am the Kwerrel, and the Kwerrel keeps no bargains.\"||\"Then you are a prisoner of the Lady of the Forest's ring for ever and every being in the forest will know that you are not her friend,\" you say.||Quailing at your words, the Kwerrel says, \"Take the flesh of the toadstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||As the imp speaks the gold ring grows and falls from his wrist to lie on the ground near the giant toadstool. You pick it up again, take a large piece of the flesh of the toadstool. Bidding the little imp goodbye, you walk back into the forest.">
 
 <ROOM STORY015
     (IN ROOMS)
@@ -277,8 +277,7 @@
     (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT019 "The dragon bats you out of the cavern and sends you rolling down the bank like a golden cannonball. You struggle to your feet while the ancient beast mocks you.||\"It is a long time since I spied a golden turtle in these parts.\" He laughs and hisses as you stagger away from the Bonehill.||Weighed down by gold, you have no chance of completing your quest unless you head back to Burg and find someone to remove the 
-precious metal. No matter, you will be rich beyond your wildest dreams . . .">
+<CONSTANT TEXT019 "The dragon bats you out of the cavern and sends you rolling down the bank like a golden cannonball. You struggle to your feet while the ancient beast mocks you.||\"It is a long time since I spied a golden turtle in these parts.\" He laughs and hisses as you stagger away from the Bonehill.||Weighed down by gold, you have no chance of completing your quest unless you head back to Burg and find someone to remove the precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <ROOM STORY019
     (IN ROOMS)
@@ -300,7 +299,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT021 "With the dragon's help and the might of the elves, you feel you have a chance of defeating the forces of the Westermen and driving the threat of the evil from the forest. Full of confidence in your ability to call upon a powerful ally of the ancient times, you head towards the rowan trees at the edge of the forest.||Travelling along routes that seem to come unbidden to you mind, you reach a clearing that seems strangely familiar. Was it perhaps, that you met the elves? Or does some horror of your travels lurk nearby in the undergrowth?||Summoning up your courage, you call out to whoever or whatever will here: |\"Elves! If you would win your freedom, come talk with a mortal who can deliver it. For I have secured us an ally equal to half the Westermen's forces -- a dragon whose very appearance will slay scores of them from sheer terror. Come forward and speak with me.\"||The words of your challenge die away, suffocated by the preternatural silence of the forest. You might have expected to hear the chirruping voice of a bird or the faint rustle of a woodmouse questing for beetles, yet there is nothoing. Cursing the elves for their arrogance, you shout again, \"Come forward!\"||Spittle flies from your lips and your face flushes with the violent passion of your request. Again you wait for a reply.||\"Do you think that one dragon is enough, then, to beat your fellow men?\" says a cool voice from behind you.||Spinning around, you see no more than inces from your face the eternally youthful face of an elf. Yet the penetrating eyes that are windows to the wisdom of countless centuries mark this elf out above all others. The Elf King has answered your call.||\"One dragon is more than enough,\" you reply, \"with the forces of the elves a well. He will demoralize the Westermen, plunging them into chaos from which the deadly arrows of the elves will cruelly pluck them.\"||He smiles a cold smile, approving of the relish with which you describe the Westermen's deaths. \"Brave words indeed, for a mortal. But for elves to accede to your schemes and counsels, you must prove yourself worthy of our respect.\"||\"How may I do that?\"||\"Overcome my champion in a duel. Only then will we heed your words.\"">
+<CONSTANT TEXT021 "With the dragon's help and the might of the elves, you feel you have a chance of defeating the forces of the Westermen and driving the threat of the evil from the forest. Full of confidence in your ability to call upon a powerful ally of the ancient times, you head towards the rowan trees at the edge of the forest.||Travelling along routes that seem to come unbidden to you mind, you reach a clearing that seems strangely familiar. Was it perhaps, that you met the elves? Or does some horror of your travels lurk nearby in the undergrowth?||Summoning up your courage, you call out to whoever or whatever will here: |\"Elves! If you would win your freedom, come talk with a mortal who can deliver it. For I have secured us an ally equal to half the Westermen's forces -- a dragon whose very appearance will slay scores of them from sheer terror. Come forward and speak with me.\"||The words of your challenge die away, suffocated by the preternatural silence of the forest. You might have expected to hear the chirruping voice of a bird or the faint rustle of a woodmouse questing for beetles, yet there is nothing. Cursing the elves for their arrogance, you shout again, \"Come forward!\"||Spittle flies from your lips and your face flushes with the violent passion of your request. Again you wait for a reply.||\"Do you think that one dragon is enough, then, to beat your fellow men?\" says a cool voice from behind you.||Spinning around, you see no more than inches from your face the eternally youthful face of an elf. Yet the penetrating eyes that are windows to the wisdom of countless centuries mark this elf out above all others. The Elf King has answered your call.||\"One dragon is more than enough,\" you reply, \"with the forces of the elves a well. He will demoralize the Westermen, plunging them into chaos from which the deadly arrows of the elves will cruelly pluck them.\"||He smiles a cold smile, approving of the relish with which you describe the Westermen's deaths. \"Brave words indeed, for a mortal. But for elves to accede to your schemes and counsels, you must prove yourself worthy of our respect.\"||\"How may I do that?\"||\"Overcome my champion in a duel. Only then will we heed your words.\"">
 <CONSTANT CHOICES021 <LTABLE "use" "use" "accept his terms if you have neither">>
 
 <ROOM STORY021
@@ -337,7 +336,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT024 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated because they eat the farmers' crops,\" she syas. \"What do you say?\"">
+<CONSTANT TEXT024 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated because they eat the farmers' crops,\" she says. \"What do you say?\"">
 <CONSTANT CHOICES024 <LTABLE "say the ants are indeed pests and should be wiped out" "reply that the forest would choke and die if there were no ants to eat the dead leaves and wood" "use your knowledge">>
 
 <ROOM STORY024
@@ -350,7 +349,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT025 "The Chief of the Westermen describes his favourite toy to you. His eyes are shining with enthusiasm as he describes a great steam-powered machine of metal armour inside which a man can ride. The suit is as large as a giant and as powerful as a steam hammer, it can smash men to pulp or rend them limb from limb. The chief believes it works by magic.||\"It only has one weakness. Sever the line that connects it to the steam furnace and it dies. Only a real hero could stand up to The Steamer and do that, by the gods,\"||At that moment a visitor is announched. \"It is Valerian the Moon Druid, sire,\" says the herald. \"He says he has important news. Shall we let him come in?\"||\"Aye, let him enter.\" The speech of Westermen sounds guttural and uncouth, but you can understand their dialect. The man who enters is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak, but his hood is thrown back to reveal his hatchet-like face and pointed black goatee beard. He bows before the chief, then wrinkles his nose and stares at you.">
+<CONSTANT TEXT025 "The Chief of the Westermen describes his favourite toy to you. His eyes are shining with enthusiasm as he describes a great steam-powered machine of metal armour inside which a man can ride. The suit is as large as a giant and as powerful as a steam hammer, it can smash men to pulp or rend them limb from limb. The chief believes it works by magic.||\"It only has one weakness. Sever the line that connects it to the steam furnace and it dies. Only a real hero could stand up to The Steamer and do that, by the gods,\"||At that moment a visitor is announced. \"It is Valerian the Moon Druid, sire,\" says the herald. \"He says he has important news. Shall we let him come in?\"||\"Aye, let him enter.\" The speech of Westermen sounds guttural and uncouth, but you can understand their dialect. The man who enters is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak, but his hood is thrown back to reveal his hatchet-like face and pointed black goatee beard. He bows before the chief, then wrinkles his nose and stares at you.">
 <CONSTANT CHOICES025 <LTABLE "make your excuses and leave" "choose to stay and hear what news Valerian brings">>
 
 <ROOM STORY025
@@ -393,7 +392,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY500)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT029 "Valerian's attention is distracted by what the king is pointing out on the map. You inch quietly past the guards and towards the pavilion's porchway. Valerian looks up and his eyes narrow, then he cries out, \"There's something moving, they're getting away. I have the senses of a bat.\"||He points in your general dirction. The guards peer from him to where you stand, unable to make you out.">
+<CONSTANT TEXT029 "Valerian's attention is distracted by what the king is pointing out on the map. You inch quietly past the guards and towards the pavilion's porchway. Valerian looks up and his eyes narrow, then he cries out, \"There's something moving, they're getting away. I have the senses of a bat.\"||He points in your general direction. The guards peer from him to where you stand, unable to make you out.">
 <CONSTANT CHOICES029 <LTABLE "cast the Shield of Defence spell, if you think this is your best option" "otherwise make a run for the forest">>
 
 <ROOM STORY029
@@ -467,7 +466,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY068)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT035 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles and asks if you are feeling brave today.||You sense a sombre urgency behind her words, and, imitating a courtly bow, you reply, \"My lady, I have never felt more heroic!\"||\"Good. Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away happy and expect good fortune to turn up on a plate without them lifting a finger. If the soothsayer prophesies misfortune a sense of helplessness comes over people and they all too often sink into a despairing inactivity which leads to their downfall through sloth. Thus their prophecy is self-fulfulling. It is a well-known fact in Godorno that those soothsayers who always give good auguries are never short of customers, leading you to conclude that they often lie, pretending to see happy events when they should be giving bad news, good fortune when they should be giving bad tidings.||Your worry on this score, however, is soon gone. Looking in the basin of smooth clear water it seems as though an artist is hurriedly painting a picture of ghoulish horror.\"The water shows what will come to pass if you do not succeed in your quest,\" says Elanor.||The picture is complete now in terrible detail, as if you were actually looking at the burnt remains of the forest. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke. Two hundred paces away you see a forge where a gigantic cauldron is suspended over a bonfire; six men constantly feed the fire with wood and charcoal. All the men working there have very pale skins, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses harnessed together pull logs to where groups of men cut them up ready for burning. A row of children sit nearby; they are darker skinned than men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped, men are torching the underbrush. They seem intent on killing everything that lives in the forest. A pall of smoke hangs like a storm-cloud over the scene.||Then the vision shifts and the men have gone, leaving behind nothing but the grey ashes of death. All that remains of the forest is a few blackened stumps.">
+<CONSTANT TEXT035 "Elanor, today dressed in a silver gown of gossamer silk, turns to look at you searchingly as you walk underneath the hawthorn arch. She smiles and asks if you are feeling brave today.||You sense a sombre urgency behind her words, and, imitating a courtly bow, you reply, \"My lady, I have never felt more heroic!\"||\"Good. Do you dare to glimpse your future, my hero?\"||You have always avoided fortune-tellers. You have noticed that if a fortune-teller gives good news, people go away happy and expect good fortune to turn up on a plate without them lifting a finger. If the soothsayer prophesies misfortune a sense of helplessness comes over people and they all too often sink into a despairing inactivity which leads to their downfall through sloth. Thus their prophecy is self-fulfilling. It is a well-known fact in Godorno that those soothsayers who always give good auguries are never short of customers, leading you to conclude that they often lie, pretending to see happy events when they should be giving bad news, good fortune when they should be giving bad tidings.||Your worry on this score, however, is soon gone. Looking in the basin of smooth clear water it seems as though an artist is hurriedly painting a picture of ghoulish horror.\"The water shows what will come to pass if you do not succeed in your quest,\" says Elanor.||The picture is complete now in terrible detail, as if you were actually looking at the burnt remains of the forest. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke. Two hundred paces away you see a forge where a gigantic cauldron is suspended over a bonfire; six men constantly feed the fire with wood and charcoal. All the men working there have very pale skins, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses harnessed together pull logs to where groups of men cut them up ready for burning. A row of children sit nearby; they are darker skinned than men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped, men are torching the underbrush. They seem intent on killing everything that lives in the forest. A pall of smoke hangs like a storm-cloud over the scene.||Then the vision shifts and the men have gone, leaving behind nothing but the grey ashes of death. All that remains of the forest is a few blackened stumps.">
 
 <ROOM STORY035
     (IN ROOMS)
@@ -523,7 +522,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT040 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated beause the ants eat their crops. What do you say?\"">
+<CONSTANT TEXT040 "\"The hackers and burners, the men from the west, say the ants of the forest must be eradicated because the ants eat their crops. What do you say?\"">
 <CONSTANT CHOICES040 <LTABLE "say the ants are indeed pests and should be wiped out" "reply that the forest would choke and die if there were no ants to eat the dead leaves and wood" "use your knowledge">>
 
 <ROOM STORY040
@@ -536,7 +535,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-NONE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT041 "Elanor takes your hand once more and brushes the surface of the water again. The water is icy to your touch this time. A shiver of indefinable apprehension runs through you.||A new picture forms. Elves with bows throng the depths of the forest. They have pale green skin and hair the colour of rich red wine. They are sniping at the Westermen, unseen. Men fall in swathes, pierced by the elves' arrows, but the Westermen come on and on, advancing towards some unseen goal. The elves fall back; it seems they are looking to you to do something decisive.||A terrible figure stalks into view. You can't tell whether it is a man or some infernal magical machine. It looks like a full suit of armour, large enough for a giant of a man, that hisses steam at the joints. It bears a great sword which whistles through the air as it strides mechanically towards you.||The vision fades.||\"Your moment of truth, hero. You must be prepared to fight the smoking man. Remember this vision, saviour, it shows the way to success in your quest,\" she says.||She pauses before continuing, \"Tomorrow will be Midsummer's day. It is time for you to go in search of the elves. But, my hero you must be careful. Tell them you are a friend of mine and they might not kill you, for they sometimes shoota man dead with a single arrow before the hapless wanderer knows he is being watched. Harm neither hide nor leaf of the forest. Only by your feeling for nature will the elves judge you. Aside from that they are impartial. You could be a saint or a murderer among men, yet it would count for nothing among the elves.\"||When she is sure you know the way she bids you farewell with one last warning. \"The flute will be of no use to  you, for I cannot save you from the elves if you anger them. Farewell.\"">
+<CONSTANT TEXT041 "Elanor takes your hand once more and brushes the surface of the water again. The water is icy to your touch this time. A shiver of indefinable apprehension runs through you.||A new picture forms. Elves with bows throng the depths of the forest. They have pale green skin and hair the colour of rich red wine. They are sniping at the Westermen, unseen. Men fall in swathes, pierced by the elves' arrows, but the Westermen come on and on, advancing towards some unseen goal. The elves fall back; it seems they are looking to you to do something decisive.||A terrible figure stalks into view. You can't tell whether it is a man or some infernal magical machine. It looks like a full suit of armour, large enough for a giant of a man, that hisses steam at the joints. It bears a great sword which whistles through the air as it strides mechanically towards you.||The vision fades.||\"Your moment of truth, hero. You must be prepared to fight the smoking man. Remember this vision, saviour, it shows the way to success in your quest,\" she says.||She pauses before continuing, \"Tomorrow will be Midsummer's day. It is time for you to go in search of the elves. But, my hero you must be careful. Tell them you are a friend of mine and they might not kill you, for they sometimes shoot a man dead with a single arrow before the hapless wanderer knows he is being watched. Harm neither hide nor leaf of the forest. Only by your feeling for nature will the elves judge you. Aside from that they are impartial. You could be a saint or a murderer among men, yet it would count for nothing among the elves.\"||When she is sure you know the way she bids you farewell with one last warning. \"The flute will be of no use to  you, for I cannot save you from the elves if you anger them. Farewell.\"">
 
 <ROOM STORY041
     (IN ROOMS)
@@ -557,7 +556,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT043 "After several days of trekking west through the forest, and climbing towards uplands, you reach the edge of the Anvil Mountains. Climbing high above the treeline you can see the Forest of Arden laid out beneath you almost like a map. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the Lady of the Forest. As it is you have wasted too much time, and you are far out of your way.||You re-enter the forest, journeying along the paths between its great trees. After the few days, however, you start to find the fresh bodies of hundres of elves among the trees. It is as though they have all been slain instantly in the act of doing everyday things -- some while eating their supper. Whatever has caused this terrible has bereft the forest of life: it is doomed and so are you.">
+<CONSTANT TEXT043 "After several days of trekking west through the forest, and climbing towards uplands, you reach the edge of the Anvil Mountains. Climbing high above the treeline you can see the Forest of Arden laid out beneath you almost like a map. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the Lady of the Forest. As it is you have wasted too much time, and you are far out of your way.||You re-enter the forest, journeying along the paths between its great trees. After the few days, however, you start to find the fresh bodies of hundreds of elves among the trees. It is as though they have all been slain instantly in the act of doing everyday things -- some while eating their supper. Whatever has caused this terrible has bereft the forest of life: it is doomed and so are you.">
 
 <ROOM STORY043
     (IN ROOMS)
@@ -566,7 +565,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT044 "You travel on until you reach the next obstacle in your path: a tributary of the Sirion that is spanned by a rope bridge, the only means of crossing the water. The bridge has clearly been tended to recently, as bushes have been hacked back from the stancions between which it hangs. Tentatively, you step onto the bidge, which holds your weight but sags more and more as you approach its centre.||When you are half-way across, a waterspout erupts from the river beneath you, out of which flails a mass of vegetation ringed with fibrous tentacles. The water was thrown up by an Embracer, which plucks you from the bridge.">
+<CONSTANT TEXT044 "You travel on until you reach the next obstacle in your path: a tributary of the Sirion that is spanned by a rope bridge, the only means of crossing the water. The bridge has clearly been tended to recently, as bushes have been hacked back from the stanchions between which it hangs. Tentatively, you step onto the bridge, which holds your weight but sags more and more as you approach its centre.||When you are half-way across, a waterspout erupts from the river beneath you, out of which flails a mass of vegetation ringed with fibrous tentacles. The water was thrown up by an Embracer, which plucks you from the bridge.">
 <CONSTANT CHOICES044 <LTABLE "grab the tentacles" "slice through the tentacles" "do something else">>
 
 <ROOM STORY044
@@ -600,7 +599,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY003)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT047 "As you set foot on the hillock you are surprised by how hard the ground feels, although it yilds slightly as if a layer of hard rock were resting on mud. The ground is smooth and has a sheen to it: it only looked like grass. The egret stops its cackling and flies off.">
+<CONSTANT TEXT047 "As you set foot on the hillock you are surprised by how hard the ground feels, although it yields slightly as if a layer of hard rock were resting on mud. The ground is smooth and has a sheen to it: it only looked like grass. The egret stops its cackling and flies off.">
 <CONSTANT CHOICES047 <LTABLE "step back off the mound" "climb onwards">>
 
 <ROOM STORY047
@@ -612,7 +611,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT048 "Your sword cuts cleanly through the fibers, lopping the tentacles into pieces. The Embracer emits a piercing shriek and subsides once more into the river. You swim to the far bank before the man-eating monster can recover.">
+<CONSTANT TEXT048 "Your sword cuts cleanly through the fibres, lopping the tentacles into pieces. The Embracer emits a piercing shriek and subsides once more into the river. You swim to the far bank before the man-eating monster can recover.">
 
 <ROOM STORY048
     (IN ROOMS)
@@ -659,7 +658,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT052 "Knowing that he has just repulsed your attempt to take over his mind and knowing you to be defenceless, the left-hand image moves. It is the real King of the Elves, and he cass a spell of his own with a dramatic gesture. A luminous green halo pops forth from his fingertips. As it darts toward you the halo grows, and it encircles your waist before you can move. Your legs feel as if they have turned to jelly: you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cries the Elf king.">
+<CONSTANT TEXT052 "Knowing that he has just repulsed your attempt to take over his mind and knowing you to be defenceless, the left-hand image moves. It is the real King of the Elves, and he casts a spell of his own with a dramatic gesture. A luminous green halo pops forth from his fingertips. As it darts toward you the halo grows, and it encircles your waist before you can move. Your legs feel as if they have turned to jelly: you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cries the Elf king.">
 <CONSTANT CHOICES052 <LTABLE "submit" "try to fight on">>
 
 <ROOM STORY052
@@ -716,7 +715,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT057 "By the time you are directed to where the King of the Elves is preparing the defences, he is in position with his elven army in the trees around the Tree of Life itself.||The forest falls still. There are thousands of elves in the trees around the clearing but they make no sound. Even the animals and birds have fallen unnaturally silent. You look around and savour the beauty of this enchanted place, the fountain of all life. This may well be the last chance you ever have to revel in the natural glory of the Forest of Arden.||The sun breaks through the rolling clouds and bathes the clearing in brilliant light. The trumpets of the tree lilies swing round to greet the sun. You expect to hear the elves cheer at this good omen, but they remain grimly silent.||The oppresive din of the tramping of feet of thousands upon thousands of enemies grows inexorably closer. There is a crack like a firecracker as a tree is split and knocked to the ground by the passing of one of the great metallic monsters.">
+<CONSTANT TEXT057 "By the time you are directed to where the King of the Elves is preparing the defences, he is in position with his elven army in the trees around the Tree of Life itself.||The forest falls still. There are thousands of elves in the trees around the clearing but they make no sound. Even the animals and birds have fallen unnaturally silent. You look around and savour the beauty of this enchanted place, the fountain of all life. This may well be the last chance you ever have to revel in the natural glory of the Forest of Arden.||The sun breaks through the rolling clouds and bathes the clearing in brilliant light. The trumpets of the tree lilies swing round to greet the sun. You expect to hear the elves cheer at this good omen, but they remain grimly silent.||The oppressive din of the tramping of feet of thousands upon thousands of enemies grows inexorably closer. There is a crack like a firecracker as a tree is split and knocked to the ground by the passing of one of the great metallic monsters.">
 
 <ROOM STORY057
     (IN ROOMS)
@@ -725,7 +724,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY434)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT058 "\"A battle of wits?\" The Elf King rises to this like a cat confronted with a helpless mouse. \"Very well, let us set an impossible task. He who fails to achieve the task has lost the contest.\"||You are on the point of asserting that an impossible task by definition can never be achieved, but then you remember that elves abide by a contrary sort of logic. In any case, this is a test of your skill as a trickster. You nod your head. \"Agreed.\"||The Elf King looks about him, then picks up a stone from the ground. Plucking a thread from the hem of his robe, he holds it between thumb and forefinger and says, \"Be rigid.\" Instantly the thread staightens like a length of steel wire. \"Curl.\" adds the Elf King, and now the thread twists into a corkscrew shape. Finally, he says, \"Penetrate,\" and drives the thread into the stone. It winds right through as you might push a nail through a lump of butter. \"Return again to thread,\" says the Elf King, and he holds the stone up dangling on the limp thread.||You take it from him. \"And what am I to do?\"||\"Withdraw the silk from the stone,\" he says, \"Then thread it back through.\"||\"Easy enough.\" You pull out the thread, then go over to a tree where you moisten the end with a drop of sticky sap. Next you find an ant crawling amid the leaf litter and glue the thread to its abdomen with the sap. As the ant wriggles, you lower it over the hole in the stone. It takes several attempts, but finally the ant crawls into the tiny hole. The Elf King glowers inscrutably as you hold up the stone and wait. Knowing that the ant is unable to turn around, it is only a matter of time before it emerges from the other end of the hole. You detach the ant and hand the stone back to the Elf King -- once more with the skilk neatly threaded through it.||He casts it aside. \"Another task -\" He begins.||\"Now it is my turn to set a task,\" you protest. \"You have just set one.\"||\"That was by way of being an example of what was needed. Now we begin the contest proper.\"">
+<CONSTANT TEXT058 "\"A battle of wits?\" The Elf King rises to this like a cat confronted with a helpless mouse. \"Very well, let us set an impossible task. He who fails to achieve the task has lost the contest.\"||You are on the point of asserting that an impossible task by definition can never be achieved, but then you remember that elves abide by a contrary sort of logic. In any case, this is a test of your skill as a trickster. You nod your head. \"Agreed.\"||The Elf King looks about him, then picks up a stone from the ground. Plucking a thread from the hem of his robe, he holds it between thumb and forefinger and says, \"Be rigid.\" Instantly the thread staightens like a length of steel wire. \"Curl.\" adds the Elf King, and now the thread twists into a corkscrew shape. Finally, he says, \"Penetrate,\" and drives the thread into the stone. It winds right through as you might push a nail through a lump of butter. \"Return again to thread,\" says the Elf King, and he holds the stone up dangling on the limp thread.||You take it from him. \"And what am I to do?\"||\"Withdraw the silk from the stone,\" he says, \"Then thread it back through.\"||\"Easy enough.\" You pull out the thread, then go over to a tree where you moisten the end with a drop of sticky sap. Next you find an ant crawling amid the leaf litter and glue the thread to its abdomen with the sap. As the ant wriggles, you lower it over the hole in the stone. It takes several attempts, but finally the ant crawls into the tiny hole. The Elf King glowers inscrutably as you hold up the stone and wait. Knowing that the ant is unable to turn around, it is only a matter of time before it emerges from the other end of the hole. You detach the ant and hand the stone back to the Elf King -- once more with the silk neatly threaded through it.||He casts it aside. \"Another task -\" He begins.||\"Now it is my turn to set a task,\" you protest. \"You have just set one.\"||\"That was by way of being an example of what was needed. Now we begin the contest proper.\"">
 <CONSTANT CHOICES058 <LTABLE "agree to attempt another task that he sets you" "accept a more conventional duel if you think you might fail a second try">>
 
 <ROOM STORY058
@@ -746,7 +745,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT060 "Thea hairs on the nape of your neck begin to bristle as you step quietly between the Greenbark trees. You sens you are being watched.">
+<CONSTANT TEXT060 "Thea hairs on the nape of your neck begin to bristle as you step quietly between the Greenbark trees. You sense you are being watched.">
 <CONSTANT CHOICES060 <LTABLE "hide" "stop and look about you" "call out that you are Elanor's friend come in search of the immortal elves">>
 
 <ROOM STORY060
@@ -776,8 +775,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT063 "Deciding your best chance of success in the duel is to use unarmed combat, you inform the King of the Elves of your choice. He scowls at you, then looks about him for a champion.||One of the frew young elves walks forward. He is the only elf you have evver seen who  you could describe as reasonably well built. His muscles are long and well defined. You have noticed how swift and deft the other elves are, and noted their surprising wiry strength. The young elf could prove to be a difficult adversary.||He walks forward, rocking up onto the balls of his feet, like a sping-heeled Jack, looks towards the king and asks, \"Do we fight to the death, Lord? Have no fear for me.\"||\"You will duel iuntil one of you submits or is killed,\" answers the king. \"If you survive we have two of the Lady of the Forest's potions to revive those who are wounded.\"||Gathkeri walks to one side of the grassy circle and waits confidently with his arms folded in front of him. He appears to be concentrating hard and mumbling.">
-<CONSTANT CHOICES063 <LTABLE "take up your postion opposite Gathkeri" "try to get out of the duel by protesting to the king that you should be measured against your foes, the Westermen, not against the elves you have come to help">>
+<CONSTANT TEXT063 "Deciding your best chance of success in the duel is to use unarmed combat, you inform the King of the Elves of your choice. He scowls at you, then looks about him for a champion.||One of the few young elves walks forward. He is the only elf you have ever seen who  you could describe as reasonably well built. His muscles are long and well defined. You have noticed how swift and deft the other elves are, and noted their surprising wiry strength. The young elf could prove to be a difficult adversary.||He walks forward, rocking up onto the balls of his feet, like a spring-heeled Jack, looks towards the king and asks, \"Do we fight to the death, Lord? Have no fear for me.\"||\"You will duel until one of you submits or is killed,\" answers the king. \"If you survive we have two of the Lady of the Forest's potions to revive those who are wounded.\"||Gathkeri walks to one side of the grassy circle and waits confidently with his arms folded in front of him. He appears to be concentrating hard and mumbling.">
+<CONSTANT CHOICES063 <LTABLE "take up your position opposite Gathkeri" "try to get out of the duel by protesting to the king that you should be measured against your foes, the Westermen, not against the elves you have come to help">>
 
 <ROOM STORY063
     (IN ROOMS)
@@ -800,7 +799,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT065 "Your sudden rush takes him by surprise as he was preparing a spell. Just before you reach him he calls out the word \"Sanctuary\" in a ringing voice and claps his hands together. There is a second clap and he is gone. He has disappeared completely. YOu go to the door of the inn but there is no sign of him in the rain-lashed cobbled street.||Only the old woman in grey remains in the common room. She nods at you approvingly.">
+<CONSTANT TEXT065 "Your sudden rush takes him by surprise as he was preparing a spell. Just before you reach him he calls out the word \"Sanctuary\" in a ringing voice and claps his hands together. There is a second clap and he is gone. He has disappeared completely. You go to the door of the inn but there is no sign of him in the rain-lashed cobbled street.||Only the old woman in grey remains in the common room. She nods at you approvingly.">
 <CONSTANT CHOICES065 <LTABLE "sit at her table and talk to her" "take a room in the inn for the night">>
 
 <ROOM STORY065
@@ -878,7 +877,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT072 "You tell them of your quest to find the Tree of Knowledge in the Forest of Arden. The tallest of the two men introduces himself as Renard the Guide.||\"If you seek the Tree of Knowledge, you will need a guide. The forest hold many snares, and its ways are treacherous. If you enter there alone you'll surely perish. That or you'll be hopelessly lost, never to see tha lands of men again.\"||\"Ha!\" snorts the short man. \"Renard doesn't know the whereabouts of the tree you seek, I'll warrant.\"||The hunter turns away, quietly saying as his parting shot, \"About as much as you, Renard, and that's nothing at all.\" He walks over to the kitchen door to talk to the young woman who pours him a jug of beer.||Renard sits down at the table, pulls up a second chair, and gestures you to join him.">
+<CONSTANT TEXT072 "You tell them of your quest to find the Tree of Knowledge in the Forest of Arden. The tallest of the two men introduces himself as Renard the Guide.||\"If you seek the Tree of Knowledge, you will need a guide. The forest hold many snares, and its ways are treacherous. If you enter there alone you'll surely perish. That or you'll be hopelessly lost, never to see the lands of men again.\"||\"Ha!\" snorts the short man. \"Renard doesn't know the whereabouts of the tree you seek, I'll warrant.\"||The hunter turns away, quietly saying as his parting shot, \"About as much as you, Renard, and that's nothing at all.\" He walks over to the kitchen door to talk to the young woman who pours him a jug of beer.||Renard sits down at the table, pulls up a second chair, and gestures you to join him.">
 <CONSTANT CHOICES072 <LTABLE "ask him about the Tree of Knowledge" "learn about the other travellers in the inn">>
 
 <ROOM STORY072
@@ -899,7 +898,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT074 "You leap into the air but the dragon twitches its head away and you miss the target. With nothing to land on, you plumment twenty feet to the ground, landing almost underneath one of the creature's massive claws.">
+<CONSTANT TEXT074 "You leap into the air but the dragon twitches its head away and you miss the target. With nothing to land on, you plummet twenty feet to the ground, landing almost underneath one of the creature's massive claws.">
 
 <ROOM STORY074
     (IN ROOMS)
@@ -921,7 +920,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     )>
     <RETURN ,STORY074>>
 
-<CONSTANT TEXT075 "\"The Westermen hate spiders. They say the sppiders are ugly, poisonous and unnatural. To them spiders are the evil cratures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?">
+<CONSTANT TEXT075 "\"The Westermen hate spiders. They say the spiders are ugly, poisonous and unnatural. To them spiders are the evil creatures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?">
 <CONSTANT CHOICES075 <LTABLE "say there is no harm in killing spiders" "say it is bad to kill spiders">>
 
 <ROOM STORY075
@@ -981,7 +980,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <STORY-JUMP ,STORY459>
     )>>
 
-<CONSTANT TEXT079 "The dragon seems to read your mind. The monster flicks its tails and licks its lips.||\"Walk into the cavern and behold my hoard which has been garnered from palaces across the whole world. Many of my teasures are old, so very old, that they have a tale to tell.\"||The dragon bats you with a mighty claw, bowling you over so you fall to the ground. Once you have gotten back on your feet, the ancient creature ushers you forward into the dark cavern. Entering, you stop for a moment to adjust to the dim light. Blinking in astonishment, your jaw goes slack at the sight before you. You stare in awe at the veritable mountain of golden coins, goblets, candelabra and jewellery that comprise the dragon's treasure trove.||\"All the gold and jewels you can carry I give to you,\" says the dragon.||At the creature's words, some of the coins fly up into the air and push themselves against you. Soon you are covered in a golden crust which has gathered like barnacles do on the hull of a ship. Although your arms and legs are left free, you are terribly weighed down by the fortune that is now stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.">
+<CONSTANT TEXT079 "The dragon seems to read your mind. The monster flicks its tails and licks its lips.||\"Walk into the cavern and behold my hoard which has been garnered from palaces across the whole world. Many of my treasures are old, so very old, that they have a tale to tell.\"||The dragon bats you with a mighty claw, bowling you over so you fall to the ground. Once you have gotten back on your feet, the ancient creature ushers you forward into the dark cavern. Entering, you stop for a moment to adjust to the dim light. Blinking in astonishment, your jaw goes slack at the sight before you. You stare in awe at the veritable mountain of golden coins, goblets, candelabra and jewellery that comprise the dragon's treasure trove.||\"All the gold and jewels you can carry I give to you,\" says the dragon.||At the creature's words, some of the coins fly up into the air and push themselves against you. Soon you are covered in a golden crust which has gathered like barnacles do on the hull of a ship. Although your arms and legs are left free, you are terribly weighed down by the fortune that is now stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.">
 
 <ROOM STORY079
     (IN ROOMS)
@@ -1047,7 +1046,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT085 "She will not listen as you ask her to stop and she moves so lightly you have a hard time keeping up.||\"What have I done to upset you?\" you ask. \"I can't help it if I don't know the ways of the forest as you do. I've had a hard life on the streets of Godorno. I din't know what I would find here in the forest. Don't leave me here . . .\"||Your pleas are useless: you cannot change her mind.||She flits between a curtain of creepers and down a secret tunnel, leaving you with an inexplicably strong feeling of loss. You try to find the concealed opening, but after hours of fruitless searching you reluctantly admit you have no choice but to follow your own destiny.||You wander in the forest for many days, until you come across the bodies of hundreds of elves lying among the trees. They are like figures of clay, cold and limp without the spark of life. You realize that the most terrible of fates have come to pass: the Westermen have succeeded in destroying the heart of the forest. You slump to your knees in despair as you hear their engines of destruction cutting through the trees towards you. Soon you will share the doom of the elves.">
+<CONSTANT TEXT085 "She will not listen as you ask her to stop and she moves so lightly you have a hard time keeping up.||\"What have I done to upset you?\" you ask. \"I can't help it if I don't know the ways of the forest as you do. I've had a hard life on the streets of Godorno. I didn't know what I would find here in the forest. Don't leave me here . . .\"||Your pleas are useless: you cannot change her mind.||She flits between a curtain of creepers and down a secret tunnel, leaving you with an inexplicably strong feeling of loss. You try to find the concealed opening, but after hours of fruitless searching you reluctantly admit you have no choice but to follow your own destiny.||You wander in the forest for many days, until you come across the bodies of hundreds of elves lying among the trees. They are like figures of clay, cold and limp without the spark of life. You realize that the most terrible of fates have come to pass: the Westermen have succeeded in destroying the heart of the forest. You slump to your knees in despair as you hear their engines of destruction cutting through the trees towards you. Soon you will share the doom of the elves.">
 
 <ROOM STORY085
     (IN ROOMS)
@@ -1068,7 +1067,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT087 "A silver noose magically appears in the air before you and drops over your head. You try to drag the noose up and over your head, but the silvery cord tightens slowly until it flattens your windpipe. You grow purple owing to the lack of oxygen and the great effort you are putting into staying alive.||It is a futile struggle. Grugling horribly, unable even to speak, you subside into the floor and black out, never to regain consciousness.">
+<CONSTANT TEXT087 "A silver noose magically appears in the air before you and drops over your head. You try to drag the noose up and over your head, but the silvery cord tightens slowly until it flattens your windpipe. You grow purple owing to the lack of oxygen and the great effort you are putting into staying alive.||It is a futile struggle. Gurgling horribly, unable even to speak, you subside into the floor and black out, never to regain consciousness.">
 
 <ROOM STORY087
     (IN ROOMS)
@@ -1431,7 +1430,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <RETURN>>
 
-<CONSTANT TEXT119 "The archway leads into a tunnel that has been cut through the thick branches and thorns of the bell-shaped bush. You walk on towards the great open space that surrounds the trunk of the bush.||Looking back, however, you cannot make out the archway at all, even though it should be directly behind you. You press on anyway until you hear a chirruping litte voice say, \"Welcome, sirray, 'tis a pretty place to spend the rest of your days, is it not?\"||A strange little man the size of a small capuchin monkey sits cross-legged on a giant toadstool. Even in the dim light you can see the fungus is liver-spotted and looks poisonous.||\"Come, share my provender,\" invites the little man as he breaks off a piece of the toadstool on which he is sitting. He offers it to you. \"Share my provender, there is nothing more helpful to a hero than the flesh of the Blood of Iron toadstool.\" The little imp proffers it to you with an elaborate bow.">
+<CONSTANT TEXT119 "The archway leads into a tunnel that has been cut through the thick branches and thorns of the bell-shaped bush. You walk on towards the great open space that surrounds the trunk of the bush.||Looking back, however, you cannot make out the archway at all, even though it should be directly behind you. You press on anyway until you hear a chirruping little voice say, \"Welcome, sirrah, 'tis a pretty place to spend the rest of your days, is it not?\"||A strange little man the size of a small capuchin monkey sits cross-legged on a giant toadstool. Even in the dim light you can see the fungus is liver-spotted and looks poisonous.||\"Come, share my provender,\" invites the little man as he breaks off a piece of the toadstool on which he is sitting. He offers it to you. \"Share my provender, there is nothing more helpful to a hero than the flesh of the Blood of Iron toadstool.\" The little imp proffers it to you with an elaborate bow.">
 <CONSTANT CHOICES119 <LTABLE "take and eat the flesh" "try to kill the little man" "ask him to help you in your quest">>
 
 <ROOM STORY119
@@ -1476,7 +1475,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT123 "The King of the Elves draws a green silk veil from his waist, holds it up and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words rolling through your senses like ocean waves. As the veil falls it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from liimb, with the slow strength of growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight. Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
+<CONSTANT TEXT123 "The King of the Elves draws a green silk veil from his waist, holds it up and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words rolling through your senses like ocean waves. As the veil falls it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from limb, with the slow strength of growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight. Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
 
 <ROOM STORY123
     (IN ROOMS)
@@ -1485,7 +1484,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT124 "\"It is my intention to search for the Tree of Knowledge in the Forest of Arden,\" you announce in a firm clear voice.||As your eyes become accustomed to the gloom you can begin to make out details of those in the room. The black-cowled man merely stares inscrutably. A woman, old and weather-beaten, in a grey robe, looks up at you with interest. The two who were at the fire stand up and walk over to you. The shorter one has a face that reminds you of a bull-mastiff. \"Why would you seek the Tree of Knowledge?\" he asks. \"What use it is to you, a southerner?\"||\"Fool, don't speak to him of the tree,\" interrupts the man in black. \"All must be left as it is, nothing changed. The knowledge of the tree is lost to men and it is better that way.\"||The woman speaks with a clear voice that sounds too young for her age. \"You would have it that way. You are not at one with the forest. Because the tree sees your evil heart, you seek to keep its knowledge and pervert it.\"||\"You dare to say I am no friend of the forest?\" The black cowled man surges to his feet and the cowl slips back to reveal a bald head, a hatchet-thin face with a long black goatee beard and eyes of flint.||\"You lost your way in the forest many years ago.\"||\"I didn't need you to find me, old woman. You only dare challenge me now because you think these simpple folk of Burg can offer you protection.\"||\"You know full well I am at my strongest in the forest, Valerian,\" says the woman. \"The beasts follow me. They sense your evil.\"||\"There is a new power astir in the forest,\" he retorts. \"It will sweep you and all your bestial followers aside like chaff in the wind.\"||\"There is no cause to fill the hearts of good people of Burg with dismay. I know of what you speak . . .\"||He sneers. \"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must change -- or pass away.\"||Valerian speaks the last words in such dire tones that three townsfolk at the nearby table hastily leave the inn. Valerian himself twitches his cloak around him and follows them out, pausing to give you a last look as though committing your face to memory.">
+<CONSTANT TEXT124 "\"It is my intention to search for the Tree of Knowledge in the Forest of Arden,\" you announce in a firm clear voice.||As your eyes become accustomed to the gloom you can begin to make out details of those in the room. The black-cowled man merely stares inscrutably. A woman, old and weather-beaten, in a grey robe, looks up at you with interest. The two who were at the fire stand up and walk over to you. The shorter one has a face that reminds you of a bull-mastiff. \"Why would you seek the Tree of Knowledge?\" he asks. \"What use it is to you, a southerner?\"||\"Fool, don't speak to him of the tree,\" interrupts the man in black. \"All must be left as it is, nothing changed. The knowledge of the tree is lost to men and it is better that way.\"||The woman speaks with a clear voice that sounds too young for her age. \"You would have it that way. You are not at one with the forest. Because the tree sees your evil heart, you seek to keep its knowledge and pervert it.\"||\"You dare to say I am no friend of the forest?\" The black cowled man surges to his feet and the cowl slips back to reveal a bald head, a hatchet-thin face with a long black goatee beard and eyes of flint.||\"You lost your way in the forest many years ago.\"||\"I didn't need you to find me, old woman. You only dare challenge me now because you think these simple folk of Burg can offer you protection.\"||\"You know full well I am at my strongest in the forest, Valerian,\" says the woman. \"The beasts follow me. They sense your evil.\"||\"There is a new power astir in the forest,\" he retorts. \"It will sweep you and all your bestial followers aside like chaff in the wind.\"||\"There is no cause to fill the hearts of good people of Burg with dismay. I know of what you speak . . .\"||He sneers. \"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must change -- or pass away.\"||Valerian speaks the last words in such dire tones that three townsfolk at the nearby table hastily leave the inn. Valerian himself twitches his cloak around him and follows them out, pausing to give you a last look as though committing your face to memory.">
 <CONSTANT CHOICES124 <LTABLE "take a room at the inn for the night" "talk to some of the inn's inhabitants: choose between the hunter and guide who are by the fire" "the woman in grey">>
 
 <ROOM STORY124
@@ -1497,7 +1496,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT125 "Your parting makes the dragon wrinkle up its nose and there is a roar as it starts to sneeze. Its breath is a mixture of acide and poisonous gas. It hits you like a wave of blistering, burning pain. There is no surviving the brath of an ancient dragon.">
+<CONSTANT TEXT125 "Your parting makes the dragon wrinkle up its nose and there is a roar as it starts to sneeze. Its breath is a mixture of acid and poisonous gas. It hits you like a wave of blistering, burning pain. There is no surviving the breath of an ancient dragon.">
 
 <ROOM STORY125
     (IN ROOMS)
@@ -1516,7 +1515,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (ITEM EMERALD-RING)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT127 "A chameleon on a tree changes colour to pale yellow as you walk past it. A beautiful silKen-winged butterfly, black and scarlet, settles on your shoulder and spreads its wings in the sun. You are beginning to feel harmony with the forest at last. You journey on, hopeful and determined.">
+<CONSTANT TEXT127 "A chameleon on a tree changes colour to pale yellow as you walk past it. A beautiful silken-winged butterfly, black and scarlet, settles on your shoulder and spreads its wings in the sun. You are beginning to feel harmony with the forest at last. You journey on, hopeful and determined.">
 
 <ROOM STORY127
     (IN ROOMS)
@@ -1543,7 +1542,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY139)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT130 "\"The Tree of Knowledge grows alone out of a blue pool in the very centre of the forest. It is an ancient Geenbark tree with gold and silver leaves which are said never to fall.\"||\"Have you seen it?\" you ask Renard.||\"Once from a long way off. But I didn't dare talk to it.\"||\"It can talk? Is there anyone her ein Burg who has spoken with the tree?\" you ask, glancing at the other travellers in the inn.||\"No, no. The folk here are simple enough. Ask them about the tree and they'll likely make something up just to satisfy your asking. Now look, why don't you put up for the night at my house and we can set out at first light?\"||Renard seem skeen to take you away from the inn. Looking around you notice the old woman in grey seem sto be taking an interest in you.">
+<CONSTANT TEXT130 "\"The Tree of Knowledge grows alone out of a blue pool in the very centre of the forest. It is an ancient Greenbark tree with gold and silver leaves which are said never to fall.\"||\"Have you seen it?\" you ask Renard.||\"Once from a long way off. But I didn't dare talk to it.\"||\"It can talk? Is there anyone here in Burg who has spoken with the tree?\" you ask, glancing at the other travellers in the inn.||\"No, no. The folk here are simple enough. Ask them about the tree and they'll likely make something up just to satisfy your asking. Now look, why don't you put up for the night at my house and we can set out at first light?\"||Renard seems keen to take you away from the inn. Looking around you notice the old woman in grey seems to be taking an interest in you.">
 <CONSTANT CHOICES130 <LTABLE "go with Renard to his house" "stay and talk to the other travellers in the inn a while longer">>
 
 <ROOM STORY130
@@ -1555,7 +1554,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT131 "The path twists and turns, winding down through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed one before. The thin crooked branches that sprout from the top of the barrel-like boles remind you of terrified old men with their hair standing on end. To your dismay the path ends in a little clearing chocked with dead leaves with two paths leading off in different directions. Each is lined with thoRn bushes that have grown to the height of a man and are covered in inch-long purple barbs which ooze an orange fluid. The thorns would break off in your flesh if you brushed against them.">
+<CONSTANT TEXT131 "The path twists and turns, winding down through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed one before. The thin crooked branches that sprout from the top of the barrel-like boles remind you of terrified old men with their hair standing on end. To your dismay the path ends in a little clearing chocked with dead leaves with two paths leading off in different directions. Each is lined with thorn bushes that have grown to the height of a man and are covered in inch-long purple barbs which ooze an orange fluid. The thorns would break off in your flesh if you brushed against them.">
 <CONSTANT CHOICES131 <LTABLE "take the left-hand path" "take the right-hand path" "despair of ever finding a way out of the forest" "mark one of the great Gwelph trees by scraping away a patch of bark">>
 
 <ROOM STORY131
@@ -1567,7 +1566,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT132 "You have directed your spell against one of the king's images, not against the king himself. The image you have assailed disappears with a startling pop, but the elf has used the time he has gained to prepare another spell.||The King of the Elves draws a green silk veil from his waist and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words echoing through your senses. As the veil fallS it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from limb with the slow strength of their growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight.||Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
+<CONSTANT TEXT132 "You have directed your spell against one of the king's images, not against the king himself. The image you have assailed disappears with a startling pop, but the elf has used the time he has gained to prepare another spell.||The King of the Elves draws a green silk veil from his waist and lets it fall from in front of his eyes.||\"See your peril, mortal, and despair.\"||His words ring out as though your skull was a vast hollow chamber and the elf was exhorting you from within it, his words echoing through your senses. As the veil falls it is as if scales had dropped from your eyes. You see the forest for what it is, a hostile place, inimical to man. Everything around you is united against your intrusion. The plants will snare you and tear you limb from limb with the slow strength of their growth. The ants will eat you alive. Stinging insects will plague you and bears will maul you. You do indeed despair at the awful nature of your plight.||Losing reason you flee in fear. As the veil falls lightly to the ground, so the terror passes and you stop.||\"You have stepped outside the circle, mortal, and forfeited the duel. I am the victor,\" says the king.||His magic made you break the rules and lose.">
 
 <ROOM STORY132
     (IN ROOMS)
@@ -1626,7 +1625,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT138 "The toadstool is a dull red colour, spotted with purple. Underneath the soft gills are mauve. You ask nevously whether it is poisonous.||\"No, no, never, not poisonous, my dear, Oh no! The Kwerrel eats it every day.\"||It tastes surprisingly good; it almost melts in your mouth.||Quite soon, however, you begin to feel sleepy. You walk a few steps further then sit down with your back to the central trunk of the giant bush. Feeling warm, snug and content you fall into a deep sleep.">
+<CONSTANT TEXT138 "The toadstool is a dull red colour, spotted with purple. Underneath the soft gills are mauve. You ask nervously whether it is poisonous.||\"No, no, never, not poisonous, my dear, Oh no! The Kwerrel eats it every day.\"||It tastes surprisingly good; it almost melts in your mouth.||Quite soon, however, you begin to feel sleepy. You walk a few steps further then sit down with your back to the central trunk of the giant bush. Feeling warm, snug and content you fall into a deep sleep.">
 
 <ROOM STORY138
     (IN ROOMS)
@@ -1663,7 +1662,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT142 "This time your rush makes Gathkeri stumble back over a hummock and your lunge catches him. You start to wrestle, trying to throw him to the ground.">
-<CONSTANT CHOICES142 <LTABLE "try to throttle your opponent for your next manouvre" "try to throw him into the ground so that you land on top of him">>
+<CONSTANT CHOICES142 <LTABLE "try to throttle your opponent for your next manoeuvre" "try to throw him into the ground so that you land on top of him">>
 
 <ROOM STORY142
     (IN ROOMS)
@@ -1729,7 +1728,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT148 "As soon as the idea of killing the impish little man forms in your head, he bounds down from the toadstool.||\"It's mischief you're planning, is it? May your bones rot to feed the Umbellifer bush. I leave you its prisoner.\"||With that he rushes to the central trunk of the giant bush and scrambles up just as if he was a monkey, writhing sinously past the wicked barbed thorns. You could never follow such a difficult route. The little imp is soon lost to sight and you start to look for a way out of the bush.">
+<CONSTANT TEXT148 "As soon as the idea of killing the impish little man forms in your head, he bounds down from the toadstool.||\"It's mischief you're planning, is it? May your bones rot to feed the Umbellifer bush. I leave you its prisoner.\"||With that he rushes to the central trunk of the giant bush and scrambles up just as if he was a monkey, writhing sinuously past the wicked barbed thorns. You could never follow such a difficult route. The little imp is soon lost to sight and you start to look for a way out of the bush.">
 
 <ROOM STORY148
     (IN ROOMS)
@@ -1747,8 +1746,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY163)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT150 "You feign nonchalance as you walk on between the beautiful Greenbark trees, which every now and then let a golden leaf fall on your brow. Though you have been hit by several leaves you never see one falling. It is as if the gargantuan trees, with their trunks as wide as towers, have been shaken slightly by your footsteps.||A little way ahead there is a clearning from which you can hear the crackle of fire and see the orange flickering of flame. The sun must have set fire to the dried grass. Advancing closer, you see a chipmunk chittering in panic inside the closing ring of flames. A solid wall of fire surrounds the desperate little animal, a fire so strong that it would undoubtedly burn you horribly.">
-<CONSTANT CHOICES150 <LTABLE "brave the flames to save the chipmunk" "keep out of the clearing on the grounds that you will make an easy target thre">>
+<CONSTANT TEXT150 "You feign nonchalance as you walk on between the beautiful Greenbark trees, which every now and then let a golden leaf fall on your brow. Though you have been hit by several leaves you never see one falling. It is as if the gargantuan trees, with their trunks as wide as towers, have been shaken slightly by your footsteps.||A little way ahead there is a clearing from which you can hear the crackle of fire and see the orange flickering of flame. The sun must have set fire to the dried grass. Advancing closer, you see a chipmunk chittering in panic inside the closing ring of flames. A solid wall of fire surrounds the desperate little animal, a fire so strong that it would undoubtedly burn you horribly.">
+<CONSTANT CHOICES150 <LTABLE "brave the flames to save the chipmunk" "keep out of the clearing on the grounds that you will make an easy target there">>
 
 <ROOM STORY150
     (IN ROOMS)
@@ -1812,7 +1811,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
-<CONSTANT TEXT154 "\"Then tell your masters that Burg is a broken-down little hamlet soon to be swamped by the forest. Go and tell them there is nothing for them here.\"||The man in black steps forward. You can see a hatchet-shaped face inside the cowl of his robe and a pointed black goatee beard. He is flanked by the two who were by the fire.||\"We don't take to foreigners. You better leave Burg before we set the dogs on you.\"||It seems they think you are a spy sent out to find rich towns to pillage and despoil. You decide to leae while you can still walk.">
+<CONSTANT TEXT154 "\"Then tell your masters that Burg is a broken-down little hamlet soon to be swamped by the forest. Go and tell them there is nothing for them here.\"||The man in black steps forward. You can see a hatchet-shaped face inside the cowl of his robe and a pointed black goatee beard. He is flanked by the two who were by the fire.||\"We don't take to foreigners. You better leave Burg before we set the dogs on you.\"||It seems they think you are a spy sent out to find rich towns to pillage and despoil. You decide to leave while you can still walk.">
 
 <ROOM STORY154
     (IN ROOMS)
@@ -1830,7 +1829,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT156 "Crushed by despair you realize you will never find your way out of the forest. There is nothing you can eat here -- everything tastes og poison, even the dead leaves. You try eating some of the earwigs in the leaf litter but their blood burns your mouth like acid.||Beyond caring, you push your way into the undergrowth, heedless of the purple thorns that rip your flesh. The bushes are not as thick as you believed. You crash through into a dark avenue between tall slender trees growing so close together you cannot force your way between their trunks. Resigned to your fate you walk on down the avenue for what seems an age.||You start to pass bodies lying where they have fallen, one at a time, and then a forlorn-looking group, huddled together. Exhausted and starving like the others before, you give up hope and lie down to die.">
+<CONSTANT TEXT156 "Crushed by despair you realize you will never find your way out of the forest. There is nothing you can eat here -- everything tastes of poison, even the dead leaves. You try eating some of the earwigs in the leaf litter but their blood burns your mouth like acid.||Beyond caring, you push your way into the undergrowth, heedless of the purple thorns that rip your flesh. The bushes are not as thick as you believed. You crash through into a dark avenue between tall slender trees growing so close together you cannot force your way between their trunks. Resigned to your fate you walk on down the avenue for what seems an age.||You start to pass bodies lying where they have fallen, one at a time, and then a forlorn-looking group, huddled together. Exhausted and starving like the others before, you give up hope and lie down to die.">
 
 <ROOM STORY156
     (IN ROOMS)
@@ -1928,7 +1927,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT165 "Turning your back on a dragon is never wise. The ancient creature pins you to the ground beneath a huge claw. You look up from the massive green scaled claw to the smouldering red eyes thirty feet above. It wasn't as sleepy as you thought and now it thinks you were trying to kill it. The dragon opens its jaws wide and its stomach convulses. A second later a gout of poisonous gass and acid hit you like a wave. There is no surviving the breath of an ancient green dragon.">
+<CONSTANT TEXT165 "Turning your back on a dragon is never wise. The ancient creature pins you to the ground beneath a huge claw. You look up from the massive green scaled claw to the smouldering red eyes thirty feet above. It wasn't as sleepy as you thought and now it thinks you were trying to kill it. The dragon opens its jaws wide and its stomach convulses. A second later a gout of poisonous gas and acid hit you like a wave. There is no surviving the breath of an ancient green dragon.">
 
 <ROOM STORY165
     (IN ROOMS)
@@ -1937,7 +1936,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT166 "When you awake you are wonderfully restored to healthy vitality.||Elanor is nowhere to be seen. On the third finger of your right hand, however is an emerald ring with the stone set in a furled silver leaf. It fits perfectly. You get up, strech your limbs, and deep in thought, rub the gem.||You feel in your bones that it is your destiny to save the forest and that you will risk your life to do so. You suffer a moment's unease as you worry abovt the dangers ahead, an unease that turns to deep-rooted fear. Once more you look at the ring. Is it magical? Is it the ring  causing you to feel the reckless courage of a hero? Or did the blood of a hero always run in your veins?">
+<CONSTANT TEXT166 "When you awake you are wonderfully restored to healthy vitality.||Elanor is nowhere to be seen. On the third finger of your right hand, however is an emerald ring with the stone set in a furled silver leaf. It fits perfectly. You get up, stretch your limbs, and deep in thought, rub the gem.||You feel in your bones that it is your destiny to save the forest and that you will risk your life to do so. You suffer a moment's unease as you worry about the dangers ahead, an unease that turns to deep-rooted fear. Once more you look at the ring. Is it magical? Is it the ring  causing you to feel the reckless courage of a hero? Or did the blood of a hero always run in your veins?">
 <CONSTANT CHOICES166 <LTABLE "take of the ring" "leave the ring on if you trust Elanor">>
 
 <ROOM STORY166
@@ -1985,7 +1984,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT170 "You turn your back on the chittering chipmunk, leaving it to a fiery death. But you have taken no more than three steps before you hear the rushing whine of an arrow as it heads towards you.||You attempt to dodge the unseen attack, but your action is in vain. There is a terrible stabbing pain in the middle of your back and you are knocked to your knees by the force of the shot. Looking down, you see the sharp head of a deadly elven arrow portruding from your belly; your stomach convulses and you begin to cough up blood.||Out of the corner of one eye you can see your assailant: a tall, proud elf, who is standing between two great Greenbark trees. An arrow is already nocked ready for a second shot, but it proves unnecessary as the first has done its work. As your lifeblood spills onto the ground, the silent elf looks on without pity.">
+<CONSTANT TEXT170 "You turn your back on the chittering chipmunk, leaving it to a fiery death. But you have taken no more than three steps before you hear the rushing whine of an arrow as it heads towards you.||You attempt to dodge the unseen attack, but your action is in vain. There is a terrible stabbing pain in the middle of your back and you are knocked to your knees by the force of the shot. Looking down, you see the sharp head of a deadly elven arrow protruding from your belly; your stomach convulses and you begin to cough up blood.||Out of the corner of one eye you can see your assailant: a tall, proud elf, who is standing between two great Greenbark trees. An arrow is already nocked ready for a second shot, but it proves unnecessary as the first has done its work. As your lifeblood spills onto the ground, the silent elf looks on without pity.">
 
 <ROOM STORY170
     (IN ROOMS)
@@ -2050,7 +2049,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY380)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT176 "Apart from the hunter and the guide there are five other people in the room. Three sit together -- they look like ordinary townsfolk, suspicious but not dangerous.||Of the two others, one is a woman dressed in a grey travelling robe. The cowl is thrown back to reveal grey hair and a weather-beaten face. The remaining person is a sinister-looking man in a black floack whose face is hidden in the shadows of his cowl.">
+<CONSTANT TEXT176 "Apart from the hunter and the guide there are five other people in the room. Three sit together -- they look like ordinary townsfolk, suspicious but not dangerous.||Of the two others, one is a woman dressed in a grey travelling robe. The cowl is thrown back to reveal grey hair and a weather-beaten face. The remaining person is a sinister-looking man in a black cloak whose face is hidden in the shadows of his cowl.">
 <CONSTANT CHOICES176 <LTABLE "sit at the nearest table to the fire and talk to the hunter and guide" "join the woman dressed in grey" "have dealings with the sinister main in black">>
 
 <ROOM STORY176
@@ -2172,7 +2171,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT186 "You summon all your willpower and try to grapple with the machine in a battle of minds, your resolve weakend by the nagging fear that the machine doesn't have a will of its own.||To your surprise your magic tells you there is a mind within the machine -- one that belongs to the man who is controlling it. He is too busy working the machine to notice your attack, and when your psychic assault hits him, the machine grinds to a halt.||You sense his shift in attention from the machine to you. Although you hold the machine motionless for many moments, you fail to overpower the will of the man inside it, and at last he manages to throw the lever that sets the steam-hammer of a sword arm into motion again.||One last great blow splits the trunk in the middle and the Tree of Life is dead. Your hopes of saving the forest are destroyed; dejected you are taken prisoner and enslaved.">
+<CONSTANT TEXT186 "You summon all your willpower and try to grapple with the machine in a battle of minds, your resolve weakened by the nagging fear that the machine doesn't have a will of its own.||To your surprise your magic tells you there is a mind within the machine -- one that belongs to the man who is controlling it. He is too busy working the machine to notice your attack, and when your psychic assault hits him, the machine grinds to a halt.||You sense his shift in attention from the machine to you. Although you hold the machine motionless for many moments, you fail to overpower the will of the man inside it, and at last he manages to throw the lever that sets the steam-hammer of a sword arm into motion again.||One last great blow splits the trunk in the middle and the Tree of Life is dead. Your hopes of saving the forest are destroyed; dejected you are taken prisoner and enslaved.">
 
 <ROOM STORY186
     (IN ROOMS)
@@ -2181,7 +2180,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT187 "The Elf King crosses to a juniper bush and shakes it branches. \"Attend to my word,\" he says to the bush. \"Awaken -- speak. Tell me of a secret.\"||The bush speaks in a voice like sighing: \"Under my roots, a mole with a scarred forepaw, has just devoured an earthworm. No other know this secret until now.\"||The Elf King turns to you triumphantly. \"Well, mortal? Can you make the very plants themselves speak? If not, you forfeit the contest.\"||You go over to a tree and snap off a twig. \"I shall make this single twig tell a secret,\" you declare. \"And moreover, it will not be by magic, but in a manner that any man might use.\" So saying, you strike up a small fire among some dead leaves and char the end of the twig. Then, removing your shirt, you use the charred tip of the twig like a pencil. The elves gather round to whatch as you write: \"The Elf King's true name is --\"||\"Enough!\" The Elf King snatches the twig out of your hand. He casts it aside, an unsettled look clouding his silver-grey eyes. \"This is mere trickery. My next task will not be so easy to circumvent.\"">
+<CONSTANT TEXT187 "The Elf King crosses to a juniper bush and shakes it branches. \"Attend to my word,\" he says to the bush. \"Awaken -- speak. Tell me of a secret.\"||The bush speaks in a voice like sighing: \"Under my roots, a mole with a scarred forepaw, has just devoured an earthworm. No other know this secret until now.\"||The Elf King turns to you triumphantly. \"Well, mortal? Can you make the very plants themselves speak? If not, you forfeit the contest.\"||You go over to a tree and snap off a twig. \"I shall make this single twig tell a secret,\" you declare. \"And moreover, it will not be by magic, but in a manner that any man might use.\" So saying, you strike up a small fire among some dead leaves and char the end of the twig. Then, removing your shirt, you use the charred tip of the twig like a pencil. The elves gather round to watch as you write: \"The Elf King's true name is --\"||\"Enough!\" The Elf King snatches the twig out of your hand. He casts it aside, an unsettled look clouding his silver-grey eyes. \"This is mere trickery. My next task will not be so easy to circumvent.\"">
 <CONSTANT CHOICES187 <LTABLE "insist that it is your turn to set him a task" "let him set a third task">>
 
 <ROOM STORY187
@@ -2193,7 +2192,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT188 "These people look very wary of strangers. Whatever you say mustn't alarm them. They could easily be untrustworthy so you had better not mention the Tree of Knowledge. You loudly announce that you are searching for a rare kind of bird that you hope to find in the forest, the violet tanager. \"Can anyone guide me to the nest of such a bird?\" you ask, fingering your money-pouch significantly.||\"I know of no such bird in the forest. Indeed, I have never heard tell of a tanager that was violet.\" The voice of the woman in grey carries absolute certainty; she must be steeped in wilderness lore.||You explain it is a very rare bird mentioned in ancient manuscripts and ask about the birds she has seen in the forest.||She gestures you to join her table; she seems happy to talk to you all night about the forest. The man in black cowl stares at you all the while; his eyes look like glittering flints within his cowl. THe other two have returned to the fire.">
+<CONSTANT TEXT188 "These people look very wary of strangers. Whatever you say mustn't alarm them. They could easily be untrustworthy so you had better not mention the Tree of Knowledge. You loudly announce that you are searching for a rare kind of bird that you hope to find in the forest, the violet tanager. \"Can anyone guide me to the nest of such a bird?\" you ask, fingering your money-pouch significantly.||\"I know of no such bird in the forest. Indeed, I have never heard tell of a tanager that was violet.\" The voice of the woman in grey carries absolute certainty; she must be steeped in wilderness lore.||You explain it is a very rare bird mentioned in ancient manuscripts and ask about the birds she has seen in the forest.||She gestures you to join her table; she seems happy to talk to you all night about the forest. The man in black cowl stares at you all the while; his eyes look like glittering flints within his cowl. The other two have returned to the fire.">
 
 <ROOM STORY188
     (IN ROOMS)
@@ -2211,7 +2210,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY406)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT190 "\"No,\" you say loudly. \"The contest is over. I have won.\"||Huldranas was already in the act of notching another arrow to his bow. He assumed that you, like any elf, would immediately accede to the king's commands. Now he lowers the bow and looks around uncertainly.||\"Do you value pride above the truth?\" you demand of the assembled elves. \"Is this what has become of the legendary elves -- cloistered from the sight of other peoples, you turn your vision inwards and forget the values of honor, courtesy and courage?\"||Hundreds of faces stare back inscrutably from the gloom between the trees. The Elf King sweeps back his cloak in an extravagant gesture which reminds you of a sleek cat grooming itself. \"Very well, mortal,\" he says in a languid voice. \"You have won the contest. Now let us talk.\"">
+<CONSTANT TEXT190 "\"No,\" you say loudly. \"The contest is over. I have won.\"||Huldranas was already in the act of notching another arrow to his bow. He assumed that you, like any elf, would immediately accede to the king's commands. Now he lowers the bow and looks around uncertainly.||\"Do you value pride above the truth?\" you demand of the assembled elves. \"Is this what has become of the legendary elves -- cloistered from the sight of other peoples, you turn your vision inwards and forget the values of honour, courtesy and courage?\"||Hundreds of faces stare back inscrutably from the gloom between the trees. The Elf King sweeps back his cloak in an extravagant gesture which reminds you of a sleek cat grooming itself. \"Very well, mortal,\" he says in a languid voice. \"You have won the contest. Now let us talk.\"">
 
 <ROOM STORY190
     (IN ROOMS)
@@ -2220,7 +2219,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY232)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT191 "You whip an arrow to your bow and let fly. It splinters your oppenent's shaft in mid air before it reaches its target. You breathe a sigh, knowing that it was a one in a hundred fluke that you did not miss your target and end up humiliated.||The effect on Huldranas is deeply mysterious and utterly elfin. For a long moment he remains gazing along the arrow's flight, his bow half lowered, arm still poised in the moment of release. Then it is as if he wakes from a trance. Turning to you, he performs an elegant courtly salute, then snaps his bow across his knee and casts it aside along with his quiver. \"Henceforth I eschew the bow,\" he declares to the assembled elves. \"Huldranas will take his prey with spear or not at all. This is my geas.\"||He turns and stalks away. You regret the loss archery such a fine exponent of the art, but at least your daring risk has secured you victory. Now the elves will respect your words.">
+<CONSTANT TEXT191 "You whip an arrow to your bow and let fly. It splinters your opponent's shaft in mid air before it reaches its target. You breathe a sigh, knowing that it was a one in a hundred fluke that you did not miss your target and end up humiliated.||The effect on Huldranas is deeply mysterious and utterly elfin. For a long moment he remains gazing along the arrow's flight, his bow half lowered, arm still poised in the moment of release. Then it is as if he wakes from a trance. Turning to you, he performs an elegant courtly salute, then snaps his bow across his knee and casts it aside along with his quiver. \"Henceforth I eschew the bow,\" he declares to the assembled elves. \"Huldranas will take his prey with spear or not at all. This is my geas.\"||He turns and stalks away. You regret the loss archery such a fine exponent of the art, but at least your daring risk has secured you victory. Now the elves will respect your words.">
 
 <ROOM STORY191
     (IN ROOMS)
@@ -2247,7 +2246,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY173)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT194 "The dragon flicks its tail and licks its lips. \"Walk into the cavern and behold my hoard. It has been gernered from the palaces of the whole world. Many of my pieces are old, so very old, that they have a tale to tell.\"||The dragon rolls over so you fall to the ground on your feet. With a sweep of its massive claw, it ushers you forward into the dark cavern.||\"All the gold and jewels you can carry I give to you.\"||As you stare in awe at a pile of coins, goblets, candelabra and jewellery, some of the coins fly up into the air and push themselves against you. Soon they are covering you in a crust, like barnacles on the hull of a ship. They leave your arms and legs free but you are terribly weighed down by the gold that has stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.\"">
+<CONSTANT TEXT194 "The dragon flicks its tail and licks its lips. \"Walk into the cavern and behold my hoard. It has been garnered from the palaces of the whole world. Many of my pieces are old, so very old, that they have a tale to tell.\"||The dragon rolls over so you fall to the ground on your feet. With a sweep of its massive claw, it ushers you forward into the dark cavern.||\"All the gold and jewels you can carry I give to you.\"||As you stare in awe at a pile of coins, goblets, candelabra and jewellery, some of the coins fly up into the air and push themselves against you. Soon they are covering you in a crust, like barnacles on the hull of a ship. They leave your arms and legs free but you are terribly weighed down by the gold that has stuck to you. You try to prise the coins away but they are stuck fast by the magic of the dragon.\"">
 
 <ROOM STORY194
     (IN ROOMS)
@@ -2305,7 +2304,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 
 <CONSTANT TEXT199 "The ants' bites are poisonous.">
 <CONSTANT TEXT199-CONTINUED "You have already suffered dozens of wounds by the time you reach a large pond in a dark hollow. Throwing caution to the winds and driven by the tormenting pain of the bites, you plunge into the water and immerse yourself where you tear off your clothes.||The torment ceases as the ants drown and float to the surface, and although the venom makes you feel drowsy you manage to drag yourself towards the pond's edge.||Just as you are about to hand yourself out of the water, you feel a huge water snake coiling around your legs.">
-<CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despare to the owl in case it is still nearby and prepared to forgive and help you">>
+<CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despair to the owl in case it is still nearby and prepared to forgive and help you">>
 
 <ROOM STORY199
     (IN ROOMS)
@@ -2350,7 +2349,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT202 "These men look well armed and well fed. They are probably veterans of many campaigns but their jowls and their paunches have grown a little flabby from lack of exercise here in the forest. The chief hired them to protect the camp against the elves, but so far, the fey sylvan elves have done nothing to hinder the Westermen and the guards have led an indolent life with nothing more to do than keep the slaves in check. Still, there are eight of them and all are armed with sowrds and protected by corslets of mail.">
+<CONSTANT TEXT202 "These men look well armed and well fed. They are probably veterans of many campaigns but their jowls and their paunches have grown a little flabby from lack of exercise here in the forest. The chief hired them to protect the camp against the elves, but so far, the fey sylvan elves have done nothing to hinder the Westermen and the guards have led an indolent life with nothing more to do than keep the slaves in check. Still, there are eight of them and all are armed with swords and protected by corslets of mail.">
 <CONSTANT CHOICES202 <LTABLE "use" "use" "use" "use" "otherwise if you have none of these skills">>
 
 <ROOM STORY202
@@ -2492,7 +2491,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT213 "You tackle her before she can leap through the hatch and, pinioning her arms behind her back, tie her to a vine that is growing in and out of the walls of the tree house.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do they do?\" you ask urgently.||There are five potions on the shelf behind her. There is a clear cherry-red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloud sea-blue fluid in a phial and a glass pot that contains layers of coloured earth.||Elanor starts to explain what each does. \"The blue fluid, if quaffed in sunlight, will heall all save the most serious of hurts.\" As she says the word \"hurts\" the back of your wrist is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is mulch of fire lizar's gizzard, a deadly poison.\"||You are stung twice more, on the leg and the neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees' stings feel like those of hornets.">
+<CONSTANT TEXT213 "You tackle her before she can leap through the hatch and, pinioning her arms behind her back, tie her to a vine that is growing in and out of the walls of the tree house.||\"What do you hope to gain by this?\" she asks.||\"The potions, what do they do?\" you ask urgently.||There are five potions on the shelf behind her. There is a clear cherry-red liquid in a wax-stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloud sea-blue fluid in a phial and a glass pot that contains layers of coloured earth.||Elanor starts to explain what each does. \"The blue fluid, if quaffed in sunlight, will heal all save the most serious of hurts.\" As she says the word \"hurts\" the back of your wrist is stung by a bee. Elanor seems not to notice and goes on talking about the potions.||\"This black tarry goo is mulch of fire lizard's gizzard, a deadly poison.\"||You are stung twice more, on the leg and the neck. More bees fly into the tree-house, buzzing angrily. You can't stand being stung like this for much longer. The bees' stings feel like those of hornets.">
 <CONSTANT CHOICES213 <LTABLE "quickly ask about the red liquid" "the white jelly" "the bands of coloured earth in the hope that one of them will protect against the insects" "grab the phial of blue fluid and drink it">>
 
 <ROOM STORY213
@@ -2731,7 +2730,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <STORY-JUMP ,STORY256>
     )>>
 
-<CONSTANT TEXT233 "The sotone misses the owl, which veers into the top of a tree. It clings on to a branch there and struggles upright, then while preening its ruffled feathers says, \"The curse of the Grey Touch be upon you, for striking at the servant of the Lady of Grey.\" The owl swoops down past you back to the forest.">
+<CONSTANT TEXT233 "The stone misses the owl, which veers into the top of a tree. It clings on to a branch there and struggles upright, then while preening its ruffled feathers says, \"The curse of the Grey Touch be upon you, for striking at the servant of the Lady of Grey.\" The owl swoops down past you back to the forest.">
 
 <ROOM STORY233
     (IN ROOMS)
@@ -2873,8 +2872,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CODEWORD CODEWORD-TWINHEAD)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT245 "Your sword skill triumphs. The elf dodges the feinted thrust but succumbs to the cut that drives your blade into his stomach; he staggers and you finish him off with a single chop across the back of the head.||Drawing brath, you listen for others, realizing that at any moment you may be picked off by the arrows of his kind.">
-<CONSTANT TEXT245-CONTINUED "You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees. This is not elven architecture. It is the firest sign of man since you entered the Forest of Arden.">
+<CONSTANT TEXT245 "Your sword skill triumphs. The elf dodges the feinted thrust but succumbs to the cut that drives your blade into his stomach; he staggers and you finish him off with a single chop across the back of the head.||Drawing breath, you listen for others, realizing that at any moment you may be picked off by the arrows of his kind.">
+<CONSTANT TEXT245-CONTINUED "You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees. This is not elven architecture. It is the first sign of man since you entered the Forest of Arden.">
 
 <ROOM STORY245
     (IN ROOMS)
@@ -2930,7 +2929,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
-<CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose antoehr spell. There is little point in casting casting Vanish.">
+<CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose another spell. There is little point in casting casting Vanish.">
 <CONSTANT CHOICES249 <LTABLE "cast Choking Fog" "Visceral Disruption or Bafflement" "Shield of Defense" "Tower of Will">>
 
 <ROOM STORY249
@@ -2942,7 +2941,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT250 "\"Why do you stare at me so? Are you trying to turn me to stone?\" asks the elf. He grins at you but you notice he is quivering tensely.||\"I'm not letting you slip away,\" you say, \"I have travelled far to find you and now that I have, you will not talk to me.\"||\"Why should I talk to a mortal? You know so little, one might as well talk to a mole or a dung beetle. You cannot hope to understand us and the way of the world.\"||\"In any case I'm not taking my eyes off you.\"||The elf's skin seems to fade almost to pearly white as you say this. He sits crossleged in front of you. \"Then I'll just have to wait for you to go to sleep.\" He feigns nonchalance but seems very uncomfortable under your gaze. At last he says \"Tie me up if you must, but release me from your stare or I shall go mad.\"||It seems your gaze alone holds him in thrall. Fascinating. You ask him what power you have over him.||\"An elf can never turn his back when looked on by mortal eyes. Your gaze entraps us as surely as if you had shackled us in cold iron. This is why we shun mankind, and rarely show ourselves. There, you have forced the secret from my lips. Will you look away and release me now?\"">
+<CONSTANT TEXT250 "\"Why do you stare at me so? Are you trying to turn me to stone?\" asks the elf. He grins at you but you notice he is quivering tensely.||\"I'm not letting you slip away,\" you say, \"I have travelled far to find you and now that I have, you will not talk to me.\"||\"Why should I talk to a mortal? You know so little, one might as well talk to a mole or a dung beetle. You cannot hope to understand us and the way of the world.\"||\"In any case I'm not taking my eyes off you.\"||The elf's skin seems to fade almost to pearly white as you say this. He sits crosslegged in front of you. \"Then I'll just have to wait for you to go to sleep.\" He feigns nonchalance but seems very uncomfortable under your gaze. At last he says \"Tie me up if you must, but release me from your stare or I shall go mad.\"||It seems your gaze alone holds him in thrall. Fascinating. You ask him what power you have over him.||\"An elf can never turn his back when looked on by mortal eyes. Your gaze entraps us as surely as if you had shackled us in cold iron. This is why we shun mankind, and rarely show ourselves. There, you have forced the secret from my lips. Will you look away and release me now?\"">
 <CONSTANT CHOICES250 <LTABLE "look away out of kindness" "demand that the elf takes you to meet his king">>
 
 <ROOM STORY250
@@ -3001,7 +3000,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (EVENTS STORY254-EVENTS)
     (DEATH T)
     (FLAGS LIGHTBIT)>
-    
+
 <ROUTINE STORY254-EVENTS ()
     <GIVE-ITEM ,POTION-CLOUDY-BLUE>
     <RETURN ,STORY254>>
@@ -3009,7 +3008,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY254-PRECHOICE ()
     <LOSE-LIFE 1 "You have died from thorn scratches." ,STORY254>>
 
-<CONSTANT TEXT255 "\"I submit!\" you cry. \"You are the victor.\"||The King of the Elves looks at you with contempt. \"Such magics as you can muster will not prevail over the Westermen. Leave the forest. You have a week to clear the edge of the forest or your life will be forefeit.\"">
+<CONSTANT TEXT255 "\"I submit!\" you cry. \"You are the victor.\"||The King of the Elves looks at you with contempt. \"Such magics as you can muster will not prevail over the Westermen. Leave the forest. You have a week to clear the edge of the forest or your life will be forfeit.\"">
 
 <ROOM STORY255
     (IN ROOMS)
@@ -3019,7 +3018,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT256 "Later, seated in a ring with the elven elders, you are planning your defence of the Tree of Life when a messenger runs into the clearing and bows to the king. \"The Westermen are moving, sire, in two columns. They are heading for the Tree of Life -- more men than there are ants in a Gwelph tree.\"||\"How long will they take to reach the Tree of Life?\" you ask.||\"Three days, perhaps four, no more.\"||\"How long will it take to marshal all your elves?\" you ask anxiously.||He returns a bleak time-haunted look. \"A week; it can't be done in less. The forest is so large . . .\"||You must think of a way of delaying the Westermen until the elves are ready.">
-<CONSTANT CHOICES256 <LTABLE "try to assasinate the chief of the Westermen" "journey to the Bonehill to talk with the dragon" "lead as many elves as you can muster into pitched battle before the Tree of Life">>
+<CONSTANT CHOICES256 <LTABLE "try to assassinate the chief of the Westermen" "journey to the Bonehill to talk with the dragon" "lead as many elves as you can muster into pitched battle before the Tree of Life">>
 
 <ROOM STORY256
     (IN ROOMS)
@@ -3060,7 +3059,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT259 "You walk slowly on past a blue cedar that stands beside a tall poplar tree. The trees are festooned with climbing plants and a spiral of violet wistaria climbs the poplar likea barber's pole. The forest seems to quieten around you as you push under a hanging curtain of clematis and honeysuckle and enter a small clearing which is a beautifully tended garden. An inner ring of fruit trees surrounds the meadow-like garden, which is lit with bright sun that bathes the wings of butterflies and dragonflies glittering with iridescent hues. Behind a large pool in the meadow is a gnarled old holm-oak tree with a ladder leading up to tree-house.||The owl is perched on top of the tree-house. \"I told you it wasn't far. If only you didn't walk so slowly.\"||\"Enough; do not chide. We must make our visitor welcome.\" A woman in a pearl-grey robe pulls aside a curtain at the top of the ladder and beckons you welcomingly. She is young and very beautiful. You find her appearance startling. Who would have expected to encounter such loveliness in this remote place? Looking upon one so serene makes you think of the fabled Faerie Queen.">
+<CONSTANT TEXT259 "You walk slowly on past a blue cedar that stands beside a tall poplar tree. The trees are festooned with climbing plants and a spiral of violet wistaria climbs the poplar like a barber's pole. The forest seems to quieten around you as you push under a hanging curtain of clematis and honeysuckle and enter a small clearing which is a beautifully tended garden. An inner ring of fruit trees surrounds the meadow-like garden, which is lit with bright sun that bathes the wings of butterflies and dragonflies glittering with iridescent hues. Behind a large pool in the meadow is a gnarled old holm-oak tree with a ladder leading up to tree-house.||The owl is perched on top of the tree-house. \"I told you it wasn't far. If only you didn't walk so slowly.\"||\"Enough; do not chide. We must make our visitor welcome.\" A woman in a pearl-grey robe pulls aside a curtain at the top of the ladder and beckons you welcomingly. She is young and very beautiful. You find her appearance startling. Who would have expected to encounter such loveliness in this remote place? Looking upon one so serene makes you think of the fabled Faerie Queen.">
 
 <ROOM STORY259
     (IN ROOMS)
@@ -3078,7 +3077,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <STORY-JUMP ,STORY310>
     )>>
 
-<CONSTANT TEXT260 "Climbing a rise you look out over a scene of utter devastation. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke and two hundred yards away you see a forge with a gigantic cauldron over a bonfire which six men feed constantly with ready-cut wood and charcoal. The men working here are very pale skinned, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses yoked together pull logs to where groups of men cut them up with saws ready for burning. A row of children sit nearby; they are darker skinned than the men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped men are torching the underbrush to kill everything that lives in the forest. A pall of smoke hangs over everything like a storm-cloud.||The men haven't noticed you yet. There is a group of armed gauards near the forge who sport more steel armour than you have ever seen. These men must be wealthy. They also look bored and edgy.">
+<CONSTANT TEXT260 "Climbing a rise you look out over a scene of utter devastation. The trees have been chopped down as far as the eye can see. An infernal engine of some kind belches black smoke and two hundred yards away you see a forge with a gigantic cauldron over a bonfire which six men feed constantly with ready-cut wood and charcoal. The men working here are very pale skinned, their faces long and thin, like hatchets. They shout to each other over the din of the engine in a language you don't understand.||Teams of horses yoked together pull logs to where groups of men cut them up with saws ready for burning. A row of children sit nearby; they are darker skinned than the men and have been set to toil over sharpening the saws.||Where the trees have been felled and stripped men are torching the underbrush to kill everything that lives in the forest. A pall of smoke hangs over everything like a storm-cloud.||The men haven't noticed you yet. There is a group of armed guards near the forge who sport more steel armour than you have ever seen. These men must be wealthy. They also look bored and edgy.">
 <CONSTANT CHOICES260 <LTABLE "show yourself and talk to them" "sink back into the forest and hide">>
 
 <ROOM STORY260
@@ -3175,7 +3174,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT267 "Your charm of friendship works. The egret flies up into the air, arcs round you in a graceful curve and comes to land on your head. It has stopped its cackling. You start to climb the hillock with the white egret balancing on your head. As you set foot on the hillock you are surprised at how hard the ground feels, yet it yields slightly as if a layer of hard rock was resting on mud. The ground is smooth and has a sheen: it only looked like grass. You climb on up the hillock and reaching the summit, look down on its far side which is ribbed and ridged in the most unusual way. It dawns on you that the thing you are standing on is a gargantuan dragon. You can see its head, the size of a cart, curled up next to its feet as it slumberes. It seems not to have noticed you crawling like a fly over its great body.">
+<CONSTANT TEXT267 "Your charm of friendship works. The egret flies up into the air, arcs round you in a graceful curve and comes to land on your head. It has stopped its cackling. You start to climb the hillock with the white egret balancing on your head. As you set foot on the hillock you are surprised at how hard the ground feels, yet it yields slightly as if a layer of hard rock was resting on mud. The ground is smooth and has a sheen: it only looked like grass. You climb on up the hillock and reaching the summit, look down on its far side which is ribbed and ridged in the most unusual way. It dawns on you that the thing you are standing on is a gargantuan dragon. You can see its head, the size of a cart, curled up next to its feet as it slumbers. It seems not to have noticed you crawling like a fly over its great body.">
 <CONSTANT CHOICES267 <LTABLE "climb down its head and slay it" "attempt to wake it up and perhaps talk with it, for they say some dragons can talk">>
 
 <ROOM STORY267
@@ -3262,7 +3261,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT275 "Without waiting to hear your answer the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily.||\"Not yet,\" you caution. \"Drink only at need when you are hurt and need a magical healing.\" The Kwerrel stops drinking and examines the joint of his thumb carefully.||\"It is working: you tell the truth, my thumb is healed.\" He sucks on it happily. \"Take some of the flesh of the toadstool. It is the Blood of Iron taodstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||You take a large piece of the flesh of the toadstool and, bidding goodbye to the little imp, you walk back out into the forest.">
+<CONSTANT TEXT275 "Without waiting to hear your answer the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily.||\"Not yet,\" you caution. \"Drink only at need when you are hurt and need a magical healing.\" The Kwerrel stops drinking and examines the joint of his thumb carefully.||\"It is working: you tell the truth, my thumb is healed.\" He sucks on it happily. \"Take some of the flesh of the toadstool. It is the Blood of Iron toadstool. Make an infusion with elderflower wine and give it to any being you wish to drug into sleep. They will sleep the sleep of the damned. Look, now I open the archway for you to leave.\"||You take a large piece of the flesh of the toadstool and, bidding goodbye to the little imp, you walk back out into the forest.">
 
 <ROOM STORY275
     (IN ROOMS)
@@ -3298,7 +3297,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY260)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT278 "Your spell, which should have stunned the egret and sent it to sleep for a while, goes off much more strongly than you expected. There is an explosion and a cloud of white feathers flutters to the charred earth, all that remains of the white egret. The report rolls around the valley, echoing ominously. The hillock begins to shake as if in an earthquake. The ground you have stepped back on is quite firm but you can feel the vibrations rocking you slightly. Then the whole of the green hillock rolls upwards and away from you, leaving you standing on the edge of a leedge with a twenty-foot drop. As the hillock moves it creases and splits apart and you realize what it is. It turns its great scaly neck like a corkscrew and looks back over its shoulder at you. You are looking into the face of a dragon; the smouldering red eyes gaze at you like the portals to hell out of its cart-sized face">
+<CONSTANT TEXT278 "Your spell, which should have stunned the egret and sent it to sleep for a while, goes off much more strongly than you expected. There is an explosion and a cloud of white feathers flutters to the charred earth, all that remains of the white egret. The report rolls around the valley, echoing ominously. The hillock begins to shake as if in an earthquake. The ground you have stepped back on is quite firm but you can feel the vibrations rocking you slightly. Then the whole of the green hillock rolls upwards and away from you, leaving you standing on the edge of a ledge with a twenty-foot drop. As the hillock moves it creases and splits apart and you realize what it is. It turns its great scaly neck like a corkscrew and looks back over its shoulder at you. You are looking into the face of a dragon; the smouldering red eyes gaze at you like the portals to hell out of its cart-sized face">
 <CONSTANT CHOICES278 <LTABLE "leap at its head to attack it before it can wake up" "smile at it and hope it doesn't eat you , while preparing a spell, if you know how">>
 
 <ROOM STORY278
@@ -3310,8 +3309,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeper groan and beg for mercy.||Soon the awful sights and sounds of the Westermen camp are far behind.">
-<CONSTANT CHOICES279 <LTABLE "head weast" "east" "south-west" "south">>
+<CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeeper groan and beg for mercy.||Soon the awful sights and sounds of the Westermen camp are far behind.">
+<CONSTANT CHOICES279 <LTABLE "head west" "east" "south-west" "south">>
 
 <ROOM STORY279
     (IN ROOMS)
@@ -3341,7 +3340,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT282 "\"How am I to find my way back out of the forest?\" asks Pozzo. \"I am a man of the town. I was lost before the Westermen dogs captured me. I'll never see Burg or my poor daughter again without your help.\"">
-<CONSTANT CHOICES282 <LTABLE "change your mind and take the time needed to escort him to Burg" "tell him to walk until he finds a river and then to follow that river towards the seaa and he will one day escape the forest">>
+<CONSTANT CHOICES282 <LTABLE "change your mind and take the time needed to escort him to Burg" "tell him to walk until he finds a river and then to follow that river towards the sea and he will one day escape the forest">>
 
 <ROOM STORY282
     (IN ROOMS)
@@ -3466,7 +3465,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT293 "The mesmerizing look in Zorolotl's eyes is gone: they are dimmed with pain. He has lost so much blood he can hardly see straight. Realizing he cannot fight on, Zorolotl submits to you, saying you are the victor in the duel. A young elf runs up with the potions for both of you  to drink which he assures you will restory you to complete health.">
+<CONSTANT TEXT293 "The mesmerizing look in Zorolotl's eyes is gone: they are dimmed with pain. He has lost so much blood he can hardly see straight. Realizing he cannot fight on, Zorolotl submits to you, saying you are the victor in the duel. A young elf runs up with the potions for both of you  to drink which he assures you will restore you to complete health.">
 
 <ROOM STORY293
     (IN ROOMS)
@@ -3550,7 +3549,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY069)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT301 "You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the  . You have failed to meet the elves on Midsummer's Day.">
+<CONSTANT TEXT301 "You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they recede into the depths of the  . You have failed to meet the elves on Midsummer's Day.">
 <CONSTANT CHOICES301 <LTABLE "try again tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
 
 <ROOM STORY301
@@ -3598,7 +3597,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT305 "You thell the chief it was very pleasant to meet up with an old friend again and wish him well, then take your leave.||As you walk towards the porch a man dressed in a black cloak walks brusquely past the guards, who obviously recognize him. The visitor is announced. \"It is Valerian the Moon Druid, sire, he says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding, but you can understand their dialect.||It is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak bit his hood is thrown back to reveal the hatchet-like face and the pointed black goatee. He bows before the chief, then wrinkles his nose and stares at you.">
+<CONSTANT TEXT305 "You tell the chief it was very pleasant to meet up with an old friend again and wish him well, then take your leave.||As you walk towards the porch a man dressed in a black cloak walks brusquely past the guards, who obviously recognize him. The visitor is announced. \"It is Valerian the Moon Druid, sire, he says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding, but you can understand their dialect.||It is the man you first saw in the inn at Burg. He is still dressed in the black travelling cloak bit his hood is thrown back to reveal the hatchet-like face and the pointed black goatee. He bows before the chief, then wrinkles his nose and stares at you.">
 <CONSTANT CHOICES305 <LTABLE "continue on your way" "stay and hear what important news Valerian brings">>
 
 <ROOM STORY305
@@ -3695,7 +3694,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT314 "As you set foot on the hillock you are surprised at how hard the ground feels, yet it yields slightly, as if a layer of hard rock was resting on mud. The ground is smooth and has a sheen. It only looked like grass. You climb on up the hillock and reaching the summit, look down on its far side which is ribbed and ridged in the most unusual way. It dawns on you that the thing you are standing on is a gargantuan dragon. You can see its head, the size of a cart, curled up net to its feet as it slumbers. It seems not to have noticed you crawling like a fly over its great body.">
-<CONSTANT CHOICES314 <LTABLE "climb down to its head and slay it" "attmpt to wake it up and perhaps talk with it, for they say some dragons can talk">>
+<CONSTANT CHOICES314 <LTABLE "climb down to its head and slay it" "attempt to wake it up and perhaps talk with it, for they say some dragons can talk">>
 
 <ROOM STORY314
     (IN ROOMS)
@@ -3885,7 +3884,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT330 "You look away for a moment then sneak a look bak towards the elf for a moment. You are too late. In a blink of the eye the last elf has vanished. You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they reced into the depths of the forest. You have failed to meet the elves on Midsummer's Day.">
+<CONSTANT TEXT330 "You look away for a moment then sneak a look back towards the elf for a moment. You are too late. In a blink of the eye the last elf has vanished. You stomp through the undergrowth calling and searching but the only answer is the high mocking laughter of the elves as they recede into the depths of the forest. You have failed to meet the elves on Midsummer's Day.">
 <CONSTANT CHOICES330 <LTABLE "Try to meet the elves tomorrow" "abandon all hope of persuading the elves to help save their own forest">>
 
 <ROOM STORY330
@@ -3897,7 +3896,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT331 "The elf leads you as he said he would, never once attempting to escape and leave you lost in the depths of the forest. It is ajourney of several hours through secret ways and tunnels. You notice him kmaking signs now and again and realize he must be communicating with others of his kind, though you can see no one in the trees.">
+<CONSTANT TEXT331 "The elf leads you as he said he would, never once attempting to escape and leave you lost in the depths of the forest. It is a journey of several hours through secret ways and tunnels. You notice him making signs now and again and realize he must be communicating with others of his kind, though you can see no one in the trees.">
 <CONSTANT CHOICES331 <LTABLE "kill him before he can lead you into a trap" "just follow in his footsteps">>
 
 <ROOM STORY331
@@ -3909,7 +3908,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT332 "\"The mortal speaks the truth. If the forest is killed the whole world will die. It will not be the time of men but the time of death and desolation, the end of all things.\"||\"But what can we do? we number thousands but the Westermen come in hundreds of thousands.\"||\"Would you rather fight bravely, and show that you value the beauty that is your home? Or will you stand idly by and let the time of death and desolation come to the forest? I beg you to take up your bows and fight these cruel Wstermen, not just for your own sake, but for all the world. We all need the forest in order to live.\"">
+<CONSTANT TEXT332 "\"The mortal speaks the truth. If the forest is killed the whole world will die. It will not be the time of men but the time of death and desolation, the end of all things.\"||\"But what can we do? we number thousands but the Westermen come in hundreds of thousands.\"||\"Would you rather fight bravely, and show that you value the beauty that is your home? Or will you stand idly by and let the time of death and desolation come to the forest? I beg you to take up your bows and fight these cruel Westermen, not just for your own sake, but for all the world. We all need the forest in order to live.\"">
 
 <ROOM STORY332
     (IN ROOMS)
@@ -3928,7 +3927,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (COST 1)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT334 "Time has run out for the innkeeper. The next kick ruptures his spleen and the guard, swearig viciously, kicks him twice more then leaves him to bleed to death inwardly. There is nothing you can do for him. Thinking sadly of the poor innkeeper's daughter you turn your back on the camp of the Westermen and return to the forest. Soon the awful sights and sounds of the Westermen camp are far behind.">
+<CONSTANT TEXT334 "Time has run out for the innkeeper. The next kick ruptures his spleen and the guard, swearing viciously, kicks him twice more then leaves him to bleed to death inwardly. There is nothing you can do for him. Thinking sadly of the poor innkeeper's daughter you turn your back on the camp of the Westermen and return to the forest. Soon the awful sights and sounds of the Westermen camp are far behind.">
 
 <ROOM STORY334
     (IN ROOMS)
@@ -3938,7 +3937,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DESTINATIONS FOUR-DESTINATIONS)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT335 "Before you can complete the train of thought you need for your spell, the King of the Elves has done so. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It encircles your wast before you can move. Your legs feel as if they have turned to jelly and you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cried the King of the Elves.">
+<CONSTANT TEXT335 "Before you can complete the train of thought you need for your spell, the King of the Elves has done so. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It encircles your waist before you can move. Your legs feel as if they have turned to jelly and you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cried the King of the Elves.">
 <CONSTANT CHOICES335 <LTABLE "submit" "try to fight on">>
 
 <ROOM STORY335
@@ -3950,7 +3949,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT336 "Three townsfolk leave you as you curtly tell the man in black to mind his own business. The hunter and guide standing near the fire retreat into the kitchen. The woman in grey reaches for a gnarled old staff lying beneath her table and speaks for the first time. \"Mind your temper, Valerian. I wil protect this stranger even if I must kill you.\"||\"You push your luck, old woman. What is the stranger to me? No one can hold up the progress of time. There is a new power astir in the forest. It will sweep you and all your beastly followers aside, like chaff in the wind.\"||\"There is no cause to fill the hearts of the good people of Burg with dismay. I know of what you speak.\"||\"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must pass away and change.\" Valerian speaks the last words in such dire tones that the hunter, listening from behind the kitchen door, slams it shut in fear.||Valerian twitches his cloak around him and leaves abruptly, pausing only to look once more at you, as though committing your face to memory.">
+<CONSTANT TEXT336 "Three townsfolk leave you as you curtly tell the man in black to mind his own business. The hunter and guide standing near the fire retreat into the kitchen. The woman in grey reaches for a gnarled old staff lying beneath her table and speaks for the first time. \"Mind your temper, Valerian. I will protect this stranger even if I must kill you.\"||\"You push your luck, old woman. What is the stranger to me? No one can hold up the progress of time. There is a new power astir in the forest. It will sweep you and all your beastly followers aside, like chaff in the wind.\"||\"There is no cause to fill the hearts of the good people of Burg with dismay. I know of what you speak.\"||\"Much good may the knowledge do you, old one. Haven't you heard the song of the wind? The time of man has come to the forest. All must pass away and change.\" Valerian speaks the last words in such dire tones that the hunter, listening from behind the kitchen door, slams it shut in fear.||Valerian twitches his cloak around him and leaves abruptly, pausing only to look once more at you, as though committing your face to memory.">
 <CONSTANT CHOICES336 <LTABLE "ask for a room in the inn for the night" "sit at the table with the woman dressed in grey">>
 
 <ROOM STORY336
@@ -3962,7 +3961,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT337 "The chief does not seem surprised you want to talk about what he calls the Tree of Life. He has been thinking about it himself a great deal. It seems he can't make up his mind whether to believe what Valerian the Moon Druid has told him. Valerian maintains the Tree of Life is the core of the elves' immortality. He counsels the chief to dstroy the tree.||The chief is still talking animatedly when Valerian himself is ushered into the pavilion and announced by a guard. He is still wearing an all-enveloping black robe but its hood is thrown back to reveal his hatchet-like features and black goatee beard.||\"It is Valerian the Moon Druid, sire. He says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding but you can understand their dialect.||It is the man you first saw in the inn at Burg. He bows before the chief, then wrinkles his nose and stares in your general direction.||\"I have driven off the tree bears, you will have no more trouble from them.\" He sniffs again and moves his head from side to side while fixing his gaze just above your head, giving him a most comical air. The chief spreads out the map of the forest and his advisers gather round, almost blocking your exit.||Despite the risk, you wait to see if you can find out what they are planning.">
+<CONSTANT TEXT337 "The chief does not seem surprised you want to talk about what he calls the Tree of Life. He has been thinking about it himself a great deal. It seems he can't make up his mind whether to believe what Valerian the Moon Druid has told him. Valerian maintains the Tree of Life is the core of the elves' immortality. He counsels the chief to destroy the tree.||The chief is still talking animatedly when Valerian himself is ushered into the pavilion and announced by a guard. He is still wearing an all-enveloping black robe but its hood is thrown back to reveal his hatchet-like features and black goatee beard.||\"It is Valerian the Moon Druid, sire. He says he has important news. Shall we let him come in?\"||\"Aye, let him.\" The speech of the Westermen is guttural and uncouth-sounding but you can understand their dialect.||It is the man you first saw in the inn at Burg. He bows before the chief, then wrinkles his nose and stares in your general direction.||\"I have driven off the tree bears, you will have no more trouble from them.\" He sniffs again and moves his head from side to side while fixing his gaze just above your head, giving him a most comical air. The chief spreads out the map of the forest and his advisers gather round, almost blocking your exit.||Despite the risk, you wait to see if you can find out what they are planning.">
 
 <ROOM STORY337
     (IN ROOMS)
@@ -3971,14 +3970,14 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY004)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT338 "As you speak the elf stoops, scopps up a handful of dirt and rotting leaves and hurls it into your face. You duck just in time and the handful of dirt spatters against a trunk behind you. Seizing our chance you shoulder-charge the elf who is still trapped against the tween trees, and wrestle him to the ground. Feeling your strength, the elf surrenders to you and says he will take you to meet the elf lord.">
+<CONSTANT TEXT338 "As you speak the elf stoops, scoops up a handful of dirt and rotting leaves and hurls it into your face. You duck just in time and the handful of dirt spatters against a trunk behind you. Seizing our chance you shoulder-charge the elf who is still trapped against the twin trees, and wrestle him to the ground. Feeling your strength, the elf surrenders to you and says he will take you to meet the elf lord.">
 
 <ROOM STORY338
     (IN ROOMS)
     (DESC "338")
     (STORY TEXT338)
     (CONTINUE STORY331)
-    (PREHOICE STORY338-PRECHOICE)
+    (PRECHOICE STORY338-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY338-PRECHOICE ()
@@ -4046,7 +4045,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT344 "You submit and Zorolotl holds his sword aloft in triumph. They give you a potion to drink which makes your body tingle excruciatingly but which cures you of all your wonds.">
+<CONSTANT TEXT344 "You submit and Zorolotl holds his sword aloft in triumph. They give you a potion to drink which makes your body tingle excruciatingly but which cures you of all your wounds.">
 
 <ROOM STORY344
     (IN ROOMS)
@@ -4101,7 +4100,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT349 "The nearby elves look at you with horror. They had conunted on you as their saviour in the moment of direst danger. The Infernal Statue strikes slowly forward until it reaches the gigantic tree, dwarfed by it yet horribly menacing. The great sword rises and falls hewing great gashes out of the trunk. The elves moan as green sap begins to ooze rapidly from the scored Greenbark. There is a crash of thunder overhead and the horrible scene is plunged in gloom. You haven't long to act. The Infernal Statue will soon mortally wound the tree, and the Westermen are howling with fearful glee.">
+<CONSTANT TEXT349 "The nearby elves look at you with horror. They had counted on you as their saviour in the moment of direst danger. The Infernal Statue strikes slowly forward until it reaches the gigantic tree, dwarfed by it yet horribly menacing. The great sword rises and falls hewing great gashes out of the trunk. The elves moan as green sap begins to ooze rapidly from the scored Greenbark. There is a crash of thunder overhead and the horrible scene is plunged in gloom. You haven't long to act. The Infernal Statue will soon mortally wound the tree, and the Westermen are howling with fearful glee.">
 <CONSTANT CHOICES349 <LTABLE "use" "use" "use" "do something else">>
 
 <ROOM STORY349
@@ -4127,7 +4126,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT351 "You have lost a lot of blood and the effort of fighting with such blood loss is making you dizzy. As Zorolotl moves carefully in to the attack again, your vision blurs.">
-<CONSTANT CHOICES351 <LTABLE "give up and submit, amitting you have lost the duel" "fight on against the odds">>
+<CONSTANT CHOICES351 <LTABLE "give up and submit, admitting you have lost the duel" "fight on against the odds">>
 
 <ROOM STORY351
     (IN ROOMS)
@@ -4138,7 +4137,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT352 "You cast the charm but the Lady in Grey just smiles at you. \"You cannot ensorcel me. I could ensorcel you, but that would not be to purpose. Use your skills in the camp of the Westermen, not on me.\" She is not impressed by your attemt to charm here.">
+<CONSTANT TEXT352 "You cast the charm but the Lady in Grey just smiles at you. \"You cannot ensorcel me. I could ensorcel you, but that would not be to purpose. Use your skills in the camp of the Westermen, not on me.\" She is not impressed by your attempt to charm here.">
 
 <ROOM STORY352
     (IN ROOMS)
@@ -4147,7 +4146,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY009)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT353 "The Elf King is retching helplessy on the forest floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. You hurriedly speak the word of negation and the king begins to recover. You have won the duel.">
+<CONSTANT TEXT353 "The Elf King is retching helplessly on the forest floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. You hurriedly speak the word of negation and the king begins to recover. You have won the duel.">
 
 <ROOM STORY353
     (IN ROOMS)
@@ -4183,11 +4182,11 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "356")
     (STORY TEXT356)
-    (CONINUE STORY301)
+    (CONTINUE STORY301)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT357 "You draw the sword back and cut fast at Zorolotl's shoulder but he has time to regain his balance and skip lightly past your sword cut. The wavy edge of his blade runs against your thigh.">
-<CONSTANT TEXT357-CONTINUED "Your red blood stains the ground; your fot feels hot and wet from the blood which soaks it. You jump back, en garde once more.">
+<CONSTANT TEXT357-CONTINUED "Your red blood stains the ground; your foot feels hot and wet from the blood which soaks it. You jump back, en garde once more.">
 
 <ROOM STORY357
     (IN ROOMS)
@@ -4207,7 +4206,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <CRLF>
     )>>
 
-<CONSTANT TEXT358 "You say you remember the serving wench all right but you can't quite conjure up her name.||\"She was never at the Reaver's. That's the girl from Rainbow's End.\" The gleam in his eyes dims a moment to be replaced by a piercing look of low cunning. \"I don't think I rember you at all. Guards.\"||You run for the exit to the porch but the guards cross heir halberds in front of you, barring your way.">
+<CONSTANT TEXT358 "You say you remember the serving wench all right but you can't quite conjure up her name.||\"She was never at the Reaver's. That's the girl from Rainbow's End.\" The gleam in his eyes dims a moment to be replaced by a piercing look of low cunning. \"I don't think I remember you at all. Guards.\"||You run for the exit to the porch but the guards cross heir halberds in front of you, barring your way.">
 <CONSTANT CHOICES358 <LTABLE "surrender" "fight">>
 
 <ROOM STORY358
@@ -4253,7 +4252,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT362 "Speaking the word you clench your fist, imagining you are twisting and crushing the entrails of the Infernal Statue. The machine does not buckle or hold its stomach, as must a man affected by this puissant spell. Instead it lurches past the tree, then circles and lurches forward again, towards the deep blue bpool. The cries of the Westermen die to silence and you can hear a muffled groaning from somewhere inside the Infernal Statue. It totters on the brink of the pool and then keels over into the water. There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
+<CONSTANT TEXT362 "Speaking the word you clench your fist, imagining you are twisting and crushing the entrails of the Infernal Statue. The machine does not buckle or hold its stomach, as must a man affected by this puissant spell. Instead it lurches past the tree, then circles and lurches forward again, towards the deep blue pool. The cries of the Westermen die to silence and you can hear a muffled groaning from somewhere inside the Infernal Statue. It totters on the brink of the pool and then keels over into the water. There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
 
 <ROOM STORY362
     (IN ROOMS)
@@ -4274,7 +4273,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT364 "Your hurried stab pierces his clothing and thick green blood stains the tip of your blade. You have danced back out of range once again and you look to see if the wound will make Zorolotl submit. That souldering look is still there in your eyes. The mandrake root he has eaten has indeed made him immune to pain.">
+<CONSTANT TEXT364 "Your hurried stab pierces his clothing and thick green blood stains the tip of your blade. You have danced back out of range once again and you look to see if the wound will make Zorolotl submit. That smouldering look is still there in your eyes. The mandrake root he has eaten has indeed made him immune to pain.">
 <CONSTANT CHOICES364 <LTABLE "circle to the left of him" "to the right of him" "meet him head on">>
 
 <ROOM STORY364
@@ -4429,8 +4428,8 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
 <ROUTINE STORY375-PRECHOICE ()
     <LOSE-LIFE 6 "You have died from your injuries." ,STORY375>>
 
-<CONSTANT TEXT376 "Somehow you kill one and leap over his falling body before it hits the ground. One stumbles over his slain brother in arms and balks  those trying to follow. You escape to a nearby rock; from the saftey of which you scan the battle. The elves are at work with their arrows which zip and whine through the air, taking a terrible toll on the Westermen. The men's captains are driving them on out of the trees with whips.||The Infernal Statue lurches remorselessly towards the Tree of Life, its heavy step making the earth tremble. Its sword arm rises and falls like a piston as it hacks into the trunk of the great Greenbark tree. Thick green sap runs from the scores in the bark and there is another groan from the elves.">
-<CONSTANT CHOICES376 <LTABLE "attack the machine before it klls the tree" "try to reach the hose that connects it to the huge twenty-wheeled boiler behind it">>
+<CONSTANT TEXT376 "Somehow you kill one and leap over his falling body before it hits the ground. One stumbles over his slain brother in arms and balks  those trying to follow. You escape to a nearby rock; from the safety of which you scan the battle. The elves are at work with their arrows which zip and whine through the air, taking a terrible toll on the Westermen. The men's captains are driving them on out of the trees with whips.||The Infernal Statue lurches remorselessly towards the Tree of Life, its heavy step making the earth tremble. Its sword arm rises and falls like a piston as it hacks into the trunk of the great Greenbark tree. Thick green sap runs from the scores in the bark and there is another groan from the elves.">
+<CONSTANT CHOICES376 <LTABLE "attack the machine before it kills the tree" "try to reach the hose that connects it to the huge twenty-wheeled boiler behind it">>
 
 <ROOM STORY376
     (IN ROOMS)
@@ -4481,7 +4480,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY390)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT380 "Drawing breah you listen for others, realizing at any moment you may be picked off by the arrows of his kind. You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees.">
+<CONSTANT TEXT380 "Drawing breath you listen for others, realizing at any moment you may be picked off by the arrows of his kind. You hurry quickly through the dense underbrush and stumble across a very strange old monument covered in creepers and partially knocked down by a fallen pine. It must once have been a great victory arch, perhaps built here before the forest itself grew here, or to commemorate a victory against rebels who had hidden out in the trees.">
 
 <ROOM STORY380
     (IN ROOMS)
@@ -4581,7 +4580,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT388 "Until it sopped to watch you the white egret was definitely feeding. Egrets eat insects but there certainly wouldn't be many insects on the surface of a copper statue, no matter how green with age. You can only conclude that the colossus lying bfore you is not a statue but a sleeping dragon.">
+<CONSTANT TEXT388 "Until it sopped to watch you the white egret was definitely feeding. Egrets eat insects but there certainly wouldn't be many insects on the surface of a copper statue, no matter how green with age. You can only conclude that the colossus lying before you is not a statue but a sleeping dragon.">
 <CONSTANT CHOICES388 <LTABLE "retreat hurriedly into the bog and let sleeping dragons lie" "go down into the valley and approach the monster">>
 
 <ROOM STORY388
@@ -4665,7 +4664,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT395 "You speak the word and bring forth the Choking Fog around the Infernal Machine. But why have you used this spell against a machine that doesn't breathe but is powered by steam? The steam rushing from vents in the head dissipates the fog, and still the piston-like sword arm of the machine slices into the tree sending splinters of green wood into the air. You are wasting prcious time. Now is your last chance to save the tree.">
+<CONSTANT TEXT395 "You speak the word and bring forth the Choking Fog around the Infernal Machine. But why have you used this spell against a machine that doesn't breathe but is powered by steam? The steam rushing from vents in the head dissipates the fog, and still the piston-like sword arm of the machine slices into the tree sending splinters of green wood into the air. You are wasting precious time. Now is your last chance to save the tree.">
 <CONSTANT CHOICES395 <LTABLE "cast Bafflement" "Visceral Disruption" "Tower Will">>
 
 <ROOM STORY395
@@ -4701,7 +4700,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT398 "All is quiet behind you but you do not look back. Renard is anxious to leave the monster far behind and sets a cracking pace through the forest. The path is difficult, overgrown and boggy. You make slow progress for many hours until nightfall.||The noises of the forest seem to intensify with the night: there is buzzing, clicking, croaking, and the hoot of a lone owl to keep you company. Finding a dry place to rest is not easy but at last you find a mound of earth on which you can settle down.||\"Not there!\" exclaims Renard. \"That mound is the cap of the burrow of a Colossus beetle.\"||Renard selects a place for you to camp for the night on a slope that climbs gradually away from the river. You take your calfskin boots off and wash your feet in a stream that winds between the trees. The boots are soaked wet and your feet shows signs of a green mould which you wash off carefully. You are relieved when Renard says your journey on the morrow will take you up out of the river valley to drier parts.||\"My journey?\" you ask. \"What about you?\"||\"This is where I leave you. In the morning I will start back to Burg. You owe me six pieces of gold. Three days out, three days back. Tomorrow, walk past that old yew tree and go on, always seeking the higher ground. If you do that you will find what you seek at the hill top.\"||\"Why not guide me further?\"||\"I want to live a long time. Nothing would make me face the terrors of the Bonehill.\" Renard is adamant he will go no futher.">
+<CONSTANT TEXT398 "All is quiet behind you but you do not look back. Renard is anxious to leave the monster far behind and sets a cracking pace through the forest. The path is difficult, overgrown and boggy. You make slow progress for many hours until nightfall.||The noises of the forest seem to intensify with the night: there is buzzing, clicking, croaking, and the hoot of a lone owl to keep you company. Finding a dry place to rest is not easy but at last you find a mound of earth on which you can settle down.||\"Not there!\" exclaims Renard. \"That mound is the cap of the burrow of a Colossus beetle.\"||Renard selects a place for you to camp for the night on a slope that climbs gradually away from the river. You take your calfskin boots off and wash your feet in a stream that winds between the trees. The boots are soaked wet and your feet shows signs of a green mould which you wash off carefully. You are relieved when Renard says your journey on the morrow will take you up out of the river valley to drier parts.||\"My journey?\" you ask. \"What about you?\"||\"This is where I leave you. In the morning I will start back to Burg. You owe me six pieces of gold. Three days out, three days back. Tomorrow, walk past that old yew tree and go on, always seeking the higher ground. If you do that you will find what you seek at the hill top.\"||\"Why not guide me further?\"||\"I want to live a long time. Nothing would make me face the terrors of the Bonehill.\" Renard is adamant he will go no further.">
 <CONSTANT CHOICES398 <LTABLE "pay Renard the price agreed" "say that you will not pay him unless he takes you to the top of Bonehill">>
 
 <ROOM STORY398
@@ -4791,7 +4790,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT406 "Sweat is pouring off you as you press through thick undergrowth, searching for the camp of the WEstermen. It is unnaturally hot here even though you  occasionally glimpse the midday sun through gaps in the leaf canopy. The vegetation is lush and the ground spongy. Ants scuttle over everything. Here and there you see clumps of them swarming all over each other, eating hapless small creatures that have strayed.||As you push through thick ferns, brushing ants off as you go, there is a sudden whooshing noise ahead and to the left, followed by a strange loud gurgling. It sounded for all the world like a dragon. If you are near the Bonehill you must be serveral days' travel further east than you thought.">
+<CONSTANT TEXT406 "Sweat is pouring off you as you press through thick undergrowth, searching for the camp of the Westermen. It is unnaturally hot here even though you  occasionally glimpse the midday sun through gaps in the leaf canopy. The vegetation is lush and the ground spongy. Ants scuttle over everything. Here and there you see clumps of them swarming all over each other, eating hapless small creatures that have strayed.||As you push through thick ferns, brushing ants off as you go, there is a sudden whooshing noise ahead and to the left, followed by a strange loud gurgling. It sounded for all the world like a dragon. If you are near the Bonehill you must be several days' travel further east than you thought.">
 
 <ROOM STORY406
     (IN ROOMS)
@@ -4824,7 +4823,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <RETURN>>
 
-<CONSTANT TEXT408 "As you skirt the dead valley you can see the white egret standing atop the green hillock in the distance, watching you. As you slowly make pgrogress you begin to see the other side of the hillock. It is creased and folded in a strange way. Then it hits you, it is so large you couldn't see it for what it was. Viewed from this side of the hillock, it looks like a gargantuan copper statue, green with verdigris. There is a huge head tucked up next to massive claws. It is a statue of a dragon.">
+<CONSTANT TEXT408 "As you skirt the dead valley you can see the white egret standing atop the green hillock in the distance, watching you. As you slowly make progress you begin to see the other side of the hillock. It is creased and folded in a strange way. Then it hits you, it is so large you couldn't see it for what it was. Viewed from this side of the hillock, it looks like a gargantuan copper statue, green with verdigris. There is a huge head tucked up next to massive claws. It is a statue of a dragon.">
 <CONSTANT CHOICES408 <LTABLE "investigate it" "enter the bogland and leave the monolithic statue behind">>
 
 <ROOM STORY408
@@ -4860,7 +4859,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY380)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT411 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming-birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Bridges of tree-houses spanning the gaps between the Greenbark's great branches are decked with hanging violets and ivy-lilies. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.||Your guide takes you to the foot of a great ladder of oak fpoles, leading up to the king's pavilion which is decked out in silver and green. The poor elf who brought you to the hidden city is trembling as he stands nervously before his lord. If he is so frightened, you reason, you must be in great peril yourself. To your relief, the king asks him a series of questions in a tongue you cannot comprehend and seems quite satisfied with the answers.">
+<CONSTANT TEXT411 "The Greenbark trees here in Elvenhame are the biggest in the world. Their branches intermingle and there are walkways, galleries and towers perched on them. Elvenhame is a town in the trees. There are always flowers in bloom here, no matter what the season. Many coloured humming-birds hover and dart from one soft spray of flowers to the next. The sound of their wings is like the soft music of a monk's chant. White hinds and black panthers lie together happily in the dappled sunlight beneath the trees.||Bridges of tree-houses spanning the gaps between the Greenbark's great branches are decked with hanging violets and ivy-lilies. The bark of the trees shines like polished jade where it has been worn smooth by the passage of elven feet. There are hundreds of elves here, congregating quietly, astonished that a mortal has been brought to Elvenhame.||Your guide takes you to the foot of a great ladder of oak poles, leading up to the king's pavilion which is decked out in silver and green. The poor elf who brought you to the hidden city is trembling as he stands nervously before his lord. If he is so frightened, you reason, you must be in great peril yourself. To your relief, the king asks him a series of questions in a tongue you cannot comprehend and seems quite satisfied with the answers.">
 
 <ROOM STORY411
     (IN ROOMS)
@@ -4878,7 +4877,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT413 "The Westermen crossbowmen are outnumbered by the elves who are brilliant natural bowmen. While the crossbows take a minute to crank and reload, the best of the elven marksmen can unleash ten arrows with just as much foce as a crossbow. The first black rain of crossbow bolts claims a few elves but the rate of fire is too much for the Westermen who are too slow to take cover. It is a scene of butchery and the surviving mercenaries are soon put to flight.||The soldiers behind them regroup and start to raze the forest in front of them so they can advance on a wide front and bring their greater numbers to bear.">
+<CONSTANT TEXT413 "The Westermen crossbowmen are outnumbered by the elves who are brilliant natural bowmen. While the crossbows take a minute to crank and reload, the best of the elven marksmen can unleash ten arrows with just as much force as a crossbow. The first black rain of crossbow bolts claims a few elves but the rate of fire is too much for the Westermen who are too slow to take cover. It is a scene of butchery and the surviving mercenaries are soon put to flight.||The soldiers behind them regroup and start to raze the forest in front of them so they can advance on a wide front and bring their greater numbers to bear.">
 <CONSTANT CHOICES413 <LTABLE "organize the defence here" "return to the other side of the great tree where you can hear a terrible racket and screaming">>
 
 <ROOM STORY413
@@ -4890,7 +4889,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT414 "When you awake you are still inside the great Umbellifer bush, lying beneath a twisted holly tree that is being uprooted by the growth of the bush. The Kwerrel imp has stolen everything off you but your clothes.||You start to dig again but next morning you awake to find the hole filled in. You are hungry again and must east. You lose track of time but nothing can daunt the spirit of a true hero and you persevere until the little Kwerrel tires of the great labour of undoing your day's work every night. By the time you have dug your way out the autumn rains have ocme. It begins to rain and rain and rain. You set off to the north once again.">
+<CONSTANT TEXT414 "When you awake you are still inside the great Umbellifer bush, lying beneath a twisted holly tree that is being uprooted by the growth of the bush. The Kwerrel imp has stolen everything off you but your clothes.||You start to dig again but next morning you awake to find the hole filled in. You are hungry again and must east. You lose track of time but nothing can daunt the spirit of a true hero and you persevere until the little Kwerrel tires of the great labour of undoing your day's work every night. By the time you have dug your way out the autumn rains have come. It begins to rain and rain and rain. You set off to the north once again.">
 
 <ROOM STORY414
     (IN ROOMS)
@@ -4969,7 +4968,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT420 "Around the neck of the statue are four large screws which seem to be bolting the head to the body.">
-<CONSTANT CHOICES420 <LTABLE "leap up onto the statue and try to undo the screws and knock the helment off" "fight on where you are" "make a dash for the hose that connects the statue to the great boiler">>
+<CONSTANT CHOICES420 <LTABLE "leap up onto the statue and try to undo the screws and knock the helmet off" "fight on where you are" "make a dash for the hose that connects the statue to the great boiler">>
 
 <ROOM STORY420
     (IN ROOMS)
@@ -5004,7 +5003,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (IN ROOMS)
     (DESC "423")
     (STORY TEXT423)
-    (CONTINE STORY390)
+    (CONTINUE STORY390)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT424 "The toadstool is a dull red colour, spotted with purple. Underneath, the soft gills are mauvre. The Kwerrel skips down to watch as you reach out to break off some toadstool flesh. You ask nervously if it is poisonous.||\"No, no, never, not poisonous, my dear, oh no.\"||It tastes surprisingly good, it almost melts in your mouth. You begin to feel sleepy. You walk a few steps further then sit down with your back to the central trunk of the of the giant bush. Feeling warm, snug and content you fall into a deep sleep.">
@@ -5025,7 +5024,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY263)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT426 "YOu say that long life has worn out their spirit. \"Is that all there is to immortality, a long slide into the grey of uncaring? Look at the beauty all around you. Are your eyes worn out? Have you become blind to the glory of this foreset? I've never seen anything like it.\"||\"Its glories are wasted on you, mortal.\" The elf's voice cracks harshly and as he speaks your eyes fill with blood. Now it is you who is blind. You will never find your way out of the forest. Without sight you cannot even find food, and will surely perish in the forest.">
+<CONSTANT TEXT426 "You say that long life has worn out their spirit. \"Is that all there is to immortality, a long slide into the grey of uncaring? Look at the beauty all around you. Are your eyes worn out? Have you become blind to the glory of this forest? I've never seen anything like it.\"||\"Its glories are wasted on you, mortal.\" The elf's voice cracks harshly and as he speaks your eyes fill with blood. Now it is you who is blind. You will never find your way out of the forest. Without sight you cannot even find food, and will surely perish in the forest.">
 
 <ROOM STORY426
     (IN ROOMS)
@@ -5034,7 +5033,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT427 "After several days of trekking to the east you come to the banks of the great Sirion river where it bends north before leaving the Forest of Arden. You have missed your way. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the lady of the woods. As it is you have wasted too much time, far out of your way. You plulnge back into the green bosom of the forest. A few days later you start to find the fresh bodies of hundreds of elves among the trees. It is as though they have all been slain in a moment. You are doomed.">
+<CONSTANT TEXT427 "After several days of trekking to the east you come to the banks of the great Sirion river where it bends north before leaving the Forest of Arden. You have missed your way. You should have turned south if you wanted to reach the Bonehill, or south-west if you wanted to search for the bower of the lady of the woods. As it is you have wasted too much time, far out of your way. You plunge back into the green bosom of the forest. A few days later you start to find the fresh bodies of hundreds of elves among the trees. It is as though they have all been slain in a moment. You are doomed.">
 
 <ROOM STORY427
     (IN ROOMS)
@@ -5083,7 +5082,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
         <STORY-JUMP ,STORY157>
     )>>
 
-<CONSTANT TEXT431 "At last you come across a well-trodden track, then climb a tree ladder. There is a maze of highways from tree to tree, fifty feet above the ground. Soon yo uare passing tree-houses festooned with flowering creepers and you see hosts of elves staring at you. You are the first mortal to enter Elvenhame.">
+<CONSTANT TEXT431 "At last you come across a well-trodden track, then climb a tree ladder. There is a maze of highways from tree to tree, fifty feet above the ground. Soon you are passing tree-houses festooned with flowering creepers and you see hosts of elves staring at you. You are the first mortal to enter Elvenhame.">
 
 <ROOM STORY431
     (IN ROOMS)
@@ -5092,7 +5091,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY411)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT432 "There is no trace of the archway by which you entered the great bush. It must have closed by magic. Your only way out is to dig or break off branches until you have broken through the forest outside. You attack the branches but as soon as you break one off, two more grow magically in its place. The harder you work the further you are from freedom. You soon give up, there is no point in going on and so you will have to dig your way out. Alas, when you sleep, after digging hard for hours, the hole you have dug has been filled in once more. The footprints of the impish little Kwerrel show it was he who did it. There is no way out. In the end you have no choice but to eat part of the todstoll or faint through hunger.">
+<CONSTANT TEXT432 "There is no trace of the archway by which you entered the great bush. It must have closed by magic. Your only way out is to dig or break off branches until you have broken through the forest outside. You attack the branches but as soon as you break one off, two more grow magically in its place. The harder you work the further you are from freedom. You soon give up, there is no point in going on and so you will have to dig your way out. Alas, when you sleep, after digging hard for hours, the hole you have dug has been filled in once more. The footprints of the impish little Kwerrel show it was he who did it. There is no way out. In the end you have no choice but to eat part of the toadstool or faint through hunger.">
 
 <ROOM STORY432
     (IN ROOMS)
@@ -5101,7 +5100,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (CONTINUE STORY424)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT433 "YOu manage to spy on the leaders of the Westermen army but the chief has not come with them. He has sent a group of his warlords to do his dirty work for him while he leads a life of ease in his silken pavilion. Killing one or even several warlords will not stop the attack on the Tree of Life. You have squandered too much time. Nothing now can stop them slaying the Tree of Life.">
+<CONSTANT TEXT433 "You manage to spy on the leaders of the Westermen army but the chief has not come with them. He has sent a group of his warlords to do his dirty work for him while he leads a life of ease in his silken pavilion. Killing one or even several warlords will not stop the attack on the Tree of Life. You have squandered too much time. Nothing now can stop them slaying the Tree of Life.">
 
 <ROOM STORY433
     (IN ROOMS)
@@ -5134,7 +5133,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT436 "Something in what you have said has struck a chord with them.||\"For thousands of years we have guarded our secret homes from the eyes of men. Now we must leave them and no one but us and the beasts of the woods will know or tell of the splendour that is Elvenhame. We grant you this, a sight of Elvenhame.\"||You walk with them, they slow their pace for you, but they seem remarkably lacking in curiosity about you. It is if they aldready know all they need to about the race of beings called man. It is a walk of several hours through secret ways and tunnels before the most beautiful sight in the world upens up before you.">
+<CONSTANT TEXT436 "Something in what you have said has struck a chord with them.||\"For thousands of years we have guarded our secret homes from the eyes of men. Now we must leave them and no one but us and the beasts of the woods will know or tell of the splendour that is Elvenhame. We grant you this, a sight of Elvenhame.\"||You walk with them, they slow their pace for you, but they seem remarkably lacking in curiosity about you. It is if they already know all they need to about the race of beings called man. It is a walk of several hours through secret ways and tunnels before the most beautiful sight in the world opens up before you.">
 
 <ROOM STORY436
     (IN ROOMS)
@@ -5195,7 +5194,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES <LTABLE R-NONE R-CODEWORD>)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT441 "A silver noose flies up into the pavilion and darts through the air to hover above your head. Your magical shield blossoms beneath it and when they touch, both disappear with a musical pop. You run for the edge of the trees and are quicly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT TEXT441 "A silver noose flies up into the pavilion and darts through the air to hover above your head. Your magical shield blossoms beneath it and when they touch, both disappear with a musical pop. You run for the edge of the trees and are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY441
     (IN ROOMS)
@@ -5286,13 +5285,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT449 "YOu push the gossamer curtain aside and it rips as your fingers touch it.,, clinging to your skin. You suppress a gasp of disgust as you realize the fabric is not silk but spider's web. Nor is the bed anything like you expected. There are no silk cushions or satin sheets. Instead the bed's occupant lies on a layer of soil and leaf litter with huge purple night blooms growing all around her. She has the high elegant cheekbones and pointed ears that you imagine to be typical of elves. Her flesh is as white as lilies and her glossy black hair is spread out across her pillow of loam like rootlets. The dim light makes her lips and long naills look as dark as old wine. You lean across her, listening to see if shie is breathing or if she lies in the sleep of death . . .||\"Over here,\" a voice calls out softly, making you jump. You turn, scanning the deep shadows for signs of movement. There is no one there, but the voice calls again: \"Here.\" It sounds like the tinkling of tiny bells.||You realize now where it is coming from: the mirror on the wall . . .">
+<CONSTANT TEXT449 "You push the gossamer curtain aside and it rips as your fingers touch it.,, clinging to your skin. You suppress a gasp of disgust as you realize the fabric is not silk but spider's web. Nor is the bed anything like you expected. There are no silk cushions or satin sheets. Instead the bed's occupant lies on a layer of soil and leaf litter with huge purple night blooms growing all around her. She has the high elegant cheekbones and pointed ears that you imagine to be typical of elves. Her flesh is as white as lilies and her glossy black hair is spread out across her pillow of loam like rootlets. The dim light makes her lips and long nails look as dark as old wine. You lean across her, listening to see if she is breathing or if she lies in the sleep of death . . .||\"Over here,\" a voice calls out softly, making you jump. You turn, scanning the deep shadows for signs of movement. There is no one there, but the voice calls again: \"Here.\" It sounds like the tinkling of tiny bells.||You realize now where it is coming from: the mirror on the wall . . .">
 
 <ROOM STORY449
     (IN ROOMS)
     (DESC "449")
     (STORY TEXT449)
-    (CONTINE STORY460)
+    (CONTINUE STORY460)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT450 "Which spell will you cast at this desperate time?">
@@ -5346,7 +5345,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT454 "As you walk on you find gaunt grey crags jutting up out of the forest. It is a relief to find clear landmarks at last. The forest is broken here; where soil is thin above the grey rock only grass can grow, and you walk out of gloom into bright sunlight that hurts your eyes. There are countless paths heading back into the forest in all directions. As you stand comtemplating the choice of ways a voice above and behind you says, \"Lost, are you?\"||You turn around and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
+<CONSTANT TEXT454 "As you walk on you find gaunt grey crags jutting up out of the forest. It is a relief to find clear landmarks at last. The forest is broken here; where soil is thin above the grey rock only grass can grow, and you walk out of gloom into bright sunlight that hurts your eyes. There are countless paths heading back into the forest in all directions. As you stand contemplating the choice of ways a voice above and behind you says, \"Lost, are you?\"||You turn around and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
 <CONSTANT CHOICES454 <LTABLE "admit you are lost" "ignore it and walk on, choosing one of the many ways at random">>
 
 <ROOM STORY454
@@ -5371,7 +5370,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT456 "The mercenary guards are heavy and slow, weighed down by their heavy chainmail corslets. Your lightning fast blows send one after another reeling but you will tire before you have defeated them all.">
-<CONSTANT TEXT256-CONTINUED "There is plenty of time for you to escape into the foreset; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quicly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT TEXT256-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY456
     (IN ROOMS)
@@ -5475,7 +5474,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <TELL TEXT462-CONTINUED>
     <CRLF>>
 
-<CONSTANT TEXT463 "The man you are fighting is a bit of a coward and he guards carefully against your every move. You look like  apir of grannies circling each other warily. Time has run out for you. The guard's comrades close in from all sides and you are overwelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
+<CONSTANT TEXT463 "The man you are fighting is a bit of a coward and he guards carefully against your every move. You look like  a pair of grannies circling each other warily. Time has run out for you. The guard's comrades close in from all sides and you are overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY463
     (IN ROOMS)
@@ -5484,7 +5483,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT464 "The stone blocks of the tower wall are fitted so closely that there is no toe-hold wider than a cenipede's legs. The ivy helps you to begin your ascent, but it grows only sparsely on the upper part of the tower, where the stone remains as smooth as broken flint despite the centuries of wind and rain that must have scoured its surface. None but the most iron-nerved and nimble of adventurers could hope to make this ascent. Even you, for all your surefooted confidence, are caareful not to glance down until you reach the parapet at the top of the tower and pull yourself over to safety.||An open arch leads from the balcony to the tower chamber. You step forward warily. Filtered through lattices of stonework, the moonbeams form a web of shadow across the smooth marble floor. Wan green light comes from a single flickering candle on a wrought-iron stand and behind it, on the far wall, a mirror sparkles with the fluid brilliance of quick-silver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
+<CONSTANT TEXT464 "The stone blocks of the tower wall are fitted so closely that there is no toe-hold wider than a centipede's legs. The ivy helps you to begin your ascent, but it grows only sparsely on the upper part of the tower, where the stone remains as smooth as broken flint despite the centuries of wind and rain that must have scoured its surface. None but the most iron-nerved and nimble of adventurers could hope to make this ascent. Even you, for all your surefooted confidence, are careful not to glance down until you reach the parapet at the top of the tower and pull yourself over to safety.||An open arch leads from the balcony to the tower chamber. You step forward warily. Filtered through lattices of stonework, the moonbeams form a web of shadow across the smooth marble floor. Wan green light comes from a single flickering candle on a wrought-iron stand and behind it, on the far wall, a mirror sparkles with the fluid brilliance of quick-silver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
 <CONSTANT CHOICES464 <LTABLE "tiptoe over to the bedside" "search the room" "go to take a closer look at the mirror">>
 
 <ROOM STORY464
@@ -5505,19 +5504,33 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT466 "The nearest of these mercenary guards is no match for you. Your fists and feet are a blur of motion and you do indeed pummel him senseless, but the others close in and you are overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
+
 <ROOM STORY466
     (IN ROOMS)
     (DESC "466")
+    (STORY TEXT466)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT467 "You fall back just in time and they form in two ranks before advancing towards you with military precision.">
+<CONSTANT CHOICES467 <LTABLE "fall back again to the edge of the trees" "fight here">>
 
 <ROOM STORY467
     (IN ROOMS)
     (DESC "467")
+    (STORY TEXT467)
+    (CHOICES CHOICES467)
+    (DESTINATIONS <LTABLE STORY487 STORY497>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT468 "You are too late. Before you can complete your spell, Valerian has cast his. A silver noose flies up into the pavilion and darts through the air to hover above your head. One of the guards strikes Valerian down but the noose drops over your head and tightens inexorably around your neck, throttling the life out of you.">
 
 <ROOM STORY468
     (IN ROOMS)
     (DESC "468")
+    (STORY TEXT468)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY469
