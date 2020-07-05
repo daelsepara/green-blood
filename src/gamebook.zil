@@ -727,9 +727,15 @@
                     )>
                 >
             )>  
-            <CRLF>
         )(ELSE
-            <TELL "None" CR>
+            <TELL "None">
+        )>
+        <CRLF>
+        <COND (<GETP .CHARACTER ,P?MONEY>
+            <CRLF>
+            <PRINT-CAP-OBJ ,CURRENCY>
+            <TELL ": " N <GETP .CHARACTER ,P?MONEY>>
+            <CRLF>
         )>
     )>>
 

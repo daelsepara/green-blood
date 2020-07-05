@@ -70,6 +70,8 @@
 <CONSTANT CAMP-CHOICES <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 <CONSTANT CAMP-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>>
 
+<CONSTANT CAMP-PLANS "The chief himself is sleeping on silken cushions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destory the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the princer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.">
+
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
 <ROOM PROLOGUE
@@ -3161,7 +3163,7 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     <CRLF>
     <TELL "You will have to offer the Kwerrel imp something else.">>
 
-<CONSTANT TEXT266 "You cast Vanish and disappear. Then you creep slowly round to the perch of the pavilion and, waiting to make sure there will be no one coming in or out you creep in and sneak behind the table where the man they call the chief is seated, poring over the maps. He is a balding, corpulent man whose eyes gleam with greed.||The master map shows the Forest of Arden in its enttirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments which are eating into the forest. The chief waves his broad hand across the map, showing where they are going to wreak devastation and havoc next .Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. There is nothing to show where Elvenhame, the fabled city of the elves, is.||The chief dismisses his scribes and furls the map once more before you can read any of the little notes the scribes have inked in.">
+<CONSTANT TEXT266 "You cast Vanish and disappear. Then you creep slowly round to the perch of the pavilion and, waiting to make sure there will be no one coming in or out you creep in and sneak behind the table where the man they call the chief is seated, poring over the maps. He is a balding, corpulent man whose eyes gleam with greed.||The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments which are eating into the forest. The chief waves his broad hand across the map, showing where they are going to wreak devastation and havoc next .Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. There is nothing to show where Elvenhame, the fabled city of the elves, is.||The chief dismisses his scribes and furls the map once more before you can read any of the little notes the scribes have inked in.">
 <CONSTANT CHOICES266 <LTABLE "stay to see if you can discover more, baring in mind your spell will fail in another ten minutes or so" "you can leave now while the coast is clear">>
 
 <ROOM STORY266
@@ -5314,15 +5316,24 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT452 "You cast the Vanish spell and disappear. Then you creep slowly round to the porch of the pavilion and checking to make sure there will be no one coming in or out, you creep into the tent. The chief himself is sleeping on silken cusions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destory the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the princer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.||As your spell will fail in another ten minutes or so, you leave while the coast is clear.">
+<CONSTANT TEXT452 "You cast the Vanish spell and disappear. Then you creep slowly round to the porch of the pavilion and checking to make sure there will be no one coming in or out, you creep into the tent.">
+<CONSTANT TEXT452-CONTINUED "As your spell will fail in another ten minutes or so, you leave while the coast is clear.">
 
 <ROOM STORY452
     (IN ROOMS)
     (DESC "452")
     (STORY TEXT452)
     (CONTINUE STORY095)
+    (PRECHOICE STORY452-PRECHOICE)
     (CODEWORD CODEWORD-BULLHORN)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY452-PRECHOICE ()
+    <TELL " ">
+    <TELL CAMP-PLANS>
+    <CRLF><CRLF>
+    <TELL TEXT452-CONTINUED>
+    <CRLF>>
 
 <CONSTANT TEXT453 "Dire straits call for desperate measures and your gamble pays off. He falls to the ground, already dead before he strikes the sward. You whip your sword tip out of his body, jump over the fallen guard and run for the nearby trees. You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far beyond you.">
 
@@ -5433,29 +5444,65 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT461 "Eight guards have fanned out to encircle you.">
+<CONSTANT CHOICES461 <LTABLE "fall back quickly in the hope that they won't manage to close the circle in time" "rush one of them, cut him down, and escape over his dead body">>
+
 <ROOM STORY461
     (IN ROOMS)
     (DESC "461")
+    (STORY TEXT461)
+    (CHOICES CHOICES461)
+    (DESTINATIONS <LTABLE STORY467 STORY477>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT462 "Using the cover provided by darkness, you creep slowly round to the porch of the pavilion and, waiting to make sure there is no one coming, you creep into the tent.">
+<CONSTANT TEXT462-CONTINUED "You risk discovery the longer you remain here, so carefully considering what you have learned, you leave as soon as the coast is clear.">
 
 <ROOM STORY462
     (IN ROOMS)
     (DESC "462")
+    (STORY TEXT462)
+    (CONTINUE STORY095)
+    (PRECHOICE STORY462-PRECHOICE)
+    (CODEWORD CODEWORD-BULLHORN)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY462-PRECHOICE ()
+    <CRLF>
+    <TELL CAMP-PLANS>
+    <CRLF><CRLF>
+    <TELL TEXT462-CONTINUED>
+    <CRLF>>
+
+<CONSTANT TEXT463 "The man you are fighting is a bit of a coward and he guards carefully against your every move. You look like  apir of grannies circling each other warily. Time has run out for you. The guard's comrades close in from all sides and you are overwelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY463
     (IN ROOMS)
     (DESC "463")
+    (STORY TEXT463)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT464 "The stone blocks of the tower wall are fitted so closely that there is no toe-hold wider than a cenipede's legs. The ivy helps you to begin your ascent, but it grows only sparsely on the upper part of the tower, where the stone remains as smooth as broken flint despite the centuries of wind and rain that must have scoured its surface. None but the most iron-nerved and nimble of adventurers could hope to make this ascent. Even you, for all your surefooted confidence, are caareful not to glance down until you reach the parapet at the top of the tower and pull yourself over to safety.||An open arch leads from the balcony to the tower chamber. You step forward warily. Filtered through lattices of stonework, the moonbeams form a web of shadow across the smooth marble floor. Wan green light comes from a single flickering candle on a wrought-iron stand and behind it, on the far wall, a mirror sparkles with the fluid brilliance of quick-silver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
+<CONSTANT CHOICES464 <LTABLE "tiptoe over to the bedside" "search the room" "go to take a closer look at the mirror">>
 
 <ROOM STORY464
     (IN ROOMS)
     (DESC "464")
+    (STORY TEXT464)
+    (CHOICES CHOICES464)
+    (DESTINATIONS <LTABLE STORY449 STORY470 STORY460>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT465 "As you unleash your spell two perfect images of yourself appear in a puff of smoke to your left. You attackers can't tell which one is the real you unless you move, for the visions remain motionless. Unfortunately the chief orders his men to bury their swords in all of the figures, including you. There is no escape and no time to cast another spell.">
 
 <ROOM STORY465
     (IN ROOMS)
     (DESC "465")
+    (STORY TEXT465)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY466
