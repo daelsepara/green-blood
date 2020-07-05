@@ -31,6 +31,7 @@
     <PUTP ,STORY383 ,P?DEATH T>
     <PUTP ,STORY385 ,P?DEATH T>
     <PUTP ,STORY393 ,P?DEATH T>
+    <PUTP ,STORY456 ,P?DEATH T>
     <RETURN>>
     
 <ROUTINE STORY-LOSERING ()
@@ -65,6 +66,9 @@
 
 <CONSTANT FOUR-DIRECTIONS <LTABLE "head west" "east" "south-west" "south from here">>
 <CONSTANT FOUR-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>>
+
+<CONSTANT CAMP-CHOICES <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
+<CONSTANT CAMP-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>>
 
 <CONSTANT PROLOGUE-TEXT "Sickened by the ways of your fellow men and despairing of man's cruelty, you have quit the teeming city of Godorno, with its cesspools and plague pits, its beggars and abject slaves. You walk for days, revelling in the fresh air of the countryside. This is a green land of hills and dales, farmsteads and mills -- a veritable bread-basket that yields all its grains and fruit to the decadent city.||As you walk you have much time to think. Long ago your family told you how the star of destiny, purple Praxis, changed colour to the flaming gold of Moraine, God of War, at the moment of your birth. Even as Praxis flared with energy, so your mother's life waned. She died of exhaustion bringing you into the world, but her sisters looked after you until you were old enough, at eight, to go up to the dreaming spires of the academy at Hegalopolis.||The bookish scholars trained you in many things and all who taught there agreed you showed great promise. But when you were just fifteen years old, Gornild, the harsh overlord of Godorno, dissolved all the monasteries in the lands along the Marches, fearing their teachings would turn minds against his corrupt rule. You were forced to scratch out a miserable living just like the other poor folk of the city.||The cloistered life of the academy, with its politeness and order, gave you scant preparation for the life on the streets of Godorno. You developed the cunning of a sewer rat and the patience of the damned just staying alive from day to day, dodging the press gangs from the war galleys that carry young men off to fight the corsairs. Your cunning was great enough to avoid the fate of the galley slave and you have grown to maturity, strong, tough and determined.||The ways of the city folk revolt you. Your diligent study of history shows an ever churning cycle of oppressors and the downtrodden. Man is strapped to the wheel of fate to be alternately dragged to the heights and plunged again into the pits and windblasted depths of pain and want.||As you walk, every step that bears you away from the stench of the city is a step taken more lightly than the last. YOu resolve to return to the city only if you have changed things for the better. Yours is the nobleness of spirit that would lay down its life to better the lot of your fellow man. If Praxis robbed you of a mother's love, Praxis can repay the debt by shining brightly on your destiny.||As the miles pass with you deep in thought, your path takes you inexorably on towards the great forest beyond the lands of men. Your curiosity has been piqued by rumours and legends about the ancient Tree of Knowledge, a fabled tree hundres of feet high, with golden bark and silver leaves. It is said to grow at the centre of the great Forest of Arden.||Fey sylvan elves are said to dwell there. The stories of what they look like and the fate that befalls those lost in the forest are too fantastically horrific to be true. Each fable tells a different story: of elves with six arms, of elves with scimitar blades in place of forearms, and of greenbark bows that can send an arrow from one horizon to the other and which always hit their mark. And there are stories of elves with jewels for eyes which melt when they cry, as they must when disturbed by man, for they keenly sense the tragedy of man's mortality.||Though each story is fanciful and bizarre they all agree in one respect. No one who sees the elves lives to tell of it. There isn't a man alive who has glimpsed the splendid glory of Elvenhame, the city of the elves.||You no longer know whether it is the desire to see elves or your wish to change the world for the better that takes you on your quest. What, however, if you were to learn the knowledge of ages and return to the lands of men as a saviour? Your name would go down in history. Anything less magnificent than this noble quest for knowledge that will save mankind will not do. You will become a hreo or die in the attempt.||You are on the road. It is approaching early evening and purple Praxis already beams out in the low dusk sky. As you stare at the star, it seems to wink out then flare bright golden yellow before resuming its purple form. It is a sign that your destiny awaits in the Forest of Arden.">
 
@@ -5207,14 +5211,13 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     )>>
 
 <CONSTANT TEXT442 "With the odds stacked against you, there is no time for subtle ploys. Quickly you cast Vanish, instantly disappearing from the gaze of your astonished foes. Lest they should hear you, however, you stealthily move from your current position, retreating to a safe vantage point at the edge of the forest so you can observe the confusion of the guards. Your Vanish spell wears off while you watch.||As the camp will be in a state of alert for some time, you reconsider your options.">
-<CONSTANT CHOICES442 <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 
 <ROOM STORY442
     (IN ROOMS)
     (DESC "442")
     (STORY TEXT442)
-    (CHOICES CHOICES442)
-    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>)
+    (CHOICES CAMP-CHOICES)
+    (DESTINATIONS CAMP-DESTINATIONS)
     (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -5302,19 +5305,34 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT451 "Valerian completes a spell. A silver noose files up into the pavilion and darts through the air to hover above your head. Before you can get any further, it drops over your head and tightens inexorably around your neck, throttling the life out of you.">
+
 <ROOM STORY451
     (IN ROOMS)
     (DESC "451")
+    (STORY TEXT451)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT452 "You cast the Vanish spell and disappear. Then you creep slowly round to the porch of the pavilion and checking to make sure there will be no one coming in or out, you creep into the tent. The chief himself is sleeping on silken cusions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destory the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the princer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.||As your spell will fail in another ten minutes or so, you leave while the coast is clear.">
 
 <ROOM STORY452
     (IN ROOMS)
     (DESC "452")
+    (STORY TEXT452)
+    (CONTINUE STORY095)
+    (CODEWORD CODEWORD-BULLHORN)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT453 "Dire straits call for desperate measures and your gamble pays off. He falls to the ground, already dead before he strikes the sward. You whip your sword tip out of his body, jump over the fallen guard and run for the nearby trees. You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far beyond you.">
 
 <ROOM STORY453
     (IN ROOMS)
     (DESC "453")
+    (STORY TEXT453)
+    (CHOICES CAMP-CHOICES)
+    (DESTINATIONS CAMP-DESTINATIONS)
+    (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT454 "As you walk on you find gaunt grey crags jutting up out of the forest. It is a relief to find clear landmarks at last. The forest is broken here; where soil is thin above the grey rock only grass can grow, and you walk out of gloom into bright sunlight that hurts your eyes. There are countless paths heading back into the forest in all directions. As you stand comtemplating the choice of ways a voice above and behind you says, \"Lost, are you?\"||You turn around and look up. All you can see is a silver-feathered owl perched on top of an outcrop.||\"Lost, are you?\" the voice says again. It sounded as if the voice came from the owl but its beak didn't move.">
@@ -5329,34 +5347,90 @@ precious metal. No matter, you will be rich beyond your wildest dreams . . .">
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT455 "You prepare to cast the Tower of Will spell, marshalling all your concentration. But who will you cast the spell at?">
+<CONSTANT CHOICES455 <LTABLE "cast it at the Chief of the Westermen" "at Valerian" "at the nearest guard who is twelve feet away">>
+
 <ROOM STORY455
     (IN ROOMS)
     (DESC "455")
+    (STORY TEXT455)
+    (CHOICES CHOICES455)
+    (DESTINATIONS <LTABLE STORY482 STORY492 STORY443>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT456 "The mercenary guards are heavy and slow, weighed down by their heavy chainmail corslets. Your lightning fast blows send one after another reeling but you will tire before you have defeated them all.">
+<CONSTANT TEXT256-CONTINUED "There is plenty of time for you to escape into the foreset; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quicly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY456
     (IN ROOMS)
     (DESC "456")
+    (STORY TEXT456)
+    (CHOICES CAMP-CHOICES)
+    (DESTINATIONS CAMP-DESTINATIONS)
+    (PRECHOICES STORY456-PRECHOICE)
+    (TYPES FIVE-NONES)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY456-PRECHOICE ()
+    <COND (<NOT <IN? ,SKILL-UNARMED-COMBAT ,SKILLS>>
+        <LOSE-LIFE 3 "You died in combat." ,STORY456>
+    )>
+    <COND (<G? ,LIFE-POINTS 0>
+        <PUTP ,STORY456 ,P?DEATH F>
+        <CRLF>
+        <TELL TEXT256-CONTINUED>
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT457 "The chief sounds as commanding as usual when he orders his guard to kill Valerian, the Moon Druid. They hesitate for a moment and Valerian completes his spell. A silver noose flies up into the pavilion and darts through the air to hover above your head. One of the guards strikes Valerian down, but the noose drops over your head and tightens inexorably around your neck, throttling the life out of you.">
 
 <ROOM STORY457
     (IN ROOMS)
     (DESC "457")
+    (STORY TEXT457)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT458 "In a moment you have cast the spell and a magical shield shimmers before you, like a ghostly buckler. A silver noose flies up into the pavilion and darts through the air to hover above your head. The shield floats up to intercept it and both disappear with a musical pop.||You must choose another spell to cast.">
+<CONSTANT CHOICES458 <LTABLE "cast Tower of Will" "Visceral Disruption" "Bafflement">>
 
 <ROOM STORY458
     (IN ROOMS)
     (DESC "458")
+    (STORY TEXT458)
+    (CHOICES CHOICES458)
+    (DESTINATIONS <LTABLE STORY455 STORY478 STORY475>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT459 "\"Ah, if only you were a friend of the forest, I could help you,\" says the owl. \"Have you still got the ring my lady gave you? Good, now put it on and perhaps I'll help you. Heroes need to have faith in their quest, you know.\"||The owl's words have the ring of truth. Shamed, you put the ring onto your finger.||\"Well, I'm sure the forest is pleased to have you back on its side,\" chides the owl. \"Why did it take you so long?\"">
 
 <ROOM STORY459
     (IN ROOMS)
     (DESC "459")
+    (STORY TEXT459)
+    (CONTINUE STORY440)
+    (PRECHOICE STORY459-PRECHOICE)
+    (CODEWORD CODEWORD-CRABCLAW)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY459-PRECHOICE ()
+    <REMOVE ,CODEWORD-TWINHEAD>
+    <FSET ,EMERALD-RING-ELANOR ,WEARBIT>
+    <FSET ,EMERALD-RING-ELANOR ,WORNBIT>>
+
+<CONSTANT TEXT460 "You gaze into the mirror. Your own image palely stares back from the limpid depths of the glass. Then it winks at you. \"I am a magic mirror,\" it attests undeniably. \"Or, more precisely, I am an aerial sprite trapped within the polished crystal of the mirror. My mistress captured me long ago and keeps me to counsel her.\"||You cast a wary glance over your shoulder, but the woman on the bed has not stirred. \"Who is she?\" you whisper.||\"An enchantress of the Fomorian race -- more ancient than even the elves. She sleeps to preserve her unearthly beauty. Disturb her at your peril!\"||You smile wryly. \"I have no intention of doing so.\"||\"Good.\" In the mirror, your reflection returns your smile with a conspiratorial look. Leaning closer, it says: \"If you agree to break the mirror, thus releasing me from my long confinement, I'll grant one wish in return.\"">
+<CONSTANT CHOICES460 <LTABLE "refuse this suggestion and search the room" "or leave the tower" "accept then decide your wish. Ask for vitality" "wisdom" "secret lore">>
 
 <ROOM STORY460
     (IN ROOMS)
     (DESC "460")
+    (STORY TEXT460)
+    (CHOICES CHOICES460)
+    (DESTINATIONS <LTABLE STORY470 STORY479 STORY118 STORY022 STORY268>)
+    (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY461
