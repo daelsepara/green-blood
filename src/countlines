@@ -1,0 +1,2 @@
+#!/bin/bash
+cat *.zil | sed '/^\s*$/d' | wc -l
