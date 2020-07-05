@@ -733,7 +733,9 @@
         <CRLF>
         <COND (<GETP .CHARACTER ,P?MONEY>
             <CRLF>
+            <HLIGHT ,H-BOLD>
             <PRINT-CAP-OBJ ,CURRENCY>
+            <HLIGHT 0>
             <TELL ": " N <GETP .CHARACTER ,P?MONEY>>
             <CRLF>
         )>
