@@ -33,6 +33,8 @@
     <PUTP ,STORY393 ,P?DEATH T>
     <PUTP ,STORY456 ,P?DEATH T>
     <PUTP ,STORY485 ,P?DEATH T>
+    <PUTP ,STORY487 ,P?DEATH T>
+    <PUTP ,STORY494 ,P?DEATH T>
     <RETURN>>
 
 <ROUTINE STORY-LOSERING ()
@@ -70,6 +72,9 @@
 
 <CONSTANT CAMP-CHOICES <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 <CONSTANT CAMP-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>>
+
+<CONSTANT TOWER-CHOICES <LTABLE "tiptoe over to the bedside" "search the room" "go to take a closer look at the mirror">>
+<CONSTANT TOWER-DESTINATIONS <LTABLE STORY449 STORY470 STORY460>>
 
 <CONSTANT CAMP-PLANS "The chief himself is sleeping on silken cushions of rich purple; his corpulent form is surrounded by the somnolent forms of his personal guards. Your keen senses also detect a faint shimmering in the air around these men -- a magical disturbance in the air that can only be some kind of warding. You had best be careful, for if you disturb it the guards could be on you in a trice.||Quietly you move to the table where the chief's maps are laid out in full view. The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments that are eating into the forest. Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. Inked in by the tree is a simple note: \"Destroy the Tree of Life and the forest dies. The Steamer shall do the work.\"||Dispatches lying ready for the signing indicate the pincer movement that the Westermen will make on the tree -- a cunning plan that could take any unwary defenders by surprise.">
 
@@ -394,7 +399,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT029 "Valerian's attention is distracted by what the king is pointing out on the map. You inch quietly past the guards and towards the pavilion's porchway. Valerian looks up and his eyes narrow, then he cries out, \"There's something moving, they're getting away. I have the senses of a bat.\"||He points in your general direction. The guards peer from him to where you stand, unable to make you out.">
-<CONSTANT CHOICES029 <LTABLE "cast the Shield of Defence spell, if you think this is your best option" "otherwise make a run for the forest">>
+<CONSTANT CHOICES029 <LTABLE "cast the Shield of Defense spell, if you think this is your best option" "otherwise make a run for the forest">>
 
 <ROOM STORY029
     (IN ROOMS)
@@ -3836,7 +3841,7 @@
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT326 "As quick as thought you murmur the incantation of the magical Shield of Defence. You have just finished when the King of the Elves casts another spell. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It splashes against the glowing defensive silver disk and fizzles out.">
+<CONSTANT TEXT326 "As quick as thought you murmur the incantation of the magical Shield of Defense. You have just finished when the King of the Elves casts another spell. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It splashes against the glowing defensive silver disk and fizzles out.">
 <CONSTANT CHOICES326 <LTABLE "now cast Bafflement, Visceral Disruption or Tower of Will" "maintain your Shield of Defense spell">>
 
 <ROOM STORY326
@@ -3985,7 +3990,7 @@
     <TAKE-ELVEN-DIRK>>
 
 <CONSTANT TEXT339 "The infernal Statue belches steam as its sword arm rises and falls like a piston. You review the spells you can cast against this terrible weapon of destruction.||VANISH allows you to disappear and move unseen. CHOKING FOG creates a cloud of poisonous gas. VISCERAL DISRUPTION causes crippling stomach cramps. SHIELD OF DEFENSE is a defense against manifest magical attacks. BAFFLEMENT confuses your foe. TOWER OF WILL subdues your enemy, who will then do your will.||The sword continues to drive into and out of the trunk of the Tree of Life. Green-stained wood flies up in splinters. Decide which spell you will cast.">
-<CONSTANT CHOICES339 <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defence" "Bafflement" "Tower of Will">>
+<CONSTANT CHOICES339 <LTABLE "cast Vanish" "Choking Fog" "Visceral Disruption" "Shield of Defense" "Bafflement" "Tower of Will">>
 
 <ROOM STORY339
     (IN ROOMS)
@@ -4947,7 +4952,7 @@
     (CONTINUE STORY049)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT418 "You have more sense than to smash the mirror here by the enchantress' bedside, where the noise would surely wake her. Taking it down carefully from the wall, you tiptoe to the balcony and drop it over the ballustrade. You watch it flash in the moonlight as it falls to shatter on the ground far below. A gust of spring-scented wind arises and you catch a glimpse of an ethereal smiling face flitting up past you as a voice whispers, \"Thank You.\" Then the wind dies and all is quiet again.">
+<CONSTANT TEXT418 "You have more sense than to smash the mirror here by the enchantress' bedside, where the noise would surely wake her. Taking it down carefully from the wall, you tiptoe to the balcony and drop it over the balustrade. You watch it flash in the moonlight as it falls to shatter on the ground far below. A gust of spring-scented wind arises and you catch a glimpse of an ethereal smiling face flitting up past you as a voice whispers, \"Thank You.\" Then the wind dies and all is quiet again.">
 <CONSTANT CHOICES418 <LTABLE "explore the bower further" "leave">>
 
 <ROOM STORY418
@@ -5371,7 +5376,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT456 "The mercenary guards are heavy and slow, weighed down by their heavy chainmail corslets. Your lightning fast blows send one after another reeling but you will tire before you have defeated them all.">
-<CONSTANT TEXT256-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT TEXT456-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY456
     (IN ROOMS)
@@ -5390,7 +5395,7 @@
     )>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT256-CONTINUED>
+        <TELL TEXT456-CONTINUED>
         <CRLF>
     )>>
 
@@ -5483,15 +5488,14 @@
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT464 "The stone blocks of the tower wall are fitted so closely that there is no toe-hold wider than a centipede's legs. The ivy helps you to begin your ascent, but it grows only sparsely on the upper part of the tower, where the stone remains as smooth as broken flint despite the centuries of wind and rain that must have scoured its surface. None but the most iron-nerved and nimble of adventurers could hope to make this ascent. Even you, for all your surefooted confidence, are careful not to glance down until you reach the parapet at the top of the tower and pull yourself over to safety.||An open arch leads from the balcony to the tower chamber. You step forward warily. Filtered through lattices of stonework, the moonbeams form a web of shadow across the smooth marble floor. Wan green light comes from a single flickering candle on a wrought-iron stand and behind it, on the far wall, a mirror sparkles with the fluid brilliance of quick-silver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
-<CONSTANT CHOICES464 <LTABLE "tiptoe over to the bedside" "search the room" "go to take a closer look at the mirror">>
+<CONSTANT TEXT464 "The stone blocks of the tower wall are fitted so closely that there is no toe-hold wider than a centipede's legs. The ivy helps you to begin your ascent, but it grows only sparsely on the upper part of the tower, where the stone remains as smooth as broken flint despite the centuries of wind and rain that must have scoured its surface. None but the most iron-nerved and nimble of adventurers could hope to make this ascent. Even you, for all your surefooted confidence, are careful not to glance down until you reach the parapet at the top of the tower and pull yourself over to safety.||An open arch leads from the balcony to the tower chamber. You step forward warily. Filtered through lattices of stonework, the moonbeams form a web of shadow across the smooth marble floor. Wan green light comes from a single flickering candle on a wrought-iron stand and behind it, on the far wall, a mirror sparkles with the fluid brilliance of quicksilver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
 
 <ROOM STORY464
     (IN ROOMS)
     (DESC "464")
     (STORY TEXT464)
-    (CHOICES CHOICES464)
-    (DESTINATIONS <LTABLE STORY449 STORY470 STORY460>)
+    (CHOICES TOWER-CHOICES)
+    (DESTINATIONS TOWER-DESTINATIONS)
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -5611,7 +5615,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT476 "You hastily send the spell unseen across the space separating you from the Chief of the Westermen. As your spell takes hold the Chief of the Westermen stares about him uncomprehendingly. He is completely nonplussed. Valerian, however, is casting a spell. He stares at you intently and flourishes his arms menacingly. You haven't long to act.">
-<CONSTANT CHOICES476 <LTABLE "tell the guards Valerian has bewitched their chief" "hastily cast Shield of Defence" "Visceral Disruption">>
+<CONSTANT CHOICES476 <LTABLE "tell the guards Valerian has bewitched their chief" "hastily cast Shield of Defense" "Visceral Disruption">>
 
 <ROOM STORY476
     (IN ROOMS)
@@ -5731,75 +5735,189 @@
         <CRLF>
     )>>
 
+<CONSTANT TEXT486 "You send the spell unseen across the space separating you from Valerian the Moon Druid. As your spell takes hold Valerian stares about him uncomprehendingly. He is completely nonplussed. Seizing your chance, you cast Vanish once more and make good your escape.||You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+
 <ROOM STORY486
     (IN ROOMS)
     (DESC "486")
+    (STORY TEXT486)
+    (CHOICES FOUR-DIRECTIONS)
+    (DESTINATIONS FOUR-DESTINATIONS)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT487 "You watch them warily as you fall back towards the forest's edge and didn't notice a loose rock over which you trip.">
+<CONSTANT TEXT487-CONTINUED "By the time you have regained your feet they have surrounded you. You take two of them with you to the afterlife as the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY487
     (IN ROOMS)
     (DESC "487")
+    (STORY TEXT487)
+    (PRECHOICE STORY487-PRECHOICE)
+    (CONTINUE STORY396)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY487-PRECHOICE ()
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+        <PUTP ,STORY487 ,P?DEATH F>
+    )(ELSE
+        <CRLF>
+        <TELL TEXT487-CONTINUED>
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT488 "These common brutish men who have become so inured to the sufferings of their fellow men are almost devoid of any feelings of friendship. They look on you as a slave and nothing more. Their swords ring out of their sheaths and they are coming to get you.">
+<CONSTANT CHOICES488 <LTABLE "use" "use" "use" "if you cannot defend yourself you have no choice but to surrender">>
 
 <ROOM STORY488
     (IN ROOMS)
     (DESC "488")
+    (STORY TEXT488)
+    (CHOICES CHOICES488)
+    (DESTINATIONS <LTABLE STORY442 STORY461 STORY491 STORY151>)
+    (REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SWORDPLAY SKILL-UNARMED-COMBAT NONE>)
+    (TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT489 "Taking a long pin that you habitually keep in your boot, you delve into the lock with the deft precision of an expert jeweller. Despite its apparent age the mechanism of the lock is untouched by rust, and your efforts are soon rewarded with a heavy click as the lock springs open. You peer inside, but the moonlight only sketches a section of black marble floor, beyond which lies impenetrable darkness. Groping your way, you find a balustrade and ascend the stairs with painstaking care. It would not do to miss your footing and go careering down in the dark.||A faint glimmer of viridescence warns you that you are nearing the top of the tower. You step through an archway into a chamber which is open to the night air. Filtered through lattices of stonework beside the balcony, moonbeams form a web of shadow across the marble floor. The wan green light you noticed before comes from a single flickering candle on a wrought-iron stand. On the far wall behind it, a mirror sparkles with fluid brilliance like quicksilver. A light breeze blows through the chamber carrying the odour of soil and growing things. As your eyes adjust further to the gloom, you can make out a figure sprawled across a bed surrounded by gossamer drapes.">
 
 <ROOM STORY489
     (IN ROOMS)
     (DESC "489")
+    (CHOICES TOWER-CHOICES)
+    (DESTINATIONS TOWER-DESTINATIONS)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT490 "You have made a good choice. You are attacking so that your weak side, the hand in which you are not holding your hand, is away from the enemy. By the time they close up to encircle you, your sword has already dropped three of them to the ground. Seeing your great prowess as a warrior they back off to look for reinforcements. You have plenty of time in which to make good your escape and are quickly lost in the forest once more, knowing they will never find you.">
 
 <ROOM STORY490
     (IN ROOMS)
     (DESC "490")
+    (STORY TEXT490)
+    (CHOICES CAMP-CHOICES)
+    (DESTINATIONS CAMP-DESTINATIONS)
+    (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT491 "Eight guards have fanned out to encircle you.">
+<CONSTANT CHOICES491 <LTABLE "fall back fast so they might not manage to close the circle in time" "you could rush one of them, knock him down, and escape">>
 
 <ROOM STORY491
     (IN ROOMS)
     (DESC "491")
+    (STORY TEXT491)
+    (CHOICES CHOICES491)
+    (DESTINATIONS <LTABLE STORY474 STORY484>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT492 "The mind of Valerian the Moon Druid has been toughened by years in the wilderness. You are unable to subdue his mind before the Chief of the Westermen realizes something is amiss and orders his guards to take you.">
 
 <ROOM STORY492
     (IN ROOMS)
     (DESC "492")
+    (STORY TEXT492)
+    (CONTINUE STORY017)
     (FLAGS LIGHTBIT)>
 
 <ROOM STORY493
     (IN ROOMS)
     (DESC "493")
+    (EVENTS STORY493-EVENTS)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY493-EVENTS ()
+    <CRLF>
+    <TELL "Are left-handed or right-handed? ">
+    <COND (<YES?>
+        <RETURN ,STORY490>
+    )(ELSE
+        <RETURN ,STORY480>
+    )>>
+
+<CONSTANT TEXT494 "You watch them warily as you fall back towards the forest's edge and didn't notice a loose rock over which you trip.">
+<CONSTANT TEXT494-CONTINUED "By the time you have regained your feet they have surrounded you. You take two of them with you to the afterlife as the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY494
     (IN ROOMS)
     (DESC "494")
+    (STORY TEXT494)
+    (CONTINUE STORY396)
+    (PRECHOICE STORY494-PRECHOICE)
+    (DEATH T)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY494-PRECHOICE ()
+    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+        <PUTP ,STORY494 ,P?DEATH F>
+    )(ELSE
+        <CRLF>
+        <TELL TEXT494-CONTINUED>
+        <CRLF>
+    )>>
+
+<CONSTANT TEXT495 "You managed to gulp a large breath of air before you let off the spell, and were ready for the awful effects of the gas. You reach the portal of the pavilion and slip past the guards who are still retching hard. You are quickly lost in the forest once more, knowing they will never find you.">
 
 <ROOM STORY495
     (IN ROOMS)
     (DESC "495")
+    (STORY TEXT495)
+    (CHOICES FOUR-DIRECTIONS)
+    (DESTINATIONS FOUR-DESTINATIONS)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT496 "You send the spell unseen across the twelve feet of the air separating you from the guard. As your spell takes hold the guard stares about him uncomprehendingly. He is completely nonplussed. Valerian, however,knows how to kill you. He stares at you intently and flourishes his arms menacingly. You haven't long to act.">
+<CONSTANT CHOICES496 <LTABLE "cast Shield of Defense" "Visceral Disruption">>
 
 <ROOM STORY496
     (IN ROOMS)
     (DESC "496")
+    (STORY TEXT496)
+    (CHOICES CHOICES496)
+    (DESTINATIONS <LTABLE STORY458 STORY468>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT497 "They are in two ranks facing you.">
+<CONSTANT CHOICES497 <LTABLE "attack the middle of the front rank" "the left end of the front rank of men" "the right end of the front rank">>
 
 <ROOM STORY497
     (IN ROOMS)
     (DESC "497")
+    (STORY TEXT497)
+    (CHOICES CHOICES497)
+    (DESTINATIONS <LTABLE STORY473 STORY483 STORY493>)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT498 "As you conjure the arcane dweomer, looks of perplexity cross the guards' faces. The looks are followed by anxiety, which finally turns to dread.||\"It's an elf.\"||\"Is it an elf.\"||\"I feel strange.\"||\"It's using some unnatural magic.\"||\"Run.\"||The man who says 'run' is the last one to move as they all turn tail and flee towards the tents of their comrades. They don't know what an elf looks like and obviously think you are one. They must be very frightened of the immortal spirits of the forest.||You have plenty of time in which to make good your escape. You are soon lost in the forest once more.">
 
 <ROOM STORY498
     (IN ROOMS)
     (DESC "498")
+    (STORY TEXT498)
+    (CHOICES CAMP-CHOICES)
+    (DESTINATIONS CAMP-DESTINATIONS)
+    (TYPE FIVE-NONES)
     (FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT499 "Stirring at the noise, the woman on the bed raises a slim white arm and brushes sleepily at her face. At any moment she will awaken. If she discovers you here, she might well express her surprise in a manner involving both magic and malice. You must begone with all stealth and haste.">
 
 <ROOM STORY499
     (IN ROOMS)
     (DESC "499")
+    (STORY TEXT499)
+    (CONTINUE STORY485)
+    (PRECHOICE STORY499-PRECHOICE)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY499-PRECHOICE ()
+    <COND (<IN? ,SKILL-ROGUERY ,SKILLS>
+        <STORY-JUMP ,STORY479>
+    )>>
 
 <CONSTANT TEXT500 "The Westermen are routed. They have faced a dragon, the elves and a hero among mankind and they have had enough. They are easy to pick off as they flee through the forest much more slowly than the elves can follow. In their panic, they break into smaller and smaller groups and the elves have no difficulty in killing them. They show no mercy: the Westermen die in their tens of thousands. They will leave the forest, never to return. The Tree of Life lives on and Elanor and the elves will tend it till it has made a full recovery.||Without you, the elves and the whole forest would have been doomed. Without the forest the whole world's atmosphere would have been thrown into imbalance. Elanor greets you as the forest's saviour she had always known you would be. Now everything that grows in the great Forest of Arden is your friend. You will not be famous when you return to the lands of men. No one will ever know what great deeds you have performed here, but it doesn't matter. You know you are a hero.">
 
