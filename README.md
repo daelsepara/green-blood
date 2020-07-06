@@ -21,14 +21,20 @@ Michelin Home, 81 Fulham Road, London SW3 6RB and Auckland, Melbourne, Singapore
 
 Text copyright (c) 1993 Dave Morris and Mark Smith
 Illustrations copyright (c) 1993 Terry Oakes
-Map copyright (c) 1993 leo Hartas
+Map copyright (c) 1993 Leo Hartas
 
 ISBN 0 7497 1484 0
 ```
 
 ## Notes about ZIL version
+
 - No in-game illustrations or graphics (also excludes map from the book)
 - Character selection, Inventory of items and codewords are handled
 - Some changes to the text were made: spelling errors or consistency, rephrased to fit the implemented choice mechanism 
 - Select an action by pressing the number keys that correspond to the option (**1** - **9**). If there are more than 9 options, items 10-15 map to the keys **A** (or **a**) - **F** (or **f**)
 - Press **q** or **Q** during choice selection to quit or terminate the program
+- Paradoxical or continuity errors (as pointed out by some reviewers/readers) are preserved since the ZIL was adapted verbatim from the book.
+
+## Bugs
+
+Feel free to report bugs or any issues with this adaptation. Thanks!
