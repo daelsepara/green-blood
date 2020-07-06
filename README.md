@@ -33,6 +33,8 @@ ISBN 0 7497 1484 0
 - Some changes to the text were made: spelling errors/consistency, some were rephrased to fit the "digital" format or the implemented mechanisms 
 - Select an action by pressing the number keys that correspond to the option (**1** - **9**). If there are more than 9 options, items 10-15 map to the keys **A** (or **a**) - **F** (or **f**)
 - Press **q** or **Q** during action selection to quit or terminate the program
+- Press **c** or **C** during action selection to view character (items, skills, codewords)
+- Press **g** or **G** during action selection to view skills glossary
 - Paradoxical or continuity errors (as pointed out by some reviewers/readers) are preserved since the ZIL was adapted verbatim from the book.
 
 ## Bugs
