@@ -119,3 +119,12 @@
     (POSSESSIONS <LTABLE LONGBOW JEWELS>)
     (MONEY 16)
     (FLAGS PERSONBIT)>
+
+<OBJECT CHARACTER-CUSTOM
+    (DESC "Custom Character")
+    (SYNONYM CHARACTER)
+    (ADJECTIVE CUSTOM)
+    (LDESC "Custom character with user selected skills.")
+    (LIFE-POINTS 10)
+    (MONEY 10)
+    (FLAGS PERSONBIT NARTICLEBIT)>

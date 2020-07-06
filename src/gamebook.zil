@@ -485,29 +485,44 @@
         )>
         <TELL "You can select up to " N .MAX " " .DESC "s from this list:" CR>
         <DO (I 1 .ITEMS)
-            <TELL N .I " - [">
+            <COND (<L? .I 10>
+                <TELL N .I>
+            )(ELSE
+                <TELL C <+ <- .I 10> !\A>>
+            )>
+            <TELL " - [">
             <COND (<INTBL? <GET .LIST .I> SELECT-CHOICES 10> <TELL "X">)(ELSE <TELL " ">)>
             <TELL "] - " D <GET .LIST .I> CR>
         >
+        <COND (<EQUAL? .CONTAINER ,SKILLS> <TELL "G - Skills Glossary" CR>)>
         <TELL "0 - I'm alright with my choices." CR>
         <TELL "Select which " .DESC "(s) to take: " CR>
         <SET KEY <INPUT 1>>
         <COND (<EQUAL? .KEY !\0> <RETURN>)>
-        <COND (<AND <G=? .KEY !\1> <L=? .KEY !\5>>
-            <SET CHOICE <- .KEY !\0>>
-            <COND (<INTBL? <GET .LIST .CHOICE> SELECT-CHOICES 10>
-                <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES <GET .LIST .CHOICE>> NONE>
-                <SET COUNT <- .COUNT 1>>
+        <COND (<EQUAL? .KEY !\G !\g> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY>)>
+        <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9>> <AND <G=? .KEY !\a> <L=? .KEY !\f>> <AND <G=? .KEY !\A> <L=? .KEY !\F>>>
+            <COND (<AND <G=? .KEY !\a> <L=? .KEY !\f>>
+                <SET CHOICE <+ <- .KEY !\a> 10>> 
+            )(<AND <G=? .KEY !\A> <L=? .KEY !\F>>
+                <SET CHOICE <+ <- .KEY !\A> 10>>
             )(ELSE
-                <COND (<EQUAL? .COUNT .MAX>
-                    <CRLF>
-                    <HLIGHT ,H-BOLD>
-                    <TELL "You have already selected " N .MAX " " .DESC "s!">
-                    <HLIGHT 0>
-                    <CRLF>
+                <SET CHOICE <- .KEY !\0>>
+            )>
+            <COND (<L=? .CHOICE .ITEMS>
+                <COND (<INTBL? <GET .LIST .CHOICE> SELECT-CHOICES 10>
+                    <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES <GET .LIST .CHOICE>> NONE>
+                    <SET COUNT <- .COUNT 1>>
                 )(ELSE
-                    <SET COUNT <+ .COUNT 1>>
-                    <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES NONE> <GET .LIST .CHOICE>>
+                    <COND (<EQUAL? .COUNT .MAX>
+                        <CRLF>
+                        <HLIGHT ,H-BOLD>
+                        <TELL "You have already selected " N .MAX " " .DESC "s!">
+                        <HLIGHT 0>
+                        <CRLF>
+                    )(ELSE
+                        <SET COUNT <+ .COUNT 1>>
+                        <PUT SELECT-CHOICES <GET-INDEX SELECT-CHOICES NONE> <GET .LIST .CHOICE>>
+                    )>
                 )>
             )>
         )>
@@ -635,6 +650,7 @@
             <DO (I 1 .COUNT)
                 <TELL N .I " - " D <GET CHARACTERS .I> CR>
             >
+            <TELL "C - Custom character" CR>
             <TELL "Select which character?">
             <SET KEY <INPUT 1>>
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
@@ -673,11 +689,52 @@
                 )(ELSE
                     <CRLF>
                 )>
+            )(<EQUAL? .KEY !\C !\c>
+                <CREATE-CHARACTER>
+                <TELL CR "You have created a custom character." CR>
+                <TELL CR "[Press a key to begin]" CR>
+                <INPUT 1>
+                <RETURN>
             )(ELSE
                 <CRLF>
             )>
         >
     )>>
+
+<ROUTINE CREATE-CHARACTER ("AUX" SKILL REQUIREMENT)
+    <CRLF>
+    <REPEAT ()
+        <RESET-SKILLS>
+        <SELECT-FROM-LIST ,SKILL-GLOSSARY 11 4 "skill" ,SKILLS>
+        <COND (<EQUAL? <COUNT-CONTAINER ,SKILLS> 4>
+            <CRLF>
+            <TELL "You have selected: ">
+            <PRINT-CONTAINER ,SKILLS>
+            <CRLF>
+            <TELL "Start the game with this character?">
+            <COND (<YES?> <RETURN>)>
+        )(ELSE
+            <CRLF>
+            <HLIGHT ,H-BOLD>
+            <TELL "You must select 4 skills.">
+            <HLIGHT 0>
+            <CRLF>
+        )>
+    >
+    <SET SKILL <FIRST? ,SKILLS>>
+    <REPEAT ()
+        <COND (<NOT .SKILL> <RETURN>)>
+        <SET REQUIREMENT <GETP .SKILL ,P?REQUIRES>>
+        <COND (.REQUIREMENT
+            <MOVE .REQUIREMENT ,PLAYER>
+        )>
+        <SET SKILL <NEXT? .SKILL>>
+    >
+    <SETG CURRENT-CHARACTER ,CHARACTER-CUSTOM>
+    <SETG MONEY <GETP ,CHARACTER-CUSTOM ,P?MONEY>>
+    <SETG LIFE-POINTS <GETP ,CHARACTER-CUSTOM ,P?LIFE-POINTS>>
+    <SETG MAX-LIFE-POINTS ,LIFE-POINTS>>
+
 
 <ROUTINE DESCRIBE-CHARACTER (CHARACTER "AUX" COUNT SKILLS POSSESSIONS QUANTITY)
     <COND (.CHARACTER
