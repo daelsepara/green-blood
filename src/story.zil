@@ -70,6 +70,8 @@
 <CONSTANT FOUR-DIRECTIONS <LTABLE "head west" "east" "south-west" "south from here">>
 <CONSTANT FOUR-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>>
 
+<CONSTANT THREE-DESTINATIONS <LTABLE STORY043 STORY427 STORY070>>
+
 <CONSTANT CAMP-CHOICES <LTABLE "head west into the forest" "head east" "south-west" "south" "wait until nightfall and steal into the camp again under the cover of darkness">>
 <CONSTANT CAMP-DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078 STORY217>>
 
@@ -293,7 +295,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT020 "He points up at the sun shining down on the clearing. Spitting onto his finger, he flicks the saliva up into the air. To your astonishment, a green watery film covers the face of the sun. It lasts only an instant before being wiped away like the blinking of a giant celestial eye. The Elf King turns to you, and his feral smile is brimming with triumph. \"Can you do that, mortal? Make the sun go green?\"">
-<CONSTANT CHOICES020 <LTABLE "cast an illusion to achieve the desired effect and pass the Elf King's test" "Otherwise you must admit defeat">>
+<CONSTANT CHOICES020 <LTABLE "cast an illusion to achieve the desired effect and pass the Elf King's test" "otherwise you must admit defeat">>
 
 <ROOM STORY020
     (IN ROOMS)
@@ -306,17 +308,21 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT021 "With the dragon's help and the might of the elves, you feel you have a chance of defeating the forces of the Westermen and driving the threat of the evil from the forest. Full of confidence in your ability to call upon a powerful ally of the ancient times, you head towards the rowan trees at the edge of the forest.||Travelling along routes that seem to come unbidden to you mind, you reach a clearing that seems strangely familiar. Was it perhaps, that you met the elves? Or does some horror of your travels lurk nearby in the undergrowth?||Summoning up your courage, you call out to whoever or whatever will here: |\"Elves! If you would win your freedom, come talk with a mortal who can deliver it. For I have secured us an ally equal to half the Westermen's forces -- a dragon whose very appearance will slay scores of them from sheer terror. Come forward and speak with me.\"||The words of your challenge die away, suffocated by the preternatural silence of the forest. You might have expected to hear the chirruping voice of a bird or the faint rustle of a woodmouse questing for beetles, yet there is nothing. Cursing the elves for their arrogance, you shout again, \"Come forward!\"||Spittle flies from your lips and your face flushes with the violent passion of your request. Again you wait for a reply.||\"Do you think that one dragon is enough, then, to beat your fellow men?\" says a cool voice from behind you.||Spinning around, you see no more than inches from your face the eternally youthful face of an elf. Yet the penetrating eyes that are windows to the wisdom of countless centuries mark this elf out above all others. The Elf King has answered your call.||\"One dragon is more than enough,\" you reply, \"with the forces of the elves a well. He will demoralize the Westermen, plunging them into chaos from which the deadly arrows of the elves will cruelly pluck them.\"||He smiles a cold smile, approving of the relish with which you describe the Westermen's deaths. \"Brave words indeed, for a mortal. But for elves to accede to your schemes and counsels, you must prove yourself worthy of our respect.\"||\"How may I do that?\"||\"Overcome my champion in a duel. Only then will we heed your words.\"">
-<CONSTANT CHOICES021 <LTABLE "use" "use" "accept his terms if you have neither">>
 
 <ROOM STORY021
     (IN ROOMS)
     (DESC "021")
     (STORY TEXT021)
-    (CHOICES CHOICES021)
-    (DESTINATIONS <LTABLE STORY215 STORY309 STORY137>)
-    (REQUIREMENTS <LTABLE SKILL-FOLKLORE <LTABLE CODEWORD-SPECULUM> NONE>)
-    (TYPES <LTABLE R-SKILL R-CODEWORD R-NONE>)
+    (PRECHOICE STORY021-PRECHOICE)
+    (CONTINUE STORY137)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY021-PRECHOICE ()
+    <COND(<IN? ,SKILL-FOLKLORE ,SKILLS>
+        <STORY-JUMP ,STORY215>
+    )(<IN? ,CODEWORD-SPECULUM ,CODEWORDS>
+        <STORY-JUMP ,STORY309>
+    )>>
 
 <CONSTANT TEXT022 "The sprite inclines your own reflected face in an expression of deep meditation. \"I see your destiny,\" it says at last. \"You will either prove yourself a hero, saving the forest, or else you will allow venality and pride to lead you to your doom.\"||\"Being a hero sounds the better option,\" you comment drily.||\"In that case, you must seek Elanor the Grey Lady. Solitude has made her strange -- not quite elvish in her ways, but not human any longer either. But you should trust her, as she'll set you on the right path. Then you must find the elves. Convincing them to help you may prove a weighty task, for they are proud and aloof and wilfully headstrong. Next seek the camp of the Westermen to learn their plans. They will destroy the forest if they succeed, and only direct action can stop them. Perhaps you can dig up a worm to help you.\"||There is a long pause. You look expectantly at the reflection until it finally gives you a distinctly unhuman grin. \"Well, that is the prophecy,\" it concludes.">
 <CONSTANT CHOICES022 <LTABLE "keep your promise to break the mirror" "leave it intact for the time being">>
@@ -377,7 +383,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT027 "While you hold your ground, Valerian begins casting a spell.">
-<CONSTANT CHOICES027 <LTABLE "go onto the offensive" "prepare a defensive magic" "otherwise do nothing">>
+<CONSTANT CHOICES027 <LTABLE "go onto the offensive" "prepare a defensive magic" "otherwise">>
 
 <ROOM STORY027
     (IN ROOMS)
@@ -1901,6 +1907,7 @@
     (STORY TEXT161)
     (CHOICES CHOICES161)
     (DESTINATIONS <LTABLE STORY183 STORY172>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT162 "You tell them of your quest to find the Tree of Knowledge in the Forest of Arden, after which the taller of the two introduces himself as Renard the Guide.||\"You will need a guide in the forest, or you'll be lost, never to see the lands of men again.\"||\"Renard doesn't know the whereabouts of this tree you seek, I'll warrant,\" comments Marek.||\"What would a hunter know of the Tree of Knowledge?\"||The hunter turns away; his parting shot is: \"About as much as you, Renard, and that is nothing at all.\" He walks over to the kitchen door to talk to the young woman, who pours him jug of beer.||Renard sits down at a table, draws up a second chair and gestures for you to join him.">
@@ -2017,8 +2024,8 @@
     (STORY TEXT172)
     (CHOICES CHOICES172)
     (DESTINATIONS <LTABLE STORY422 STORY142 STORY381>)
-    (TYPES THREE-NONES)
     (PRECHOICE STORY172-PRECHOICE)
+    (TYPES THREE-NONES)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
@@ -2164,7 +2171,7 @@
     (DESC "184")
     (STORY TEXT184)
     (CHOICES CHOICES184)
-    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070>)
+    (DESTINATIONS THREE-DESTINATIONS)
     (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -2270,8 +2277,8 @@
     (STORY TEXT195)
     (CHOICES CHOICES195)
     (DESTINATIONS <LTABLE STORY235 STORY244>)
-    (TYPES TWO-NONES)
     (PRECHOICE STORY-LOSERING)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT196 "The path twists and turns, winding through dense undergrowth overhung by barrel-like Gwelph trees that are festooned with lianas. You try to fix the shape of each tree in your mind so you will know if you have passed by one before.||To your dismay the path ends in a little clearing choked with dead leaves, but from which two paths lead off in different directions. Each path is lined with thorn bushes that have grown to the height of a man and are covered in inch-long purple barbs oozing an orange fluid. The thorns would break off in your flesh if you brushed against them.">
@@ -2318,8 +2325,8 @@
     (STORY TEXT199)
     (CHOICES CHOICES199)
     (DESTINATIONS <LTABLE STORY218 STORY227>)
-    (TYPES TWO-NONES)
     (PRECHOICE STORY199-PRECHOICE)
+    (TYPES TWO-NONES)
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
@@ -2765,13 +2772,13 @@
 
 <ROOM STORY235
     (IN ROOMS)
+    (DESC "235")
     (STORY TEXT235)
     (CHOICES CHOICES235)
     (DESTINATIONS <LTABLE STORY197 STORY184 STORY168 STORY155 STORY141>)
     (REQUIREMENTS <LTABLE NONE JAR-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
-    (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
     (PRECHOICE STORY-GATHERPOTIONS)
-    (DESC "235")
+    (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT236 "The little imp's eyes light up when he sees the emerald ring. \"It is the Lady's ring, the ring of power.\" He yanks it off your finger and runs to the central trunk of the giant bush. He scrambles up just as if he were a monkey, writhing sinuously past the wicked barbed thorns. You could never follow him. He chirrups and laughs, looking down at you through the thorny branches. You ask him to keep his side of the bargain, to help you in your quest.||\"I am the Kwerrel, the Kwerrel keep no bargains.\"||His chirruping laugh mocks you.">
@@ -2784,8 +2791,8 @@
     (CHOICES CHOICES236)
     (DESTINATIONS <LTABLE STORY015 STORY375>)
     (REQUIREMENTS <LTABLE NONE SKILL-SPELLS>)
-    (TYPES <LTABLE R-NONE R-SKILL>)
     (PRECHOICE STORY-LOSERING)
+    (TYPES <LTABLE R-NONE R-SKILL>)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT237 "You trudge on, singling out a particular tree to head for as far away as you can see and keeping it in sight as you go to try to make sure you don't walk in circles. When you reach the tree you look back and try to identify the one you left behind so that you can choose another tree to make for in the same general direction. It is tiring and you are exhausted.||Moving through winding mossy ways, wrapped in the green gloom of the forest depth, you catch the scent of unusual blooms. A path fringed with violet blossoms leads off between the great black boles of the trees, and following it with your gaze you glimpse a stone tower. It is some distance out of your path, and ominously draped in shadows.">
@@ -2850,7 +2857,7 @@
     (DESC "242")
     (STORY TEXT242)
     (CHOICES CHOICES242)
-    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070>)
+    (DESTINATIONS THREE-DESTINATIONS)
     (TYPES THREE-NONES)
     (PRECHOICE STORY-GATHERPOTIONS)
     (FLAGS LIGHTBIT)>
@@ -2885,7 +2892,7 @@
     (IN ROOMS)
     (DESC "245")
     (STORY TEXT245)
-    (CONTINUE STORY287)
+    (CONTINUE STORY289)
     (PRECHOICE STORY245-PRECHOICE)
     (FLAGS LIGHTBIT)>
 
@@ -2969,17 +2976,20 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT252 "The man in black fixes you with a flinty stare. \"What are you doing here, stranger?\"">
-<CONSTANT CHOICES252 <LTABLE "use" "tell him to mind his own business" "tell him you seek the Tree of Knowledge" "simply leave the inn abruptly">>
+<CONSTANT CHOICES252 <LTABLE "tell him to mind his own business" "tell him you seek the Tree of Knowledge" "simply leave the inn abruptly">>
 
 <ROOM STORY252
     (IN ROOMS)
     (DESC "252")
     (STORY TEXT252)
     (CHOICES CHOICES252)
-    (DESTINATIONS <LTABLE STORY188 STORY336 STORY124 STORY117>)
-    (REQUIREMENTS <LTABLE SKILL-STREETWISE NONE NONE NONE>)
-    (TYPES <LTABLE R-SKILL R-NONE R-NONE R-NONE>)
+    (DESTINATIONS <LTABLE STORY336 STORY124 STORY117>)
+    (PRECHOICE STORY252-PRECHOICE)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
+
+<ROUTINE STORY252-PRECHOICE ()
+    <COND (<IN? ,SKILL-STREETWISE ,SKILLS> <STORY-JUMP ,STORY188>)>>
 
 <CONSTANT TEXT253 "As you draw back your sword to strike, Elanor suddenly jerks the end of a vine. A secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest,\" she warns. \"I will turn every living thing against you.\"||Inside the tree-house you are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily. In your haste to flee you can grab only three of the five potions. There is a cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot banded with layers of coloured earth.">
 
@@ -2987,12 +2997,15 @@
     (IN ROOMS)
     (DESC "253")
     (STORY TEXT253)
-    (CONTINUE STORY322)
     (PRECHOICE STORY253-PRECHOICE)
+    (CONTINUE STORY322)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY253-PRECHOICE ()
     <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
+    <CRLF>
+    <TELL "You rush to climb down the ladder to the ground.">
+    <CRLF>
     <RETURN>>
 
 <CONSTANT TEXT254 "Without waiting to hear a word the impish little Kwerrel puts the potion bottle to his mouth and begins to drink greedily. He is drinking the mulch of the fire lizard's gizzard, as deadly a poison to him as it is to you. He dies in a fit of convulsions, leaving you alone.||There is nothing to be done for the poor little Kwerrel, so you begin to search for a way out of the giant bush. At last your perseverance is rewarded and you break out into the open -- but not without getting badly scratched by the thorns.">
@@ -3144,7 +3157,7 @@
     (IN ROOMS)
     (DESC "265")
     (STORY TEXT265)
-    (CONTINUE STORY258)
+    (CONTINUE STORY158)
     (EVENTS STORY265-EVENTS)
     (PRECHOICE STORY265-PRECHOICE)
     (FLAGS LIGHTBIT)>
@@ -3316,14 +3329,13 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT279 "You have no difficulty in making your way back into the forest unchallenged. The guard thought better of raising the alarm. He goes over to some of the other slaves and starts kicking them to give himself the feeling he is doing his job well. You hear the innkeeper groan and beg for mercy.||Soon the awful sights and sounds of the Westermen camp are far behind.">
-<CONSTANT CHOICES279 <LTABLE "head west" "east" "south-west" "south">>
 
 <ROOM STORY279
     (IN ROOMS)
     (DESC "279")
     (STORY TEXT279)
-    (CHOICES CHOICES279)
-    (DESTINATIONS <LTABLE STORY043 STORY427 STORY070 STORY078>)
+    (CHOICES FOUR-DIRECTIONS)
+    (DESTINATIONS FOUR-DESTINATIONS)
     (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
@@ -3363,8 +3375,8 @@
     (IN ROOMS)
     (DESC "283")
     (STORY TEXT283)
-    (CONTINUE STORY310)
     (PRECHOICE STORY283-PRECHOICE)
+    (CONTINUE STORY310)
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY283-PRECHOICE ()
@@ -3806,7 +3818,7 @@
     (DESC "322")
     (STORY TEXT322)
     (CHOICES CHOICES322)
-    (DESTINATIONS <LTABLE STORY197 STORY174 STORY168 STORY155 STORY141>)
+    (DESTINATIONS <LTABLE STORY197 STORY184 STORY168 STORY155 STORY141>)
     (REQUIREMENTS <LTABLE NONE JAR-WHITE-JELLY POTION-TARRY-BLACK POTION-CLOUDY-BLUE POTION-RED-LIQUID>)
     (TYPES <LTABLE R-NONE R-ITEM R-ITEM R-ITEM R-ITEM>)
     (FLAGS LIGHTBIT)>
@@ -3849,7 +3861,7 @@
     (DESC "326")
     (STORY TEXT326)
     (CHOICES CHOICES326)
-    (DESTINATIONS <LTABLE STORY347 STORY132>)
+    (DESTINATIONS <LTABLE STORY347 STORY123>)
     (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
