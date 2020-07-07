@@ -3953,6 +3953,7 @@
     (STORY TEXT334)
     (CHOICES FOUR-DIRECTIONS)
     (DESTINATIONS FOUR-DESTINATIONS)
+    (TYPES FOUR-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT335 "Before you can complete the train of thought you need for your spell, the King of the Elves has done so. A luminous green halo pops forth from his fingertips and grows as it darts towards you. It encircles your waist before you can move. Your legs feel as if they have turned to jelly and you cannot stop yourself collapsing to the ground.||\"Submit, mortal, I have defeated you,\" cried the King of the Elves.">
@@ -4382,7 +4383,7 @@
     (STORY TEXT371)
     (CHOICES CHOICES371)
     (DESTINATIONS <LTABLE STORY144 STORY084 STORY397>)
-    (TYPE THREE-NONES)
+    (TYPES THREE-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT372 "You speak the word and the spell wings its way to the Infernal Statue. It doesn't shake its head or rub its brow as a man affected by this spell might but it takes a great step backwards and falls into the deep blue pool.||There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
@@ -5538,6 +5539,7 @@
     (STORY TEXT467)
     (CHOICES CHOICES467)
     (DESTINATIONS <LTABLE STORY487 STORY497>)
+    (TYPES TWO-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT468 "You are too late. Before you can complete your spell, Valerian has cast his. A silver noose flies up into the pavilion and darts through the air to hover above your head. One of the guards strikes Valerian down but the noose drops over your head and tightens inexorably around your neck, throttling the life out of you.">
@@ -5913,7 +5915,7 @@
     (STORY TEXT498)
     (CHOICES CAMP-CHOICES)
     (DESTINATIONS CAMP-DESTINATIONS)
-    (TYPE FIVE-NONES)
+    (TYPES FIVE-NONES)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT499 "Stirring at the noise, the woman on the bed raises a slim white arm and brushes sleepily at her face. At any moment she will awaken. If she discovers you here, she might well express her surprise in a manner involving both magic and malice. You must begone with all stealth and haste.">
