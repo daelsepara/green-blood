@@ -9,3 +9,14 @@
     <TELL INSTRUCTIONS-TEXT>
     <CRLF>
     <PRESS-A-KEY>>
+
+<CONSTANT HELP-TEXT "C - Display player information (skills, items, codewords)|G - Display glossary of skills|Q - quit the game">
+
+<ROUTINE DISPLAY-HELP ()
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "Additional Command Keys:">
+    <HLIGHT 0>
+    <CRLF><CRLF>
+    <TELL HELP-TEXT>
+    <CRLF>>

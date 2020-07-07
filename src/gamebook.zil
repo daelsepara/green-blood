@@ -74,7 +74,8 @@
             <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\g !\G>> <CRLF> <PRINT-SKILLS> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\i !\I>> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
-            <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <RETURN>)>
+            <COND (<EQUAL? .KEY !\h !\H !\?> <DISPLAY-HELP> <PRESS-A-KEY> <SET KEY NONE>)>
+            <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <TELL "Are you sure? "><COND(<YES?> <RETURN>)>)>
             <COND (<EQUAL? .KEY !\x !\X> <CRLF> <RETURN>)>
         )>
         <CLOCKER>
@@ -166,7 +167,7 @@
                 )>
             )>
         )>
-        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\i !\I !\q !\Q> <CRLF> <RETURN>)>
+        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\i !\I !\q !\Q !\h !\H !\?> <CRLF> <RETURN>)>
     >
     <RETURN .KEY>>
 
@@ -307,7 +308,7 @@
     <HLIGHT ,H-BOLD>
     <TELL .MESSAGE>
     <HLIGHT 0>
-    <JIGS-UP " ">>
+    <GAMES-UP " ">>
 
 <ROUTINE STORY-JUMP (STORY)
     <COND (.STORY
@@ -890,3 +891,26 @@
     )>
     <SCREEN 0>
     <HLIGHT 0>>
+
+<ROUTINE QUIT-MSG ()
+    <TELL CR "Thanks for playing." CR>
+    <QUIT>>
+
+<ROUTINE GAMES-UP (TEXT "AUX" W)
+    <TELL .TEXT CR CR>
+    <PRINT-GAME-OVER>
+    <CRLF>
+    <REPEAT PROMPT ()
+        <PRINTI "Would you like to RESTART or QUIT? > ">
+        <REPEAT ()
+            <READLINE>
+            <SET W <AND <GETB ,LEXBUF 1> <GET ,LEXBUF 1>>>
+            <COND (<EQUAL? .W ,W?RESTART>
+                <RESTART>
+            )(<EQUAL? .W ,W?QUIT>
+                <QUIT-MSG>
+            )(T
+                <TELL CR "(Please type RESTART or QUIT) > ">
+            )>
+        >
+    >>

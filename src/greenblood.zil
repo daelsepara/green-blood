@@ -10,4 +10,4 @@
 <ROUTINE GO ()
     <V-VERSION>
     <GAME-BOOK>
-    <JIGS-UP "This is a work in progress.">>
+    <QUIT-MSG>>
