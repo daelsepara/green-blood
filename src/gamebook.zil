@@ -869,24 +869,24 @@
     <RETURN>>
 
 <ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
-    <SPLIT 1>
+    <COND (,CHARACTERS-ENABLED <SPLIT 2>)(ELSE <SPLIT 1>)>
     <SCREEN 1>
     <SET WIDTH <LOWCORE SCRH>>
     <HLIGHT ,H-INVERSE>
     <LINE-ERASE 1>
-    <TELL !\ >
     <COND (,HERE
-        <COND (,HERE-LIT <TELL D ,HERE>)(ELSE <TELL %,DARKNESS-STATUS-TEXT>)>
+        <CURSET 1 1>
+        <TELL D ,HERE>
+        <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
+            <LINE-ERASE 2>
+            <CURSET 1 <- .WIDTH 12>>
+            <TELL "Life: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
+            <CURSET 2 1>
+            <PRINT-CAP-OBJ ,CURRENT-CHARACTER>
+            <CURSET 2 <- .WIDTH 12>>
+            <PRINT-CAP-OBJ ,CURRENCY>
+            <TELL ": " N ,MONEY>
+        )>
     )>
-    <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
-        <TELL " - " CT ,CURRENT-CHARACTER>
-        <CURSET 1 <- .WIDTH 46>>
-        <TELL "Life Points: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
-        <CURSET 1 <- .WIDTH 27>>
-        <PRINT-CAP-OBJ ,CURRENCY>
-        <TELL ": " N ,MONEY>
-    )>
-    <CURSET 1 <- .WIDTH 16>>
-    <TELL "Moves: " N ,MOVES>
     <SCREEN 0>
     <HLIGHT 0>>
