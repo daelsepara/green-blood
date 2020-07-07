@@ -7,8 +7,7 @@
     <HLIGHT 0>
     <CRLF>
     <TELL INSTRUCTIONS-TEXT>
-    <CRLF>
-    <PRESS-A-KEY>>
+    <CRLF>>
 
 <CONSTANT HELP-TEXT "C - Display player information (skills, items, codewords)|G - Display glossary of skills|Q - quit the game">
 
