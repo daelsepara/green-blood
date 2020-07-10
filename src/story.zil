@@ -5676,7 +5676,7 @@
     (DEATH T)
     (FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT481 "\"What use is it to you, if you capture me? I have no gold, no treasures for you to steal -- but I know where you can find some. The great dragon of the forest has breathed his last breath and I need the help of many men to carry away his hoard,. We will be wealthy beyond the dreams of men -- wealthier than kinds. Will you help me? I'ææ give each of you a tenth of the bounty.\"||They look at each other and one whispers something to his colleagues before saying he agrees. But you know enough of the ways of men to know it is just a trick -- they clearly donøt believe you and still mean to capture you.">
+<CONSTANT TEXT481 "\"What use is it to you, if you capture me? I have no gold, no treasures for you to steal -- but I know where you can find some. The great dragon of the forest has breathed his last breath and I need the help of many men to carry away his hoard,. We will be wealthy beyond the dreams of men -- wealthier than kinds. Will you help me? I'll give each of you a tenth of the bounty.\"||They look at each other and one whispers something to his colleagues before saying he agrees. But you know enough of the ways of men to know it is just a trick -- they clearly don't believe you and still mean to capture you.">
 <CONSTANT CHOICES481 <LTABLE "use" "use" "use" "otherwise, if you don't have any of these skills">>
 
 <ROOM STORY481
