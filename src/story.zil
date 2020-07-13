@@ -2340,7 +2340,8 @@
     <COND(,RUN-ONCE <LOSE-LIFE 2 "You have died from ant bites." ,STORY199>)>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT199-CONTINUED ,PERIOD-CR>
+        <TELL TEXT199-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT200 "Renard leads you out of the town through the waterside gate to the bank of the Burgstream. You walk north along a path next to the bank. The river valley has quite steep sides, making it difficult for you to see very much of the surrounding land. Ahead, however, you can see the vast top of a leafy canopy that stretches to the far horizon like a green sea fading to blue in the distance. The air is good here -- fresh and clean, laden only with the perfumes of wild flowers.||A lone figure in grey walks ahead. You suggest trying to catch up but Renard just shakes his head.\"We will never find her in the forest unless she wishes it. A man might as well try to fly.\"||\"If we run we can catch up before she reaches the forest,\" you suggest.||\"She moves as fast as a deer at need. We'd only tire ourselves to no end.\"||If it is the same old woman from the inn last night, she looked too old even to break into a trot. You ponder Renard's strange claims until you can see the trunks of the trees at the edge of the Forest of Arden.||As you enter the forest you are surprised by how much colour there is. Blossoming trees, fungus mounds in bright hues, flowering creepers and giant butterflies are lit by the dappled sunshine that pours through gaps in the leafy canopy. It is noisy too -- the forest is alive with insects, birds and small mammals. Renard leads you along short cuts where the Burgstream bends tortuously until at last you hear the roar of the great Sirion river as it rushes through the forest ahead. He brings you to a ford over the Burgstream.||\"We must cross here and then walk west beside the Sirion.\" You follow across the ford and on through the thick forest.||Nothing in your life has prepared you for the moment when you first catch sight of the Sirion river. The furthest bank is just a line of shimmering heat-hazed greenery at least six miles away. The roiling waters carry a multitude of dead tree branches towards the sea, like a vein carrying detritus out of a living body. Across the river the treeline is unbroken. You are deep in the rainforest now. The gigantic trees spread their branches more than a hundred feet above the ground. At the river's edge mangroves reach far out into the water. Bloated river buffalo bask beneath their arching roots.||\"The going will be difficult for a while until we reach higher ground,\" says Renard. He presses on, hacking at the undergrowth, until you reach a tributary of the river. It blocks your progress, and is spanned by only a narrow rope bridge. The bridge show signs of regular repair: bushes have been hacked back from the stanchions between which it hangs. Renard tells you that the elves maintain this bridge as a link between different parts of their domain. He leads the way across and you follow.||He is halfway across when a waterspout surges up from the river. Out of it rears a mass of vegetation ringed with fibrous tentacles. It is a dreaded Embracer, and in seconds it has plucked Renard from the bridge. As he is pulled under the water, he manages to cry out to you: \"You must go on, then climb. Then you may find what you seek --\"||The tentacles drag him under. You watch the muddied water swirl beneath the bridge, but there is no sign of poor Renard.">
@@ -2662,7 +2663,8 @@
     <LOSE-LIFE 4 "You died in combat" ,STORY226>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT226-CONTINUED ,PERIOD-CR>
+        <TELL TEXT226-CONTINUED>
+        <TELL ,PERIOD-CR>
         <COND (<IN? ,POTION-RED-LIQUID ,PLAYER>
             <CRLF>
             <TELL "Drink " T ,POTION-RED-LIQUID "?">
@@ -2903,7 +2905,8 @@
 <ROUTINE STORY245-PRECHOICE ()
     <TAKE-ELVEN-DIRK>
     <CRLF>
-    <TELL TEXT245-CONTINUED ,PERIOD-CR>
+    <TELL TEXT245-CONTINUED>
+    <TELL ,PERIOD-CR>
     <RETURN>>
 
 <CONSTANT TEXT246 "Renard is beginning to panic as he weakens from loss of blood. He curses you for a murderous fool. As you wonder how you could have been so foolish as to attack the tentacles clutching him, the Embracer erupts out of the water beneath you once more.">
@@ -2941,7 +2944,8 @@
         <PUTP ,STORY248 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT248-CONTINUED ,PERIOD-CR>
+        <TELL TEXT248-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose another spell. There is little point in casting casting Vanish.">
@@ -4221,7 +4225,8 @@
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT357-CONTINUED ,PERIOD-CR>
+        <TELL TEXT357-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT358 "You say you remember the serving wench all right but you can't quite conjure up her name.||\"She was never at the Reaver's. That's the girl from Rainbow's End.\" The gleam in his eyes dims a moment to be replaced by a piercing look of low cunning. \"I don't think I remember you at all. Guards.\"||You run for the exit to the porch but the guards cross heir halberds in front of you, barring your way.">
@@ -4411,10 +4416,12 @@
         <STORY-JUMP ,STORY213>
     )(ELSE
         <CRLF>
-        <TELL TEXT373-CONTINUED ,PERIOD-CR>
+        <TELL TEXT373-CONTINUED>
+        <TELL ,PERIOD-CR>
         <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
         <CRLF>
-        <TELL TEXT373-END ,PERIOD-CR>
+        <TELL TEXT373-END>
+        <TELL ,PERIOD-CR>
     )>
     <RETURN>>
 
@@ -5353,7 +5360,8 @@
     <TELL " ">
     <TELL CAMP-PLANS>
     <CRLF><CRLF>
-    <TELL TEXT452-CONTINUED ,PERIOD-CR>>
+    <TELL TEXT452-CONTINUED>
+    <TELL ,PERIOD-CR>>
 
 <CONSTANT TEXT453 "Dire straits call for desperate measures and your gamble pays off. He falls to the ground, already dead before he strikes the sward. You whip your sword tip out of his body, jump over the fallen guard and run for the nearby trees. You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far beyond you.">
 
@@ -5410,7 +5418,8 @@
     )>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT456-CONTINUED ,PERIOD-CR>
+        <TELL TEXT456-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT457 "The chief sounds as commanding as usual when he orders his guard to kill Valerian, the Moon Druid. They hesitate for a moment and Valerian completes his spell. A silver noose flies up into the pavilion and darts through the air to hover above your head. One of the guards strikes Valerian down, but the noose drops over your head and tightens inexorably around your neck, throttling the life out of you.">
@@ -5490,7 +5499,8 @@
     <CRLF>
     <TELL CAMP-PLANS>
     <CRLF><CRLF>
-    <TELL TEXT462-CONTINUED ,PERIOD-CR>>
+    <TELL TEXT462-CONTINUED>
+    <TELL ,PERIOD-CR>>
 
 <CONSTANT TEXT463 "The man you are fighting is a bit of a coward and he guards carefully against your every move. You look like  a pair of grannies circling each other warily. Time has run out for you. The guard's comrades close in from all sides and you are overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
 
@@ -5745,7 +5755,8 @@
     )>
     <COND (<G? ,LIFE-POINTS 0>
         <CRLF>
-        <TELL TEXT485-CONTINUED ,PERIOD-CR>
+        <TELL TEXT485-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT486 "You send the spell unseen across the space separating you from Valerian the Moon Druid. As your spell takes hold Valerian stares about him uncomprehendingly. He is completely nonplussed. Seizing your chance, you cast Vanish once more and make good your escape.||You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
@@ -5776,7 +5787,8 @@
         <PUTP ,STORY487 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT487-CONTINUED ,PERIOD-CR>
+        <TELL TEXT487-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT488 "These common brutish men who have become so inured to the sufferings of their fellow men are almost devoid of any feelings of friendship. They look on you as a slave and nothing more. Their swords ring out of their sheaths and they are coming to get you.">
@@ -5866,7 +5878,8 @@
         <PUTP ,STORY494 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT494-CONTINUED ,PERIOD-CR>
+        <TELL TEXT494-CONTINUED>
+        <TELL ,PERIOD-CR>
     )>>
 
 <CONSTANT TEXT495 "You managed to gulp a large breath of air before you let off the spell, and were ready for the awful effects of the gas. You reach the portal of the pavilion and slip past the guards who are still retching hard. You are quickly lost in the forest once more, knowing they will never find you.">

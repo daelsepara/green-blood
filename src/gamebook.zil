@@ -1252,7 +1252,8 @@
     <RETURN 0>>
 
 <ROUTINE GAMES-UP ("OPT" TEXT "AUX" W)
-    <COND (.TEXT <TELL .TEXT CR CR>)>
+    <COND (.TEXT <TELL .TEXT CR>)>
+    <CRLF>
     <PRINT-GAME-OVER>
     <CRLF>
     <REPEAT PROMPT ()
