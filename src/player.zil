@@ -8,12 +8,12 @@
 <OBJECT SKILL-ARCHERY
     (DESC "ARCHERY")
     (LDESC "A long-range attack skill. You must possess a longbow to use this skill")
-    (REQUIRES LONGBOW)>
+    (REQUIRES <LTABLE LONGBOW>)>
 
 <OBJECT SKILL-CHARMS
     (DESC "CHARMS")
     (LDESC "The expert use of magical wards to protect you from danger. Also includes that most elusive of qualities. luck. YOu must possess a magic amulet to use this skill.")
-    (REQUIRES MAGIC-AMULET)>
+    (REQUIRES <LTABLE MAGIC-AMULET>)>
 
 <OBJECT SKILL-CUNNING
     (DESC "CUNNING")
@@ -30,7 +30,7 @@
 <OBJECT SKILL-SPELLS
     (DESC "SPELLS")
     (LDESC "A range of magical effects encompassing illusions, elemental effects, commands, and summonings. You must possess a magic wand to use this skill.")
-    (REQUIRES MAGIC-WAND)>
+    (REQUIRES <LTABLE MAGIC-WAND>)>
 
 <OBJECT SKILL-STREETWISE
     (DESC "STREETWISE")
@@ -39,7 +39,7 @@
 <OBJECT SKILL-SWORDPLAY
     (DESC "SWORDPLAY")
     (LDESC "The best fighting skill. You must possess a sword to use this skill.")
-    (REQUIRES SWORD)>
+    (REQUIRES <LTABLE SWORD>)>
 
 <OBJECT SKILL-UNARMED-COMBAT
     (DESC "UNARMED COMBAT")
