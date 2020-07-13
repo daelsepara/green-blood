@@ -1269,9 +1269,10 @@
         <CURSET 1 1>
         <TELL D ,HERE>
         <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
-            <LINE-ERASE 2>
+            <COND (,CURRENT-VEHICLE <TELL " " D ,CURRENT-VEHICLE>)>
             <CURSET 1 <- .WIDTH 16>>
             <TELL "Life: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
+            <LINE-ERASE 2>
             <CURSET 2 1>
             <PRINT-CAP-OBJ ,CURRENT-CHARACTER>
             <CURSET 2 <- .WIDTH 16>>
