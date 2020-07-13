@@ -433,6 +433,14 @@
         <HLIGHT 0>
     )>>
 
+<ROUTINE GAIN-MONEY (COST)
+    <CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL "You gain " N .COST " " D ,CURRENCY ,PERIOD-CR>
+    <HLIGHT 0>
+    <SETG MONEY <+ ,MONEY .COST>>
+    <UPDATE-STATUS-LINE>>
+
 <ROUTINE GIVE-ITEM (ITEM)
     <REMOVE-ITEM .ITEM "gave">>
 
@@ -926,6 +934,12 @@
             <HLIGHT 0>
             <PRINT-CONTAINER ,VEHICLES>
         )>
+        <CRLF>
+        <HLIGHT ,H-BOLD>
+        <PRINT-CAP-OBJ ,CURRENCY>
+        <HLIGHT 0>
+        <TELL ": ">
+        <TELL N ,MONEY CR>
     )>>
 
 <ROUTINE PRINT-CONTAINER (CONTAINER "AUX" COUNT ITEMS)
@@ -1256,13 +1270,17 @@
         <TELL D ,HERE>
         <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
             <LINE-ERASE 2>
-            <CURSET 1 <- .WIDTH 14>>
+            <CURSET 1 <- .WIDTH 16>>
             <TELL "Life: " N ,LIFE-POINTS "/" N ,MAX-LIFE-POINTS>
             <CURSET 2 1>
             <PRINT-CAP-OBJ ,CURRENT-CHARACTER>
-            <CURSET 2 <- .WIDTH 14>>
+            <CURSET 2 <- .WIDTH 16>>
             <PRINT-CAP-OBJ ,CURRENCY>
-            <TELL ": " N ,MONEY>
+            <COND (<G? ,MONEY 9999>
+                <TELL ": lots">
+            )(ELSE
+                <TELL ": " N ,MONEY>
+            )>
         )>
     )>
     <SCREEN 0>
