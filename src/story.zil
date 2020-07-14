@@ -1820,12 +1820,7 @@
 
 <ROUTINE STORY153-PRECHOICE ()
     <COND (<NOT <EQUAL? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
-        <CRLF>
-        <HLIGHT ,H-BOLD>
-        <TELL "You regain 2 life points" ,PERIOD-CR>
-        <HLIGHT 0>
-        <SETG LIFE-POINTS <+ ,LIFE-POINTS 2>>
-        <COND (<G? ,LIFE-POINTS ,MAX-LIFE-POINTS> <SETG LIFE-POINTS ,MAX-LIFE-POINTS>)>
+        <GAIN-LIFE 2>
         <UPDATE-STATUS-LINE>
     )>>
 
@@ -2323,7 +2318,7 @@
 
 <CONSTANT TEXT199 "The ants' bites are poisonous.">
 <CONSTANT TEXT199-CONTINUED "You have already suffered dozens of wounds by the time you reach a large pond in a dark hollow. Throwing caution to the winds and driven by the tormenting pain of the bites, you plunge into the water and immerse yourself where you tear off your clothes.||The torment ceases as the ants drown and float to the surface, and although the venom makes you feel drowsy you manage to drag yourself towards the pond's edge.||Just as you are about to hand yourself out of the water, you feel a huge water snake coiling around your legs">
-<CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despair to the owl in case it is still nearby and prepared to forgive and help you">>
+<CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despair to the owl in case it is still nearby and prepared to forgive and help you.">>
 
 <ROOM STORY199
     (IN ROOMS)
@@ -2338,11 +2333,7 @@
 
 <ROUTINE STORY199-PRECHOICE ()
     <COND(,RUN-ONCE <LOSE-LIFE 2 "You have died from ant bites." ,STORY199>)>
-    <COND (<G? ,LIFE-POINTS 0>
-        <CRLF>
-        <TELL TEXT199-CONTINUED>
-        <TELL ,PERIOD-CR>
-    )>>
+    <IF-ALIVE TEXT199-CONTINUED>>
 
 <CONSTANT TEXT200 "Renard leads you out of the town through the waterside gate to the bank of the Burgstream. You walk north along a path next to the bank. The river valley has quite steep sides, making it difficult for you to see very much of the surrounding land. Ahead, however, you can see the vast top of a leafy canopy that stretches to the far horizon like a green sea fading to blue in the distance. The air is good here -- fresh and clean, laden only with the perfumes of wild flowers.||A lone figure in grey walks ahead. You suggest trying to catch up but Renard just shakes his head.\"We will never find her in the forest unless she wishes it. A man might as well try to fly.\"||\"If we run we can catch up before she reaches the forest,\" you suggest.||\"She moves as fast as a deer at need. We'd only tire ourselves to no end.\"||If it is the same old woman from the inn last night, she looked too old even to break into a trot. You ponder Renard's strange claims until you can see the trunks of the trees at the edge of the Forest of Arden.||As you enter the forest you are surprised by how much colour there is. Blossoming trees, fungus mounds in bright hues, flowering creepers and giant butterflies are lit by the dappled sunshine that pours through gaps in the leafy canopy. It is noisy too -- the forest is alive with insects, birds and small mammals. Renard leads you along short cuts where the Burgstream bends tortuously until at last you hear the roar of the great Sirion river as it rushes through the forest ahead. He brings you to a ford over the Burgstream.||\"We must cross here and then walk west beside the Sirion.\" You follow across the ford and on through the thick forest.||Nothing in your life has prepared you for the moment when you first catch sight of the Sirion river. The furthest bank is just a line of shimmering heat-hazed greenery at least six miles away. The roiling waters carry a multitude of dead tree branches towards the sea, like a vein carrying detritus out of a living body. Across the river the treeline is unbroken. You are deep in the rainforest now. The gigantic trees spread their branches more than a hundred feet above the ground. At the river's edge mangroves reach far out into the water. Bloated river buffalo bask beneath their arching roots.||\"The going will be difficult for a while until we reach higher ground,\" says Renard. He presses on, hacking at the undergrowth, until you reach a tributary of the river. It blocks your progress, and is spanned by only a narrow rope bridge. The bridge show signs of regular repair: bushes have been hacked back from the stanchions between which it hangs. Renard tells you that the elves maintain this bridge as a link between different parts of their domain. He leads the way across and you follow.||He is halfway across when a waterspout surges up from the river. Out of it rears a mass of vegetation ringed with fibrous tentacles. It is a dreaded Embracer, and in seconds it has plucked Renard from the bridge. As he is pulled under the water, he manages to cry out to you: \"You must go on, then climb. Then you may find what you seek --\"||The tentacles drag him under. You watch the muddied water swirl beneath the bridge, but there is no sign of poor Renard.">
 <CONSTANT CHOICES200 <LTABLE "try to save him" "cross the bridge quickly while the Embracer is otherwise occupied">>
@@ -2661,7 +2652,7 @@
 
 <ROUTINE STORY226-PRECHOICE ()
     <LOSE-LIFE 4 "You died in combat" ,STORY226>
-    <COND (<G? ,LIFE-POINTS 0>
+    <COND (<IS-ALIVE>
         <CRLF>
         <TELL TEXT226-CONTINUED>
         <TELL ,PERIOD-CR>
@@ -3808,9 +3799,8 @@
 <ROUTINE STORY321-PRECHOICE ()
     <COND (<IN? ,SKILL-AGILITY ,PLAYER> <CRLF> <TELL TEXT321-AGILITY> <CRLF>)>
     <LOSE-LIFE 3 "You died from the attack" ,STORY321>
-    <COND (<G? ,LIFE-POINTS 0>
-        <CRLF>
-        <TELL TEXT321-CONTINUED>
+    <COND (<IS-ALIVE>
+        <IF-ALIVE TEXT321-CONTINUED>
         <TAKE-ELVEN-DIRK>
     )>>
 
@@ -4209,7 +4199,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT357 "You draw the sword back and cut fast at Zorolotl's shoulder but he has time to regain his balance and skip lightly past your sword cut. The wavy edge of his blade runs against your thigh.">
-<CONSTANT TEXT357-CONTINUED "Your red blood stains the ground; your foot feels hot and wet from the blood which soaks it. You jump back, en garde once more">
+<CONSTANT TEXT357-CONTINUED "Your red blood stains the ground; your foot feels hot and wet from the blood which soaks it. You jump back, en garde once more.">
 
 <ROOM STORY357
     (IN ROOMS)
@@ -4223,11 +4213,7 @@
 <ROUTINE STORY357-PRECHOICE ()
     <LOSE-LIFE 4 "You died in combat" ,STORY357>
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
-    <COND (<G? ,LIFE-POINTS 0>
-        <CRLF>
-        <TELL TEXT357-CONTINUED>
-        <TELL ,PERIOD-CR>
-    )>>
+    <IF-ALIVE TEXT357-CONTINUED>>
 
 <CONSTANT TEXT358 "You say you remember the serving wench all right but you can't quite conjure up her name.||\"She was never at the Reaver's. That's the girl from Rainbow's End.\" The gleam in his eyes dims a moment to be replaced by a piercing look of low cunning. \"I don't think I remember you at all. Guards.\"||You run for the exit to the porch but the guards cross heir halberds in front of you, barring your way.">
 <CONSTANT CHOICES358 <LTABLE "surrender" "fight">>
@@ -5399,7 +5385,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT456 "The mercenary guards are heavy and slow, weighed down by their heavy chainmail corslets. Your lightning fast blows send one after another reeling but you will tire before you have defeated them all.">
-<CONSTANT TEXT456-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind">
+<CONSTANT TEXT456-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY456
     (IN ROOMS)
@@ -5416,11 +5402,7 @@
     <COND (<NOT <IN? ,SKILL-UNARMED-COMBAT ,SKILLS>>
         <COND (,RUN-ONCE <LOSE-LIFE 3 "You died in combat." ,STORY456>)>
     )>
-    <COND (<G? ,LIFE-POINTS 0>
-        <CRLF>
-        <TELL TEXT456-CONTINUED>
-        <TELL ,PERIOD-CR>
-    )>>
+    <IF-ALIVE TEXT456-CONTINUED>>
 
 <CONSTANT TEXT457 "The chief sounds as commanding as usual when he orders his guard to kill Valerian, the Moon Druid. They hesitate for a moment and Valerian completes his spell. A silver noose flies up into the pavilion and darts through the air to hover above your head. One of the guards strikes Valerian down, but the noose drops over your head and tightens inexorably around your neck, throttling the life out of you.">
 
@@ -5735,7 +5717,7 @@
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT485 "You are halfway across the room when you hear an imperious voice raised in thunderous anger behind you. Glancing back, you see the lady of the tower rising from her bed. Soil and flower petals scatter to the marble floor as she raises her arms to the moonlight and signs the words of a spell. Suddenly a numbness creeps through your limbs and you see patches of grey mould spreading across the backs of your hands. With a horrified cry, you reel out of the chamber and stagger down the steps of the tower.">
-<CONSTANT TEXT485-CONTINUED "The enchantress stands and watches you flee, sending peals of laughter ringing down the stairwell to mock you. The doors fly wide at your approach, but even on the threshold of escape you are frozen to the spot at the sound of her voice: \"Get you gone, mortal. If I catch you at my bedside a second time, your corpse will be food for my night-blooms\"||You stagger outside and the tower doors slam shut behind you">
+<CONSTANT TEXT485-CONTINUED "The enchantress stands and watches you flee, sending peals of laughter ringing down the stairwell to mock you. The doors fly wide at your approach, but even on the threshold of escape you are frozen to the spot at the sound of her voice: \"Get you gone, mortal. If I catch you at my bedside a second time, your corpse will be food for my night-blooms\"||You stagger outside and the tower doors slam shut behind you.">
 <CONSTANT NOXIOUS-BLIGHT "You died because of the Noxious Blight spell">
 
 <ROOM STORY485
@@ -5753,11 +5735,7 @@
     )(ELSE
         <LOSE-LIFE 4 NOXIOUS-BLIGHT ,STORY485>
     )>
-    <COND (<G? ,LIFE-POINTS 0>
-        <CRLF>
-        <TELL TEXT485-CONTINUED>
-        <TELL ,PERIOD-CR>
-    )>>
+    <IF-ALIVE TEXT485-CONTINUED>>
 
 <CONSTANT TEXT486 "You send the spell unseen across the space separating you from Valerian the Moon Druid. As your spell takes hold Valerian stares about him uncomprehendingly. He is completely nonplussed. Seizing your chance, you cast Vanish once more and make good your escape.||You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
