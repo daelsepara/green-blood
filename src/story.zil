@@ -324,7 +324,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY021-PRECHOICE ()
-    <COND(<IN? ,SKILL-FOLKLORE ,SKILLS>
+    <COND(<CHECK-SKILL ,SKILL-FOLKLORE>
         <STORY-JUMP ,STORY215>
     )(<IN? ,CODEWORD-SPECULUM ,CODEWORDS>
         <STORY-JUMP ,STORY309>
@@ -927,7 +927,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY074-EVENTS ()
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <HLIGHT ,H-BOLD>
         <TELL "It is a difficult leap, made harder by the dragon slowly rearing up onto its legs.">
         <HLIGHT 0>
@@ -1789,7 +1789,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY151-PRECHOICE ()
-    <COND (<AND <IN? ,SKILL-SPELLS ,SKILLS> <IN? ,MAGIC-WAND ,PLAYER>>
+    <COND (<CHECK-SKILL ,SKILL-SPELLS>
         <PUTP ,STORY151 ,P?DEATH F>
         <STORY-JUMP ,STORY229>
     )(ELSE
@@ -1853,7 +1853,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY156-EVENTS ()
-    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS> <RETURN ,STORY251>)>
+    <COND (<CHECK-SKILL ,SKILL-WILDERNESS-LORE> <RETURN ,STORY251>)>
     <RETURN ,STORY156>>
 
 <CONSTANT TEXT157 "Squirming quickly round to the statue's back you work at the screws. Two come free and the head starts to tilt. With one great forearm smash you knock it off and the Infernal Statue lurches back from the Tree of Life. Inside the machine is a small man who cannot defend himself. You rain blows down on his head and he slumps forward, knocking the strange levers inside the machine and sending it striding towards the deep blue pool.||It totters on the brink of the pool and you leap clear just as it keels over into the water. There is a rush of steam like a geyser, followed by an explosion underwater as the machine tears itself apart. The Westermen cry out in alarm and begin to retreat, harried by the arrows of the elves.">
@@ -2931,7 +2931,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY248-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <PUTP ,STORY248 ,P?DEATH F>
     )(ELSE
         <CRLF>
@@ -2986,7 +2986,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY252-PRECHOICE ()
-    <COND (<IN? ,SKILL-STREETWISE ,SKILLS> <STORY-JUMP ,STORY188>)>>
+    <COND (<CHECK-SKILL ,SKILL-STREETWISE> <STORY-JUMP ,STORY188>)>>
 
 <CONSTANT TEXT253 "As you draw back your sword to strike, Elanor suddenly jerks the end of a vine. A secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest,\" she warns. \"I will turn every living thing against you.\"||Inside the tree-house you are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily. In your haste to flee you can grab only three of the five potions. There is a cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot banded with layers of coloured earth.">
 
@@ -3085,7 +3085,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY259-PRECHOICE ()
-    <COND (<AND <IN? ,SKILL-CHARMS ,SKILLS> <IN? ,MAGIC-AMULET ,PLAYER>>
+    <COND (<CHECK-SKILL ,SKILL-CHARMS>
         <STORY-JUMP ,STORY283>
     )(<IN? ,MAPLE-FLUTE ,PLAYER>
         <STORY-JUMP ,STORY299>
@@ -3165,7 +3165,7 @@
 
 <ROUTINE STORY265-PRECHOICE ()
     <HLIGHT ,H-BOLD>
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <CRLF>
         <TELL "You leap over the toadstool and catch it before it lands on the ground and breaks" ,PERIOD-CR>
         <TAKE-ITEM ,JAR-WHITE-JELLY>
@@ -3263,7 +3263,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY273-EVENTS ()
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS> <RETURN ,STORY286>)>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY> <RETURN ,STORY286>)>
     <RETURN ,STORY273>>
 
 <CONSTANT TEXT274 "The earth mound that was to be your bed collapses beneath you. It is the some of a giant man-eating Colossus beetle. You try to puzzle out what has happened in the pitch dark. Then as the chitinous walls of the throat of a Colossus beetle press you down to its gullet you realize you have been swallowed alive while you listened for a monster stalking you. Nothing will avail you now as the acid of the beetle's stomach does its work. If only you had a guide who might have warned that the mound of earth on which you chose to sleep was the cap of a Colossus beetle's burrow.">
@@ -3797,7 +3797,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY321-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,PLAYER> <CRLF> <TELL TEXT321-AGILITY> <CRLF>)>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY> <CRLF> <TELL TEXT321-AGILITY> <CRLF>)>
     <LOSE-LIFE 3 "You died from the attack" ,STORY321>
     <COND (<IS-ALIVE>
         <IF-ALIVE TEXT321-CONTINUED>
@@ -4398,7 +4398,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY373-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,PLAYER>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <STORY-JUMP ,STORY213>
     )(ELSE
         <CRLF>
@@ -4814,7 +4814,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY406-PRECHOICE ()
-    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-WILDERNESS-LORE>
         <STORY-JUMP ,STORY034>
     )>>
 
@@ -4850,7 +4850,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY408-PRECHOICE ()
-    <COND (<IN? ,SKILL-WILDERNESS-LORE ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-WILDERNESS-LORE>
         <STORY-JUMP ,STORY388>
     )>>
 
@@ -5093,7 +5093,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY430-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,PLAYER>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <STORY-JUMP ,STORY157>
     )>>
 
@@ -5399,7 +5399,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY456-PRECHOICE ()
-    <COND (<NOT <IN? ,SKILL-UNARMED-COMBAT ,SKILLS>>
+    <COND (<NOT <CHECK-SKILL ,SKILL-UNARMED-COMBAT>>
         <COND (,RUN-ONCE <LOSE-LIFE 3 "You died in combat." ,STORY456>)>
     )>
     <IF-ALIVE TEXT456-CONTINUED>>
@@ -5585,7 +5585,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY472-EVENTS ()
-    <COND (<IN? ,SKILL-CHARMS ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-CHARMS>
         <STORY-JUMP ,STORY495>
     )>>
 
@@ -5730,7 +5730,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY485-PRECHOICE ()
-    <COND (<IN? ,SKILL-CHARMS ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-CHARMS>
         <LOSE-LIFE 1 NOXIOUS-BLIGHT ,STORY485>
     )(ELSE
         <LOSE-LIFE 4 NOXIOUS-BLIGHT ,STORY485>
@@ -5761,7 +5761,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY487-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <PUTP ,STORY487 ,P?DEATH F>
     )(ELSE
         <CRLF>
@@ -5852,7 +5852,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY494-PRECHOICE ()
-    <COND (<IN? ,SKILL-AGILITY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY>
         <PUTP ,STORY494 ,P?DEATH F>
     )(ELSE
         <CRLF>
@@ -5917,7 +5917,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY499-PRECHOICE ()
-    <COND (<IN? ,SKILL-ROGUERY ,SKILLS>
+    <COND (<CHECK-SKILL ,SKILL-ROGUERY>
         <STORY-JUMP ,STORY479>
     )>>
 
