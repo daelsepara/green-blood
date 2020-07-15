@@ -547,12 +547,15 @@
             <TELL "You are carrying too many items" ,PERIOD-CR>
             <DROP-REPLACE-ITEM .ITEM>
         )(ELSE
+            <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
             <COND (<IN? .ITEM ,PLAYER>
-                <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
                 <COND (.QUANTITY
                     <PUTP .ITEM ,P?QUANTITY <+ .QUANTITY 1>>
                 )>
             )(ELSE
+                <COND (.QUANTITY
+                    <PUTP .ITEM ,P?QUANTITY 1>
+                )>
                 <MOVE .ITEM ,PLAYER>
             )>
         )>
@@ -636,24 +639,26 @@
                     <COND (<YES?>
                         <COND (<CHECK-DROPS .ITEM>
                             <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
-                            <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
-                            <COND (.QUANTITY
-                                <SET QUANTITY <- .QUANTITY 1>>
-                                <COND (<G? .QUANTITY 0>
-                                    <PUTP .ITEM ,P?QUANTITY .QUANTITY>
+                            <COND (<NOT <EQUAL? .ITEM .OBJ>>
+                                <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+                                <COND (.QUANTITY
+                                    <SET QUANTITY <- .QUANTITY 1>>
+                                    <COND (<G? .QUANTITY 0>
+                                        <PUTP .ITEM ,P?QUANTITY .QUANTITY>
+                                    )(ELSE
+                                        <REMOVE .ITEM>
+                                    )>
                                 )(ELSE
                                     <REMOVE .ITEM>
                                 )>
-                            )(ELSE
-                                <REMOVE .ITEM>
-                            )>
-                            <COND (<EQUAL? .OBJ .ITEM>
-                                <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
-                                <COND (.QUANTITY
-                                    <PUTP .OBJ ,P?QUANTITY <+ .QUANTITY 1>>
+                                <COND (<IN? .OBJ ,PLAYER>
+                                    <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
+                                    <COND (.QUANTITY
+                                        <PUTP .OBJ ,P?QUANTITY <+ .QUANTITY 1>>
+                                    )>
                                 )>
+                                <MOVE .OBJ ,PLAYER>
                             )>
-                            <MOVE .OBJ ,PLAYER>
                             <RETURN>
                         )>
                     )>
@@ -663,12 +668,8 @@
                 <TELL "Drop " T .OBJ "?">
                 <COND (<YES?>
                     <TELL "You dropped " T .OBJ CR>
-                    <COND (<IN? .OBJ ,PLAYER>
-                        <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
-                        <COND (.QUANTITY
-                            <PUTP .ITEM ,P?QUANTITY <- .QUANTITY 1>>
-                        )>
-                    )(ELSE
+                    <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
+                    <COND (<NOT .QUANTITY>
                         <REMOVE .OBJ>
                     )>
                     <RETURN>
