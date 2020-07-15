@@ -16,6 +16,7 @@
 <CONSTANT R-MONEY 4>
 <CONSTANT R-ANY 5>
 <CONSTANT R-ALL 6>
+<CONSTANT R-SKILL-ITEM 7>
 
 <CONSTANT LIMIT-POSSESSIONS 8>
 
@@ -100,15 +101,15 @@
         <SET CURRENT-LOC ,HERE>
         <GOTO ,HERE>
         <PRINT-PAGE>
-        <COND (<AND ,CHARACTERS-ENABLED ,RUN-ONCE>
-            <LOSE-MONEY>
-            <GAIN-CODEWORD>
-            <GAIN-ITEM>
-        )>
         <CHECK-PRECHOICE>
         <COND (<EQUAL? .CURRENT-LOC ,HERE>
             <CHECK-DEATH>
             <CHECK-VICTORY>
+        )>
+        <COND (<AND ,CHARACTERS-ENABLED ,RUN-ONCE>
+            <LOSE-MONEY>
+            <GAIN-CODEWORD>
+            <GAIN-ITEM>
         )>
         <COND (,CONTINUE-TO-CHOICES
             <SET KEY <PROCESS-STORY>>
@@ -133,7 +134,7 @@
         <CRLF>
     )>>
 
-<ROUTINE PROCESS-CHOICES (CHOICES "AUX" DESTINATIONS REQUIREMENTS TYPES KEY CHOICE TYPE)
+<ROUTINE PROCESS-CHOICES (CHOICES "AUX" DESTINATIONS REQUIREMENTS TYPES KEY CHOICE TYPE LIST)
     <SET DESTINATIONS <GETP ,HERE ,P?DESTINATIONS>>
     <SET REQUIREMENTS <GETP ,HERE ,P?REQUIREMENTS>>
     <SET TYPES <GETP ,HERE ,P?TYPES>>
@@ -164,11 +165,12 @@
                             <PRESS-A-KEY>
                         )>
                     )(<AND <EQUAL? .TYPE R-CODEWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-CODEWORDS <GET .REQUIREMENTS .CHOICE>>
+                        <SET LIST <GET .REQUIREMENTS .CHOICE>>
+                        <COND (<CHECK-CODEWORDS .LIST>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )(ELSE
-                            <NOT-ALL-ANY R-ALL <GET .REQUIREMENTS .CHOICE> ,CODEWORDS>
+                            <NOT-ALL-ANY R-ALL .LIST ,CODEWORDS>
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
@@ -181,18 +183,42 @@
                             <CRLF>
                         )>
                     )(<AND <EQUAL? .TYPE R-ANY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-ANY <GET .REQUIREMENTS .CHOICE>>
+                        <SET LIST <GET .REQUIREMENTS .CHOICE>>
+                        <COND (<CHECK-ANY .LIST>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )(ELSE
-                            <NOT-ALL-ANY R-ANY <GET .REQUIREMENTS .CHOICE>>
+                            <NOT-ALL-ANY R-ANY .LIST>
                         )>
                     )(<AND <EQUAL? .TYPE R-ALL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
-                        <COND (<CHECK-ALL <GET .REQUIREMENTS .CHOICE>>
+                        <SET LIST <GET .REQUIREMENTS .CHOICE>>
+                        <COND (<CHECK-ALL .LIST>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
                         )(ELSE
-                            <NOT-ALL-ANY R-ALL <GET .REQUIREMENTS .CHOICE>>
+                            <NOT-ALL-ANY R-ALL .LIST>
+                        )>
+                    )(<AND <EQUAL? .TYPE R-SKILL-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <SET LIST <GET .REQUIREMENTS .CHOICE>>
+                        <COND (<CHECK-SKILL-ITEM <GET .LIST 1> <GET .LIST 2>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                        )(ELSE
+                            <CRLF><CRLF>
+                            <HLIGHT ,H-BOLD>
+                            <TELL "You do not have the ">
+                            <HLIGHT ,H-ITALIC>
+                            <TELL D <GET .LIST 1>>
+                            <HLIGHT 0>
+                            <HLIGHT ,H-BOLD>
+                            <TELL " skill or a">
+                            <COND (<FSET? <GET .LIST 2> ,VOWELBIT> <TELL "n">)>
+                            <TELL " ">
+                            <HLIGHT ,H-ITALIC>
+                            <TELL D <GET .LIST 2>>
+                            <HLIGHT H-BOLD>
+                            <TELL ,PERIOD-CR>
+                            <HLIGHT 0>
                         )>
                     )>
                     <RETURN>
@@ -209,7 +235,7 @@
     >
     <RETURN .KEY>>
 
-<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES TYPES REQUIREMENTS CONTINUE CURRENT-LOC CHOICE)
+<ROUTINE PROCESS-STORY ("AUX" COUNT CHOICES TYPES REQUIREMENTS LIST CONTINUE CURRENT-LOC CHOICE CHOICE-TYPE)
     <SET CHOICES <GETP ,HERE ,P?CHOICES>>
     <SET TYPES <GETP ,HERE ,P?TYPES>>
     <SET REQUIREMENTS <GETP ,HERE ,P?REQUIREMENTS>>
@@ -222,16 +248,20 @@
             <TELL "You can ">
             <SET COUNT <GET .CHOICES 0>>
             <DO (I 1 .COUNT)
+                <SET CHOICE-TYPE <GET .TYPES .I>>
+                <COND (.REQUIREMENTS <SET LIST <GET .REQUIREMENTS .I>>)>
                 <COND (<AND <EQUAL? .I .COUNT> <G? .COUNT 1>> <TELL "or ">)>
                 <HLIGHT ,H-BOLD>
                 <TELL N .I ") ">
                 <HLIGHT 0>
                 <TELL <GET .CHOICES .I>>
-                <COND (<AND <EQUAL? R-SKILL <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
-                <COND (<AND <EQUAL? R-CODEWORD <GET .TYPES .I>> .REQUIREMENTS> <PRINT-CODEWORDS <GET .REQUIREMENTS .I>>)>
-                <COND (<AND <EQUAL? R-ITEM <GET .TYPES .I>> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D <GET .REQUIREMENTS .I>> <HLIGHT 0> <TELL ")">)>
-                <COND (<AND <EQUAL? R-MONEY <GET .TYPES .I>> .REQUIREMENTS> <TELL " (" N <GET .REQUIREMENTS .I> " " D ,CURRENCY ")">)>
-                <COND (<AND <EQUAL? R-ANY <GET .TYPES .I>> .REQUIREMENTS> <PRINT-ANY <GET .REQUIREMENTS .I>>)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-SKILL> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D .LIST> <HLIGHT 0> <TELL ")">)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-CODEWORD> .REQUIREMENTS> <PRINT-CODEWORDS .LIST>)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-ITEM> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D .LIST> <HLIGHT 0> <TELL ")">)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-MONEY> .REQUIREMENTS> <TELL " (" N .LIST " " D ,CURRENCY ")">)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-ANY> .REQUIREMENTS> <PRINT-ANY .LIST>)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-ALL> .REQUIREMENTS> <PRINT-ALL .LIST>)>
+                <COND (<AND <EQUAL? R-SKILL-ITEM .CHOICE-TYPE> .REQUIREMENTS> <PRINT-ALL .LIST>)>
                 <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
                 <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
             >
@@ -271,6 +301,10 @@
     )>
     <RTRUE>>
 
+<ROUTINE CHECK-CODEWORD (CODEWORD)
+    <COND (<NOT .CODEWORD> <RTRUE>)>
+    <RETURN <IN? .CODEWORD ,CODEWORDS>>>
+
 <ROUTINE CHECK-CODEWORDS (CODEWORDS)
     <RETURN <CHECK-ALL .CODEWORDS ,CODEWORDS>>>
 
@@ -301,6 +335,12 @@
         <RETURN <CHECK-SKILL-POSSESSIONS .SKILL>>
     )>
     <RFALSE>>
+
+<ROUTINE CHECK-SKILL-ITEM (SKILL ITEM "OPT" CONTAINER)
+    <COND (<NOT .CONTAINER> <SET .CONTAINER ,PLAYER>)>
+    <COND (<AND <OR <IN? .SKILL ,SKILLS> <CHECK-TEMP-SKILLS .SKILL>> <IN? .ITEM .CONTAINER>>
+        <RETURN <CHECK-SKILL-POSSESSIONS .SKILL>>
+    )>>
 
 <ROUTINE CHECK-TEMP-SKILLS (SKILL "AUX" COUNT)
     <COND (.SKILL
@@ -337,9 +377,11 @@
         <TELL " of the ">
         <COND (<EQUAL? .CONTAINER ,CODEWORDS>
             <TELL "codewords">
+            <HLIGHT 0>
             <PRINT-CODEWORDS .LIST>
         )(ELSE
             <TELL "items">
+            <HLIGHT 0>
             <COND (<EQUAL? .TYPE R-ANY>
                 <PRINT-ANY .LIST>
             )(<EQUAL? .TYPE R-ALL>
@@ -492,7 +534,7 @@
     <CRLF>
     <RETURN>>
 
-<ROUTINE TAKE-ITEM (ITEM)
+<ROUTINE TAKE-ITEM (ITEM "AUX" QUANTITY)
     <COND (.ITEM
         <CRLF>
         <TELL "[You gained ">
@@ -500,12 +542,19 @@
         <TELL T .ITEM>
         <HLIGHT 0>
         <TELL "]" CR>
-        <COND (<AND <EQUAL? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS> <NOT <IN? .ITEM ,PLAYER>>>
+        <COND (<G=? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS>
             <CRLF>
             <TELL "You are carrying too many items" ,PERIOD-CR>
             <DROP-REPLACE-ITEM .ITEM>
         )(ELSE
-            <MOVE .ITEM ,PLAYER>
+            <COND (<IN? .ITEM ,PLAYER>
+                <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+                <COND (.QUANTITY
+                    <PUTP .ITEM ,P?QUANTITY <+ .QUANTITY 1>>
+                )>
+            )(ELSE
+                <MOVE .ITEM ,PLAYER>
+            )>
         )>
     )>>
 
@@ -524,13 +573,18 @@
     )>
     <RTRUE>>
 
-<ROUTINE COUNT-CONTAINER (CONTAINER "AUX" COUNT ITEM)
+<ROUTINE COUNT-CONTAINER (CONTAINER "AUX" COUNT ITEM QUANTITY)
     <SET COUNT 0>
     <SET ITEM <FIRST? .CONTAINER>>
     <REPEAT ()
         <COND (<NOT .ITEM> <RETURN>)>
         <COND (<NOT <FSET? .ITEM ,NDESCBIT>>
-            <SET COUNT <+ .COUNT 1>>
+            <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+            <COND (<G? .QUANTITY 0>
+                <SET COUNT <+ .COUNT .QUANTITY>>
+            )(ELSE
+                <SET COUNT <+ .COUNT 1>>
+            )>
         )>
         <SET .ITEM <NEXT? .ITEM>>
     >
@@ -547,7 +601,7 @@
 <ROUTINE COUNT-POSSESSIONS ()
     <RETURN <COUNT-CONTAINER ,PLAYER>>>
 
-<ROUTINE DROP-REPLACE-ITEM (OBJ "AUX" KEY COUNT ITEM CHOICE)
+<ROUTINE DROP-REPLACE-ITEM (OBJ "AUX" KEY COUNT ITEM CHOICE QUANTITY)
     <COND (<AND .OBJ <G=? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS>>
         <REPEAT ()
             <CRLF>
@@ -556,11 +610,16 @@
             <SET ITEM <FIRST? ,PLAYER>>
             <REPEAT ()
                 <COND (<NOT .ITEM> <RETURN>)>
-                <SET COUNT <+ .COUNT 1>>
-                <HLIGHT ,H-BOLD>
-                <TELL N .COUNT>
-                <HLIGHT 0>
-                <TELL " - " T .ITEM  CR>
+                <COND (<NOT <FSET? .ITEM ,NDESCBIT>>
+                    <SET COUNT <+ .COUNT 1>>
+                    <HLIGHT ,H-BOLD>
+                    <TELL N .COUNT>
+                    <HLIGHT 0>
+                    <TELL " - " T .ITEM>
+                    <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+                    <COND (.QUANTITY <TELL " (" N .QUANTITY ")">)>
+                    <CRLF>
+                )>
                 <SET .ITEM <NEXT? .ITEM>>
             >
             <HLIGHT ,H-BOLD>
@@ -577,7 +636,23 @@
                     <COND (<YES?>
                         <COND (<CHECK-DROPS .ITEM>
                             <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
-                            <REMOVE .ITEM>
+                            <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+                            <COND (.QUANTITY
+                                <SET QUANTITY <- .QUANTITY 1>>
+                                <COND (<G? .QUANTITY 0>
+                                    <PUTP .ITEM ,P?QUANTITY .QUANTITY>
+                                )(ELSE
+                                    <REMOVE .ITEM>
+                                )>
+                            )(ELSE
+                                <REMOVE .ITEM>
+                            )>
+                            <COND (<EQUAL? .OBJ .ITEM>
+                                <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
+                                <COND (.QUANTITY
+                                    <PUTP .OBJ ,P?QUANTITY <+ .QUANTITY 1>>
+                                )>
+                            )>
                             <MOVE .OBJ ,PLAYER>
                             <RETURN>
                         )>
@@ -588,7 +663,14 @@
                 <TELL "Drop " T .OBJ "?">
                 <COND (<YES?>
                     <TELL "You dropped " T .OBJ CR>
-                    <REMOVE .OBJ>
+                    <COND (<IN? .OBJ ,PLAYER>
+                        <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
+                        <COND (.QUANTITY
+                            <PUTP .ITEM ,P?QUANTITY <- .QUANTITY 1>>
+                        )>
+                    )(ELSE
+                        <REMOVE .OBJ>
+                    )>
                     <RETURN>
                 )>
             )>
@@ -601,8 +683,10 @@
         <SET ITEMS <FIRST? ,PLAYER>>
         <REPEAT ()
             <COND (.ITEMS
-                <SET COUNT <+ .COUNT 1>>
-                <COND (<EQUAL? .COUNT .ITEM> <RETURN>)>
+                <COND (<NOT <FSET? .ITEMS ,NDESCBIT>>
+                    <SET COUNT <+ .COUNT 1>>
+                    <COND (<EQUAL? .COUNT .ITEM> <RETURN>)>
+                )>
             )(ELSE
                 <RETURN>
             )>
@@ -895,7 +979,13 @@
         <COND (<G? .COUNT 0>
             <TELL " (">            
             <DO (I 1 .COUNT)
-                <COND (<G? .I 1> <TELL ", ">)>
+                <COND (<G? .I 1>
+                    <COND (<NOT <EQUAL? .COUNT 2>>
+                        <TELL ", ">
+                    )(ELSE
+                        <TELL " ">
+                    )>
+                )> 
                 <COND (<AND <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
                 <HLIGHT ,H-ITALIC>
                 <TELL D <GET .ITEMS .I>>
