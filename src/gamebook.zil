@@ -539,7 +539,7 @@
         <CRLF>
         <TELL "[You gained ">
         <HLIGHT ,H-BOLD>
-        <TELL T .ITEM>
+        <TELL A .ITEM>
         <HLIGHT 0>
         <TELL "]" CR>
         <COND (<G=? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS>
