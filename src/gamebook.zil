@@ -27,7 +27,7 @@
 <CONSTANT SIX-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
 
 <CONSTANT SELECT-CHOICES <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
-<CONSTANT TEMP-LIST <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
+<CONSTANT TEMP-LIST <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
 
 <CONSTANT GIVE-GIVEN 0>
 <CONSTANT GIVE-UNABLE 1>
@@ -57,6 +57,22 @@
     (ADJECTIVE ALL YOUR)
     (FLAGS TAKEBIT NDESCBIT)>
 
+; "story properties"
+<PROPDEF STORY NONE>
+<PROPDEF CHOICES NONE>
+<PROPDEF DESTINATIONS NONE>
+<PROPDEF REQUIREMENTS NONE>
+<PROPDEF TYPES NONE>
+<PROPDEF EVENTS NONE>
+<PROPDEF PRECHOICE NONE>
+<PROPDEF CONTINUE NONE>
+<PROPDEF ITEM NONE>
+<PROPDEF CODEWORD NONE>
+<PROPDEF COST 0>
+<PROPDEF DEATH F>
+<PROPDEF VICTORY F>
+
+; "object properties"
 <PROPDEF QUANTITY 0>
 <PROPDEF STARS 0>
 
@@ -308,6 +324,10 @@
 <ROUTINE CHECK-CODEWORDS (CODEWORDS)
     <RETURN <CHECK-ALL .CODEWORDS ,CODEWORDS>>>
 
+<ROUTINE CHECK-ITEM (ITEM)
+    <COND (<NOT .ITEM> <RTRUE>)>
+    <RETURN <IN? .ITEM ,PLAYER>>>
+
 <ROUTINE CHECK-MONEY (AMOUNT)
     <COND (<G? .AMOUNT 0>
         <COND (<L? ,MONEY .AMOUNT>
@@ -323,7 +343,7 @@
 
 <ROUTINE CHECK-POSSESSIONS (ITEM)
     <COND (.ITEM
-        <COND (<NOT <IN? .ITEM ,PLAYER>>
+        <COND (<NOT <CHECK-ITEM .ITEM>>
             <NOT-POSSESSED .ITEM>
             <RFALSE>
         )>
@@ -359,7 +379,7 @@
     <COND (<NOT .REQUIREMENTS> <RTRUE>)>
     <SET COUNT <GET .REQUIREMENTS 0>>
     <DO (I 1 .COUNT)
-        <COND (<IN? <GET .REQUIREMENTS .I> ,PLAYER> <RTRUE>)>
+        <COND (<CHECK-ITEM <GET .REQUIREMENTS .I>> <RTRUE>)>
     >
     <RFALSE>>
 
@@ -548,7 +568,7 @@
             <DROP-REPLACE-ITEM .ITEM>
         )(ELSE
             <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
-            <COND (<IN? .ITEM ,PLAYER>
+            <COND (<CHECK-ITEM .ITEM>
                 <COND (.QUANTITY
                     <PUTP .ITEM ,P?QUANTITY <+ .QUANTITY 1>>
                 )>
@@ -651,7 +671,7 @@
                                 )(ELSE
                                     <REMOVE .ITEM>
                                 )>
-                                <COND (<IN? .OBJ ,PLAYER>
+                                <COND (<CHECK-ITEM .OBJ>
                                     <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
                                     <COND (.QUANTITY
                                         <PUTP .OBJ ,P?QUANTITY <+ .QUANTITY 1>>
@@ -705,7 +725,9 @@
     <DO (I 1 .ITEMS)
         <COND (<AND <GET .LIST .I> <IN? <GET .LIST .I> .CONTAINER>>
             <SET COUNT <+ .COUNT 1>>
-            <PUT TEMP-LIST .COUNT <GET .LIST .I>>
+            <COND (<L=? .COUNT <GET TEMP-LIST 0>>
+                <PUT TEMP-LIST .COUNT <GET .LIST .I>>
+            )>
         )>
     >
     <COND (<G? .COUNT 1>
@@ -720,11 +742,16 @@
                         <TELL "Are you sure?">
                         <COND (<YES?>
                             <YOU-GAVE ,ALL-MONEY>
-                            <COND (.JUMP <STORY-JUMP .JUMP>)>
+                            <COND (.JUMP
+                                <STORY-JUMP .JUMP>
+                                <SETG ,MONEY 0>
+                                <MOVE ,ALL-MONEY ,PLAYER>
+                            )>
                             <SET RESULT GIVE-GIVEN>
                             <RETURN>
                         )>
                     )(ELSE
+                        <TRANSFER-CONTAINER ,GIVEBAG .CONTAINER>
                         <SET RESULT GIVE-UNABLE>
                         <RETURN>
                     )>
