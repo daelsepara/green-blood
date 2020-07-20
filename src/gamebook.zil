@@ -107,7 +107,6 @@
         <CHOOSE-CHARACTER>
     )>
     <SETG HERE ,PROLOGUE>
-    <INIT-STATUS-LINE>
     <UPDATE-STATUS-LINE>
     <SETG RUN-ONCE T>
     <REPEAT ()
@@ -136,7 +135,6 @@
             <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <TELL "Are you sure you want to quit the game?"> <COND(<YES?> <RETURN>)>)>
             <COND (<EQUAL? .KEY !\x !\X> <CRLF> <RETURN>)>
         )>
-        <CLOCKER>
         <UPDATE-STATUS-LINE>
     >>
 
