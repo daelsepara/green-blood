@@ -4,7 +4,7 @@
 <CONSTANT RELEASEID 2>
 <VERSION XZIP>
 
-<INSERT-FILE "parser">
+<INSERT-FILE "minilib">
 <INSERT-FILE "gamebook">
 
 <ROUTINE GO ()
