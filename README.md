@@ -8,6 +8,8 @@ This is a ZIL Implementation of Green Blood game book (Virtual Reality Adventure
 | |Not luck but judgement!|
 | |*Virtual Reality Adventure Books are a new generation of interactive fiction. This unique non-random game system makes the choices all yours. There are no dice to roll, no lengthy rules to learn. All you need is the spark of your own imagination!*|
 | |*Cover illustration by Mike Posen|
+| |Map of the Forest of Arden|
+| |![Map](/images/forest-of-arden.jpg)|
 
 ## Additional Copyright Information 
 
