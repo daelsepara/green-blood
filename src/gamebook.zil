@@ -17,6 +17,8 @@
 <CONSTANT R-ANY 5>
 <CONSTANT R-ALL 6>
 <CONSTANT R-SKILL-ITEM 7>
+<CONSTANT R-LOSE-ITEM 8>
+<CONSTANT R-LOSE-LIFE 9>
 
 <CONSTANT LIMIT-POSSESSIONS 8>
 
@@ -244,6 +246,25 @@
                             <TELL ,PERIOD-CR>
                             <HLIGHT 0>
                         )>
+                    )(<AND <EQUAL? .TYPE R-LOSE-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
+                            <CRLF><CRLF>
+                            <LOSE-ITEM <GET .REQUIREMENTS .CHOICE>>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                        )>
+                    )(<AND <EQUAL? .TYPE R-LOSE-LIFE> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <COND (<CHECK-LIFE <GET .REQUIREMENTS .CHOICE>>
+                            <CRLF><CRLF>
+                            <HLIGHT ,H-BOLD>
+                            <TELL "You lost " N <GET .REQUIREMENTS .CHOICE> " life points">
+                            <TELL ,PERIOD-CR>
+                            <HLIGHT 0>
+                            <SETG LIFE-POINTS <- ,LIFE-POINTS <GET .REQUIREMENTS .CHOICE>>>
+                            <UPDATE-STATUS-LINE>
+                            <PRESS-A-KEY>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                        )>
                     )>
                     <RETURN>
                 )(ELSE
@@ -285,7 +306,9 @@
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-MONEY> .REQUIREMENTS> <TELL " (" N .LIST " " D ,CURRENCY ")">)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-ANY> .REQUIREMENTS> <PRINT-ANY .LIST>)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-ALL> .REQUIREMENTS> <PRINT-ALL .LIST>)>
-                <COND (<AND <EQUAL? R-SKILL-ITEM .CHOICE-TYPE> .REQUIREMENTS> <PRINT-ALL .LIST>)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-SKILL-ITEM> .REQUIREMENTS> <PRINT-ALL .LIST>)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-LOSE-ITEM> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D .LIST> <HLIGHT 0> <TELL ")">)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-LOSE-LIFE> .REQUIREMENTS> <TELL " (" N .LIST " life points)">)>
                 <COND (<AND <NOT <EQUAL? .COUNT 2>> <L? .I .COUNT> <TELL ", ">>)>
                 <COND (<AND <EQUAL? .I 1> <EQUAL? .COUNT 2>> <TELL " ">)>
             >
@@ -335,6 +358,19 @@
 <ROUTINE CHECK-ITEM (ITEM)
     <COND (<NOT .ITEM> <RTRUE>)>
     <RETURN <IN? .ITEM ,PLAYER>>>
+
+<ROUTINE CHECK-LIFE (AMOUNT)
+    <COND (<G? .AMOUNT 0>
+        <COND (<L=? ,LIFE-POINTS .AMOUNT>
+            <CRLF><CRLF>
+            <HLIGHT ,H-BOLD>
+            <TELL "You'll die if you do that" ,EXCLAMATION-CR>
+            <HLIGHT 0>
+            <PRESS-A-KEY>
+            <RFALSE>
+        )>
+    )>
+    <RTRUE>>
 
 <ROUTINE CHECK-MONEY (AMOUNT)
     <COND (<G? .AMOUNT 0>
