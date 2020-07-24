@@ -201,8 +201,10 @@
                         )>
                     )(<AND <EQUAL? .TYPE R-MONEY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-MONEY <GET .REQUIREMENTS .CHOICE>>
-                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
                             <CRLF>
+                            <CHARGE-MONEY <GET .REQUIREMENTS .CHOICE>>
+                            <PRESS-A-KEY>
+                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
                         )>
                     )(<AND <EQUAL? .TYPE R-ANY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <SET LIST <GET .REQUIREMENTS .CHOICE>>

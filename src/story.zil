@@ -2521,7 +2521,6 @@
     (DESC "214")
     (STORY TEXT214)
     (CONTINUE STORY008)
-    (COST 10)
     (FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT215 "You recall a snippet of doggerel that used to be sung by the old gypsy women who came to town selling their handicrafts:||The name of the elfin king|Is a terribly powerful thing:|If you speak it to him, or even sing,|You can make him give you his signet ring.|The Elf King's name is --|Ah! but that would be telling!||Such songs always fascinated you, since their simple folk rhythm seems to conceal a core of hoary secret truth. The hard part is to strip away the mystery so that you are left with that truth. You also know that you must tread carefully. The elves are proud and pitiless, and often behave like spiteful children in spite of their immemorial wisdom. You must not show weakness or hesitation which they could exploit to their advantage, but neither must you offend them.">
