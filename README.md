@@ -10,7 +10,7 @@ This is a ZIL Implementation of Green Blood game book (Virtual Reality Adventure
 | |*Cover illustration by Mike Posen|
 | | |
 | |**Map of the Forest of Arden**|
-| |![Map](/images/forest-of-arden.jpg)<br>**From: ![Museum of Computer Adventure Game History](https://mocagh.org/loadpage.php?getcompany=otherbook)|
+| |![Map](/images/forest-of-arden.jpg)<br>**From: [Museum of Computer Adventure Game History](https://mocagh.org/loadpage.php?getcompany=otherbook)|
 
 ## Additional Copyright Information 
 
