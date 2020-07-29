@@ -34,6 +34,8 @@ ISBN 0 7497 1484 0
 - Press **q** or **Q** during action selection to quit or terminate the program
 - Press **c** or **C** during action selection to view character (items, skills, codewords)
 - Press **g** or **G** during action selection to view skills glossary
+- Press **r** or **R** during action selection to restore progress from a save file
+- Press **s** or **S** during action selection to save current progress to a file
 - Press **h** or **H** or **?** during action selection lists the commands **G**/**C**/**Q** and what each does 
 - Paradoxical or continuity errors (as pointed out by some reviewers/readers) are preserved since the ZIL was adapted verbatim from the book.
 
