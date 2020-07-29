@@ -143,6 +143,8 @@
             <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\i !\I>> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\h !\H !\?> <DISPLAY-HELP> <PRESS-A-KEY> <SET KEY NONE>)>
             <COND (<EQUAL? .KEY !\q !\Q> <CRLF> <TELL "Are you sure you want to quit the game?"> <COND(<YES?> <RETURN>)>)>
+            <COND (<EQUAL? .KEY !\s !\S> <CRLF> <TELL "Save current progres?"> <COND (<YES?> <COND (<NOT <SAVE>> <EMPHASIZE "Save failed."> <PRESS-A-KEY>)>)>)>
+            <COND (<EQUAL? .KEY !\r !\R> <CRLF> <TELL "Restore from a previous save?"> <COND (<YES?> <COND (<NOT <RESTORE>> <EMPHASIZE "Restore failed."> <PRESS-A-KEY>)>)>)>
             <COND (<EQUAL? .KEY !\x !\X> <CRLF> <RETURN>)>
         )>
         <UPDATE-STATUS-LINE>
@@ -276,7 +278,7 @@
             )>
         )>
         <COND (<SPECIAL-INTERRUPT-ROUTINE .KEY> <RETURN>)>
-        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\i !\I !\q !\Q !\h !\H !\?> <CRLF> <RETURN>)>
+        <COND (<EQUAL? .KEY !\c !\C !\g !\G !\i !\I !\q !\Q !\h !\H !\? !\r !\R !\s !\S> <CRLF> <RETURN>)>
     >
     <RETURN .KEY>>
 
