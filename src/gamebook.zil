@@ -152,8 +152,9 @@
 
 ; "Story Routines - print story, process choices"
 ; ---------------------------------------------------------------------------------------------
-<ROUTINE PRINT-PAGE ("AUX" TEXT)
-    <SET TEXT <GETP ,HERE ,P?STORY>>
+<ROUTINE PRINT-PAGE ("OPT" PAGE "AUX" TEXT)
+    <COND (<NOT .PAGE> <SET PAGE ,HERE>)>
+    <SET TEXT <GETP .PAGE ,P?STORY>>
     <COND (.TEXT
         <CRLF>
         <TELL .TEXT>
@@ -477,6 +478,7 @@
     <SET DEATH <GETP ,HERE ,P?DEATH>>
     <COND (.DEATH
         <PRINT-ENDING BAD-ENDING>
+        <SETG CONTINUE-TO-CHOICES F>
     )>>
 
 <ROUTINE CHECK-EVENTS ("AUX" EVENT STORY)
@@ -495,6 +497,7 @@
     <SET VICTORY <GETP ,HERE ,P?VICTORY>>
     <COND (.VICTORY
         <PRINT-ENDING GOOD-ENDING>
+        <SETG CONTINUE-TO-CHOICES F>
     )>>
 
 <ROUTINE GAIN-CODEWORD ("OPT" CODEWORD)    
