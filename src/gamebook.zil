@@ -169,7 +169,7 @@
     <REPEAT ()
         <SET KEY <INPUT 1>>
         <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
-            <SET .CHOICE <- .KEY !\0>>
+            <SET CHOICE <- .KEY !\0>>
             <COND (<AND <G=? .CHOICES 1> <L=? .CHOICE <GET .CHOICES 0>>>
                 <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>> <L=? .CHOICE <GET .TYPES 0>>>
                     <SET TYPE <GET .TYPES .CHOICE>>
@@ -404,7 +404,7 @@
     <RFALSE>>
 
 <ROUTINE CHECK-SKILL-ITEM (SKILL ITEM "OPT" CONTAINER)
-    <COND (<NOT .CONTAINER> <SET .CONTAINER ,PLAYER>)>
+    <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
     <COND (<AND <OR <IN? .SKILL ,SKILLS> <CHECK-TEMP-SKILLS .SKILL>> <IN? .ITEM .CONTAINER>>
         <RETURN <CHECK-SKILL-POSSESSIONS .SKILL>>
     )>>
@@ -658,7 +658,7 @@
                 <SET COUNT <+ .COUNT 1>>
             )>
         )>
-        <SET .ITEM <NEXT? .ITEM>>
+        <SET ITEM <NEXT? .ITEM>>
     >
     <RETURN .COUNT>>
 
@@ -692,7 +692,7 @@
                     <COND (.QUANTITY <TELL " (" N .QUANTITY ")">)>
                     <CRLF>
                 )>
-                <SET .ITEM <NEXT? .ITEM>>
+                <SET ITEM <NEXT? .ITEM>>
             >
             <HLIGHT ,H-BOLD>
             <TELL N <+ .COUNT 1>>
@@ -701,7 +701,7 @@
             <SET KEY <INPUT 1>>
             <COND (<AND <G? .KEY 48> <L? .KEY <+ .COUNT 49>>>
                 <SET CHOICE <- .KEY 48>>
-                <SET .ITEM <GET-ITEM .CHOICE>>
+                <SET ITEM <GET-ITEM .CHOICE>>
                 <COND (.ITEM
                     <CRLF>
                     <TELL "Drop " T .ITEM "?">
@@ -761,14 +761,14 @@
             )(ELSE
                 <RETURN>
             )>
-            <SET .ITEMS <NEXT? .ITEMS>>
+            <SET ITEMS <NEXT? .ITEMS>>
         >
         <RETURN .ITEMS>
     )>>
 
 <ROUTINE GIVE-FROM-LIST (LIST UNABLE UNWILLING "OPT" MAX JUMP CONTAINER "AUX" ITEMS COUNT RESULT)
     <RESET-TEMP-LIST>
-    <COND (<NOT .CONTAINER> <SET .CONTAINER ,PLAYER>)>
+    <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
     <COND (<NOT .MAX> <SET MAX 1>)>
     <SET ITEMS <GET .LIST 0>>
     <SET COUNT 0>
@@ -784,7 +784,7 @@
         <RESET-GIVEBAG>
         <REPEAT ()
             <TRANSFER-CONTAINER ,GIVEBAG .CONTAINER>
-            <SELECT-FROM-LIST TEMP-LIST .COUNT .MAX "item" ,GIVEBAG>
+            <SELECT-FROM-LIST TEMP-LIST .COUNT .MAX "item" ,GIVEBAG "give">
             <COND (<NOT <EQUAL? <COUNT-CONTAINER ,GIVEBAG> .MAX>>
                 <COND (<AND <EQUAL? .MAX <+ <COUNT-CONTAINER ,GIVEBAG> 1>> <IN? ,ALL-MONEY ,GIVEBAG> <INTBL? ,ALL-MONEY .LIST <+ <GET .LIST 0> 1>>>
                     <COND (<G? ,MONEY 0>
@@ -794,7 +794,7 @@
                             <YOU-GAVE ,ALL-MONEY>
                             <COND (.JUMP
                                 <STORY-JUMP .JUMP>
-                                <SETG ,MONEY 0>
+                                <SETG MONEY 0>
                                 <MOVE ,ALL-MONEY ,PLAYER>
                             )>
                             <SET RESULT GIVE-GIVEN>
@@ -831,7 +831,7 @@
     <COND (<IS-ALIVE> <TELL CR .TEXT CR>)>>
 
 <ROUTINE IS-ALIVE ("OPT" THRESHOLD)
-    <COND (<NOT .THRESHOLD> <SET .THRESHOLD 0>)>
+    <COND (<NOT .THRESHOLD> <SET THRESHOLD 0>)>
     <COND (<G? ,LIFE-POINTS .THRESHOLD> <RTRUE>)>
     <RFALSE>>
 
@@ -841,8 +841,9 @@
         <PUT TEMP-LIST .I NONE>
     >>
 
-<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC CONTAINER "AUX" KEY COUNT CHOICE)
-    <COND (<NOT .CONTAINER> <SET .CONTAINER ,PLAYER>)>
+<ROUTINE SELECT-FROM-LIST (LIST ITEMS MAX "OPT" DESC CONTAINER ACTION "AUX" KEY COUNT CHOICE)
+    <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
+    <COND (<NOT .ACTION> <SET ACTION "take">)>
     <SET COUNT 0>
     <COND (<NOT .DESC> <SET DESC "item">)>
     <RESET-SELECTIONS>
@@ -871,11 +872,7 @@
         <HLIGHT 0>
         <TELL " - I'm alright with my choices" ,PERIOD-CR>
         <TELL "Select which " .DESC "(s) to ">
-        <COND (<EQUAL? .CONTAINER ,GIVEBAG>
-            <TELL "give">
-        )(ELSE
-            <TELL "take">
-        )>
+        <TELL .ACTION>
         <TELL ":" CR>
         <SET KEY <INPUT 1>>
         <COND (<EQUAL? .KEY !\0>
@@ -939,7 +936,7 @@
         <COND (<NOT .SKILLS> <RETURN>)>
         <SET COUNT <+ .COUNT 1>>
         <PUT .MY-SKILLS .COUNT .SKILLS>
-        <SET .SKILLS <NEXT? .SKILLS>>
+        <SET SKILLS <NEXT? .SKILLS>>
     >
     <DO (I 1 .ITEMS)
         <COND (<NOT <INTBL? <GET .LIST .I> .MY-SKILLS 9>>
@@ -1015,7 +1012,7 @@
                         <COND (<IN? <GET .WARES .ITEM> .CONTAINER>
                             <TELL "You already have " T <GET .WARES .ITEM> ,EXCLAMATION-CR>
                         )(ELSE
-                            <SETG ,MONEY <- ,MONEY <GET .PRICELIST .ITEM>>>
+                            <SETG MONEY <- ,MONEY <GET .PRICELIST .ITEM>>>
                             <TELL "You bought " T <GET .WARES .ITEM> CR>
                             <COND (<AND <EQUAL? .CONTAINER ,PLAYER> <EQUAL? <COUNT-POSSESSIONS> LIMIT-POSSESSIONS> <NOT <IN? <GET .WARES .ITEM> .CONTAINER>>>
                                 <CRLF>
@@ -1170,7 +1167,7 @@
             <COND (<NOT .ITEM> <RETURN>)>
             <SET NEXT <NEXT? .ITEM>>
             <MOVE .ITEM .TO>
-            <SET .ITEM .NEXT>
+            <SET ITEM .NEXT>
         >
     )>>
 
@@ -1199,7 +1196,7 @@
             <TELL "Select which character?">
             <SET KEY <INPUT 1>>
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
-                <SET .CHOICE <- .KEY !\0>>
+                <SET CHOICE <- .KEY !\0>>
                 <COND (<AND <G=? CHARACTERS 1> <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
                     <SET CHARACTER <GET CHARACTERS .CHOICE>>
                     <CRLF>
