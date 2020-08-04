@@ -206,10 +206,12 @@
                         )>
                     )(<AND <EQUAL? .TYPE R-MONEY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-MONEY <GET .REQUIREMENTS .CHOICE>>
-                            <CRLF>
-                            <CHARGE-MONEY <GET .REQUIREMENTS .CHOICE>>
-                            <PRESS-A-KEY>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                            <CRLF>
+                            <COND (<G? <GET .REQUIREMENTS .CHOICE> 0>
+                                <CHARGE-MONEY <GET .REQUIREMENTS .CHOICE>>
+                                <PRESS-A-KEY>
+                            )>
                         )>
                     )(<AND <EQUAL? .TYPE R-ANY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <SET LIST <GET .REQUIREMENTS .CHOICE>>
@@ -306,7 +308,7 @@
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-SKILL> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D .LIST> <HLIGHT 0> <TELL ")">)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-CODEWORD> .REQUIREMENTS> <PRINT-CODEWORDS .LIST>)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-ITEM> .REQUIREMENTS> <TELL " ("> <HLIGHT ,H-ITALIC> <TELL D .LIST> <HLIGHT 0> <TELL ")">)>
-                <COND (<AND <EQUAL? .CHOICE-TYPE R-MONEY> .REQUIREMENTS> <TELL " (" N .LIST " " D ,CURRENCY ")">)>
+                <COND (<AND <EQUAL? .CHOICE-TYPE R-MONEY> .REQUIREMENTS> <COND (<G? .LIST 0> <TELL " (" N .LIST " " D ,CURRENCY ")">)>)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-ANY> .REQUIREMENTS> <PRINT-ANY .LIST>)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-ALL> .REQUIREMENTS> <PRINT-ALL .LIST>)>
                 <COND (<AND <EQUAL? .CHOICE-TYPE R-SKILL-ITEM> .REQUIREMENTS> <PRINT-ALL .LIST>)>
@@ -376,15 +378,13 @@
     <RTRUE>>
 
 <ROUTINE CHECK-MONEY (AMOUNT)
-    <COND (<G? .AMOUNT 0>
-        <COND (<L? ,MONEY .AMOUNT>
-            <CRLF><CRLF>
-            <HLIGHT ,H-BOLD>
-            <TELL "You do not have enough " D ,CURRENCY ,PERIOD-CR>
-            <HLIGHT 0>
-            <PRESS-A-KEY>
-            <RFALSE>
-        )>
+    <COND (<OR <AND <G? .AMOUNT 0> <L? ,MONEY .AMOUNT>> <L=? ,MONEY 0>>
+        <CRLF><CRLF>
+        <HLIGHT ,H-BOLD>
+        <TELL "You do not have enough " D ,CURRENCY ,PERIOD-CR>
+        <HLIGHT 0>
+        <PRESS-A-KEY>
+        <RFALSE>
     )>
     <RTRUE>>
 
