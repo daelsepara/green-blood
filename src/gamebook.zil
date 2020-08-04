@@ -780,7 +780,7 @@
             )>
         )>
     >
-    <COND (<G? .COUNT 1>
+    <COND (<G=? .COUNT .MAX>
         <RESET-GIVEBAG>
         <REPEAT ()
             <TRANSFER-CONTAINER ,GIVEBAG .CONTAINER>
