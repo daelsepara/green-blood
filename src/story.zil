@@ -1,8 +1,8 @@
 <GLOBAL CHARACTERS-ENABLED T>
 <GLOBAL STARTING-POINT PROLOGUE>
 
-<CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.">
-<CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!">
+<CONSTANT BAD-ENDING "The adventure is over. The Forest of Arden is doomed.|">
+<CONSTANT GOOD-ENDING "The adventure is over. You saved the Forest of Arden! Congratulations!|">
 
 <OBJECT CURRENCY (DESC "gold")>
 <OBJECT VEHICLE (DESC "none")>
