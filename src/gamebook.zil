@@ -877,7 +877,22 @@
         <TELL "Select which " .DESC "(s) to ">
         <TELL .ACTION>
         <TELL ":" CR>
-        <SET KEY <INPUT 1>>
+        <REPEAT ()
+            <SET KEY <INPUT 1>>
+            <COND (
+                <OR
+                    <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 12> <EQUAL? .KEY !\c !\C>>
+                    <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16> <EQUAL? .KEY !\G !\g>>
+                    <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 18> <EQUAL? .KEY !\i !\I>>
+                    <AND <G=? .KEY !\A> <L=? .KEY !\F> <+ <L=? <- .KEY !\A> 10> .ITEMS>>
+                    <AND <G=? .KEY !\a> <L=? .KEY !\f> <+ <L=? <- .KEY !\a> 10> .ITEMS>>
+                    <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .ITEMS>>
+                    <AND <EQUAL? .KEY !\h !\H> <L? .ITEMS 17>>
+                    <EQUAL? .KEY !\0 !\?>
+                >
+                <RETURN>
+            )>
+        >
         <COND (<EQUAL? .KEY !\0>
             <COND (<L? .COUNT .MAX>
                 <TELL CR "Are you sure?">
@@ -889,6 +904,7 @@
         <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 12> <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY>)>
         <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16> <EQUAL? .KEY !\G !\g>> <PRINT-SKILLS> <PRESS-A-KEY>)>
         <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 18> <EQUAL? .KEY !\i !\I>> <DESCRIBE-INVENTORY> <PRESS-A-KEY>)>
+        <COND (<OR <EQUAL? .KEY !\?> <AND <EQUAL? .KEY !\h !\H> <L? .ITEMS 17>>> <DISPLAY-HELP> <PRESS-A-KEY>)>
         <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9>> <AND <G=? .KEY !\a> <L=? .KEY !\f>> <AND <G=? .KEY !\A> <L=? .KEY !\F>>>
             <COND (<AND <G=? .KEY !\a> <L=? .KEY !\f>>
                 <SET CHOICE <+ <- .KEY !\a> 10>> 
@@ -997,10 +1013,21 @@
         <HLIGHT 0>
         <TELL " - Bye" CR>
         <TELL "You are carrying " N ,MONEY " " D ,CURRENCY ": ">
-        <SET KEY <INPUT 1>>
+        <REPEAT ()
+            <SET KEY <INPUT 1>>
+            <COND (
+                <OR
+                    <AND ,CHARACTERS-ENABLED <OR <EQUAL? .KEY !\c !\C> <AND <EQUAL? .KEY !\i !\I> <EQUAL? .CONTAINER ,PLAYER>>>>
+                    <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .ITEMS>>
+                    <EQUAL? .KEY !\h !\H !\? !\0>
+                >
+                <RETURN>
+            )>
+        >
         <CRLF>
-        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY> <SET KEY NONE>)>
-        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\i !\I> <EQUAL? .CONTAINER ,PLAYER>> <DESCRIBE-INVENTORY> <PRESS-A-KEY> <SET KEY NONE>)>
+        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY>)>
+        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .KEY !\i !\I> <EQUAL? .CONTAINER ,PLAYER>> <DESCRIBE-INVENTORY> <PRESS-A-KEY>)>
+        <COND (<EQUAL? .KEY !\h !\H !\?> <DISPLAY-HELP> <PRESS-A-KEY>)>
         <COND (<AND <G? .KEY 48> <L? .KEY <+ .ITEMS 49>>>
             <SET ITEM <- .KEY 48>>
             <CRLF>
@@ -1196,8 +1223,15 @@
             <TELL "C">
             <HLIGHT 0>
             <TELL " - Custom character" CR>
+            <HLIGHT ,H-BOLD>
+            <TELL "R">
+            <HLIGHT 0>
+            <TELL " - Restore from previous save" CR>
             <TELL "Select which character?">
-            <SET KEY <INPUT 1>>
+            <REPEAT ()
+                <SET KEY <INPUT 1>>
+                <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .COUNT>> <EQUAL? .KEY !\C !\c> <EQUAL? .KEY !\R !\r>> <RETURN>)>
+            >
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
                 <SET CHOICE <- .KEY !\0>>
                 <COND (<AND <G=? CHARACTERS 1> <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
@@ -1241,6 +1275,10 @@
                 <TELL CR "[Press a key to begin]" CR>
                 <INPUT 1>
                 <RETURN>
+            )(<EQUAL? .KEY !\R !\r>
+                <COND (<NOT <RESTORE>>
+                    <EMPHASIZE "Restore failed.">
+                )>
             )(ELSE
                 <CRLF>
             )>
