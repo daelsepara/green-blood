@@ -868,7 +868,7 @@
             <COND (<INTBL? <GET .LIST .I> SELECT-CHOICES 10> <TELL "X">)(ELSE <TELL " ">)>
             <TELL "] - " D <GET .LIST .I> CR>
         >
-        <COND (<AND <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 12>> <HLIGHT ,H-BOLD> <TELL "C"> <HLIGHT 0> <TELL " - View your character (" D ,CURRENT-CHARACTER ")" CR>)>
+        <COND (<AND <OR <EQUAL? .CONTAINER ,PLAYER> <EQUAL? .CONTAINER ,SKILLS>> <L? .ITEMS 12>> <HLIGHT ,H-BOLD> <TELL "C"> <HLIGHT 0> <TELL " - View your character (" D ,CURRENT-CHARACTER ")" CR>)>
         <COND (<AND <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16>> <HLIGHT ,H-BOLD> <TELL "G"> <HLIGHT 0> <TELL " - Display skills glossary" CR>)>
         <HLIGHT ,H-BOLD>
         <TELL "0">
@@ -881,11 +881,11 @@
             <SET KEY <INPUT 1>>
             <COND (
                 <OR
-                    <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 12> <EQUAL? .KEY !\c !\C>>
+                    <AND ,CHARACTERS-ENABLED <OR <EQUAL? .CONTAINER ,PLAYER> <EQUAL? .CONTAINER ,SKILLS>> <L? .ITEMS 12> <EQUAL? .KEY !\c !\C>>
                     <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16> <EQUAL? .KEY !\G !\g>>
                     <AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 18> <EQUAL? .KEY !\i !\I>>
-                    <AND <G=? .KEY !\A> <L=? .KEY !\F> <+ <L=? <- .KEY !\A> 10> .ITEMS>>
-                    <AND <G=? .KEY !\a> <L=? .KEY !\f> <+ <L=? <- .KEY !\a> 10> .ITEMS>>
+                    <AND <G=? .KEY !\A> <L=? .KEY !\F> <L=? <+ <- .KEY !\A> 10> .ITEMS>>
+                    <AND <G=? .KEY !\a> <L=? .KEY !\f> <L=? <+ <- .KEY !\a> 10> .ITEMS>>
                     <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .ITEMS>>
                     <AND <EQUAL? .KEY !\h !\H> <L? .ITEMS 17>>
                     <EQUAL? .KEY !\0 !\?>
@@ -902,7 +902,7 @@
             )>
         )>
         <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 12> <EQUAL? .KEY !\c !\C>> <DESCRIBE-PLAYER> <PRESS-A-KEY>)>
-        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16> <EQUAL? .KEY !\G !\g>> <PRINT-SKILLS> <PRESS-A-KEY>)>
+        <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,SKILLS> <L? .ITEMS 16> <EQUAL? .KEY !\G !\g>> <PRINT-SKILLS>)>
         <COND (<AND ,CHARACTERS-ENABLED <EQUAL? .CONTAINER ,PLAYER> <L? .ITEMS 18> <EQUAL? .KEY !\i !\I>> <DESCRIBE-INVENTORY> <PRESS-A-KEY>)>
         <COND (<OR <EQUAL? .KEY !\?> <AND <EQUAL? .KEY !\h !\H> <L? .ITEMS 17>>> <DISPLAY-HELP> <PRESS-A-KEY>)>
         <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9>> <AND <G=? .KEY !\a> <L=? .KEY !\f>> <AND <G=? .KEY !\A> <L=? .KEY !\F>>>
