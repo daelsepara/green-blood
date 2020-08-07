@@ -9,7 +9,7 @@
     <TELL INSTRUCTIONS-TEXT>
     <CRLF>>
 
-<CONSTANT HELP-TEXT "C - Display player information (skills, items, codewords)|G - Display glossary of skills|R - Restore progress from a saved file|S - Save current progress to a file|Q - quit the game">
+<CONSTANT HELP-TEXT "C - Display player information (skills, items, codewords)|G - Display glossary of skills|I - Display inventory (items)|R - Restore progress from a saved file|S - Save current progress to a file|Q - quit the game">
 
 <ROUTINE DISPLAY-HELP ()
     <CRLF>

@@ -30,14 +30,16 @@ ISBN 0 7497 1484 0
 - No in-game illustrations or graphics (also excludes map from the book)
 - Character selection and inventory of items and codewords are implemented
 - Some changes to the text were made: spelling errors/consistency, some were rephrased to fit the "digital" format or the implemented mechanisms 
-- Select an action by pressing the number keys that correspond to the option (**1** - **9**). If there are more than 9 options, items 10-15 map to the keys **A** (or **a**) - **F** (or **f**)
-- Press **q** or **Q** during action selection to quit or terminate the program
-- Press **c** or **C** during action selection to view character (items, skills, codewords)
-- Press **g** or **G** during action selection to view skills glossary
-- Press **r** or **R** during action selection to restore progress from a save file
-- Press **s** or **S** during action selection to save current progress to a file
-- Press **h** or **H** or **?** during action selection lists the commands **G**/**C**/**S**/**R**/**Q** and what each does 
 - Paradoxical or continuity errors (as pointed out by some reviewers/readers) are preserved since the ZIL was adapted verbatim from the book.
+- Select an action by pressing the number keys that correspond to the option (**1** - **9**).
+- In some situations, if there are more than 9 options, items 10-15 map to the keys **A** (or **a**) - **F** (or **f**)
+- Press **q** or **Q** to quit or terminate the program
+- Press **c** or **C** to view character (items, skills, codewords)
+- Press **i** or **I** to view inventory (items)
+- Press **g** or **G** to view skills glossary
+- Press **r** or **R** to restore progress from a save file
+- Press **s** or **S** to save current progress to a file
+- Press **h** or **H** or **?** lists the commands **G**/**C**/**I**/**S**/**R**/**Q** and what each does 
 
 ## Bugs
 
