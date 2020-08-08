@@ -180,8 +180,12 @@
                     )(<AND <EQUAL? .TYPE R-SKILL> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<OR <IN? <GET .REQUIREMENTS .CHOICE> ,SKILLS> <CHECK-TEMP-SKILLS <GET .REQUIREMENTS .CHOICE>>>
                             <COND (<CHECK-SKILL-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
-                                <SETG HERE <GET .DESTINATIONS .CHOICE>>
-                                <CRLF>
+                                <COND (<CHECK-CHARGES <SKILL-FIRST-REQUIREMENT <GET .REQUIREMENTS .CHOICE>>>
+                                    <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                                    <CRLF>
+                                )(ELSE
+                                    <NOT-CHARGED <SKILL-FIRST-REQUIREMENT <GET .REQUIREMENTS .CHOICE>>>
+                                )>
                             )(ELSE
                                 <NOT-POSSESSED <SKILL-FIRST-REQUIREMENT <GET .REQUIREMENTS .CHOICE>>>
                             )>
@@ -354,6 +358,16 @@
     )>
     <RTRUE>>
 
+<ROUTINE CHECK-CHARGES (ITEM "AUX" CHARGES)
+    <COND (<NOT .ITEM> <RTRUE>)>
+    <SET CHARGES <GETP .ITEM ,P?CHARGES>>
+    <COND (<L? .CHARGES 0>
+        <RTRUE>
+    )(<G? .CHARGES 0>
+        <RTRUE>
+    )>
+    <RFALSE>>
+
 <ROUTINE CHECK-CODEWORD (CODEWORD)
     <COND (<NOT .CODEWORD> <RTRUE>)>
     <RETURN <IN? .CODEWORD ,CODEWORDS>>>
@@ -466,10 +480,17 @@
         <PRESS-A-KEY>
     )>>
 
+<ROUTINE NOT-CHARGED (OBJ)
+    <CRLF><CRLF>
+    <HLIGHT ,H-BOLD>
+    <TELL CT .OBJ " has no charges left" ,PERIOD-CR>
+    <HLIGHT 0>
+    <PRESS-A-KEY>>
+
 <ROUTINE NOT-POSSESSED (OBJ)
     <CRLF><CRLF>
     <HLIGHT ,H-BOLD>
-    <TELL "You do not possess " A .OBJ CR>
+    <TELL "You do not possess " A .OBJ ,PERIOD-CR>
     <HLIGHT 0>
     <PRESS-A-KEY>>
 
@@ -1194,6 +1215,9 @@
                     <HLIGHT 0>
                     <COND (<G=? <GETP .ITEMS ,P?QUANTITY> 0>
                         <TELL " (" N <GETP .ITEMS ,P?QUANTITY> ")">
+                    )>
+                    <COND (<G=? <GETP .ITEMS ,P?CHARGES> 0>
+                        <TELL " (" N <GETP .ITEMS ,P?CHARGES> " charges left)">
                     )>
                     <COND (<G? <GETP .ITEMS ,P?STARS> 0>
                         <TELL " (" N <GETP .ITEMS ,P?STARS> " stars)">
