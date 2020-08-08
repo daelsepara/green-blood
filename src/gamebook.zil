@@ -206,8 +206,12 @@
                         )>
                     )(<AND <EQUAL? .TYPE R-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-POSSESSIONS <GET .REQUIREMENTS .CHOICE>>
-                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
-                            <CRLF>
+                            <COND (<CHECK-CHARGES <GET .REQUIREMENTS .CHOICE>>
+                                <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                                <CRLF>
+                            )(ELSE
+                                <NOT-CHARGED <GET .REQUIREMENTS .CHOICE>>
+                            )>
                         )>
                     )(<AND <EQUAL? .TYPE R-MONEY> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <COND (<CHECK-MONEY <GET .REQUIREMENTS .CHOICE>>
