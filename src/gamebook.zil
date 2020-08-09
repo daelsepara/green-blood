@@ -19,6 +19,7 @@
 <CONSTANT R-SKILL-ITEM 7>
 <CONSTANT R-LOSE-ITEM 8>
 <CONSTANT R-LOSE-LIFE 9>
+<CONSTANT R-GAIN-CODEWORD 10>
 
 <CONSTANT LIMIT-POSSESSIONS 8>
 
@@ -284,6 +285,11 @@
                             <PRESS-A-KEY>
                             <SETG HERE <GET .DESTINATIONS .CHOICE>>
                         )>
+                    )(<AND <EQUAL? .TYPE R-GAIN-CODEWORD> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
+                        <CRLF>
+                        <GAIN-CODEWORD <GET .REQUIREMENTS .CHOICE>>
+                        <PRESS-A-KEY>
+                        <SETG HERE <GET .DESTINATIONS .CHOICE>>
                     )>
                     <RETURN>
                 )(ELSE
@@ -490,6 +496,7 @@
                 <HLIGHT 0>
                 <PRINT-CODEWORDS .LIST>
             )(ELSE
+                <TELL " ">
                 <HLIGHT 0>
                 <HLIGHT ,H-ITALIC>
                 <TELL D <GET .LIST 1>>
@@ -1176,7 +1183,7 @@
     <PRINT-LIST .ITEMS "or ">>
 
 <ROUTINE PRINT-CODEWORDS (CODEWORDS)
-    <PRINT-LIST .CODEWORDS>>
+    <PRINT-LIST .CODEWORDS "and ">>
 
 <ROUTINE PRINT-LIST (ITEMS "OPT" LASTFIX "AUX" COUNT)
     <COND (.ITEMS
