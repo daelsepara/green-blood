@@ -1795,7 +1795,7 @@
         <STORY-JUMP ,STORY229>
     )(ELSE
         <CRLF>
-        <TELL TEXT151-DEATH>
+        <TELL ,TEXT151-DEATH>
         <CRLF>
     )>>
 
@@ -2651,10 +2651,10 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY226-PRECHOICE ()
-    <LOSE-LIFE 4 "You died in combat" ,STORY226>
+    <LOSE-LIFE 4 "You died in combat." ,STORY226>
     <COND (<IS-ALIVE>
         <CRLF>
-        <TELL TEXT226-CONTINUED>
+        <TELL ,TEXT226-CONTINUED>
         <TELL ,PERIOD-CR>
         <COND (<CHECK-ITEM ,POTION-RED-LIQUID>
             <CRLF>
@@ -2896,7 +2896,7 @@
 <ROUTINE STORY245-PRECHOICE ()
     <TAKE-ELVEN-DIRK>
     <CRLF>
-    <TELL TEXT245-CONTINUED>
+    <TELL ,TEXT245-CONTINUED>
     <TELL ,PERIOD-CR>
     <RETURN>>
 
@@ -2935,7 +2935,7 @@
         <PUTP ,STORY248 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT248-CONTINUED>
+        <TELL ,TEXT248-CONTINUED>
         <TELL ,PERIOD-CR>
     )>>
 
@@ -3797,8 +3797,8 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY321-PRECHOICE ()
-    <COND (<CHECK-SKILL ,SKILL-AGILITY> <CRLF> <TELL TEXT321-AGILITY> <CRLF>)>
-    <LOSE-LIFE 3 "You died from the attack" ,STORY321>
+    <COND (<CHECK-SKILL ,SKILL-AGILITY> <CRLF> <TELL ,TEXT321-AGILITY> <CRLF>)>
+    <LOSE-LIFE 3 "You died from the attack." ,STORY321>
     <COND (<IS-ALIVE>
         <IF-ALIVE TEXT321-CONTINUED>
         <TAKE-ELVEN-DIRK>
@@ -4211,7 +4211,7 @@
     (FLAGS LIGHTBIT)>
 
 <ROUTINE STORY357-PRECHOICE ()
-    <LOSE-LIFE 4 "You died in combat" ,STORY357>
+    <LOSE-LIFE 4 "You died in combat." ,STORY357>
     <SETG LIFE-POINTS-LOST <+ ,LIFE-POINTS-LOST 4>>
     <IF-ALIVE TEXT357-CONTINUED>>
 
@@ -4402,11 +4402,11 @@
         <STORY-JUMP ,STORY213>
     )(ELSE
         <CRLF>
-        <TELL TEXT373-CONTINUED>
+        <TELL ,TEXT373-CONTINUED>
         <TELL ,PERIOD-CR>
         <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
         <CRLF>
-        <TELL TEXT373-END>
+        <TELL ,TEXT373-END>
         <TELL ,PERIOD-CR>
     )>
     <RETURN>>
@@ -4832,7 +4832,7 @@
 <ROUTINE STORY407-PRECHOICE ()
     <SELECT-FROM-LIST FIVE-POTIONS 5 3 "potion">
     <CRLF>
-    <TELL TEXT407-END>
+    <TELL ,TEXT407-END>
     <CRLF>
     <RETURN>>
 
@@ -5344,9 +5344,10 @@
 
 <ROUTINE STORY452-PRECHOICE ()
     <TELL " ">
-    <TELL CAMP-PLANS>
-    <CRLF><CRLF>
-    <TELL TEXT452-CONTINUED>
+    <TELL ,CAMP-PLANS>
+    <CRLF>
+    <CRLF>
+    <TELL ,TEXT452-CONTINUED>
     <TELL ,PERIOD-CR>>
 
 <CONSTANT TEXT453 "Dire straits call for desperate measures and your gamble pays off. He falls to the ground, already dead before he strikes the sward. You whip your sword tip out of his body, jump over the fallen guard and run for the nearby trees. You are quickly lost in the forest once more, knowing the guards will never find you. The awful sights and sounds of the Westermen camp are soon far beyond you.">
@@ -5479,9 +5480,10 @@
 
 <ROUTINE STORY462-PRECHOICE ()
     <CRLF>
-    <TELL CAMP-PLANS>
-    <CRLF><CRLF>
-    <TELL TEXT462-CONTINUED>
+    <TELL ,CAMP-PLANS>
+    <CRLF>
+    <CRLF>
+    <TELL ,TEXT462-CONTINUED>
     <TELL ,PERIOD-CR>>
 
 <CONSTANT TEXT463 "The man you are fighting is a bit of a coward and he guards carefully against your every move. You look like  a pair of grannies circling each other warily. Time has run out for you. The guard's comrades close in from all sides and you are overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
@@ -5731,9 +5733,9 @@
 
 <ROUTINE STORY485-PRECHOICE ()
     <COND (<CHECK-SKILL ,SKILL-CHARMS>
-        <LOSE-LIFE 1 NOXIOUS-BLIGHT ,STORY485>
+        <LOSE-LIFE 1 ,NOXIOUS-BLIGHT ,STORY485>
     )(ELSE
-        <LOSE-LIFE 4 NOXIOUS-BLIGHT ,STORY485>
+        <LOSE-LIFE 4 ,NOXIOUS-BLIGHT ,STORY485>
     )>
     <IF-ALIVE TEXT485-CONTINUED>>
 
@@ -5765,7 +5767,7 @@
         <PUTP ,STORY487 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT487-CONTINUED>
+        <TELL ,TEXT487-CONTINUED>
         <TELL ,PERIOD-CR>
     )>>
 
@@ -5856,7 +5858,7 @@
         <PUTP ,STORY494 ,P?DEATH F>
     )(ELSE
         <CRLF>
-        <TELL TEXT494-CONTINUED>
+        <TELL ,TEXT494-CONTINUED>
         <TELL ,PERIOD-CR>
     )>>
 

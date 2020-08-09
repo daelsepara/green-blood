@@ -784,7 +784,10 @@
             <TELL N <+ .COUNT 1>>
             <HLIGHT 0>
             <TELL " - drop " T .OBJ " instead" ,PERIOD-CR>
-            <SET KEY <INPUT 1>>
+            <REPEAT ()
+                <SET KEY <INPUT 1>>
+                <COND (<AND <G? .KEY !\0> <L=? .KEY <+ .COUNT 49>>> <RETURN>)>
+            >
             <COND (<AND <G? .KEY 48> <L? .KEY <+ .COUNT 49>>>
                 <SET CHOICE <- .KEY 48>>
                 <SET ITEM <GET-ITEM .CHOICE>>
@@ -793,7 +796,16 @@
                     <TELL "Drop " T .ITEM "?">
                     <COND (<YES?>
                         <COND (<CHECK-DROPS .ITEM>
-                            <TELL "You dropped " T .ITEM " and took " T .OBJ CR>
+                            <HLIGHT 0>
+                            <TELL CR "You dropped ">
+                            <HLIGHT ,H-BOLD>
+                            <TELL T .ITEM>
+                            <HLIGHT 0>
+                            <TELL " and took ">
+                            <HLIGHT ,H-BOLD>
+                            <TELL T .OBJ>
+                            <HLIGHT 0>
+                            <TELL ,PERIOD-CR>
                             <COND (<NOT <EQUAL? .ITEM .OBJ>>
                                 <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
                                 <COND (<G? .QUANTITY 0>
@@ -824,7 +836,12 @@
                 <CRLF>
                 <TELL "Drop " T .OBJ "?">
                 <COND (<YES?>
-                    <TELL "You dropped " T .OBJ CR>
+                    <HLIGHT 0>
+                    <TELL CR "You dropped ">
+                    <HLIGHT ,H-BOLD>
+                    <TELL T .OBJ>
+                    <HLIGHT 0>
+                    <TELL ,PERIOD-CR>
                     <SET QUANTITY <GETP .OBJ ,P?QUANTITY>>
                     <COND (<L? .QUANTITY 0> <REMOVE .OBJ>)>
                     <RETURN>
