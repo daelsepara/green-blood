@@ -241,8 +241,12 @@
                     )(<AND <EQUAL? .TYPE R-SKILL-ITEM> .REQUIREMENTS <L=? .CHOICE <GET .REQUIREMENTS 0>>>
                         <SET LIST <GET .REQUIREMENTS .CHOICE>>
                         <COND (<CHECK-SKILL-ITEM <GET .LIST 1> <GET .LIST 2>>
-                            <SETG HERE <GET .DESTINATIONS .CHOICE>>
-                            <CRLF>
+                            <COND (<CHECK-CHARGES <GET .LIST 2>>
+                                <SETG HERE <GET .DESTINATIONS .CHOICE>>
+                                <CRLF>
+                            )(ELSE
+                                <NOT-CHARGED <GET .LIST 2>>
+                            )>
                         )(ELSE
                             <CRLF><CRLF>
                             <HLIGHT ,H-BOLD>
@@ -256,7 +260,8 @@
                             <TELL " ">
                             <HLIGHT ,H-ITALIC>
                             <TELL D <GET .LIST 2>>
-                            <HLIGHT H-BOLD>
+                            <HLIGHT 0>
+                            <HLIGHT ,H-BOLD>
                             <TELL ,PERIOD-CR>
                             <HLIGHT 0>
                         )>
@@ -429,9 +434,11 @@
 
 <ROUTINE CHECK-SKILL-ITEM (SKILL ITEM "OPT" CONTAINER)
     <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
+    <COND (<OR <NOT .SKILL> <NOT .ITEM>> <RTRUE>)>
     <COND (<AND <OR <IN? .SKILL ,SKILLS> <CHECK-TEMP-SKILLS .SKILL>> <IN? .ITEM .CONTAINER>>
         <RETURN <CHECK-SKILL-POSSESSIONS .SKILL>>
-    )>>
+    )>
+    <RFALSE>>
 
 <ROUTINE CHECK-TEMP-SKILLS (SKILL "AUX" COUNT)
     <COND (.SKILL
@@ -454,29 +461,56 @@
     >
     <RFALSE>>
 
-<ROUTINE NOT-ALL-ANY (TYPE LIST "OPT" CONTAINER)
+<ROUTINE NOT-ALL-ANY (TYPE LIST "OPT" CONTAINER "AUX" COUNT)
     <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
     <COND (<EQUAL? .TYPE R-ANY R-ALL>
+        <SET COUNT <GET .LIST 0>>
         <HLIGHT ,H-BOLD>
-        <CRLF><CRLF>
-        <TELL "You do not have ">
-        <COND (<EQUAL? .TYPE R-ANY>
-            <TELL "any">
-        )(<EQUAL? .TYPE R-ALL>
-            <TELL "all">
-        )> 
-        <TELL " of the ">
-        <COND (<EQUAL? .CONTAINER ,CODEWORDS>
-            <TELL "codewords">
-            <HLIGHT 0>
-            <PRINT-CODEWORDS .LIST>
-        )(ELSE
-            <TELL "items">
-            <HLIGHT 0>
+        <CRLF>
+        <TELL CR "You do not have ">
+        <COND (<G? .COUNT 1>
             <COND (<EQUAL? .TYPE R-ANY>
-                <PRINT-ANY .LIST>
+                <TELL "any">
             )(<EQUAL? .TYPE R-ALL>
-                <PRINT-ALL .LIST>
+                <TELL "all">
+            )>
+            <TELL " of the">
+        )(<EQUAL? .CONTAINER ,CODEWORDS>
+            <TELL "the">
+        )(<FSET? <GET .LIST 1> ,VOWELBIT>
+            <TELL "an">
+        )(ELSE
+            <TELL "a">
+        )>
+        <TELL " ">
+        <COND (<EQUAL? .CONTAINER ,CODEWORDS>
+            <TELL "codeword">
+            <COND (<G? .COUNT 1>
+                <TELL "s">
+                <HLIGHT 0>
+                <PRINT-CODEWORDS .LIST>
+            )(ELSE
+                <HLIGHT 0>
+                <HLIGHT ,H-ITALIC>
+                <TELL D <GET .LIST 1>>
+                <HLIGHT 0>
+                <TELL ,PERIOD-CR>
+            )>
+        )(ELSE
+            <COND (<G? .COUNT 1>
+                <TELL "items">
+                <HLIGHT 0>
+                <COND (<EQUAL? .TYPE R-ANY>
+                    <PRINT-ANY .LIST>
+                )(<EQUAL? .TYPE R-ALL>
+                    <PRINT-ALL .LIST>
+                )>
+            )(ELSE
+                <HLIGHT 0>
+                <HLIGHT ,H-ITALIC>
+                <TELL D <GET .LIST 1>>
+                <HLIGHT 0>
+                <TELL ,PERIOD-CR>
             )>
         )>
         <HLIGHT 0>
@@ -1140,7 +1174,7 @@
                         <TELL " ">
                     )>
                 )> 
-                <COND (<AND <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
+                <COND (<AND <G? .COUNT 1> <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
                 <HLIGHT ,H-ITALIC>
                 <TELL D <GET .ITEMS .I>>
                 <HLIGHT 0>
