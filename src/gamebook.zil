@@ -350,6 +350,9 @@
     )>
     <RETURN !\x>>
 
+<ROUTINE SET-DESTINATION (STORY DESTINATION NEW)
+	<PUT <GETP .STORY ,P?DESTINATIONS> 1 .NEW>>
+
 ; "Story - Choice Requirements Validations"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE CHECK-ALL (ITEMS "OPT" CONTAINER "AUX" COUNT)
@@ -568,7 +571,11 @@
 <ROUTINE CHECK-VICTORY ("AUX" VICTORY)
     <SET VICTORY <GETP ,HERE ,P?VICTORY>>
     <COND (.VICTORY
-        <PRINT-ENDING GOOD-ENDING 4>
+        <COND (<EQUAL? .VICTORY T>
+            <PRINT-ENDING GOOD-ENDING 4>
+        )(ELSE
+            <PRINT-ENDING .VICTORY 6>
+        )>
         <SETG CONTINUE-TO-CHOICES F>
     )>>
 
