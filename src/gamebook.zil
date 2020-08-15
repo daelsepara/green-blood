@@ -1394,7 +1394,7 @@
             >
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
                 <SET CHOICE <- .KEY !\0>>
-                <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
+                <COND (<AND <G=? <GET CHARACTERS 0> 1> <G=? .CHOICE 1> <L=? .CHOICE <GET CHARACTERS 0>>>
                     <SET CHARACTER <GET CHARACTERS .CHOICE>>
                     <CRLF>
                     <DESCRIBE-CHARACTER .CHARACTER>
