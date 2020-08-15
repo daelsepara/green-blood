@@ -173,7 +173,7 @@
         <SET KEY <INPUT 1>>
         <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
             <SET CHOICE <- .KEY !\0>>
-            <COND (<AND <G=? .CHOICES 1> <L=? .CHOICE <GET .CHOICES 0>>>
+            <COND (<AND <G=? <GET .CHOICES 0> 1> <L=? .CHOICE <GET .CHOICES 0>>>
                 <COND (<AND <G=? .CHOICE 1> <L=? .CHOICE <GET .DESTINATIONS 0>> <L=? .CHOICE <GET .TYPES 0>>>
                     <SET TYPE <GET .TYPES .CHOICE>>
                     <COND (<EQUAL? .TYPE R-NONE>
