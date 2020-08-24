@@ -353,7 +353,7 @@
     <RETURN !\x>>
 
 <ROUTINE SET-DESTINATION (STORY DESTINATION NEW)
-	<PUT <GETP .STORY ,P?DESTINATIONS> 1 .NEW>>
+	<PUT <GETP .STORY ,P?DESTINATIONS> .DESTINATION .NEW>>
 
 ; "Story - Choice Requirements Validations"
 ; ---------------------------------------------------------------------------------------------
