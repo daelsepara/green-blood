@@ -723,7 +723,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT056 "You step back off the mound, which begins to shake as if there was an earthquake. The ground you have stepped back onto is quite firm, but even so you can feel the vibrations rocking you slightly.||The whole of the green hillock suddenly rolls upwards and away from you, leaving you standing on the edge of a ledge with a twenty-foot drop. As the hillock moves it creases and splits apart.||The dragon, for that is what the hillock really is, moves slowly as it wakes from its slumber. Turning its great scaly neck like a corkscrew, the ancient creature looks back over its shoulder at you. Its smouldering red eyes, as terrifying as the portals to hell, gaze at you from a craggy face the size of a cart">
+<CONSTANT TEXT056 "You step back off the mound, which begins to shake as if there was an earthquake. The ground you have stepped back onto is quite firm, but even so you can feel the vibrations rocking you slightly.||The whole of the green hillock suddenly rolls upwards and away from you, leaving you standing on the edge of a ledge with a twenty-foot drop. As the hillock moves it creases and splits apart.||The dragon, for that is what the hillock really is, moves slowly as it wakes from its slumber. Turning its great scaly neck like a corkscrew, the ancient creature looks back over its shoulder at you. Its smouldering red eyes, as terrifying as the portals to hell, gaze at you from a craggy face the size of a cart.">
 <CONSTANT CHOICES056 <LTABLE "leap at its head to attack it before it is fully awake" "smile at it in the hope that it will not eat you, while preparing a spell if you know how">>
 
 <ROOM STORY056
@@ -765,7 +765,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT060 "Thea hairs on the nape of your neck begin to bristle as you step quietly between the Greenbark trees. You sense you are being watched.">
+<CONSTANT TEXT060 "The hairs on the nape of your neck begin to bristle as you step quietly between the Greenbark trees. You sense you are being watched.">
 <CONSTANT CHOICES060 <LTABLE "hide" "stop and look about you" "call out that you are Elanor's friend come in search of the immortal elves">>
 
 <ROOM STORY060
@@ -843,7 +843,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT067 "\"The Westermen hate spiders. They say the spiders are ugly, poisonous and unnatural. To them spiders are the evil creatures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?">
+<CONSTANT TEXT067 "\"The Westermen hate spiders. They say the spiders are ugly, poisonous and unnatural. To them spiders are the evil creatures of the Demoness. It does no harm to the forest to kill a spider. Are they right, these Westermen?\"">
 <CONSTANT CHOICES067 <LTABLE "say there is no harm in killing spiders" "say it is bad to kill spiders" "use">>
 
 <ROOM STORY067
