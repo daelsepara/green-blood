@@ -961,9 +961,9 @@
 <ROUTINE STORY076-EVENTS ()
 	<HLIGHT ,H-BOLD>
 	<COND (<NOT ,STORY033-PRECHOICE-FLAG>
-		<TELL "You take up position in the circle on the west side, where the ground is flattest and where the wind is at your back.">
+		<TELL "You take up position in the circle on the west side, where the ground is flattest and the wind is at your back.">
 	)(ELSE
-		<TELL "You take up position in the circle on the east side, where the ground is uneven and where the wind is in your face.">
+		<TELL "You take up position in the circle on the east side, where the ground is uneven and the wind is in your face.">
 	)>
 	<HLIGHT 0>
 	<CRLF>
