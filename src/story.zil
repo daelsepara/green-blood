@@ -2110,7 +2110,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT179 "As you start to pull the emerald ring off your finger you notice the owl perched on top of the ladder looking on with its unblinking eyes.">
-<CONSTANT CHOICES179 <LTABLE "take of the ring and throw it into the pool" "take off the ring and keep it" "change or mind and leave the ring on">>
+<CONSTANT CHOICES179 <LTABLE "take off the ring and throw it into the pool" "take off the ring and keep it" "change your mind and leave the ring on">>
 
 <ROOM STORY179
 	(IN ROOMS)
