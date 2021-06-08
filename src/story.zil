@@ -1800,7 +1800,7 @@
 		<CRLF>
 	)>>
 
-<CONSTANT TEXT152 "\"How am I to stop them? I am a stranger here in the forest.\"||\"Make the elves fight them. Kill the Westermen's leader. Wake the mighty dragon and send him forth to destroy them. If the forest perishes the whole world will die.\"||\"Which of these three should I do?\" you ask. \"Or it is not as simple as that, and I must do two or even all three of these things?\"||\"I do not know.\"||\"Can't you talk to the elves?\"||\"The elves will talk to men only on Midsummer's Day. On that day, you must find them and convince them to help you save the forest. I can never talk with elvenkind except on Midsummer's Day.\"||There are so many questions you would like to ask Elanor, but the elderflower nectar seems to be going to your head and you feel too drowsy to continue.||\"Sleep now, and awake a here.\"||As Elanor says the word sleep, your eyes shut and you sink in deep slumber.">
+<CONSTANT TEXT152 "\"How am I to stop them? I am a stranger here in the forest.\"||\"Make the elves fight them. Kill the Westermen's leader. Wake the mighty dragon and send him forth to destroy them. If the forest perishes the whole world will die.\"||\"Which of these three should I do?\" you ask. \"Or it is not as simple as that, and I must do two or even all three of these things?\"||\"I do not know.\"||\"Can't you talk to the elves?\"||\"The elves will talk to men only on Midsummer's Day. On that day, you must find them and convince them to help you save the forest. I can never talk with elvenkind except on Midsummer's Day.\"||There are so many questions you would like to ask Elanor, but the elderflower nectar seems to be going to your head and you feel too drowsy to continue.||\"Sleep now, and awake a hero.\"||As Elanor says the word sleep, your eyes shut and you sink in deep slumber.">
 
 <ROOM STORY152
 	(IN ROOMS)
@@ -1809,7 +1809,7 @@
 	(CONTINUE STORY166)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT153 "Renard thanks you for the six pieces of gold. \"It's not that I'm a coward, you understand. It's just that nobody in their right mind would brave the Bonehill.||You awake at dawn in time to glimpse Renard's disappearing back. It seems he doesn't want to stay a moment longer than he has to. You slept soundly and feel invigorated and confident as you begin to climb the slop away from the Sirion river.">
+<CONSTANT TEXT153 "Renard thanks you for the six pieces of gold. \"It's not that I'm a coward, you understand. It's just that nobody in their right mind would brave the Bonehill.\"||You awake at dawn in time to glimpse Renard's disappearing back. It seems he doesn't want to stay a moment longer than he has to. You slept soundly and feel invigorated and confident as you begin to climb the slop away from the Sirion river.">
 
 <ROOM STORY153
 	(IN ROOMS)
