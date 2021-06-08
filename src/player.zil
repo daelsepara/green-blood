@@ -12,7 +12,7 @@
 
 <OBJECT SKILL-CHARMS
     (DESC "CHARMS")
-    (LDESC "The expert use of magical wards to protect you from danger. Also includes that most elusive of qualities. luck. YOu must possess a magic amulet to use this skill.")
+    (LDESC "The expert use of magical wards to protect you from danger. Also includes that most elusive of qualities: luck. You must possess a magic amulet to use this skill.")
     (REQUIRES <LTABLE MAGIC-AMULET>)>
 
 <OBJECT SKILL-CUNNING
