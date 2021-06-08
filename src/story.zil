@@ -1953,7 +1953,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT166 "When you awake you are wonderfully restored to healthy vitality.||Elanor is nowhere to be seen. On the third finger of your right hand, however is an emerald ring with the stone set in a furled silver leaf. It fits perfectly. You get up, stretch your limbs, and deep in thought, rub the gem.||You feel in your bones that it is your destiny to save the forest and that you will risk your life to do so. You suffer a moment's unease as you worry about the dangers ahead, an unease that turns to deep-rooted fear. Once more you look at the ring. Is it magical? Is it the ring causing you to feel the reckless courage of a hero? Or did the blood of a hero always run in your veins?">
-<CONSTANT CHOICES166 <LTABLE "take of the ring" "leave the ring on if you trust Elanor">>
+<CONSTANT CHOICES166 <LTABLE "take off the ring" "leave the ring on if you trust Elanor">>
 
 <ROOM STORY166
 	(IN ROOMS)
