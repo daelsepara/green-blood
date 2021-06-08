@@ -1441,7 +1441,7 @@
 			<TELL "You gain a permanent +1 life point" ,PERIOD-CR>
 		)(ELSE
 			<SETG LIFE-POINTS ,MAX-LIFE-POINTS>
-			<TELL "You life points is restored" ,PERIOD-CR>
+			<TELL "Your life points are restored" ,PERIOD-CR>
 		)>
 		<HLIGHT 0>
 		<UPDATE-STATUS-LINE>
