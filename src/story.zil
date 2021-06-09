@@ -2318,8 +2318,8 @@
 	(TYPES <LTABLE R-NONE R-NONE R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT199 "The ants' bites are poisonous.">
-<CONSTANT TEXT199-CONTINUED "You have already suffered dozens of wounds by the time you reach a large pond in a dark hollow. Throwing caution to the winds and driven by the tormenting pain of the bites, you plunge into the water and immerse yourself where you tear off your clothes.||The torment ceases as the ants drown and float to the surface, and although the venom makes you feel drowsy you manage to drag yourself towards the pond's edge.||Just as you are about to hand yourself out of the water, you feel a huge water snake coiling around your legs">
+<CONSTANT TEXT199 "The ants' bites are poisonous. You have already suffered dozens of wounds by the time you reach a large pond in a dark hollow.">
+<CONSTANT TEXT199-CONTINUED "Throwing caution to the winds and driven by the tormenting pain of the bites, you plunge into the water and immerse yourself where you tear off your clothes.||The torment ceases as the ants drown and float to the surface, and although the venom makes you feel drowsy you manage to drag yourself towards the pond's edge.||Just as you are about to hand yourself out of the water, you feel a huge water snake coiling around your legs.">
 <CONSTANT CHOICES199 <LTABLE "fight the serpent" "cry out in despair to the owl in case it is still nearby and prepared to forgive and help you.">>
 
 <ROOM STORY199
