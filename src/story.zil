@@ -3458,7 +3458,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT291 "Your lunge is mighty indeed but the point of your sword only cuts through air. The nimble elf jumps aside, rolls and, as you turn to face him once more, you feel the cold steel of his dirk biting deep into your side.">
+<CONSTANT TEXT291 "Your lunge is mighty indeed but the point of your sword only cuts through air. The nimble elf jumps aside, rolls and, as you turn to face him once more, you feel the cold steel of his dirk biting deep into your side. The elf pulls the dirk out and begins to circle you.">
 <CONSTANT CHOICES291 <LTABLE "fight on" "let the elf go by looking away">>
 
 <ROOM STORY291
