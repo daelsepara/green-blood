@@ -3183,7 +3183,7 @@
 	<TELL "You will have to offer the Kwerrel imp something else" ,PERIOD-CR>>
 
 <CONSTANT TEXT266 "You cast Vanish and disappear. Then you creep slowly round to the perch of the pavilion and, waiting to make sure there will be no one coming in or out you creep in and sneak behind the table where the man they call the chief is seated, poring over the maps. He is a balding, corpulent man whose eyes gleam with greed.||The master map shows the Forest of Arden in its entirety. A broad swathe of brown has recently been painted across the green of the forest and a red point marks each of the Westermen encampments which are eating into the forest. The chief waves his broad hand across the map, showing where they are going to wreak devastation and havoc next .Right in the centre of the triangle made by the Bonehill, the bower of the Lady of the Forest and the geysers, a small pool with an ancient-looking Greenbark tree drawn on it has been carefully painted in. There is nothing to show where Elvenhame, the fabled city of the elves, is.||The chief dismisses his scribes and furls the map once more before you can read any of the little notes the scribes have inked in.">
-<CONSTANT CHOICES266 <LTABLE "stay to see if you can discover more, baring in mind your spell will fail in another ten minutes or so" "you can leave now while the coast is clear">>
+<CONSTANT CHOICES266 <LTABLE "stay to see if you can discover more, bearing in mind your spell will fail in another ten minutes or so" "you can leave now while the coast is clear">>
 
 <ROOM STORY266
 	(IN ROOMS)
