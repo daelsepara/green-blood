@@ -3069,8 +3069,8 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT258 "\"Yes. I am lost,\" your reply. \"Are you truly a talking owl?\"||\"Truly I am. I suppose you want to know how to escape from the forest?\"||You are tempted to say yes but pride will not let you. The owl sounds surprised when you say no.||\"Humans usually want to know the way out. It is a hard place for those who do not know and love the forest.\"||The owl seems friendly, if it really is the owl talking. It tells you it is an enchanted bird, enchanted by the Lady of Grey, to bring those who are friends of the forest to her bower.">
-<CONSTANT CHOICES258 <LTABLE "can ask the owl to take you to the Lady in Grey" "ask the way to find the Tree of Knowledge">>
+<CONSTANT TEXT258 "\"Yes. I am lost,\" you reply. \"Are you truly a talking owl?\"||\"Truly I am. I suppose you want to know how to escape from the forest?\"||You are tempted to say yes but pride will not let you. The owl sounds surprised when you say no.||\"Humans usually want to know the way out. It is a hard place for those who do not know and love the forest.\"||The owl seems friendly, if it really is the owl talking. It tells you it is an enchanted bird, enchanted by the Lady of Grey, to bring those who are friends of the forest to her bower.">
+<CONSTANT CHOICES258 <LTABLE "ask the owl to take you to the Lady in Grey" "ask the way to find the Tree of Knowledge">>
 
 <ROOM STORY258
 	(IN ROOMS)
