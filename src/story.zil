@@ -256,6 +256,11 @@
 	(ITEM TOADSTOOL-FLESH)
 	(FLAGS LIGHTBIT)>
 
+<ROUTINE STORY015-PRECHOICE ()
+	<COND (,RUN-ONCE
+		<TAKE-ITEM ,EMERALD-RING-ELANOR>
+	)>>
+
 <CONSTANT TEXT016 "You walk across the room without looking to either side, pretending not to have heard the command.||The same voice rings out again, but the imperious tone now carries the sharp ring of anger: \"So you think you can come here and treat us as though we are beneath notice, do you? Are you deaf? Ignore Valerian, would you? I'll make you pay for your insolence.\"||There is a scramble as people leave the common room. Only the old woman in grey stays to watch the fight. It is too late to do anything but fight or run.">
 <CONSTANT CHOICES016 <LTABLE "run out of the inn without looking back" "otherwise, you must fight">>
 
@@ -1673,7 +1678,7 @@
 	(CONTINUE STORY152)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT141 "The red liquid tastes vile, but unlike medicine it doesn't seem to to anything to you. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not a pleasant way to leave the world. Your neck swells until your windpipe closes right up, and slowly but surely you choke to death. You bitterly rue your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
+<CONSTANT TEXT141 "The red liquid tastes vile, but unlike medicine it doesn't seem to do anything to you. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not a pleasant way to leave the world. Your neck swells until your windpipe closes right up, and slowly but surely you choke to death. You bitterly rue your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
 
 <ROOM STORY141
 	(IN ROOMS)
@@ -2701,7 +2706,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT230 "\"Why have all your fiends gone? Why won't they talk to me?\"||\"They are elves, they do not wish to.\"||\"You are an elf, you are still here talking to me.\"||\"But I do not wish to.\"||\"Then why do you not vanish like the rest?\"||\"Shut your eyes just for a moment.\"">
+<CONSTANT TEXT230 "\"Why have all your friends gone? Why won't they talk to me?\"||\"They are elves, they do not wish to.\"||\"You are an elf, you are still here talking to me.\"||\"But I do not wish to.\"||\"Then why do you not vanish like the rest?\"||\"Shut your eyes just for a moment.\"">
 <CONSTANT CHOICES230 <LTABLE "do as the elf asks" "keep your gaze firmly on the last of the slippery elves">>
 
 <ROOM STORY230
