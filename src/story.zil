@@ -1984,7 +1984,7 @@
 	<SETG MONEY 0>
 	<RETURN ,STORY167>>
 
-<CONSTANT TEXT168 "The black tarty goo smells of putrefaction and does not deter the bees at all. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not pleasant. Your neck swells until your windpipe is closed tight up and you choke to death. You rue bitterly your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
+<CONSTANT TEXT168 "The black tarry goo smells of putrefaction and does not deter the bees at all. You start to run as the swarm of bees settles around your head, but you have left it too late. Death from a hundred bee stings is not pleasant. Your neck swells until your windpipe is closed tight up and you choke to death. You rue bitterly your folly in upsetting Elanor, the Lady of the Forest, and you have paid the price.">
 
 <ROOM STORY168
 	(IN ROOMS)
