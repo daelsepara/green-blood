@@ -2945,7 +2945,7 @@
 		<TELL ,PERIOD-CR>
 	)>>
 
-<CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose another spell. There is little point in casting casting Vanish.">
+<CONSTANT TEXT249 "You cry a single word of power and vanish, to reappear in an instant later with two copies of yourself to your left. You and they remain motionless, for if you move the illusion will be broken and the visions will fade.||Now you must choose another spell. There is little point in casting Vanish.">
 <CONSTANT CHOICES249 <LTABLE "cast Choking Fog" "Visceral Disruption or Bafflement" "Shield of Defense" "Tower of Will">>
 
 <ROOM STORY249
