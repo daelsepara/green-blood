@@ -4582,7 +4582,7 @@
 	)>>
 
 <CONSTANT TEXT386 "You are led to the clearing in the centre of the city of trees and there sat down on the ground. The elves sit in tiers around you, perching on branches; more stand on the walkways and lean out from the towers between the trees. You cannot hide your awe at the natural beauty which surrounds you. When you say that you could never have imagined such an idyll they seem pleased.||\"Never have we risked everything by sharing the beauty of our home with mortals. But now we realize that this beauty will soon be lost. In the time of men no one but you will tell tales of the splendours that were once Elvenhame.\" There is a brooding melancholy in the faces of all the elves.||\"But if you fight you can drive the men out of the forest.\"||\"Do you, a mortal, counsel us to slay your fellow men?\"||What will you answer?">
-<CONSTANT CHOICES386 <LTABLE "say that the men of the west are not your fellows" "that the men are killing the forest which keeps the air pure for everyone to breath">>
+<CONSTANT CHOICES386 <LTABLE "say that the men of the west are not your fellows" "that the men are killing the forest which keeps the air pure for everyone to breathe">>
 
 <ROOM STORY386
 	(IN ROOMS)
