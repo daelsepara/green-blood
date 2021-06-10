@@ -4321,7 +4321,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT CHOICES366 <LTABLE "throw the elven dirk at the egret" "attack it with magic" "use" "otherwise there is nothing you can do which keeps it well out of range. You can however, walk to the top of the hillock to what you can see" "leave the valley and skirt around it to the east" "use">>
+<CONSTANT CHOICES366 <LTABLE "throw the elven dirk at the egret" "attack it with magic" "use" "otherwise there is nothing you can do to the wily bird which keeps well out of range. You can however, walk to the top of the hillock to what you can see" "leave the valley and skirt around it to the east" "use">>
 
 <ROOM STORY366
 	(IN ROOMS)
