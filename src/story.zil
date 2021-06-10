@@ -3807,7 +3807,7 @@
 		<CRLF>
 		<TELL ,TEXT321-AGILITY>
 		<CRLF>
-		<PREVENT-DEATH ,STORY321>
+		<PUTP ,STORY321 ,P?DEATH F>
 	)(ELSE
 		<CRLF>
 		<TELL "The dirk embeds itself in your back" ,PERIOD-CR>
