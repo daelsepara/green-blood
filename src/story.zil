@@ -4022,7 +4022,7 @@
 	(TYPES SIX-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT340 "\"I cannot take you to Elvenhame. I would rather die like a mortal than reveal our last great secret.\"||\"What secret is that?\" you ask.||\"No mortal has ever looked upon the glory of Elvenhame.\"||\"And lived?\" you ask grimly.||\"No mortals live. If they did they wouldn't be mortal, would they?||You threaten to kill the elf but he seems ready to die rather than to lead you to his lord. You look deep into his violet eyes, reading there the fear that you are about to cut short a life that should endure for millennia.">
+<CONSTANT TEXT340 "\"I cannot take you to Elvenhame. I would rather die like a mortal than reveal our last great secret.\"||\"What secret is that?\" you ask.||\"No mortal has ever looked upon the glory of Elvenhame.\"||\"And lived?\" you ask grimly.||\"No mortals live. If they did they wouldn't be mortal, would they?\"||You threaten to kill the elf but he seems ready to die rather than to lead you to his lord. You look deep into his violet eyes, reading there the fear that you are about to cut short a life that should endure for millennia.">
 <CONSTANT CHOICES340 <LTABLE "let him go" "tie him up" "kill him anyway">>
 
 <ROOM STORY340
