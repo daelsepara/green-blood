@@ -3691,7 +3691,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT312 "You have gambled with your life and lost. Zorolotl's sword arcs through the air and buries itself in your skull. You fall to the ground, poleaxed You are beyond the help of magic.">
+<CONSTANT TEXT312 "You have gambled with your life and lost. Zorolotl's sword arcs through the air and buries itself in your skull. You fall to the ground, poleaxed. You are beyond the help of magic.">
 
 <ROOM STORY312
 	(IN ROOMS)
