@@ -4164,7 +4164,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT352 "You cast the charm but the Lady in Grey just smiles at you. \"You cannot ensorcel me. I could ensorcel you, but that would not be to purpose. Use your skills in the camp of the Westermen, not on me.\" She is not impressed by your attempt to charm here.">
+<CONSTANT TEXT352 "You cast the charm but the Lady in Grey just smiles at you. \"You cannot ensorcel me. I could ensorcel you, but that would not be to purpose. Use your skills in the camp of the Westermen, not on me.\" She is not impressed by your attempt to charm her.">
 
 <ROOM STORY352
 	(IN ROOMS)
