@@ -3803,14 +3803,22 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY321-PRECHOICE ()
-	<COND (<CHECK-SKILL ,SKILL-AGILITY> <CRLF> <TELL ,TEXT321-AGILITY> <CRLF>)>
-	<LOSE-LIFE 3 "You died from the attack." ,STORY321>
+	<COND (<CHECK-SKILL ,SKILL-AGILITY>
+		<CRLF>
+		<TELL ,TEXT321-AGILITY>
+		<CRLF>
+		<PREVENT-DEATH ,STORY321>
+	)(ELSE
+		<CRLF>
+		<TELL "The dirk embeds itself in your back" ,PERIOD-CR>
+		<LOSE-LIFE 3 "You died from the attack." ,STORY321>
+	)>
 	<COND (<IS-ALIVE>
 		<IF-ALIVE TEXT321-CONTINUED>
 		<TAKE-ELVEN-DIRK>
 	)>>
 
-<CONSTANT TEXT322 "Elanor is nowhere to bee seen, but her owl is still gazing at you unwinkingly. It follows you as you exit the beautiful clearing, hoping to leave the bees behind. Just as you hear a loud buzzing behind you there is a stab of pain as a bee strings the back of your neck. Looking back you see a whole swarm of bees flying to attack you.">
+<CONSTANT TEXT322 "Elanor is nowhere to be seen, but her owl is still gazing at you unwinkingly. It follows you as you exit the beautiful clearing, hoping to leave the bees behind. Just as you hear a loud buzzing behind you there is a stab of pain as a bee strings the back of your neck. Looking back you see a whole swarm of bees flying to attack you.">
 <CONSTANT CHOICES322 <LTABLE "run in search of water to hide in" "smear some of the white jelly on yourself" "smear some of the black tar on your self" "drink the blue potion" "drink the red potion">>
 
 <ROOM STORY322
