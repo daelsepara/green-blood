@@ -4312,7 +4312,7 @@
 <ROUTINE STORY364-PRECHOICE ()
 	<COND (,RUN-ONCE <SETG ZOROLOTL-WOUNDED <+ ,ZOROLOTL-WOUNDED 1>>)>>
 
-<CONSTANT TEXT365 "The King of the Elves is retching helplessly on the floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. He can longer even speak -- this spell seems to have dire effects on elves. He is dying. The hard look on your face as he gives up the ghost with a ghoulish death rattle turns to one of fear as you realize the elves are going to kill you. You should have spared their king. Twenty arrows all find their mark in your body and you too are dead.">
+<CONSTANT TEXT365 "The King of the Elves is retching helplessly on the floor. The look of horror on the faces of the other elves is of embarrassment and shame as much as fear for their king. He can no longer even speak -- this spell seems to have dire effects on elves. He is dying. The hard look on your face as he gives up the ghost with a ghoulish death rattle turns to one of fear as you realize the elves are going to kill you. You should have spared their king. Twenty arrows all find their mark in your body and you too are dead.">
 
 <ROOM STORY365
 	(IN ROOMS)
