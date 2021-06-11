@@ -5605,7 +5605,7 @@
 		<STORY-JUMP ,STORY495>
 	)>>
 
-<CONSTANT TEXT473 "A bad choice. The men at either ends of the front rank move around and attack you from the back. You are quickly overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying">
+<CONSTANT TEXT473 "A bad choice. The men at either ends of the front rank move around and attack you from the back. You are quickly overwhelmed. You take two of them with you to the unending grey as the steel of their swords pierces your vitals and you fall, dying.">
 
 <ROOM STORY473
 	(IN ROOMS)
