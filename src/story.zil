@@ -5697,7 +5697,7 @@
 	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT482 "The indolent Chief of the Westermen falls under your spell. His mind is not as strong as yours and you can bend it to your will. Valerian is about to cast a spell. He stares at you intently and flourishes his arms menacingly.||You haven't long to act">
+<CONSTANT TEXT482 "The indolent Chief of the Westermen falls under your spell. His mind is not as strong as yours and you can bend it to your will. Valerian is about to cast a spell. He stares at you intently and flourishes his arms menacingly.||You haven't long to act.">
 <CONSTANT CHOICES482 <LTABLE "make the Chief of the Westermen order his guards to provide you safe escort into the forest" "get him to order the guards to kill Valerian">>
 
 <ROOM STORY482
