@@ -4832,7 +4832,7 @@
 		<STORY-JUMP ,STORY034>
 	)>>
 
-<CONSTANT TEXT407 "Spurting flame blossoms from your palm. Elanor tugs on a vine and a secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest. I will turn every living thing in the forest against you.\"||You are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily.You can now take some of the potions, although you have time to grab only three. Choose which of the following you are taking: a clear cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot that contains bands of coloured earth.">
+<CONSTANT TEXT407 "Spurting flame blossoms from your palm. Elanor tugs on a vine and a secret hatch opens in the side of the tree-house. She jumps through and swings to the ground on a hanging creeper.||\"You will never leave the forest. I will turn every living thing in the forest against you.\"||You are stung on the cheek by a bee. Then another stings your wrist. More bees fly in, buzzing angrily. You can now take some of the potions, although you have time to grab only three. Choose which of the following you are taking: a clear cherry-red liquid in a stoppered phial, a small round bottle of something like runny tar, a jar of white jelly, a cloudy sea-blue fluid in a phial and a glass pot that contains bands of coloured earth.">
 <CONSTANT TEXT407-END "You rush to climb down the ladder to the ground.">
 
 <ROOM STORY407
