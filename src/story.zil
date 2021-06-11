@@ -5139,7 +5139,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT434 "A faint hissing can be heard above the heavy tramp of feet. The thick trees dampen sound so they must be very close. The Elf King and his subjects are ready in the branches with their bows. A few of the bravest elves gather around you beneath the great Greenbark trees. The Westermen have come to the Tree of Life. The fate of the whole world hangs in the balance. The hissing of their infernal engines grows louder, a foreign unnatural sound, a desecration of nature. Birds fly up from their path and the animals of the forest run in panic from the clanging metal monstrosities. The two columns of men are converging on the tree at the same time from opposite directions.">
-<CONSTANT CHOICES434 <LTABLE "stand your ground before the main column from which he hissing and clanging sounds come" "make a stand first against the soldiers and crossbowmen in the smaller column">>
+<CONSTANT CHOICES434 <LTABLE "stand your ground before the main column from which the hissing and clanging sounds come" "make a stand first against the soldiers and crossbowmen in the smaller column">>
 
 <ROOM STORY434
 	(IN ROOMS)
