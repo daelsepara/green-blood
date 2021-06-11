@@ -5400,7 +5400,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT456 "The mercenary guards are heavy and slow, weighed down by their heavy chainmail corslets. Your lightning fast blows send one after another reeling but you will tire before you have defeated them all.">
-<CONSTANT TEXT456-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts. ||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
+<CONSTANT TEXT456-CONTINUED "There is plenty of time for you to escape into the forest; however, none of them will dare to follow you into the shadows under the trees now that they have seen your prowess at the martial arts.||You are quickly lost in the forest once more, knowing they will never find you. The awful sights and sounds of the Westermen camp are soon far behind.">
 
 <ROOM STORY456
 	(IN ROOMS)
