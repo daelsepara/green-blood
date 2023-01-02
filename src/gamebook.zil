@@ -1657,12 +1657,12 @@
     <RETURN>>
 
 <ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
-    <COND (,CHARACTERS-ENABLED <SPLIT 2>)(ELSE <SPLIT 1>)>
-    <SCREEN 1>
-    <SET WIDTH <LOWCORE SCRH>>
-    <HLIGHT ,H-INVERSE>
-    <LINE-ERASE 1>
     <COND (,HERE
+        <COND (,CHARACTERS-ENABLED <SPLIT 2>)(ELSE <SPLIT 1>)>
+        <SCREEN 1>
+        <SET WIDTH <LOWCORE SCRH>>
+        <HLIGHT ,H-INVERSE>
+        <LINE-ERASE 1>
         <CURSET 1 1>
         <TELL D ,HERE>
         <COND (<AND ,CHARACTERS-ENABLED ,CURRENT-CHARACTER>
@@ -1680,9 +1680,9 @@
                 <TELL ": " N ,MONEY>
             )>
         )>
-    )>
-    <SCREEN 0>
-    <HLIGHT 0>>
+        <SCREEN 0>
+        <HLIGHT 0>
+    )>>
 
 <ROUTINE QUIT-MSG ()
     <TELL CR "Thanks for playing" ,PERIOD-CR>
