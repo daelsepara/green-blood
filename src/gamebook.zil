@@ -1036,7 +1036,7 @@
         <COND (<OR <EQUAL? .KEY !\?> <AND <EQUAL? .KEY !\h !\H> <L? .ITEMS 17>>> <DISPLAY-HELP> <PRESS-A-KEY>)>
         <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9>> <AND <G=? .KEY !\a> <L=? .KEY !\f>> <AND <G=? .KEY !\A> <L=? .KEY !\F>>>
             <COND (<AND <G=? .KEY !\a> <L=? .KEY !\f>>
-                <SET CHOICE <+ <- .KEY !\a> 10>> 
+                <SET CHOICE <+ <- .KEY !\a> 10>>
             )(<AND <G=? .KEY !\A> <L=? .KEY !\F>>
                 <SET CHOICE <+ <- .KEY !\A> 10>>
             )(ELSE
@@ -1242,7 +1242,7 @@
     <COND (.ITEMS
         <SET COUNT <GET .ITEMS 0>>
         <COND (<G? .COUNT 0>
-            <TELL " (">            
+            <TELL " (">
             <DO (I 1 .COUNT)
                 <COND (<G? .I 1>
                     <COND (<NOT <EQUAL? .COUNT 2>>
@@ -1250,7 +1250,7 @@
                     )(ELSE
                         <TELL " ">
                     )>
-                )> 
+                )>
                 <COND (<AND <G? .COUNT 1> <EQUAL? .I .COUNT> .LASTFIX> <TELL .LASTFIX>)>
                 <HLIGHT ,H-ITALIC>
                 <TELL D <GET .ITEMS .I>>
@@ -1508,7 +1508,7 @@
                     <HLIGHT 0>
                     <TELL <GETP <GET .SKILLS .I> P?LDESC> ,PERIOD-CR>
                 >
-            )>  
+            )>
             <CRLF>
         )(ELSE
             <TELL CR "None" CR>
@@ -1530,7 +1530,7 @@
                         <TELL " (" N .QUANTITY ")">
                     )>
                 >
-            )>  
+            )>
         )(ELSE
             <TELL "None">
         )>
