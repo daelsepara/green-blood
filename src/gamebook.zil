@@ -1391,10 +1391,14 @@
             <TELL "R">
             <HLIGHT 0>
             <TELL " - Restore from previous save" CR>
+            <HLIGHT ,H-BOLD>
+            <TELL "Q">
+            <HLIGHT 0>
+            <TELL " - Quit the game" CR>
             <TELL "Select which character?">
             <REPEAT ()
                 <SET KEY <INPUT 1>>
-                <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .COUNT>> <EQUAL? .KEY !\C !\c> <EQUAL? .KEY !\R !\r>> <RETURN>)>
+                <COND (<OR <AND <G=? .KEY !\1> <L=? .KEY !\9> <L=? <- .KEY !\0> .COUNT>> <EQUAL? .KEY !\C !\c> <EQUAL? .KEY !\R !\r> <EQUAL? .KEY !\Q !\q>> <RETURN>)>
             >
             <COND (<AND <G=? .KEY !\1> <L=? .KEY !\9>>
                 <SET CHOICE <- .KEY !\0>>
@@ -1439,6 +1443,10 @@
                 <TELL CR "[Press a key to begin]" CR>
                 <INPUT 1>
                 <RETURN>
+            )(<EQUAL? .KEY !\Q !\q>
+                <CRLF>
+                <TELL "Are you sure you want to quit the game?">
+                <COND(<YES?> <QUIT-MSG>)>
             )(<EQUAL? .KEY !\R !\r>
                 <COND (<NOT <RESTORE>>
                     <EMPHASIZE "Restore failed.">
