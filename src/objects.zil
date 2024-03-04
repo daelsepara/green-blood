@@ -8,13 +8,13 @@
     (DESC "emerald ring")
     (SYNONYM RING)
     (ADJECTIVE EMERALD)
-    (FALGS TAKEBIT)>
+    (FLAGS TAKEBIT)>
 
 <OBJECT EMERALD-RING-ELANOR
     (DESC "Lady of the Forest's emerald ring")
     (SYNONYM RING)
     (ADJECTIVE EMERALD)
-    (FALGS TAKEBIT WEARBIT WORNBIT)>
+    (FLAGS TAKEBIT WEARBIT WORNBIT)>
 
 <OBJECT JAR-COLOURED-EARTH
     (DESC "jar of coloured earth")
