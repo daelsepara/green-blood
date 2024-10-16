@@ -1,0 +1,1 @@
+<OBJECT CURRENCY (DESC "gold")>
