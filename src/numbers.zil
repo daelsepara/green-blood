@@ -1,3 +1,6 @@
+; "number routines"
+; ---------------------------------------------------------------------------------------------
+
 <ROUTINE POWER (BASE EXP)
     <COND (<G? .EXP 0>
         <RETURN <* .BASE <POWER .BASE <- .EXP 1>>>>

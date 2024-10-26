@@ -1,6 +1,10 @@
+; "Mini-library from ZILF v0.9"
+; ---------------------------------------------------------------------------------------------
+
 <SETG ZILLIB-VERSION "J5">
 
-<GLOBAL HERE <>>                   ;"Player's location"
+    ; "Player's location"
+<GLOBAL HERE <>>
 
 <VERSION? (ZIP)
           (T
@@ -29,15 +33,15 @@
 <GLOBAL LEXBUF KBD-LEXBUF>
 
 
-;"The game can override this with SETG. It doesn't go through DARKNESS-F, since
+; "The game can override this with SETG. It doesn't go through DARKNESS-F, since
  it has to be a constant on V3."
 <OR <GASSIGNED? DARKNESS-STATUS-TEXT>
     <SETG DARKNESS-STATUS-TEXT "Darkness">>
 
 <COND (<NOT <GASSIGNED? EXTRA-FLAGS>> <SETG EXTRA-FLAGS '()>)>
 
-;"These are all set on ROOMS in case no game objects define them."
-;"TODO: Eliminate some standard flags or make them optional.
+; "These are all set on ROOMS in case no game objects define them."
+; "TODO: Eliminate some standard flags or make them optional.
   27 flags in the library only leaves 5 for V3 games."
 <SETG KNOWN-FLAGS
     (ATTACKBIT CONTBIT DEVICEBIT DOORBIT EDIBLEBIT FEMALEBIT INVISIBLE KLUDGEBIT
@@ -64,7 +68,7 @@
 
 <VERSION?
     (ZIP
-     ;"If unlit, change HERE to 'Darkness' temporarily."
+     ; "If unlit, change HERE to 'Darkness' temporarily."
      <DEFMAC DO-READ ('RB 'LB)
          <EXPAND <FORM WRAP-FOR-DARK-STATUS <FORM READ .RB .LB>>>>
 
@@ -92,11 +96,11 @@
     (FLAGS NARTICLEBIT PLURALBIT PERSONBIT TOUCHBIT)>
 
 <OBJECT ROOMS
-    ;"For V3, we need an object called 'Darkness' to show in the status line."
+    ; "For V3, we need an object called 'Darkness' to show in the status line."
     %<VERSION?
        (ZIP <LIST DESC ,DARKNESS-STATUS-TEXT>)
        (ELSE #SPLICE ())>
-    ;"This has all the flags, just in case other objects don't define them."
+    ; "This has all the flags, just in case other objects don't define them."
     (FLAGS !,KNOWN-FLAGS)>
 
 <ROUTINE V-VERSION ()
@@ -108,7 +112,7 @@
     <TELL %<STRING " / " ,ZIL-VERSION " lib " ,ZILLIB-VERSION>>
     <CRLF>>
 
-;"Prints a (short) string with the first letter capitalized."
+; "Prints a (short) string with the first letter capitalized."
 <ROUTINE PRINT-CAP-STR (S "AUX" MAX C)
     <DIROUT 3 ,TEMPTABLE>
     <PRINT .S>
@@ -121,7 +125,7 @@
                <AND <=? .I 2> <SET C <UPPERCASE-CHAR .C>>>
                <PRINTC .C>>)>>
 
-;"Prints an object name with the first letter capitalized."
+; "Prints an object name with the first letter capitalized."
 <ROUTINE PRINT-CAP-OBJ (OBJ "AUX" MAX C)
     <DIROUT 3 ,TEMPTABLE>
     <PRINTD .OBJ>
@@ -134,7 +138,7 @@
                <AND <=? .I 2> <SET C <UPPERCASE-CHAR .C>>>
                <PRINTC .C>>)>>
 
-;"Implements <TELL A .OBJ>."
+; "Implements <TELL A .OBJ>."
 <ROUTINE PRINT-INDEF (OBJ "AUX" A)
     <COND (<FSET? .OBJ ,NARTICLEBIT>)
           (<SET A <GETP .OBJ ,P?ARTICLE>> <TELL .A> <PRINTC !\ >)
@@ -143,12 +147,12 @@
           (ELSE <TELL "a ">)>
     <PRINTD .OBJ>>
 
-;"Implements <TELL T .OBJ>."
+; "Implements <TELL T .OBJ>."
 <ROUTINE PRINT-DEF (OBJ)
     <COND (<NOT <FSET? .OBJ ,NARTICLEBIT>> <TELL "the ">)>
     <PRINTD .OBJ>>
 
-;"Implements <TELL CA .OBJ>."
+; "Implements <TELL CA .OBJ>."
 <ROUTINE PRINT-CINDEF (OBJ "AUX" A)
     <COND (<FSET? .OBJ ,NARTICLEBIT>
            <PRINT-CAP-OBJ .OBJ>
@@ -159,7 +163,7 @@
           (ELSE <TELL "A ">)>
     <PRINTD .OBJ>>
 
-;"Implements <TELL CT .OBJ>."
+; "Implements <TELL CT .OBJ>."
 <ROUTINE PRINT-CDEF (OBJ)
     <COND (<FSET? .OBJ ,NARTICLEBIT>
            <PRINT-CAP-OBJ .OBJ>
@@ -167,7 +171,7 @@
           (ELSE <TELL "The " D .OBJ>)>>
 
 <DEFAULT-DEFINITION PRINT-GAME-OVER
-    ;"Prints a message explaining that the game is over or the player has died.
+    ; "Prints a message explaining that the game is over or the player has died.
       This is called after JIGS-UP has already printed the message passed in to
       describe the specific circumstances, so usually this should print a generic
       message appropriate for the game's theme."
@@ -175,7 +179,7 @@
         <TELL "    ****  The game is over  ****" CR>>
 >
 
-;"Fills READBUF and LEXBUF by reading a command from the player.
+; "Fills READBUF and LEXBUF by reading a command from the player.
 
 Args:
   PROMPT?: Whether to print the prompt first.
@@ -189,7 +193,7 @@ Sets (contents):
         <SETG READBUF ,KBD-READBUF>
         <SETG LEXBUF ,KBD-LEXBUF>
         <PUTB ,READBUF 0 <- ,READBUF-SIZE 2>>
-        ;"The read buffer has a slightly different format on V3."
+        ; "The read buffer has a slightly different format on V3."
         <VERSION? (ZIP)
                   (ELSE
                    <PUTB ,READBUF 1 0>
@@ -197,7 +201,7 @@ Sets (contents):
         <DO-READ ,READBUF ,LEXBUF>
         <RTRUE>>>
 
-;"Prompts the player to answer a yes/no question by pressing 'y' or 'n',
+; "Prompts the player to answer a yes/no question by pressing 'y' or 'n',
 repeating the prompt if they press any other key.
 
 The question should be printed before calling this routine.
@@ -221,7 +225,6 @@ Returns:
                (<EQUAL? .RESP !\N !\n>
                 <RFALSE>)
                (T
-                ;<CRLF>
                 <TELL "(Please type y or n) >" >)>>>
 
 <ROUTINE GOTO (RM)

@@ -1,3 +1,36 @@
+; "objects for Green Blood"
+; ---------------------------------------------------------------------------------------------
+
+; weapons
+; ---------------------------------------------------------------------------------------------
+<OBJECT LONGBOW
+    (DESC "longbow")
+    (SYNONYM LONGBOW)
+    (REQUIRES SKILL-ARCHERY)
+    (FLAGS TAKEBIT)>
+
+<OBJECT MAGIC-AMULET
+    (DESC "magic amulet")
+    (SYNONYM AMULET)
+    (ADJECTIVE MAGIC)
+    (REQUIRES SKILL-CHARMS)
+    (FLAGS TAKEBIT)>
+
+<OBJECT MAGIC-WAND
+    (DESC "magic wand")
+    (SYNONYM WAND)
+    (ADJECTIVE MAGIC)
+    (REQUIRES SKILL-SPELLS)
+    (FLAGS TAKEBIT)>
+
+<OBJECT SWORD
+    (DESC "sword")
+    (SYNONYM SWORD)
+    (REQUIRES SKILL-SWORDPLAY)
+    (FLAGS TAKEBIT)>
+
+; "story objects"
+; ---------------------------------------------------------------------------------------------
 <OBJECT ELVEN-DIRK
     (DESC "elven dirk")
     (SYNONYM DIRK)
@@ -34,26 +67,6 @@
     (QUANTITY 2)
     (FLAGS TAKEBIT)>
 
-<OBJECT LONGBOW
-    (DESC "longbow")
-    (SYNONYM LONGBOW)
-    (REQUIRES SKILL-ARCHERY)
-    (FLAGS TAKEBIT)>
-
-<OBJECT MAGIC-AMULET
-    (DESC "magic amulet")
-    (SYNONYM AMULET)
-    (ADJECTIVE MAGIC)
-    (REQUIRES SKILL-CHARMS)
-    (FLAGS TAKEBIT)>
-
-<OBJECT MAGIC-WAND
-    (DESC "magic wand")
-    (SYNONYM WAND)
-    (ADJECTIVE MAGIC)
-    (REQUIRES SKILL-SPELLS)
-    (FLAGS TAKEBIT)>
-
 <OBJECT MAPLE-FLUTE
     (DESC "maple flute")
     (SYNONYM FLUTE)
@@ -76,12 +89,6 @@
     (DESC "tarry black potion")
     (SYNONYM POTION)
     (ADJECTIVE TARRY BLACK)
-    (FLAGS TAKEBIT)>
-
-<OBJECT SWORD
-    (DESC "sword")
-    (SYNONYM SWORD)
-    (REQUIRES SKILL-SWORDPLAY)
     (FLAGS TAKEBIT)>
 
 <OBJECT TOADSTOOL-FLESH

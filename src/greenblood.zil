@@ -1,4 +1,5 @@
-"Green Blood (ZIL)"
+; "Green Blood (ZIL)"
+; ---------------------------------------------------------------------------------------------
 
 <CONSTANT GAME-TITLE "||Green Blood">
 <CONSTANT GAME-DESCRIPTION "|Mark Smith and Dave Morris (1993)||Implemented in ZIL by SD Separa (2020)|">

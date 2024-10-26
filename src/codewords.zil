@@ -1,3 +1,6 @@
+; "codewords for Green Blood"
+; ---------------------------------------------------------------------------------------------
+
 <OBJECT CODEWORD-BULLHORN
     (DESC "Bullhorn")
     (SYNONYM BULLHORN)>

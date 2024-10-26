@@ -1,8 +1,9 @@
+; "Green Blood"
+; ---------------------------------------------------------------------------------------------
+
 <INSERT-FILE "gamebook">
 
 <GLOBAL STARTING-POINT PROLOGUE>
-
-<OBJECT VEHICLE (DESC "none")>
 
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
 	<RFALSE>>
